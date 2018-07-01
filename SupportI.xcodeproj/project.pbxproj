@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
+		8026194920E9796300BE7A5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8026194820E9796300BE7A5E /* README.md */; };
 		8037F0F720BFABA300162BA9 /* DynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F0F520BFABA300162BA9 /* DynamicType.swift */; };
 		8037F0F820BFABA300162BA9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F0F620BFABA300162BA9 /* TestViewModel.swift */; };
 		8037F0FF20BFB1B800162BA9 /* CoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F0FE20BFB1B800162BA9 /* CoreViewModel.swift */; };
@@ -174,6 +175,7 @@
 
 /* Begin PBXFileReference section */
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
+		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8037F0F520BFABA300162BA9 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
 		8037F0F620BFABA300162BA9 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		8037F0FE20BFB1B800162BA9 /* CoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewModel.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 		8050BC3E20BF89DA00E355BE = {
 			isa = PBXGroup;
 			children = (
+				8026194820E9796300BE7A5E /* README.md */,
 				8050BC4920BF89DA00E355BE /* SupportI */,
 				8050BC4820BF89DA00E355BE /* Products */,
 				1AF646A694716730DF718F39 /* Pods */,
@@ -929,6 +932,7 @@
 				8050BC5820BF89DC00E355BE /* LaunchScreen.storyboard in Resources */,
 				8050BD7120BF8A7100E355BE /* MapStyle.json in Resources */,
 				8050BC5520BF89DC00E355BE /* Assets.xcassets in Resources */,
+				8026194920E9796300BE7A5E /* README.md in Resources */,
 				80A7A5A420E69CC800F1F217 /* Radio.xib in Resources */,
 				8050BC5020BF89DA00E355BE /* Main.storyboard in Resources */,
 			);
