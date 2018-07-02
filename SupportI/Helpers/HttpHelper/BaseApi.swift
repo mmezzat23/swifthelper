@@ -27,7 +27,6 @@ class BaseApi:Paginator,Downloader {
             }
         }
         
-        paramaters["api_token"] = UserRoot.instance.data?.api_token
         paramaters["lang"] = LocalizationHelper.getAppLang()
         paramaters["device_type"] = Constants.deviceType
         if let devicetoken = UserDefaults.standard.string(forKey: "deviceToken"){
