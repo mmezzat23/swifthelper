@@ -16,6 +16,7 @@ class Authorization{
     
     static var running:Bool = false
     func setupTimestamp()->Bool {
+        return true
         let timestamp = NSDate().timeIntervalSince1970
         let myTimeInterval = TimeInterval(timestamp).int
         //let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
@@ -38,7 +39,7 @@ class Authorization{
                 Authorization.running = true
                 if !setupTimestamp(){
                     
-                    ApiManager.instance.callGet(.token){ response in
+                    ApiManager.instance.callGet(.token) { response in
                         Authorization.running = false
                         let data = TokenModel.convertToModel(response: response)
                         if let token = data.token{

@@ -65,9 +65,10 @@ extension BaseApi{
         let error = BaseModel.convertToModel(response: response)
         if let errors = error.errors{
             if let _ = error.message{
-                errors.message = error.message
+                self.showAlert(message: error.message!)
+                return
             }
-            self.showAlert(message: errors.description())
+            self.showAlert(message: Errors.description(errors))
         }else{
             if let _ = error.message{
                 self.showAlert(message: error.message!)

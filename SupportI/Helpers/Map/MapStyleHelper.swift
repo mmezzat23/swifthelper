@@ -10,6 +10,9 @@ import Foundation
 import MapKit
 import MapKitGoogleStyler
 
+protocol MapStyler: class {
+    func configureTileOverlay()
+}
 
 extension MapHelper{
     

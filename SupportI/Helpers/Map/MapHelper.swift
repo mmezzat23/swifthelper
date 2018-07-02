@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapHelper:NSObject{
+class MapHelper:NSObject,MapStyler{
     /** options **/
     var updated:Bool = false
     var defaultAnnotation:Bool = true
@@ -42,7 +42,6 @@ class MapHelper:NSObject{
         }
         set{
             _locationDelegate = newValue!
-            runDelegates()
         }
     }
     

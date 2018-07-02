@@ -2,6 +2,8 @@ import Alamofire
 import NVActivityIndicatorView
 
 class BaseApi:Paginator,Downloader {
+ 
+   
     
     let url = Constants.url
     var paramaters :[String:Any] = [:]
@@ -25,6 +27,7 @@ class BaseApi:Paginator,Downloader {
             }
         }
         
+        paramaters["api_token"] = UserRoot.instance.data?.api_token
         paramaters["lang"] = LocalizationHelper.getAppLang()
         paramaters["device_type"] = Constants.deviceType
         if let devicetoken = UserDefaults.standard.string(forKey: "deviceToken"){
@@ -39,6 +42,7 @@ class BaseApi:Paginator,Downloader {
         self.paramaters = [:]
         setupObject()
     }
+    
     func connection(_ method: String , type:HTTPMethod, completionHandler: @escaping (Data?) -> ()) {
         self.running = true
         

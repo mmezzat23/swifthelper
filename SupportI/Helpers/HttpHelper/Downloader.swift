@@ -4,12 +4,13 @@ protocol DownloaderDelegate {
     func downloadStatus(status:String?)
 }
 
-protocol Downloader {
+protocol Downloader : class{
     func downloader(file:String?) 
 }
 
 fileprivate var delegateFile:DownloaderDelegate?
-extension BaseApi{
+
+extension Downloader{
     var downloaderDelegate:DownloaderDelegate?{
         set{
             delegateFile = newValue

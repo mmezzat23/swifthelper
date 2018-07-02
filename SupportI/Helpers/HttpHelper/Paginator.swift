@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol Paginator {
+protocol Paginator : class {
     func paginate()
     func incresePaginate()
     func resetPaginate()
@@ -18,7 +18,8 @@ protocol Paginator {
 fileprivate var paginatorFile:Int = 1
 fileprivate var paginatorStopFile:Bool = false
 fileprivate var paginatorLimitFile = 10
-extension BaseApi{
+
+extension Paginator{
     var paginator:Int{
         set{
             paginatorFile = newValue
@@ -41,7 +42,7 @@ extension BaseApi{
         }
     }    
     func paginate()  {
-        paramaters["page"] = paginator
+       ApiManager.instance.paramaters["page"] = paginator
     }
     func incresePaginate() {
         paginator = paginator+1
@@ -49,7 +50,7 @@ extension BaseApi{
     func resetPaginate()  {
         paginator = 1
         paginatorStop = false
-        self.resetObject()
+        ApiManager.instance.resetObject()
     }
     func stopPaginate()  {
         paginatorStop = true
@@ -57,7 +58,7 @@ extension BaseApi{
     func checkPaginator(respond:Array<Any>?){
         if let array = respond{
             if array.count == 0 || array.count < ApiManager.instance.paginatorLimit{
-                ApiManager.instance.stopPaginate()
+                self.stopPaginate()
             }
         }
         
