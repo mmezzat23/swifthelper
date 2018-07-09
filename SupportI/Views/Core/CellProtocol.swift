@@ -17,8 +17,7 @@ public protocol CellProtocol {
     var model:Any? {set get}
     var path:Int? {set get}
     func setup()
-
-    //func indexPath()->Int?
+    func indexPath()->Int
 }
 fileprivate var modelOfCollectionCell:[UICollectionViewCell:Any] = [:]
 fileprivate var modelOfTableCell:[UITableViewCell:Any] = [:]
@@ -78,6 +77,10 @@ public extension CellProtocol {
     }
     
     
+    func indexPath()->Int {
+        guard let path = self.path else { return 0}
+        return path
+    }
 }
 
 

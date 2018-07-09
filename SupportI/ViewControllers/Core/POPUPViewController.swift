@@ -13,12 +13,13 @@ protocol POPUPView{
     func topMostController() -> UIViewController
 }
 
-extension POPUPView{
-
+extension POPUPView where Self:UIViewController{
+    
     func pushPop(vc:UIViewController)  {
         //show window
         vc.modalPresentationStyle = .overFullScreen
         //present(vc, animated: true, completion: nil)
+        vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
         let topVC = UIApplication.topMostController()
         topVC.present(vc, animated: true, completion: nil)
         

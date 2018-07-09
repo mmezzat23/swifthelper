@@ -43,10 +43,11 @@ extension UITableView {
         if(register){
             self.register(UINib(nibName: ind, bundle: nil), forCellReuseIdentifier: ind)
         }
-        if type is CellProtocol {
-            guard var cellProt = self.dequeueReusableCell(withIdentifier: ind, for: indexPath) as? CellProtocol else {throw CellError.confirmProtocol}
-            cellProt.path = indexPath.item
-            return cellProt as! T
+        guard let cellProt = self.dequeueReusableCell(withIdentifier: ind, for: indexPath) as? T else {throw CellError.confirmProtocol}
+        if cellProt is CellProtocol {
+            var cell = cellProt as! CellProtocol
+            cell.path = indexPath.item
+            return cell as! T
         }else{
             throw CellError.confirmProtocol
         }
@@ -86,5 +87,4 @@ extension UITableView {
         }
         
     }
-    
 }

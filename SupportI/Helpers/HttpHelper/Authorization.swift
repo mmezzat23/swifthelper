@@ -16,7 +16,7 @@ class Authorization{
     
     static var running:Bool = false
     func setupTimestamp()->Bool {
-        return true
+
         let timestamp = NSDate().timeIntervalSince1970
         let myTimeInterval = TimeInterval(timestamp).int
         //let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))

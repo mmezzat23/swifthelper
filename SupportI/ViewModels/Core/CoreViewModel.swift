@@ -7,37 +7,19 @@
 //
 
 import Foundation
-extension PresentingViewProtocol{
-    func bind(){
-        
-    }
-}
-fileprivate var presentingClass:PresentingViewProtocol?
 
-extension ViewModelProtocol{
-    var delegate:PresentingViewProtocol?{
+class ViewModelCore:ViewModelProtocol {
+    
+    weak var _delegate:PresentingViewProtocol?
+    weak var delegate:PresentingViewProtocol?{
         set{
-            presentingClass = newValue
+            _delegate = newValue
         }get{
-            let vc = UIApplication.topViewController()
-            if vc is PresentingViewProtocol{
-                presentingClass = vc as? PresentingViewProtocol
-            }
-            return presentingClass
+            return _delegate
         }
+    }
+    deinit {
+        print("deinit")
     }
     
-    func paginator(respnod:Array<Any>?){
-        ApiManager.instance.checkPaginator(respond: respnod)
-    }
-    func runPaginator()->Bool{
-        if !ApiManager.instance.running && !ApiManager.instance.paginatorStop{
-            ApiManager.instance.incresePaginate()
-            return true
-        }else{
-            return false
-        }
-    }
 }
-
-

@@ -10,7 +10,7 @@ import Foundation
 import NVActivityIndicatorView
 
 // All ViewControllers must implement this protocol
-protocol PresentingViewProtocol{
+protocol PresentingViewProtocol :class{
     
     func bind()
     func startLoading()
@@ -31,6 +31,9 @@ protocol PresentingViewProtocol{
 // implementation of PresentingViewProtocol only in cases where the presenting view is a UIViewController
 extension PresentingViewProtocol where Self:UIViewController {
   
+    func bind(){
+        
+    }
     func startLoading(){
         let activityData = ActivityData()
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)

@@ -171,6 +171,8 @@
 		80A7A5F120E6A04200F1F217 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5EF20E6A04200F1F217 /* MenuCell.swift */; };
 		80A7A5F220E6A04200F1F217 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5F020E6A04200F1F217 /* MenuVC.swift */; };
 		80A7A5F420E6A0D800F1F217 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5F320E6A0D800F1F217 /* TokenModel.swift */; };
+		8896C1C820F34D5D00FD1D8F /* UIConstraintLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C1C720F34D5D00FD1D8F /* UIConstraintLayoutExtension.swift */; };
+		8896C1CA20F34D7000FD1D8F /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C1C920F34D7000FD1D8F /* UIWindowExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -343,6 +345,8 @@
 		80A7A5EF20E6A04200F1F217 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		80A7A5F020E6A04200F1F217 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		80A7A5F320E6A0D800F1F217 /* TokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		8896C1C720F34D5D00FD1D8F /* UIConstraintLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstraintLayoutExtension.swift; sourceTree = "<group>"; };
+		8896C1C920F34D7000FD1D8F /* UIWindowExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
 		C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupportI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6B730607EBE0D31A9D800B /* Pods-SupportI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -501,6 +505,8 @@
 				8050BC8E20BF89FF00E355BE /* UITextViewExtensions.swift */,
 				8050BC8F20BF89FF00E355BE /* UIViewControllerExtensions.swift */,
 				8050BC9020BF89FF00E355BE /* UIViewExtensions.swift */,
+				8896C1C720F34D5D00FD1D8F /* UIConstraintLayoutExtension.swift */,
+				8896C1C920F34D7000FD1D8F /* UIWindowExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1046,6 +1052,7 @@
 				8050BCF920BF8A0000E355BE /* CollectionExtensions.swift in Sources */,
 				80A7A56C20E69CC800F1F217 /* EmailRule.swift in Sources */,
 				8050BCFD20BF8A0000E355BE /* FloatExtensions.swift in Sources */,
+				8896C1C820F34D5D00FD1D8F /* UIConstraintLayoutExtension.swift in Sources */,
 				80A7A5E420E69ED400F1F217 /* BaseController.swift in Sources */,
 				80A7A57020E69CC800F1F217 /* MaxLengthRule.swift in Sources */,
 				80A7A58020E69CC800F1F217 /* LocationHelper.swift in Sources */,
@@ -1069,6 +1076,7 @@
 				8050BD2120BF8A0000E355BE /* UIViewControllerExtensions.swift in Sources */,
 				80A7A56220E69CC800F1F217 /* ChangeLangHelper.swift in Sources */,
 				8050BCF720BF8A0000E355BE /* BoolExtensions.swift in Sources */,
+				8896C1CA20F34D7000FD1D8F /* UIWindowExtensions.swift in Sources */,
 				8050BCFF20BF8A0000E355BE /* IntExtensions.swift in Sources */,
 				80A7A57E20E69CC800F1F217 /* ClassesHelper.swift in Sources */,
 				8050BD1D20BF8A0000E355BE /* UITabBarExtensions.swift in Sources */,

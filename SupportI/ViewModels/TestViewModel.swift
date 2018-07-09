@@ -5,7 +5,8 @@ import Foundation
 
 // swift3:Capturing an inout parameter, including self in a mutating method, becomes an error in an escapable closure literal, unless the capture is made explicit (and thereby immutable):
 // Hate this : Forced to have a class :-(
-class TestViewModel:ViewModelProtocol {
+class TestViewModel:ViewModelCore {
+    
     
     var model:DynamicType = DynamicType<SelectDropDownModel>()
     

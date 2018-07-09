@@ -158,7 +158,7 @@ extension UITextField{
         }
         set {
             if let _ = newValue{
-                self.underlined(color: newValue!)
+                self.addBottomBorder(withColor: newValue!)
                 textFieldUnderline[self] = newValue!
             }
         }
@@ -201,12 +201,12 @@ extension UITextField:UITextFieldDelegate{
     }
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         guard let activeUnderline = textFieldUnderlineActive[textField] else{return}
-        textField.underlined(color: activeUnderline)
+        textField.addBottomBorder(withColor: activeUnderline)
         
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
         guard let underline = textFieldUnderline[textField] else{return}
-        textField.underlined(color: underline)
+        textField.addBottomBorder(withColor: underline)
     }
 }
 extension UIImageView{

@@ -13,6 +13,7 @@ protocol BaseViewControllerProtocol {
     func setup()
     func setupBase()
     func pushViewController(indetifier:String ,storyboard: String)->UIViewController
+    func pushViewController<T>(_ indetifier:T.Type ,storyboard: String )->T
     func push(_ view:UIViewController,_ animated:Bool)
 }
 extension BaseViewControllerProtocol{
