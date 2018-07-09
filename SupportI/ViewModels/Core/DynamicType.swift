@@ -8,6 +8,7 @@
 
 
 public struct DynamicType<T> {
+    
     typealias ModelEventListener = (T)->Void
     typealias Listeners = [ModelEventListener]
     

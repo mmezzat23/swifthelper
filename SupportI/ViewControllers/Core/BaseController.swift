@@ -10,7 +10,6 @@ import UIKit
 
 import NVActivityIndicatorView
 
-
 class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
     
     var hiddenNav:Bool = false

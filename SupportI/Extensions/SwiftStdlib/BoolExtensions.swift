@@ -8,6 +8,7 @@
 
 // MARK: - Properties
 public extension Bool {
+    
 
 	/// SwifterSwift: Return 1 if true, or 0 if false.
 	///

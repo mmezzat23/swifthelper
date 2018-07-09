@@ -12,7 +12,6 @@ public enum CellError:Error {
     case confirmProtocol
 }
 
-
 public protocol CellProtocol {
     var model:Any? {set get}
     var path:Int? {set get}
