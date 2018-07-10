@@ -1,7 +1,7 @@
 import Alamofire
 import NVActivityIndicatorView
 
-class BaseApi:Paginator,Downloader {
+class BaseApi:Downloader,Paginator {
  
    
     
@@ -11,7 +11,8 @@ class BaseApi:Paginator,Downloader {
     
     var running:Bool = false
 
-    init() {
+    override init() {
+        super.init()
         setupObject()
     }
     func refresh()  {

@@ -1,84 +1,170 @@
-import Alamofire
-protocol DownloaderDelegate {
-    func fileCallback(file:URL?)
-    func downloadStatus(status:String?)
+
+import UIKit
+
+protocol DownloaderDelegate:class {
+    func taskComplete()
+}
+extension DownloaderDelegate {
+    func taskComplete(){
+        
+    }
 }
 
-protocol Downloader : class{
-    func downloader(file:String?) 
-}
-
-fileprivate var delegateFile:DownloaderDelegate?
-
-extension Downloader{
-    var downloaderDelegate:DownloaderDelegate?{
+class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionControllerDelegate {
+    
+    
+    var fileName:String? = ""
+    var downloadTask: URLSessionDownloadTask!
+    var backgroundSession: URLSession!
+    var presenter:UIViewController!
+    private weak var _delegate:DownloaderDelegate?
+    weak var downloaderDelegate:DownloaderDelegate?{
         set{
-            delegateFile = newValue
+            if newValue is UIViewController {
+                _delegate = newValue
+                presenter = newValue as? UIViewController
+            }
         }get{
-            return delegateFile
+            return _delegate
         }
     }
-
-    func downloader(file:String? = nil)  {
+    
+    private var progressView: UIProgressView!
+    private var parentView:UIView!
+    private var label:UILabel!
+    
+    private func presenting(){
+        guard let window = UIApplication.shared.keyWindow else {return}
         
-        guard let _ = file else {return}
-        guard let fileUrl = URL(string: file!) else {return}
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let fileURL = documentsURL.appendingPathComponent("\(randomString()).\(fileUrl.pathExtension)")
-            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        if let url = file{
-            
-            Alamofire.download(url, to: destination).response { response in
-                if response.response?.statusCode == 200 && response.destinationURL != nil{
-                    self.downloaderDelegate?.downloadStatus(status: translate("ok"))
-                    self.downloaderDelegate?.fileCallback(file: response.destinationURL)
-                }else if response.error != nil{
-                    self.downloaderDelegate?.downloadStatus(status: response.error?.localizedDescription)
-                }
-                
-                
-            }
-        }
+        progressView = UIProgressView()
+        progressView.frame = CGRect(x: self.presenter.view.width/4, y: self.presenter.view.height/2, width: self.presenter.view.width/100*50, height: 40)
+        
+        parentView = UIView(frame: CGRect(x: 0, y: 0, width: self.presenter.view.width, height: self.presenter.view.height))
+        parentView.backgroundColor = UIColor.black.withAlphaComponent(0.50)
+        parentView.addSubview(progressView)
+        //self.presenter.view.addSubview(parentView)
+        
+        label = UILabel()
+        label.frame = CGRect(x: 0, y: self.presenter.view.height/2+20, width: self.presenter.view.width, height: 20)
+        label.textColor = UIColor.white
+        label.textAlignment = .center
         
         
-
+        parentView.addSubview(label)
+        window.addSubview(parentView)
+        
     }
-}
-
-
-func download(file:String? = nil){
-    guard let url = file else {
-        return
+    private func generateFileName(_ urlTask:String){
+        let file = URL(string:urlTask)
+        guard let url = file else { return }
+        self.fileName = randomString()+"."+url.pathExtension
     }
-    // Create destination URL
-    let documentsUrl:URL =  (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL?)!
-    let destinationFileUrl = documentsUrl.appendingPathComponent("downloadedFile.jpg")
-    //Create URL to the source file you want to download
-    let fileURL = URL(string: url)
-    let sessionConfig = URLSessionConfiguration.default
-    let session = URLSession(configuration: sessionConfig)
-    let request = URLRequest(url:fileURL!)
-    let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
-        if let tempLocalUrl = tempLocalUrl, error == nil {
-            // Success
-            if let statusCode = (response as? HTTPURLResponse)?.statusCode {
-                print("Successfully downloaded. Status code: \(statusCode)")
-            }
-            
+    private func initTask(_ urlTask:String){
+        let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
+        backgroundSession = Foundation.URLSession(configuration: backgroundSessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
+        progressView.setProgress(0.0, animated: false)
+        
+        let url = URL(string: urlTask)!
+        downloadTask = backgroundSession.downloadTask(with: url)
+        downloadTask.resume()
+    }
+    private func restore(){
+        self.parentView.removeFromSuperview()
+    }
+    private func showFileWithPath(file:String?){
+        guard let url = file else {return}
+        print(url)
+        let isFileFound:Bool? = FileManager.default.fileExists(atPath: url)
+        if isFileFound == true{
+            let viewer = UIDocumentInteractionController(url: URL(fileURLWithPath: url))
+            viewer.delegate = self
+            viewer.presentPreview(animated: true)
+        }
+    }
+    
+    func downloadFile(_ string:String?){
+        if downloaderDelegate == nil {
+            return
+        }
+        guard let urlTask = string else { return }
+        self.presenting()
+        self.generateFileName(urlTask)
+        self.initTask(urlTask)
+    }
+    func downloadPause(){
+        if downloadTask != nil{
+            downloadTask.suspend()
+        }
+    }
+    func downloadResume(){
+        if downloadTask != nil{
+            downloadTask.resume()
+        }
+    }
+    func downloadCancel(){
+        if downloadTask != nil{
+            downloadTask.cancel()
+        }
+    }
+    
+    
+    //MARK: URLSessionDownloadDelegate
+    // 1
+    func urlSession(_ session: URLSession,
+                    downloadTask: URLSessionDownloadTask,
+                    didFinishDownloadingTo location: URL){
+        
+        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentDirectoryPath:String = path[0]
+        let fileManager = FileManager()
+        let destinationURLForFile = URL(fileURLWithPath: documentDirectoryPath.appendingFormat("/\(self.fileName ?? "file.pdf")"))
+        
+        if fileManager.fileExists(atPath: destinationURLForFile.path){
+            showFileWithPath(file: destinationURLForFile.path)
+        }
+        else{
             do {
-                try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrl)
-            } catch (let writeError) {
-                print("Error creating a file \(destinationFileUrl) : \(writeError)")
+                try fileManager.moveItem(at: location, to: destinationURLForFile)
+                // show file
+                showFileWithPath(file: destinationURLForFile.path)
+            }catch{
+                self.restore()
+                print("An error occurred while moving file to destination url")
             }
-            
-        } else {
-            //print("Error took place while downloading a file. Error description: %@", error?.localizedDescription)
         }
     }
-    task.resume()
+    // 2
+    func urlSession(_ session: URLSession,
+                    downloadTask: URLSessionDownloadTask,
+                    didWriteData bytesWritten: Int64,
+                    totalBytesWritten: Int64,
+                    totalBytesExpectedToWrite: Int64){
+        progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
+        var progress = progressView.progress
+        progress = progress*100
+        label.text = progress.int.string+"%"
+    }
+    
+    //MARK: URLSessionTaskDelegate
+    func urlSession(_ session: URLSession,
+                    task: URLSessionTask,
+                    didCompleteWithError error: Error?){
+        downloadTask = nil
+        //progressView.setProgress(0.0, animated: true)
+        if (error != nil) {
+            self.restore()
+            print(error!.localizedDescription)
+        }else{
+            self.restore()
+            self.downloaderDelegate?.taskComplete()
+            print("The task finished transferring data successfully")
+        }
+    }
+    //MARK: UIDocumentInteractionControllerDelegate
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController
+    {
+        return self.presenter
+    }
     
 }
-
 
