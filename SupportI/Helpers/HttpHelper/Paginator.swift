@@ -40,9 +40,9 @@ extension Paginator{
         }get{
             return paginatorLimitFile
         }
-    }    
+    }
     func paginate()  {
-       ApiManager.instance.paramaters["page"] = paginator
+        ApiManager.instance.paramaters["page"] = paginator
     }
     func incresePaginate() {
         paginator = paginator+1
@@ -55,10 +55,15 @@ extension Paginator{
     func stopPaginate()  {
         paginatorStop = true
     }
+    func runPaginate()  {
+        paginatorStop = false
+    }
     func checkPaginator(respond:Array<Any>?){
         if let array = respond{
             if array.count == 0 || array.count < ApiManager.instance.paginatorLimit{
                 self.stopPaginate()
+            }else{
+                self.runPaginate()
             }
         }
         
