@@ -73,6 +73,7 @@ extension UIView {
         - interval: Interval of the animations between subviews.
     */
     func animationRandom(interval: Double = AnimationConfiguration.interval) {
+        
         for(index, value) in subviews.enumerated() {
             let delay = Double(index) * interval
             let animationRandom = AnimationType.random()
@@ -114,16 +115,26 @@ extension UIView{
             durations[self] = newValue
         }
     }
-    func animateZoom(_ interval:Double = 0.40){
+    func animateZoom(_ interval:Double = 0.40, closure:CompletionBlock? = nil){
         for(index, value) in subviews.enumerated() {
             let delay = Double(index) * interval
             let randomScale = Double.random(min: 0, max: AnimationConfiguration.maxZoomScale)
-            value.animate(withType: [.zoom(scale: CGFloat(randomScale))], delay: delay)
+            value.animate(withType: [.zoom(scale: CGFloat(randomScale))], delay: delay,completion:closure)
         }
     }
-    func animateZoomSingleView(_ interval:Double = 0.40){
+    func animateZoomSingleView(_ interval:Double = 0.40 , closure:CompletionBlock? = nil){
         let delay = Double(1) * interval
         let randomScale = Double.random(min: 0, max: AnimationConfiguration.maxZoomScale)
-        self.animate(withType: [.zoom(scale: CGFloat(randomScale))], delay: delay)
+        self.animate(withType: [.zoom(scale: CGFloat(randomScale))], delay: delay, completion:closure)
     }
+    func animate(_ interval:Double = 0.40){
+        let delay = Double(1) * interval
+        self.animate(withType: [AnimationType.random()], delay: delay)
+    }
+    func animate(_ interval:Double = 0.40, closure:CompletionBlock?){
+        let delay = Double(1) * interval
+        self.animate(withType:  [AnimationType.random()],delay:delay, completion: closure)
+        
+    }
+   
 }

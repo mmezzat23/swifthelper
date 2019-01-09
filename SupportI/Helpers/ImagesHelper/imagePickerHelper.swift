@@ -15,19 +15,23 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
     
     var viewController:UIViewController!
     private var _delegate:ImagePickerDelegate?
+    var run:Bool = true
     var delegate:ImagePickerDelegate?{
         set{
             _delegate = newValue
             viewController = _delegate as! UIViewController
-            self.openPicker()
+            if(self.run){
+                self.openPicker()
+            }
         }get{
             return _delegate
         }
     }
     var imagepicker = UIImagePickerController()
     
-    required init(_ delegate:ImagePickerDelegate?) {
+    required init(_ delegate:ImagePickerDelegate? , run:Bool = true) {
         super.init()
+        self.run = run
         self.delegate = delegate
     }
     convenience override init() {
@@ -49,8 +53,9 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
         //OR next possibility
         //let view controlller as VC
        
-        self.delegate?.pickerCallback(image: image)
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: {
+            self.delegate?.pickerCallback(image: image)
+        })
         
     }
    
@@ -96,6 +101,8 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
             alert.popoverPresentationController?.permittedArrowDirections = .up
+            alert.popoverPresentationController?.sourceView = self.viewController.view
+
         default:
             break
         }

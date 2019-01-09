@@ -14,11 +14,13 @@ protocol ViewModelProtocol{
     var delegate:PresentingViewProtocol? {set get }
     func paginator(respnod:Array<Any>?)
     func runPaginator()->Bool
+    func resetPaginator()
     
 }
 
 
 extension ViewModelProtocol{
+    
     func paginator(respnod:Array<Any>?){
         ApiManager.instance.checkPaginator(respond: respnod)
     }
@@ -29,6 +31,9 @@ extension ViewModelProtocol{
         }else{
             return false
         }
+    }
+    func resetPaginator(){
+        ApiManager.instance.resetPaginate()
     }
 }
 

@@ -23,12 +23,13 @@ class UserRoot : Decodable{
         return Static.instance!
     }
     
-    var data : User?
+    var result : User?
     var errors : Errors?
-    var expire : Int?
-    var token : String?
+    var expires_in : Int?
+    var access_token : String?
+    var refresh_token : String?
     var message : String?
-    
+    var json:String?
     
     public static func convertToModel(response: Data?) -> UserRoot{
         do{
@@ -50,24 +51,25 @@ class UserRoot : Decodable{
  
     public func getUser(){
     
-        self.data = User()
-        self.token = UserDefaults.standard.string(forKey: "token")
-        self.expire = UserDefaults.standard.integer(forKey: "expire")
-        self.data?.id = UserDefaults.standard.integer(forKey: "id")
-        self.data?.image = UserDefaults.standard.string(forKey: "image")
-        self.data?.fname = UserDefaults.standard.string(forKey: "fname")
-        self.data?.lname = UserDefaults.standard.string(forKey: "lname")
-        self.data?.email = UserDefaults.standard.string(forKey: "email")
-        self.data?.password = UserDefaults.standard.string(forKey: "password")
-        self.data?.mobile = UserDefaults.standard.integer(forKey: "mobile")
+        
+        self.result = User()
+        self.access_token = UserDefaults.standard.string(forKey: "token")
+        self.expires_in = UserDefaults.standard.integer(forKey: "expire")
+        self.result?.id = UserDefaults.standard.integer(forKey: "id")
+        self.result?.image = UserDefaults.standard.string(forKey: "image")
+        self.result?.fname = UserDefaults.standard.string(forKey: "fname")
+        self.result?.lname = UserDefaults.standard.string(forKey: "lname")
+        self.result?.email = UserDefaults.standard.string(forKey: "email")
+        self.result?.password = UserDefaults.standard.string(forKey: "password")
+        self.result?.mobile = UserDefaults.standard.integer(forKey: "mobile")
     }
     public func storeInDefault() {
         let defaults = UserDefaults.standard
-        if let _ = token{
-            defaults.set(self.token , forKey: "token")
-            defaults.set(self.expire, forKey: "expire")
+        if let _ = access_token{
+            defaults.set(self.access_token , forKey: "token")
+            defaults.set(self.expires_in, forKey: "expire")
         }
-        guard let data = self.data else {return}
+        guard let data = self.result else {return}
         
         defaults.set(true, forKey: "LOGIN")
         defaults.set(Date(), forKey: "LastLogin")

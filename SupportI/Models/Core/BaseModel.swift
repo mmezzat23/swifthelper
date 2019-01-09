@@ -14,7 +14,6 @@ class BaseModel:Decodable {
     var success: Bool?
     var message:String?
     var errors:Errors?
-    var verification_code:String?
   
     public static func convertToModel(response:Data?)->BaseModel{
         do{

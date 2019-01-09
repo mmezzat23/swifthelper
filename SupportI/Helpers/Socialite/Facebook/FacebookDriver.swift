@@ -63,6 +63,7 @@
 //                let fbDetails = result as! NSDictionary
 //
 //                do {
+//                    print(result , fbDetails)
 //                    let jsonData = try JSONSerialization.data(withJSONObject: fbDetails, options: .prettyPrinted)
 //
 //                    // here "jsonData" is the dictionary encoded in JSON data

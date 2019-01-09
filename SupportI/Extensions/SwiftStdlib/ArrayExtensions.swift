@@ -45,6 +45,17 @@ public extension Array where Element: FloatingPoint {
 
 // MARK: - Methods
 public extension Array {
+    /// : Safe protects the array from out of bounds by use of optional.
+    ///
+    ///        let arr = [1, 2, 3, 4, 5]
+    ///        arr[safe: 1] -> 2
+    ///        arr[safe: 10] -> nil
+    ///
+    /// - Parameter index: index of element to access element.
+    public subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+    
     public func index(_ index:Int) -> Bool{
         return self.isset(index)
     }
@@ -58,7 +69,7 @@ public extension Array {
     public func toJson()->String?{
         let jsonData = try! JSONSerialization.data(withJSONObject: self, options: [])
         let json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
-        guard let string = json as? String else {return nil}
+        guard let string = json as String? else {return nil}
         return string
     }
    
@@ -459,6 +470,18 @@ public extension Array where Element: Equatable {
 		return found
 	}
 
+    public func contain(_ elements: [Element]) -> Bool {
+        guard !elements.isEmpty else { return true }
+        var found = true
+        for element in elements {
+            if !contains(element) {
+                found = false
+            }
+        }
+        return found
+    }
+
+    
 	/// SwifterSwift: All indices of specified item.
 	///
 	///		[1, 2, 2, 3, 4, 2, 5].indices(of 2) -> [1, 2, 5]

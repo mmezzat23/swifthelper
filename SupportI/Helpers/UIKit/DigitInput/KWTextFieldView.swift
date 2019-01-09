@@ -139,6 +139,7 @@ protocol KWTextFieldDelegate: class {
     }
     
     fileprivate func updateUnderline() {
+        guard let _ = self.underlineView else { return }
         underlineView.backgroundColor = numberTextField.text?.trim() != "" ? underlineSelectedColor : underlineColor
     }
 }

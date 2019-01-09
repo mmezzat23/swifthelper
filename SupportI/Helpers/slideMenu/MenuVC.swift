@@ -12,15 +12,14 @@ import UIKit
 
 enum MenuEnum:String {
     case home
-    case favorites
-    case my_orders
-    case branches
+    case payment
+    case history
+    case notifications
     case settings
-    case contact_us
-    case about_app
-    case usage_policy
-    case share_app
+    case help
+    case logout
 }
+
 class MenuModel{
     var name:String!
     var index:MenuEnum?
@@ -35,12 +34,12 @@ class MenuModel{
         self.imageOn = imageOn
         self.imageOff = imageOff
     }
+    
 }
 class MenuVC: BaseController {
     
     
 
-    @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var menuCollection: UITableView!
@@ -55,36 +54,69 @@ class MenuVC: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMenu()
-        menuCollection.delegate = self
-        menuCollection.dataSource = self
+        if menuCollection != nil {
+            menuCollection.delegate = self
+            menuCollection.dataSource = self
+        }
+        //userName.text = "\(UserRoot.instance.result?.first_name ?? "") \(UserRoot.instance.result?.last_name ?? "" )"
+        //userImage.setImage(url: UserRoot.instance.result?.image)
         // Do any additional setup after loading the view.
     }
     
     func setupMenu(){
+       
         
-        menu.append(MenuModel(translate("home"),"HomeNav",#imageLiteral(resourceName: "icHomeMenu2"),#imageLiteral(resourceName: "icHomeMenu"),.home))
-        menu.append(MenuModel(translate("favorites"),"FavoritesNav",#imageLiteral(resourceName: "icFavoriteMenu2"),#imageLiteral(resourceName: "icFavoriteMenu"),.favorites))
-        menu.append(MenuModel(translate("my_orders"),"OrdersNav",#imageLiteral(resourceName: "icReceipt2"),#imageLiteral(resourceName: "icReceipt"),.my_orders))
-        menu.append(MenuModel(translate("company branches"),"BranchesNav",#imageLiteral(resourceName: "icStoreMenu2"),#imageLiteral(resourceName: "icStoreMenu"),.branches))
-        menu.append(MenuModel(translate("settings"),"SettingsNav",#imageLiteral(resourceName: "icSettingsMenu2"),#imageLiteral(resourceName: "icSettingsMenu"),.settings))
-        menu.append(MenuModel(translate("contact_us"),"ContactUsNav",#imageLiteral(resourceName: "icCallMenu2"),#imageLiteral(resourceName: "icCallMenu"),.contact_us))
-        menu.append(MenuModel(translate("about_app"), "AboutUsNav",#imageLiteral(resourceName: "icInfoMenu2"),#imageLiteral(resourceName: "icInfoMenu"),.about_app))
-        menu.append(MenuModel(translate("usage_policy"),"AboutUsNav",#imageLiteral(resourceName: "icLockMenu2"),#imageLiteral(resourceName: "icLockMenu"),.usage_policy))
-        menu.append(MenuModel(translate("share_app"),"ShareAppNav",#imageLiteral(resourceName: "icShareMenu2"),#imageLiteral(resourceName: "icShareMenu")))
+        menu.append(MenuModel(translate("home"),"HomeNav",#imageLiteral(resourceName: "home"),#imageLiteral(resourceName: "home"),.home))
+        menu.append(MenuModel(translate("payment"),"PaymentNav",#imageLiteral(resourceName: "payments"),#imageLiteral(resourceName: "payments"),.payment))
+        menu.append(MenuModel(translate("history"),"HistoryNav",#imageLiteral(resourceName: "history"),#imageLiteral(resourceName: "history"),.history))
+        menu.append(MenuModel(translate("notifications"),"NotificationsNav",#imageLiteral(resourceName: "notification"),#imageLiteral(resourceName: "notification"),.notifications))
+        menu.append(MenuModel(translate("settings"),"SettingsNav",#imageLiteral(resourceName: "settings"),#imageLiteral(resourceName: "settings"),.settings))
+        menu.append(MenuModel(translate("help"),"HelpNav",#imageLiteral(resourceName: "help"),#imageLiteral(resourceName: "help"),.help))
+        menu.append(MenuModel(translate("logout"),"LogoutNav",#imageLiteral(resourceName: "logout"),#imageLiteral(resourceName: "logout"),.logout))
+
         
         
     }
     func clickOnMenu(menuItem:MenuModel) {
-        if menuItem.key != "ShareAppNav"{
+        if menuItem.index == .logout{
+//            if UserRoot.isLogin() {
+//                UserRoot.removeCacheingDefault()
+//                useMenu = true
+//                MenuVC.currentIndex = .home
+//                let vc = pushViewController(indetifier: Constants.login)
+//                push(vc)
+//            }
+//        }else if menuItem.index == .home {
+//            if BaseController.currentTrip?.id != nil {
+//                useMenu = true
+//                MenuVC.currentPage = menuItem.key
+//                MenuVC.currentIndex = menuItem.index
+//                let vc = pushViewController(indetifier: "PickupMapNav")
+//                push(vc)
+//            }else{
+//                useMenu = true
+//                MenuVC.currentPage = menuItem.key
+//                MenuVC.currentIndex = menuItem.index
+//                let vc = pushViewController(indetifier: menuItem.key)
+//                push(vc)
+//            }
+           
+        }else{
             useMenu = true
             MenuVC.currentPage = menuItem.key
             MenuVC.currentIndex = menuItem.index
             let vc = pushViewController(indetifier: menuItem.key)
             push(vc)
-        }else{
-            shareApp(url: Constants.url)
         }
     }
+    
+    @IBAction func editProfile(_ sender: Any) {
+        useMenu = true
+        let vc = pushViewController(indetifier: "ProfileNav")
+        push(vc)
+        
+    }
+    
     
 }
 
@@ -95,9 +127,11 @@ extension MenuVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(type: MenuCell(), indexPath,register: false)!
+        if MenuVC.currentIndex == menu[indexPath.item].index {
+            cell.contentView.backgroundColor = UIColor.colorRGB(red: 239, green: 239, blue: 239)
+        }
         cell.menu = menu[indexPath.item]
         cell.setup()
-        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

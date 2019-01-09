@@ -8,10 +8,7 @@
 import Alamofire
 
 protocol Api {
-    func callGet(_ method:Apis ,_ completionHandler: @escaping (Data?) -> ())
-    func callPost(_ method:Apis ,_ completionHandler: @escaping (Data?) -> ())
-    func callPut(_ method:Apis ,_ completionHandler: @escaping (Data?) -> ())
-    func callDelete(_ method:Apis ,_ completionHandler: @escaping (Data?) -> ())
+    
 }
 
 

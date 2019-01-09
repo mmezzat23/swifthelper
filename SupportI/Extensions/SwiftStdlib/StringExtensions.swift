@@ -22,6 +22,56 @@ import Cocoa
 import CoreGraphics
 #endif
 
+
+
+extension String{
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+    
+    func splitString()->String{
+        var filter = self
+        if let index = filter.range(of: " ")?.lowerBound {
+            let spaceing = filter[..<index]
+            let filterSpacing = String(spaceing)
+            if(!filterSpacing.isEmpty){
+                filter = filterSpacing
+            }
+        }
+        //filter = filter.uppercased()
+        print(filter)
+        return filter
+    }
+    
+    func stroke()->NSAttributedString{
+        let attributes: NSMutableAttributedString =  NSMutableAttributedString(string: self)
+        attributes.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 2, range: NSMakeRange(0, attributes.length))
+        return attributes
+    }
+    func strokeUnderline(fontSize:Int = 16) ->NSAttributedString {
+        let attributes : [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(fontSize)),
+            NSAttributedStringKey.foregroundColor : Constants.mainColorRGB,
+            NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleSingle.rawValue]
+        
+        let attributeString = NSMutableAttributedString(string: self, attributes: attributes)
+        
+        return attributeString
+    }
+    func getSize()->CGSize{
+        let text = NSAttributedString(string:self)
+        return text.size()
+        
+    }
+}
+
+
+
+
 // MARK: - Properties
 public extension String {
     
@@ -66,11 +116,12 @@ public extension String {
     public  func cut()->String{
         var string = self
         string = string.replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
+        string.capitalizeFirstLetter()
         return string
     }
-    public  func cut(charSplit :String = "_")->String{
+    public  func cut(charSplit :String = "_", charWith:String = " ")->String{
         var string = self
-        string = string.replacingOccurrences(of: charSplit, with: " ", options: .literal, range: nil)
+        string = string.replacingOccurrences(of: charSplit, with: charWith, options: .literal, range: nil)
         return string
     }
     

@@ -11,7 +11,6 @@ import Foundation
 extension UIView {
     func calculateMargin(_ margin:Int = 20) -> CGFloat {
         
-        
         let margin = (self.frame.size.width / 100) * margin.cgFloat
         let width = (self.frame.size.width - margin)
         

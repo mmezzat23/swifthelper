@@ -23,10 +23,12 @@ class MenuCell: UITableViewCell,CellProtocol {
         
         if(MenuVC.currentIndex == menu.index){
             itemName.text =  menu.name
+            itemName.textColor = Constants.mainColorRGB
             itemImage.image = menu.imageOn
             
         }else{
             itemName.text =  menu.name
+            itemName.textColor = Constants.textColorRGB
             itemImage.image = menu.imageOff
         }
         

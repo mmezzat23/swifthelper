@@ -12,7 +12,7 @@ class TestViewModel:ViewModelCore {
     
     func fetchData() {
         delegate?.startLoading()
-        ApiManager.instance.callGet("test"){ response in
+        ApiManager.instance.connection("test",type:.get){ response in
             self.delegate?.stopLoading()
             let data = SelectDropDownModel.convertToModel(response: response)
             //self.paginator(respnod: self.model.value?.data)

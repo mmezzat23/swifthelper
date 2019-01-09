@@ -9,7 +9,6 @@
 import UIKit
 
 #if !os(watchOS)
-
 // MARK: - enums
 
 /// SwifterSwift: Shake directions of a view.

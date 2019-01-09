@@ -13,9 +13,11 @@ pod 'XLPagerTabStrip', '~> 8.0'
 pod 'NVActivityIndicatorView'
 pod 'Firebase'
 pod 'Firebase/Messaging'
-pod 'MapKitGoogleStyler'
 pod 'AlamofireImage', '~> 3.3'
 pod 'IQKeyboardManagerSwift'
-
+pod 'BSImagePicker'
+pod 'GoogleMaps'
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
 
 end

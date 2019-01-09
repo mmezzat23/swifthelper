@@ -12,11 +12,17 @@ import Foundation
 class TimeHelper{
     var timerVar:Timer?
     var numberOfCycle:Int?
-    var closureTimer:(Int)->Void
+    var closureTimer:(Int)->Void = {_ in
+        
+    }
     
     init(seconds:Double,numberOfCycle:Int = 0,closure:@escaping ((Int)->Void)) {
         self.numberOfCycle = numberOfCycle
         self.closureTimer = closure
+        self.runTimer(seconds: seconds, closure: closureTimer)
+    }
+    init(seconds:Double,numberOfCycle:Int = 0) {
+        self.numberOfCycle = numberOfCycle
         self.runTimer(seconds: seconds, closure: closureTimer)
     }
     init(seconds:Double,closure:@escaping ((Int)->Void)) {
@@ -73,6 +79,29 @@ class TimeHelper{
     }
     
     func secondsTimer(cycle:Int)->String{
+        if cycle <= 0{
+            return ""
+        }
+        var seconds = 0
+        var text = "0"
+        if cycle > 60 {
+            seconds = cycle - 61
+            if seconds < 10 {
+                text = "1:0\(String(seconds))"
+            }else{
+                text = "1:\(String(seconds))"
+            }
+        }else{
+            seconds = cycle - 1
+            if seconds < 10 {
+                text = "0\(String(seconds))"
+            }else{
+                text = "\(String(seconds))"
+            }
+        }
+        return text
+    }
+    static func staticSecondsTimer(cycle:Int)->String{
         if cycle <= 0{
             return ""
         }

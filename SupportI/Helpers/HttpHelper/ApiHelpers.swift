@@ -48,11 +48,44 @@ extension BaseApi{
                 let storyboard: UIStoryboard = UIStoryboard(name: Constants.storyboard, bundle: nil)
                 let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: indetifier)
                 
-                UIApplication.topViewController()?.navigationController?.pushViewController(vc)
+                let topVC = UIApplication.topViewController()
+                if topVC is SWRevealViewController {
+                    let sw  = topVC as! SWRevealViewController
+                    sw.pushFrontViewController(vc, animated: true)
+                }else{
+                    UIApplication.topViewController()?.navigationController?.pushViewController(vc)
+                }
             }
             alert.addAction(acceptAction)
             
         }
+        
+        UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    func loginAlert()  {
+        
+        let alert = UIAlertController(title: translate("alert"), message: translate("the_login_is_required"), preferredStyle: UIAlertControllerStyle.alert)
+        
+        let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
+            let storyboard: UIStoryboard = UIStoryboard(name: Constants.storyboard, bundle: nil)
+            let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: Constants.login)
+            
+            let topVC = UIApplication.topViewController()
+            if topVC is SWRevealViewController {
+                let sw  = topVC as! SWRevealViewController
+                sw.pushFrontViewController(vc, animated: true)
+            }else{
+                UIApplication.topViewController()?.navigationController?.pushViewController(vc)
+            }
+        }
+        let cancelAction = UIAlertAction(title: translate("cancel"), style: .default) { (_) -> Void in
+           
+        }
+        alert.addAction(acceptAction)
+        alert.addAction(cancelAction)
+        
         
         UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
         

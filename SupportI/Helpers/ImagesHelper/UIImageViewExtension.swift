@@ -10,7 +10,19 @@ import UIKit
 import AlamofireImage
 
 fileprivate var staticalyTranstion:UIImageView.ImageTransition? = nil
+fileprivate var isLoadedPrivate:[UIImageView:Bool] = [:]
 extension UIImageView{
+    var isLoaded:Bool {
+        set{
+            isLoadedPrivate[self] = newValue
+        }get{
+            if isLoadedPrivate[self] != nil {
+                return true
+            }else{
+                return false
+            }
+        }
+    }
     var imageTranstion:ImageTransition?{
         get{
             if staticalyTranstion == nil {
@@ -59,9 +71,15 @@ extension UIImageView{
         
         if animate {
             guard let transation = self.imageTranstion else {return}
-            self.af_setImage(withURL: finalUrl, placeholderImage: UIImage(named: "placeHolder"), filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: transation, runImageTransitionIfCached: true, completion: nil)
+            self.af_setImage(withURL: finalUrl, placeholderImage: UIImage(named: "placeHolder"), filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: transation, runImageTransitionIfCached: true, completion: { _ in
+                self.isLoaded = true
+            })
+            
+            
         }else{
-            self.af_setImage(withURL: finalUrl, placeholderImage: UIImage(named: "placeHolder"), filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: nil)
+            self.af_setImage(withURL: finalUrl, placeholderImage: UIImage(named: "placeHolder"), filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: { _ in
+                self.isLoaded = true
+            })
         }
         
     }

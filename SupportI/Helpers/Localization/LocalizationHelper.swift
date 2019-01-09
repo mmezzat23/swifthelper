@@ -8,6 +8,17 @@
 
 import UIKit
 
+extension UIViewController {
+    public func initLang(){
+        if(getAppLang() == "ar" || getAppLang() == "AR"){
+            self.navigationController?.navigationBar.semanticContentAttribute = .forceRightToLeft
+            self.view.semanticContentAttribute = .forceRightToLeft
+        }else{
+            self.navigationController?.navigationBar.semanticContentAttribute = .forceLeftToRight
+            self.view.semanticContentAttribute = .forceLeftToRight
+        }
+    }
+}
 class LocalizationHelper {
     
     public static var keys = keysTranslation
@@ -25,7 +36,7 @@ class LocalizationHelper {
         if let lang = UserDefaults.standard.string(forKey: "lang"){
             return lang
         }else{
-            return "ar"
+            return "en"
         }
        
         
@@ -89,7 +100,7 @@ class LocalizationHelper {
                 return key.cut()+" "+itemNew
             }
         }else{
-            return itemNew+" "+key.cut()
+            return key.cut()+" "+itemNew
         }
     }
 }

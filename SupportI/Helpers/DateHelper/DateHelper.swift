@@ -36,7 +36,7 @@ extension Date{
         case year = "yyyy"
         case full = "yyyy-MM-dd HH:mm:ss"
         case monthString = "MMM"
-        case month = "mm"
+        case month = "MM"
         case day = "dd"
         
     }
@@ -51,6 +51,14 @@ extension Date{
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let dateOrginial = dateFormatter.string(from:date)
+        return dateOrginial
+    }
+    static func currentDate()->Date?{
+        guard let date = Date.current() else {return nil}
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let dateOrginial = dateFormatter.date(from:date)
         return dateOrginial
     }
     static func currentDay()->String?{
@@ -77,7 +85,7 @@ extension Date{
     static func locale()->String{
         var locale = ""
         if getAppLang() == "ar"{
-            locale = DateLocale.ar.rawValue
+            locale = DateLocale.en.rawValue
         }else{
             locale = DateLocale.en.rawValue
         }
@@ -181,4 +189,17 @@ extension Date{
             return nil
         }
     }
+    
+    static func convertToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    static func convertToHoursMinutesSeconds (firstTimeStamp:Int , secondTimeStamp:Int) -> (Int, Int, Int) {
+        
+        let seconds = firstTimeStamp - secondTimeStamp
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    
 }
+
+

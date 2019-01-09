@@ -12,11 +12,19 @@ extension DownloaderDelegate {
 
 class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionControllerDelegate {
     
+    //** vars of task *//
+    private var fileName:String? = ""
+    private var downloadTask: URLSessionDownloadTask!
+    private var backgroundSession: URLSession!
     
-    var fileName:String? = ""
-    var downloadTask: URLSessionDownloadTask!
-    var backgroundSession: URLSession!
-    var presenter:UIViewController!
+    /** presenting Control */
+    private var presenter:UIViewController!
+    private var progressView: UIProgressView!
+    private var parentView:UIView!
+    private var label:UILabel!
+    //
+    
+    //delegation
     private weak var _delegate:DownloaderDelegate?
     weak var downloaderDelegate:DownloaderDelegate?{
         set{
@@ -28,10 +36,7 @@ class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionContro
             return _delegate
         }
     }
-    
-    private var progressView: UIProgressView!
-    private var parentView:UIView!
-    private var label:UILabel!
+    ///
     
     private func presenting(){
         guard let window = UIApplication.shared.keyWindow else {return}
@@ -48,7 +53,6 @@ class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionContro
         label.frame = CGRect(x: 0, y: self.presenter.view.height/2+20, width: self.presenter.view.width, height: 20)
         label.textColor = UIColor.white
         label.textAlignment = .center
-        
         
         parentView.addSubview(label)
         window.addSubview(parentView)

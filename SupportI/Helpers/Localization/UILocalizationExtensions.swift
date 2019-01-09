@@ -20,6 +20,7 @@ extension UILabel{
         set {
             self.controlAlignment()
             self.text = translate(newValue)
+
         }
     }
 }
@@ -44,6 +45,15 @@ extension UIButton{
                 self.imageEdgeInsets.left = 0
                 
             }
+            if(self.titleEdgeInsets.right > 0){
+                self.titleEdgeInsets.left = self.titleEdgeInsets.right
+                self.titleEdgeInsets.right = 0
+            }
+            else if(self.titleEdgeInsets.left > 0){
+                self.titleEdgeInsets.right = self.titleEdgeInsets.left
+                self.titleEdgeInsets.left = 0
+                
+            }
         }
         
         
@@ -56,6 +66,7 @@ extension UIButton{
         set {
             self.controlAlignment()
             self.setTitle(translate(newValue), for: .normal)
+            
         }
     }
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
@@ -129,6 +140,7 @@ extension UITextField{
         set {
             self.controlAlignment()
             self.placeholder = translate(newValue)
+            
         }
     }
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
@@ -158,6 +170,7 @@ extension UITextField{
         }
         set {
             if let _ = newValue{
+                //self.underlined(color: newValue!)
                 self.addBottomBorder(withColor: newValue!)
                 textFieldUnderline[self] = newValue!
             }
@@ -201,12 +214,12 @@ extension UITextField:UITextFieldDelegate{
     }
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         guard let activeUnderline = textFieldUnderlineActive[textField] else{return}
-        textField.addBottomBorder(withColor: activeUnderline)
+        textField.underlined(color: activeUnderline)
         
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
         guard let underline = textFieldUnderline[textField] else{return}
-        textField.addBottomBorder(withColor: underline)
+        textField.underlined(color: underline)
     }
 }
 extension UIImageView{

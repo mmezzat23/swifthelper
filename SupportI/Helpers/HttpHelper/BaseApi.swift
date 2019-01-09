@@ -21,10 +21,11 @@ class BaseApi:Downloader,Paginator {
     }
     func setupObject(){
         headers["version"] = Constants.version
+        headers["Device"] = Constants.deviceId
         headers["lang"] = LocalizationHelper.getAppLang()
         if(UserDefaults.standard.bool(forKey: "LOGIN")){
-            if let token = UserDefaults.standard.string(forKey: "token"){
-                headers["Authorization"] = token
+            if let token = UserDefaults.standard.string(forKey: "access_token"){
+                headers["Authorization"] = "Bearer "+token
             }
         }
         
@@ -36,6 +37,7 @@ class BaseApi:Downloader,Paginator {
         }else{
             paramaters["device_token"] = "nil"
         }
+        paramaters["device_id"] = Constants.deviceId
         
     }
     func resetObject()  {
@@ -55,7 +57,9 @@ class BaseApi:Downloader,Paginator {
         }
         
         print(url)
-        Alamofire.request(safeUrl(url: url),method: type , parameters: self.paramaters , headers : self.headers)
+        let paramters = self.paramaters
+        self.resetObject()
+        Alamofire.request(safeUrl(url: url),method: type , parameters: paramters , headers : self.headers)
             .responseJSON { response in
                 
                 print(response.result.value ?? "")
@@ -77,7 +81,10 @@ class BaseApi:Downloader,Paginator {
                     //completionHandler(nil)
                     case 401?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                        self.showAlert(message: translate("authorization"),indetifier: Constants.login)
+                        self.showAlert(message: translate("the_login_is_required"),indetifier: Constants.login)
+                    case 404?:
+                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                        self.showAlert(message: translate("not_found"))
                     case 422?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                         self.setErrorMessage(data: response.data)

@@ -17,7 +17,7 @@ public protocol KWVerificationCodeViewDelegate: class {
     // MARK: - Constants
     private let minDigits: UInt8 = 2
     private let maxDigits: UInt8 = 8
-    private let textFieldViewLeadingSpace: CGFloat = 10
+    private var textFieldViewLeadingSpace: CGFloat = 10
     private let textFieldViewVerticalSpace: CGFloat = 6
     
     // MARK: - IBInspectables
@@ -48,6 +48,12 @@ public protocol KWVerificationCodeViewDelegate: class {
     @IBInspectable public var digits: UInt8 = 4 {
         didSet {
             setupTextFieldViews()
+        }
+    }
+    
+    @IBInspectable public var spacing: CGFloat = 10 {
+        didSet {
+            textFieldViewLeadingSpace = spacing
         }
     }
     
