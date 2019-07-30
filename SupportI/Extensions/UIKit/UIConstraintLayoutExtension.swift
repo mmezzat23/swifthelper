@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NSLayoutConstraint{
+extension NSLayoutConstraint {
     /**
      Change multiplier constraint
      
@@ -20,7 +20,7 @@ extension NSLayoutConstraint{
         NSLayoutConstraint.deactivate([self])
         
         let newConstraint = NSLayoutConstraint(
-            item: firstItem,
+            item: firstItem!,
             attribute: firstAttribute,
             relatedBy: relation,
             toItem: secondItem,

@@ -78,7 +78,7 @@ public extension String {
     func sizeT() -> CGFloat {
         let font = UIFont(name: "Helvetica", size: 14.0)
         let constraintRect = CGSize(width: Double.greatestFiniteMagnitude, height: 35)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font ?? UIFont()], context: nil)
         return boundingBox.width
     }
     var size:CGSize{

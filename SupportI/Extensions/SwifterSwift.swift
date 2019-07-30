@@ -199,7 +199,7 @@ public struct SwifterSwift {
 			return UIApplication.shared.isStatusBarHidden
 		}
 		set {
-			UIApplication.shared.isStatusBarHidden = newValue
+			//UIApplication.shared.isStatusBarHidden = newValue
 		}
 	}
 	#endif
@@ -238,7 +238,7 @@ public struct SwifterSwift {
 		}
 		set {
 			if let style = newValue {
-				UIApplication.shared.statusBarStyle = style
+				// UIApplication.shared.statusBarStyle = style
 			}
 		}
 	}

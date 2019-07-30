@@ -12,7 +12,7 @@ import GooglePlacePicker
 import GoogleMaps
 
 
-class PlacesPickerView:UIViewController,GMSPlacePickerViewControllerDelegate{
+class PlacesPickerView: UIViewController, GMSPlacePickerViewControllerDelegate {
     
     var mapHelper:GoogleMapHelper?
     
@@ -43,7 +43,6 @@ class PlacesPickerView:UIViewController,GMSPlacePickerViewControllerDelegate{
     func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
         viewController.dismiss(animated: true, completion: {
             self.dismiss(animated: false, completion: {
-                print(self.mapHelper?.placePickerDelegate)
                 self.mapHelper?.placePickerDelegate?.didPickPlace(place: place)
             })
         })
@@ -66,21 +65,22 @@ protocol PlacesPickerDelegate:class {
 fileprivate weak var placePickerPrivate:PlacesPickerDelegate?
 
 
-protocol MapPlaceHelper:class{
-    var placePickerDelegate:PlacesPickerDelegate?{set get}
+protocol MapPlaceHelper:class {
+    var placePickerDelegate:PlacesPickerDelegate? { set get }
     func showPlacePicker()
     func nearbyPlaces()
 }
 
-extension MapPlaceHelper where Self:GoogleMapHelper{
-    weak var placePickerDelegate:PlacesPickerDelegate?{
+extension MapPlaceHelper where Self:GoogleMapHelper {
+    
+    weak var placePickerDelegate: PlacesPickerDelegate? {
         set{
             placePickerPrivate = newValue
         }get{
             return placePickerPrivate
         }
     }
-    func showPlacePicker(){
+    func showPlacePicker() {
         if self.placePickerDelegate is UIViewController {
             let delegate = self.placePickerDelegate as? UIViewController
             let picker = PlacesPickerView()
