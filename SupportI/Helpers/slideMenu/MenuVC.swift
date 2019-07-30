@@ -105,14 +105,14 @@ class MenuVC: BaseController {
             useMenu = true
             MenuVC.currentPage = menuItem.key
             MenuVC.currentIndex = menuItem.index
-            let vc = pushViewController(indetifier: menuItem.key)
+            let vc = initViewController(menuItem.key)
             push(vc)
         }
     }
     
     @IBAction func editProfile(_ sender: Any) {
         useMenu = true
-        let vc = pushViewController(indetifier: "ProfileNav")
+        let vc = initViewController("ProfileNav")
         push(vc)
         
     }

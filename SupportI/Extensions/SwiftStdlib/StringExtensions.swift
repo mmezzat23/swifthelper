@@ -26,7 +26,7 @@ import CoreGraphics
 
 extension String{
     func capitalizingFirstLetter() -> String {
-        return prefix(1).uppercased() + self.lowercased().dropFirst()
+        return prefix(1).uppercased() + self.dropFirst()
     }
     
     mutating func capitalizeFirstLetter() {
@@ -62,7 +62,7 @@ extension String{
         
         return attributeString
     }
-    func getSize()->CGSize{
+    func getSize() -> CGSize {
         let text = NSAttributedString(string:self)
         return text.size()
         
@@ -75,7 +75,7 @@ extension String{
 // MARK: - Properties
 public extension String {
     
-    func sizeT()->CGFloat{
+    func sizeT() -> CGFloat {
         let font = UIFont(name: "Helvetica", size: 14.0)
         let constraintRect = CGSize(width: Double.greatestFiniteMagnitude, height: 35)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
@@ -119,7 +119,7 @@ public extension String {
         string.capitalizeFirstLetter()
         return string
     }
-    public  func cut(charSplit :String = "_", charWith:String = " ")->String{
+    public  func cut(charSplit :String = "_", charWith:String = " ") -> String {
         var string = self
         string = string.replacingOccurrences(of: charSplit, with: charWith, options: .literal, range: nil)
         return string

@@ -83,7 +83,7 @@
     
  }
  
- public func random(_ n:Int = 100)->Int{
+ public func random(_ n:Int = 100) ->Int {
     return Int(arc4random_uniform(UInt32(n)))
  }
  public func randomNumbers(_ n:Int = 100)->Int{

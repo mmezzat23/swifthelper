@@ -18,22 +18,7 @@ class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
     var popTranstion:Bool = false
     
     var publicFont:UIFont? = nil
-    var centerTitleNavigation:String? {
-        didSet{
-            if centerTitleNavigation != nil {
-                let size:CGSize = CGSize(width: 100, height: 40)
-                let marginX:CGFloat = (self.navigationController!.navigationBar.frame.size.width / 2) - (size.width / 2)
-                let label1 = UILabel(frame: CGRect(x: marginX, y: 0, width: size.width, height: size.height))
-                label1.text = centerTitleNavigation
-                label1.textAlignment = .center
-                label1.textColor = Constants.textColorRGB
-                if publicFont != nil {
-                    label1.font = publicFont!
-                }
-                self.navigationController?.navigationBar.addSubview(label1)
-            }
-        }
-    }
+  
     var centerImageNavigation:UIImageView? {
         didSet{
             if centerImageNavigation != nil {
@@ -71,7 +56,7 @@ class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         if(self.hiddenNav){
             // Show the Navigation Bar
             self.navigationController?.setNavigationBarHidden(true, animated: false )
@@ -84,7 +69,7 @@ class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
         //baseViewModel = nil
         if(self.hiddenNav){
             // Show the Navigation Bar
@@ -96,7 +81,6 @@ class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
         }
     }
     
-    
     func bind() {
         
     }
@@ -104,7 +88,7 @@ class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
 
 
 
-extension BaseController:BaseViewControllerProtocol{
+extension BaseController: BaseViewControllerProtocol {
     
     
     func setupBase() {
@@ -135,18 +119,18 @@ extension BaseController:BaseViewControllerProtocol{
         //        baseViewModel?.setting.bind(closure)
         //
     }
-    func pushViewController(indetifier:String ,storyboard: String = Constants.storyboard)->UIViewController {
-        let storyboard: UIStoryboard = UIStoryboard(name: storyboard, bundle: nil)
+    func initViewController(_ indetifier: String ,storyboard: Storyboards = Storyboards.main) -> UIViewController {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
         let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: indetifier)
         return vc
     }
-    func pushViewController<T>(_ indetifier:T.Type ,storyboard: String = Constants.storyboard)->T{
+    func pushViewController<T>(_ indetifier:T.Type ,storyboard: Storyboards = Storyboards.main) ->T {
         
-        let storyboard: UIStoryboard = UIStoryboard(name: storyboard, bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
         let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: String(describing: indetifier))
         return vc as! T
     }
-    
     func push(_ view:UIViewController,_ animated:Bool = true)  {
         if useMenu{
             let topController = UIApplication.shared.keyWindow?.rootViewController as! SWRevealViewController
@@ -161,10 +145,13 @@ extension BaseController:BaseViewControllerProtocol{
     
 }
 
-extension BaseController:UIPopoverPresentationControllerDelegate{
+extension BaseController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
+}
+extension BaseController: Alertable {
+    
 }
 
 

@@ -10,10 +10,10 @@ import IQKeyboardManagerSwift
 import GoogleMaps
 import GooglePlaces
 
-struct Constants{
+struct Constants {
     
     static let locale = LocalizationHelper.getLocale()
-    static var login:String{
+    static var login:String {
         get{
             Constants.storyboard = Storyboards.main.rawValue
             return "LoginNav"
@@ -31,18 +31,17 @@ struct Constants{
     static let deviceId = UIDevice.current.identifierForVendor!.uuidString
     static let googleAPI = "AIzaSyCGKTEvpfIbHSLZBvckDG06-KKQOGD6wyo"
     static let googleRoutesAPI = "AIzaSyDP115w2CRwFjSQDiCzYRJ4jFTu1IHS2qI"
-    static var useAuth:Bool = true
-
+    static var useAuth:Bool = false
+    static var placeHolderImage: UIImage = UIImage(named: "placeHolder") ?? UIImage()
     
     static let mainColorRGB = UIColor(red: 140/255, green: 198/255, blue: 62/255, alpha: 1)
     static let textColorRGB = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
     static let borderColorRGB = UIColor.init(red: 209/255, green: 209/255, blue: 209/255, alpha: 1)
     static let underlineRGB = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 1)
     
-    static var splash:Void!
-    static func sleep(time:TimeInterval){
+    static var splash: Void!
+    static func sleep(time:TimeInterval) {
         Constants.splash = Thread.sleep(forTimeInterval: time)
-        
     }
     static func initAppDelegate(){
         initLang()

@@ -61,9 +61,6 @@
 		80A2FC0F215841BC00223A77 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB8A215841BC00223A77 /* LocalizationHelper.swift */; };
 		80A2FC10215841BC00223A77 /* LocalizationTranslateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB8B215841BC00223A77 /* LocalizationTranslateHelper.swift */; };
 		80A2FC11215841BC00223A77 /* UILocalizationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB8C215841BC00223A77 /* UILocalizationExtensions.swift */; };
-		80A2FC1A215841BC00223A77 /* NotificationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB97215841BC00223A77 /* NotificationEx.swift */; };
-		80A2FC1B215841BC00223A77 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB98215841BC00223A77 /* NotificationHelper.swift */; };
-		80A2FC1C215841BC00223A77 /* PushNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB99215841BC00223A77 /* PushNotificationModel.swift */; };
 		80A2FC1D215841BC00223A77 /* MeneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB9B215841BC00223A77 /* MeneHelper.swift */; };
 		80A2FC1E215841BC00223A77 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB9C215841BC00223A77 /* MenuCell.swift */; };
 		80A2FC1F215841BC00223A77 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB9D215841BC00223A77 /* MenuVC.swift */; };
@@ -79,8 +76,6 @@
 		80A2FC2A215841BC00223A77 /* TwitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBAF215841BC00223A77 /* TwitterDelegate.swift */; };
 		80A2FC2B215841BC00223A77 /* TwitterDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBB0215841BC00223A77 /* TwitterDriver.swift */; };
 		80A2FC2C215841BC00223A77 /* TwitterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBB1215841BC00223A77 /* TwitterModel.swift */; };
-		80A2FC2D215841BC00223A77 /* TabHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBB3215841BC00223A77 /* TabHelper.swift */; };
-		80A2FC2E215841BC00223A77 /* TabHostHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBB4215841BC00223A77 /* TabHostHelper.swift */; };
 		80A2FC2F215841BC00223A77 /* AnimationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBB7215841BC00223A77 /* AnimationConfiguration.swift */; };
 		80A2FC30215841BC00223A77 /* AnimationDirectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBB8215841BC00223A77 /* AnimationDirectionType.swift */; };
 		80A2FC31215841BC00223A77 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FBB9215841BC00223A77 /* AnimationType.swift */; };
@@ -138,6 +133,11 @@
 		80A7A5ED20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5EA20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift */; };
 		80A7A5EE20E69FFB00F1F217 /* ExtensionUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5EB20E69FFB00F1F217 /* ExtensionUITableViewCell.swift */; };
 		80A7A5F420E6A0D800F1F217 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5F320E6A0D800F1F217 /* TokenModel.swift */; };
+		80D11D3F22F086CB00CACFD4 /* UITabHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */; };
+		80D11D4122F0871C00CACFD4 /* AlertableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */; };
+		80D11D4522F0899900CACFD4 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4222F0899800CACFD4 /* NotificationHelper.swift */; };
+		80D11D4622F0899900CACFD4 /* NotificationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4322F0899900CACFD4 /* NotificationSetup.swift */; };
+		80D11D4722F0899900CACFD4 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4422F0899900CACFD4 /* AppDelegateExtension.swift */; };
 		80DA0143211A888600817038 /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0110211A888600817038 /* SwifterSwift.swift */; };
 		80DA0144211A888600817038 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0112211A888600817038 /* ArrayExtensions.swift */; };
 		80DA0145211A888600817038 /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0113211A888600817038 /* BoolExtensions.swift */; };
@@ -245,9 +245,6 @@
 		80A2FB8A215841BC00223A77 /* LocalizationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
 		80A2FB8B215841BC00223A77 /* LocalizationTranslateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationTranslateHelper.swift; sourceTree = "<group>"; };
 		80A2FB8C215841BC00223A77 /* UILocalizationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalizationExtensions.swift; sourceTree = "<group>"; };
-		80A2FB97215841BC00223A77 /* NotificationEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEx.swift; sourceTree = "<group>"; };
-		80A2FB98215841BC00223A77 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
-		80A2FB99215841BC00223A77 /* PushNotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationModel.swift; sourceTree = "<group>"; };
 		80A2FB9B215841BC00223A77 /* MeneHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeneHelper.swift; sourceTree = "<group>"; };
 		80A2FB9C215841BC00223A77 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		80A2FB9D215841BC00223A77 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -263,8 +260,6 @@
 		80A2FBAF215841BC00223A77 /* TwitterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDelegate.swift; sourceTree = "<group>"; };
 		80A2FBB0215841BC00223A77 /* TwitterDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDriver.swift; sourceTree = "<group>"; };
 		80A2FBB1215841BC00223A77 /* TwitterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterModel.swift; sourceTree = "<group>"; };
-		80A2FBB3215841BC00223A77 /* TabHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabHelper.swift; sourceTree = "<group>"; };
-		80A2FBB4215841BC00223A77 /* TabHostHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabHostHelper.swift; sourceTree = "<group>"; };
 		80A2FBB7215841BC00223A77 /* AnimationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationConfiguration.swift; sourceTree = "<group>"; };
 		80A2FBB8215841BC00223A77 /* AnimationDirectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDirectionType.swift; sourceTree = "<group>"; };
 		80A2FBB9215841BC00223A77 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
@@ -325,6 +320,11 @@
 		80A7A5EA20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUICollectionViewCell.swift; sourceTree = "<group>"; };
 		80A7A5EB20E69FFB00F1F217 /* ExtensionUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUITableViewCell.swift; sourceTree = "<group>"; };
 		80A7A5F320E6A0D800F1F217 /* TokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabHelper.swift; sourceTree = "<group>"; };
+		80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertableHelper.swift; sourceTree = "<group>"; };
+		80D11D4222F0899800CACFD4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		80D11D4322F0899900CACFD4 /* NotificationSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSetup.swift; sourceTree = "<group>"; };
+		80D11D4422F0899900CACFD4 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		80DA0110211A888600817038 /* SwifterSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSwift.swift; sourceTree = "<group>"; };
 		80DA0112211A888600817038 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		80DA0113211A888600817038 /* BoolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtensions.swift; sourceTree = "<group>"; };
@@ -517,6 +517,7 @@
 		80A2FB61215841BC00223A77 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				80D11D3D22F086B700CACFD4 /* ViewHelper */,
 				8070BD2B21CC904E008D9E27 /* SwipeRefreshHelper */,
 				80A2FB62215841BC00223A77 /* CommonHelper */,
 				80A2FB66215841BC00223A77 /* Contacts */,
@@ -528,7 +529,6 @@
 				80A2FB96215841BC00223A77 /* Notification */,
 				80A2FB9A215841BC00223A77 /* slideMenu */,
 				80A2FBA1215841BC00223A77 /* Socialite */,
-				80A2FBB2215841BC00223A77 /* TabHostHelper */,
 				80A2FBB5215841BC00223A77 /* UIKit */,
 				80A2FBD9215841BC00223A77 /* Validation */,
 			);
@@ -541,6 +541,7 @@
 				80A2FB63215841BC00223A77 /* PublicHelper.swift */,
 				80A2FB64215841BC00223A77 /* StringHelper.swift */,
 				80A2FB65215841BC00223A77 /* TimerHelper.swift */,
+				80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */,
 			);
 			path = CommonHelper;
 			sourceTree = "<group>";
@@ -631,9 +632,9 @@
 		80A2FB96215841BC00223A77 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				80A2FB97215841BC00223A77 /* NotificationEx.swift */,
-				80A2FB98215841BC00223A77 /* NotificationHelper.swift */,
-				80A2FB99215841BC00223A77 /* PushNotificationModel.swift */,
+				80D11D4422F0899900CACFD4 /* AppDelegateExtension.swift */,
+				80D11D4222F0899800CACFD4 /* NotificationHelper.swift */,
+				80D11D4322F0899900CACFD4 /* NotificationSetup.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -700,15 +701,6 @@
 				80A2FBB1215841BC00223A77 /* TwitterModel.swift */,
 			);
 			path = Twitter;
-			sourceTree = "<group>";
-		};
-		80A2FBB2215841BC00223A77 /* TabHostHelper */ = {
-			isa = PBXGroup;
-			children = (
-				80A2FBB3215841BC00223A77 /* TabHelper.swift */,
-				80A2FBB4215841BC00223A77 /* TabHostHelper.swift */,
-			);
-			path = TabHostHelper;
 			sourceTree = "<group>";
 		};
 		80A2FBB5215841BC00223A77 /* UIKit */ = {
@@ -852,6 +844,14 @@
 				80A7A5EB20E69FFB00F1F217 /* ExtensionUITableViewCell.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		80D11D3D22F086B700CACFD4 /* ViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */,
+			);
+			path = ViewHelper;
 			sourceTree = "<group>";
 		};
 		80DA010F211A888600817038 /* Extensions */ = {
@@ -1134,15 +1134,18 @@
 				80A2FBFD215841BC00223A77 /* MarkerAttrbuite.swift in Sources */,
 				80A2FC3B215841BC00223A77 /* UIViewExtensionDigits.swift in Sources */,
 				80A2FC30215841BC00223A77 /* AnimationDirectionType.swift in Sources */,
+				80D11D4722F0899900CACFD4 /* AppDelegateExtension.swift in Sources */,
 				80A2FC50215841BC00223A77 /* EmailRule.swift in Sources */,
 				8050BC4D20BF89DA00E355BE /* ViewController.swift in Sources */,
 				80A2FC23215841BC00223A77 /* SocialError.swift in Sources */,
 				80A2FC36215841BC00223A77 /* OtherExtensions.swift in Sources */,
+				80D11D3F22F086CB00CACFD4 /* UITabHelper.swift in Sources */,
 				80DA0159211A888600817038 /* UIButtonExtensions.swift in Sources */,
 				80A7A5ED20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift in Sources */,
 				80A2FBFC215841BC00223A77 /* MapSearchHelper.swift in Sources */,
 				8050BD6A20BF8A0000E355BE /* Errors.swift in Sources */,
 				80A2FC42215841BC00223A77 /* RadioView.swift in Sources */,
+				80D11D4622F0899900CACFD4 /* NotificationSetup.swift in Sources */,
 				80A2FC45215841BC00223A77 /* RangeSeekSliderDelegate.swift in Sources */,
 				80DA0168211A888600817038 /* UISliderExtensions.swift in Sources */,
 				80A2FC29215841BC00223A77 /* GoogleProtocol.swift in Sources */,
@@ -1181,12 +1184,10 @@
 				80A2FC06215841BC00223A77 /* Downloader.swift in Sources */,
 				80DA0157211A888600817038 /* UIApplicationExtensions.swift in Sources */,
 				80DA014C211A888600817038 /* FloatingPointExtensions.swift in Sources */,
-				80A2FC1A215841BC00223A77 /* NotificationEx.swift in Sources */,
 				80A2FC25215841BC00223A77 /* FacebookDriver.swift in Sources */,
 				80A2FC52215841BC00223A77 /* FloatRule.swift in Sources */,
 				80A2FC4C215841BC00223A77 /* ValidationDelegate.swift in Sources */,
 				80A2FC3A215841BC00223A77 /* StringExtension.swift in Sources */,
-				80A2FC1C215841BC00223A77 /* PushNotificationModel.swift in Sources */,
 				80A2FC38215841BC00223A77 /* UIViewExtension.swift in Sources */,
 				80A2FC04215841BC00223A77 /* Authorization.swift in Sources */,
 				80DA016A211A888700817038 /* UIStoryboardExtensions.swift in Sources */,
@@ -1197,6 +1198,7 @@
 				80A2FBF3215841BC00223A77 /* ContactsModel.swift in Sources */,
 				80A2FC0D215841BC00223A77 /* UIImageViewExtension.swift in Sources */,
 				80DA015C211A888600817038 /* UIConstraintLayoutExtension.swift in Sources */,
+				80D11D4522F0899900CACFD4 /* NotificationHelper.swift in Sources */,
 				80DA0170211A888700817038 /* UIViewControllerExtensions.swift in Sources */,
 				80A2FBF8215841BC00223A77 /* GoogleMapHelper.swift in Sources */,
 				80A2FC44215841BC00223A77 /* RangeSeekSlider.swift in Sources */,
@@ -1219,6 +1221,7 @@
 				80DA014D211A888600817038 /* IntExtensions.swift in Sources */,
 				80DA0162211A888600817038 /* UINavigationBarExtensions.swift in Sources */,
 				80DA0167211A888600817038 /* UISegmentedControlExtensions.swift in Sources */,
+				80D11D4122F0871C00CACFD4 /* AlertableHelper.swift in Sources */,
 				80A7A5E520E69ED400F1F217 /* BaseViewControllerProtocol.swift in Sources */,
 				80DA0149211A888600817038 /* DictionaryExtensions.swift in Sources */,
 				80A2FC4E215841BC00223A77 /* Validator.swift in Sources */,
@@ -1246,14 +1249,12 @@
 				80A2FC4B215841BC00223A77 /* Validation.swift in Sources */,
 				80A2FBFB215841BC00223A77 /* MapRouteHelper.swift in Sources */,
 				80A2FC55215841BC00223A77 /* MinLengthRule.swift in Sources */,
-				80A2FC2E215841BC00223A77 /* TabHostHelper.swift in Sources */,
 				80A2FC1D215841BC00223A77 /* MeneHelper.swift in Sources */,
 				80A2FC5C215841BC00223A77 /* ZipCodeRule.swift in Sources */,
 				80A2FC22215841BC00223A77 /* Setup.swift in Sources */,
 				80A2FC57215841BC00223A77 /* PhoneNumberRule.swift in Sources */,
 				80DA0156211A888600817038 /* UIAlertControllerExtensions.swift in Sources */,
 				80DA015D211A888600817038 /* UIDatePickerExtensions.swift in Sources */,
-				80A2FC1B215841BC00223A77 /* NotificationHelper.swift in Sources */,
 				80A2FC09215841BC00223A77 /* imagePickerHelper.swift in Sources */,
 				80A2FBF9215841BC00223A77 /* GoogleMapProtocolHelper.swift in Sources */,
 				80A2FBFE215841BC00223A77 /* MarkerProtocols.swift in Sources */,
@@ -1262,7 +1263,6 @@
 				80DA0144211A888600817038 /* ArrayExtensions.swift in Sources */,
 				80DA0155211A888600817038 /* FloatingLabelTextField.swift in Sources */,
 				80A2FBF2215841BC00223A77 /* Contacts.swift in Sources */,
-				80A2FC2D215841BC00223A77 /* TabHelper.swift in Sources */,
 				80A7A5EE20E69FFB00F1F217 /* ExtensionUITableViewCell.swift in Sources */,
 				80DA0154211A888600817038 /* Costant.swift in Sources */,
 				80A2FC31215841BC00223A77 /* AnimationType.swift in Sources */,

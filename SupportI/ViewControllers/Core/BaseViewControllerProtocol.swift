@@ -12,11 +12,11 @@ import UIKit
 protocol BaseViewControllerProtocol {
     func setup()
     func setupBase()
-    func pushViewController(indetifier:String ,storyboard: String)->UIViewController
-    func pushViewController<T>(_ indetifier:T.Type ,storyboard: String )->T
+    func initViewController(_ indetifier: String ,storyboard: Storyboards )-> UIViewController
+    func pushViewController<T>(_ indetifier:T.Type ,storyboard: Storyboards )->T
     func push(_ view:UIViewController,_ animated:Bool)
 }
-extension BaseViewControllerProtocol{
+extension BaseViewControllerProtocol {
     func setup(){
         
     }

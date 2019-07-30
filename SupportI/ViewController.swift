@@ -113,7 +113,7 @@ extension ViewController:UITableViewDelegate , UITableViewDataSource , SwipeRefr
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.cell(type: TestCell.self, indexPath,register: false) else { return UITableViewCell() }
+        let cell = tableView.cell(type: TestCell.self, indexPath,register: false)
         cell.setup()
         return cell
     }

@@ -37,7 +37,7 @@ extension UITableView {
     ///   - indexPath: indexpath
     ///   - register: register
     /// - Returns: return the template cell
-    func cellTemplate<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true) throws -> T{
+    func cellTemplate<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true) throws -> T {
         
         let ind = String (describing: type)
         if(register){
@@ -78,13 +78,29 @@ extension UITableView {
     ///   - indexPath: indexpath
     ///   - register: register
     /// - Returns: return the template cell
-    func cell<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true)-> T?{
-        do{
-            return try cellTemplate(type: type, indexPath,register: register)
-        }catch{
-            print(error.localizedDescription)
-            return nil
+    func cell<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true) -> T {
+        
+        let ind = String (describing: type)
+        if(register){
+            self.register(UINib(nibName: ind, bundle: nil), forCellReuseIdentifier: ind)
+        }
+        let cellProt = self.dequeueReusableCell(withIdentifier: ind, for: indexPath) as! T
+        if cellProt is CellProtocol {
+            var cell = cellProt as! CellProtocol
+            cell.path = indexPath.item
+            return cell as! T
+        } else {
+            return cellProt
         }
         
     }
+//    func cell<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true)-> T? {
+//        do{
+//            return try cellTemplate(type: type, indexPath,register: register)
+//        }catch{
+//            print(error.localizedDescription)
+//            return nil
+//        }
+//
+//    }
 }

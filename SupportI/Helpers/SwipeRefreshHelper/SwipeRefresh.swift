@@ -140,20 +140,6 @@ extension UIScrollView:SwipeRefreshProtocol {
     
 }
 extension UIRefreshControl {
-    private func actionHandleBlock(action:(() -> Void)? = nil) {
-        struct __ {
-            static var action :(() -> Void)?
-        }
-        if action != nil {
-            __.action = action
-        } else {
-            __.action?()
-        }
-    }
-    
-    @objc private func triggerActionHandleBlock() {
-        self.actionHandleBlock()
-    }
     
     func actionHandle(ForAction action:@escaping () -> Void) {
         self.actionHandleBlock(action: action)

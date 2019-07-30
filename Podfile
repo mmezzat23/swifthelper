@@ -9,7 +9,6 @@ target 'SupportI' do
 
 pod 'Alamofire'
 pod 'Cosmos', '~> 15.0'
-pod 'XLPagerTabStrip', '~> 8.0'
 pod 'NVActivityIndicatorView'
 pod 'Firebase'
 pod 'Firebase/Messaging'

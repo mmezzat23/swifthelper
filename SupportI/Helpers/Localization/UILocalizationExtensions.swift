@@ -20,7 +20,7 @@ extension UILabel{
         set {
             self.controlAlignment()
             self.text = translate(newValue)
-
+            
         }
     }
 }
@@ -76,7 +76,13 @@ extension UIButton{
         }
         set {
             self.controlImageEdge()
-            self.setImage(UIImage(named: translate(newValue)), for: .normal)
+            if getAppLang() == "ar" {
+                if let translate =  LocalizationHelper.keys[newValue] {
+                    self.setImage(UIImage(named: translate), for: .normal)
+                }
+            } else {
+                self.setImage(UIImage(named: newValue), for: .normal)
+            }
         }
     }
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
@@ -197,17 +203,17 @@ extension UITextField{
         }
         set {
             if(newValue){
-              
+                
                 
                 self.delegate = self
                 _ = self.textFieldShouldReturn(self)
             }
-           
+            
         }
     }
-   
+    
 }
-extension UITextField:UITextFieldDelegate{
+extension UITextField: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool  {
         textField.endEditing(true)
         return false
@@ -222,7 +228,7 @@ extension UITextField:UITextFieldDelegate{
         textField.underlined(color: underline)
     }
 }
-extension UIImageView{
+extension UIImageView {
     
     
     /// SwifterSwift:  width of view; also inspectable from Storyboard.
@@ -231,12 +237,18 @@ extension UIImageView{
             return self.localizationImage
         }
         set {
-            self.image = UIImage(named: translate(newValue))
+            if getAppLang() == "ar" {
+                if let translate =  LocalizationHelper.keys[newValue] {
+                    self.image = UIImage(named: translate)
+                }
+            } else {
+                self.image = UIImage(named: newValue)
+            }
         }
     }
 }
 
-extension UIBarButtonItem{
+extension UIBarButtonItem {
     
     /// SwifterSwift:  width of view; also inspectable from Storyboard.
     @IBInspectable public var localization: String {
@@ -245,7 +257,13 @@ extension UIBarButtonItem{
         }
         set {
             if(self.image != nil){
-                self.image = UIImage(named: translate(newValue))
+                if getAppLang() == "ar" {
+                    if let translate =  LocalizationHelper.keys[newValue] {
+                        self.image = UIImage(named: translate)
+                    }
+                } else {
+                    self.image = UIImage(named: newValue)
+                }
             }else{
                 self.title = translate(newValue)
             }
@@ -334,7 +352,7 @@ extension UISearchBar {
             textField.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedStringKey.foregroundColor: color])
         }
     }
-
+    
 }
 
 

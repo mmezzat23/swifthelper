@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenueHelper{
+class MenueHelper {
     struct Static {
         static var instance: MenueHelper?
     }

@@ -71,13 +71,13 @@ extension UIImageView{
         
         if animate {
             guard let transation = self.imageTranstion else {return}
-            self.af_setImage(withURL: finalUrl, placeholderImage: UIImage(named: "placeHolder"), filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: transation, runImageTransitionIfCached: true, completion: { _ in
+            self.af_setImage(withURL: finalUrl, placeholderImage: Constants.placeHolderImage, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: transation, runImageTransitionIfCached: true, completion: { _ in
                 self.isLoaded = true
             })
             
             
         }else{
-            self.af_setImage(withURL: finalUrl, placeholderImage: UIImage(named: "placeHolder"), filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: { _ in
+            self.af_setImage(withURL: finalUrl, placeholderImage:  Constants.placeHolderImage, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: { _ in
                 self.isLoaded = true
             })
         }

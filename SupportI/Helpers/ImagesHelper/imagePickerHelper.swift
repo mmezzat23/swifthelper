@@ -10,6 +10,12 @@ import UIKit
 
 protocol ImagePickerDelegate {
     func pickerCallback(image:UIImage)
+    func pickerCallback(image:URL?)
+}
+extension ImagePickerDelegate {
+    func pickerCallback(image:URL?) {
+        
+    }
 }
 class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
@@ -19,7 +25,7 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
     var delegate:ImagePickerDelegate?{
         set{
             _delegate = newValue
-            viewController = _delegate as! UIViewController
+            viewController = _delegate as? UIViewController
             if(self.run){
                 self.openPicker()
             }
@@ -45,6 +51,7 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var photoURL: URL?
         //self.imagePickerView.image = image
         //Use image name from bundle to create NSData
         //Now use image to create into NSData format
@@ -52,26 +59,41 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
         
         //OR next possibility
         //let view controlller as VC
-       
+        
+        
+        if let imgUrl = info[UIImagePickerControllerImageURL] as? URL {
+            let imgName = imgUrl.lastPathComponent
+            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+            let localPath = documentDirectory?.appending(imgName)
+            
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            let data = UIImagePNGRepresentation(image)! as NSData
+            data.write(toFile: localPath!, atomically: true)
+            //let imageData = NSData(contentsOfFile: localPath!)!
+            photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)
+            
+        }
+        
         picker.dismiss(animated: true, completion: {
             self.delegate?.pickerCallback(image: image)
+            self.delegate?.pickerCallback(image: photoURL)
         })
         
     }
-   
+    
     func openCamera()
     {
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera))
         {
             imagepicker.sourceType = UIImagePickerControllerSourceType.camera
             imagepicker.allowsEditing = true
-            self.viewController.present(imagepicker, animated: true, completion: nil)
+            self.viewController?.present(imagepicker, animated: true, completion: nil)
         }
         else
         {
             let alert  = UIAlertController(title:translate("warning"), message: translate("you_don't_have_camera"), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: translate("ok"), style: .default, handler: nil))
-            self.viewController.present(alert, animated: true, completion: nil)
+            self.viewController?.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -79,7 +101,7 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
     {
         imagepicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         //imagepicker.allowsEditing = true
-        self.viewController.present(imagepicker, animated: true, completion: nil)
+        self.viewController?.present(imagepicker, animated: true, completion: nil)
     }
     func openPicker(){
         self.imagepicker.delegate = self
@@ -101,13 +123,13 @@ class ImagePickerHelper:NSObject,UIImagePickerControllerDelegate , UINavigationC
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
             alert.popoverPresentationController?.permittedArrowDirections = .up
-            alert.popoverPresentationController?.sourceView = self.viewController.view
-
+            alert.popoverPresentationController?.sourceView = self.viewController?.view
+            
         default:
             break
         }
         
-        self.viewController.present(alert, animated: true, completion: nil)
+        self.viewController?.present(alert, animated: true, completion: nil)
     }
-
+    
 }

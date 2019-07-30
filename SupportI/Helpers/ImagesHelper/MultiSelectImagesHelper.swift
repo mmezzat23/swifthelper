@@ -12,9 +12,16 @@ import Photos
 
 protocol MultiSelectImagesDelegate : class {
     func didFinish(_ images:[UIImage])
+    func didFinish(urls: [URL])
 }
-class MultiSelectImagesHelper: NSObject,UICollectionViewDataSource , UICollectionViewDelegate ,  UICollectionViewDelegateFlowLayout {
+extension MultiSelectImagesDelegate {
+    func didFinish(urls: [URL]) {
+        
+    }
+}
+class MultiSelectImagesHelper: NSObject,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var images:[UIImage] = []
+    var urls: [URL] = []
     var imagesCollection:UICollectionView?
     var collectionHeight:NSLayoutConstraint?
     var collectionParentTop:NSLayoutConstraint?
@@ -22,6 +29,10 @@ class MultiSelectImagesHelper: NSObject,UICollectionViewDataSource , UICollectio
     
     init(delegate:MultiSelectImagesDelegate? = nil , collection:UICollectionView? = nil, height:NSLayoutConstraint? = nil , parentTop:NSLayoutConstraint? = nil) {
         super.init()
+        self.delegate = delegate
+        self.imagesCollection = collection
+        self.collectionHeight = height
+        self.collectionParentTop = parentTop
     }
     
     func initPicker(){
@@ -58,26 +69,53 @@ class MultiSelectImagesHelper: NSObject,UICollectionViewDataSource , UICollectio
         option.resizeMode = .fast
         option.isSynchronous = false
         
-        
-        self.images = []
-        self.imagesCollection?.reloadData()
-        for item in asset {
-            
-            manager.requestImageData(for: item, options: option) { (data, imageString, oritination, info) in
-                var thumbnail:UIImage?
-                guard let _ = data else { return}
-                thumbnail = UIImage(data: data!)
-                if let _ = thumbnail {
-                    self.images.append(thumbnail!)
-                }
-                if(self.images.count == asset.count){
-                    self.reloadCollection()
-                    self.delegate?.didFinish(self.images)
+        DispatchQueue.main.async {
+            self.images = []
+            self.imagesCollection?.reloadData()
+            for item in asset {
+                
+                manager.requestImageData(for: item, options: option) { (data, imageString, oritination, info) in
+                    var thumbnail:UIImage?
+                    guard let _ = data else { return}
+                    thumbnail = UIImage(data: data!)
+                    if let _ = thumbnail {
+                        self.images.append(thumbnail!)
+                    }
+                    if(self.images.count == asset.count){
+                        self.reloadCollection()
+                        self.delegate?.didFinish(self.images)
+                        
+                    }
+                    if !(imageString!.contains("HEIC") || imageString!.contains("heic")) {
+                        if let info = info {
+                            if info.keys.contains(NSString(string: "PHImageFileURLKey")) {
+                                if let path = info[NSString(string: "PHImageFileURLKey")] as? NSURL {
+                                    self.urls.append(path as URL)
+                                }
+                            }
+                        }
+                    }
                     
+                    
+                    //                    let imageURL = info?[UIImagePickerControllerReferenceURL] as? URL
+                    //                    let imageName = imageURL?.path.lastPathComponent
+                    //                    let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+                    //                    let localPath = documentDirectory?.appendingPathComponent(imageString ?? "")
+                    //
+                    //                    let image = info?[UIImagePickerControllerOriginalImage] as? UIImage
+                    //                    let data = UIImagePNGRepresentation(image ?? UIImage())
+                    //                    try? data?.write(to: URL(fileURLWithPath: localPath ?? ""), options: .atomic)
+                    //
+                    //                    let photoURL = URL(fileURLWithPath: localPath ?? "")
+                    //                    self.urls.append(photoURL)
+                    if(self.images.count == asset.count){
+                        self.delegate?.didFinish(urls: self.urls)
+                    }
                 }
+                
             }
-            
         }
+        
         
     }
     func reloadCollection(){
@@ -109,7 +147,7 @@ class MultiSelectImagesHelper: NSObject,UICollectionViewDataSource , UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.cell(type: MultiImageCell.self, indexPath ) else { return UICollectionViewCell()}
+        let cell = collectionView.cell(type: MultiImageCell.self, indexPath )
         cell.imageView.image = nil
         cell.imageView.image = self.images[indexPath.item]
         cell.imageView.borderWidth = 1

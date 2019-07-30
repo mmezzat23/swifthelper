@@ -9,7 +9,7 @@
 import Foundation
 
 
-class TimeHelper{
+class TimeHelper {
     var timerVar:Timer?
     var numberOfCycle:Int?
     var closureTimer:(Int)->Void = {_ in
