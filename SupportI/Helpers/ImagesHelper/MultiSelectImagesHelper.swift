@@ -154,6 +154,16 @@ class MultiSelectImagesHelper: NSObject,UICollectionViewDataSource, UICollection
         cell.imageView.borderColor = UIColor.black.withAlphaComponent(0.15)
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var actions: [String: Any] = [:]
+        actions["delete"] = 0
+        createActionSheet(title: translate("alert"), actions: actions) { (action) in
+            self.images.remove(at: indexPath.row)
+            self.urls.remove(at: indexPath.row)
+            self.reloadCollection()
+            self.delegate?.didFinish(self.images)
+            self.delegate?.didFinish(urls: self.urls)
+        }
+    }
     
 }

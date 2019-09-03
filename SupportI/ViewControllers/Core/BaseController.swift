@@ -10,7 +10,7 @@ import UIKit
 
 import NVActivityIndicatorView
 
-class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
+class BaseController : UIViewController, PresentingViewProtocol, POPUPView, Alertable {
     
     var hiddenNav:Bool = false
     var useMenu:Bool = false
@@ -49,10 +49,7 @@ class BaseController : UIViewController,PresentingViewProtocol,POPUPView{
         self.navigationController?.navigationBar.removeSubviews()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.setupBase()
-        
-        
-        
-        
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,29 +116,6 @@ extension BaseController: BaseViewControllerProtocol {
         //        baseViewModel?.setting.bind(closure)
         //
     }
-    func initViewController(_ indetifier: String ,storyboard: Storyboards = Storyboards.main) -> UIViewController {
-        
-        let storyboard: UIStoryboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
-        let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: indetifier)
-        return vc
-    }
-    func pushViewController<T>(_ indetifier:T.Type ,storyboard: Storyboards = Storyboards.main) ->T {
-        
-        let storyboard: UIStoryboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
-        let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: String(describing: indetifier))
-        return vc as! T
-    }
-    func push(_ view:UIViewController,_ animated:Bool = true)  {
-        if useMenu{
-            let topController = UIApplication.shared.keyWindow?.rootViewController as! SWRevealViewController
-            topController.pushFrontViewController(view, animated: animated)
-        }else{
-            self.navigationController?.delegate = self
-            view.transitioningDelegate = self
-            self.navigationController?.pushViewController(view, animated: animated)
-        }
-    }
-    
     
 }
 
@@ -150,9 +124,5 @@ extension BaseController: UIPopoverPresentationControllerDelegate {
         return .none
     }
 }
-extension BaseController: Alertable {
-    
-}
-
 
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Display Controller-->
+        <scene sceneID="LUc-GT-PKh">
+            <objects>
+                <viewController storyboardIdentifier="ImageDisplayController" id="gR7-x3-rBk" customClass="ImageDisplayController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZGp-RJ-xw1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8H-Zc-xdM">
+                                <rect key="frame" x="25" y="183.5" width="325" height="300"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c9I-gR-Sff">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="300"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="c9I-gR-Sff" firstAttribute="top" secondItem="I8H-Zc-xdM" secondAttribute="top" id="5Fo-O9-7gt"/>
+                                    <constraint firstAttribute="height" constant="300" id="SpA-QG-JP5"/>
+                                    <constraint firstItem="c9I-gR-Sff" firstAttribute="leading" secondItem="I8H-Zc-xdM" secondAttribute="leading" id="c6W-ai-Jqh"/>
+                                    <constraint firstAttribute="bottom" secondItem="c9I-gR-Sff" secondAttribute="bottom" id="iJs-kZ-DlL"/>
+                                    <constraint firstAttribute="trailing" secondItem="c9I-gR-Sff" secondAttribute="trailing" id="icA-vb-B9e"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I8H-Zc-xdM" firstAttribute="centerX" secondItem="ZGp-RJ-xw1" secondAttribute="centerX" id="9BD-Zv-Aef"/>
+                            <constraint firstItem="I8H-Zc-xdM" firstAttribute="leading" secondItem="0mW-pl-WP5" secondAttribute="leading" constant="25" id="Juu-VZ-jqC"/>
+                            <constraint firstItem="I8H-Zc-xdM" firstAttribute="centerY" secondItem="ZGp-RJ-xw1" secondAttribute="centerY" id="Rks-NY-12m"/>
+                            <constraint firstItem="0mW-pl-WP5" firstAttribute="trailing" secondItem="I8H-Zc-xdM" secondAttribute="trailing" constant="25" id="p9s-51-QDc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0mW-pl-WP5"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="c9I-gR-Sff" id="gFQ-js-qXU"/>
+                        <outlet property="superView" destination="I8H-Zc-xdM" id="fea-GN-oAS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gRg-cM-8bF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="-172"/>
+        </scene>
+    </scenes>
+</document>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		8037F0F820BFABA300162BA9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F0F620BFABA300162BA9 /* TestViewModel.swift */; };
 		8037F0FF20BFB1B800162BA9 /* CoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F0FE20BFB1B800162BA9 /* CoreViewModel.swift */; };
 		8037F10120BFB5B800162BA9 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F10020BFB5B800162BA9 /* ViewModelProtocol.swift */; };
+		803E6664231D73A2005D6CB7 /* GalleryPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E6663231D73A2005D6CB7 /* GalleryPickerHelper.swift */; };
+		803E6667231D7635005D6CB7 /* PickerViewHelper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803E6666231D7635005D6CB7 /* PickerViewHelper.storyboard */; };
+		803E6669231D76EE005D6CB7 /* PickerViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E6668231D76EE005D6CB7 /* PickerViewHelper.swift */; };
+		803E666B231D7894005D6CB7 /* ImageDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E666A231D7894005D6CB7 /* ImageDisplayController.swift */; };
+		803E666D231D78A2005D6CB7 /* ImageDisplayController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803E666C231D78A2005D6CB7 /* ImageDisplayController.storyboard */; };
 		8050BC4B20BF89DA00E355BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050BC4A20BF89DA00E355BE /* AppDelegate.swift */; };
 		8050BC4D20BF89DA00E355BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050BC4C20BF89DA00E355BE /* ViewController.swift */; };
 		8050BC5020BF89DA00E355BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8050BC4E20BF89DA00E355BE /* Main.storyboard */; };
@@ -39,7 +44,6 @@
 		80A2FBF9215841BC00223A77 /* GoogleMapProtocolHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB71215841BC00223A77 /* GoogleMapProtocolHelper.swift */; };
 		80A2FBFA215841BC00223A77 /* GoogleMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB72215841BC00223A77 /* GoogleMapZoom.swift */; };
 		80A2FBFB215841BC00223A77 /* MapRouteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB73215841BC00223A77 /* MapRouteHelper.swift */; };
-		80A2FBFC215841BC00223A77 /* MapSearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB74215841BC00223A77 /* MapSearchHelper.swift */; };
 		80A2FBFD215841BC00223A77 /* MarkerAttrbuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB75215841BC00223A77 /* MarkerAttrbuite.swift */; };
 		80A2FBFE215841BC00223A77 /* MarkerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB76215841BC00223A77 /* MarkerProtocols.swift */; };
 		80A2FBFF215841BC00223A77 /* PolylineAttrbuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB77215841BC00223A77 /* PolylineAttrbuite.swift */; };
@@ -52,7 +56,6 @@
 		80A2FC06215841BC00223A77 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB7F215841BC00223A77 /* Downloader.swift */; };
 		80A2FC07215841BC00223A77 /* Paginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB80215841BC00223A77 /* Paginator.swift */; };
 		80A2FC08215841BC00223A77 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB82215841BC00223A77 /* ImageHelper.swift */; };
-		80A2FC09215841BC00223A77 /* imagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB83215841BC00223A77 /* imagePickerHelper.swift */; };
 		80A2FC0A215841BC00223A77 /* MultiImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB84215841BC00223A77 /* MultiImageCell.swift */; };
 		80A2FC0B215841BC00223A77 /* MultiImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A2FB85215841BC00223A77 /* MultiImageCell.xib */; };
 		80A2FC0C215841BC00223A77 /* MultiSelectImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB86215841BC00223A77 /* MultiSelectImagesHelper.swift */; };
@@ -186,6 +189,14 @@
 		80DA0170211A888700817038 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0140211A888600817038 /* UIViewControllerExtensions.swift */; };
 		80DA0171211A888700817038 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0141211A888600817038 /* UIViewExtensions.swift */; };
 		80DA0172211A888700817038 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0142211A888600817038 /* UIWindowExtensions.swift */; };
+		80EA0051231DA1350008E68B /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0050231DA1350008E68B /* LocationHelper.swift */; };
+		80EA0053231DA3720008E68B /* PlacesPickerHelper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EA0052231DA3720008E68B /* PlacesPickerHelper.storyboard */; };
+		80EA0055231DA6820008E68B /* PlacePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0054231DA6820008E68B /* PlacePickerController.swift */; };
+		80EA0057231DA69F0008E68B /* PlacePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0056231DA69F0008E68B /* PlacePickerCell.swift */; };
+		80EA0059231DF7CD0008E68B /* PlacePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0058231DF7CD0008E68B /* PlacePickerModel.swift */; };
+		80EA0069231DFE7C0008E68B /* EFTimingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0066231DFE7C0008E68B /* EFTimingMethod.swift */; };
+		80EA006A231DFE7C0008E68B /* EFCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0067231DFE7C0008E68B /* EFCount.swift */; };
+		80EA006B231DFE7C0008E68B /* EFCountAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -195,6 +206,11 @@
 		8037F0F620BFABA300162BA9 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		8037F0FE20BFB1B800162BA9 /* CoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewModel.swift; sourceTree = "<group>"; };
 		8037F10020BFB5B800162BA9 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		803E6663231D73A2005D6CB7 /* GalleryPickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerHelper.swift; sourceTree = "<group>"; };
+		803E6666231D7635005D6CB7 /* PickerViewHelper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickerViewHelper.storyboard; sourceTree = "<group>"; };
+		803E6668231D76EE005D6CB7 /* PickerViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewHelper.swift; sourceTree = "<group>"; };
+		803E666A231D7894005D6CB7 /* ImageDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayController.swift; sourceTree = "<group>"; };
+		803E666C231D78A2005D6CB7 /* ImageDisplayController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDisplayController.storyboard; sourceTree = "<group>"; };
 		8050BC4720BF89DA00E355BE /* SupportI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupportI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8050BC4A20BF89DA00E355BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8050BC4C20BF89DA00E355BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +239,6 @@
 		80A2FB71215841BC00223A77 /* GoogleMapProtocolHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapProtocolHelper.swift; sourceTree = "<group>"; };
 		80A2FB72215841BC00223A77 /* GoogleMapZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapZoom.swift; sourceTree = "<group>"; };
 		80A2FB73215841BC00223A77 /* MapRouteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRouteHelper.swift; sourceTree = "<group>"; };
-		80A2FB74215841BC00223A77 /* MapSearchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSearchHelper.swift; sourceTree = "<group>"; };
 		80A2FB75215841BC00223A77 /* MarkerAttrbuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerAttrbuite.swift; sourceTree = "<group>"; };
 		80A2FB76215841BC00223A77 /* MarkerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerProtocols.swift; sourceTree = "<group>"; };
 		80A2FB77215841BC00223A77 /* PolylineAttrbuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolylineAttrbuite.swift; sourceTree = "<group>"; };
@@ -236,7 +251,6 @@
 		80A2FB7F215841BC00223A77 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		80A2FB80215841BC00223A77 /* Paginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
 		80A2FB82215841BC00223A77 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
-		80A2FB83215841BC00223A77 /* imagePickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imagePickerHelper.swift; sourceTree = "<group>"; };
 		80A2FB84215841BC00223A77 /* MultiImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiImageCell.swift; sourceTree = "<group>"; };
 		80A2FB85215841BC00223A77 /* MultiImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiImageCell.xib; sourceTree = "<group>"; };
 		80A2FB86215841BC00223A77 /* MultiSelectImagesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectImagesHelper.swift; sourceTree = "<group>"; };
@@ -373,6 +387,14 @@
 		80DA0140211A888600817038 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		80DA0141211A888600817038 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		80DA0142211A888600817038 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
+		80EA0050231DA1350008E68B /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		80EA0052231DA3720008E68B /* PlacesPickerHelper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlacesPickerHelper.storyboard; sourceTree = "<group>"; };
+		80EA0054231DA6820008E68B /* PlacePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerController.swift; sourceTree = "<group>"; };
+		80EA0056231DA69F0008E68B /* PlacePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerCell.swift; sourceTree = "<group>"; };
+		80EA0058231DF7CD0008E68B /* PlacePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerModel.swift; sourceTree = "<group>"; };
+		80EA0066231DFE7C0008E68B /* EFTimingMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFTimingMethod.swift; path = SupportI/Helpers/CountLabelHelper/EFTimingMethod.swift; sourceTree = SOURCE_ROOT; };
+		80EA0067231DFE7C0008E68B /* EFCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFCount.swift; path = SupportI/Helpers/CountLabelHelper/EFCount.swift; sourceTree = SOURCE_ROOT; };
+		80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFCountAdapter.swift; path = SupportI/Helpers/CountLabelHelper/EFCountAdapter.swift; sourceTree = SOURCE_ROOT; };
 		C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupportI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6B730607EBE0D31A9D800B /* Pods-SupportI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -415,6 +437,15 @@
 				8037F10020BFB5B800162BA9 /* ViewModelProtocol.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		803E6665231D761E005D6CB7 /* PickerViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				803E6666231D7635005D6CB7 /* PickerViewHelper.storyboard */,
+				803E6668231D76EE005D6CB7 /* PickerViewHelper.swift */,
+			);
+			path = PickerViewHelper;
 			sourceTree = "<group>";
 		};
 		8050BC3E20BF89DA00E355BE = {
@@ -517,6 +548,8 @@
 		80A2FB61215841BC00223A77 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				80EA004F231DA1260008E68B /* LocationHelper */,
+				803E6665231D761E005D6CB7 /* PickerViewHelper */,
 				80D11D3D22F086B700CACFD4 /* ViewHelper */,
 				8070BD2B21CC904E008D9E27 /* SwipeRefreshHelper */,
 				80A2FB62215841BC00223A77 /* CommonHelper */,
@@ -567,17 +600,23 @@
 			isa = PBXGroup;
 			children = (
 				80A2FB6D215841BC00223A77 /* ARMovement */,
-				80A2FC5D215844DD00223A77 /* GooglePlacesHelper.swift */,
 				80A2FB6C215841BC00223A77 /* AddressHelper.swift */,
 				80A2FB70215841BC00223A77 /* GoogleMapHelper.swift */,
 				80A2FB71215841BC00223A77 /* GoogleMapProtocolHelper.swift */,
 				80A2FB72215841BC00223A77 /* GoogleMapZoom.swift */,
 				80A2FB73215841BC00223A77 /* MapRouteHelper.swift */,
-				80A2FB74215841BC00223A77 /* MapSearchHelper.swift */,
 				80A2FB75215841BC00223A77 /* MarkerAttrbuite.swift */,
 				80A2FB76215841BC00223A77 /* MarkerProtocols.swift */,
 				80A2FB77215841BC00223A77 /* PolylineAttrbuite.swift */,
 				80A2FB78215841BC00223A77 /* RouteModel.swift */,
+				80A2FC5D215844DD00223A77 /* GooglePlacesHelper.swift */,
+				80EA0052231DA3720008E68B /* PlacesPickerHelper.storyboard */,
+				80EA0054231DA6820008E68B /* PlacePickerController.swift */,
+				80EA0056231DA69F0008E68B /* PlacePickerCell.swift */,
+				80EA0058231DF7CD0008E68B /* PlacePickerModel.swift */,
+				80EA0067231DFE7C0008E68B /* EFCount.swift */,
+				80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */,
+				80EA0066231DFE7C0008E68B /* EFTimingMethod.swift */,
 			);
 			path = GoogleMap;
 			sourceTree = "<group>";
@@ -609,11 +648,13 @@
 			isa = PBXGroup;
 			children = (
 				80A2FB82215841BC00223A77 /* ImageHelper.swift */,
-				80A2FB83215841BC00223A77 /* imagePickerHelper.swift */,
 				80A2FB84215841BC00223A77 /* MultiImageCell.swift */,
 				80A2FB85215841BC00223A77 /* MultiImageCell.xib */,
 				80A2FB86215841BC00223A77 /* MultiSelectImagesHelper.swift */,
 				80A2FB87215841BC00223A77 /* UIImageViewExtension.swift */,
+				803E6663231D73A2005D6CB7 /* GalleryPickerHelper.swift */,
+				803E666A231D7894005D6CB7 /* ImageDisplayController.swift */,
+				803E666C231D78A2005D6CB7 /* ImageDisplayController.storyboard */,
 			);
 			path = ImagesHelper;
 			sourceTree = "<group>";
@@ -933,6 +974,14 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		80EA004F231DA1260008E68B /* LocationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				80EA0050231DA1350008E68B /* LocationHelper.swift */,
+			);
+			path = LocationHelper;
+			sourceTree = "<group>";
+		};
 		88517BB257EFF489ADE9F488 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1006,9 +1055,12 @@
 				80A2FC43215841BC00223A77 /* RadioView.xib in Resources */,
 				8050BC5820BF89DC00E355BE /* LaunchScreen.storyboard in Resources */,
 				80A2FC3D215841BC00223A77 /* KWTextFieldView.xib in Resources */,
+				80EA0053231DA3720008E68B /* PlacesPickerHelper.storyboard in Resources */,
 				8050BD7120BF8A7100E355BE /* MapStyle.json in Resources */,
 				8050BC5520BF89DC00E355BE /* Assets.xcassets in Resources */,
+				803E6667231D7635005D6CB7 /* PickerViewHelper.storyboard in Resources */,
 				80A2FC0B215841BC00223A77 /* MultiImageCell.xib in Resources */,
+				803E666D231D78A2005D6CB7 /* ImageDisplayController.storyboard in Resources */,
 				8026194920E9796300BE7A5E /* README.md in Resources */,
 				80A2FC3F215841BC00223A77 /* KWVerificationCodeView.xib in Resources */,
 				8050BC5020BF89DA00E355BE /* Main.storyboard in Resources */,
@@ -1089,6 +1141,7 @@
 				80A2FC5E215844DD00223A77 /* GooglePlacesHelper.swift in Sources */,
 				80DA0161211A888600817038 /* UILabelExtensions.swift in Sources */,
 				80DA0151211A888600817038 /* SignedNumericExtensions.swift in Sources */,
+				80EA0057231DA69F0008E68B /* PlacePickerCell.swift in Sources */,
 				80A2FC2C215841BC00223A77 /* TwitterModel.swift in Sources */,
 				80A2FC10215841BC00223A77 /* LocalizationTranslateHelper.swift in Sources */,
 				80A2FC39215841BC00223A77 /* UIView+AutoLayoutHelper.swift in Sources */,
@@ -1100,21 +1153,25 @@
 				80DA0169211A888600817038 /* UIStackViewExtensions.swift in Sources */,
 				8050BD8020BF8CC100E355BE /* User.swift in Sources */,
 				80A2FC00215841BC00223A77 /* RouteModel.swift in Sources */,
+				80EA006A231DFE7C0008E68B /* EFCount.swift in Sources */,
 				80DA014F211A888600817038 /* SequenceExtensions.swift in Sources */,
 				80A2FBFF215841BC00223A77 /* PolylineAttrbuite.swift in Sources */,
+				80EA0051231DA1350008E68B /* LocationHelper.swift in Sources */,
 				80A2FC21215841BC00223A77 /* CoreSocial.swift in Sources */,
 				80A2FBFD215841BC00223A77 /* MarkerAttrbuite.swift in Sources */,
 				80A2FC3B215841BC00223A77 /* UIViewExtensionDigits.swift in Sources */,
 				80A2FC30215841BC00223A77 /* AnimationDirectionType.swift in Sources */,
 				80D11D4722F0899900CACFD4 /* AppDelegateExtension.swift in Sources */,
+				80EA0059231DF7CD0008E68B /* PlacePickerModel.swift in Sources */,
 				80A2FC50215841BC00223A77 /* EmailRule.swift in Sources */,
 				8050BC4D20BF89DA00E355BE /* ViewController.swift in Sources */,
 				80A2FC23215841BC00223A77 /* SocialError.swift in Sources */,
+				80EA006B231DFE7C0008E68B /* EFCountAdapter.swift in Sources */,
 				80A2FC36215841BC00223A77 /* OtherExtensions.swift in Sources */,
 				80D11D3F22F086CB00CACFD4 /* UITabHelper.swift in Sources */,
 				80DA0159211A888600817038 /* UIButtonExtensions.swift in Sources */,
 				80A7A5ED20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift in Sources */,
-				80A2FBFC215841BC00223A77 /* MapSearchHelper.swift in Sources */,
+				803E6664231D73A2005D6CB7 /* GalleryPickerHelper.swift in Sources */,
 				8050BD6A20BF8A0000E355BE /* Errors.swift in Sources */,
 				80A2FC42215841BC00223A77 /* RadioView.swift in Sources */,
 				80D11D4622F0899900CACFD4 /* NotificationSetup.swift in Sources */,
@@ -1167,6 +1224,7 @@
 				80DA015F211A888600817038 /* UIImageExtensions.swift in Sources */,
 				80DA0163211A888600817038 /* UINavigationControllerExtensions.swift in Sources */,
 				80DA014A211A888600817038 /* DoubleExtensions.swift in Sources */,
+				803E6669231D76EE005D6CB7 /* PickerViewHelper.swift in Sources */,
 				80A2FBF3215841BC00223A77 /* ContactsModel.swift in Sources */,
 				80A2FC0D215841BC00223A77 /* UIImageViewExtension.swift in Sources */,
 				80DA015C211A888600817038 /* UIConstraintLayoutExtension.swift in Sources */,
@@ -1192,6 +1250,7 @@
 				8037F0FF20BFB1B800162BA9 /* CoreViewModel.swift in Sources */,
 				80DA014D211A888600817038 /* IntExtensions.swift in Sources */,
 				80DA0162211A888600817038 /* UINavigationBarExtensions.swift in Sources */,
+				80EA0055231DA6820008E68B /* PlacePickerController.swift in Sources */,
 				80DA0167211A888600817038 /* UISegmentedControlExtensions.swift in Sources */,
 				80D11D4122F0871C00CACFD4 /* AlertableHelper.swift in Sources */,
 				80A7A5E520E69ED400F1F217 /* BaseViewControllerProtocol.swift in Sources */,
@@ -1227,8 +1286,8 @@
 				80A2FC57215841BC00223A77 /* PhoneNumberRule.swift in Sources */,
 				80DA0156211A888600817038 /* UIAlertControllerExtensions.swift in Sources */,
 				80DA015D211A888600817038 /* UIDatePickerExtensions.swift in Sources */,
-				80A2FC09215841BC00223A77 /* imagePickerHelper.swift in Sources */,
 				80A2FBF9215841BC00223A77 /* GoogleMapProtocolHelper.swift in Sources */,
+				803E666B231D7894005D6CB7 /* ImageDisplayController.swift in Sources */,
 				80A2FBFE215841BC00223A77 /* MarkerProtocols.swift in Sources */,
 				80A2FC48215841BC00223A77 /* TTGSnackbar.swift in Sources */,
 				80A2FC47215841BC00223A77 /* SearchBarHelper.swift in Sources */,
@@ -1236,6 +1295,7 @@
 				80DA0155211A888600817038 /* FloatingLabelTextField.swift in Sources */,
 				80A2FBF2215841BC00223A77 /* Contacts.swift in Sources */,
 				80A7A5EE20E69FFB00F1F217 /* ExtensionUITableViewCell.swift in Sources */,
+				80EA0069231DFE7C0008E68B /* EFTimingMethod.swift in Sources */,
 				80DA0154211A888600817038 /* Costant.swift in Sources */,
 				80A2FC31215841BC00223A77 /* AnimationType.swift in Sources */,
 				8050BD6B20BF8A0000E355BE /* SelectDropDownModel.swift in Sources */,

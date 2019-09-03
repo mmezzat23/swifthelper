@@ -18,10 +18,10 @@ public protocol CellProtocol {
     func setup()
     func indexPath() -> Int
 }
-fileprivate var modelOfCollectionCell:[UICollectionViewCell: Any] = [:]
-fileprivate var modelOfTableCell:[UITableViewCell: Any] = [:]
-fileprivate var pathOfCollectionCell:[UICollectionViewCell: Int] = [:]
-fileprivate var pathOfTableCell:[UITableViewCell: Int] = [:]
+fileprivate var modelOfCollectionCell: [UICollectionViewCell: Any] = [:]
+fileprivate var modelOfTableCell: [UITableViewCell: Any] = [:]
+fileprivate var pathOfCollectionCell: [UICollectionViewCell: Int] = [:]
+fileprivate var pathOfTableCell: [UITableViewCell: Int] = [:]
 
 public extension CellProtocol {
     /// index path of item

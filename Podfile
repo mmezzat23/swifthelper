@@ -18,8 +18,9 @@ pod 'Firebase/Messaging'
 pod 'AlamofireImage', '~> 3.3'
 pod 'IQKeyboardManagerSwift'
 pod 'BSImagePicker'
-pod 'GoogleMaps'
-pod 'GooglePlaces'
-pod 'GooglePlacePicker'
+pod 'GooglePlaces', '= 3.0.3'
+pod 'GooglePlacePicker', '= 3.0.3'
+pod 'GoogleMaps', '= 3.0.3'
+pod 'SnapKit'
 
 end

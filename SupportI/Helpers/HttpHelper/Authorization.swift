@@ -14,19 +14,21 @@ class Authorization{
     }
     
     
-    static var running:Bool = false
-    func setupTimestamp()->Bool {
+    static var running: Bool = false
+    func setupTimestamp() -> Bool {
         //return true
         let timestamp = NSDate().timeIntervalSince1970
         let myTimeInterval = TimeInterval(timestamp).int
         //let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
         
-        let expiration = UserDefaults.standard.integer(forKey: "expires_in")
+        var expiration = UserDefaults.standard.integer(forKey: "expires_in")
+        let loginTimeStamp = UserDefaults.standard.integer(forKey: "LOGIN_TIMESTAMP")
+        expiration += loginTimeStamp
 //        if expiration > 0{
 //            let time = NSDate(timeIntervalSince1970: TimeInterval(expiration))
 //        }
         
-        if expiration < myTimeInterval{
+        if expiration < myTimeInterval {
             return false
         }else{
             return true
@@ -34,7 +36,7 @@ class Authorization{
     }
     func refreshToken(_ completionHandler: @escaping (Bool) -> ()) {
 
-        if (UserRoot.instance.refresh_token != nil){
+        if (UserRoot.fetch()?.refresh_token != nil) {
             if !Authorization.running{
                 Authorization.running = true
                 if !setupTimestamp(){

@@ -13,10 +13,14 @@ import GooglePlaces
 struct Constants {
     
     static let locale = LocalizationHelper.getLocale()
-    static var login:String {
-        get{
-            Constants.storyboard = Storyboards.main.rawValue
-            return "LoginNav"
+    static var loginNavInd: String = "LoginNav"
+    static var login: String = "LoginNav"
+    static var loginNav: UINavigationController? {
+        get {
+            let storyboard = UIStoryboard(name: Storyboards.auth.rawValue, bundle: nil)
+            let nav = storyboard.instantiateViewController(withIdentifier: loginNavInd) as? UINavigationController
+            return nav
+            // Constants.storyboard = Storyboards.main.rawValue
         }
     }
     static var storyboard = Storyboards.main.rawValue
@@ -30,7 +34,8 @@ struct Constants {
     static let deviceToken = "deviceToken"
     static let deviceId = UIDevice.current.identifierForVendor!.uuidString
     static let googleAPI = "AIzaSyCGKTEvpfIbHSLZBvckDG06-KKQOGD6wyo"
-    static let googleRoutesAPI = "AIzaSyDP115w2CRwFjSQDiCzYRJ4jFTu1IHS2qI"
+    static let googleRoutesAPI = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
+    static let googleNotRestrictionKey = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
     static var useAuth:Bool = false
     static var placeHolderImage: UIImage = UIImage(named: "placeHolder") ?? UIImage()
     
@@ -62,8 +67,9 @@ public enum Fonts:String {
     //case reg = "DINNextLTW23-Regular"
     //case mid = "DINNextLTW23-Medium"
 }
-public enum Storyboards:String{
+public enum Storyboards: String {
     case main = "Main"
+    case auth = "Auth"
 }
 
 public enum Apis:String {

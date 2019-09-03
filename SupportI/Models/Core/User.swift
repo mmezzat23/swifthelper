@@ -9,19 +9,9 @@ import Foundation
 
 
 
-class UserRoot : Decodable{
-    struct Static {
-        static var instance: UserRoot?
-    }
-    
-    class var instance : UserRoot {
-        
-        if(Static.instance == nil) {
-            Static.instance = UserRoot()
-        }
-        Static.instance?.getUser()
-        return Static.instance!
-    }
+class UserRoot : Decodable {
+    public static var storeUserDefaults: String = "userDataDefaults"
+    public static var storeRememberUser: String = "USER_LOGIN_REMEMBER"
     
     var result : User?
     var errors : Errors?
@@ -29,7 +19,7 @@ class UserRoot : Decodable{
     var access_token : String?
     var refresh_token : String?
     var message : String?
-    var json:String?
+    var loginTimeStamp: Int?
     
     public static func convertToModel(response: Data?) -> UserRoot{
         do{
@@ -39,67 +29,47 @@ class UserRoot : Decodable{
             return UserRoot()
         }
     }
+
     
-    
-    
-    init() {
-        self.getUser()
-    }
-    
-    
-    
- 
-    public func getUser(){
-    
-        
-        self.result = User()
-        self.access_token = UserDefaults.standard.string(forKey: "token")
-        self.expires_in = UserDefaults.standard.integer(forKey: "expire")
-        self.result?.id = UserDefaults.standard.integer(forKey: "id")
-        self.result?.image = UserDefaults.standard.string(forKey: "image")
-        self.result?.fname = UserDefaults.standard.string(forKey: "fname")
-        self.result?.lname = UserDefaults.standard.string(forKey: "lname")
-        self.result?.email = UserDefaults.standard.string(forKey: "email")
-        self.result?.password = UserDefaults.standard.string(forKey: "password")
-        self.result?.mobile = UserDefaults.standard.integer(forKey: "mobile")
-    }
-    public func storeInDefault() {
-        let defaults = UserDefaults.standard
-        if let _ = access_token{
-            defaults.set(self.access_token , forKey: "token")
-            defaults.set(self.expires_in, forKey: "expire")
+    public static func save(response: Data?, remember: Bool = true) {
+        let timestamp = NSDate().timeIntervalSince1970
+        let myTimeInterval = TimeInterval(timestamp).int
+        UserDefaults.standard.set(response, forKey: storeUserDefaults)
+        UserDefaults.standard.set(myTimeInterval, forKey: "LOGIN_TIMESTAMP")
+        if remember {
+            UserDefaults.standard.set(true, forKey: storeRememberUser)
         }
-        guard let data = self.result else {return}
-        
-        defaults.set(true, forKey: "LOGIN")
-        defaults.set(Date(), forKey: "LastLogin")
-        defaults.set(data.email , forKey: "email")
-        defaults.set(data.fname, forKey: "fname")
-        defaults.set(data.lname, forKey: "lname")
-        defaults.set(data.image, forKey: "image")
-        defaults.set(data.mobile, forKey: "mobile")
-        defaults.set(data.id, forKey: "id")
-        defaults.set(data.password, forKey: "password")
-        
     }
-    public static func removeCacheingDefault() {
-        UserDefaults.standard.removeObject(forKey: "LastLogin")
-        UserDefaults.standard.removeObject(forKey: "LOGIN")
-        UserDefaults.standard.removeObject(forKey: "id")
-        UserDefaults.standard.removeObject(forKey: "image")
-        UserDefaults.standard.removeObject(forKey: "fname")
-        UserDefaults.standard.removeObject(forKey: "lname")
-        UserDefaults.standard.removeObject(forKey: "email")
-        UserDefaults.standard.removeObject(forKey: "mobile")
-        UserDefaults.standard.removeObject(forKey: "token")
-        UserDefaults.standard.removeObject(forKey: "expire")
+    public static func fetch() -> UserRoot? {
+        let data = UserDefaults.standard.data(forKey: storeUserDefaults)
+        let user = self.convertToModel(response: data)
+        return user
     }
-    
+    public static func token() -> String? {
+        let data = UserDefaults.standard.data(forKey: storeUserDefaults)
+        let user = self.convertToModel(response: data)
+        return user.access_token
+    }
+    public static func LoginAlert(closure: HandlerView? = nil) {
+        let handler: HandlerView? = {
+            guard let vc = Constants.loginNav else { return }
+            UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
+        }
+        let alert = UIAlertController(title: translate("alert"), message: translate("you_must_be_logged_in"), preferredStyle: UIAlertControllerStyle.alert)
+        let acceptAction = UIAlertAction(title: translate("sure"), style: .default) { (_) -> Void in
+            handler?()
+        }
+        let cancelAction = UIAlertAction(title: translate("cancel"), style: .default) { (_) -> Void in
+        }
+        alert.addAction(acceptAction)
+        alert.addAction(cancelAction)
+        UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
+    }
 }
 
 
 
-class User : Decodable{
+class User: Decodable {
     
     var email : String?
     var fname : String?
@@ -108,16 +78,5 @@ class User : Decodable{
     var lname : String?
     var mobile : Int?
     var password : String?
-    
-    
-    public static func convertToModel(response: Data?) -> User{
-        do{
-            let data = try JSONDecoder().decode(self, from: response!)
-            return data
-        }catch{
-            return User()
-        }
-    }
-    
     
 }

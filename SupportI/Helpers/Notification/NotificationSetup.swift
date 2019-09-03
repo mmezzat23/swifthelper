@@ -9,6 +9,8 @@ import Firebase
 
 protocol FirebaseNotificationDelegate: class {
     func setupFirebase()
+    func subscribeFirebase()
+    func unSubscribeFirebase()
     func notificationControl(notification: [AnyHashable: Any], closure: SoundHandler? )
 }
 extension FirebaseNotificationDelegate where Self: AppDelegate {
@@ -34,6 +36,18 @@ extension FirebaseNotificationDelegate where Self: AppDelegate {
             application.registerUserNotificationSettings(settings)
         }
         
+        application.registerForRemoteNotifications()
+    }
+    func unSubscribeFirebase() {
+        let application = UIApplication.shared
+        Messaging.messaging().delegate = nil
+        UNUserNotificationCenter.current().delegate = nil
+        application.unregisterForRemoteNotifications()
+    }
+    func subscribeFirebase() {
+        let application = UIApplication.shared
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
         application.registerForRemoteNotifications()
     }
 }

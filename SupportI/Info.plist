@@ -50,5 +50,9 @@
 	<string>Allow to use camera for update your image</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow to use photo library for update your image</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow to use your location to find nearest places</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow to use your location to find nearest places</string>
 </dict>
 </plist>

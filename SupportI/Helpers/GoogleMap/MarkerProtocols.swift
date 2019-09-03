@@ -11,7 +11,7 @@ import GoogleMaps
 import GooglePlaces
 
 protocol MarkerDataSource:class {
-    func marker()->MarkerAttrbuite
+    func marker() -> MarkerAttrbuite
     func setMarkers()->[GMSMarker]
 }
 extension MarkerDataSource {

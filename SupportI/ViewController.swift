@@ -14,6 +14,7 @@ class ViewController: BaseController {
     var viewModel:TestViewModel = TestViewModel()
     var city:SelectDropDownModel = SelectDropDownModel()
     var list:[String] = []
+    var mapHelper: GoogleMapHelper?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,17 +23,22 @@ class ViewController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setup()
+        
         bind()
     }
     override func viewDidAppear(_ animated: Bool) {
 //        let map = GoogleMapHelper()
 //        map.showPlacePicker()
 //    
-        
+        setup()
     }
     
     func setup() {
+        mapHelper = .init()
+        mapHelper?.placePickerDelegate = self
+        mapHelper?.delegate = self
+        mapHelper?.showPlacePicker()
+        
         collection.delegate = self
         collection.dataSource = self
         collection.swipeTopRefresh(closure: swipeTop)
@@ -135,4 +141,9 @@ class TestCell:UITableViewCell , CellProtocol {
 //        print(place)
 //    }
 //}
-
+import GooglePlaces
+extension ViewController: GoogleMapHelperDelegate, PlacesPickerDelegate {
+    func didPickPlace(place: GMSPlace) {
+        
+    }
+}

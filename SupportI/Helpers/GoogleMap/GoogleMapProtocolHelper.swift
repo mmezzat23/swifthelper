@@ -7,21 +7,16 @@
 //
 import MapKit
 
-protocol GoogleMapHelperDelegate:class {
-    func locationCallback(lat:Double , lng:Double)
-    func locationCallback(name:String?)
-    func locationCallback(address:String?)
-  
+protocol GoogleMapHelperDelegate: class {
+    func didChangeCameraLocation(lat: Double, lng: Double)
+    func didClickOnMap(lat: Double, lng: Double)
+   
 }
-extension GoogleMapHelperDelegate where Self:Any{
-    func locationCallback(lat:Double , lng:Double){
+extension GoogleMapHelperDelegate where Self: Any {
+    func didChangeCameraLocation(lat: Double, lng: Double) {
         
     }
-    func locationCallback(name:String?){
+    func didClickOnMap(lat: Double, lng: Double) {
         
     }
-    func locationCallback(address:String?){
-        
-    }
-    
 }

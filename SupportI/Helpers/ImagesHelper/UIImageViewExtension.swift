@@ -63,8 +63,10 @@ extension UIImageView{
         }
     }
     
-    func setImage(url: String?,animate:Bool = false){
-        guard let string = url else {return}
+    func setImage(url: String?, animate: Bool = false) {
+        guard var string = url else { return }
+        string = ApiManager.instance.safeUrl(url: string)
+    
         let Url = URL(string: string)
         
         guard let finalUrl = Url else{ return }

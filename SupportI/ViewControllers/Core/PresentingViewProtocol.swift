@@ -10,13 +10,12 @@ import Foundation
 import NVActivityIndicatorView
 
 // All ViewControllers must implement this protocol
-protocol PresentingViewProtocol :class{
+protocol PresentingViewProtocol :class {
     
     func bind()
     func startLoading()
     func stopLoading()
     func push(_ view:UIViewController ,_ animated:Bool)
-    
     func snackBar(message:String,duration:TTGSnackbarDuration)
     func snackBar(message:String,duration:TTGSnackbarDuration,dismissClosure:@escaping ()->())
     func snackBar(message:String,duration:TTGSnackbarDuration,actionClosure:@escaping ()->())
