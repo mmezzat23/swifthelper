@@ -33,7 +33,7 @@ struct Constants {
     static let deviceType = "2"
     static let deviceToken = "deviceToken"
     static let deviceId = UIDevice.current.identifierForVendor!.uuidString
-    static let googleAPI = "AIzaSyCGKTEvpfIbHSLZBvckDG06-KKQOGD6wyo"
+    static let googleAPI = "AIzaSyAAap7IKyuO8zQ58Erx5n_NPr_HQOrdM84"
     static let googleRoutesAPI = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
     static let googleNotRestrictionKey = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
     static var useAuth:Bool = false

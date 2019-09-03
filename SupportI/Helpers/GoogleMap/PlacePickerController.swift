@@ -91,11 +91,12 @@ class PlacePickerController: UIViewController {
         }
         let method = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
         ApiManager.instance.paramaters["location"] = "\(lat),\(lng)"
-        ApiManager.instance.paramaters["radius"] = 1000
+        ApiManager.instance.paramaters["radius"] = 2000
         ApiManager.instance.paramaters["key"] = Constants.googleNotRestrictionKey
         ApiManager.instance.connection(method, type: .get) { (response) in
             let result = try? JSONDecoder().decode(PlacePickerModel.self, from: response ?? Data())
             if result?.status == "OK" {
+                self.likelyPlaces.removeAll()
                 self.likelyPlaces.append(contentsOf: result?.results ?? [])
                 self.placesTbl.reloadData()
             } else {
