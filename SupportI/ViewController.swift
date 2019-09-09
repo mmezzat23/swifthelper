@@ -37,7 +37,7 @@ class ViewController: BaseController {
         mapHelper = .init()
         mapHelper?.placePickerDelegate = self
         mapHelper?.delegate = self
-        mapHelper?.showPlacePicker()
+        mapHelper?.placePicker()
         
         collection.delegate = self
         collection.dataSource = self
@@ -143,7 +143,7 @@ class TestCell:UITableViewCell , CellProtocol {
 //}
 import GooglePlaces
 extension ViewController: GoogleMapHelperDelegate, PlacesPickerDelegate {
-    func didPickPlace(place: GMSPlace) {
+    func didPickPlace(place: PlacePickerModel.PlacePickerResult) {
         
     }
 }

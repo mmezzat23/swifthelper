@@ -35,6 +35,7 @@ class PlacePickerController: UIViewController {
     internal var likelyPlaces: [PlacePickerModel.PlacePickerResult] = []
     // The currently selected place.
     internal var selectedPlace: PlacePickerModel.PlacePickerResult?
+    private var  currentLocationPlace: PlacePickerModel.PlacePickerResult?
     
     private var isCounterRun: Bool = false
     private lazy var counterLbl: EFCountingLabel = {
@@ -49,6 +50,21 @@ class PlacePickerController: UIViewController {
         super.viewDidLoad()
         setup()
         // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search))
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationItem.setHidesBackButton(false, animated: false)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    @objc func search() {
+        let storyboard = UIStoryboard(name: "PlacesPickerHelper", bundle: nil)
+        guard let navVC = storyboard.instantiateViewController(withIdentifier: "PlaceSearchNav") as? UINavigationController else { return }
+        let searchVC = navVC.rootViewController as? PlacePickerSearchController
+        searchVC?.delegate = self
+        self.present(navVC, animated: true, completion: nil)
     }
     func setup() {
         location = .init()
@@ -57,6 +73,7 @@ class PlacePickerController: UIViewController {
         mapHelper = .init()
         mapHelper?.delegate = self
         mapHelper?.mapView = mapView
+        mapView.isMyLocationEnabled = true
         placesClient = GMSPlacesClient.shared()
         //nearbyPlaces()
     }
@@ -97,6 +114,8 @@ class PlacePickerController: UIViewController {
             let result = try? JSONDecoder().decode(PlacePickerModel.self, from: response ?? Data())
             if result?.status == "OK" {
                 self.likelyPlaces.removeAll()
+                guard let currentLocationPlace = self.currentLocationPlace else { return }
+                self.likelyPlaces.append(currentLocationPlace)
                 self.likelyPlaces.append(contentsOf: result?.results ?? [])
                 self.placesTbl.reloadData()
             } else {
@@ -106,6 +125,20 @@ class PlacePickerController: UIViewController {
         }
         
     
+    }
+    func initCurrentLocationPlace(title: String? = nil, snippet: String? = nil) {
+        currentLocationPlace = PlacePickerModel.PlacePickerResult()
+        currentLocationPlace?.geometry = .init()
+        currentLocationPlace?.geometry?.location = .init()
+        currentLocationPlace?.geometry?.location?.lat = lat
+        currentLocationPlace?.geometry?.location?.lat = lng
+        currentLocationPlace?.icon = nil
+        if title != nil {
+            currentLocationPlace?.name = title
+        }
+        if snippet != nil {
+            currentLocationPlace?.vicinity = snippet
+        }
     }
     func waitTimer() {
         isCounterRun = true
@@ -118,7 +151,7 @@ class PlacePickerController: UIViewController {
         }
     }
   
-    @IBAction func back(_ sender: Any) {
+    @objc func back() {
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -140,28 +173,63 @@ extension PlacePickerController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as? PlacePickerCell
-        guard let place = cell?.place else { return }
+        let place = likelyPlaces[indexPath.row]
         self.dismiss(animated: true) { [weak self] in
             self?.delegate?.didPickPlace(place: place)
         }
+//        let cell = tableView.cellForRow(at: indexPath) as? PlacePickerCell
+//        guard let place = cell?.place else { return didSelectWithoutGMSPlace(path: indexPath.row) }
+//        self.dismiss(animated: true) { [weak self] in
+//            self?.delegate?.didPickPlace(place: place)
+//        }
+    }
+    func didSelectWithoutGMSPlace(path: Int) {
+        
     }
     
 }
 extension PlacePickerController: LocationDelegate, GoogleMapHelperDelegate {
     func didUpdateLocation(lat: Double, lng: Double) {
-        self.mapHelper?.updateCamera(lat: lat, lng: lng)
         self.lat = lat
         self.lng = lng
-        self.fetchPlacesByLocation()
+        self.mapHelper?.address(lat: lat, lng: lng, handler: { (title, snippet) in
+            self.initCurrentLocationPlace(title: title, snippet: snippet)
+            self.fetchPlacesByLocation()
+            self.mapHelper?.updateCamera(lat: lat, lng: lng)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+            }
+        })
+       
     }
     func didChangeCameraLocation(lat: Double, lng: Double) {
-        self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+        
     }
     func didClickOnMap(lat: Double, lng: Double) {
         self.lat = lat
         self.lng = lng
-        self.mapHelper?.updateCamera(lat: lat, lng: lng)
+        self.mapHelper?.address(lat: lat, lng: lng, handler: { (title, snippet) in
+            self.initCurrentLocationPlace(title: title, snippet: snippet)
+            self.fetchPlacesByLocation()
+            self.mapHelper?.updateCamera(lat: lat, lng: lng)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+            }
+        })
+    }
+}
+
+extension PlacePickerController: PlacePickerSearchDelegate {
+    func didPickSearchPlace(place: PlacePickerModel.PlacePickerResult?) {
+        guard let lat = place?.geometry?.location?.lat, let lng = place?.geometry?.location?.lng else { return }
+        self.lat = lat
+        self.lng = lng
+        
+        self.currentLocationPlace = place
         self.fetchPlacesByLocation()
+        self.mapHelper?.updateCamera(lat: lat, lng: lng)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+        }
     }
 }

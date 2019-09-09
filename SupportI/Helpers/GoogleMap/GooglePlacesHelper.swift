@@ -60,7 +60,7 @@ import GoogleMaps
 
 
 protocol PlacesPickerDelegate: class {
-    func didPickPlace(place:GMSPlace)
+    func didPickPlace(place: PlacePickerModel.PlacePickerResult)
 }
 
 fileprivate weak var placePickerPrivate: PlacesPickerDelegate?
@@ -68,7 +68,7 @@ fileprivate weak var placePickerPrivate: PlacesPickerDelegate?
 
 protocol MapPlaceHelper: class {
     var placePickerDelegate: PlacesPickerDelegate? { set get }
-    func showPlacePicker()
+    func placePicker()
 }
 
 extension MapPlaceHelper where Self:GoogleMapHelper {
@@ -80,13 +80,15 @@ extension MapPlaceHelper where Self:GoogleMapHelper {
             return placePickerPrivate
         }
     }
-    func showPlacePicker() {
+    func placePicker() {
         if self.placePickerDelegate is UIViewController {
             let delegate = self.placePickerDelegate as? UIViewController
             let storyboard = UIStoryboard(name: "PlacesPickerHelper", bundle: nil)
-            guard let pickerVC = storyboard.instantiateInitialViewController() else { return }
-            
-            delegate?.present(pickerVC, animated: false, completion: nil)
+            guard let navVC = storyboard.instantiateInitialViewController() as? UINavigationController else { return }
+            let pickerVC = navVC.rootViewController as? PlacePickerController
+            pickerVC?.delegate = self.placePickerDelegate
+            delegate?.present(navVC, animated: true, completion: nil)
+            //delegate?.present(pickerVC, animated: false, completion: nil)
         }
     }
     

@@ -9,8 +9,9 @@ import CoreLocation
 import GoogleMaps
 
 
+typealias AddressHandler = (String, String) -> ()
 protocol MapAddressHelper: class {
-    func address(lat: Double, lng: Double)
+    func address(lat: Double, lng: Double, handler: AddressHandler?)
     func address(degree: CLLocationCoordinate2D)
     func address(location: CLLocation)
 }
@@ -36,7 +37,7 @@ extension MapAddressHelper where Self: GoogleMapHelper {
             return _delegate
         }
     }
-    func address(lat: Double, lng: Double) {
+    func address(lat: Double, lng: Double, handler: AddressHandler? = nil) {
         let degree = CLLocationCoordinate2D(latitude: lat, longitude: lng)
         geocoder.reverseGeocodeCoordinate(degree) { (response, error) in
             guard error == nil else {
@@ -57,6 +58,7 @@ extension MapAddressHelper where Self: GoogleMapHelper {
                     snippet = lines[1]
                 }
                 /** call delegate **/
+                handler?(title, snippet)
                 self.addressDelegate?.didGetAddress(name: title)
                 self.addressDelegate?.didGetAddress(snippet: snippet)
                 /** call **/

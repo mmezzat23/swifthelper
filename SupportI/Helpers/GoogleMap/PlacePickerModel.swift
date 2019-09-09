@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GoogleMaps
 
 class PlacePickerModel: Decodable {
     var results: [PlacePickerResult]?
@@ -14,6 +15,11 @@ class PlacePickerModel: Decodable {
     
     class PlacePickerResult: Decodable {
         var geometry: PlacePickerGeometry?
+        var coordinate: CLLocationCoordinate2D {
+            get {
+                return CLLocationCoordinate2D(latitude: geometry?.location?.lat ?? 0, longitude: geometry?.location?.lng ?? 0)
+            }
+        }
         var icon: String?
         var id: String?
         var name: String?

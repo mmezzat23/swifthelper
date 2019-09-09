@@ -136,6 +136,7 @@
 		80A7A5ED20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5EA20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift */; };
 		80A7A5EE20E69FFB00F1F217 /* ExtensionUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5EB20E69FFB00F1F217 /* ExtensionUITableViewCell.swift */; };
 		80A7A5F420E6A0D800F1F217 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7A5F320E6A0D800F1F217 /* TokenModel.swift */; };
+		80B5230923216C1800EE65DB /* PlacePickerSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B5230823216C1800EE65DB /* PlacePickerSearchController.swift */; };
 		80D11D3F22F086CB00CACFD4 /* UITabHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */; };
 		80D11D4122F0871C00CACFD4 /* AlertableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */; };
 		80D11D4522F0899900CACFD4 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4222F0899800CACFD4 /* NotificationHelper.swift */; };
@@ -334,6 +335,7 @@
 		80A7A5EA20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUICollectionViewCell.swift; sourceTree = "<group>"; };
 		80A7A5EB20E69FFB00F1F217 /* ExtensionUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUITableViewCell.swift; sourceTree = "<group>"; };
 		80A7A5F320E6A0D800F1F217 /* TokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		80B5230823216C1800EE65DB /* PlacePickerSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePickerSearchController.swift; sourceTree = "<group>"; };
 		80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabHelper.swift; sourceTree = "<group>"; };
 		80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertableHelper.swift; sourceTree = "<group>"; };
 		80D11D4222F0899800CACFD4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				80A2FC5D215844DD00223A77 /* GooglePlacesHelper.swift */,
 				80EA0052231DA3720008E68B /* PlacesPickerHelper.storyboard */,
 				80EA0054231DA6820008E68B /* PlacePickerController.swift */,
+				80B5230823216C1800EE65DB /* PlacePickerSearchController.swift */,
 				80EA0056231DA69F0008E68B /* PlacePickerCell.swift */,
 				80EA0058231DF7CD0008E68B /* PlacePickerModel.swift */,
 				80EA0067231DFE7C0008E68B /* EFCount.swift */,
@@ -1134,6 +1137,7 @@
 				80A2FBF4215841BC00223A77 /* DateHelper.swift in Sources */,
 				8050BD7320BF8A8A00E355BE /* Constants.swift in Sources */,
 				80A2FC0A215841BC00223A77 /* MultiImageCell.swift in Sources */,
+				80B5230923216C1800EE65DB /* PlacePickerSearchController.swift in Sources */,
 				80A2FC51215841BC00223A77 /* ExactLengthRule.swift in Sources */,
 				80DA015E211A888600817038 /* UIFontExtensions.swift in Sources */,
 				80A2FC02215841BC00223A77 /* ApiManager.swift in Sources */,

@@ -16,7 +16,7 @@ class PlacePickerCell: UITableViewCell, CellProtocol {
     
     var placesClient:GMSPlacesClient? = GMSPlacesClient.shared()
     var place: GMSPlace?
-    
+    var fetchGMSPlace: Bool = true
     func setup() {
         guard let model = model as? PlacePickerModel.PlacePickerResult else { return }
         self.placeName.text = model.name
@@ -24,7 +24,9 @@ class PlacePickerCell: UITableViewCell, CellProtocol {
         self.placeIcon.setImage(url: model.icon)
         // Specify the place data types to return (in this case, just photos).
         
-        fetchPlaceDetail()
+        if fetchGMSPlace {
+            fetchPlaceDetail()
+        }
         
     }
     func fetchPlaceDetail() {
