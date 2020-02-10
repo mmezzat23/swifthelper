@@ -34,7 +34,6 @@ extension UISearchBar{
      func initSearchBar(){
         
         self.tintColor = .white
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setValue(translate("cancel"), forKey: "_cancelButtonText")
@@ -64,7 +63,7 @@ extension UISearchBar{
         {
             for case let textField as UITextField in subView.subviews{
                 textField.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-                let attributeDict = [NSAttributedStringKey.foregroundColor: UIColor.white]
+                let attributeDict = [NSAttributedString.Key.foregroundColor: UIColor.white]
                 textField.attributedPlaceholder = NSAttributedString(string: translate("search"), attributes: attributeDict)
                 
                 textField.textColor = .white
@@ -85,7 +84,6 @@ extension UISearchBar{
     static func initSearchBar(searchBar:UISearchBar,delegate:UIViewController){
     
         searchBar.tintColor = .white
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
         
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.setValue(translate("cancel"), forKey: "_cancelButtonText")
@@ -107,7 +105,7 @@ extension UISearchBar{
         {
             for case let textField as UITextField in subView.subviews{
                 textField.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-                let attributeDict = [NSAttributedStringKey.foregroundColor: UIColor.white]
+                let attributeDict = [NSAttributedString.Key.foregroundColor: UIColor.white]
                 textField.attributedPlaceholder = NSAttributedString(string: translate("search"), attributes: attributeDict)
                 
                 textField.textColor = .white

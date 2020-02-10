@@ -26,7 +26,7 @@ protocol SocialIndicator {
     func startLoading()
     func stopLoading()
 }
-extension SocialIndicator{
+extension SocialIndicator {
     
     func startLoading(){
         let activityData = ActivityData()

@@ -13,7 +13,7 @@ import UIKit
 protocol SocialError {
     func alertError()
 }
-extension SocialError{
+extension SocialError {
     func alertError(){
         let topVC = UIApplication.topMostController()
         let alert = UIAlertController(title: translate("your_are_cancel_the_operation"), message: translate("you_must_accept_the_request_to_login"), preferredStyle: .alert)

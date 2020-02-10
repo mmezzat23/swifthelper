@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 
+typealias OnUpdateLocation = ((CLLocationCoordinate2D?) -> Void)
 protocol LocationDelegate: class {
     func didUpdateLocation(lat: Double, lng: Double)
 }
@@ -20,7 +21,11 @@ extension MapAddressDelegate {
 }
 class LocationHelper: NSObject {
     private var locationManager: CLLocationManager!
-    var locationUpdated: Bool = false
+    private var locationUpdated: Bool = false
+
+    var useInBackground: Bool = false
+    var updateLocationInDistance: Double? = nil
+    var useOnlyoneTime: Bool = true
 
     private var _delegate: LocationDelegate?
     weak var delegate: LocationDelegate? {
@@ -30,6 +35,7 @@ class LocationHelper: NSObject {
             return _delegate
         }
     }
+    var onUpdateLocation: OnUpdateLocation?
     /* currentLocation */
     var location: CLLocation?
     var degree: CLLocationCoordinate2D? {
@@ -67,10 +73,19 @@ extension LocationHelper: CLLocationManagerDelegate {
         self.locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.distanceFilter = kCLDistanceFilterNone
+            if updateLocationInDistance == nil {
+                locationManager.distanceFilter = kCLDistanceFilterNone
+            } else {
+                locationManager.distanceFilter = updateLocationInDistance ?? 0
+            }
+            if useInBackground {
+                locationManager.allowsBackgroundLocationUpdates = true
+                //locationManager.showsBackgroundLocationIndicator = true
+            }
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
             locationManager.delegate = self
+            
             
         } else {
             let topViewController = UIApplication.topMostController()
@@ -80,14 +95,18 @@ extension LocationHelper: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation // note that locations is same as the one in the function declaration
-        if !locationUpdated {
+        self.location = userLocation
+        self.delegate?.didUpdateLocation(lat: self.lat ?? 0, lng: self.lng ?? 0)
+        self.onUpdateLocation?(self.degree)
+        if useOnlyoneTime {
             manager.stopUpdatingLocation()
             locationManager.stopUpdatingLocation()
-            /** set current location */
-            self.location = userLocation
-            self.delegate?.didUpdateLocation(lat: self.lat ?? 0, lng: self.lng ?? 0)
-            locationUpdated = true
+            if !locationUpdated {
+                /** set current location */
+                locationUpdated = true
+            }
         }
+        
         
     }
     

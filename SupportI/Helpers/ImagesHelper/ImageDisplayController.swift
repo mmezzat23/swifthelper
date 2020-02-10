@@ -19,10 +19,10 @@ extension ImageDisplayInterface where Self: UIViewController {
         guard let popOverVC = storyboard.instantiateViewController(withClass: ImageDisplayController.self) else { return }
         popOverVC.mode = .url
         popOverVC.imageURL = image
-        self.addChildViewController(popOverVC)
+        self.addChild(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+        popOverVC.didMove(toParent: self)
     }
     func displayImage(image: UIImage?) {
         let storyboard = UIStoryboard(name: "ImageDisplayController", bundle: nil)
@@ -30,10 +30,10 @@ extension ImageDisplayInterface where Self: UIViewController {
         guard let popOverVC = storyboard.instantiateViewController(withClass: ImageDisplayController.self) else { return }
         popOverVC.mode = .image
         popOverVC.uiImage = image
-        self.addChildViewController(popOverVC)
+        self.addChild(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+        popOverVC.didMove(toParent: self)
     }
 }
 class ImageDisplayController: UIViewController {

@@ -17,7 +17,7 @@ fileprivate let gcmMessageIDKey = "gcm.message_id"
 typealias SoundHandler = (Bool) -> ()
 
 extension AppDelegate: FirebaseNotificationDelegate {
-    func notificationControl(notification: [AnyHashable : Any], closure: SoundHandler? = nil ) {
+    func notificationControl(notification: [AnyHashable : Any]) {
         //let string = notification["gcm.notification.extras"] as? String
         //let noti = string?.data(using: .utf8)
         
@@ -38,6 +38,9 @@ extension AppDelegate: FirebaseNotificationDelegate {
 //        } else {
 //            closure?(true)
 //        }
+        
+    }
+    func notificationControlWillPresent(notification: [AnyHashable : Any], closure: SoundHandler? = nil) {
         
     }
 
@@ -139,7 +142,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         //print("here it  is\(userInfo)")
         
-        notificationControl(notification: userInfo) { sound in
+        notificationControlWillPresent(notification: userInfo) { sound in
             if sound {
                 completionHandler([.alert, .badge, .sound])
             }

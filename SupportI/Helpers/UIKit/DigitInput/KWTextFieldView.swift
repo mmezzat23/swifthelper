@@ -109,7 +109,7 @@ protocol KWTextFieldDelegate: class {
         loadViewFromNib()
         updateviewCircle()
         numberTextField.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: numberTextField)
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: numberTextField)
     }
     
     // MARK: - Public Methods

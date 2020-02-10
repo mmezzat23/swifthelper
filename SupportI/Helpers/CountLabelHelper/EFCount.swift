@@ -161,8 +161,8 @@ extension EFCounter: EFCount {
         } else {
             timer.frameInterval = 2
         }
-        timer.add(to: .main, forMode: RunLoopMode.defaultRunLoopMode)
-        timer.add(to: .main, forMode: RunLoopMode.UITrackingRunLoopMode)
+        timer.add(to: .main, forMode: RunLoop.Mode.default)
+        timer.add(to: .main, forMode: RunLoop.Mode.tracking)
         self.timer = timer
     }
     

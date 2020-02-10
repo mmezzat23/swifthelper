@@ -10,13 +10,13 @@ import Foundation
 
 
 class TimeHelper {
-    var timerVar:Timer?
-    var numberOfCycle:Int?
-    var closureTimer:(Int)->Void = {_ in
+    var timerVar: Timer?
+    var numberOfCycle: Int?
+    var closureTimer: (Int) -> Void = { _ in
         
     }
     
-    init(seconds:Double,numberOfCycle:Int = 0,closure:@escaping ((Int)->Void)) {
+    init(seconds: Double, numberOfCycle: Int = 0, closure: @escaping ((Int)->Void)) {
         self.numberOfCycle = numberOfCycle
         self.closureTimer = closure
         self.runTimer(seconds: seconds, closure: closureTimer)
@@ -78,8 +78,8 @@ class TimeHelper {
         }
     }
     
-    func secondsTimer(cycle:Int)->String{
-        if cycle <= 0{
+    func secondsTimer(cycle: Int) -> String {
+        if cycle <= 0 {
             return ""
         }
         var seconds = 0

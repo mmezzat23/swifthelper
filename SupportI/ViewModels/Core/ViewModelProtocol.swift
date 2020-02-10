@@ -10,21 +10,21 @@ import Foundation
 
 
 // All ViewModels must implement this protocol
-protocol ViewModelProtocol{
-    var delegate:PresentingViewProtocol? {set get }
-    func paginator(respnod:Array<Any>?)
-    func runPaginator()->Bool
+protocol ViewModelProtocol {
+    var delegate: PresentingViewProtocol? { set get }
+    func paginator(respnod: Array<Any>?)
+    func runPaginator() -> Bool
     func resetPaginator()
     
 }
 
 
-extension ViewModelProtocol{
+extension ViewModelProtocol {
     
-    func paginator(respnod:Array<Any>?){
+    func paginator(respnod: Array<Any>?) {
         ApiManager.instance.checkPaginator(respond: respnod)
     }
-    func runPaginator()->Bool{
+    func runPaginator() ->Bool {
         if !ApiManager.instance.running && !ApiManager.instance.paginatorStop{
             ApiManager.instance.incresePaginate()
             return true
@@ -32,7 +32,7 @@ extension ViewModelProtocol{
             return false
         }
     }
-    func resetPaginator(){
+    func resetPaginator() {
         ApiManager.instance.resetPaginate()
     }
 }

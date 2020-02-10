@@ -8,21 +8,10 @@
 
 import Foundation
 
-class SelectDropDownModel:Decodable{
+class SelectDropDownModel: Decodable{
     
     var id: Int?
     var title:String?
-    
-    public static func convertToModel(response:Data?)->SelectDropDownModel{
-        do{
-            let data = try JSONDecoder().decode(self, from: response!)
-            return data
-            
-        }catch{
-            print("error")
-            return SelectDropDownModel()
-        }
-        
-    }
+
     
 }

@@ -83,7 +83,7 @@ class Validation :ValidationDelegate {
     
     func showErrors(message:String,indetifier:String = "")  {
         
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
         let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
         }

@@ -37,7 +37,7 @@ extension BaseApi{
     
     func showAlert(message:String,indetifier:String = "")  {
         
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
         if(indetifier.isEmpty){
             let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
             }
@@ -66,7 +66,7 @@ extension BaseApi{
     }
     func loginAlert()  {
         
-        let alert = UIAlertController(title: translate("alert"), message: translate("the_login_is_required"), preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: translate("alert"), message: translate("the_login_is_required"), preferredStyle: UIAlertController.Style.alert)
         
         let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
             let storyboard: UIStoryboard = UIStoryboard(name: Constants.storyboard, bundle: nil)

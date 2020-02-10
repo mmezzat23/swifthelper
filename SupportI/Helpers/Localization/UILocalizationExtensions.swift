@@ -349,7 +349,7 @@ extension UISearchBar {
     func setPlaceholderTextColor(color: UIColor) {
         
         if let textField = getSearchBarTextField() {
-            textField.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedStringKey.foregroundColor: color])
+            textField.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor: color])
         }
     }
     

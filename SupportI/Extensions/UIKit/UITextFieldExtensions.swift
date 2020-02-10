@@ -129,12 +129,12 @@ extension UITextField {
     }
     
     func changeColor(){
-        let str = NSAttributedString(string: "", attributes: [NSAttributedStringKey.foregroundColor:
+        let str = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor:
             UIColor(red:129/255, green:186/255, blue:0/255, alpha: 1)])
         self.attributedText = str
     }
     func changeColorPlaceHolder(holder :String){
-        let str = NSAttributedString(string: holder, attributes: [NSAttributedStringKey.foregroundColor:
+        let str = NSAttributedString(string: holder, attributes: [NSAttributedString.Key.foregroundColor:
             UIColor(red:0/255, green:0/255, blue:0/255, alpha: 1)])
         self.attributedPlaceholder = str
     }
@@ -150,7 +150,7 @@ extension UITextField {
         self.layer.shadowRadius = 0.0
     }
     func placeholderRectForBounds(bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5))
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5))
     }
     func setLeftPaddingPoints(_ amount:CGFloat){
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
@@ -203,7 +203,7 @@ public extension UITextField {
 		imageView.contentMode = .center
 		self.leftView = imageView
 		self.leftView?.frame.size = CGSize(width: image.size.width + padding, height: image.size.height)
-		self.leftViewMode = UITextFieldViewMode.always
+        self.leftViewMode = UITextField.ViewMode.always
 	}
 
 }

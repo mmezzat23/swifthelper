@@ -24,7 +24,9 @@ import CoreGraphics
 
 
 
-extension String{
+extension String {
+   
+    
     func capitalizingFirstLetter() -> String {
         return prefix(1).uppercased() + self.dropFirst()
     }
@@ -33,7 +35,7 @@ extension String{
         self = self.capitalizingFirstLetter()
     }
     
-    func splitString()->String{
+    func splitString() ->String {
         var filter = self
         if let index = filter.range(of: " ")?.lowerBound {
             let spaceing = filter[..<index]
@@ -47,16 +49,31 @@ extension String{
         return filter
     }
     
-    func stroke()->NSAttributedString{
+    func splitString(_ string: String) -> String {
+        var filter = string
+        if let index = filter.range(of: " ")?.lowerBound {
+            let spaceing = filter[..<index]
+            let filterSpacing = String(spaceing)
+            if(!filterSpacing.isEmpty){
+                filter = filterSpacing
+            }
+        }
+        //filter = filter.uppercased()
+        print(filter)
+        return filter
+    }
+    
+    
+    func stroke() -> NSAttributedString {
         let attributes: NSMutableAttributedString =  NSMutableAttributedString(string: self)
-        attributes.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 2, range: NSMakeRange(0, attributes.length))
+        attributes.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributes.length))
         return attributes
     }
-    func strokeUnderline(fontSize:Int = 16) ->NSAttributedString {
-        let attributes : [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey.font : UIFont.systemFont(ofSize: CGFloat(fontSize)),
-            NSAttributedStringKey.foregroundColor : Constants.mainColorRGB,
-            NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleSingle.rawValue]
+    func strokeUnderline(fontSize: Int = 16) -> NSAttributedString {
+        let attributes : [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: CGFloat(fontSize)),
+            NSAttributedString.Key.foregroundColor : Constants.mainColorRGB,
+            NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
         
         let attributeString = NSMutableAttributedString(string: self, attributes: attributes)
         
@@ -1165,14 +1182,14 @@ public extension String {
     #if canImport(Foundation)
     /// SwifterSwift: Underlined string
     public var underline: NSAttributedString {
-        return NSAttributedString(string: self, attributes: [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+        return NSAttributedString(string: self, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
     }
     #endif
     
     #if canImport(Foundation)
     /// SwifterSwift: Strikethrough string.
     public var strikethrough: NSAttributedString {
-        return NSAttributedString(string: self, attributes: [.strikethroughStyle: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)])
+        return NSAttributedString(string: self, attributes: [.strikethroughStyle: NSNumber(value: NSUnderlineStyle.single.rawValue as Int)])
     }
     #endif
     

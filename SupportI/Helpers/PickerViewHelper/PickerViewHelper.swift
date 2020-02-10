@@ -44,13 +44,14 @@ class PickerViewHelper: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func okBtn(_ sender: Any) {
-        self.dismiss(animated: true) {
-            if self.source.count > 0 {
-                let id = self.pickerView.selectedRow(inComponent: 0)
-                self.delegate?.didSelectItem(item: id)
-                self.delegate?.didSelectItem(for: self.source[id])
-                self.didSelectClosure?(id)
-                self.didSelectItemClosure?(id)
+        self.dismiss(animated: true) { [weak self] in
+            if (self?.source.count ?? 0) > 0 {
+                guard let id = self?.pickerView.selectedRow(inComponent: 0) else { return }
+                guard let item = self?.source[id] else { return }
+                self?.delegate?.didSelectItem(item: id)
+                self?.delegate?.didSelectItem(for: item)
+                self?.didSelectClosure?(id)
+                self?.didSelectItemClosure?(id)
             }
         }
     }

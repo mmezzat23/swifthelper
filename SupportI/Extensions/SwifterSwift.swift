@@ -237,7 +237,7 @@ public struct SwifterSwift {
 			return UIApplication.shared.statusBarStyle
 		}
 		set {
-			if let style = newValue {
+            if newValue != nil {
 				// UIApplication.shared.statusBarStyle = style
 			}
 		}
@@ -299,7 +299,7 @@ public extension SwifterSwift {
 	/// - Parameter action: a closure to run when user takes a screenshot
 	public static func didTakeScreenShot(_ action: @escaping (_ notification: Notification) -> Void) {
 		// http://stackoverflow.com/questions/13484516/ios-detection-of-screenshot
-		_ = NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationUserDidTakeScreenshot, object: nil, queue: OperationQueue.main) { notification in
+        _ = NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification, object: nil, queue: OperationQueue.main) { notification in
 			action(notification)
 		}
 	}

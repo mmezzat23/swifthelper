@@ -70,7 +70,7 @@ open class TTGSnackbar: UIView {
     public typealias TTGDismissBlock = (_ snackbar:TTGSnackbar) -> Void
  
     /// Swipe gesture callback closure
-    public typealias TTGSwipeBlock = (_ snackbar: TTGSnackbar, _ direction: UISwipeGestureRecognizerDirection) -> Void
+    public typealias TTGSwipeBlock = (_ snackbar: TTGSnackbar, _ direction: UISwipeGestureRecognizer.Direction) -> Void
 
     // MARK: - Public property.
  
@@ -191,35 +191,35 @@ open class TTGSnackbar: UIView {
     /// Action button title.
     @objc open dynamic var actionText: String = "" {
         didSet {
-            actionButton.setTitle(actionText, for: UIControlState())
+            actionButton.setTitle(actionText, for: UIControl.State())
         }
     }
 
     /// Action button image.
     @objc open dynamic var actionIcon: UIImage? = nil {
         didSet {
-            actionButton.setImage(actionIcon, for: UIControlState())
+            actionButton.setImage(actionIcon, for: UIControl.State())
         }
     }
 
     /// Second action button title.
     @objc open dynamic var secondActionText: String = "" {
         didSet {
-            secondActionButton.setTitle(secondActionText, for: UIControlState())
+            secondActionButton.setTitle(secondActionText, for: UIControl.State())
         }
     }
 
     /// Action button title color. Default is white.
     @objc open dynamic var actionTextColor: UIColor = UIColor.white {
         didSet {
-            actionButton.setTitleColor(actionTextColor, for: UIControlState())
+            actionButton.setTitleColor(actionTextColor, for: UIControl.State())
         }
     }
 
     /// Second action button title color. Default is white.
     @objc open dynamic var secondActionTextColor: UIColor = UIColor.white {
         didSet {
-            secondActionButton.setTitleColor(secondActionTextColor, for: UIControlState())
+            secondActionButton.setTitleColor(secondActionTextColor, for: UIControl.State())
         }
     }
 
@@ -264,7 +264,7 @@ open class TTGSnackbar: UIView {
     }
 
     /// Icon image content 
-    @objc open dynamic var iconContentMode: UIViewContentMode = .center {
+    @objc open dynamic var iconContentMode: UIView.ContentMode = .center {
         didSet {
             iconImageView.contentMode = iconContentMode
         }
@@ -284,12 +284,12 @@ open class TTGSnackbar: UIView {
     }
     
     /// ActivityIndicatorViewStyle
-    @objc open dynamic var activityIndicatorViewStyle: UIActivityIndicatorViewStyle {
+    @objc open dynamic var activityIndicatorViewStyle: UIActivityIndicatorView.Style {
         get {
-            return activityIndicatorView.activityIndicatorViewStyle
+            return activityIndicatorView.style
         }
         set {
-            activityIndicatorView.activityIndicatorViewStyle = newValue
+            activityIndicatorView.style = newValue
         }
     }
     
@@ -464,7 +464,7 @@ public extension TTGSnackbar {
         // Create dismiss timer
         dismissTimer = Timer.init(timeInterval: (TimeInterval)(duration.rawValue),
                                   target: self, selector: #selector(dismiss), userInfo: nil, repeats: false)
-        RunLoop.main.add(dismissTimer!, forMode: .commonModes)
+        RunLoop.main.add(dismissTimer!, forMode: RunLoop.Mode.common)
 
         // Show or hide action button
         iconImageView.isHidden = icon == nil
@@ -757,7 +757,7 @@ private extension TTGSnackbar {
 
         // Notification
         NotificationCenter.default.addObserver(self, selector: #selector(onScreenRotateNotification),
-                                               name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+                                               name: UIDevice.orientationDidChangeNotification, object: nil)
         
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.init(white: 0, alpha: 0.8)
@@ -797,12 +797,12 @@ private extension TTGSnackbar {
         actionButton.accessibilityIdentifier = "actionButton"
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.backgroundColor = UIColor.clear
-        actionButton.contentEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 4)
+        actionButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
         actionButton.titleLabel?.font = actionTextFont
         actionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         actionButton.titleLabel?.numberOfLines = actionTextNumberOfLines
-        actionButton.setTitle(actionText, for: UIControlState())
-        actionButton.setTitleColor(actionTextColor, for: UIControlState())
+        actionButton.setTitle(actionText, for: UIControl.State())
+        actionButton.setTitleColor(actionTextColor, for: UIControl.State())
         actionButton.addTarget(self, action: #selector(doAction(_:)), for: .touchUpInside)
         contentView.addSubview(actionButton)
 
@@ -810,12 +810,12 @@ private extension TTGSnackbar {
         secondActionButton.accessibilityIdentifier = "secondActionButton"
         secondActionButton.translatesAutoresizingMaskIntoConstraints = false
         secondActionButton.backgroundColor = UIColor.clear
-        secondActionButton.contentEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 4)
+        secondActionButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
         secondActionButton.titleLabel?.font = secondActionTextFont
         secondActionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         secondActionButton.titleLabel?.numberOfLines = actionTextNumberOfLines
-        secondActionButton.setTitle(secondActionText, for: UIControlState())
-        secondActionButton.setTitleColor(secondActionTextColor, for: UIControlState())
+        secondActionButton.setTitle(secondActionText, for: UIControl.State())
+        secondActionButton.setTitleColor(secondActionTextColor, for: UIControl.State())
         secondActionButton.addTarget(self, action: #selector(doAction(_:)), for: .touchUpInside)
         contentView.addSubview(secondActionButton)
 
@@ -824,7 +824,7 @@ private extension TTGSnackbar {
         separateView.backgroundColor = separateViewBackgroundColor
         contentView.addSubview(separateView)
 
-        activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        activityIndicatorView = UIActivityIndicatorView(style: .white)
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicatorView.stopAnimating()
         contentView.addSubview(activityIndicatorView)
@@ -832,37 +832,37 @@ private extension TTGSnackbar {
         // Add constraints
         let hConstraints = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-0-[iconImageView]-2-[messageLabel]-2-[seperateView(0.5)]-2-[actionButton(>=44@999)]-0-[secondActionButton(>=44@999)]-0-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["iconImageView": iconImageView, "messageLabel": messageLabel, "seperateView": separateView, "actionButton": actionButton, "secondActionButton": secondActionButton])
         
         let vConstraintsForIconImageView = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-2-[iconImageView]-2-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["iconImageView": iconImageView])
 
         let vConstraintsForMessageLabel = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-0-[messageLabel]-0-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["messageLabel": messageLabel])
 
         let vConstraintsForSeperateView = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-4-[seperateView]-4-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["seperateView": separateView])
 
         let vConstraintsForActionButton = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-0-[actionButton]-0-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["actionButton": actionButton])
 
         let vConstraintsForSecondActionButton = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-0-[secondActionButton]-0-|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["secondActionButton": secondActionButton])
 
@@ -884,7 +884,7 @@ private extension TTGSnackbar {
 
         let hConstraintsForActivityIndicatorView = NSLayoutConstraint.constraints(
         withVisualFormat: "H:[activityIndicatorView]-2-|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+        options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: ["activityIndicatorView": activityIndicatorView])
 
@@ -916,7 +916,7 @@ private extension TTGSnackbar {
         self.isUserInteractionEnabled = true
         
         // swipe gestures
-        [UISwipeGestureRecognizerDirection.up, .down, .left, .right].forEach { (direction) in
+        [UISwipeGestureRecognizer.Direction.up, .down, .left, .right].forEach { (direction) in
             let gesture = UISwipeGestureRecognizer(target: self, action: #selector(self.didSwipeSelf(_:)))
             gesture.direction = direction
             self.addGestureRecognizer(gesture)

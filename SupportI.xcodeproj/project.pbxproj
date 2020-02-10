@@ -27,16 +27,14 @@
 		8050BD6920BF8A0000E355BE /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050BCE920BF89FF00E355BE /* BaseModel.swift */; };
 		8050BD6A20BF8A0000E355BE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050BCEA20BF89FF00E355BE /* Errors.swift */; };
 		8050BD6B20BF8A0000E355BE /* SelectDropDownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050BCEB20BF89FF00E355BE /* SelectDropDownModel.swift */; };
-		8050BD7120BF8A7100E355BE /* MapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 8050BD7020BF8A7100E355BE /* MapStyle.json */; };
 		8050BD7320BF8A8A00E355BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050BD7220BF8A8A00E355BE /* Constants.swift */; };
 		8050BD8020BF8CC100E355BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8050BD7F20BF8CC100E355BE /* User.swift */; };
 		8070BD2D21CC9072008D9E27 /* SwipeRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070BD2C21CC9072008D9E27 /* SwipeRefresh.swift */; };
 		80A2FBEF215841BC00223A77 /* PublicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB63215841BC00223A77 /* PublicHelper.swift */; };
-		80A2FBF0215841BC00223A77 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB64215841BC00223A77 /* StringHelper.swift */; };
 		80A2FBF1215841BC00223A77 /* TimerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB65215841BC00223A77 /* TimerHelper.swift */; };
 		80A2FBF2215841BC00223A77 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB67215841BC00223A77 /* Contacts.swift */; };
 		80A2FBF3215841BC00223A77 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB68215841BC00223A77 /* ContactsModel.swift */; };
-		80A2FBF4215841BC00223A77 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB6A215841BC00223A77 /* DateHelper.swift */; };
+		80A2FBF4215841BC00223A77 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB6A215841BC00223A77 /* DateExtension.swift */; };
 		80A2FBF5215841BC00223A77 /* AddressHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB6C215841BC00223A77 /* AddressHelper.swift */; };
 		80A2FBF6215841BC00223A77 /* ARCarMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB6E215841BC00223A77 /* ARCarMovement.swift */; };
 		80A2FBF7215841BC00223A77 /* ARCarMovementDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB6F215841BC00223A77 /* ARCarMovementDelegate.swift */; };
@@ -139,7 +137,6 @@
 		80B5230923216C1800EE65DB /* PlacePickerSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B5230823216C1800EE65DB /* PlacePickerSearchController.swift */; };
 		80D11D3F22F086CB00CACFD4 /* UITabHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */; };
 		80D11D4122F0871C00CACFD4 /* AlertableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */; };
-		80D11D4522F0899900CACFD4 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4222F0899800CACFD4 /* NotificationHelper.swift */; };
 		80D11D4622F0899900CACFD4 /* NotificationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4322F0899900CACFD4 /* NotificationSetup.swift */; };
 		80D11D4722F0899900CACFD4 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D11D4422F0899900CACFD4 /* AppDelegateExtension.swift */; };
 		80DA0143211A888600817038 /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0110211A888600817038 /* SwifterSwift.swift */; };
@@ -198,6 +195,7 @@
 		80EA0069231DFE7C0008E68B /* EFTimingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0066231DFE7C0008E68B /* EFTimingMethod.swift */; };
 		80EA006A231DFE7C0008E68B /* EFCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0067231DFE7C0008E68B /* EFCount.swift */; };
 		80EA006B231DFE7C0008E68B /* EFCountAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */; };
+		E8ADC90623EB194E006E1044 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADC90523EB194E006E1044 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,16 +221,14 @@
 		8050BCE920BF89FF00E355BE /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		8050BCEA20BF89FF00E355BE /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		8050BCEB20BF89FF00E355BE /* SelectDropDownModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDropDownModel.swift; sourceTree = "<group>"; };
-		8050BD7020BF8A7100E355BE /* MapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MapStyle.json; sourceTree = SOURCE_ROOT; };
 		8050BD7220BF8A8A00E355BE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8050BD7F20BF8CC100E355BE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8070BD2C21CC9072008D9E27 /* SwipeRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeRefresh.swift; sourceTree = "<group>"; };
 		80A2FB63215841BC00223A77 /* PublicHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicHelper.swift; sourceTree = "<group>"; };
-		80A2FB64215841BC00223A77 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		80A2FB65215841BC00223A77 /* TimerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
 		80A2FB67215841BC00223A77 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		80A2FB68215841BC00223A77 /* ContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
-		80A2FB6A215841BC00223A77 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		80A2FB6A215841BC00223A77 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		80A2FB6C215841BC00223A77 /* AddressHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressHelper.swift; sourceTree = "<group>"; };
 		80A2FB6E215841BC00223A77 /* ARCarMovement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCarMovement.swift; sourceTree = "<group>"; };
 		80A2FB6F215841BC00223A77 /* ARCarMovementDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCarMovementDelegate.swift; sourceTree = "<group>"; };
@@ -338,7 +334,6 @@
 		80B5230823216C1800EE65DB /* PlacePickerSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePickerSearchController.swift; sourceTree = "<group>"; };
 		80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabHelper.swift; sourceTree = "<group>"; };
 		80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertableHelper.swift; sourceTree = "<group>"; };
-		80D11D4222F0899800CACFD4 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		80D11D4322F0899900CACFD4 /* NotificationSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSetup.swift; sourceTree = "<group>"; };
 		80D11D4422F0899900CACFD4 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		80DA0110211A888600817038 /* SwifterSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSwift.swift; sourceTree = "<group>"; };
@@ -399,6 +394,7 @@
 		80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFCountAdapter.swift; path = SupportI/Helpers/CountLabelHelper/EFCountAdapter.swift; sourceTree = SOURCE_ROOT; };
 		C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupportI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6B730607EBE0D31A9D800B /* Pods-SupportI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.debug.xcconfig"; sourceTree = "<group>"; };
+		E8ADC90523EB194E006E1044 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,7 +477,6 @@
 				8050BC4A20BF89DA00E355BE /* AppDelegate.swift */,
 				8050BD7220BF8A8A00E355BE /* Constants.swift */,
 				8050BC4C20BF89DA00E355BE /* ViewController.swift */,
-				8050BD7020BF8A7100E355BE /* MapStyle.json */,
 				8050BC4E20BF89DA00E355BE /* Main.storyboard */,
 				8050BC5420BF89DC00E355BE /* Assets.xcassets */,
 				8050BC5620BF89DC00E355BE /* LaunchScreen.storyboard */,
@@ -552,7 +547,7 @@
 			children = (
 				80EA004F231DA1260008E68B /* LocationHelper */,
 				803E6665231D761E005D6CB7 /* PickerViewHelper */,
-				80D11D3D22F086B700CACFD4 /* ViewHelper */,
+				80D11D3D22F086B700CACFD4 /* UIViewHelper */,
 				8070BD2B21CC904E008D9E27 /* SwipeRefreshHelper */,
 				80A2FB62215841BC00223A77 /* CommonHelper */,
 				80A2FB66215841BC00223A77 /* Contacts */,
@@ -574,7 +569,6 @@
 			isa = PBXGroup;
 			children = (
 				80A2FB63215841BC00223A77 /* PublicHelper.swift */,
-				80A2FB64215841BC00223A77 /* StringHelper.swift */,
 				80A2FB65215841BC00223A77 /* TimerHelper.swift */,
 				80D11D4022F0871C00CACFD4 /* AlertableHelper.swift */,
 			);
@@ -593,7 +587,8 @@
 		80A2FB69215841BC00223A77 /* DateHelper */ = {
 			isa = PBXGroup;
 			children = (
-				80A2FB6A215841BC00223A77 /* DateHelper.swift */,
+				80A2FB6A215841BC00223A77 /* DateExtension.swift */,
+				E8ADC90523EB194E006E1044 /* DateHelper.swift */,
 			);
 			path = DateHelper;
 			sourceTree = "<group>";
@@ -677,7 +672,6 @@
 			isa = PBXGroup;
 			children = (
 				80D11D4422F0899900CACFD4 /* AppDelegateExtension.swift */,
-				80D11D4222F0899800CACFD4 /* NotificationHelper.swift */,
 				80D11D4322F0899900CACFD4 /* NotificationSetup.swift */,
 			);
 			path = Notification;
@@ -890,12 +884,12 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		80D11D3D22F086B700CACFD4 /* ViewHelper */ = {
+		80D11D3D22F086B700CACFD4 /* UIViewHelper */ = {
 			isa = PBXGroup;
 			children = (
 				80D11D3E22F086CB00CACFD4 /* UITabHelper.swift */,
 			);
-			path = ViewHelper;
+			path = UIViewHelper;
 			sourceTree = "<group>";
 		};
 		80DA010F211A888600817038 /* Extensions */ = {
@@ -1059,7 +1053,6 @@
 				8050BC5820BF89DC00E355BE /* LaunchScreen.storyboard in Resources */,
 				80A2FC3D215841BC00223A77 /* KWTextFieldView.xib in Resources */,
 				80EA0053231DA3720008E68B /* PlacesPickerHelper.storyboard in Resources */,
-				8050BD7120BF8A7100E355BE /* MapStyle.json in Resources */,
 				8050BC5520BF89DC00E355BE /* Assets.xcassets in Resources */,
 				803E6667231D7635005D6CB7 /* PickerViewHelper.storyboard in Resources */,
 				80A2FC0B215841BC00223A77 /* MultiImageCell.xib in Resources */,
@@ -1134,7 +1127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80A2FC27215841BC00223A77 /* GoogleDriver.swift in Sources */,
-				80A2FBF4215841BC00223A77 /* DateHelper.swift in Sources */,
+				80A2FBF4215841BC00223A77 /* DateExtension.swift in Sources */,
 				8050BD7320BF8A8A00E355BE /* Constants.swift in Sources */,
 				80A2FC0A215841BC00223A77 /* MultiImageCell.swift in Sources */,
 				80B5230923216C1800EE65DB /* PlacePickerSearchController.swift in Sources */,
@@ -1201,7 +1194,6 @@
 				80DA0171211A888700817038 /* UIViewExtensions.swift in Sources */,
 				80DA014B211A888600817038 /* FloatExtensions.swift in Sources */,
 				80A2FBF1215841BC00223A77 /* TimerHelper.swift in Sources */,
-				80A2FBF0215841BC00223A77 /* StringHelper.swift in Sources */,
 				80A2FC4A215841BC00223A77 /* UIValidation.swift in Sources */,
 				80DA0148211A888600817038 /* SwiftStdlibDeprecated.swift in Sources */,
 				8037F10120BFB5B800162BA9 /* ViewModelProtocol.swift in Sources */,
@@ -1232,7 +1224,6 @@
 				80A2FBF3215841BC00223A77 /* ContactsModel.swift in Sources */,
 				80A2FC0D215841BC00223A77 /* UIImageViewExtension.swift in Sources */,
 				80DA015C211A888600817038 /* UIConstraintLayoutExtension.swift in Sources */,
-				80D11D4522F0899900CACFD4 /* NotificationHelper.swift in Sources */,
 				80DA0170211A888700817038 /* UIViewControllerExtensions.swift in Sources */,
 				80A2FBF8215841BC00223A77 /* GoogleMapHelper.swift in Sources */,
 				80A2FC44215841BC00223A77 /* RangeSeekSlider.swift in Sources */,
@@ -1251,6 +1242,7 @@
 				80DA0164211A888600817038 /* UINavigationItemExtensions.swift in Sources */,
 				80DA016D211A888700817038 /* UITableViewExtensions.swift in Sources */,
 				80DA015B211A888600817038 /* UIColorExtensions.swift in Sources */,
+				E8ADC90623EB194E006E1044 /* DateHelper.swift in Sources */,
 				8037F0FF20BFB1B800162BA9 /* CoreViewModel.swift in Sources */,
 				80DA014D211A888600817038 /* IntExtensions.swift in Sources */,
 				80DA0162211A888600817038 /* UINavigationBarExtensions.swift in Sources */,
@@ -1456,7 +1448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQQ7DHRD96;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1466,7 +1458,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SupportI/Helpers/slideMenu/SupportI-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1478,7 +1470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQQ7DHRD96;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1487,7 +1479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedAbdu.Helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SupportI/Helpers/slideMenu/SupportI-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

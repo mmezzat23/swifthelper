@@ -314,7 +314,7 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     func circleBottom(){
-        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: self.bounds.size.width / 2, y: 0), radius: self.bounds.size.height, startAngle: 0.0, endAngle: CGFloat(M_PI), clockwise: true)
+        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: self.bounds.size.width / 2, y: 0), radius: self.bounds.size.height, startAngle: 0.0, endAngle: CGFloat(Double.pi), clockwise: true)
         let circleShape = CAShapeLayer()
         circleShape.path = circlePath.cgPath
         self.layer.mask = circleShape
@@ -549,13 +549,13 @@ public extension UIView {
         }
         switch animationType {
         case .linear:
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         case .easeIn:
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         case .easeOut:
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         case .easeInOut:
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         }
         CATransaction.setCompletionBlock(completion)
         animation.duration = duration
@@ -577,7 +577,7 @@ public extension UIView {
             view.translatesAutoresizingMaskIntoConstraints = false
             viewsDictionary[key] = view
         }
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: withFormat, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: withFormat, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
     }
     
     /// SwifterSwift: Anchor all sides of the view into it's superview.

@@ -8,17 +8,18 @@
 
 import Foundation
 
-class ViewModelCore:ViewModelProtocol {
+class ViewModelCore: ViewModelProtocol {
     
-    weak var _delegate:PresentingViewProtocol?
-    weak var delegate:PresentingViewProtocol?{
-        set{
+    weak var _delegate: PresentingViewProtocol?
+    weak var delegate: PresentingViewProtocol? {
+        set {
             _delegate = newValue
-        }get{
+        } get {
             return _delegate
         }
     }
     deinit {
+        delegate = nil
         print("deinit")
     }
     

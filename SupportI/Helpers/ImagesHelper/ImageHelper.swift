@@ -17,8 +17,8 @@ extension UIImage {
     public func base64(format: ImageFormat) -> String {
         var imageData: NSData
         switch format {
-        case .PNG: imageData = UIImagePNGRepresentation(self)! as NSData
-        case .JPEG(let compression): imageData = UIImageJPEGRepresentation(self, compression)! as NSData
+        case .PNG: imageData = self.pngData()! as NSData
+        case .JPEG(let compression): imageData = self.jpegData(compressionQuality: compression)! as NSData
         }
         return imageData.base64EncodedString()
     }
@@ -26,8 +26,8 @@ extension UIImage {
         var imageData: NSData
         
         switch format {
-        case .PNG: imageData = UIImagePNGRepresentation(self)! as NSData
-        case .JPEG(let compression): imageData = UIImageJPEGRepresentation(self, compression)! as NSData
+        case .PNG: imageData = self.pngData()! as NSData
+        case .JPEG(let compression): imageData = self.jpegData(compressionQuality: compression)! as NSData
         }
         return imageData
     }

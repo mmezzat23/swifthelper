@@ -55,7 +55,7 @@ class UserRoot : Decodable {
             guard let vc = Constants.loginNav else { return }
             UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
         }
-        let alert = UIAlertController(title: translate("alert"), message: translate("you_must_be_logged_in"), preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: translate("alert"), message: translate("you_must_be_logged_in"), preferredStyle: UIAlertController.Style.alert)
         let acceptAction = UIAlertAction(title: translate("sure"), style: .default) { (_) -> Void in
             handler?()
         }

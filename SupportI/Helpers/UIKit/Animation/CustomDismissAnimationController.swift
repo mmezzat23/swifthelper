@@ -26,7 +26,7 @@ class CustomDismissAnimationController: NSObject, UIViewControllerAnimatedTransi
         toViewController.view.frame = finalFrameForVC
         toViewController.view.alpha = 0.5
         containerView.addSubview(toViewController.view)
-        containerView.sendSubview(toBack: toViewController.view)
+        containerView.sendSubviewToBack(toViewController.view)
 
         let snapshotView = fromViewController.view.snapshotView(afterScreenUpdates: false)
         snapshotView?.frame = fromViewController.view.frame

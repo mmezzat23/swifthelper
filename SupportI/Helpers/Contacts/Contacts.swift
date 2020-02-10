@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 import Contacts
 
-class ContactsHelper:NSObject {
+class ContactsHelper: NSObject {
     private let contactStore = CNContactStore()
     private var list = [CNContact]()
-    private var contactsModel:[ContactsResult] = []
+    private var contactsModel: [ContactsResult] = []
   
     override init() {
         super.init()
@@ -33,7 +33,7 @@ class ContactsHelper:NSObject {
                 if contact.imageData != nil {
                     model.imageData = contact.imageData
                 }else{
-                    let image = #imageLiteral(resourceName: "man")
+                    let image = #imageLiteral(resourceName: "sad_cloud@2x.png")
                     model.imageData = image.compressedData(quality: 0.1)
                 }
                 model.name = contact.givenName
@@ -53,7 +53,7 @@ class ContactsHelper:NSObject {
             print("unable to fetch contacts")
         }
     }
-    func contacts()->[ContactsResult]{
+    func contacts() -> [ContactsResult] {
         return self.contactsModel
     }
 }

@@ -42,7 +42,7 @@ public enum EFAutoScrollDirection {
     // Pixels, defaults to 20
     public var labelSpacing = AutoScrollLabel.kDefaultLabelBufferSpace
     
-    public var animationOptions: UIViewAnimationOptions = UIViewAnimationOptions.curveLinear
+    public var animationOptions: UIView.AnimationOptions = UIView.AnimationOptions.curveLinear
     
     // Returns YES, if it is actively scrolling, NO if it has paused or if text is within bounds (disables scrolling).
     public var scrolling = false
@@ -153,7 +153,7 @@ public enum EFAutoScrollDirection {
     
     lazy public private(set) var scrollView: UIScrollView = {
         let sv = UIScrollView(frame: self.bounds)
-        sv.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        sv.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         sv.backgroundColor = UIColor.clear
         return sv
     }()
@@ -223,11 +223,11 @@ public enum EFAutoScrollDirection {
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(
             self, selector: #selector(AutoScrollLabel.scrollLabelIfNeeded),
-            name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil
+            name: UIApplication.willEnterForegroundNotification, object: nil
         )
         NotificationCenter.default.addObserver(
             self, selector: #selector(AutoScrollLabel.scrollLabelIfNeeded),
-            name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil
+            name: UIApplication.didBecomeActiveNotification, object: nil
         )
     }
     
@@ -279,7 +279,7 @@ public enum EFAutoScrollDirection {
         UIView.animate(
             withDuration: duration,
             delay: self.pauseInterval,
-            options: [self.animationOptions, UIViewAnimationOptions.allowUserInteraction],
+            options: [self.animationOptions, UIView.AnimationOptions.allowUserInteraction],
             animations: { [weak self] () -> Void in
                 if let strongSelf = self {
                     // Adjust offset

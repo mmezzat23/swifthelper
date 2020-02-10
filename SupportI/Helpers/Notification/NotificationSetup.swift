@@ -11,7 +11,8 @@ protocol FirebaseNotificationDelegate: class {
     func setupFirebase()
     func subscribeFirebase()
     func unSubscribeFirebase()
-    func notificationControl(notification: [AnyHashable: Any], closure: SoundHandler? )
+    func notificationControl(notification: [AnyHashable: Any])
+    func notificationControlWillPresent(notification: [AnyHashable : Any], closure: SoundHandler?)
 }
 extension FirebaseNotificationDelegate where Self: AppDelegate {
     func setupFirebase() {

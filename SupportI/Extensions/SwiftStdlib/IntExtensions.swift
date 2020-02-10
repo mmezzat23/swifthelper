@@ -94,6 +94,13 @@ public extension Int {
 // MARK: - Methods
 public extension Int {
 
+    public func random(_ n: Int = 100) -> Int {
+        return Int(arc4random_uniform(UInt32(n)))
+    }
+    public func randomNumbers(_ n: Int = 100) ->Int {
+        return random(n)
+    }
+
 	/// SwifterSwift: Random integer between two integer values.
 	///
 	/// - Parameters:
