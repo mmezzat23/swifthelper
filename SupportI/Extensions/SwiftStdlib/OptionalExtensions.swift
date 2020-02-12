@@ -19,7 +19,7 @@ public extension Optional {
     ///
     /// - Parameter defaultValue: default value to return if self is nil.
     /// - Returns: self if not nil or default value if nil.
-    public func unwrapped(or defaultValue: Wrapped) -> Wrapped {
+    func unwrapped(or defaultValue: Wrapped) -> Wrapped {
         // http://www.russbishop.net/improving-optionals
         return self ?? defaultValue
     }

@@ -35,7 +35,7 @@ import UIKit
 public extension UIViewController {
 
 	/// SwifterSwift: Check if ViewController is onscreen and not hidden.
-	public var isVisible: Bool {
+    var isVisible: Bool {
 		// http://stackoverflow.com/questions/2777438/how-to-tell-if-uiviewcontrollers-view-is-visible
 		return self.isViewLoaded && view.window != nil
 	}
@@ -50,19 +50,19 @@ public extension UIViewController {
 	/// - Parameters:
 	///   - name: notification name.
 	///   - selector: selector to run with notified.
-	public func addNotificationObserver(name: Notification.Name, selector: Selector) {
+    func addNotificationObserver(name: Notification.Name, selector: Selector) {
 		NotificationCenter.default.addObserver(self, selector: selector, name: name, object: nil)
 	}
 
 	/// SwifterSwift: Unassign as listener to notification.
 	///
 	/// - Parameter name: notification name.
-	public func removeNotificationObserver(name: Notification.Name) {
+    func removeNotificationObserver(name: Notification.Name) {
 		NotificationCenter.default.removeObserver(self, name: name, object: nil)
 	}
 
 	/// SwifterSwift: Unassign as listener from all notifications.
-	public func removeNotificationsObserver() {
+    func removeNotificationsObserver() {
 		NotificationCenter.default.removeObserver(self)
 	}
 
@@ -75,7 +75,7 @@ public extension UIViewController {
     ///   - highlightedButtonIndex: (Optional) index of the button from buttonTitles that should be highlighted. If this parameter is nil no button will be highlighted
     ///   - completion: (Optional) completion block to be invoked when any one of the buttons is tapped. It passes the index of the tapped button as an argument
     /// - Returns: UIAlertController object (discardable).
-    @discardableResult public func showAlert(title: String?, message: String?, buttonTitles: [String]? = nil, highlightedButtonIndex: Int? = nil, completion: ((Int) -> Void)? = nil) -> UIAlertController {
+    @discardableResult func showAlert(title: String?, message: String?, buttonTitles: [String]? = nil, highlightedButtonIndex: Int? = nil, completion: ((Int) -> Void)? = nil) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         var allButtons = buttonTitles ?? [String]()
         if allButtons.count == 0 {

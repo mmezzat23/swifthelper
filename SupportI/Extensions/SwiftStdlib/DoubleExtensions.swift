@@ -18,23 +18,23 @@ public extension Double {
     ///
     /// - Parameter num: num of digits
     /// - Returns: return a string of new value
-    public func decimal(_ num:Int)->String{
+    func decimal(_ num:Int)->String{
         let string = String(format: "%.\(num)f", self)
         return string
     }
 	/// SwifterSwift: Int.
-	public var int: Int {
+    var int: Int {
 		return Int(self)
 	}
 
 	/// SwifterSwift: Float.
-	public var float: Float {
+    var float: Float {
 		return Float(self)
 	}
 
 	#if canImport(CoreGraphics)
 	/// SwifterSwift: CGFloat.
-	public var cgFloat: CGFloat {
+    var cgFloat: CGFloat {
 		return CGFloat(self)
 	}
 	#endif

@@ -25,7 +25,7 @@ public extension Collection {
 	///		arr[safe: 10] -> nil
 	///
 	/// - Parameter index: index of element to access element.
-	public subscript(safe index: Index) -> Iterator.Element? {
+    subscript(safe index: Index) -> Iterator.Element? {
 		return indices.contains(index) ? self[index] : nil
 	}
 
@@ -39,7 +39,7 @@ public extension Collection where Iterator.Element == IntegerLiteralType, Index 
 	/// SwifterSwift: Average of all elements in array.
 	///
 	/// - Returns: the average of the array's elements.
-	public func average() -> Double {
+    func average() -> Double {
 		// http://stackoverflow.com/questions/28288148/making-my-function-calculate-average-of-array-swift
 		return isEmpty ? 0 : Double(reduce(0, +)) / Double(count)
 	}

@@ -15,7 +15,7 @@ public extension UINavigationController {
 	/// SwifterSwift: Pop ViewController with completion handler.
 	///
 	/// - Parameter completion: optional completion handler (default is nil).
-	public func popViewController(_ completion: (() -> Void)? = nil) {
+    func popViewController(_ completion: (() -> Void)? = nil) {
 		// https://github.com/cotkjaer/UserInterface/blob/master/UserInterface/UIViewController.swift
 		CATransaction.begin()
 		CATransaction.setCompletionBlock(completion)
@@ -28,7 +28,7 @@ public extension UINavigationController {
 	/// - Parameters:
 	///   - viewController: viewController to push.
 	///   - completion: optional completion handler (default is nil).
-	public func pushViewController(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
+    func pushViewController(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
 		// https://github.com/cotkjaer/UserInterface/blob/master/UserInterface/UIViewController.swift
 		CATransaction.begin()
 		CATransaction.setCompletionBlock(completion)
@@ -39,7 +39,7 @@ public extension UINavigationController {
 	/// SwifterSwift: Make navigation controller's navigation bar transparent.
 	///
 	/// - Parameter tint: tint color (default is .white).
-	public func makeTransparent(withTint tint: UIColor = .white) {
+    func makeTransparent(withTint tint: UIColor = .white) {
 		navigationBar.setBackgroundImage(UIImage(), for: .default)
 		navigationBar.shadowImage = UIImage()
 		navigationBar.isTranslucent = true
