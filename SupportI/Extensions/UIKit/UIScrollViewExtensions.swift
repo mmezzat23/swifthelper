@@ -17,7 +17,7 @@ extension UIScrollView {
     ///
     /// - Returns: bool value
     
-    func didEndDragging(forSwipe swipe:Bool = true)->Bool {
+    func didEndDragging(forSwipe swipe: Bool = true) -> Bool {
         if ((self.contentOffset.y + self.frame.size.height) >= self.contentSize.height)
         {
             if swipe {

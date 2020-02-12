@@ -171,3 +171,15 @@ extension EFCounter: EFCount {
         updateBlock?(currentValue)
     }
 }
+
+public enum EFTimingFunction: EFTiming {
+    case linear
+    
+    public func update(_ time: CGFloat) -> CGFloat {
+        switch self {
+        case .linear:
+            return time
+            
+        }
+    }
+}

@@ -90,13 +90,13 @@ extension BaseController: BaseViewControllerProtocol {
     
     func setupBase() {
         //init menu
-        if(menuBtn != nil){
-            MenueHelper.instance.setUpMenuButton(delegate: self, menuBtn: menuBtn)
+        if(menuBtn != nil) {
+            MenuHelper.instance.setUpMenuButton(delegate: self, menuBtn: menuBtn)
         }
-        if(menuBtnButton != nil){
-            MenueHelper.instance.setUpMenuButton(delegate: self, menuBtn: menuBtnButton)
+        if(menuBtnButton != nil) {
+            MenuHelper.instance.setUpMenuButton(delegate: self, menuBtn: menuBtnButton)
         }
-        if(!BaseController.configLoaded){
+        if(!BaseController.configLoaded) {
             //baseViewModel = SettingViewModel()
             //baseViewModel?.fetchSetting()
             bindSetting()

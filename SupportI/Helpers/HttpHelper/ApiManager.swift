@@ -32,7 +32,9 @@ class ApiManager:BaseApi,Api {
                     super.refresh()
                     super.connection(method,type: type, completionHandler: completionHandler)
                 }else{
-                    self.showAlert(message: translate("aunthorized"),indetifier:Constants.login)
+                    self.makeAlert(translate("aunthorized"), closure: {
+                        print("Go TO Login")
+                    })
                 }
             }
         }else{
@@ -48,7 +50,9 @@ class ApiManager:BaseApi,Api {
                     super.refresh()
                     super.connection(method.rawValue,type: type, completionHandler: completionHandler)
                 }else{
-                    self.showAlert(message: translate("aunthorized"),indetifier:Constants.login)
+                    self.makeAlert(translate("aunthorized"), closure: {
+                        print("Go TO Login")
+                    })
                 }
             }
         }else{

@@ -1,7 +1,7 @@
 import Alamofire
 import NVActivityIndicatorView
 
-class BaseApi:Downloader,Paginator {
+class BaseApi:Downloader, Paginator, Alertable {
  
    
     
@@ -81,10 +81,12 @@ class BaseApi:Downloader,Paginator {
                     //completionHandler(nil)
                     case 401?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                        self.showAlert(message: translate("the_login_is_required"),indetifier: Constants.login)
+                        self.makeAlert(translate("the_login_is_required"), closure: {
+                            print("Go TO Login")
+                        })
                     case 404?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                        self.showAlert(message: translate("not_found"))
+                        self.makeAlert(translate("not_found"), closure: {})
                     case 422?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                         self.setErrorMessage(data: response.data)
@@ -96,7 +98,7 @@ class BaseApi:Downloader,Paginator {
                     }
                 case .failure(let error):
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                    self.showAlert(message: error.localizedDescription)
+                    self.makeAlert(error.localizedDescription, closure: {})
                     
                 }
                 

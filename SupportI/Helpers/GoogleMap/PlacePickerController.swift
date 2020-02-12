@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-import GooglePlacePicker
+
 class PlacePickerController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var scrollView: UIScrollView! {

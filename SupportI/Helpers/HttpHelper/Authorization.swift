@@ -1,5 +1,6 @@
+import CoreData
 
-class Authorization{
+class Authorization {
     struct Static {
         static var instance: Authorization?
     }

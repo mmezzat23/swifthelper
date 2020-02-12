@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Alertable: class {
     func makeAlert(_ message: String, closure: @escaping ()->() )

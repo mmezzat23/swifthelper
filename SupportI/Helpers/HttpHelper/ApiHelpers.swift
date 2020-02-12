@@ -1,3 +1,6 @@
+import CoreData
+import UIKit
+
 
 public func api(_ method:Apis , _ paramters:[Any] = [])->String {
     var url = method.rawValue
@@ -8,7 +11,7 @@ public func api(_ method:Apis , _ paramters:[Any] = [])->String {
     
 }
 
-extension BaseApi{
+extension BaseApi {
    
     func safeUrl(url:String) -> String {
         let safeURL = url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
@@ -35,63 +38,7 @@ extension BaseApi{
         return genericUrl
     }
     
-    func showAlert(message:String,indetifier:String = "")  {
-        
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
-        if(indetifier.isEmpty){
-            let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
-            }
-            alert.addAction(acceptAction)
-            
-        }else{
-            let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
-                let storyboard: UIStoryboard = UIStoryboard(name: Constants.storyboard, bundle: nil)
-                let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: indetifier)
-                
-                let topVC = UIApplication.topViewController()
-                if topVC is SWRevealViewController {
-                    let sw  = topVC as! SWRevealViewController
-                    sw.pushFrontViewController(vc, animated: true)
-                }else{
-                    UIApplication.topViewController()?.navigationController?.pushViewController(vc)
-                }
-            }
-            alert.addAction(acceptAction)
-            
-        }
-        
-        UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
-        
-        
-    }
-    func loginAlert()  {
-        
-        let alert = UIAlertController(title: translate("alert"), message: translate("the_login_is_required"), preferredStyle: UIAlertController.Style.alert)
-        
-        let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
-            let storyboard: UIStoryboard = UIStoryboard(name: Constants.storyboard, bundle: nil)
-            let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: Constants.login)
-            
-            let topVC = UIApplication.topViewController()
-            if topVC is SWRevealViewController {
-                let sw  = topVC as! SWRevealViewController
-                sw.pushFrontViewController(vc, animated: true)
-            }else{
-                UIApplication.topViewController()?.navigationController?.pushViewController(vc)
-            }
-        }
-        let cancelAction = UIAlertAction(title: translate("cancel"), style: .default) { (_) -> Void in
-           
-        }
-        alert.addAction(acceptAction)
-        alert.addAction(cancelAction)
-        
-        
-        UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
-        
-        
-    }
-
+   
    
     func setErrorMessage(data: Data?) {
         guard data != nil else { return }
@@ -100,10 +47,10 @@ extension BaseApi{
             if let _ = error.message {
                 errors.message = error.message
             }
-            self.showAlert(message: errors.description())
+            self.makeAlert(errors.description(), closure: {})
         } else {
             if let _ = error.message {
-                self.showAlert(message: error.message!)
+                self.makeAlert(error.message!, closure: {})
             }
         }
         

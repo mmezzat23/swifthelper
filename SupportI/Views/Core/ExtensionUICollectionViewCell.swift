@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIView {
     func calculateMargin(_ margin:Int = 20) -> CGFloat {

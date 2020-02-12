@@ -44,7 +44,7 @@ open class IQBarButtonItem: UIBarButtonItem {
 
         let  appearanceProxy = self.appearance()
 
-        let states : [UIControlState] = [.normal,.highlighted,.disabled,.selected,.application,.reserved]
+        let states : [UIControl.State] = [.normal,.highlighted,.disabled,.selected,.application,.reserved]
 
         for state in states {
 
@@ -63,7 +63,7 @@ open class IQBarButtonItem: UIBarButtonItem {
         didSet {
 
             #if swift(>=4)
-                var textAttributes = [NSAttributedStringKey : Any]()
+            var textAttributes = [NSAttributedString.Key : Any]()
                 
                 if let attributes = titleTextAttributes(for: .normal) {
                 

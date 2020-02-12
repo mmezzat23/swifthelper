@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 protocol PickerViewDelegate: class {
     func didSelectItem(item: Int)

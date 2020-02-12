@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
-protocol POPUPView{
+protocol POPUPView {
     func pushPop(vc:UIViewController)
     func topMostController() -> UIViewController
 }
 
-extension POPUPView where Self:UIViewController{
+extension POPUPView where Self:UIViewController {
     
     func pushPop(vc:UIViewController)  {
         //show window

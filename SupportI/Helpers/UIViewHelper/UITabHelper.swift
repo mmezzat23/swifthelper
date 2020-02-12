@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 typealias HandlerView = (() -> Void)
 internal var handlerActions: [UIView: HandlerView] = [:]

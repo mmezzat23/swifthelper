@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /** vars helper use it **/
 fileprivate var refreshControlFile: UIRefreshControl?

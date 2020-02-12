@@ -5,6 +5,7 @@
 //  Created by Omar Albeik on 8/5/16.
 //  Copyright © 2016 SwifterSwift
 //
+import CoreData
 
 // MARK: - Methods (Numeric)
 public extension Array where Element: Numeric {
