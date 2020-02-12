@@ -85,7 +85,7 @@ extension MapPlaceHelper where Self:GoogleMapHelper {
             let delegate = self.placePickerDelegate as? UIViewController
             let storyboard = UIStoryboard(name: "PlacesPickerHelper", bundle: nil)
             guard let navVC = storyboard.instantiateInitialViewController() as? UINavigationController else { return }
-            let pickerVC = navVC.rootViewController as? PlacePickerController
+            let pickerVC = navVC.topViewController as? PlacePickerController
             pickerVC?.delegate = self.placePickerDelegate
             delegate?.present(navVC, animated: true, completion: nil)
             //delegate?.present(pickerVC, animated: false, completion: nil)

@@ -45,8 +45,8 @@ class Authorization{
                     ApiManager.instance.connection(.token,type: .post) { response in
                         Authorization.running = false
                         
-                        let data = TokenModel.convertToModel(response: response)
-                        if data.access_token != nil{
+                        guard let data = try? JSONDecoder().decode(TokenModel.self, from: response ?? Data()) else { return }
+                        if data.access_token != nil {
                             let defaults = UserDefaults.standard
                             defaults.set(data.access_token! , forKey: "access_token")
                             defaults.set(data.expires_in!, forKey: "expires_in")

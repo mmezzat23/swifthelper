@@ -143,28 +143,28 @@ public extension UIButton {
 	/// SwifterSwift: Set image for all states.
 	///
 	/// - Parameter image: UIImage.
-	public func setImageForAllStates(_ image: UIImage) {
+    func setImageForAllStates(_ image: UIImage) {
 		states.forEach { self.setImage(image, for: $0) }
 	}
 
 	/// SwifterSwift: Set title color for all states.
 	///
 	/// - Parameter color: UIColor.
-	public func setTitleColorForAllStates(_ color: UIColor) {
+    func setTitleColorForAllStates(_ color: UIColor) {
 		states.forEach { self.setTitleColor(color, for: $0) }
 	}
 
 	/// SwifterSwift: Set title for all states.
 	///
 	/// - Parameter title: title string.
-	public func setTitleForAllStates(_ title: String) {
+    func setTitleForAllStates(_ title: String) {
 		states.forEach { self.setTitle(title, for: $0) }
 	}
 
     /// SwifterSwift: Center align title text and image on UIButton
     ///
     /// - Parameter spacing: spacing between UIButton title text and UIButton Image.
-    public func centerTextAndImage(spacing: CGFloat) {
+    func centerTextAndImage(spacing: CGFloat) {
         let insetAmount = spacing / 2
         imageEdgeInsets = UIEdgeInsets(top: 0, left: -insetAmount, bottom: 0, right: insetAmount)
         titleEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: -insetAmount)

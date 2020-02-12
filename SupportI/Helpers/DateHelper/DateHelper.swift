@@ -100,7 +100,7 @@ class DateHelper {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         //dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600 * 2)
-        dateFormatter.locale = Locale(identifier: Date.locale()) // set locale to reliable US_POSIX
+        dateFormatter.locale = Locale(identifier: locale()) // set locale to reliable US_POSIX
         
         if dateD != nil {
             let dateString = dateFormatter.string(from: dateD!)

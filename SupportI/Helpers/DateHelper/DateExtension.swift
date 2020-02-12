@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Date{
+extension Date {
  
     
     static func current() -> String? {
@@ -19,7 +19,7 @@ extension Date{
         let dateOrginial = dateFormatter.string(from:date)
         return dateOrginial
     }
-    static func currentDate()->Date?{
+    static func currentDate() -> Date? {
         guard let date = Date.current() else {return nil}
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -27,7 +27,7 @@ extension Date{
         let dateOrginial = dateFormatter.date(from:date)
         return dateOrginial
     }
-    static func currentDay()->String?{
+    static func currentDay() -> String? {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

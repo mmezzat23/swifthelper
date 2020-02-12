@@ -17,7 +17,7 @@ public extension Sequence {
     ///
     /// - Parameter condition: condition to evaluate each element against.
     /// - Returns: true when all elements in the array match the specified condition.
-    public func all(matching condition: (Element) throws -> Bool) rethrows -> Bool {
+    func all(matching condition: (Element) throws -> Bool) rethrows -> Bool {
         return try !contains { try !condition($0) }
     }
 
@@ -28,7 +28,7 @@ public extension Sequence {
     ///
     /// - Parameter condition: condition to evaluate each element against.
     /// - Returns: true when no elements in the array match the specified condition.
-    public func none(matching condition: (Element) throws -> Bool) rethrows -> Bool {
+    func none(matching condition: (Element) throws -> Bool) rethrows -> Bool {
         return try !contains { try condition($0) }
     }
 
@@ -39,7 +39,7 @@ public extension Sequence {
     ///
     /// - Parameter condition: condition to evaluate each element against.
     /// - Returns: true when no elements in the array match the specified condition.
-    public func any(matching condition: (Element) throws -> Bool) rethrows -> Bool {
+    func any(matching condition: (Element) throws -> Bool) rethrows -> Bool {
         return try contains { try condition($0) }
     }
 

@@ -10,29 +10,29 @@ import UIKit
 import AlamofireImage
 
 fileprivate var staticalyTranstion:UIImageView.ImageTransition? = nil
-fileprivate var isLoadedPrivate:[UIImageView:Bool] = [:]
-extension UIImageView{
-    var isLoaded:Bool {
-        set{
+fileprivate var isLoadedPrivate: [UIImageView:Bool] = [:]
+
+extension UIImageView {
+    var isLoaded: Bool {
+        set {
             isLoadedPrivate[self] = newValue
-        }get{
+        } get {
             if isLoadedPrivate[self] != nil {
                 return true
-            }else{
+            } else {
                 return false
             }
         }
     }
-    var imageTranstion:ImageTransition?{
-        get{
+    var imageTranstion: ImageTransition? {
+        get {
             if staticalyTranstion == nil {
                 staticalyTranstion = UIImageView.randomTransiation()
                 return staticalyTranstion
-            }else{
+            } else {
                 return staticalyTranstion
             }
-        }
-        set{
+        } set {
             staticalyTranstion = nil
         }
     }
@@ -78,7 +78,7 @@ extension UIImageView{
             })
             
             
-        }else{
+        } else {
             self.af_setImage(withURL: finalUrl, placeholderImage:  Constants.placeHolderImage, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: { _ in
                 self.isLoaded = true
             })

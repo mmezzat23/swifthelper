@@ -10,7 +10,7 @@
 public extension SignedNumeric {
 
 	/// SwifterSwift: String.
-	public var string: String {
+    var string: String {
 		return String(describing: self)
 	}
 

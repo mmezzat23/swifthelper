@@ -10,10 +10,11 @@ import Foundation
 import CoreLocation
 
 typealias OnUpdateLocation = ((CLLocationCoordinate2D?) -> Void)
+
 protocol LocationDelegate: class {
     func didUpdateLocation(lat: Double, lng: Double)
 }
-extension MapAddressDelegate {
+extension LocationDelegate {
     func didUpdateLocation(lat: Double, lng: Double) {
         
     }

@@ -133,7 +133,7 @@ public class Validator {
      
      - returns: No return value.
      */
-    public func validate(delegate:ValidationDelegate) {
+    public func validate(delegate: ValidationDelegate) {
         
         self.validateAllFields()
         

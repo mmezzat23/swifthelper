@@ -25,7 +25,7 @@ protocol PresentingViewProtocol :class {
 extension PresentingViewProtocol where Self:UIViewController {
     func randomIndicatorView(){
         // pick and return a new value
-        var rand = random(32)
+        var rand = Int().random(32)
         if rand == 31 || rand == 25 || rand == 19 || rand == 20 || rand == 14 || rand == 15 || rand == 4 || rand == 26 {
             rand = 29
         }

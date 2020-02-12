@@ -12,8 +12,8 @@ public extension Bool {
     ///        false.toggled -> true
     ///        true.toggled -> false
     ///
-    @available(*, deprecated: 4.3, message: "Use !self instead.")
-    public var toggled: Bool {
+    @available(*, deprecated, message: "Use !self instead.")
+    var toggled: Bool {
         return !self
     }
 
@@ -29,8 +29,8 @@ public extension Bool {
     ///        print(bool) -> true
     ///
     /// - Returns: inversed value of bool.
-    @available(*, deprecated: 4.3, message: "Use !self instead.")
-    public mutating func toggle() -> Bool {
+    @available(*, deprecated, message: "Use !self instead.")
+    mutating func toggle() -> Bool {
         self = !self
         return self
     }
@@ -43,7 +43,7 @@ extension String {
 	///
 	///		"Hello world!".length -> 12
 	///
-	@available(*, deprecated: 4.1.0, message: "Use .count instead.")
+    @available(*, deprecated, message: "Use .count instead.")
 	public var length: Int {
 		return count
 	}
@@ -55,7 +55,7 @@ extension String {
 	///
 	/// - Parameter i: string index the slicing should start from.
 	/// - Returns: sliced substring starting from start index (if applicable) (example: "Hello world".slicing(at: 6) -> "world")
-	@available(*, deprecated: 4.1.0, message: "Use string[safe: i] instead.")
+    @available(*, deprecated, message: "Use string[safe: i] instead.")
 	public func slicing(at i: Int) -> String? {
 		guard i < count else {
 			return nil
@@ -71,7 +71,7 @@ extension String {
 	///   - start: string index the slicing should start from.
 	///   - end: string index the slicing should end at.
 	/// - Returns: sliced substring starting from start index, and ends at end index (if applicable) (example: "Hello World".slicing(from: 6, to: 11) -> "World")
-	@available(*, deprecated: 4.1.0, message: "Use string[safe: start..<end] instead.")
+    @available(*, deprecated, message: "Use string[safe: start..<end] instead.")
 	public func slicing(from start: Int, to end: Int) -> String? {
 		guard end >= start else {
 			return nil
@@ -86,7 +86,7 @@ extension String {
 	///
 	/// - Parameter string: substring to search for.
 	/// - Returns: first index of substring in string (if applicable).
-	@available(*, deprecated: 4.1.0, message: "Use string.index(of: Character) or string.range(of: StringProtocol) instead.")
+    @available(*, deprecated, message: "Use string.index(of: Character) or string.range(of: StringProtocol) instead.")
 	public func firstIndex(of string: String) -> Int? {
 		return map({ String($0) }).index(of: string)
 	}
@@ -99,7 +99,7 @@ extension String {
 	///
 	/// - Parameter separator: separator to split string by.
 	/// - Returns: array of strings separated by given string.
-	@available(*, deprecated: 4.1.0, message: "Use string.split(separator: Character) instead.")
+    @available(*, deprecated, message: "Use string.split(separator: Character) instead.")
 	public func splitted(by separator: Character) -> [String] {
 		return split { $0 == separator }.map(String.init)
 	}
@@ -116,8 +116,8 @@ public extension Array {
 	///
 	/// - Parameter index: index of element.
 	/// - Returns: optional element (if exists).
-	@available(*, deprecated: 4.3, message: "Use subscript(safe:) instead", renamed: "subscript(safe:)")
-	public func item(at index: Int) -> Element? {
+    @available(*, deprecated, message: "Use subscript(safe:) instead", renamed: "subscript(safe:)")
+    func item(at index: Int) -> Element? {
 		guard startIndex..<endIndex ~= index else { return nil }
 		return self[index]
 	}
@@ -133,8 +133,8 @@ public extension Array where Element: Equatable {
 	///
 	/// - Returns: an array of unique elements.
 	///
-	@available(*, deprecated: 4.3, message: "Use withoutDuplicates() instead", renamed: "withoutDuplicates")
-	public func duplicatesRemoved() -> [Element] {
+    @available(*, deprecated, message: "Use withoutDuplicates() instead", renamed: "withoutDuplicates")
+    func duplicatesRemoved() -> [Element] {
 		// Thanks to https://github.com/sairamkotha for improving the method
 		return reduce(into: [Element]()) {
 			if !$0.contains($1) {
@@ -151,8 +151,8 @@ public extension Array where Element: Equatable {
 	///
 	/// - Parameter item: item to check.
 	/// - Returns: an array with all indexes of the given item.
-	@available(*, deprecated: 4.1.1, message: "Use indices(of:) instead", renamed: "indices(of:)")
-	public func indexes(of item: Element) -> [Int] {
+    @available(*, deprecated, message: "Use indices(of:) instead", renamed: "indices(of:)")
+    func indexes(of item: Element) -> [Int] {
 		var indexes: [Int] = []
 		for index in startIndex..<endIndex where self[index] == item {
 			indexes.append(index)
@@ -166,8 +166,8 @@ public extension Array where Element: Equatable {
 	///		[].pop() // returns nil since the array is empty.
 	///
 	/// - Returns: last element in array (if applicable).
-	@available(*, deprecated: 4.3, message: "Use popLast() instead")
-	@discardableResult public mutating func pop() -> Element? {
+    @available(*, deprecated, message: "Use popLast() instead")
+    @discardableResult mutating func pop() -> Element? {
 		return popLast()
 	}
 
@@ -177,8 +177,8 @@ public extension Array where Element: Equatable {
 	///		["h", "e", "l", "l"].push("o") -> ["h", "e", "l", "l", "o"]
 	///
 	/// - Parameter newElement: element to insert.
-	@available(*, deprecated: 4.3, message: "Use append() instead")
-	public mutating func push(_ newElement: Element) {
+    @available(*, deprecated, message: "Use append() instead")
+    mutating func push(_ newElement: Element) {
 		append(newElement)
 	}
 
@@ -190,8 +190,8 @@ public extension Array where Element: Equatable {
 	/// - Parameters:
 	///   - index: index of first element.
 	///   - otherIndex: index of other element.
-	@available(*, deprecated: 4.3, message: "Use swapAt() instead")
-	public mutating func swap(from index: Int, to otherIndex: Int) {
+    @available(*, deprecated, message: "Use swapAt() instead")
+    mutating func swap(from index: Int, to otherIndex: Int) {
 		swapAt(index, otherIndex)
 	}
 

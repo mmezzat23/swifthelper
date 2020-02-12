@@ -1,7 +1,7 @@
 import UIKit
 
-var validatorArray = [UITextField:[Rule]]()
-extension UITextField{
+var validatorArray = [UITextField: [Rule]]()
+extension UITextField {
     
     @IBInspectable public var validationRules: String {
         get {
@@ -20,11 +20,11 @@ extension UITextField{
         }
     }
     
-    public func validations(rules:String) -> [Rule]  {
+    public func validations(rules: String) -> [Rule]  {
         let rulesArray = rules.split(separator: "|")
         var rulesValide = [Rule]()
-        for rule in rulesArray{
-            switch rule{
+        for rule in rulesArray {
+            switch rule {
             case "required":
                 rulesValide.append(RequiredRule())
             case "email":
@@ -40,8 +40,8 @@ extension UITextField{
         }
         return rulesValide
     }
-    public func validator()->[Rule]{
-        if let valid = validatorArray[self]{
+    public func validator() -> [Rule] {
+        if let valid = validatorArray[self] {
             return valid
         }
         return []

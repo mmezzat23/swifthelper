@@ -41,7 +41,7 @@ extension AppDelegate: FirebaseNotificationDelegate {
         
     }
     func notificationControlWillPresent(notification: [AnyHashable : Any], closure: SoundHandler? = nil) {
-        
+        closure?(true)
     }
 
 }

@@ -93,16 +93,16 @@ extension BaseApi{
     }
 
    
-    func setErrorMessage(data:Data?){
+    func setErrorMessage(data: Data?) {
         guard let response = data else { return }
-        let error = BaseModel.convertToModel(response: response)
-        if let errors = error.errors{
-            if let _ = error.message{
+        guard let error = try? JSONDecoder().decode(BaseModel.self, from: data ?? Data()) else { return }
+        if let errors = error.errors {
+            if let _ = error.message {
                 errors.message = error.message
             }
             self.showAlert(message: errors.description())
-        }else{
-            if let _ = error.message{
+        } else {
+            if let _ = error.message {
                 self.showAlert(message: error.message!)
             }
         }

@@ -62,7 +62,7 @@ class PlacePickerController: UIViewController {
     @objc func search() {
         let storyboard = UIStoryboard(name: "PlacesPickerHelper", bundle: nil)
         guard let navVC = storyboard.instantiateViewController(withIdentifier: "PlaceSearchNav") as? UINavigationController else { return }
-        let searchVC = navVC.rootViewController as? PlacePickerSearchController
+        let searchVC = navVC.topViewController as? PlacePickerSearchController
         searchVC?.delegate = self
         self.present(navVC, animated: true, completion: nil)
     }

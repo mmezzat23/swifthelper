@@ -14,44 +14,44 @@ import CoreGraphics
 public extension Int {
 
 	/// SwifterSwift: CountableRange 0..<Int.
-	public var countableRange: CountableRange<Int> {
+    var countableRange: CountableRange<Int> {
 		return 0..<self
 	}
 
 	/// SwifterSwift: Radian value of degree input.
-	public var degreesToRadians: Double {
+    var degreesToRadians: Double {
 		return Double.pi * Double(self) / 180.0
 	}
 
 	/// SwifterSwift: Degree value of radian input
-	public var radiansToDegrees: Double {
+    var radiansToDegrees: Double {
 		return Double(self) * 180 / Double.pi
 	}
 
 	/// SwifterSwift: UInt.
-	public var uInt: UInt {
+    var uInt: UInt {
 		return UInt(self)
 	}
 
 	/// SwifterSwift: Double.
-	public var double: Double {
+    var double: Double {
 		return Double(self)
 	}
 
 	/// SwifterSwift: Float.
-	public var float: Float {
+    var float: Float {
 		return Float(self)
 	}
 
 	#if canImport(CoreGraphics)
 	/// SwifterSwift: CGFloat.
-	public var cgFloat: CGFloat {
+    var cgFloat: CGFloat {
 		return CGFloat(self)
 	}
 	#endif
 
 	/// SwifterSwift: String formatted for values over ±1000 (example: 1k, -2k, 100k, 1kk, -5kk..)
-	public var kFormatted: String {
+    var kFormatted: String {
 		var sign: String {
 			return self >= 0 ? "" : "-"
 		}
@@ -67,7 +67,7 @@ public extension Int {
 	}
 
 	/// SwifterSwift: Array of digits of integer value.
-	public var digits: [Int] {
+    var digits: [Int] {
 		guard self != 0 else { return [0] }
 		var digits = [Int]()
 		var number = self.abs
@@ -83,7 +83,7 @@ public extension Int {
 	}
 
 	/// SwifterSwift: Number of digits of integer value.
-	public var digitsCount: Int {
+    var digitsCount: Int {
 		guard self != 0 else { return 1 }
 		let number = Double(self.abs)
 		return Int(log10(number) + 1)
@@ -94,10 +94,10 @@ public extension Int {
 // MARK: - Methods
 public extension Int {
 
-    public func random(_ n: Int = 100) -> Int {
+    func random(_ n: Int = 100) -> Int {
         return Int(arc4random_uniform(UInt32(n)))
     }
-    public func randomNumbers(_ n: Int = 100) ->Int {
+    func randomNumbers(_ n: Int = 100) ->Int {
         return random(n)
     }
 
@@ -107,7 +107,7 @@ public extension Int {
 	///   - min: minimum number to start random from.
 	///   - max: maximum number random number end before.
 	/// - Returns: random double between two double values.
-	public static func random(between min: Int, and max: Int) -> Int {
+    static func random(between min: Int, and max: Int) -> Int {
 		return random(inRange: min...max)
 	}
 
@@ -115,7 +115,7 @@ public extension Int {
 	///
 	/// - Parameter range: closed interval range.
 	/// - Returns: random double in the given closed range.
-	public static func random(inRange range: ClosedRange<Int>) -> Int {
+    static func random(inRange range: ClosedRange<Int>) -> Int {
 		let delta = UInt32(range.upperBound - range.lowerBound + 1)
 		return range.lowerBound + Int(arc4random_uniform(delta))
 	}
@@ -123,7 +123,7 @@ public extension Int {
 	/// SwifterSwift: check if given integer prime or not.
 	/// Warning: Using big numbers can be computationally expensive!
 	/// - Returns: true or false depending on prime-ness
-	public func isPrime() -> Bool {
+    func isPrime() -> Bool {
 		// To improve speed on latter loop :)
 		if self == 2 {
 			return true
@@ -148,7 +148,7 @@ public extension Int {
 	///10.romanNumeral() -> "X"
 	///
 	/// - Returns: The roman numeral string.
-	public func romanNumeral() -> String? {
+    func romanNumeral() -> String? {
 		// https://gist.github.com/kumo/a8e1cb1f4b7cff1548c7
 		guard self > 0 else { // there is no roman numerals for 0 or negative numbers
 			return nil
@@ -174,7 +174,7 @@ public extension Int {
 
 	// swiftlint:disable next identifier_name
 	/// SwifterSwift: Rounds to the closest multiple of n
-	public func roundToNearest(_ n: Int) -> Int {
+    func roundToNearest(_ n: Int) -> Int {
 		return n == 0 ? self : Int(round(Double(self) / Double(n))) * n
 	}
 
@@ -188,14 +188,14 @@ public extension Int {
 	/// - Parameters:
 	///   - min: minimum number to start random from.
 	///   - max: maximum number random number end before.
-	public init(randomBetween min: Int, and max: Int) {
+    init(randomBetween min: Int, and max: Int) {
 		self = Int.random(between: min, and: max)
 	}
 
 	/// SwifterSwift: Create a random integer in a closed interval range.
 	///
 	/// - Parameter range: closed interval range.
-	public init(randomInRange range: ClosedRange<Int>) {
+    init(randomInRange range: ClosedRange<Int>) {
 		self = Int.random(inRange: range)
 	}
 

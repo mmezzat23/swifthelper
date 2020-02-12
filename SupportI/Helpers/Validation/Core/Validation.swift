@@ -8,16 +8,16 @@
 
 import UIKit
 
-class Validation :ValidationDelegate {
+class Validation: ValidationDelegate, Alertable {
     public let validator = Validator()
     public var success:Bool = false
     public var message:String = ""
     
     
-    init(textFields:[UITextField]){
+    init(textFields: [UITextField]) {
 
         
-        for textField in textFields{
+        for textField in textFields {
         
             validator.registerField(textField: textField, rules: textField.validator())
             //validator.registerField(textField: textField, rules: rules[textField]!)
@@ -45,7 +45,7 @@ class Validation :ValidationDelegate {
             
             }, error:{ (validationError) -> Void in
                 
-                if !(validationError.textField.text?.isEmpty)!{
+                if !(validationError.textField.text?.isEmpty)! {
                     let text = validationError.textField.text!
                     self.message = self.message + " \n "+text+" "+validationError.errorMessage
                 }
@@ -72,26 +72,27 @@ class Validation :ValidationDelegate {
     }
     
     func validationSuccessful() {
-        self.success=true
+        self.success = true
     }
     
     func validationFailed(errors: [UITextField : ValidationError]) {
-        self.success=false
-        self.showErrors(message: self.message)
+        self.success = false
+//        self.showErrors(message: self.message)
+        makeAlert(message, closure: {})
     }
     
     
-    func showErrors(message:String,indetifier:String = "")  {
-        
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
-        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-        let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
-        }
-        alert.addAction(acceptAction)
-        
-        
-        
-    }
+//    func showErrors(message:String,indetifier:String = "")  {
+//
+//        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
+//        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+//        let acceptAction = UIAlertAction(title: translate("ok"), style: .default) { (_) -> Void in
+//        }
+//        alert.addAction(acceptAction)
+//
+//
+//
+//    }
     
     
 }

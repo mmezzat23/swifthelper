@@ -12,7 +12,7 @@ protocol KWTextFieldDelegate: class {
     func moveToNext(_ textFieldView: KWTextFieldView)
     func moveToPrevious(_ textFieldView: KWTextFieldView, oldCode: String)
     func didChangeCharacters()
-    func didChangeCharacters(_ textFieldView:KWTextFieldView)
+    func didChangeCharacters(_ textFieldView: KWTextFieldView)
 }
 
 @IBDesignable class KWTextFieldView: UIView {

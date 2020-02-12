@@ -61,7 +61,7 @@ class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionContro
     private func generateFileName(_ urlTask:String){
         let file = URL(string:urlTask)
         guard let url = file else { return }
-        self.fileName = randomString()+"."+url.pathExtension
+        self.fileName = String.random(ofLength: 20)+"."+url.pathExtension
     }
     private func initTask(_ urlTask:String){
         let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
