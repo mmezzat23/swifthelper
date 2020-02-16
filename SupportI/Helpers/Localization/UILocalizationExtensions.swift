@@ -2,7 +2,33 @@ import UIKit
 fileprivate var textFieldUnderlineActive:[UITextField:UIColor] = [:]
 fileprivate var textFieldUnderline:[UITextField:UIColor] = [:]
 
-extension UILabel{
+//func getDocumentsDirectory() -> URL {
+//    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//    return paths[0]
+//}
+//func writeFile(value: String) {
+//    let str = fileLocalize() + "\n" + value
+//    let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
+//
+//    do {
+//        try str.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
+//    } catch {
+//        // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
+//    }
+//}
+//func fileLocalize() -> String {
+//    guard let url = Bundle.main.url(forResource: "Localizable", withExtension: "strings") else { return "" }
+//
+//    let contents: String
+//    do {
+//        contents = try String(contentsOf: url)
+//        return contents
+//    } catch {
+//        print(error) // Error Domain=NSCocoaErrorDomain Code=262 "The file couldn’t be opened because the specified URL type isn’t supported."
+//        return ""
+//    }
+//}
+extension UILabel {
     public func controlAlignment(){
         if(self.textAlignment != .center){
             if(getAppLang() == "ar" || getAppLang() == "AR"){
@@ -20,12 +46,12 @@ extension UILabel{
         set {
             self.controlAlignment()
             self.text = translate(newValue)
-            
+
         }
     }
 }
-extension UIButton{
-    public func controlAlignment(){
+extension UIButton {
+    public func controlAlignment() {
         if(self.titleLabel?.textAlignment != .center){
             if(getAppLang() == "ar" || getAppLang() == "AR"){
                 self.titleLabel?.textAlignment = .right
@@ -34,7 +60,7 @@ extension UIButton{
             }
         }
     }
-    public func controlImageEdge(){
+    public func controlImageEdge() {
         if(LocalizationHelper.getAppLang() == "ar" || LocalizationHelper.getAppLang() == "AR"){
             if(self.imageEdgeInsets.right > 0){
                 self.imageEdgeInsets.left = self.imageEdgeInsets.right

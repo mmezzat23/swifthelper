@@ -45,12 +45,12 @@ class MenuHelper {
         SideMenuManager.default.menuFadeStatusBar = true
     }
     
-    func setUpMenuButton(delegate: UIViewController, menuBtn: UIBarButtonItem ) {
+    func setUpMenuButton(delegate: UIViewController, menuBtn: UIBarButtonItem) {
         self.delegate = delegate
         // Define the menus
         setupMenu()
         menuBtn.action = #selector(MenuHelper.toggoleMenu)
-
+        
     }
     func setUpMenuButton(delegate: UIViewController, menuBtn: UIButton) {
         self.delegate = delegate
@@ -58,6 +58,7 @@ class MenuHelper {
         setupMenu()
         menuBtn.addTarget(self, action:#selector(MenuHelper.toggoleMenu), for: .touchUpInside)
     }
+    
     @objc func toggoleMenu() {
         let sideMenu = storyboard.instantiateViewController(withIdentifier: navID) as! UISideMenuNavigationController
         if getAppLang() == "ar" {

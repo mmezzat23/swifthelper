@@ -47,14 +47,9 @@ extension BaseViewControllerProtocol where Self: BaseController {
         return vc as! T
     }
     func push(_ view:UIViewController,_ animated:Bool = true)  {
-        if useMenu {
-            //let topController = UIApplication.shared.keyWindow?.rootViewController as! SWRevealViewController
-            //topController.pushFrontViewController(view, animated: animated)
-        } else {
-            self.navigationController?.delegate = self
-            view.transitioningDelegate = self
-            self.navigationController?.pushViewController(view, animated: animated)
-        }
+        self.navigationController?.delegate = self
+        view.transitioningDelegate = self
+        self.navigationController?.pushViewController(view, animated: animated)
     }
     
 }

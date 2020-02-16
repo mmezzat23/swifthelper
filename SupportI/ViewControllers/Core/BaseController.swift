@@ -13,10 +13,8 @@ import NVActivityIndicatorView
 class BaseController : UIViewController, PresentingViewProtocol, POPUPView, Alertable {
     
     var hiddenNav:Bool = false
-    var useMenu:Bool = false
     var pushTranstion:Bool = true
     var popTranstion:Bool = false
-    
     var publicFont:UIFont? = nil
   
     var centerImageNavigation:UIImageView? {
@@ -29,6 +27,7 @@ class BaseController : UIViewController, PresentingViewProtocol, POPUPView, Aler
             }
         }
     }
+    
     @IBOutlet weak var menuBtnButton: UIButton!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var titleBar: UIBarButtonItem!
