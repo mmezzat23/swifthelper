@@ -8,7 +8,7 @@ import CoreData
 import Alamofire
 
 
-class ApiManager:BaseApi,Api {
+class ApiManager: BaseApi, Api {
  
     struct Static {
         static var instance: ApiManager?
@@ -34,6 +34,8 @@ class ApiManager:BaseApi,Api {
                 }else{
                     self.makeAlert(translate("aunthorized"), closure: {
                         print("Go TO Login")
+                        guard let vc = Constants.loginNav else { return }
+                        UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
                     })
                 }
             }
@@ -52,6 +54,8 @@ class ApiManager:BaseApi,Api {
                 }else{
                     self.makeAlert(translate("aunthorized"), closure: {
                         print("Go TO Login")
+                        guard let vc = Constants.loginNav else { return }
+                        UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
                     })
                 }
             }

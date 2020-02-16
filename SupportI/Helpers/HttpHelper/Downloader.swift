@@ -10,7 +10,7 @@ extension DownloaderDelegate {
     }
 }
 
-class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionControllerDelegate {
+class Downloader: NSObject, URLSessionDownloadDelegate, UIDocumentInteractionControllerDelegate {
     
     //** vars of task *//
     private var fileName:String? = ""
@@ -25,8 +25,8 @@ class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionContro
     //
     
     //delegation
-    private weak var _delegate:DownloaderDelegate?
-    weak var downloaderDelegate:DownloaderDelegate?{
+    private weak var _delegate: DownloaderDelegate?
+    weak var downloaderDelegate: DownloaderDelegate? {
         set{
             if newValue is UIViewController {
                 _delegate = newValue
@@ -86,7 +86,7 @@ class Downloader:NSObject,URLSessionDownloadDelegate,UIDocumentInteractionContro
         }
     }
     
-    func downloadFile(_ string:String?){
+    func downloadFile(_ string: String?) {
         if downloaderDelegate == nil {
             return
         }

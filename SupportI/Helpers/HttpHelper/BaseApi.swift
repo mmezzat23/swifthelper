@@ -26,6 +26,8 @@ class BaseApi:Downloader, Paginator, Alertable {
         if(UserDefaults.standard.bool(forKey: "LOGIN")){
             if let token = UserDefaults.standard.string(forKey: "access_token"){
                 headers["Authorization"] = "Bearer "+token
+            } else {
+                headers["Authorization"] = ""
             }
         }
         
@@ -82,7 +84,8 @@ class BaseApi:Downloader, Paginator, Alertable {
                     case 401?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                         self.makeAlert(translate("the_login_is_required"), closure: {
-                            print("Go TO Login")
+                            guard let vc = Constants.loginNav else { return }
+                            UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
                         })
                     case 404?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
