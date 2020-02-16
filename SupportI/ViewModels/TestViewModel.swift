@@ -14,6 +14,7 @@ class TestViewModel:ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.connection("test",type:.get){ response in
             self.delegate?.stopLoading()
+            self.paginator(respnod: [])
             //let data = SelectDropDownModel.convertToModel(response: response)
             //self.paginator(respnod: self.model.value?.data)
             //self.model.value = data

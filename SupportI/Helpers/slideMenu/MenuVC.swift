@@ -102,22 +102,13 @@ class MenuVC: BaseController {
 //            }
            
         }else{
-            useMenu = true
             MenuVC.currentPage = menuItem.key
             MenuVC.currentIndex = menuItem.index
             let vc = initViewController(menuItem.key)
             push(vc)
         }
     }
-    
-    @IBAction func editProfile(_ sender: Any) {
-        useMenu = true
-        let vc = initViewController("ProfileNav")
-        push(vc)
-        
-    }
-    
-    
+   
 }
 
 extension MenuVC:UITableViewDelegate,UITableViewDataSource{
