@@ -24,8 +24,8 @@ extension ViewModelProtocol {
     func paginator(respnod: Array<Any>?) {
         ApiManager.instance.checkPaginator(respond: respnod)
     }
-    func runPaginator() ->Bool {
-        if !ApiManager.instance.running && !ApiManager.instance.paginatorStop{
+    func runPaginator() -> Bool {
+        if !ApiManager.instance.running && !ApiManager.instance.paginatorStop {
             ApiManager.instance.incresePaginate()
             return true
         }else{

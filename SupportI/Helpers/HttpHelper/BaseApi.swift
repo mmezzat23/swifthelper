@@ -1,13 +1,13 @@
 import Alamofire
 import NVActivityIndicatorView
 
-class BaseApi:Downloader, Paginator, Alertable {
+class BaseApi: Downloader, Paginator, Alertable {
  
    
     
     let url = Constants.url
-    var paramaters :[String:Any] = [:]
-    var headers : [String:String] = [:]
+    var paramaters :[String: Any] = [:]
+    var headers : [String: String] = [:]
     
     var running:Bool = false
 

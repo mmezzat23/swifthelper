@@ -7,43 +7,43 @@
 //
 
 import Foundation
-protocol Paginator : class {
+protocol Paginator: class {
     func paginate()
     func incresePaginate()
     func resetPaginate()
     func stopPaginate()
-    func checkPaginator(respond:Array<Any>?)
+    func checkPaginator(respond: Array<Any>?)
 }
 
 fileprivate var paginatorFile:Int = 1
-fileprivate var paginatorStopFile:Bool = false
+fileprivate var paginatorStopFile: Bool = false
 fileprivate var paginatorLimitFile = 10
 
-extension Paginator{
-    var paginator:Int{
+extension Paginator {
+    var paginator: Int {
         set{
             paginatorFile = newValue
         }get{
             return paginatorFile
         }
     }
-    var paginatorStop:Bool{
+    var paginatorStop: Bool {
         set{
             paginatorStopFile = newValue
         }get{
             return paginatorStopFile
         }
     }
-    var paginatorLimit:Int{
+    var paginatorLimit: Int {
         set{
             paginatorLimitFile = newValue
         }get{
             return paginatorLimitFile
         }
     }    
-    func paginate()  {
+    func paginate() {
        ApiManager.instance.paramaters["page"] = paginator
-        if(ApiManager.instance.paramaters["custom_page"] != nil){
+        if(ApiManager.instance.paramaters["custom_page"] != nil) {
             ApiManager.instance.paramaters["page"] = ApiManager.instance.paramaters["custom_page"]
         }
     }
@@ -61,10 +61,10 @@ extension Paginator{
     func runPaginate()  {
         paginatorStop = false
     }
-    func checkPaginator(respond:Array<Any>?){
+    func checkPaginator(respond:Array<Any>?) {
         
         if let array = respond{
-            if array.count == 0 || array.count < ApiManager.instance.paginatorLimit{
+            if array.count == 0 || array.count < ApiManager.instance.paginatorLimit {
                 self.stopPaginate()
             }else{
                 self.runPaginate()
