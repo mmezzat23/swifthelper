@@ -198,6 +198,9 @@
 		80EA0059231DF7CD0008E68B /* PlacePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0058231DF7CD0008E68B /* PlacePickerModel.swift */; };
 		80EA006A231DFE7C0008E68B /* EFCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0067231DFE7C0008E68B /* EFCount.swift */; };
 		80EA006B231DFE7C0008E68B /* EFCountAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */; };
+		E86D96EE23F4C23F0029FBAD /* Stuff.txt in Resources */ = {isa = PBXBuildFile; fileRef = E86D96ED23F4C23E0029FBAD /* Stuff.txt */; };
+		E86D96F123F4C5330029FBAD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E86D96EF23F4C5330029FBAD /* Localizable.strings */; };
+		E86D96F423F4C57A0029FBAD /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86D96F323F4C57A0029FBAD /* Localization.swift */; };
 		E8ADC90623EB194E006E1044 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ADC90523EB194E006E1044 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -232,10 +235,6 @@
 		808565C923F4540D002717CB /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		808565CA23F4540D002717CB /* SideMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuManager.swift; sourceTree = "<group>"; };
 		808565D023F457E1002717CB /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		808565D223F45C53002717CB /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Main.strings"; sourceTree = "<group>"; };
-		808565D323F45C53002717CB /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		808565D423F45C61002717CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		808565D523F45C61002717CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		80A2FB63215841BC00223A77 /* PublicHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicHelper.swift; sourceTree = "<group>"; };
 		80A2FB65215841BC00223A77 /* TimerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
 		80A2FB67215841BC00223A77 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
@@ -402,6 +401,10 @@
 		80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFCountAdapter.swift; path = SupportI/Helpers/CountLabelHelper/EFCountAdapter.swift; sourceTree = SOURCE_ROOT; };
 		C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupportI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6B730607EBE0D31A9D800B /* Pods-SupportI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.debug.xcconfig"; sourceTree = "<group>"; };
+		E86D96ED23F4C23E0029FBAD /* Stuff.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stuff.txt; sourceTree = "<group>"; };
+		E86D96F023F4C5330029FBAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E86D96F223F4C53A0029FBAD /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E86D96F323F4C57A0029FBAD /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		E8ADC90523EB194E006E1044 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -488,7 +491,9 @@
 				8050BC4E20BF89DA00E355BE /* Main.storyboard */,
 				8050BC5420BF89DC00E355BE /* Assets.xcassets */,
 				8050BC5620BF89DC00E355BE /* LaunchScreen.storyboard */,
+				E86D96EF23F4C5330029FBAD /* Localizable.strings */,
 				8050BC5920BF89DC00E355BE /* Info.plist */,
+				E86D96ED23F4C23E0029FBAD /* Stuff.txt */,
 				8050BC5120BF89DA00E355BE /* SupportI.xcdatamodeld */,
 			);
 			path = SupportI;
@@ -682,6 +687,7 @@
 				80A2FB8A215841BC00223A77 /* LocalizationHelper.swift */,
 				80A2FB8B215841BC00223A77 /* LocalizationTranslateHelper.swift */,
 				80A2FB8C215841BC00223A77 /* UILocalizationExtensions.swift */,
+				E86D96F323F4C57A0029FBAD /* Localization.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -1049,8 +1055,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				"ar-EG",
 				en,
+				ar,
 			);
 			mainGroup = 8050BC3E20BF89DA00E355BE;
 			productRefGroup = 8050BC4820BF89DA00E355BE /* Products */;
@@ -1070,12 +1076,14 @@
 				80A2FC43215841BC00223A77 /* RadioView.xib in Resources */,
 				8050BC5820BF89DC00E355BE /* LaunchScreen.storyboard in Resources */,
 				808565D123F457E1002717CB /* Menu.storyboard in Resources */,
+				E86D96EE23F4C23F0029FBAD /* Stuff.txt in Resources */,
 				80A2FC3D215841BC00223A77 /* KWTextFieldView.xib in Resources */,
 				80EA0053231DA3720008E68B /* PlacesPickerHelper.storyboard in Resources */,
 				8050BC5520BF89DC00E355BE /* Assets.xcassets in Resources */,
 				803E6667231D7635005D6CB7 /* PickerViewHelper.storyboard in Resources */,
 				80A2FC0B215841BC00223A77 /* MultiImageCell.xib in Resources */,
 				803E666D231D78A2005D6CB7 /* ImageDisplayController.storyboard in Resources */,
+				E86D96F123F4C5330029FBAD /* Localizable.strings in Resources */,
 				8026194920E9796300BE7A5E /* README.md in Resources */,
 				80A2FC3F215841BC00223A77 /* KWVerificationCodeView.xib in Resources */,
 				8050BC5020BF89DA00E355BE /* Main.storyboard in Resources */,
@@ -1229,6 +1237,7 @@
 				80A2FC06215841BC00223A77 /* Downloader.swift in Sources */,
 				80DA0157211A888600817038 /* UIApplicationExtensions.swift in Sources */,
 				80DA014C211A888600817038 /* FloatingPointExtensions.swift in Sources */,
+				E86D96F423F4C57A0029FBAD /* Localization.swift in Sources */,
 				80A2FC25215841BC00223A77 /* FacebookDriver.swift in Sources */,
 				80A2FC52215841BC00223A77 /* FloatRule.swift in Sources */,
 				80A2FC4C215841BC00223A77 /* ValidationDelegate.swift in Sources */,
@@ -1333,8 +1342,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8050BC4F20BF89DA00E355BE /* Base */,
-				808565D223F45C53002717CB /* ar-EG */,
-				808565D423F45C61002717CB /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1343,10 +1350,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				8050BC5720BF89DC00E355BE /* Base */,
-				808565D323F45C53002717CB /* ar-EG */,
-				808565D523F45C61002717CB /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E86D96EF23F4C5330029FBAD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E86D96F023F4C5330029FBAD /* en */,
+				E86D96F223F4C53A0029FBAD /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

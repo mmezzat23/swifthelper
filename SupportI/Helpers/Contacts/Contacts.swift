@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import Contacts
+import UIKit
 
 class ContactsHelper: NSObject {
     private let contactStore = CNContactStore()
@@ -33,7 +34,7 @@ class ContactsHelper: NSObject {
                 if contact.imageData != nil {
                     model.imageData = contact.imageData
                 }else{
-                    let image = #imageLiteral(resourceName: "sad_cloud@2x.png")
+                    let image = #imageLiteral(resourceName: "placeHolder")
                     model.imageData = image.compressedData(quality: 0.1)
                 }
                 model.name = contact.givenName

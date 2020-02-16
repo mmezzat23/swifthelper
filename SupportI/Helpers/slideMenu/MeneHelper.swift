@@ -42,7 +42,6 @@ class MenuHelper {
         
         SideMenuManager.default.menuPresentMode = .viewSlideInOut
         SideMenuManager.default.menuBlurEffectStyle = .none
-        SideMenuManager.default.menuWidth = min(delegate?.view.width ?? 0, delegate?.view.height ?? 0) * CGFloat(Float(menuWidth / min(delegate?.view.width ?? 0, delegate?.view.height ?? 0)))
         SideMenuManager.default.menuFadeStatusBar = true
     }
     
