@@ -5,6 +5,22 @@
   Created by Jamal on 11/5/18.
   Copyright © 2018 ocs. All rights reserved.
 */
+/** validation **/
+"this_field_is_required.lan" = "هذا الحقل مطلوب";
+"you_must_be_logged_in.lan" = "يجب تسجيل الدخول اولا";
+"sure.lan" = "تاكيد";
+"does_not_match.lan" = "غير متطابق";
+"you_are_not_allow_use_your_location.lan" = "لم تسمح باستخدام الموقع الخاص بك";
+"location_error.lan" = "خطأ في الموقع";
+"must_be_a_valid_email_address.lan" = "يجب ان يكون البريد الألكتروني صحيح البنية";
+"change_language.lan" = "تغيير اللغة";
+"your_are_cancel_the_operation.lan" = "لقد قمت بألغاء العملية";
+"you_must_accept_the_request_to_login.lan" = "يجب عليك الموافقة علي الطلب لكي يتم تسجيل الدخول";
+"the_login_is_required.lan" = "تسجيل الدخول مطلوب";
+"not_found.lan" = "غير موجودة";
+
+/** validation **/
+
 
 "registration.lan" = "التسجيل";
 "first.name.lan" = "الاسم الأول";

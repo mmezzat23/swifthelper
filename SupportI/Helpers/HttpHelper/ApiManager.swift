@@ -32,7 +32,7 @@ class ApiManager: BaseApi, Api {
                     super.refresh()
                     super.connection(method,type: type, completionHandler: completionHandler)
                 }else{
-                    self.makeAlert(translate("aunthorized"), closure: {
+                    self.makeAlert("aunthorized.lan".localized, closure: {
                         print("Go TO Login")
                         guard let vc = Constants.loginNav else { return }
                         UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
@@ -52,7 +52,7 @@ class ApiManager: BaseApi, Api {
                     super.refresh()
                     super.connection(method.rawValue,type: type, completionHandler: completionHandler)
                 }else{
-                    self.makeAlert(translate("aunthorized"), closure: {
+                    self.makeAlert("aunthorized.lan".localized, closure: {
                         print("Go TO Login")
                         guard let vc = Constants.loginNav else { return }
                         UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)

@@ -40,7 +40,7 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
     placeholderImage = UIImage(),
     alertTitle, alertMessage: String?,
     tintColor = UIColor.darkGray,
-    cameraTitle = translate("camera"), libraryTitle = translate("Library"), cancelTitle = translate("cancel"),
+    cameraTitle = "camera.lan".localized, libraryTitle = "photo.library.lan".localized, cancelTitle = "cancel.lan".localized,
     onError: (() -> Void)?,
     onPickVideoURL: ((URL) -> Void)?
     

@@ -19,10 +19,10 @@ class BaseApi: Downloader, Paginator, Alertable {
         setupObject()
         paginate()
     }
-    func setupObject(){
+    func setupObject() {
         headers["version"] = Constants.version
         headers["Device"] = Constants.deviceId
-        headers["lang"] = LocalizationHelper.getAppLang()
+        headers["lang"] = Localizer.current
         if(UserDefaults.standard.bool(forKey: "LOGIN")){
             if let token = UserDefaults.standard.string(forKey: "access_token"){
                 headers["Authorization"] = "Bearer "+token
@@ -31,7 +31,7 @@ class BaseApi: Downloader, Paginator, Alertable {
             }
         }
         
-        paramaters["lang"] = LocalizationHelper.getAppLang()
+        paramaters["lang"] = Localizer.current
         paramaters["device_type"] = Constants.deviceType
         if let devicetoken = UserDefaults.standard.string(forKey: "deviceToken"){
             paramaters["device_token"] = devicetoken
@@ -83,13 +83,13 @@ class BaseApi: Downloader, Paginator, Alertable {
                     //completionHandler(nil)
                     case 401?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                        self.makeAlert(translate("the_login_is_required"), closure: {
+                        self.makeAlert("the_login_is_required.lan".localized, closure: {
                             guard let vc = Constants.loginNav else { return }
                             UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
                         })
                     case 404?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                        self.makeAlert(translate("not_found"), closure: {})
+                        self.makeAlert("not_found.lan".localized, closure: {})
                     case 422?:
                         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                         self.setErrorMessage(data: response.data)

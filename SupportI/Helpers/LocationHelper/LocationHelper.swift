@@ -91,7 +91,7 @@ extension LocationHelper: CLLocationManagerDelegate {
             
         } else {
             let topViewController = UIApplication.topMostController()
-            topViewController.showAlert(title: translate("location_error"), message: translate("you_are_not_allow_use_your_location"))
+            topViewController.showAlert(title: "location_error.lan".localized, message: "you_are_not_allow_use_your_location.lan".localized)
         }
     }
     

@@ -10,24 +10,24 @@ import Foundation
 import UIKit
 
 
-func changeLang(closure:@escaping ()->()){
-    let alert = UIAlertController(title: translate("change_language"), message: nil, preferredStyle: .actionSheet)
+func changeLang(closure:@escaping ()->()) {
+    let alert = UIAlertController(title: "change_language.lan".localized, message: nil, preferredStyle: .actionSheet)
     alert.addAction(UIAlertAction(title: "العربية", style: .default, handler: { _ in
-        _ = setAppLang("ar")
+        setAppLang("ar")
         initLang()
         closure()
         
     }))
     
     alert.addAction(UIAlertAction(title: "الأنجليزية", style: .default, handler: { _ in
-        _ = setAppLang("en")
+        setAppLang("en")
         initLang()
         closure()
         
         
     }))
     
-    alert.addAction(UIAlertAction.init(title: translate("cancel"), style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction.init(title: "cancel".localized, style: .cancel, handler: nil))
     
     /*If you want work actionsheet on ipad
      then you have to use popoverPresentationController to present the actionsheet,
@@ -35,6 +35,8 @@ func changeLang(closure:@escaping ()->()){
     switch UIDevice.current.userInterfaceIdiom {
     case .pad:
         alert.popoverPresentationController?.permittedArrowDirections = .up
+        alert.popoverPresentationController?.sourceView = UIApplication.topViewController()?.view
+
     default:
         break
     }
@@ -42,43 +44,3 @@ func changeLang(closure:@escaping ()->()){
     UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
 }
 
-
-func changeLang(refresh: String = "Home") {
-    let storyboard: UIStoryboard = UIStoryboard(name: Constants.storyboard, bundle: nil)
-    let topView =  UIApplication.topMostController()
-    
-    let alert = UIAlertController(title: translate("change_language"), message: nil, preferredStyle: .actionSheet)
-    alert.addAction(UIAlertAction(title: "العربية", style: .default, handler: { _ in
-        _ = setAppLang("ar")
-        initLang()
-        
-        let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: refresh)
-        topView.navigationController?.pushViewController(vc, animated: true)
-    }))
-    
-    alert.addAction(UIAlertAction(title: "الأنجليزية", style: .default, handler: { _ in
-        _ = setAppLang("en")
-        initLang()
-        
-        let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: refresh)
-        topView.navigationController?.pushViewController(vc, animated: true)
-        
-        
-        
-    }))
-    
-    alert.addAction(UIAlertAction.init(title: translate("cancel"), style: .cancel, handler: nil))
-    
-    /*If you want work actionsheet on ipad
-     then you have to use popoverPresentationController to present the actionsheet,
-     otherwise app will crash on iPad */
-    switch UIDevice.current.userInterfaceIdiom {
-    case .pad:
-        alert.popoverPresentationController?.permittedArrowDirections = .up
-        alert.popoverPresentationController?.sourceView = topView.view
-    default:
-        break
-    }
-    
-    UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
-}

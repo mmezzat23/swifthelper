@@ -91,7 +91,7 @@ extension PresentingViewProtocol where Self:UIViewController {
     func snackBar(message:String,duration:TTGSnackbarDuration = .middle,actionClosure:@escaping ()->()){
         let snackbar = TTGSnackbar(message:message,
                                    duration: .forever,
-                                   actionText: translate("ok"),
+                                   actionText: "sure.lan".localized,
                                    actionBlock: { (snackbar) in
                                     actionClosure()
                                     snackbar.dismiss()

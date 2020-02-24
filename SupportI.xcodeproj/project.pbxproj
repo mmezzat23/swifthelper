@@ -66,8 +66,6 @@
 		80A2FC0C215841BC00223A77 /* MultiSelectImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB86215841BC00223A77 /* MultiSelectImagesHelper.swift */; };
 		80A2FC0D215841BC00223A77 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB87215841BC00223A77 /* UIImageViewExtension.swift */; };
 		80A2FC0E215841BC00223A77 /* ChangeLangHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB89215841BC00223A77 /* ChangeLangHelper.swift */; };
-		80A2FC0F215841BC00223A77 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB8A215841BC00223A77 /* LocalizationHelper.swift */; };
-		80A2FC10215841BC00223A77 /* LocalizationTranslateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB8B215841BC00223A77 /* LocalizationTranslateHelper.swift */; };
 		80A2FC11215841BC00223A77 /* UILocalizationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB8C215841BC00223A77 /* UILocalizationExtensions.swift */; };
 		80A2FC1D215841BC00223A77 /* MeneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB9B215841BC00223A77 /* MeneHelper.swift */; };
 		80A2FC1E215841BC00223A77 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2FB9C215841BC00223A77 /* MenuCell.swift */; };
@@ -268,8 +266,6 @@
 		80A2FB86215841BC00223A77 /* MultiSelectImagesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSelectImagesHelper.swift; sourceTree = "<group>"; };
 		80A2FB87215841BC00223A77 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		80A2FB89215841BC00223A77 /* ChangeLangHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLangHelper.swift; sourceTree = "<group>"; };
-		80A2FB8A215841BC00223A77 /* LocalizationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
-		80A2FB8B215841BC00223A77 /* LocalizationTranslateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationTranslateHelper.swift; sourceTree = "<group>"; };
 		80A2FB8C215841BC00223A77 /* UILocalizationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalizationExtensions.swift; sourceTree = "<group>"; };
 		80A2FB9B215841BC00223A77 /* MeneHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeneHelper.swift; sourceTree = "<group>"; };
 		80A2FB9C215841BC00223A77 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -690,8 +686,6 @@
 			isa = PBXGroup;
 			children = (
 				80A2FB89215841BC00223A77 /* ChangeLangHelper.swift */,
-				80A2FB8A215841BC00223A77 /* LocalizationHelper.swift */,
-				80A2FB8B215841BC00223A77 /* LocalizationTranslateHelper.swift */,
 				80A2FB8C215841BC00223A77 /* UILocalizationExtensions.swift */,
 				E86D96F323F4C57A0029FBAD /* Localization.swift */,
 			);
@@ -1174,7 +1168,6 @@
 				80DA0151211A888600817038 /* SignedNumericExtensions.swift in Sources */,
 				80EA0057231DA69F0008E68B /* PlacePickerCell.swift in Sources */,
 				80A2FC2C215841BC00223A77 /* TwitterModel.swift in Sources */,
-				80A2FC10215841BC00223A77 /* LocalizationTranslateHelper.swift in Sources */,
 				80A2FC39215841BC00223A77 /* UIView+AutoLayoutHelper.swift in Sources */,
 				80A2FC32215841BC00223A77 /* CustomDismissAnimationController.swift in Sources */,
 				80A2FC58215841BC00223A77 /* RegexRule.swift in Sources */,
@@ -1253,7 +1246,6 @@
 				80A2FC38215841BC00223A77 /* UIViewExtension.swift in Sources */,
 				80A2FC04215841BC00223A77 /* Authorization.swift in Sources */,
 				80DA016A211A888700817038 /* UIStoryboardExtensions.swift in Sources */,
-				80A2FC0F215841BC00223A77 /* LocalizationHelper.swift in Sources */,
 				80DA015F211A888600817038 /* UIImageExtensions.swift in Sources */,
 				80DA0163211A888600817038 /* UINavigationControllerExtensions.swift in Sources */,
 				80DA014A211A888600817038 /* DoubleExtensions.swift in Sources */,

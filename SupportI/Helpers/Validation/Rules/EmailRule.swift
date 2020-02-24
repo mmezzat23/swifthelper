@@ -21,7 +21,7 @@ public class EmailRule: RegexRule {
      - parameter message: String of error message.
      - returns: An initialized object, or nil if an object could not be created for some reason that would not result in an exception.
      */
-    public convenience init(message : String = translate("must_be_a_valid_email_address")){
-        self.init(regex: EmailRule.regex, message: message)
+    public convenience init(message : String = ""){
+        self.init(regex: EmailRule.regex, message: "must_be_a_valid_email_address.lan".localized)
     }
 }

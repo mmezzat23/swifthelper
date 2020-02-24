@@ -55,11 +55,11 @@ class UserRoot : Decodable {
             guard let vc = Constants.loginNav else { return }
             UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
         }
-        let alert = UIAlertController(title: translate("alert"), message: translate("you_must_be_logged_in"), preferredStyle: UIAlertController.Style.alert)
-        let acceptAction = UIAlertAction(title: translate("sure"), style: .default) { (_) -> Void in
+        let alert = UIAlertController(title: "alert.lan".localized, message: "you_must_be_logged_in.lan".localized, preferredStyle: UIAlertController.Style.alert)
+        let acceptAction = UIAlertAction(title: "sure.lan".localized, style: .default) { (_) -> Void in
             handler?()
         }
-        let cancelAction = UIAlertAction(title: translate("cancel"), style: .default) { (_) -> Void in
+        let cancelAction = UIAlertAction(title: "cancel.lan".localized, style: .default) { (_) -> Void in
         }
         alert.addAction(acceptAction)
         alert.addAction(cancelAction)

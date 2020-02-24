@@ -6,6 +6,8 @@
   Copyright © 2018 ocs. All rights reserved.
 */
 
+/** validation **/
+
 "registration.lan" = "Registration";
 "first.name.lan" = "First name";
 "last.name.lan" = "Last name";

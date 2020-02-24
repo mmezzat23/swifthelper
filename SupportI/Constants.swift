@@ -12,7 +12,7 @@ import GooglePlaces
 
 struct Constants {
     
-    static let locale = LocalizationHelper.getLocale()
+    static let locale = Localizer.getLocale()
     static var loginNavInd: String = "LoginNav"
     static var login: String = "LoginNav"
     static var loginNav: UINavigationController? {

@@ -66,13 +66,13 @@ class MenuVC: BaseController {
     func setupMenu(){
        
         
-        menu.append(MenuModel(translate("home"),"HomeNav",#imageLiteral(resourceName: "home"),#imageLiteral(resourceName: "home"),.home))
-        menu.append(MenuModel(translate("payment"),"PaymentNav",#imageLiteral(resourceName: "payments"),#imageLiteral(resourceName: "payments"),.payment))
-        menu.append(MenuModel(translate("history"),"HistoryNav",#imageLiteral(resourceName: "history"),#imageLiteral(resourceName: "history"),.history))
-        menu.append(MenuModel(translate("notifications"),"NotificationsNav",#imageLiteral(resourceName: "notification"),#imageLiteral(resourceName: "notification"),.notifications))
-        menu.append(MenuModel(translate("settings"),"SettingsNav",#imageLiteral(resourceName: "settings"),#imageLiteral(resourceName: "settings"),.settings))
-        menu.append(MenuModel(translate("help"),"HelpNav",#imageLiteral(resourceName: "help"),#imageLiteral(resourceName: "help"),.help))
-        menu.append(MenuModel(translate("logout"),"LogoutNav",#imageLiteral(resourceName: "logout"),#imageLiteral(resourceName: "logout"),.logout))
+//        menu.append(MenuModel(translate("home"),"HomeNav",#imageLiteral(resourceName: "home"),#imageLiteral(resourceName: "home"),.home))
+//        menu.append(MenuModel(translate("payment"),"PaymentNav",#imageLiteral(resourceName: "payments"),#imageLiteral(resourceName: "payments"),.payment))
+//        menu.append(MenuModel(translate("history"),"HistoryNav",#imageLiteral(resourceName: "history"),#imageLiteral(resourceName: "history"),.history))
+//        menu.append(MenuModel(translate("notifications"),"NotificationsNav",#imageLiteral(resourceName: "notification"),#imageLiteral(resourceName: "notification"),.notifications))
+//        menu.append(MenuModel(translate("settings"),"SettingsNav",#imageLiteral(resourceName: "settings"),#imageLiteral(resourceName: "settings"),.settings))
+//        menu.append(MenuModel(translate("help"),"HelpNav",#imageLiteral(resourceName: "help"),#imageLiteral(resourceName: "help"),.help))
+//        menu.append(MenuModel(translate("logout"),"LogoutNav",#imageLiteral(resourceName: "logout"),#imageLiteral(resourceName: "logout"),.logout))
 
         
         

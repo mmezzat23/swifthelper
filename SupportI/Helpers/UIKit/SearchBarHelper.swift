@@ -36,11 +36,11 @@ extension UISearchBar{
         self.tintColor = .white
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.setValue(translate("cancel"), forKey: "_cancelButtonText")
+        self.setValue("cancel.lan".localized, forKey: "_cancelButtonText")
         
         var searchImageIcon = UIImage()
         var cancelImageIcon = UIImage()
-        if LocalizationHelper.getAppLang() == "ar"{
+        if Localizer.current == "ar" {
             self.semanticContentAttribute = .forceRightToLeft
         }
         else{
@@ -64,7 +64,7 @@ extension UISearchBar{
             for case let textField as UITextField in subView.subviews{
                 textField.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                 let attributeDict = [NSAttributedString.Key.foregroundColor: UIColor.white]
-                textField.attributedPlaceholder = NSAttributedString(string: translate("search"), attributes: attributeDict)
+                textField.attributedPlaceholder = NSAttributedString(string: "search.lan".localized, attributes: attributeDict)
                 
                 textField.textColor = .white
             }
@@ -72,7 +72,7 @@ extension UISearchBar{
             for innerSubViews in subView.subviews {
                 if let cancelButton = innerSubViews as? UIButton {
                     cancelButton.setTitleColor(UIColor.white, for: .normal)
-                    cancelButton.setTitle(translate("cancel"), for: .normal)
+                    cancelButton.setTitle("cancel.lan".localized, for: .normal)
                 }
             }
             
@@ -80,47 +80,5 @@ extension UISearchBar{
         self.enablesReturnKeyAutomatically = false
         self.returnKeyType = .done
     }
-    
-    static func initSearchBar(searchBar:UISearchBar,delegate:UIViewController){
-    
-        searchBar.tintColor = .white
-        
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.setValue(translate("cancel"), forKey: "_cancelButtonText")
-        
-        var searchImage = UIImage()
-        if LocalizationHelper.getAppLang() == "ar"{
-            searchBar.semanticContentAttribute = .forceRightToLeft
-        }
-        else{
-            searchBar.semanticContentAttribute = .forceLeftToRight
-        }
-        if searchImagePrivate != nil{
-            searchImage = searchImagePrivate!
-        }
-        searchBar.setImage(searchImage, for: .search, state: .normal)
-        searchBar.setImage(#imageLiteral(resourceName: "clearButton"), for: .clear, state: .normal)
-        
-        for subView in searchBar.subviews
-        {
-            for case let textField as UITextField in subView.subviews{
-                textField.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-                let attributeDict = [NSAttributedString.Key.foregroundColor: UIColor.white]
-                textField.attributedPlaceholder = NSAttributedString(string: translate("search"), attributes: attributeDict)
-                
-                textField.textColor = .white
-            }
-            
-            for innerSubViews in subView.subviews {
-                if let cancelButton = innerSubViews as? UIButton {
-                    cancelButton.setTitleColor(UIColor.white, for: .normal)
-                    cancelButton.setTitle(translate("cancel"), for: .normal)
-                }
-            }
-            
-        }
-        searchBar.enablesReturnKeyAutomatically = false
-        searchBar.returnKeyType = .done
-        searchBar.delegate = delegate as? UISearchBarDelegate
-    }
+  
 }

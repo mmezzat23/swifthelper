@@ -17,11 +17,11 @@ protocol Alertable: class {
 extension Alertable {
     func makeAlert(_ message: String, closure: @escaping ()->() ) {
         
-        let alert = UIAlertController(title: translate("alert"), message: message, preferredStyle: UIAlertController.Style.alert)
-        let acceptAction = UIAlertAction(title: translate("sure"), style: .default) { (_) -> Void in
+        let alert = UIAlertController(title: "alert.lan".localized, message: message, preferredStyle: UIAlertController.Style.alert)
+        let acceptAction = UIAlertAction(title: "sure.lan".localized, style: .default) { (_) -> Void in
             closure()
         }
-        let cancelAction = UIAlertAction(title: translate("cancel"), style: .default) { (_) -> Void in
+        let cancelAction = UIAlertAction(title: "cancel.lan".localized, style: .default) { (_) -> Void in
         }
         alert.addAction(acceptAction)
         alert.addAction(cancelAction)
@@ -32,12 +32,12 @@ extension Alertable {
     
     func createActionSheet(title: String, actions: [String: Any] , closure: @escaping ([String: Any])->() ){
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
-        for (key,value) in actions{
+        for (key,value) in actions {
             alert.addAction(UIAlertAction(title: key, style: .default, handler: { _ in
                 closure([key:value])
             }))
         }
-        alert.addAction(UIAlertAction.init(title: translate("cancel"), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.init(title: "cancel.lan".localized, style: .cancel, handler: nil))
         
         /*If you want work actionsheet on ipad
          then you have to use popoverPresentationController to present the actionsheet,

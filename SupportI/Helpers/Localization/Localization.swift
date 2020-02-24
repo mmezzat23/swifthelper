@@ -7,13 +7,69 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Constants
 private let defaultLanguageSign = "default.language.ia"
 
+
+public func initLang() {
+    Localizer.initLang()
+}
+public func getAppLang() -> String {
+    return Localizer.current
+}
+public func setAppLang(_ lang:String) {
+    Localizer.set(language: lang)
+}
+
+
 final class Localizer: NSObject {
     
-    private static let defaultSign = Bundle.main.preferredLocalizations[0]
+    public static func initLang() {
+        if current == "ar" || current == "AR" {
+            UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            UILabel.appearance().semanticContentAttribute = .forceRightToLeft
+            UITextField.appearance().semanticContentAttribute = .forceRightToLeft
+            UITextView.appearance().semanticContentAttribute = .forceRightToLeft
+            UIButton.appearance().semanticContentAttribute = .forceRightToLeft
+            UIStackView.appearance().semanticContentAttribute = .forceRightToLeft
+            UISwitch.appearance().semanticContentAttribute = .forceRightToLeft
+            UITableView.appearance().semanticContentAttribute = .forceRightToLeft
+            UICollectionView.appearance().semanticContentAttribute = .forceRightToLeft
+            UICollectionViewCell.appearance().semanticContentAttribute = .forceRightToLeft
+            UITableViewCell.appearance().semanticContentAttribute = .forceRightToLeft
+            UITabBar.appearance().semanticContentAttribute = .forceRightToLeft
+            UISearchBar.appearance().semanticContentAttribute = .forceRightToLeft
+
+        } else {
+            UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            UILabel.appearance().semanticContentAttribute = .forceLeftToRight
+            UITextField.appearance().semanticContentAttribute = .forceLeftToRight
+            UITextView.appearance().semanticContentAttribute = .forceLeftToRight
+            UIButton.appearance().semanticContentAttribute = .forceLeftToRight
+            UIStackView.appearance().semanticContentAttribute = .forceLeftToRight
+            UISwitch.appearance().semanticContentAttribute = .forceLeftToRight
+            UITableView.appearance().semanticContentAttribute = .forceLeftToRight
+            UICollectionView.appearance().semanticContentAttribute = .forceLeftToRight
+            UICollectionViewCell.appearance().semanticContentAttribute = .forceLeftToRight
+            UITableViewCell.appearance().semanticContentAttribute = .forceLeftToRight
+            UITabBar.appearance().semanticContentAttribute = .forceLeftToRight
+            UISearchBar.appearance().semanticContentAttribute = .forceLeftToRight
+        }
+    }
+   
+    public static func getLocale() -> String {
+        if let locale = UserDefaults.standard.string(forKey: "locale"){
+            return locale
+        }else{
+            return "ar_EG"
+        }
+    }
+
+    public static let defaultSign = Bundle.main.preferredLocalizations[0]
     
     /**
      Get available languages from main bundle

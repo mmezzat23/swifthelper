@@ -142,8 +142,8 @@ class MultiSelectImagesHelper: NSObject,UICollectionViewDataSource, UICollection
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var actions: [String: Any] = [:]
-        actions["delete"] = 0
-        createActionSheet(title: translate("alert"), actions: actions) { (action) in
+        actions["delete.lan".localized] = 0
+        createActionSheet(title: "alert.lan".localized, actions: actions) { (action) in
             self.images.remove(at: indexPath.row)
             self.urls.remove(at: indexPath.row)
             self.reloadCollection()
