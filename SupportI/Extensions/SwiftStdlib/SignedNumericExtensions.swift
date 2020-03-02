@@ -13,9 +13,4 @@ public extension SignedNumeric {
     var string: String {
 		return String(describing: self)
 	}
-
-	
-
 }
-
-

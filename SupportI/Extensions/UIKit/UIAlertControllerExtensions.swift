@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-
 #if !os(watchOS)
 // MARK: - Methodss
 public extension UIAlertController {
@@ -22,7 +20,6 @@ public extension UIAlertController {
     func show(animated: Bool = true, vibrate: Bool = false, completion: (() -> Void)? = nil) {
 		UIApplication.shared.keyWindow?.rootViewController?.present(self, animated: animated, completion: completion)
 		if vibrate {
-			
 		}
 	}
 
@@ -34,7 +31,8 @@ public extension UIAlertController {
 	///   - isEnabled: isEnabled status for action (default is true)
 	///   - handler: optional action handler to be called when button is tapped (default is nil)
 	/// - Returns: action created by this method
-    @discardableResult func addAction(title: String, style: UIAlertAction.Style = .default, isEnabled: Bool = true, handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertAction {
+    @discardableResult func addAction(title: String, style: UIAlertAction.Style = .default, isEnabled: Bool = true,
+                                      handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertAction {
 		let action = UIAlertAction(title: title, style: style, handler: handler)
 		action.isEnabled = isEnabled
 		addAction(action)
@@ -86,7 +84,8 @@ public extension UIAlertController {
 	///   - error: error to set alert controller's message to it's localizedDescription.
 	///   - defaultActionButtonTitle: default action button title (default is "OK")
 	///   - tintColor: alert controller's tint color (default is nil)
-    convenience init(title: String = "Error", error: Error, defaultActionButtonTitle: String = "OK", preferredStyle: UIAlertController.Style = .alert, tintColor: UIColor? = nil) {
+    convenience init(title: String = "Error", error: Error, defaultActionButtonTitle: String = "OK",
+                     preferredStyle: UIAlertController.Style = .alert, tintColor: UIColor? = nil) {
 		self.init(title: title, message: error.localizedDescription, preferredStyle: preferredStyle)
 		let defaultAction = UIAlertAction(title: defaultActionButtonTitle, style: .default, handler: nil)
 		addAction(defaultAction)
@@ -97,5 +96,3 @@ public extension UIAlertController {
 
 }
 #endif
-
-

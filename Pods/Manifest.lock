@@ -52,6 +52,7 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.2.0)
   - NVActivityIndicatorView/Presenter (4.2.0)
   - Protobuf (3.5.0)
+  - SwiftLint (0.38.1)
   - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - GooglePlaces (= 3.0.3)
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -85,6 +87,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - Protobuf
+    - SwiftLint
     - UIImageViewModeScaleAspect
 
 SPEC CHECKSUMS:
@@ -105,8 +108,9 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  SwiftLint: 0aeb99ca7ccfc222ef93e2560a35e669f5465e6c
   UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: 2d1099739f0dcec6256e255fddecedb83f781de3
+PODFILE CHECKSUM: 7982c97ae373d2161acbca5c9c0956180997266f
 
 COCOAPODS: 1.7.2

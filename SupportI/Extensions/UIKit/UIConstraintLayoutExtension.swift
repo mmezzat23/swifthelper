@@ -16,9 +16,7 @@ extension NSLayoutConstraint {
      - returns: NSLayoutConstraint
      */
     func setMultiplier(multiplier:CGFloat) -> NSLayoutConstraint {
-        
         NSLayoutConstraint.deactivate([self])
-        
         let newConstraint = NSLayoutConstraint(
             item: firstItem!,
             attribute: firstAttribute,
@@ -27,32 +25,26 @@ extension NSLayoutConstraint {
             attribute: secondAttribute,
             multiplier: multiplier,
             constant: constant)
-        
         newConstraint.priority = priority
         newConstraint.shouldBeArchived = self.shouldBeArchived
         newConstraint.identifier = self.identifier
-        
         NSLayoutConstraint.activate([newConstraint])
         return newConstraint
     }
-    
-    func checkMultiplayer()->NSLayoutConstraint{
-        if getAppLang() == "ar"{
-            if self.multiplier < 1{
+    func checkMultiplayer() -> NSLayoutConstraint {
+        if getAppLang() == "ar" {
+            if self.multiplier < 1 {
                 let newMulti = 1+(1 - self.multiplier)
                 return self.setMultiplier(multiplier: newMulti)
-                
             }
-            if self.multiplier > 1{
+            if self.multiplier > 1 {
                 let newMulti = 1 - (self.multiplier - 1)
                 return self.setMultiplier(multiplier: newMulti)
-            }else{
+            } else {
                 return self.setMultiplier(multiplier: 1)
             }
-        }else{
+        } else {
             return self.setMultiplier(multiplier: 1)
         }
-        
-        
     }
 }

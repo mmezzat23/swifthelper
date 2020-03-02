@@ -12,13 +12,11 @@ import CoreGraphics
 
 // MARK: - Properties
 public extension Double {
-
-    
     /// func make of self it decimal
     ///
     /// - Parameter num: num of digits
     /// - Returns: return a string of new value
-    func decimal(_ num:Int)->String{
+    func decimal(_ num: Int) -> String {
         let string = String(format: "%.\(num)f", self)
         return string
     }
@@ -56,7 +54,6 @@ public func ** (lhs: Double, rhs: Double) -> Double {
 	return pow(lhs, rhs)
 }
 
-// swiftlint:disable next identifier_name
 prefix operator √
 /// SwifterSwift: Square root of double.
 ///

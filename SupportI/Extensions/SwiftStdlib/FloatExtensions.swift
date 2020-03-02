@@ -47,7 +47,6 @@ public func ** (lhs: Float, rhs: Float) -> Float {
     return pow(lhs, rhs)
 }
 
-// swiftlint:disable next identifier_name
 prefix operator √
 /// SwifterSwift: Square root of float.
 ///

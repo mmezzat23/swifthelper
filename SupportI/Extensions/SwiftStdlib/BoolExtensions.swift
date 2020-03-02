@@ -27,6 +27,4 @@ public extension Bool {
 		return description
 	}
 
-
-
 }

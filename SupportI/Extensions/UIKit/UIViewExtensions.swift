@@ -246,7 +246,7 @@ extension UIView {
     }
     
     
-    func borderView(width:CGFloat , color:UIColor = ConstantUI.mainColorRGB){
+    func borderView(width:CGFloat , color:UIColor = .black) {
         let border = CALayer()
         let width = width
         
@@ -257,7 +257,7 @@ extension UIView {
         self.layer.addSublayer(border)
         self.layer.masksToBounds = false
     }
-    func border(width:CGFloat, color:UIColor = ConstantUI.borderColorRGB){
+    func border(width:CGFloat, color:UIColor = .black) {
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }

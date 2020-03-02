@@ -20,10 +20,8 @@ public extension UIImageView {
 	///   - placeHolder: optional placeholder image
 	///   - completionHandler: optional completion handler to run when download finishs (default is nil).
     func download(
-		from url: URL,
-        contentMode: UIView.ContentMode = .scaleAspectFit,
-		placeholder: UIImage? = nil,
-		completionHandler: ((UIImage?) -> Void)? = nil) {
+		from url: URL, contentMode: UIView.ContentMode = .scaleAspectFit,
+        placeholder: UIImage? = nil, completionHandler: ((UIImage?) -> Void)? = nil) {
 
 		image = placeholder
 		self.contentMode = contentMode
@@ -68,5 +66,3 @@ public extension UIImageView {
 
 }
 #endif
-
-

@@ -195,12 +195,7 @@ public struct SwifterSwift {
 	#if os(iOS)
 	/// SwifterSwift: Status bar visibility state.
 	public static var isStatusBarHidden: Bool {
-		get {
-			return UIApplication.shared.isStatusBarHidden
-		}
-		set {
-			//UIApplication.shared.isStatusBarHidden = newValue
-		}
+		return UIApplication.shared.isStatusBarHidden
 	}
 	#endif
 
@@ -299,8 +294,9 @@ public extension SwifterSwift {
 	/// - Parameter action: a closure to run when user takes a screenshot
     static func didTakeScreenShot(_ action: @escaping (_ notification: Notification) -> Void) {
 		// http://stackoverflow.com/questions/13484516/ios-detection-of-screenshot
-        _ = NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification, object: nil, queue: OperationQueue.main) { notification in
-			action(notification)
+        _ = NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification,
+                                                   object: nil, queue: OperationQueue.main) { notification in
+            action(notification)
 		}
 	}
 	#endif

@@ -16,8 +16,6 @@ public extension Collection {
 	///		}
 	///
 	/// - Parameter each: closure to run for each element.
-	
-
 	/// SwifterSwift: Safe protects the array from out of bounds by use of optional.
 	///
 	///		let arr = [1, 2, 3, 4, 5]
@@ -30,8 +28,6 @@ public extension Collection {
 	}
 
 }
-
-
 
 // MARK: - Methods (Integer)
 public extension Collection where Iterator.Element == IntegerLiteralType, Index == Int {

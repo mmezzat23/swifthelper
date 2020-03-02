@@ -56,25 +56,22 @@ public extension Array {
     subscript(safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
-    
-    func index(_ index:Int) -> Bool{
+    func index(_ index: Int) -> Bool {
         return self.isset(index)
     }
-    func isset(_ index:Int) -> Bool{
-        if self.indices.contains(index){
+    func isset(_ index: Int) -> Bool {
+        if self.indices.contains(index) {
             return true
-        }else{
+        } else {
             return false
         }
     }
-    func toJson()->String?{
-        let jsonData = try! JSONSerialization.data(withJSONObject: self, options: [])
+    func toJson() -> String? {
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: self, options: []) else { return nil }
         let json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
         guard let string = json as String? else {return nil}
         return string
     }
-   
-
 	/// SwifterSwift: Insert an element at the beginning of array.
 	///
 	///		[2, 3, 4, 5].prepend(1) -> [1, 2, 3, 4, 5]
@@ -350,7 +347,8 @@ public extension Array {
 	///     [1, 2, 3, 4].rotated(by: 3) -> [2,3,4,1]
 	///     [1, 2, 3, 4].rotated(by: -1) -> [2,3,4,1]
 	///
-	/// - Parameter places: Number of places that the array be rotated. If the value is positive the end becomes the start, if it negative it's that start becom the end.
+	/// - Parameter places: Number of places that the array be rotated. If the value is positive the end becomes the start,
+    // if it negative it's that start becom the end.
 	/// - Returns: The new rotated array
     func rotated(by places: Int) -> [Element] {
 		//Inspired by: https://ruby-doc.org/core-2.2.0/Array.html#method-i-rotate
@@ -377,7 +375,8 @@ public extension Array {
 	///     [1, 2, 3, 4].rotate(by: 3) -> [2,3,4,1]
 	///     [1, 2, 3, 4].rotated(by: -1) -> [2,3,4,1]
 	///
-	/// - Parameter places: Number of places that the array should be rotated. If the value is positive the end becomes the start, if it negative it's that start becom the end.
+	/// - Parameter places: Number of places that the array should be rotated. If the value is positive the end becomes the start,
+    //if it negative it's that start becom the end.
 	///
 	/// - Returns: self after rotating
     mutating func rotate(by places: Int) -> [Element] {
@@ -396,8 +395,6 @@ public extension Array {
 	///
 	///		[1, 2, 3, 4, 5].shuffled // return a shuffled version from given array e.g. [2, 4, 1, 3, 5].
 	///
-
-
 	/// SwifterSwift: Return a sorted array based on an optional keypath.
 	///
 	/// - Parameter path: Key path to sort. The key path type must be Comparable.
@@ -481,8 +478,6 @@ public extension Array where Element: Equatable {
         }
         return found
     }
-
-    
 	/// SwifterSwift: All indices of specified item.
 	///
 	///		[1, 2, 2, 3, 4, 2, 5].indices(of 2) -> [1, 2, 5]

@@ -20,5 +20,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'BSImagePicker'
 pod 'GooglePlaces', '= 3.0.3'
 pod 'GoogleMaps', '= 3.0.3'
+pod 'SwiftLint'
 
 end

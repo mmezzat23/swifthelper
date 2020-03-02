@@ -94,11 +94,11 @@ public extension Int {
 // MARK: - Methods
 public extension Int {
 
-    func random(_ n: Int = 100) -> Int {
-        return Int(arc4random_uniform(UInt32(n)))
+    func random(_ num: Int = 100) -> Int {
+        return Int(arc4random_uniform(UInt32(num)))
     }
-    func randomNumbers(_ n: Int = 100) ->Int {
-        return random(n)
+    func randomNumbers(_ num: Int = 100) -> Int {
+        return random(num)
     }
 
 	/// SwifterSwift: Random integer between two integer values.
@@ -172,7 +172,6 @@ public extension Int {
 		return romanValue
 	}
 
-	// swiftlint:disable next identifier_name
 	/// SwifterSwift: Rounds to the closest multiple of n
     func roundToNearest(_ n: Int) -> Int {
 		return n == 0 ? self : Int(round(Double(self) / Double(n))) * n
@@ -216,7 +215,6 @@ public func ** (lhs: Int, rhs: Int) -> Double {
 	return pow(Double(lhs), Double(rhs))
 }
 
-// swiftlint:disable next identifier_name
 prefix operator √
 /// SwifterSwift: Square root of integer.
 ///
@@ -227,7 +225,6 @@ public prefix func √ (int: Int) -> Double {
 	return sqrt(Double(int))
 }
 
-// swiftlint:disable next identifier_name
 infix operator ±
 /// SwifterSwift: Tuple of plus-minus operation.
 ///
@@ -240,7 +237,6 @@ public func ± (lhs: Int, rhs: Int) -> (Int, Int) {
 	return (lhs + rhs, lhs - rhs)
 }
 
-// swiftlint:disable next identifier_name
 prefix operator ±
 /// SwifterSwift: Tuple of plus-minus operation.
 ///

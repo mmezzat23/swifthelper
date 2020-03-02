@@ -48,7 +48,6 @@ extension String {
 		return count
 	}
 
-	// swiftlint:disable next identifier_name
 	/// SwifterSwift: Sliced string from a start index.
 	///
 	///		"Hello World".slicing(at: 6) -> "World"

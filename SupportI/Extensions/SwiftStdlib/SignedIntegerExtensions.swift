@@ -59,7 +59,6 @@ public extension SignedInteger {
 // MARK: - Methods
 public extension SignedInteger {
 
-	// swiftlint:disable next identifier_name
 	/// SwifterSwift: Greatest common divisor of integer value and n.
 	///
 	/// - Parameter n: integer value to find gcd with.
@@ -68,7 +67,6 @@ public extension SignedInteger {
 		return n == 0 ? self : n.gcd(of: self % n)
 	}
 
-	// swiftlint:disable next identifier_name
 	/// SwifterSwift: Least common multiple of integer and n.
 	///
 	/// - Parameter n: integer value to find lcm with.
@@ -76,6 +74,4 @@ public extension SignedInteger {
     func lcm(of n: Self) -> Self {
 		return (self * n).abs / gcd(of: n)
 	}
-
-  
 }

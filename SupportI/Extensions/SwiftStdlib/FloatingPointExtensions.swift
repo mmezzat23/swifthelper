@@ -8,15 +8,10 @@
 
 // MARK: - Properties
 public extension FloatingPoint {
-
-
-
 }
-
 
 // MARK: - Operators
 
-// swiftlint:disable next identifier_name
 infix operator ±
 /// SwifterSwift: Tuple of plus-minus operation.
 ///
@@ -29,7 +24,6 @@ public func ±<T: FloatingPoint> (lhs: T, rhs: T) -> (T, T) {
 	return (lhs + rhs, lhs - rhs)
 }
 
-// swiftlint:disable next identifier_name
 prefix operator ±
 /// SwifterSwift: Tuple of plus-minus operation.
 ///

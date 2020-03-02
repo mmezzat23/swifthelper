@@ -9,28 +9,24 @@
 import UIKit
 #if !os(watchOS)
 
-fileprivate var collectionViewAutoScroll = 1
-fileprivate var timerTest:Timer?
+private var collectionViewAutoScroll = 1
+private var timerTest: Timer?
 
 // MARK: - Properties
-public extension UICollectionView{
-   
-    
-    @objc func timer(){
+public extension UICollectionView {
+    @objc func timer() {
         self.moveToNextItem()
     }
     /**
      Invokes Timer to start Automatic Animation with repeat enabled
      */
     func autoScrolling() {
-        
         collectionViewAutoScroll = 1
         self.stopTimerTest()
         startTimer()
         //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timer), userInfo: nil, repeats: true)
     }
     func startTimer () {
-        
         if timerTest == nil {
             timerTest =  Timer.scheduledTimer(
                 timeInterval: TimeInterval(2),
@@ -40,35 +36,28 @@ public extension UICollectionView{
                 repeats     : true)
         }
     }
-    
     func stopTimerTest() {
         if timerTest != nil {
             timerTest?.invalidate()
             timerTest = nil
         }
     }
-    
-    
     /// running auto scrolling
     ///
     /// - Parameter count: number of items
     func moveToNextItem() {
         let count = self.numberOfItems()
-        if count > 0 {
+        if count > 1 {
             if collectionViewAutoScroll < count {
                 let indexPath = IndexPath(item: collectionViewAutoScroll, section: 0)
                 self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-                collectionViewAutoScroll = collectionViewAutoScroll + 1
+                collectionViewAutoScroll += 1
             } else {
                 collectionViewAutoScroll = 1
                 self.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
             }
         }
-        
-        
     }
-    
-
 }
 
 // MARK: - Properties
@@ -200,7 +189,7 @@ public extension UICollectionView {
     ///   - bundleClass: Class in which the Bundle instance will be based on.
     func register<T: UICollectionViewCell>(nibWithCellClass name: T.Type, at bundleClass: AnyClass? = nil) {
         let identifier = String(describing: name)
-        var bundle: Bundle? = nil
+        var bundle: Bundle?
 
         if let bundleName = bundleClass {
             bundle = Bundle(for: bundleName)
@@ -211,5 +200,3 @@ public extension UICollectionView {
 
 }
 #endif
-
-

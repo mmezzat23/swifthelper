@@ -38,7 +38,6 @@ public extension Dictionary {
     ///
     /// - Parameter prettify: set true to prettify data (default is false).
     /// - Returns: optional JSON Data (if applicable).
- 
     /// SwifterSwift: JSON String from dictionary.
     ///
     ///		dict.jsonString() -> "{"testKey":"testValue","testArrayKey":[1,2,3,4,5]}"
@@ -61,8 +60,6 @@ public extension Dictionary {
     ///		*/
     ///
     /// - Parameter prettify: set true to prettify string (default is false).
-  
-
     /// SwifterSwift: Count dictionary entries that where function returns true.
     ///
     /// - Parameter where: condition to evaluate each tuple entry against.
