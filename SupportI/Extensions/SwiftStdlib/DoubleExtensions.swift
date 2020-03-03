@@ -54,12 +54,12 @@ public func ** (lhs: Double, rhs: Double) -> Double {
 	return pow(lhs, rhs)
 }
 
-prefix operator √
-/// SwifterSwift: Square root of double.
-///
-/// - Parameter double: double value to find square root for.
-/// - Returns: square root of given double.
-public prefix func √ (double: Double) -> Double {
-	// http://nshipster.com/swift-operators/
-	return sqrt(double)
-}
+//prefix operator √
+///// SwifterSwift: Square root of double.
+/////
+///// - Parameter double: double value to find square root for.
+///// - Returns: square root of given double.
+//public prefix func √ (double: Double) -> Double {
+//    // http://nshipster.com/swift-operators/
+//    return sqrt(double)
+//}

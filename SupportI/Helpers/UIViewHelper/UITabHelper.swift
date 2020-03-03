@@ -32,7 +32,6 @@ extension UIView {
             action()
         }
     }
-    
     @objc func triggerActionHandleBlock() {
         self.actionHandleBlock()
     }

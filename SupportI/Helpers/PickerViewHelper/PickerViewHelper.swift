@@ -16,10 +16,8 @@ protocol PickerViewDelegate: class {
 }
 extension PickerViewDelegate {
     func didSelectItem(item: Int) {
-        
     }
     func didSelectItem(for item: Any) {
-        
     }
 }
 
@@ -28,20 +26,17 @@ typealias PickerDidSelectPath = (Int) -> Void
 typealias PickerDidSelectItem = (Any) -> Void
 
 class PickerViewHelper: UIViewController {
-    
-    @IBOutlet weak var pickerView: UIPickerView!  {
+    @IBOutlet weak var pickerView: UIPickerView! {
         didSet {
             pickerView.delegate = self
             pickerView.dataSource = self
         }
     }
-    
     weak var delegate: PickerViewDelegate?
     var source: [Any] = []
     var titleClosure: PickerTitleHandler?
     var didSelectClosure: PickerDidSelectPath?
     var didSelectItemClosure: PickerDidSelectItem?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -57,11 +52,9 @@ class PickerViewHelper: UIViewController {
             }
         }
     }
-    
     @IBAction func cancelBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension PickerViewHelper: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -74,5 +67,4 @@ extension PickerViewHelper: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return titleClosure?(row)
     }
-    
 }

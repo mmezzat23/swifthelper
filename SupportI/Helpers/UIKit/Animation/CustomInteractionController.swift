@@ -1,4 +1,3 @@
-
 import UIKit
 
 class CustomInteractionController: UIPercentDrivenInteractiveTransition {
@@ -8,16 +7,16 @@ class CustomInteractionController: UIPercentDrivenInteractiveTransition {
     var completionSeed: CGFloat {
         return 1 - percentComplete
     }
-    
+
     func attachToViewController(viewController: UIViewController) {
         navigationController = viewController.navigationController
         setupGestureRecognizer(view: viewController.view)
     }
-    
+
     private func setupGestureRecognizer(view: UIView) {
             view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(_:))))
     }
-    
+
     @objc func handlePanGesture(_ gestureRecognizer: UIPanGestureRecognizer) {
         let viewTranslation = gestureRecognizer.translation(in: gestureRecognizer.view!.superview!)
         let width = Int((gestureRecognizer.view?.width)!)
@@ -26,28 +25,27 @@ class CustomInteractionController: UIPercentDrivenInteractiveTransition {
             transitionInProgress = true
             //navigationController.popViewController(animated: true)
         case .changed:
-            var const:CGFloat = 0
+            var const: CGFloat = 0
             let int = Int(viewTranslation.x)
             if getAppLang() == "ar"{
-                if int > 0{
-                    let unInt:Int = abs(int)
+                if int > 0 {
+                    let unInt: Int = abs(int)
                     const = CGFloat(fminf(fmaxf(Float( unInt / (width/3)), 0.0), 1.0))
                     shouldCompleteTransition = const > 0.5
-                }else{
+                } else {
                     shouldCompleteTransition = false
                 }
-               
-            }else{
-                if int < 0{
-                    let unInt:Int = abs(int)
+
+            } else {
+                if int < 0 {
+                    let unInt: Int = abs(int)
                     const = CGFloat(fminf(fmaxf(Float( unInt / (width/3)), 0.0), 1.0))
                     shouldCompleteTransition = const > 0.5
-                }else{
+                } else {
                     shouldCompleteTransition = false
                 }
             }
-            
-            
+
             update(const)
         case .cancelled, .ended:
             transitionInProgress = false

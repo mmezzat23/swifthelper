@@ -10,30 +10,26 @@ import CoreLocation
 import GoogleMaps
 import GooglePlaces
 
-enum MarkerUse{
+enum MarkerUse {
     case color
     case icon
     case image
 }
 struct MarkerAttrbuite {
-    var color:UIColor?
-    var icon:UIImage?
-    var image:UIImageView?
-    var use:MarkerUse!
+    var color: UIColor?
+    var icon: UIImage?
+    var image: UIImageView?
+    var use: MarkerUse!
 }
-
-
-
-fileprivate var markersFile:[GMSMarker:CLLocationCoordinate2D] = [:]
-
+private var markersFile: [GMSMarker: CLLocationCoordinate2D] = [:]
 extension GMSMarker {
-    var oldPosition:CLLocationCoordinate2D? {
-        set{
+    var oldPosition: CLLocationCoordinate2D? {
+        set {
             markersFile[self] = newValue
-        }get{
+        } get {
             if markersFile[self] != nil {
                 return markersFile[self]
-            }else{
+            } else {
                 return nil
             }
         }

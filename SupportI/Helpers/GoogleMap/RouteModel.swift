@@ -7,14 +7,14 @@
 //
 import MapKit
 
-public struct MapPath : Decodable{
-    var routes : [Route]?
+public struct MapPath: Decodable {
+    var routes: [Route]?
 }
 
-public struct Route : Decodable{
-    var overview_polyline : OverView?
+public struct Route: Decodable {
+    var overview_polyline: OverView?
 }
 
-public struct OverView : Decodable {
-    var points : String?
+public struct OverView: Decodable {
+    var points: String?
 }

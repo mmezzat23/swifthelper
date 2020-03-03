@@ -5,17 +5,14 @@
 //  Created by mohamed abdo on 9/2/19.
 //  Copyright © 2019 MohamedAbdu. All rights reserved.
 //
-
 import UIKit
-
-
 protocol ImageDisplayInterface: class {
-    func displayImage()
+    func displayImage(image: String?)
+    func displayImage(image: UIImage?)
 }
 extension ImageDisplayInterface where Self: UIViewController {
     func displayImage(image: String?) {
         let storyboard = UIStoryboard(name: "ImageDisplayController", bundle: nil)
-        
         guard let popOverVC = storyboard.instantiateViewController(withClass: ImageDisplayController.self) else { return }
         popOverVC.mode = .url
         popOverVC.imageURL = image
@@ -26,7 +23,6 @@ extension ImageDisplayInterface where Self: UIViewController {
     }
     func displayImage(image: UIImage?) {
         let storyboard = UIStoryboard(name: "ImageDisplayController", bundle: nil)
-        
         guard let popOverVC = storyboard.instantiateViewController(withClass: ImageDisplayController.self) else { return }
         popOverVC.mode = .image
         popOverVC.uiImage = image
@@ -43,7 +39,6 @@ class ImageDisplayController: UIViewController {
     }
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var superView: UIView!
-    
     var imageURL: String?
     var uiImage: UIImage?
     var mode: Mode = .url
@@ -64,36 +59,28 @@ class ImageDisplayController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-    
     @objc func handleTap(sender: UITapGestureRecognizer) {
         removeAnimate()
     }
-    func showAnimate()
-    {
+    func showAnimate() {
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        self.view.alpha = 0.0;
-        
+        self.view.alpha = 0.0
         UIView.animate(withDuration: 0.25, animations: {
             self.view.alpha = 1.0
             self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        });
+        })
     }
-    func removeAnimate(closure: HandlerView? = nil)
-    {
+    func removeAnimate(closure: HandlerView? = nil) {
         UIView.animate(withDuration: 0.25, animations: {
             self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-            self.view.alpha = 0.0;
-            
-        }, completion: {(finished : Bool)  in
-            
-            if (finished)
-            {
+            self.view.alpha = 0.0
+        }, completion: {(finished: Bool)  in
+
+            if finished {
                 self.view.removeFromSuperview()
                 closure?()
             }
-            
-        });
-        
-    }
 
+        })
+    }
 }

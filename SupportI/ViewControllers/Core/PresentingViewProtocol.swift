@@ -10,20 +10,20 @@ import Foundation
 import NVActivityIndicatorView
 
 // All ViewControllers must implement this protocol
-protocol PresentingViewProtocol :class {
-    
+protocol PresentingViewProtocol: class {
+
     func bind()
     func startLoading()
     func stopLoading()
-    func push(_ view:UIViewController ,_ animated:Bool)
-    func snackBar(message:String,duration:TTGSnackbarDuration)
-    func snackBar(message:String,duration:TTGSnackbarDuration,dismissClosure:@escaping ()->())
-    func snackBar(message:String,duration:TTGSnackbarDuration,actionClosure:@escaping ()->())
+    func push(_ view: UIViewController, _ animated: Bool)
+    func snackBar(message: String, duration: TTGSnackbarDuration)
+    func snackBar(message: String, duration: TTGSnackbarDuration, dismissClosure:@escaping () -> Void)
+    func snackBar(message: String, duration: TTGSnackbarDuration, actionClosure:@escaping () -> Void)
 }
 
 // implementation of PresentingViewProtocol only in cases where the presenting view is a UIViewController
-extension PresentingViewProtocol where Self:UIViewController {
-    func randomIndicatorView(){
+extension PresentingViewProtocol where Self: UIViewController {
+    func randomIndicatorView() {
         // pick and return a new value
         var rand = Int().random(32)
         if rand == 31 || rand == 25 || rand == 19 || rand == 20 || rand == 14 || rand == 15 || rand == 4 || rand == 26 {
@@ -33,19 +33,19 @@ extension PresentingViewProtocol where Self:UIViewController {
         guard let loading = type else { return }
         NVActivityIndicatorView.DEFAULT_TYPE = loading
     }
-    func bind(){
-        
+    func bind() {
+
     }
-    func startLoading(){
+    func startLoading() {
         self.randomIndicatorView()
         let activityData = ActivityData()
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
     }
-    
-    func stopLoading(){
+
+    func stopLoading() {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
-    func snackBar(message:String,duration:TTGSnackbarDuration = .middle) {
+    func snackBar(message: String, duration: TTGSnackbarDuration = .middle) {
         let snackbar = TTGSnackbar(message: message, duration: duration)
         snackbar.onSwipeBlock = { (snackbar, direction) in
             // Change the animation type to simulate being dismissed in that direction
@@ -58,16 +58,16 @@ extension PresentingViewProtocol where Self:UIViewController {
             } else if direction == .down {
                 snackbar.animationType = .slideFromTopBackToTop
             }
-            
+
             snackbar.dismiss()
         }
         snackbar.show()
-        
+
     }
-    func snackBar(message:String,duration:TTGSnackbarDuration = .middle , dismissClosure:@escaping ()->()){
+    func snackBar(message: String, duration: TTGSnackbarDuration = .middle, dismissClosure:@escaping () -> Void) {
         let snackbar = TTGSnackbar(message: message, duration: duration)
         snackbar.onSwipeBlock = { (snackbar, direction) in
-            
+
             // Change the animation type to simulate being dismissed in that direction
             if direction == .right {
                 snackbar.animationType = .slideFromLeftToRight
@@ -78,18 +78,17 @@ extension PresentingViewProtocol where Self:UIViewController {
             } else if direction == .down {
                 snackbar.animationType = .slideFromTopBackToTop
             }
-            
+
             snackbar.dismiss()
         }
         snackbar.dismissBlock = {
             (snackbar) in dismissClosure()
         }
         snackbar.show()
-        
-        
+
     }
-    func snackBar(message:String,duration:TTGSnackbarDuration = .middle,actionClosure:@escaping ()->()){
-        let snackbar = TTGSnackbar(message:message,
+    func snackBar(message: String, duration: TTGSnackbarDuration = .middle, actionClosure:@escaping () -> Void) {
+        let snackbar = TTGSnackbar(message: message,
                                    duration: .forever,
                                    actionText: "sure.lan".localized,
                                    actionBlock: { (snackbar) in

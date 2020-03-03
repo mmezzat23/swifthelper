@@ -42,5 +42,3 @@ public extension UISegmentedControl {
 
 }
 #endif
-
-

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class TokenModel : Decodable {
-    
-    var data : String?
-    var expires_in : Int?
-    var access_token : String?
-    var refresh_token : String?
-   
+class TokenModel: Decodable {
+
+    var data: String?
+    var expires_in: Int?
+    var access_token: String?
+    var refresh_token: String?
+
 }

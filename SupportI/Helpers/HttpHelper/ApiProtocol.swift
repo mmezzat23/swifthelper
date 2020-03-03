@@ -8,10 +8,4 @@
 import Alamofire
 
 protocol Api {
-    
 }
-
-
-
-
-

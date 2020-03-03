@@ -9,15 +9,15 @@
 import Foundation
 import NVActivityIndicatorView
 
-enum Socials:Int{
+enum Socials: Int {
     case facebook = 1
     case twitter = 2
     case google = 3
     case instagram = 4
 }
-class SocialModel{
-    var type:Socials?
-    init(type:Socials) {
+class SocialModel {
+    var type: Socials?
+    init(type: Socials) {
         self.type = type
     }
 }
@@ -27,12 +27,12 @@ protocol SocialIndicator {
     func stopLoading()
 }
 extension SocialIndicator {
-    
-    func startLoading(){
+
+    func startLoading() {
         let activityData = ActivityData()
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
     }
-    func stopLoading(){
+    func stopLoading() {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
 }

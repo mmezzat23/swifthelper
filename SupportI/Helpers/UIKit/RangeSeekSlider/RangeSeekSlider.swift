@@ -29,7 +29,6 @@ import UIKit
         completion?(self)
     }
 
-
     // MARK: - open stored properties
 
     open weak var delegate: RangeSeekSliderDelegate?
@@ -162,10 +161,10 @@ import UIKit
             guard let image = handleImage else {
                 return
             }
-            
+
             var handleFrame = CGRect.zero
             handleFrame.size = image.size
-            
+
             leftHandle.frame = handleFrame
             leftHandle.contents = image.cgImage
 
@@ -221,7 +220,6 @@ import UIKit
     /// The brief description displayed in accessibility mode for maximum value handler. If not set, the default is empty String.
     @IBInspectable open var maxLabelAccessibilityHint: String?
 
-
     // MARK: - public stored properties
 
     public enum HandleTracking { case none, left, right }
@@ -247,7 +245,6 @@ import UIKit
     // see http://stackoverflow.com/questions/13462046/custom-uiview-not-showing-accessibility-on-voice-over
     public var accessibleElements: [UIAccessibilityElement] = []
 
-
     // MARK: - public computed properties
 
     public var leftHandleAccessibilityElement: UIAccessibilityElement {
@@ -272,7 +269,6 @@ import UIKit
         return element
     }
 
-
     // MARK: - UIView
 
     open override func layoutSubviews() {
@@ -291,7 +287,6 @@ import UIKit
         return CGSize(width: UIView.noIntrinsicMetric, height: 65.0)
     }
 
-
     // MARK: - UIControl
 
     open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -302,10 +297,10 @@ import UIKit
 
         guard isTouchingLeftHandle || isTouchingRightHandle else { return false }
 
-
-        // the touch was inside one of the handles so we're definitely going to start movign one of them. But the handles might be quite close to each other, so now we need to find out which handle the touch was closest too, and activate that one.
-        let distanceFromLeftHandle: CGFloat = touchLocation.distance(to: leftHandle.frame.center)
-        let distanceFromRightHandle: CGFloat = touchLocation.distance(to: rightHandle.frame.center)
+        // the touch was inside one of the handles so we're definitely going to start movign one of them. But the handles might
+        //be quite close to each other, so now we need to find out which handle the touch was closest too, and activate that one.
+        let distanceFromLeftHandle: CGFloat = touchLocation.distance(tor: leftHandle.frame.center)
+        let distanceFromRightHandle: CGFloat = touchLocation.distance(tor: rightHandle.frame.center)
 
         if distanceFromLeftHandle < distanceFromRightHandle && !disableRange {
             handleTracking = .left
@@ -327,7 +322,8 @@ import UIKit
 
         let location: CGPoint = touch.location(in: self)
 
-        // find out the percentage along the line we are in x coordinate terms (subtracting half the frames width to account for moving the middle of the handle, not the left hand side)
+        // find out the percentage along the line we are in x coordinate terms (subtracting half the frames width to
+        //account for moving the middle of the handle, not the left hand side)
         let percentage: CGFloat = (location.x - sliderLine.frame.minX - handleDiameter / 2.0) / (sliderLine.frame.maxX - sliderLine.frame.minX)
 
         // multiply that percentage by self.maxValue to get the new selected minimum value
@@ -361,7 +357,6 @@ import UIKit
         delegate?.didEndTouches(in: self)
     }
 
-
     // MARK: - UIAccessibility
 
     open override func accessibilityElementCount() -> Int {
@@ -377,12 +372,10 @@ import UIKit
         return accessibleElements.index(of: element) ?? 0
     }
 
-
     // MARK: - open methods
 
     /// When subclassing **RangeSeekSlider** and setting each item in **setupStyle()**, the design is reflected in Interface Builder as well.
     open func setupStyle() {}
-
 
     // MARK: - public methods
 
@@ -518,7 +511,7 @@ import UIKit
             sliderLine.backgroundColor = tintCGColor
 
             let color: CGColor
-            if let _ = handleImage {
+            if handleImage != nil {
                 color = UIColor.clear.cgColor
             } else {
                 color = handleColor?.cgColor ?? tintCGColor
@@ -548,8 +541,12 @@ import UIKit
                                                 height: lineHeight)
     }
 
+}
+
+extension RangeSeekSlider {
     public func updateLabelPositions() {
-        // the center points for the labels are X = the same x position as the relevant handle. Y = the y position of the handle minus half the height of the text label, minus some padding.
+        // the center points for the labels are X = the same x position as the relevant handle. Y = the
+        //y position of the handle minus half the height of the text label, minus some padding.
 
         minLabel.frame.size = minLabelTextSize
         maxLabel.frame.size = maxLabelTextSize
@@ -604,7 +601,6 @@ import UIKit
             }
         }
     }
-
     public func updateFixedLabelPositions() {
         minLabel.position = CGPoint(x: xPositionAlongLine(for: minValue),
                                     y: sliderLine.frame.minY - (minLabelTextSize.height / 2.0) - (handleDiameter / 2.0) - labelPadding)
@@ -618,7 +614,6 @@ import UIKit
             maxLabel.frame.origin.x = frame.width - maxLabel.frame.width
         }
     }
-
     public func refresh() {
         if enableStep && step > 0.0 {
             selectedMinValue = CGFloat(roundf(Float(selectedMinValue / step))) * step
@@ -626,16 +621,13 @@ import UIKit
                 TapticEngine.selection.feedback()
             }
             previousStepMinValue = selectedMinValue
-
             selectedMaxValue = CGFloat(roundf(Float(selectedMaxValue / step))) * step
             if let previousStepMaxValue = previousStepMaxValue, previousStepMaxValue != selectedMaxValue {
                 TapticEngine.selection.feedback()
             }
             previousStepMaxValue = selectedMaxValue
         }
-
         let diff: CGFloat = selectedMaxValue - selectedMinValue
-
         if diff < minDistance {
             switch handleTracking {
             case .left:
@@ -655,32 +647,28 @@ import UIKit
                 break
             }
         }
-
-        // ensure the minimum and maximum selected values are within range. Access the values directly so we don't cause this refresh method to be called again (otherwise changing the properties causes a refresh)
+        // ensure the minimum and maximum selected values are within range. Access the values directly so we don't cause this refresh
+        //method to be called again (otherwise changing the properties causes a refresh)
         if selectedMinValue < minValue {
             selectedMinValue = minValue
         }
         if selectedMaxValue > maxValue {
             selectedMaxValue = maxValue
         }
-
         // update the frames in a transaction so that the tracking doesn't continue until the frame has moved.
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         updateHandlePositions()
         updateLabelPositions()
         CATransaction.commit()
-
         updateLabelValues()
         updateColors()
         updateAccessibilityElements()
-
         // update the delegate
         if let delegate = delegate, handleTracking != .none {
             delegate.rangeSeekSlider(self, didChange: selectedMinValue, maxValue: selectedMaxValue)
         }
     }
-
     public func animate(handle: CALayer, selected: Bool) {
         let transform: CATransform3D
         if selected {
@@ -688,20 +676,15 @@ import UIKit
         } else {
             transform = CATransform3DIdentity
         }
-
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.3)
         CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
         handle.transform = transform
-
         // the label above the handle will need to move too if the handle changes size
         updateLabelPositions()
-
         CATransaction.commit()
     }
 }
-
-
 // MARK: - RangeSeekSliderLeftElement
 
 public final class RangeSeekSliderLeftElement: UIAccessibilityElement {
@@ -718,7 +701,6 @@ public final class RangeSeekSliderLeftElement: UIAccessibilityElement {
         accessibilityValue = slider.minLabel.string as? String
     }
 }
-
 
 // MARK: - RangeSeekSliderRightElement
 
@@ -739,7 +721,6 @@ public final class RangeSeekSliderRightElement: UIAccessibilityElement {
     }
 }
 
-
 // MARK: - CGRect
 
 public extension CGRect {
@@ -749,14 +730,13 @@ public extension CGRect {
     }
 }
 
-
 // MARK: - CGPoint
 
 public extension CGPoint {
 
-    func distance(to: CGPoint) -> CGFloat {
-        let distX: CGFloat = to.x - x
-        let distY: CGFloat = to.y - y
+    func distance(tor: CGPoint) -> CGFloat {
+        let distX: CGFloat = tor.x - x
+        let distY: CGFloat = tor.y - y
         return sqrt(distX * distX + distY * distY)
     }
 }

@@ -23,12 +23,11 @@ class PlacePickerController: UIViewController {
             placesTbl.dataSource = self
         }
     }
-    
     var location: LocationHelper?
     var lat: Double = 0
     var lng: Double = 0
     var mapHelper: GoogleMapHelper?
-    var delegate: PlacesPickerDelegate?
+    weak var delegate: PlacesPickerDelegate?
     /** places **/
     internal var placesClient: GMSPlacesClient!
     // An array to hold the list of likely places.
@@ -36,7 +35,6 @@ class PlacePickerController: UIViewController {
     // The currently selected place.
     internal var selectedPlace: PlacePickerModel.PlacePickerResult?
     private var  currentLocationPlace: PlacePickerModel.PlacePickerResult?
-    
     private var isCounterRun: Bool = false
     private lazy var counterLbl: EFCountingLabel = {
      let myLabel = EFCountingLabel(frame: CGRect(x: self.view.width/2 - 20, y: self.placesTbl.y - 50, width: 200, height: 40))
@@ -78,29 +76,6 @@ class PlacePickerController: UIViewController {
         //nearbyPlaces()
     }
     func nearbyPlaces() {
-        // Populate the array with the list of likely places.
-        // Clean up from previous sessions.
-        
-//        likelyPlaces.removeAll()
-//
-//        placesClient.currentPlace(callback: { (placeLikelihoods, error) -> Void in
-//            if let error = error {
-//                // TODO: Handle the error.
-//                print("Current Place error: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            // Get likely places and add to the list.
-//            if let likelihoodList = placeLikelihoods {
-//                for likelihood in likelihoodList.likelihoods {
-//                    let place = likelihood.place
-//                    print(place.name)
-//                    self.likelyPlaces.append(place)
-//                }
-//                //self.placesTbl.animateZoom()
-//                self.placesTbl.reloadData()
-//            }
-//        })
     }
     func fetchPlacesByLocation() {
         if isCounterRun {
@@ -121,10 +96,7 @@ class PlacePickerController: UIViewController {
             } else {
                 self.waitTimer()
             }
-            
         }
-        
-    
     }
     func initCurrentLocationPlace(title: String? = nil, snippet: String? = nil) {
         currentLocationPlace = PlacePickerModel.PlacePickerResult()
@@ -150,7 +122,6 @@ class PlacePickerController: UIViewController {
             self.fetchPlacesByLocation()
         }
     }
-  
     @objc func back() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -158,15 +129,13 @@ class PlacePickerController: UIViewController {
 
 extension PlacePickerController: UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+        if (scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height {
             self.placesTbl.isScrollEnabled = true
         }
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return likelyPlaces.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: PlacePickerCell.self, indexPath, register: false)
         cell.model = likelyPlaces[indexPath.row]
@@ -184,9 +153,7 @@ extension PlacePickerController: UITableViewDelegate, UITableViewDataSource {
 //        }
     }
     func didSelectWithoutGMSPlace(path: Int) {
-        
     }
-    
 }
 extension PlacePickerController: LocationDelegate, GoogleMapHelperDelegate {
     func didUpdateLocation(lat: Double, lng: Double) {
@@ -200,10 +167,8 @@ extension PlacePickerController: LocationDelegate, GoogleMapHelperDelegate {
                 self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
             }
         })
-       
     }
     func didChangeCameraLocation(lat: Double, lng: Double) {
-        
     }
     func didClickOnMap(lat: Double, lng: Double) {
         self.lat = lat
@@ -224,7 +189,6 @@ extension PlacePickerController: PlacePickerSearchDelegate {
         guard let lat = place?.geometry?.location?.lat, let lng = place?.geometry?.location?.lng else { return }
         self.lat = lat
         self.lng = lng
-        
         self.currentLocationPlace = place
         self.fetchPlacesByLocation()
         self.mapHelper?.updateCamera(lat: lat, lng: lng)

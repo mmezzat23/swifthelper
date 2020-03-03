@@ -55,11 +55,11 @@ extension String {
 	/// - Parameter i: string index the slicing should start from.
 	/// - Returns: sliced substring starting from start index (if applicable) (example: "Hello world".slicing(at: 6) -> "world")
     @available(*, deprecated, message: "Use string[safe: i] instead.")
-	public func slicing(at i: Int) -> String? {
-		guard i < count else {
+	public func slicing(at counter: Int) -> String? {
+		guard counter < count else {
 			return nil
 		}
-		return self[safe: i..<count]
+		return self[safe: counter..<count]
 	}
 
 	/// SwifterSwift: Sliced string from a start index to an end index.

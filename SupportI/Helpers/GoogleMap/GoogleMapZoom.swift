@@ -10,7 +10,7 @@ import GoogleMaps
 import GooglePlaces
 
 extension GoogleMapHelper {
-    enum Zoom:Float {
+    enum Zoom: Float {
         case world = 1
         case landmass = 5
         case city = 10

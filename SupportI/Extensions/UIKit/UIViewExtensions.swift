@@ -44,7 +44,7 @@ public enum ShakeAnimationType {
 
 // MARK: - Properties
 public extension UIView {
-    
+
     /// SwifterSwift: Border color of view; also inspectable from Storyboard.
     @IBInspectable var borderColor: UIColor? {
         get {
@@ -61,7 +61,7 @@ public extension UIView {
             layer.borderColor = color.cgColor
         }
     }
-    
+
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
     @IBInspectable var borderWidth: CGFloat {
         get {
@@ -71,9 +71,7 @@ public extension UIView {
             layer.borderWidth = newValue
         }
     }
-    
-    
-    
+
     /// SwifterSwift: Corner radius of view; also inspectable from Storyboard.
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -82,16 +80,14 @@ public extension UIView {
         set {
             if shadowOpacity > 0 {
                layer.masksToBounds = false
-            }else{
+            } else {
                 layer.masksToBounds = true
             }
-            
+
             layer.cornerRadius = abs(CGFloat(Int(newValue * 100)) / 100)
         }
     }
-    
-    
-    
+
     /// SwifterSwift: First responder.
     var firstResponder: UIView? {
         guard !isFirstResponder else { return self }
@@ -100,7 +96,7 @@ public extension UIView {
         }
         return nil
     }
-    
+
     // SwifterSwift: Height of view.
     var height: CGFloat {
         get {
@@ -110,7 +106,7 @@ public extension UIView {
             frame.size.height = newValue
         }
     }
-    
+
     /// SwifterSwift: Check if view is in RTL format.
     var isRightToLeft: Bool {
         if #available(iOS 10.0, *, tvOS 10.0, *) {
@@ -119,7 +115,7 @@ public extension UIView {
             return false
         }
     }
-    
+
     /// SwifterSwift: Take screenshot of view (if applicable).
     var screenshot: UIImage? {
         UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
@@ -130,7 +126,7 @@ public extension UIView {
         layer.render(in: context)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
-    
+
     /// SwifterSwift: Shadow color of view; also inspectable from Storyboard.
     @IBInspectable var shadowColor: UIColor? {
         get {
@@ -141,7 +137,7 @@ public extension UIView {
             layer.shadowColor = newValue?.cgColor
         }
     }
-    
+
     /// SwifterSwift: Shadow offset of view; also inspectable from Storyboard.
     @IBInspectable var shadowOffset: CGSize {
         get {
@@ -151,7 +147,7 @@ public extension UIView {
             layer.shadowOffset = newValue
         }
     }
-    
+
     /// SwifterSwift: Shadow opacity of view; also inspectable from Storyboard.
     @IBInspectable var shadowOpacity: Float {
         get {
@@ -161,7 +157,7 @@ public extension UIView {
             layer.shadowOpacity = newValue
         }
     }
-    
+
     /// SwifterSwift: Shadow radius of view; also inspectable from Storyboard.
     @IBInspectable var shadowRadius: CGFloat {
         get {
@@ -171,7 +167,7 @@ public extension UIView {
             layer.shadowRadius = newValue
         }
     }
-    
+
     /// SwifterSwift: Size of view.
     var size: CGSize {
         get {
@@ -182,7 +178,7 @@ public extension UIView {
             height = newValue.height
         }
     }
-    
+
     /// SwifterSwift: Get view's parent view controller
     var parentViewController: UIViewController? {
         weak var parentResponder: UIResponder? = self
@@ -194,7 +190,7 @@ public extension UIView {
         }
         return nil
     }
-    
+
     /// SwifterSwift: Width of view.
     var width: CGFloat {
         get {
@@ -204,8 +200,7 @@ public extension UIView {
             frame.size.width = newValue
         }
     }
-    
-    // swiftlint:disable next identifier_name
+
     /// SwifterSwift: x origin of view.
     var x: CGFloat {
         get {
@@ -215,8 +210,7 @@ public extension UIView {
             frame.origin.x = newValue
         }
     }
-    
-    // swiftlint:disable next identifier_name
+
     /// SwifterSwift: y origin of view.
     var y: CGFloat {
         get {
@@ -226,46 +220,40 @@ public extension UIView {
             frame.origin.y = newValue
         }
     }
-    
+
 }
 
-
 extension UIView {
-    
-    func borderView(){
+
+    func borderView() {
         let border = CALayer()
         let width = CGFloat(0.5)
-        
-        border.borderColor = UIColor(red:209/255, green:209/255, blue:209/255, alpha: 1).cgColor
-        
-        border.frame = CGRect(x: 0, y: 0, width:  self.frame.size.width, height: self.frame.size.height)
-        
+
+        border.borderColor = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 1).cgColor
+
+        border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
-    
-    
-    func borderView(width:CGFloat , color:UIColor = .black) {
+
+    func borderView(width: CGFloat, color: UIColor = .black) {
         let border = CALayer()
         let width = width
-        
+
         border.borderColor = color.cgColor
-        border.frame = CGRect(x: 0, y: 0, width:  self.frame.size.width, height: self.frame.size.height)
-        
+        border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = false
     }
-    func border(width:CGFloat, color:UIColor = .black) {
+    func border(width: CGFloat, color: UIColor = .black) {
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
-    
-    enum ViewSide {
-        case Left, Right, Top, Bottom
-    }
-    
+
     func addBottomBorder(withColor color: UIColor) {
         self.layer.backgroundColor = UIColor.white.cgColor
         self.layer.masksToBounds = false
@@ -274,102 +262,102 @@ extension UIView {
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0
     }
-    func underlined(hexa : String){
+    func underlined(hexa: String) {
         let border = CALayer()
         let width = CGFloat(1.5)
-        
-        border.borderColor = self.hexaCodeToColor(hex:hexa).cgColor
-        
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-        
+
+        border.borderColor = self.hexaCodeToColor(hex: hexa).cgColor
+
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: self.frame.size.height)
+
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
-    func underlined(color:UIColor){
+    func underlined(color: UIColor) {
         let border = CALayer()
         let width = CGFloat(1)
-        
+
         border.borderColor = color.cgColor
-        
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-        
+
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: self.frame.size.height)
+
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
 
-
     }
-    func underlined(_ red:Int , _ green:Int , _ blue:Int){
+    func underlined(_ red: Int, _ green: Int, _ blue: Int) {
         let border = CALayer()
         let width = CGFloat(1.5)
-        
+
         let color = UIColor.colorRGB(red: red, green: green, blue: blue)
         border.borderColor = color.cgColor
-        
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-        
+
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: self.frame.size.height)
+
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
-    func circleBottom(){
-        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: self.bounds.size.width / 2, y: 0), radius: self.bounds.size.height, startAngle: 0.0, endAngle: CGFloat(Double.pi), clockwise: true)
+    func circleBottom() {
+        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: self.bounds.size.width / 2, y: 0),
+                                           radius: self.bounds.size.height, startAngle: 0.0, endAngle: CGFloat(Double.pi), clockwise: true)
         let circleShape = CAShapeLayer()
         circleShape.path = circlePath.cgPath
         self.layer.mask = circleShape
-        
+
     }
-    func shadow(opacity: Float = 0.7, radius: Int = 4 , offset:CGSize = CGSize.zero,masks:Bool = false){
+    func shadow(opacity: Float = 0.7, radius: Int = 4, offset: CGSize = CGSize.zero, masks: Bool = false) {
         self.layer.shadowColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.18).cgColor
         self.layer.shadowOffset = offset
         self.layer.shadowOpacity = opacity
         self.layer.shadowRadius = CGFloat(radius)
         self.layer.masksToBounds = masks
-        
+
     }
-    
-    func hexaCodeToColor(hex : String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
+
+    func hexaCodeToColor(hex: String) -> UIColor {
+        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if cString.hasPrefix("#") {
             cString.remove(at: cString.startIndex)
         }
-        
-        if ((cString.count) != 6) {
+
+        if (cString.count) != 6 {
             return UIColor.gray
         }
-        
-        var rgbValue:UInt32 = 0
+
+        var rgbValue: UInt32 = 0
         Scanner(string: cString).scanHexInt32(&rgbValue)
-        
+
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
-        
+
     }
-    func cornerRounded(rounded: Int,_ clipsBounds:Bool = false){
+    func cornerRounded(rounded: Int, _ clipsBounds: Bool = false) {
         self.layer.cornerRadius = CGFloat(rounded)
         self.clipsToBounds = clipsBounds
     }
-    
+
     func addTopShadow() {
         let frame = CGRect(x: 0, y: 35, width: self.frame.width, height: 6)
-        
+
         let backgroundView = UIView(frame: frame)
         self.addSubview(backgroundView)
-        
+
         //A linear Gradient Consists of two colours: top colour and bottom colour
         let topColor = UIColor.black
         let bottomColor = UIColor.clear
-        
+
         //Add the top and bottom colours to an array and setup the location of those two.
         let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
         let gradientLocations: [CGFloat] = [0.0, 1.0]
-        
+
         //Create a Gradient CA layer
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
@@ -378,9 +366,9 @@ extension UIView {
         gradientLayer.opacity = 0.2
         backgroundView.layer.insertSublayer(gradientLayer, at: 0)
         backgroundView.layer.zPosition = 100
-        
+
     }
-    func shadow(radius:CGFloat ,height:CGFloat,opacity:Float, color:UIColor){
+    func shadow(radius: CGFloat, height: CGFloat, opacity: Float, color: UIColor) {
         self.layer.shadowRadius = radius
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: height)
@@ -388,13 +376,12 @@ extension UIView {
         self.layer.masksToBounds = false
     }
     // Next step here
-    
-    
+
 }
 
 // MARK: - Methods
 public extension UIView {
-    
+
     /// SwifterSwift: Set some or all corners radiuses of view.
     ///
     /// - Parameters:
@@ -405,12 +392,12 @@ public extension UIView {
             roundedRect: bounds,
             byRoundingCorners: corners,
             cornerRadii: CGSize(width: radius, height: radius))
-        
+
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
         layer.mask = shape
     }
-    
+
     /// SwifterSwift: Add shadow to view.
     ///
     /// - Parameters:
@@ -418,21 +405,22 @@ public extension UIView {
     ///   - radius: shadow radius (default is 3).
     ///   - offset: shadow offset (default is .zero).
     ///   - opacity: shadow opacity (default is 0.5).
-    func addShadow(ofColor color: UIColor = UIColor(red: 0.07, green: 0.47, blue: 0.57, alpha: 1.0), radius: CGFloat = 3, offset: CGSize = .zero, opacity: Float = 0.5) {
+    func addShadow(ofColor color: UIColor = UIColor(red: 0.07, green: 0.47, blue: 0.57, alpha: 1.0),
+                   radius: CGFloat = 3, offset: CGSize = .zero, opacity: Float = 0.5) {
         layer.shadowColor = color.cgColor
         layer.shadowOffset = offset
         layer.shadowRadius = radius
         layer.shadowOpacity = opacity
         layer.masksToBounds = false
     }
-    
+
     /// SwifterSwift: Add array of subviews to view.
     ///
     /// - Parameter subviews: array of subviews to add to self.
     func addSubviews(_ subviews: [UIView]) {
         subviews.forEach({ self.addSubview($0) })
     }
-    
+
     /// SwifterSwift: Fade in view.
     ///
     /// - Parameters:
@@ -446,7 +434,7 @@ public extension UIView {
             self.alpha = 1
         }, completion: completion)
     }
-    
+
     /// SwifterSwift: Fade out view.
     ///
     /// - Parameters:
@@ -460,7 +448,7 @@ public extension UIView {
             self.alpha = 0
         }, completion: completion)
     }
-    
+
     /// SwifterSwift: Load view from nib.
     ///
     /// - Parameters:
@@ -470,17 +458,17 @@ public extension UIView {
     class func loadFromNib(named name: String, bundle: Bundle? = nil) -> UIView? {
         return UINib(nibName: name, bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as? UIView
     }
-    
+
     /// SwifterSwift: Remove all subviews in view.
     func removeSubviews() {
         subviews.forEach({ $0.removeFromSuperview() })
     }
-    
+
     /// SwifterSwift: Remove all gesture recognizers from view.
     func removeGestureRecognizers() {
         gestureRecognizers?.forEach(removeGestureRecognizer)
     }
-    
+
     /// SwifterSwift: Rotate view by angle on relative axis.
     ///
     /// - Parameters:
@@ -496,7 +484,7 @@ public extension UIView {
             self.transform = self.transform.rotated(by: angleWithType)
         }, completion: completion)
     }
-    
+
     /// SwifterSwift: Rotate view to angle on fixed axis.
     ///
     /// - Parameters:
@@ -512,7 +500,7 @@ public extension UIView {
             self.transform = self.transform.concatenating(CGAffineTransform(rotationAngle: angleWithType))
         }, completion: completion)
     }
-    
+
     /// SwifterSwift: Scale view by offset.
     ///
     /// - Parameters:
@@ -530,7 +518,7 @@ public extension UIView {
             completion?(true)
         }
     }
-    
+
     /// SwifterSwift: Shake view.
     ///
     /// - Parameters:
@@ -538,7 +526,8 @@ public extension UIView {
     ///   - duration: animation duration in seconds (default is 1 second).
     ///   - animationType: shake animation type (default is .easeOut).
     ///   - completion: optional completion handler to run with animation finishes (default is nil).
-    func shake(direction: ShakeDirection = .horizontal, duration: TimeInterval = 1, animationType: ShakeAnimationType = .easeOut, completion:(() -> Void)? = nil) {
+    func shake(direction: ShakeDirection = .horizontal, duration: TimeInterval = 1,
+               animationType: ShakeAnimationType = .easeOut, completion:(() -> Void)? = nil) {
         CATransaction.begin()
         let animation: CAKeyframeAnimation
         switch direction {
@@ -563,7 +552,7 @@ public extension UIView {
         layer.add(animation, forKey: "shake")
         CATransaction.commit()
     }
-    
+
     /// SwifterSwift: Add Visual Format constraints.
     ///
     /// - Parameters:
@@ -577,9 +566,10 @@ public extension UIView {
             view.translatesAutoresizingMaskIntoConstraints = false
             viewsDictionary[key] = view
         }
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: withFormat, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: withFormat,
+                                                      options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
     }
-    
+
     /// SwifterSwift: Anchor all sides of the view into it's superview.
     @available(iOS 9, *) func fillToSuperview() {
         // https://videos.letsbuildthatapp.com/
@@ -591,7 +581,7 @@ public extension UIView {
             bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
         }
     }
-    
+
     /// SwifterSwift: Add anchors from any side of the current view into the specified anchors and returns the newly added constraints.
     ///
     /// - Parameters:
@@ -619,38 +609,38 @@ public extension UIView {
         heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
         // https://videos.letsbuildthatapp.com/
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         var anchors = [NSLayoutConstraint]()
-        
+
         if let top = top {
             anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
         }
-        
+
         if let left = left {
             anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
         }
-        
+
         if let bottom = bottom {
             anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
         }
-        
+
         if let right = right {
             anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
         }
-        
+
         if widthConstant > 0 {
             anchors.append(widthAnchor.constraint(equalToConstant: widthConstant))
         }
-        
+
         if heightConstant > 0 {
             anchors.append(heightAnchor.constraint(equalToConstant: heightConstant))
         }
-        
+
         anchors.forEach({$0.isActive = true})
-        
+
         return anchors
     }
-    
+
     /// SwifterSwift: Anchor center X into current view's superview with a constant margin value.
     ///
     /// - Parameter constant: constant of the anchor constraint (default is 0).
@@ -661,7 +651,7 @@ public extension UIView {
             centerXAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
         }
     }
-    
+
     /// SwifterSwift: Anchor center Y into current view's superview with a constant margin value.
     ///
     /// - Parameter withConstant: constant of the anchor constraint (default is 0).
@@ -672,15 +662,13 @@ public extension UIView {
             centerYAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
         }
     }
-    
+
     /// SwifterSwift: Anchor center X and Y into current view's superview
     @available(iOS 9, *) func anchorCenterSuperview() {
         // https://videos.letsbuildthatapp.com/
         anchorCenterXToSuperview()
         anchorCenterYToSuperview()
     }
-    
+
 }
 #endif
-
-

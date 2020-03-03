@@ -15,7 +15,7 @@ extension UIApplication {
     }
     static func topMostController() -> UIViewController {
         var topController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
-        while (topController.presentedViewController != nil) {
+        while topController.presentedViewController != nil {
             topController = topController.presentedViewController!
         }
         return topController

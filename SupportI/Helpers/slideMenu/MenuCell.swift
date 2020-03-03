@@ -8,30 +8,30 @@
 
 import UIKit
 
-class MenuCell: UITableViewCell,CellProtocol {
+class MenuCell: UITableViewCell, CellProtocol {
 
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
-    
-    var menu:MenuModel!
+
+    var menu: MenuModel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    func setup()  {
-        
-        if(MenuVC.currentIndex == menu.index){
+
+    func setup() {
+
+        if MenuVC.currentIndex == menu.index {
             itemName.text =  menu.name
             itemName.textColor = Constants.mainColorRGB
             itemImage.image = menu.imageOn
-            
-        }else{
+
+        } else {
             itemName.text =  menu.name
             itemName.textColor = Constants.textColorRGB
             itemImage.image = menu.imageOff
         }
-        
+
     }
 
 }

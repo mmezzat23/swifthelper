@@ -12,61 +12,60 @@ protocol Paginator: class {
     func incresePaginate()
     func resetPaginate()
     func stopPaginate()
-    func checkPaginator(respond: Array<Any>?)
+    func checkPaginator(respond: [Any]?)
 }
 
-fileprivate var paginatorFile:Int = 1
-fileprivate var paginatorStopFile: Bool = false
-fileprivate var paginatorLimitFile = 10
+private var paginatorFile: Int = 1
+private var paginatorStopFile: Bool = false
+private var paginatorLimitFile = 10
 
 extension Paginator {
     var paginator: Int {
-        set{
+        set {
             paginatorFile = newValue
-        }get{
+        } get {
             return paginatorFile
         }
     }
     var paginatorStop: Bool {
-        set{
+        set {
             paginatorStopFile = newValue
-        }get{
+        } get {
             return paginatorStopFile
         }
     }
     var paginatorLimit: Int {
-        set{
+        set {
             paginatorLimitFile = newValue
-        }get{
+        } get {
             return paginatorLimitFile
         }
-    }    
+    }
     func paginate() {
        ApiManager.instance.paramaters["page"] = paginator
-        if(ApiManager.instance.paramaters["custom_page"] != nil) {
+        if ApiManager.instance.paramaters["custom_page"] != nil {
             ApiManager.instance.paramaters["page"] = ApiManager.instance.paramaters["custom_page"]
         }
     }
     func incresePaginate() {
-        paginator = paginator+1
+        paginator += 1
     }
-    func resetPaginate()  {
+    func resetPaginate() {
         paginator = 1
         paginatorStop = false
         ApiManager.instance.resetObject()
     }
-    func stopPaginate()  {
+    func stopPaginate() {
         paginatorStop = true
     }
-    func runPaginate()  {
+    func runPaginate() {
         paginatorStop = false
     }
-    func checkPaginator(respond:Array<Any>?) {
-        
-        if let array = respond{
+    func checkPaginator(respond: [Any]?) {
+        if let array = respond {
             if array.count == 0 || array.count < ApiManager.instance.paginatorLimit {
                 self.stopPaginate()
-            }else{
+            } else {
                 self.runPaginate()
             }
         }

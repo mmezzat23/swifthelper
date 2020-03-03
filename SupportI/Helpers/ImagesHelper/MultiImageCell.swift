@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MultiImageCell: UICollectionViewCell,CellProtocol {
+class MultiImageCell: UICollectionViewCell, CellProtocol {
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -16,11 +16,8 @@ class MultiImageCell: UICollectionViewCell,CellProtocol {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    
     func setup() {
         guard let data = self.model as? String else { return }
         imageView.setImage(url: data)
     }
-
 }

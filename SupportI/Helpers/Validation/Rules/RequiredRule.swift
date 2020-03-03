@@ -13,17 +13,17 @@ import Foundation
  */
 public class RequiredRule: Rule {
     /// String that holds error message.
-    private var message : String 
-    
+    private var message: String
+
     /**
      - parameter message: String of error message.
      - returns: An initialized `RequiredRule` object, or nil if an object could not be created for some reason that would not result in an exception.
      */
-    public init(message : String = "") {
-        let v = "this_field_is_required.lan".localized
-        self.message = v
+    public init(message: String = "") {
+        let vali = "this_field_is_required.lan".localized
+        self.message = vali
     }
-    
+
     /**
      Validates a text field.
      
@@ -33,7 +33,7 @@ public class RequiredRule: Rule {
     public func validate(value: String) -> Bool {
         return !value.isEmpty
     }
-    
+
     /**
      Used to display error message when validation fails.
      

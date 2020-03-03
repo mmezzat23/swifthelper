@@ -8,13 +8,13 @@
 
 import UIKit
 
-//MARK:- AnimationType
+// MARK: - AnimationType
 enum AnimationType {
-    
+
     case from(direction: AnimationDirectionType, offSet: CGFloat)
     case zoom(scale: CGFloat)
     case rotate(angle: CGFloat)
-    
+
     var initialTransform: CGAffineTransform {
         switch self {
         case .from(direction: let direction, offSet: let offSet):
@@ -29,7 +29,7 @@ enum AnimationType {
             return CGAffineTransform(rotationAngle: angle)
         }
     }
-    
+
     //Generated random animation.
     static func random() -> AnimationType {
         let index = Int(arc4random_uniform(3))

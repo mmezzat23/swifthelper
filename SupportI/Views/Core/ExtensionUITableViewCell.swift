@@ -17,83 +17,25 @@ extension UITableView {
     ///   - indexPath: indexpath
     ///   - register: register
     /// - Returns: return the template cell
-    func cellTemplate<T>(type:T , _ indexPath:IndexPath , register:Bool = true) throws -> T{
-        let ind = String (describing: T.self)
-        if(register){
+    func cell<T>(type: T.Type, _ indexPath: IndexPath, register: Bool = true) -> T {
+
+        let ind = String(describing: type)
+        if register {
             self.register(UINib(nibName: ind, bundle: nil), forCellReuseIdentifier: ind)
         }
-        if type is CellProtocol {
-            guard var cellProt = self.dequeueReusableCell(withIdentifier: ind, for: indexPath) as? CellProtocol else {throw CellError.confirmProtocol}
-            cellProt.path = indexPath.item
-            return cellProt as! T
-        }else{
-            throw CellError.confirmProtocol
-        }
-        
-    }
-    /// func cell Template
-    ///
-    /// - Parameters:
-    ///   - cell: Template
-    ///   - indexPath: indexpath
-    ///   - register: register
-    /// - Returns: return the template cell
-    func cellTemplate<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true) throws -> T {
-        
-        let ind = String (describing: type)
-        if(register){
-            self.register(UINib(nibName: ind, bundle: nil), forCellReuseIdentifier: ind)
-        }
-        guard let cellProt = self.dequeueReusableCell(withIdentifier: ind, for: indexPath) as? T else {throw CellError.confirmProtocol}
+        let cellProt = self.dequeueReusableCell(withIdentifier: ind, for: indexPath) as? T
         if cellProt is CellProtocol {
-            var cell = cellProt as! CellProtocol
-            cell.path = indexPath.item
-            return cell as! T
-        }else{
-            throw CellError.confirmProtocol
-        }
-        
-    }
-    
-    
-    
-    /// func cell  another template
-    ///
-    /// - Parameters:
-    ///   - cell: Template
-    ///   - indexPath: indexpath
-    ///   - register: register
-    /// - Returns: return the template cell
-    func cell<T>(type:T , _ indexPath:IndexPath , register:Bool = true)-> T?{
-        do{
-            return try cellTemplate(type:type, indexPath,register: register)
-        }catch{
-            print(error.localizedDescription)
-            return nil
-        }
-    }
-    /// func cell Template
-    ///
-    /// - Parameters:
-    ///   - cell: Template
-    ///   - indexPath: indexpath
-    ///   - register: register
-    /// - Returns: return the template cell
-    func cell<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true) -> T {
-        
-        let ind = String (describing: type)
-        if(register){
-            self.register(UINib(nibName: ind, bundle: nil), forCellReuseIdentifier: ind)
-        }
-        let cellProt = self.dequeueReusableCell(withIdentifier: ind, for: indexPath) as! T
-        if cellProt is CellProtocol {
-            var cell = cellProt as! CellProtocol
-            cell.path = indexPath.item
-            return cell as! T
+            var cell = cellProt as? CellProtocol
+            cell?.path = indexPath.item
+            if let cell = cell as? T {
+                return cell
+            } else {
+                return cellProt!
+            }
         } else {
-            return cellProt
+            return cellProt!
         }
-        
+
     }
 //    func cell<T>(type:T.Type , _ indexPath:IndexPath , register:Bool = true)-> T? {
 //        do{

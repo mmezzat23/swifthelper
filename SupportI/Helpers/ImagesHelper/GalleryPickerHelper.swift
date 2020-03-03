@@ -5,13 +5,12 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 
-protocol ImagePickerDelegate {
+protocol ImagePickerDelegate: class {
     func didPickItem(image: UIImage)
     func didPickItem(url: URL?)
 }
 extension ImagePickerDelegate {
     func didPickItem(url: URL?) {
-        
     }
 }
 
@@ -22,11 +21,10 @@ internal enum PickingType {
 }
 
 internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
-    
     private var picker: UIImagePickerController?
-    private var _delegate: ImagePickerDelegate?
-    private var viewController: UIViewController!
-    internal var delegate: ImagePickerDelegate? {
+    private weak var _delegate: ImagePickerDelegate?
+    private weak var viewController: UIViewController!
+    internal weak var delegate: ImagePickerDelegate? {
         set {
             _delegate = newValue
             viewController = _delegate as? UIViewController
@@ -34,7 +32,6 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             return _delegate
         }
     }
-    
     internal var onPickImage: ((UIImage) -> Void)?,
     onCancel: (() -> Void)?,
     placeholderImage = UIImage(),
@@ -43,8 +40,7 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
     cameraTitle = "camera.lan".localized, libraryTitle = "photo.library.lan".localized, cancelTitle = "cancel.lan".localized,
     onError: (() -> Void)?,
     onPickVideoURL: ((URL) -> Void)?
-    
-    /// TODO:- picking image
+
     internal func pick(in screen: UIViewController?, type: PickingType = .picture) {
         picker = UIImagePickerController()
         picker?.delegate = self
@@ -62,7 +58,6 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
         alert.addAction(libraryAction(in: screen))
         screen?.present(alert, animated: true)
     }
-    
     private func cameraAction(in screen: UIViewController?) -> UIAlertAction {
         return UIAlertAction(title: cameraTitle, style: .default, handler: { [weak self] (_) in
             guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -81,7 +76,6 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             screen?.present(picker, animated: true)
         })
     }
-    
     private func libraryAction(in screen: UIViewController?) -> UIAlertAction {
         return UIAlertAction(title: libraryTitle, style: .default, handler: { [weak self] (_) in
             guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
@@ -100,7 +94,7 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             screen?.present(picker, animated: true)
         })
     }
-    
+
     internal func getThumbnailImage(for url: URL) -> UIImage? {
         let asset = AVAsset.init(url: url)
         let imageGenerator = AVAssetImageGenerator.init(asset: asset)
@@ -109,12 +103,11 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
                                                             actualTime: .none) else { return .none }
         return UIImage.init(cgImage: cgImage)
     }
-    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         NSLog("tell user something in `onCancel` block because he cancel picking")
         picker.dismiss(animated: true, completion: onCancel)
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
             onPickVideoURL?(videoURL)
             delegate?.didPickItem(url: videoURL)
@@ -132,17 +125,13 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
         }
         picker.dismiss(animated: true)
     }
-    
-    
-    func getImageURL(info: [UIImagePickerController.InfoKey : Any]) -> URL? {
+    func getImageURL(info: [UIImagePickerController.InfoKey: Any]) -> URL? {
         var photoURL: URL?
-        
         if let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL {
             let imgName = imgUrl.lastPathComponent
             let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
             let localPath = documentDirectory?.appending(imgName)
-            
-            let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return nil }
             let data = image.pngData()! as NSData
             data.write(toFile: localPath!, atomically: true)
             //let imageData = NSData(contentsOfFile: localPath!)!
@@ -153,5 +142,3 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
         }
     }
 }
-
-

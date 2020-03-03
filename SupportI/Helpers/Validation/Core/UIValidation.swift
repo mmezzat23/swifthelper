@@ -2,7 +2,7 @@ import UIKit
 
 var validatorArray = [UITextField: [Rule]]()
 extension UITextField {
-    
+
     @IBInspectable public var validationRules: String {
         get {
             return ""
@@ -19,8 +19,8 @@ extension UITextField {
             validatorArray[self] = newValue
         }
     }
-    
-    public func validations(rules: String) -> [Rule]  {
+
+    public func validations(rules: String) -> [Rule] {
         let rulesArray = rules.split(separator: "|")
         var rulesValide = [Rule]()
         for rule in rulesArray {
@@ -33,7 +33,7 @@ extension UITextField {
                 rulesValide.append(FloatRule())
             case "password":
                 rulesValide.append(PasswordRule())
-                
+
             default:
                 break
             }

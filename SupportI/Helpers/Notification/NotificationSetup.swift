@@ -1,18 +1,14 @@
-
-
 import UIKit
 import UserNotifications
 import CoreData
 import Firebase
-
-
 
 protocol FirebaseNotificationDelegate: class {
     func setupFirebase()
     func subscribeFirebase()
     func unSubscribeFirebase()
     func notificationControl(notification: [AnyHashable: Any])
-    func notificationControlWillPresent(notification: [AnyHashable : Any], closure: SoundHandler?)
+    func notificationControlWillPresent(notification: [AnyHashable: Any], closure: SoundHandler?)
 }
 extension FirebaseNotificationDelegate where Self: AppDelegate {
     func setupFirebase() {
@@ -36,7 +32,6 @@ extension FirebaseNotificationDelegate where Self: AppDelegate {
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
         application.registerForRemoteNotifications()
     }
     func unSubscribeFirebase() {

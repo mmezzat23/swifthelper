@@ -10,24 +10,28 @@ import UIKit
 
 /// Generates iOS Device vibrations by UIFeedbackGenerator.
 open class TapticEngine {
-
+    /// Impact feedback styles
+    ///
+    /// - light: A impact feedback between small, light user interface elements.
+    /// - medium: A impact feedback between moderately sized user interface elements.
+    /// - heavy: A impact feedback between large, heavy user interface elements.
+    public enum ImpactStyle {
+        case light, medium, heavy
+    }
+    /// Notification feedback types
+    ///
+    /// - success: A notification feedback, indicating that a task has completed successfully.
+    /// - warning: A notification feedback, indicating that a task has produced a warning.
+    /// - error: A notification feedback, indicating that a task has failed.
+    public enum NotificationType {
+        case success, warning, error
+    }
     public static let impact: Impact = Impact()
     public static let selection: Selection = Selection()
     public static let notification: Notification = Notification()
 
-
     /// Wrapper of `UIImpactFeedbackGenerator`
     open class Impact {
-
-        /// Impact feedback styles
-        ///
-        /// - light: A impact feedback between small, light user interface elements.
-        /// - medium: A impact feedback between moderately sized user interface elements.
-        /// - heavy: A impact feedback between large, heavy user interface elements.
-        public enum ImpactStyle {
-            case light, medium, heavy
-        }
-
         private var style: ImpactStyle = .light
         private var generator: Any? = Impact.makeGenerator(.light)
 
@@ -76,7 +80,6 @@ open class TapticEngine {
         }
     }
 
-
     /// Wrapper of `UISelectionFeedbackGenerator`
     open class Selection {
 
@@ -104,19 +107,8 @@ open class TapticEngine {
         }
     }
 
-
     /// Wrapper of `UINotificationFeedbackGenerator`
     open class Notification {
-
-        /// Notification feedback types
-        ///
-        /// - success: A notification feedback, indicating that a task has completed successfully.
-        /// - warning: A notification feedback, indicating that a task has produced a warning.
-        /// - error: A notification feedback, indicating that a task has failed.
-        public enum NotificationType {
-            case success, warning, error
-        }
-
         private var generator: Any? = {
             guard #available(iOS 10.0, *) else { return nil }
 

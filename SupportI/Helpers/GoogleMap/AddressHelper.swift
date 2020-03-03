@@ -8,8 +8,7 @@
 import CoreLocation
 import GoogleMaps
 
-
-typealias AddressHandler = (String, String) -> ()
+typealias AddressHandler = (String, String) -> Void
 protocol MapAddressHelper: class {
     func address(lat: Double, lng: Double, handler: AddressHandler?)
     func address(degree: CLLocationCoordinate2D)
@@ -21,10 +20,8 @@ protocol MapAddressDelegate: class {
 }
 extension MapAddressDelegate {
     func didGetAddress(name: String) {
-        
     }
     func didGetAddress(snippet: String) {
-        
     }
 }
 
@@ -44,12 +41,11 @@ extension MapAddressHelper where Self: GoogleMapHelper {
                 return
             }
             if let result = response?.firstResult() {
-                
                 /** set Marker **/
-                var lines:[String] = []
+                var lines: [String] = []
                 var title = ""
                 var snippet = ""
-                if let _ = result.lines {
+                if result.lines != nil {
                     lines.append(contentsOf: result.lines!)
                 }
                 title = lines.first!
@@ -72,10 +68,10 @@ extension MapAddressHelper where Self: GoogleMapHelper {
             }
             if let result = response?.firstResult() {
                 /** set Marker **/
-                var lines:[String] = []
+                var lines: [String] = []
                 var title = ""
                 var snippet = ""
-                if let _ = result.lines {
+                if result.lines != nil {
                     lines.append(contentsOf: result.lines!)
                 }
                 title = lines.first!
@@ -87,7 +83,6 @@ extension MapAddressHelper where Self: GoogleMapHelper {
                 self.addressDelegate?.didGetAddress(name: title)
                 self.addressDelegate?.didGetAddress(snippet: snippet)
                 /** call **/
-                
             }
         }
     }
@@ -98,10 +93,10 @@ extension MapAddressHelper where Self: GoogleMapHelper {
             }
             if let result = response?.firstResult() {
                 /** set Marker **/
-                var lines:[String] = []
+                var lines: [String] = []
                 var title = ""
                 var snippet = ""
-                if let _ = result.lines {
+                if result.lines != nil {
                     lines.append(contentsOf: result.lines!)
                 }
                 title = lines.first!
@@ -113,7 +108,6 @@ extension MapAddressHelper where Self: GoogleMapHelper {
                 self.addressDelegate?.didGetAddress(name: title)
                 self.addressDelegate?.didGetAddress(snippet: snippet)
                 /** call **/
-                
             }
         }
     }

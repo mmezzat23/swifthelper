@@ -12,7 +12,6 @@ import GoogleMaps
 import GooglePlaces
 
 class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelper {
-  
     /* mapview */
     private var _mapView: GMSMapView!
     private let marker = GMSMarker()
@@ -20,16 +19,15 @@ class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelpe
     /* delegates */
     private weak var _delegate: GoogleMapHelperDelegate?
     weak var markerDataSource: MarkerDataSource?
-    
     /* AR*/
-    private var moveMent:ARCarMovement?
+    private var moveMent: ARCarMovement?
     internal let geocoder = GMSGeocoder()
 
     /** options **/
-    var useNearestPlaces:Bool = false
-    var useRoad:Bool = true
-    var useMarkerDataSoruce:Bool = true
-    var useARMovement:Bool = true
+    var useNearestPlaces: Bool = false
+    var useRoad: Bool = true
+    var useMarkerDataSoruce: Bool = true
+    var useARMovement: Bool = true
     var zoom: Zoom = .streets
     /** options **/
 
@@ -42,18 +40,13 @@ class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelpe
             _mapView.delegate = self
         }
     }
-    
-    weak var delegate:GoogleMapHelperDelegate? {
-        get{
+    weak var delegate: GoogleMapHelperDelegate? {
+        get {
             return _delegate
-        }
-        set{
+        } set {
             _delegate = newValue
         }
     }
-    
-    
-    
     override init() {
         super.init()
         if useARMovement {
@@ -61,11 +54,9 @@ class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelpe
             self.moveMent?.delegate = self
         }
     }
-    
+
     public func reload() {
-        
     }
-    
 }
 
 extension GoogleMapHelper: GMSMapViewDelegate {
@@ -81,10 +72,10 @@ extension GoogleMapHelper: GMSMapViewDelegate {
             }
             if let result = response?.firstResult() {
                 /** set Marker **/
-                var lines:[String] = []
+                var lines: [String] = []
                 var title = ""
                 var snippet = ""
-                if let _ = result.lines {
+                if result.lines != nil {
                     lines.append(contentsOf: result.lines!)
                 }
                 title = lines.first!
@@ -99,48 +90,41 @@ extension GoogleMapHelper: GMSMapViewDelegate {
                 /** call **/
             }
         }
-        
     }
-  
     public func updateCamera(lat: Double, lng: Double) {
         self.mapView?.clear()
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lng, zoom: self.zoom.rawValue)
         self.mapView?.camera = camera
         self.mapView?.animate(to: camera)
     }
-    public func setMarker(position:CLLocationCoordinate2D! , title:String? = nil , snippet:String? = nil) {
+    public func setMarker(position: CLLocationCoordinate2D!, title: String? = nil, snippet: String? = nil) {
         let attr = self.markerDataSource?.marker()
-        
         marker.position = position
         marker.title = title
         marker.snippet = snippet
-        
         if let options = attr {
             if options.use == .icon {
                 marker.icon = options.icon
-            }else if options.use == .image {
+            } else if options.use == .image {
                 marker.iconView = options.image
-            }else {
+            } else {
                 let view = UIImageView()
                 view.tintColor = options.color
                 marker.iconView = view
             }
         }
-        
         marker.map = mapView
-        
     }
-    
 }
 
 extension GoogleMapHelper: MarkerDelegate {
     public func setMarker(marker: GMSMarker!) {
         marker.map = mapView
     }
-    public func removeMarker(marker:GMSMarker){
+    public func removeMarker(marker: GMSMarker) {
         marker.map = nil
     }
-    func refresh(lat: Double! = nil , lng: Double! = nil) {
+    func refresh(lat: Double! = nil, lng: Double! = nil) {
         self.mapView?.clear()
         guard let markers = self.markerDataSource?.setMarkers() else { return }
         markers.forEach { (marker) in
@@ -153,32 +137,29 @@ extension GoogleMapHelper: MarkerDelegate {
             self.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
         }
     }
-    func refreshARMovement(lat:Double! = nil , lng:Double! = nil) {
+    func refreshARMovement(lat: Double! = nil, lng: Double! = nil) {
         self.mapView?.clear()
         guard let markers = self.markerDataSource?.setMarkers() else { return }
         markers.forEach { (marker) in
             if marker.oldPosition == nil {
                 marker.oldPosition = marker.position
             }
-            self.moveMent?.arCarMovement(marker, withOldCoordinate: marker.oldPosition!, andNewCoordinate: marker.position, inMapview: self.mapView, withBearing: 0)
+            self.moveMent?.arCarMovement(marker, withOldCoordinate: marker.oldPosition!,
+                                         andNewCoordinate: marker.position, inMapview: self.mapView, withBearing: 0)
         }
         if lat != nil && lng != nil {
             self.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
         }
     }
-    func refreshARMovement(marker:GMSMarker) {
+    func refreshARMovement(marker: GMSMarker) {
         if marker.oldPosition == nil {
             marker.oldPosition = marker.position
         }
         self.moveMent?.arCarMovement(marker, withOldCoordinate: marker.oldPosition!, andNewCoordinate: marker.position, inMapview: nil, withBearing: 0)
     }
-    
 }
-
-
 /** AR **/
-extension GoogleMapHelper:ARCarMovementDelegate {
+extension GoogleMapHelper: ARCarMovementDelegate {
     func arCarMovement(_ movedMarker: GMSMarker?) {
-        
     }
 }

@@ -11,12 +11,12 @@ import Foundation
 /**
  `ExactLengthRule` is a subclass of Rule that is used to make sure a the text of a text field is an exact length.
  */
-public class ExactLengthRule : Rule {
+public class ExactLengthRule: Rule {
     /// parameter message: String of error message.
-    private var message : String = "Must be at most 16 characters long"
+    private var message: String = "Must be at most 16 characters long"
     /// parameter length: Integer value string length
-    private var length : Int
-    
+    private var length: Int
+
     /**
      Initializes an `ExactLengthRule` object to validate the text of a text field against an exact length.
      
@@ -24,11 +24,11 @@ public class ExactLengthRule : Rule {
      - parameter message: String of error message.
      - returns: An initialized `ExactLengthRule` object, or nil if an object could not be created for some reason. that would not result in an exception.
      */
-    public init(length: Int, message : String = "Must be exactly %ld characters long"){
+    public init(length: Int, message: String = "Must be exactly %ld characters long") {
         self.length = length
         self.message = NSString(format: message as NSString, self.length) as String
     }
-    
+
     /**
      Used to validate a text field.
      
@@ -38,7 +38,7 @@ public class ExactLengthRule : Rule {
     public func validate(value: String) -> Bool {
         return value.count == length
     }
-    
+
     /**
      Displays error message if a text field fails validation.
      

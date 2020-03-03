@@ -10,12 +10,8 @@ import CoreData
 
 class BaseModel: Decodable {
 
-    
     var success: Bool?
     var message: String?
     var errors: Errors?
-  
+
 }
-
-
-

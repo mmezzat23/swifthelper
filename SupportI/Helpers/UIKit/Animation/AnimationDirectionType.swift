@@ -8,14 +8,14 @@
 
 import UIKit
 
-//MARK:- DirectionType
+// MARK: - DirectionType
 enum AnimationDirectionType: Int {
-    
+
     case top
     case bottom
     case right
     case left
-    
+
     var isVertical: Bool {
         switch self {
         case .top, .bottom:
@@ -24,7 +24,7 @@ enum AnimationDirectionType: Int {
             return false
         }
     }
-    
+
     var isPositive: CGFloat {
         switch self {
         case .top, .left:
@@ -33,7 +33,7 @@ enum AnimationDirectionType: Int {
             return 1
         }
     }
-    
+
     //Random direction.
     static func random() -> AnimationDirectionType {
         let rawValue = Int(arc4random_uniform(4))

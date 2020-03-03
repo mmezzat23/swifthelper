@@ -34,7 +34,7 @@ extension String {
         if let index = filter.range(of: " ")?.lowerBound {
             let spaceing = filter[..<index]
             let filterSpacing = String(spaceing)
-            if(!filterSpacing.isEmpty) {
+            if !filterSpacing.isEmpty {
                 filter = filterSpacing
             }
         }
@@ -47,7 +47,7 @@ extension String {
         if let index = filter.range(of: " ")?.lowerBound {
             let spaceing = filter[..<index]
             let filterSpacing = String(spaceing)
-            if(!filterSpacing.isEmpty) {
+            if !filterSpacing.isEmpty {
                 filter = filterSpacing
             }
         }
@@ -56,15 +56,15 @@ extension String {
         return filter
     }
     func strokeUnderline(fontSize: Int = 16) -> NSAttributedString {
-        let attributes : [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: CGFloat(fontSize)),
-            NSAttributedString.Key.foregroundColor : Constants.mainColorRGB,
-            NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(fontSize)),
+            NSAttributedString.Key.foregroundColor: Constants.mainColorRGB,
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         let attributeString = NSMutableAttributedString(string: self, attributes: attributes)
         return attributeString
     }
     func getSize() -> CGSize {
-        let text = NSAttributedString(string:self)
+        let text = NSAttributedString(string: self)
         return text.size()
     }
 }
@@ -104,7 +104,7 @@ public extension String {
         string.capitalizeFirstLetter()
         return string
     }
-    func cut(charSplit :String = "_", charWith:String = " ") -> String {
+    func cut(charSplit: String = "_", charWith: String = " ") -> String {
         var string = self
         string = string.replacingOccurrences(of: charSplit, with: charWith, options: .literal, range: nil)
         return string
@@ -607,9 +607,9 @@ public extension String {
     ///        "Hello World!"[20] -> nil
     ///
     /// - Parameter i: index.
-    subscript(safe i: Int) -> Character? {
-        guard i >= 0 && i < count else { return nil }
-        return self[index(startIndex, offsetBy: i)]
+    subscript(safe counter: Int) -> Character? {
+        guard counter >= 0 && counter < count else { return nil }
+        return self[index(startIndex, offsetBy: counter)]
     }
     /// SwifterSwift: Safely subscript string within a half-open range.
     ///
@@ -767,13 +767,13 @@ public extension String {
     ///   - i: string index the slicing should start from.
     ///   - length: amount of characters to be sliced after given index.
     /// - Returns: sliced substring of length number of characters (if applicable) (example: "Hello World".slicing(from: 6, length: 5) -> "World")
-    func slicing(from i: Int, length: Int) -> String? {
-        guard length >= 0, i >= 0, i < count  else { return nil }
-        guard i.advanced(by: length) <= count else {
-            return self[safe: i..<count]
+    func slicing(from counter: Int, length: Int) -> String? {
+        guard length >= 0, counter >= 0, counter < count  else { return nil }
+        guard counter.advanced(by: length) <= count else {
+            return self[safe: counter..<count]
         }
         guard length > 0 else { return "" }
-        return self[safe: i..<i.advanced(by: length)]
+        return self[safe: counter..<counter.advanced(by: length)]
     }
     /// SwifterSwift: Slice given string from a start index with length (if applicable).
     ///
@@ -784,8 +784,8 @@ public extension String {
     /// - Parameters:
     ///   - i: string index the slicing should start from.
     ///   - length: amount of characters to be sliced after given index.
-    mutating func slice(from i: Int, length: Int) {
-        if let str = self.slicing(from: i, length: length) {
+    mutating func slice(from counter: Int, length: Int) {
+        if let str = self.slicing(from: counter, length: length) {
             self = String(str)
         }
     }
@@ -811,9 +811,9 @@ public extension String {
     ///        print(str) // prints "World"
     ///
     /// - Parameter i: string index the slicing should start from.
-    mutating func slice(at i: Int) {
-        guard i < count else { return }
-        if let str = self[safe: i..<count] {
+    mutating func slice(at counter: Int) {
+        guard counter < count else { return }
+        if let str = self[safe: counter..<count] {
             self = str
         }
     }

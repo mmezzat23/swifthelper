@@ -8,10 +8,9 @@
 
 import Foundation
 
-class SelectDropDownModel: Decodable{
-    
-    var id: Int?
-    var title:String?
+class SelectDropDownModel: Decodable {
 
-    
+    var id: Int?
+    var title: String?
+
 }

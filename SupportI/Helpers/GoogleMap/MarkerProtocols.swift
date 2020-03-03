@@ -10,24 +10,22 @@ import CoreLocation
 import GoogleMaps
 import GooglePlaces
 
-protocol MarkerDataSource:class {
+protocol MarkerDataSource: class {
     func marker() -> MarkerAttrbuite
-    func setMarkers()->[GMSMarker]
+    func setMarkers() -> [GMSMarker]
 }
 extension MarkerDataSource {
-    func setMarkers()->[GMSMarker]{
+    func setMarkers() -> [GMSMarker] {
         return []
     }
 }
-protocol MarkerDelegate:class {
+protocol MarkerDelegate: class {
     func refresh()
     func refreshARMovement()
 }
 extension MarkerDelegate {
-    func refresh(){
-        
+    func refresh() {
     }
-    func refreshARMovement(){
-        
+    func refreshARMovement() {
     }
 }

@@ -9,9 +9,8 @@
 import UIKit
 import AlamofireImage
 
-fileprivate var staticalyTranstion:UIImageView.ImageTransition? = nil
-fileprivate var isLoadedPrivate: [UIImageView:Bool] = [:]
-
+private var staticalyTranstion: UIImageView.ImageTransition?
+private var isLoadedPrivate: [UIImageView: Bool] = [:]
 extension UIImageView {
     var isLoaded: Bool {
         set {
@@ -33,7 +32,7 @@ extension UIImageView {
                 return staticalyTranstion
             }
         } set {
-            staticalyTranstion = nil
+            staticalyTranstion = newValue
         }
     }
     //Random direction.
@@ -57,33 +56,28 @@ extension UIImageView {
             return ImageTransition.flipFromRight(0.40)
         case 7:
             return ImageTransition.flipFromTop(0.40)
-            
         default:
             return nil
         }
     }
-    
     func setImage(url: String?, animate: Bool = false) {
         guard var string = url else { return }
         string = ApiManager.instance.safeUrl(url: string)
-    
-        let Url = URL(string: string)
-        
-        guard let finalUrl = Url else{ return }
-        
+        let url = URL(string: string)
+        guard let finalUrl = url else { return }
         if animate {
             guard let transation = self.imageTranstion else {return}
-            self.af_setImage(withURL: finalUrl, placeholderImage: Constants.placeHolderImage, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: transation, runImageTransitionIfCached: true, completion: { _ in
+            self.af_setImage(withURL: finalUrl, placeholderImage: Constants.placeHolderImage,
+                             filter: nil, progress: nil, progressQueue: DispatchQueue.main,
+                             imageTransition: transation, runImageTransitionIfCached: true, completion: { _ in
                 self.isLoaded = true
             })
-            
-            
         } else {
-            self.af_setImage(withURL: finalUrl, placeholderImage:  Constants.placeHolderImage, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: { _ in
+            self.af_setImage(withURL: finalUrl, placeholderImage: Constants.placeHolderImage,
+                             filter: nil, progress: nil, progressQueue: DispatchQueue.main,
+                             imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: { _ in
                 self.isLoaded = true
             })
         }
-        
     }
 }
-

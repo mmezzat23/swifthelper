@@ -47,12 +47,12 @@ public func ** (lhs: Float, rhs: Float) -> Float {
     return pow(lhs, rhs)
 }
 
-prefix operator √
-/// SwifterSwift: Square root of float.
-///
-/// - Parameter float: float value to find square root for
-/// - Returns: square root of given float.
-public prefix func √ (float: Float) -> Float {
-    // http://nshipster.com/swift-operators/
-    return sqrt(float)
-}
+//prefix operator √
+///// SwifterSwift: Square root of float.
+/////
+///// - Parameter float: float value to find square root for
+///// - Returns: square root of given float.
+//public prefix func √ (float: Float) -> Float {
+//    // http://nshipster.com/swift-operators/
+//    return sqrt(float)
+//}

@@ -56,7 +56,8 @@
 //    func fetchUserProfile(completionHandler: @escaping callbackFacebook)
 //    {
 //
-//        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, relationship_status , email ,picture.width(480).height(480)"]).start(completionHandler: { (connection, result, error) -> Void in
+//        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, relationship_status ,
+                        //email ,picture.width(480).height(480)"]).start(completionHandler: { (connection, result, error) -> Void in
 //            self.stopLoading()
 //            if (error == nil){
 //

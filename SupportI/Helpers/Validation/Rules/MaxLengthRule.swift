@@ -14,21 +14,21 @@ public class MaxLengthRule: Rule {
     /// Default maximum character length.
     private var DEFAULT_LENGTH: Int = 16
     /// Error message to be displayed if validation fails.
-    private var message : String = "Must be at most 16 characters long"
+    private var message: String = "Must be at most 16 characters long"
     /// - returns: An initialized `MaxLengthRule` object, or nil if an object could not be created for some reason that would not result in an exception.
-    public init(){}
-    
+    public init() {}
+
     /**
      Initializes a `MaxLengthRule` object that is to validate the length of the text of a text field
      - parameter length: Maximum character length.
      - parameter message: String of error message.
      - returns: An initialized object, or nil if an object could not be created for some reason that would not result in an exception.
      */
-    public init(length: Int, message : String = "Must be at most %ld characters long"){
+    public init(length: Int, message: String = "Must be at most %ld characters long") {
         self.DEFAULT_LENGTH = length
         self.message = NSString(format: message as NSString, self.DEFAULT_LENGTH) as String
     }
-    
+
     /**
      Used to validate a text field.
      
@@ -38,7 +38,7 @@ public class MaxLengthRule: Rule {
     public func validate(value: String) -> Bool {
         return value.count <= DEFAULT_LENGTH
     }
-    
+
     /**
      Displays an error message if a text field fails validation.
      

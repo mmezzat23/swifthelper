@@ -14,7 +14,6 @@ protocol PlacePickerSearchDelegate: class {
 }
 
 class PlacePickerSearchController: UIViewController {
-   
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
             searchBar.delegate = self
@@ -26,15 +25,12 @@ class PlacePickerSearchController: UIViewController {
             placesTbl.dataSource = self
         }
     }
-    
     weak var delegate: PlacePickerSearchDelegate?
     // An array to hold the list of likely places.
     internal var likelyPlaces: [PlacePickerModel.PlacePickerResult] = []
     // The currently selected place.
     internal var selectedPlace: PlacePickerModel.PlacePickerResult?
-    
     private var isCounterRun: Bool = false
-    
     private lazy var counterLbl: EFCountingLabel = {
      let myLabel = EFCountingLabel(frame: CGRect(x: self.view.width/2 - 20, y: self.placesTbl.y - 50, width: 200, height: 40))
         self.view.addSubview(myLabel)
@@ -58,7 +54,6 @@ class PlacePickerSearchController: UIViewController {
     func setup() {
 
     }
-    
     func fetchPlaces() {
         if isCounterRun {
             return
@@ -75,10 +70,7 @@ class PlacePickerSearchController: UIViewController {
             } else {
                 self.waitTimer()
             }
-            
         }
-        
-    
     }
     func waitTimer() {
         isCounterRun = true
@@ -90,7 +82,6 @@ class PlacePickerSearchController: UIViewController {
             self.fetchPlaces()
         }
     }
-  
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -110,12 +101,10 @@ extension PlacePickerSearchController: UISearchBarDelegate {
 extension PlacePickerSearchController: UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         searchBar.endEditing(true)
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return likelyPlaces.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: PlacePickerCell.self, indexPath, register: false)
         cell.fetchGMSPlace = false
@@ -127,5 +116,4 @@ extension PlacePickerSearchController: UITableViewDelegate, UITableViewDataSourc
             self?.delegate?.didPickSearchPlace(place: self?.likelyPlaces[indexPath.row])
         }
     }
-    
 }

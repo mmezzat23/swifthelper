@@ -13,8 +13,7 @@ class PlacePickerCell: UITableViewCell, CellProtocol {
     @IBOutlet weak var placeIcon: UIImageView!
     @IBOutlet weak var placeName: UILabel!
     @IBOutlet weak var placeAddress: UILabel!
-    
-    var placesClient:GMSPlacesClient? = GMSPlacesClient.shared()
+    var placesClient: GMSPlacesClient? = GMSPlacesClient.shared()
     var place: GMSPlace?
     var fetchGMSPlace: Bool = true
     func setup() {
@@ -23,11 +22,9 @@ class PlacePickerCell: UITableViewCell, CellProtocol {
         self.placeAddress.text = model.vicinity
         self.placeIcon.setImage(url: model.icon)
         // Specify the place data types to return (in this case, just photos).
-        
         if fetchGMSPlace {
             fetchPlaceDetail()
         }
-        
     }
     func fetchPlaceDetail() {
         guard let model = model as? PlacePickerModel.PlacePickerResult else { return }
@@ -38,8 +35,7 @@ class PlacePickerCell: UITableViewCell, CellProtocol {
             UInt(GMSPlaceField.name.rawValue))!
         placesClient?.fetchPlace(fromPlaceID: model.place_id ?? "",
                                  placeFields: fields,
-                                 sessionToken: nil, callback: {
-                                    (place: GMSPlace?, error: Error?) in
+                                 sessionToken: nil, callback: { (place: GMSPlace?, error: Error?) in
                                     if let error = error {
                                         print("An error occurred: \(error.localizedDescription)")
                                         return
@@ -50,17 +46,14 @@ class PlacePickerCell: UITableViewCell, CellProtocol {
                                         self.placeAddress.text = place.formattedAddress
                                         // Get the metadata for the first photo in the place photo metadata list.
                                         guard let photoMetadata: GMSPlacePhotoMetadata = place.photos?.first else { return }
-                                        
                                         // Call loadPlacePhoto to display the bitmap and attribution.
                                         self.placesClient?.loadPlacePhoto(photoMetadata, callback: { (photo, error) -> Void in
                                             if let error = error {
-                                                // TODO: Handle the error.
                                                 print("Error loading photo metadata: \(error.localizedDescription)")
                                                 return
                                             } else {
                                                 // Display the first image and its attributions.
                                                 self.placeIcon?.image = photo
-                                                
                                             }
                                         })
                                     }

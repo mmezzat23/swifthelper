@@ -63,15 +63,15 @@ public extension SignedInteger {
 	///
 	/// - Parameter n: integer value to find gcd with.
 	/// - Returns: greatest common divisor of self and n.
-    func gcd(of n: Self) -> Self {
-		return n == 0 ? self : n.gcd(of: self % n)
+    func gcd(of num: Self) -> Self {
+		return num == 0 ? self : num.gcd(of: self % num)
 	}
 
 	/// SwifterSwift: Least common multiple of integer and n.
 	///
 	/// - Parameter n: integer value to find lcm with.
 	/// - Returns: least common multiple of self and n.
-    func lcm(of n: Self) -> Self {
-		return (self * n).abs / gcd(of: n)
+    func lcm(of num: Self) -> Self {
+		return (self * num).abs / gcd(of: num)
 	}
 }

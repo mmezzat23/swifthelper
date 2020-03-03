@@ -21,5 +21,5 @@ import UIKit
      This method will be called on delegate object when validation fails.
      - returns: No return value.
      */
-    func validationFailed(errors: [UITextField:ValidationError])
+    func validationFailed(errors: [UITextField: ValidationError])
 }

@@ -21,5 +21,3 @@ public extension UISwitch {
 
 }
 #endif
-
-

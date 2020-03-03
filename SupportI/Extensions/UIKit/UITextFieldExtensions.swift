@@ -112,37 +112,29 @@ public extension UITextField {
 	}
 
 }
-
-
 extension UITextField {
-    func underlinedFull(hexa : String){
+    func underlinedFull(hexa: String) {
         let border = CALayer()
         let width = CGFloat(1.5)
-        
-        border.borderColor = self.hexaCodeToColor(hex:hexa).cgColor
-        
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-        
+        border.borderColor = self.hexaCodeToColor(hex: hexa).cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: self.frame.size.height)
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
-    
-    func changeColor(){
+    func changeColor() {
         let str = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor:
-            UIColor(red:129/255, green:186/255, blue:0/255, alpha: 1)])
+            UIColor(red: 129/255, green: 186/255, blue: 0/255, alpha: 1)])
         self.attributedText = str
     }
-    func changeColorPlaceHolder(holder :String){
+    func changeColorPlaceHolder(holder: String) {
         let str = NSAttributedString(string: holder, attributes: [NSAttributedString.Key.foregroundColor:
-            UIColor(red:0/255, green:0/255, blue:0/255, alpha: 1)])
+            UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)])
         self.attributedPlaceholder = str
     }
-    
     func setBottomBorder() {
         self.borderStyle = .none
         self.layer.backgroundColor = UIColor.white.cgColor
-        
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
@@ -152,19 +144,17 @@ extension UITextField {
     func placeholderRectForBounds(bounds: CGRect) -> CGRect {
         return bounds.inset(by: UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5))
     }
-    func setLeftPaddingPoints(_ amount:CGFloat){
+    func setLeftPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
     }
-    func setRightPaddingPoints(_ amount:CGFloat) {
+    func setRightPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.rightView = paddingView
         self.rightViewMode = .always
     }
     // Next step here
-    
-    
 }
 
 // MARK: - Methods
@@ -209,5 +199,3 @@ public extension UITextField {
 }
 
 #endif
-
-

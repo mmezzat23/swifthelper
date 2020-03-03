@@ -20,22 +20,19 @@ public extension UITextView {
 
 	/// SwifterSwift: Scroll to the bottom of text view
     func scrollToBottom() {
-        // swiftlint:disable next legacy_constructor
-		let range = NSMakeRange((text as NSString).length - 1, 1)
+		let range = NSRange(location: (text as NSString).length - 1, length: 1)
         scrollRangeToVisible(range)
 	}
 
 	/// SwifterSwift: Scroll to the top of text view
     func scrollToTop() {
-        // swiftlint:disable next legacy_constructor
-		let range = NSMakeRange(0, 1)
+		let range = NSRange(location: 0, length: 1)
 		scrollRangeToVisible(range)
 	}
 
-    
 }
 
-fileprivate var textViewsHieght:[UITextView:NSLayoutConstraint] = [:]
+private var textViewsHieght: [UITextView: NSLayoutConstraint] = [:]
 extension UITextView {
     @IBInspectable public var viewHeight: Int {
         get {
@@ -55,28 +52,26 @@ extension UITextView {
             }
         }
     }
-    func setHieght(value:Int){
-        let constraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: value.cgFloat)
+    func setHieght(value: Int) {
+        let constraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil,
+                                            attribute: .notAnAttribute, multiplier: 1, constant: value.cgFloat)
         self.addConstraint(constraint)
         textViewsHieght[self] = constraint
     }
-    
-    func runAutoHieght(){
+    func runAutoHieght() {
         self.delegate = self
         self.addBottomBorder(withColor: UIColor.colorRGB(red: 209, green: 209, blue: 209))
-        
     }
-    func getHieght()->NSLayoutConstraint?{
+    func getHieght() -> NSLayoutConstraint? {
         if textViewsHieght[self] != nil {
             return textViewsHieght[self]
-        }else{
+        } else {
             return nil
         }
     }
-    
 }
 
-extension UITextView:UITextViewDelegate {
+extension UITextView: UITextViewDelegate {
     public func textViewDidChange(_ textView: UITextView) {
         guard let textViewHeight = self.getHieght() else { return }
         let fixedWidth = textView.frame.size.width
@@ -85,17 +80,13 @@ extension UITextView:UITextViewDelegate {
         var newFrame = textView.frame
         newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
         textView.frame = newFrame
-        
-        if newSize.height > textViewHeight.constant{
+        if newSize.height > textViewHeight.constant {
             textViewHeight.constant = newSize.height
         }
         if newSize.height < 40 {
             textViewHeight.constant = 40
         }
-        
     }
-    
-    
     public func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
@@ -116,10 +107,5 @@ extension UITextView:UITextViewDelegate {
         }
         return true
     }
-    
 }
-
-
 #endif
-
-

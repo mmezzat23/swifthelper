@@ -10,12 +10,11 @@ import CoreLocation
 import GoogleMaps
 import GooglePlaces
 
-
 struct PolylineAttrbuite {
-    var color:UIColor!
-    var width:CGFloat!
+    var color: UIColor!
+    var width: CGFloat!
 }
 
-protocol PolylineDataSource:class {
-    func polyline()->PolylineAttrbuite
+protocol PolylineDataSource: class {
+    func polyline() -> PolylineAttrbuite
 }

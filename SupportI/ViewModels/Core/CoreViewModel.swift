@@ -9,7 +9,7 @@
 import Foundation
 
 class ViewModelCore: ViewModelProtocol {
-    
+
     weak var _delegate: PresentingViewProtocol?
     weak var delegate: PresentingViewProtocol? {
         set {
@@ -22,5 +22,5 @@ class ViewModelCore: ViewModelProtocol {
         delegate = nil
         print("deinit")
     }
-    
+
 }

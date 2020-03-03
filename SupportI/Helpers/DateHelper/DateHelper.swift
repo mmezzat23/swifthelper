@@ -38,19 +38,17 @@ class DateHelper {
         case monthString = "MMM"
         case month = "MM"
         case day = "dd"
-        
     }
-    enum DateLocale: String{
-        case en = "en_US_POSIX"
-        case ar = "ar_EG"
+    enum DateLocale: String {
+        case english = "en_US_POSIX"
+        case arabic = "ar_EG"
     }
-    
     func currentFullFormat() -> String? {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        let dateOrginial = dateFormatter.string(from:date)
+        let dateOrginial = dateFormatter.string(from: date)
         return dateOrginial
     }
     func currentDateFullFormat() -> Date? {
@@ -58,7 +56,7 @@ class DateHelper {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        let dateOrginial = dateFormatter.date(from:date)
+        let dateOrginial = dateFormatter.date(from: date)
         return dateOrginial
     }
     func currentDate() -> String? {
@@ -66,7 +64,7 @@ class DateHelper {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        let dateOrginial = dateFormatter.string(from:date)
+        let dateOrginial = dateFormatter.string(from: date)
         return dateOrginial
     }
     /// start with date yyyy-mm-dd hh:mm:ii
@@ -81,42 +79,34 @@ class DateHelper {
         let dateOrginial = dateFormatter.date(from: original)
         return dateOrginial
     }
-    
     func locale() -> String {
         var locale = ""
-        if getAppLang() == "ar"{
-            locale = DateLocale.en.rawValue
-        }else{
-            locale = DateLocale.en.rawValue
+        if getAppLang() == "ar" {
+            locale = DateLocale.arabic.rawValue
+        } else {
+            locale = DateLocale.english.rawValue
         }
         return locale
     }
-    
-   
     func date(date: String?, format: String) -> String? {
         guard let dateUse = date else {return nil}
         let dateD = originalDate(original: dateUse)
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         //dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600 * 2)
         dateFormatter.locale = Locale(identifier: locale()) // set locale to reliable US_POSIX
-        
         if dateD != nil {
             let dateString = dateFormatter.string(from: dateD!)
             return dateString
-        }else{
+        } else {
             return nil
         }
     }
-    
-    func convertToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    func convertToHoursMinutesSeconds (seconds: Int) -> (Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60)
     }
-    func convertToHoursMinutesSeconds (firstTimeStamp:Int , secondTimeStamp:Int) -> (Int, Int, Int) {
-        
+    func convertToHoursMinutesSeconds (firstTimeStamp: Int, secondTimeStamp: Int) -> (Int, Int) {
         let seconds = firstTimeStamp - secondTimeStamp
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+        return (seconds / 3600, (seconds % 3600) / 60)
     }
-    
 }

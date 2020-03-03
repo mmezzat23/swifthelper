@@ -24,7 +24,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-
 import Foundation
 import UIKit
 
@@ -33,11 +32,11 @@ import UIKit
 */
 extension UIView {
 
-
     // MARK: - Fill
 
     /**
-     Creates and adds an array of NSLayoutConstraint objects that relates this view's top, leading, bottom and trailing to its superview, given an optional set of insets for each side.
+     Creates and adds an array of NSLayoutConstraint objects that relates this view's top, leading, bottom and trailing to its superview,
+     //given an optional set of insets for each side.
 
      Default parameter values relate this view's top, leading, bottom and trailing to its superview with no insets.
 
@@ -65,7 +64,6 @@ extension UIView {
         return constraints
     }
 
-
     // MARK: - Leading / Trailing
 
     /**
@@ -76,7 +74,8 @@ extension UIView {
 
      :param: view      The other view to relate this view's layout to
 
-     :param: attribute The other view's layout attribute to relate this view's leading edge to e.g. the other view's trailing edge. Default value is `NSLayoutAttribute.Leading`
+     :param: attribute The other view's layout attribute to relate this view's leading edge to e.g. the other view's trailing edge.
+     Default value is `NSLayoutAttribute.Leading`
 
      :param: relation  The relation of the constraint. Default value is `NSLayoutRelation.Equal`
 
@@ -85,7 +84,8 @@ extension UIView {
      :returns: The created `NSLayoutConstraint` for this leading attribute relation
      */
     @discardableResult
-    public func addLeadingConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .leading, relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
+    public func addLeadingConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .leading,
+                                     relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
 
         let constraint = createConstraint(attribute: .leading, toView: view, attribute: attribute, relation: relation, constant: constant)
         addConstraintToSuperview(constraint)
@@ -101,7 +101,8 @@ extension UIView {
 
      :param: view      The other view to relate this view's layout to
 
-     :param: attribute The other view's layout attribute to relate this view's leading edge to e.g. the other view's trailing edge. Default value is `NSLayoutAttribute.Trailing`
+     :param: attribute The other view's layout attribute to relate this view's leading edge to e.g. the other view's trailing edge.
+     Default value is `NSLayoutAttribute.Trailing`
 
      :param: relation  The relation of the constraint. Default value is `NSLayoutRelation.Equal`
 
@@ -110,14 +111,14 @@ extension UIView {
      :returns: The created `NSLayoutConstraint` for this trailing attribute relation
      */
     @discardableResult
-    public func addTrailingConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .trailing, relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
+    public func addTrailingConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .trailing,
+                                      relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
 
         let constraint = createConstraint(attribute: .trailing, toView: view, attribute: attribute, relation: relation, constant: constant)
         addConstraintToSuperview(constraint)
 
         return constraint
     }
-
 
     // MARK: - Left
 
@@ -138,14 +139,14 @@ extension UIView {
      :returns: The created NSLayoutConstraint for this left attribute relation
     */
     @discardableResult
-    public func addLeftConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .left, relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
+    public func addLeftConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .left,
+                                  relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
 
         let constraint = createConstraint(attribute: .left, toView: view, attribute: attribute, relation: relation, constant: constant)
         addConstraintToSuperview(constraint)
 
         return constraint
     }
-
 
     // MARK: - Right
 
@@ -166,14 +167,14 @@ extension UIView {
      :returns: The created NSLayoutConstraint for this right attribute relation
     */
     @discardableResult
-    public func addRightConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .right, relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
+    public func addRightConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .right,
+                                   relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
 
         let constraint = createConstraint(attribute: .right, toView: view, attribute: attribute, relation: relation, constant: constant)
         addConstraintToSuperview(constraint)
 
         return constraint
     }
-
 
     // MARK: - Top
 
@@ -194,14 +195,14 @@ extension UIView {
      :returns: The created NSLayoutConstraint for this top edge layout relation
     */
     @discardableResult
-    public func addTopConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .top, relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
+    public func addTopConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .top,
+                                 relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
 
         let constraint = createConstraint(attribute: .top, toView: view, attribute: attribute, relation: relation, constant: constant)
         addConstraintToSuperview(constraint)
 
         return constraint
     }
-
 
     // MARK: - Bottom
 
@@ -222,14 +223,14 @@ extension UIView {
      :returns: The created NSLayoutConstraint for this bottom edge layout relation
     */
     @discardableResult
-    public func addBottomConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .bottom, relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
+    public func addBottomConstraint(toView view: UIView?, attribute: NSLayoutConstraint.Attribute = .bottom,
+                                    relation: NSLayoutConstraint.Relation = .equal, constant: CGFloat = 0.0) -> NSLayoutConstraint {
 
         let constraint = createConstraint(attribute: .bottom, toView: view, attribute: attribute, relation: relation, constant: constant)
         addConstraintToSuperview(constraint)
 
         return constraint
     }
-
 
     // MARK: - Center X
 
@@ -254,7 +255,6 @@ extension UIView {
         return constraint
     }
 
-
     // MARK: - Center Y
 
     /**
@@ -277,7 +277,6 @@ extension UIView {
 
         return constraint
     }
-
 
     // MARK: - Width
 
@@ -302,7 +301,6 @@ extension UIView {
         return constraint
     }
 
-
     // MARK: - Height
 
     /**
@@ -326,7 +324,6 @@ extension UIView {
         return constraint
     }
 
-
     // MARK: - Private
 
     /// Adds an NSLayoutConstraint to the superview
@@ -337,7 +334,9 @@ extension UIView {
     }
 
     /// Creates an NSLayoutConstraint using its factory method given both views, attributes a relation and offset
-    fileprivate func createConstraint(attribute attr1: NSLayoutConstraint.Attribute, toView: UIView?, attribute attr2: NSLayoutConstraint.Attribute, relation: NSLayoutConstraint.Relation, constant: CGFloat) -> NSLayoutConstraint {
+    fileprivate func createConstraint(attribute attr1: NSLayoutConstraint.Attribute, toView: UIView?,
+                                      attribute attr2: NSLayoutConstraint.Attribute,
+                                      relation: NSLayoutConstraint.Relation, constant: CGFloat) -> NSLayoutConstraint {
 
         let constraint = NSLayoutConstraint(
             item: self,

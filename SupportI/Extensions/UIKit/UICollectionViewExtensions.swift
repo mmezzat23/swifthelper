@@ -30,10 +30,10 @@ public extension UICollectionView {
         if timerTest == nil {
             timerTest =  Timer.scheduledTimer(
                 timeInterval: TimeInterval(2),
-                target      : self,
-                selector    : #selector(timer),
-                userInfo    : nil,
-                repeats     : true)
+                target: self,
+                selector: #selector(timer),
+                userInfo: nil,
+                repeats: true)
         }
     }
     func stopTimerTest() {

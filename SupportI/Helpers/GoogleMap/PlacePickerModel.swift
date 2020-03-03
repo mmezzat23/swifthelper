@@ -12,13 +12,10 @@ import GoogleMaps
 class PlacePickerModel: Decodable {
     var results: [PlacePickerResult]?
     var status: String?
-    
     class PlacePickerResult: Decodable {
         var geometry: PlacePickerGeometry?
         var coordinate: CLLocationCoordinate2D {
-            get {
-                return CLLocationCoordinate2D(latitude: geometry?.location?.lat ?? 0, longitude: geometry?.location?.lng ?? 0)
-            }
+           return CLLocationCoordinate2D(latitude: geometry?.location?.lat ?? 0, longitude: geometry?.location?.lng ?? 0)
         }
         var icon: String?
         var id: String?
@@ -30,12 +27,10 @@ class PlacePickerModel: Decodable {
     }
     class PlacePickerGeometry: Decodable {
         var location: GeometryLocation?
-        
-        class GeometryLocation: Decodable {
-            var lat: Double?
-            var lng: Double?
-        }
-    }
-        
-}
 
+    }
+    class GeometryLocation: Decodable {
+        var lat: Double?
+        var lng: Double?
+    }
+}

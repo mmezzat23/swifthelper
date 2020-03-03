@@ -10,26 +10,25 @@ import Foundation
 import UIKit
 
 protocol POPUPView {
-    func pushPop(vc:UIViewController)
+    func pushPop(vcr: UIViewController)
     func topMostController() -> UIViewController
 }
 
-extension POPUPView where Self:UIViewController {
-    
-    func pushPop(vc:UIViewController)  {
+extension POPUPView where Self: UIViewController {
+
+    func pushPop(vcr: UIViewController) {
         //show window
-        vc.modalPresentationStyle = .overFullScreen
+        vcr.modalPresentationStyle = .overFullScreen
         //present(vc, animated: true, completion: nil)
-        vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
+        vcr.view.backgroundColor = UIColor.black.withAlphaComponent(0.50)
         let topVC = UIApplication.topMostController()
-        topVC.present(vc, animated: true, completion: nil)
-        
+        topVC.present(vcr, animated: true, completion: nil)
+
         //appDelegate.window?.rootViewController = vc
-        
+
     }
-    
+
     func topMostController() -> UIViewController {
         return UIApplication.topMostController()
     }
 }
-

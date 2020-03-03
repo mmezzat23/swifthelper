@@ -33,14 +33,14 @@ struct Constants {
     static let googleAPI = "AIzaSyAAap7IKyuO8zQ58Erx5n_NPr_HQOrdM84"
     static let googleRoutesAPI = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
     static let googleNotRestrictionKey = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
-    static var useAuth:Bool = false
+    static var useAuth: Bool = false
     static var placeHolderImage: UIImage = UIImage(named: "placeHolder") ?? UIImage()
     static let mainColorRGB = UIColor(red: 140/255, green: 198/255, blue: 62/255, alpha: 1)
     static let textColorRGB = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
     static let borderColorRGB = UIColor.init(red: 209/255, green: 209/255, blue: 209/255, alpha: 1)
     static let underlineRGB = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 1)
     static var splash: Void!
-    static func sleep(time:TimeInterval) {
+    static func sleep(time: TimeInterval) {
         Constants.splash = Thread.sleep(forTimeInterval: time)
     }
     static func initAppDelegate() {
@@ -70,7 +70,6 @@ public enum Apis: String {
     case register
     case logout
     case packages
-    case get_user
     case locations
     case categories
     case ads

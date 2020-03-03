@@ -7,63 +7,58 @@
 import CoreData
 import Alamofire
 
-
 class ApiManager: BaseApi, Api {
- 
+
     struct Static {
         static var instance: ApiManager?
     }
-    
-    class var instance : ApiManager {
-        
-        if(Static.instance == nil) {
+    class var instance: ApiManager {
+
+        if Static.instance == nil {
             Static.instance = ApiManager()
         }
-        
         return Static.instance!
     }
-  
-    static var useAuth:Bool = Constants.useAuth
-   
-    override func connection(_ method: String, type: HTTPMethod, completionHandler: @escaping (Data?) -> ()) {
+    static var useAuth: Bool = Constants.useAuth
+    override func connection(_ method: String, type: HTTPMethod, completionHandler: @escaping (Data?) -> Void) {
         if ApiManager.useAuth {
-            Authorization.instance.refreshToken(){ callback in
+            Authorization.instance.refreshToken { callback in
                 if callback {
                     super.refresh()
-                    super.connection(method,type: type, completionHandler: completionHandler)
-                }else{
+                    super.connection(method, type: type, completionHandler: completionHandler)
+                } else {
                     self.makeAlert("aunthorized.lan".localized, closure: {
                         print("Go TO Login")
-                        guard let vc = Constants.loginNav else { return }
-                        UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
+                        guard let vcr = Constants.loginNav else { return }
+                        UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
                     })
                 }
             }
-        }else{
+        } else {
             super.refresh()
-            super.connection(method,type: type, completionHandler: completionHandler)
+            super.connection(method, type: type, completionHandler: completionHandler)
         }
-       
+
     }
-    func connection(_ method: Apis, type: HTTPMethod, completionHandler: @escaping (Data?) -> ()) {
+    func connection(_ method: Apis, type: HTTPMethod, completionHandler: @escaping (Data?) -> Void) {
         if ApiManager.useAuth {
-            Authorization.instance.refreshToken(){ callback in
-                if callback{
+            Authorization.instance.refreshToken { callback in
+                if callback {
                     super.refresh()
-                    super.connection(method.rawValue,type: type, completionHandler: completionHandler)
-                }else{
+                    super.connection(method.rawValue, type: type, completionHandler: completionHandler)
+                } else {
                     self.makeAlert("aunthorized.lan".localized, closure: {
                         print("Go TO Login")
-                        guard let vc = Constants.loginNav else { return }
-                        UIApplication.topMostController().navigationController?.pushViewController(vc, animated: true)
+                        guard let vcr = Constants.loginNav else { return }
+                        UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
                     })
                 }
             }
-        }else{
+        } else {
             super.refresh()
-            super.connection(method.rawValue,type: type, completionHandler: completionHandler)
+            super.connection(method.rawValue, type: type, completionHandler: completionHandler)
         }
-        
+
     }
-   
+
 }

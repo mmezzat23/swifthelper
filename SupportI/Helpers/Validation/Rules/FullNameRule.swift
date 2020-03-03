@@ -10,20 +10,20 @@ import Foundation
 /**
  `FullNameRule` is a subclass of Rule that defines how a full name is validated.
  */
-public class FullNameRule : Rule {
+public class FullNameRule: Rule {
     /// Error message to be displayed if validation fails.
-    private var message : String
-    
+    private var message: String
+
     /**
      Initializes a `FullNameRule` object that is used to verify that text in text field is a full name.
      
      - parameter message: String of error message.
      - returns: An initialized `FullNameRule` object, or nil if an object could not be created for some reason that would not result in an exception.
      */
-    public init(message : String = "Please provide a first & last name"){
+    public init(message: String = "Please provide a first & last name") {
         self.message = message
     }
-    
+
     /**
      Used to validate a text field.
      
@@ -34,7 +34,7 @@ public class FullNameRule : Rule {
         let nameArray: [String] = value.split { $0 == " " }.map { String($0) }
         return nameArray.count >= 2
     }
-    
+
     /**
      Used to display error message of a text field that has failed validation.
      

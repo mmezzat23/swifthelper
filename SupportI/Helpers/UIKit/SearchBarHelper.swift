@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-fileprivate var searchImagePrivate:UIImage?
-fileprivate var cancelImagePrivate:UIImage?
-extension UISearchBar{
+private var searchImagePrivate: UIImage?
+private var cancelImagePrivate: UIImage?
+extension UISearchBar {
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
     @IBInspectable public var searchImage: UIImage {
         get {
@@ -30,55 +30,51 @@ extension UISearchBar{
             cancelImagePrivate = newValue
         }
     }
-    
-     func initSearchBar(){
-        
+
+     func initSearchBar() {
+
         self.tintColor = .white
-        
+
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setValue("cancel.lan".localized, forKey: "_cancelButtonText")
-        
+
         var searchImageIcon = UIImage()
         var cancelImageIcon = UIImage()
         if Localizer.current == "ar" {
             self.semanticContentAttribute = .forceRightToLeft
-        }
-        else{
+        } else {
             self.semanticContentAttribute = .forceLeftToRight
-           
+
         }
-        if searchImagePrivate != nil{
+        if searchImagePrivate != nil {
             searchImageIcon = searchImagePrivate!
-            
-            
+
         }
-        if cancelImagePrivate != nil{
+        if cancelImagePrivate != nil {
             cancelImageIcon = cancelImagePrivate!
         }
         self.setImage(searchImageIcon, for: .search, state: .normal)
         self.setImage(cancelImageIcon, for: .clear, state: .normal)
-        
 
-        for subView in self.subviews
-        {
-            for case let textField as UITextField in subView.subviews{
+        for subView in self.subviews {
+            for case let textField as UITextField in subView.subviews {
                 textField.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                 let attributeDict = [NSAttributedString.Key.foregroundColor: UIColor.white]
                 textField.attributedPlaceholder = NSAttributedString(string: "search.lan".localized, attributes: attributeDict)
-                
+
                 textField.textColor = .white
             }
-            
+
             for innerSubViews in subView.subviews {
                 if let cancelButton = innerSubViews as? UIButton {
                     cancelButton.setTitleColor(UIColor.white, for: .normal)
                     cancelButton.setTitle("cancel.lan".localized, for: .normal)
                 }
             }
-            
+
         }
         self.enablesReturnKeyAutomatically = false
         self.returnKeyType = .done
     }
-  
+
 }

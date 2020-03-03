@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-
 //fileprivate var hideNavVar = [String:Bool]()
 //extension UIViewController{
 //    @IBInspectable public var hideNav:Bool{
@@ -72,10 +70,12 @@ public extension UIViewController {
     ///   - title: title of the alert
     ///   - message: message/body of the alert
     ///   - buttonTitles: (Optional)list of button titles for the alert. Default button i.e "OK" will be shown if this paramter is nil
-    ///   - highlightedButtonIndex: (Optional) index of the button from buttonTitles that should be highlighted. If this parameter is nil no button will be highlighted
+    ///   - highlightedButtonIndex: (Optional) index of the button from buttonTitles that should be highlighted. If this parameter
+    //is nil no button will be highlighted
     ///   - completion: (Optional) completion block to be invoked when any one of the buttons is tapped. It passes the index of the tapped button as an argument
     /// - Returns: UIAlertController object (discardable).
-    @discardableResult func showAlert(title: String?, message: String?, buttonTitles: [String]? = nil, highlightedButtonIndex: Int? = nil, completion: ((Int) -> Void)? = nil) -> UIAlertController {
+    @discardableResult func showAlert(title: String?, message: String?, buttonTitles: [String]? = nil,
+                                      highlightedButtonIndex: Int? = nil, completion: ((Int) -> Void)? = nil) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         var allButtons = buttonTitles ?? [String]()
         if allButtons.count == 0 {
@@ -100,4 +100,3 @@ public extension UIViewController {
     }
 
 }
-

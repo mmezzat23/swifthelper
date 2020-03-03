@@ -10,17 +10,16 @@ import Foundation
 import UIKit
 
 /** vars helper use it **/
-fileprivate var refreshControlFile: UIRefreshControl?
-fileprivate var enableSwipeFile: Bool = false
-fileprivate weak var delegateFile: SwipeRefreshDelegate?
+private var refreshControlFile: UIRefreshControl?
+private var enableSwipeFile: Bool = false
+private weak var delegateFile: SwipeRefreshDelegate?
 /** vars helper use it **/
-
 
 /** contract of swipe **/
 protocol SwipeRefreshProtocol {
-    var refreshControl: UIRefreshControl? { set get }
-    var swipeDelegate: SwipeRefreshDelegate? { set get }
-    var enableTopSwipe: Bool { set get }
+    var refreshControl: UIRefreshControl? { get set }
+    var swipeDelegate: SwipeRefreshDelegate? { get set }
+    var enableTopSwipe: Bool { get set }
     func swipeTopRefresh()
     func swipeButtomRefresh()
     func stopSwipeButtom()
@@ -29,21 +28,16 @@ protocol SwipeRefreshProtocol {
     func createIndicator() -> UIActivityIndicatorView
 }
 /** contract of swipe **/
-
-
 /** Delegation of swipe **/
 @objc protocol SwipeRefreshDelegate: class {
     @objc func swipeTopEvent()
     func swipeButtomEvent()
 }
 extension SwipeRefreshDelegate {
-    func swipeButtomEvent(){
-        
+    func swipeButtomEvent() {
     }
 }
 /** Delegation of swipe **/
-
-
 
 extension UIScrollView: SwipeRefreshProtocol {
     weak var swipeDelegate: SwipeRefreshDelegate? {
@@ -55,32 +49,27 @@ extension UIScrollView: SwipeRefreshProtocol {
         }
     }
     var refreshControl: UIRefreshControl? {
-        get{
+        get {
             return refreshControlFile
-        }
-        set{
+        } set {
             refreshControlFile = newValue
         }
     }
     var enableTopSwipe: Bool {
         get {
             return enableSwipeFile
-        }
-        set {
+        } set {
             enableSwipeFile = newValue
             swipeTopRefresh()
         }
     }
     func checkSwipeButtom() {
         if swipeDelegate != nil {
-            if ((self.contentOffset.y + self.frame.size.height) >= self.contentSize.height)
-            {
+            if (self.contentOffset.y + self.frame.size.height) >= self.contentSize.height {
                 self.swipeButtomRefresh()
             }
         }
-      
     }
-    
     func swipeTopRefresh() {
         if enableTopSwipe {
             refreshControl = UIRefreshControl()
@@ -89,7 +78,6 @@ extension UIScrollView: SwipeRefreshProtocol {
             self.addSubview(refreshControl!)
         }
     }
-    
     func swipeButtomRefresh() {
         if self is UITableView {
             let table = self as? UITableView
@@ -100,15 +88,12 @@ extension UIScrollView: SwipeRefreshProtocol {
             self.swipeDelegate?.swipeButtomEvent()
         }
     }
-    
     func stopSwipeButtom() {
-        
         if self is UITableView {
             let table = self as? UITableView
             table?.tableFooterView?.isHidden = true
         }
     }
-    
     func stopSwipeTop() {
         self.refreshControl?.endRefreshing()
     }
@@ -118,16 +103,14 @@ extension UIScrollView: SwipeRefreshProtocol {
         indicator.hidesWhenStopped = true
         return indicator
     }
-    
-    func swipeTopRefresh(closure: @escaping (()->Void)) {
+    func swipeTopRefresh(closure: @escaping (() -> Void)) {
         refreshControl = UIRefreshControl()
         //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")\
         refreshControl?.actionHandle(ForAction: closure)
         self.addSubview(refreshControl!)
     }
-    func swipeButtomRefresh(closure: @escaping (()->Void)){
-        if ((self.contentOffset.y + self.frame.size.height) >= self.contentSize.height)
-        {
+    func swipeButtomRefresh(closure: @escaping (() -> Void)) {
+        if (self.contentOffset.y + self.frame.size.height) >= self.contentSize.height {
             if self is UITableView {
                 let table = self as? UITableView
                 let indicator = createIndicator()
@@ -138,10 +121,8 @@ extension UIScrollView: SwipeRefreshProtocol {
             }
         }
     }
-    
 }
 extension UIRefreshControl {
-    
     func actionHandle(ForAction action:@escaping () -> Void) {
         self.actionHandleBlock(action: action)
         self.addTarget(self, action: #selector(UIRefreshControl.triggerActionHandleBlock), for: .valueChanged)

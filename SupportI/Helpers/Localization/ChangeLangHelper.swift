@@ -9,26 +9,19 @@
 import Foundation
 import UIKit
 
-
-func changeLang(closure:@escaping ()->()) {
+func changeLang(closure:@escaping () -> Void ) {
     let alert = UIAlertController(title: "change_language.lan".localized, message: nil, preferredStyle: .actionSheet)
     alert.addAction(UIAlertAction(title: "العربية", style: .default, handler: { _ in
         setAppLang("ar")
         initLang()
         closure()
-        
     }))
-    
     alert.addAction(UIAlertAction(title: "الأنجليزية", style: .default, handler: { _ in
         setAppLang("en")
         initLang()
         closure()
-        
-        
     }))
-    
     alert.addAction(UIAlertAction.init(title: "cancel".localized, style: .cancel, handler: nil))
-    
     /*If you want work actionsheet on ipad
      then you have to use popoverPresentationController to present the actionsheet,
      otherwise app will crash on iPad */
@@ -40,7 +33,5 @@ func changeLang(closure:@escaping ()->()) {
     default:
         break
     }
-    
     UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
 }
-

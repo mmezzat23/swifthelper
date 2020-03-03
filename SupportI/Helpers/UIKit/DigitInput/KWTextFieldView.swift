@@ -16,31 +16,31 @@ protocol KWTextFieldDelegate: class {
 }
 
 @IBDesignable class KWTextFieldView: UIView {
-    
+
     // MARK: - Constants
     static let maxCharactersLength = 1
-    
+
     // MARK: - IBInspectables
     @IBInspectable var underlineColor: UIColor = UIColor.darkGray {
         didSet {
             underlineView.backgroundColor = underlineColor
         }
     }
-    
+
     @IBInspectable var underlineSelectedColor: UIColor = UIColor.black
-    
+
     @IBInspectable var textColor: UIColor = UIColor.darkText {
         didSet {
             numberTextField.textColor = textColor
         }
     }
-    
+
     @IBInspectable var textSize: CGFloat = 24.0 {
         didSet {
             numberTextField.font = UIFont.systemFont(ofSize: textSize)
         }
     }
-    
+
     @IBInspectable var textFont: String = "" {
         didSet {
             if let font = UIFont(name: textFont, size: textSize) {
@@ -50,68 +50,70 @@ protocol KWTextFieldDelegate: class {
             }
         }
     }
-    
+
     @IBInspectable var textFieldBackgroundColor: UIColor = UIColor.clear {
         didSet {
             numberTextField.backgroundColor = textFieldBackgroundColor
         }
     }
-    
+
     @IBInspectable var textFieldTintColor: UIColor = UIColor.blue {
         didSet {
             numberTextField.tintColor = textFieldTintColor
         }
     }
-    
+
     @IBInspectable var darkKeyboard: Bool = false {
         didSet {
             keyboardAppearance = darkKeyboard ? .dark : .light
             numberTextField.keyboardAppearance = keyboardAppearance
         }
     }
-    
+
     // MARK: - IBOutlets
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak private var underlineView: UIView!
     @IBOutlet weak var viewCircle: UIView!
-    func updateviewCircle(_ option:Bool = false){
-        guard let _ = self.viewCircle else { return }
-        self.viewCircle.isHidden = option
+    func updateviewCircle(_ option: Bool = false) {
+        if self.viewCircle != nil {
+            self.viewCircle.isHidden = option
+        }
     }
-    
+
     // MARK: - Variables
     private var keyboardAppearance = UIKeyboardAppearance.default
     weak var delegate: KWTextFieldDelegate?
-    
+
     var code: String? {
         return numberTextField.text
     }
-    
+
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setup()
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+
         setup()
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     // MARK: - Private Methods
     private func setup() {
         loadViewFromNib()
         updateviewCircle()
         numberTextField.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: numberTextField)
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)),
+                                               name: UITextField.textDidChangeNotification, object: numberTextField)
     }
-    
+
     // MARK: - Public Methods
     public func activate() {
         numberTextField.becomeFirstResponder()
@@ -120,26 +122,28 @@ protocol KWTextFieldDelegate: class {
             updateviewCircle()
         }
     }
-    
+
     public func deactivate() {
         numberTextField.resignFirstResponder()
     }
-    
+
     public func reset() {
         numberTextField.text = " "
         updateviewCircle()
         updateUnderline()
     }
-    
+
     // MARK: - FilePrivate Methods
     @objc dynamic fileprivate func textFieldDidChange(_ notification: Foundation.Notification) {
         if numberTextField.text?.count == 0 {
             numberTextField.text = " "
         }
     }
-    
+
     fileprivate func updateUnderline() {
-        guard let _ = self.underlineView else { return }
+        if self.underlineView == nil {
+            return
+        }
         underlineView.backgroundColor = numberTextField.text?.trim() != "" ? underlineSelectedColor : underlineColor
     }
 }
@@ -149,7 +153,7 @@ extension KWTextFieldView: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentString = numberTextField.text!
         let newString = currentString.replacingCharacters(in: textField.text!.range(from: range)!, with: string)
-        
+
         if newString.count > type(of: self).maxCharactersLength {
             delegate?.moveToNext(self)
             textField.text = string
@@ -157,12 +161,11 @@ extension KWTextFieldView: UITextFieldDelegate {
             delegate?.moveToPrevious(self, oldCode: textField.text!)
             numberTextField.text = " "
         }
-        
+
         delegate?.didChangeCharacters()
         delegate?.didChangeCharacters(self)
         updateUnderline()
-        
+
         return newString.count <= type(of: self).maxCharactersLength
     }
 }
-

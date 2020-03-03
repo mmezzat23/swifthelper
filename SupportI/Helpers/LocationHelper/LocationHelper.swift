@@ -17,7 +17,6 @@ protocol LocationDelegate: class {
 }
 extension LocationDelegate {
     func didUpdateLocation(lat: Double, lng: Double) {
-        
     }
 
 }
@@ -26,10 +25,9 @@ class LocationHelper: NSObject {
     private var locationUpdated: Bool = false
 
     var useInBackground: Bool = false
-    var updateLocationInDistance: Double? = nil
+    var updateLocationInDistance: Double?
     var useOnlyoneTime: Bool = true
-
-    private var _delegate: LocationDelegate?
+    private weak var _delegate: LocationDelegate?
     weak var delegate: LocationDelegate? {
         set {
             _delegate = newValue
@@ -41,39 +39,29 @@ class LocationHelper: NSObject {
     /* currentLocation */
     var location: CLLocation?
     var degree: CLLocationCoordinate2D? {
-        get {
-            return location?.coordinate
-        }
+        return location?.coordinate
     }
     var lat: Double? {
-        get{
-            return location?.coordinate.latitude
-        }
+        return location?.coordinate.latitude
     }
     var lng: Double? {
-        get{
-            return location?.coordinate.longitude
-        }
+        return location?.coordinate.longitude
     }
     override init() {
         super.init()
         self.locationManager = CLLocationManager()
     }
-    
     public func reload() {
         self.locationUpdated = false
         self.currentLocation()
     }
-    
 }
 
 /** part of location **/
 extension LocationHelper: CLLocationManagerDelegate {
-    
     public func currentLocation() {
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.requestAlwaysAuthorization()
-        
         if CLLocationManager.locationServicesEnabled() {
             if updateLocationInDistance == nil {
                 locationManager.distanceFilter = kCLDistanceFilterNone
@@ -87,16 +75,13 @@ extension LocationHelper: CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
             locationManager.delegate = self
-            
-            
         } else {
             let topViewController = UIApplication.topMostController()
             topViewController.showAlert(title: "location_error.lan".localized, message: "you_are_not_allow_use_your_location.lan".localized)
         }
     }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation // note that locations is same as the one in the function declaration
+        let userLocation: CLLocation = locations[0] as CLLocation // note that locations is same as the one in the function declaration
         self.location = userLocation
         self.delegate?.didUpdateLocation(lat: self.lat ?? 0, lng: self.lng ?? 0)
         self.onUpdateLocation?(self.degree)
@@ -108,8 +93,5 @@ extension LocationHelper: CLLocationManagerDelegate {
                 locationUpdated = true
             }
         }
-        
-        
     }
-    
 }

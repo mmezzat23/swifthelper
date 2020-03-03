@@ -1,10 +1,10 @@
-
 import Foundation
 import GoogleMaps
 import UIKit
 
 extension ARCarMovement {
-    func arCarMovement(_ marker: GMSMarker?, withOldCoordinate oldCoordinate: CLLocationCoordinate2D, andNewCoordinate newCoordinate: CLLocationCoordinate2D, inMapview mapView: GMSMapView?, withBearing newBearing: Float) {
+    func arCarMovement(_ marker: GMSMarker?, withOldCoordinate oldCoordinate: CLLocationCoordinate2D,
+                       andNewCoordinate newCoordinate: CLLocationCoordinate2D, inMapview mapView: GMSMapView?, withBearing newBearing: Float) {
         //calculate the bearing value from old and new coordinates
         //
         let calBearing = getHeadingForDirection(fromCoordinate: oldCoordinate, toCoordinate: newCoordinate)
@@ -39,8 +39,6 @@ extension ARCarMovement {
         marker?.rotation = calBearing
         CATransaction.commit()
     }
-    
-
     func getHeadingForDirection(fromCoordinate fromLoc: CLLocationCoordinate2D, toCoordinate toLoc: CLLocationCoordinate2D) -> Double {
         let fLat = degreesToRadians(fromLoc.latitude)
         let fLng = degreesToRadians(fromLoc.longitude)
@@ -53,6 +51,4 @@ extension ARCarMovement {
             return 360 + degree
         }
     }
-
-    
 }
