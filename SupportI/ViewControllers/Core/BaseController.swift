@@ -8,8 +8,6 @@
 
 import UIKit
 
-import NVActivityIndicatorView
-
 class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alertable {
 
     var hiddenNav: Bool = false
@@ -98,7 +96,6 @@ extension BaseController: BaseViewControllerProtocol {
 
         //reset paginator
         ApiManager.instance.resetPaginate()
-        ApiManager.instance.resetObject()
         //binding
     }
     func bindSetting() {

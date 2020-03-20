@@ -40,7 +40,7 @@ class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelpe
             _mapView.delegate = self
         }
     }
-    weak var delegate: GoogleMapHelperDelegate? {
+    var delegate: GoogleMapHelperDelegate? {
         get {
             return _delegate
         } set {

@@ -1,7 +1,7 @@
 import CoreData
 import UIKit
 
-public func api(_ method: Apis, _ paramters: [Any] = []) -> String {
+public func api(_ method: EndPoint, _ paramters: [Any] = []) -> String {
     var url = method.rawValue
     for key in paramters {
         url += "/\(key)"

@@ -1,11 +1,12 @@
 PODS:
-  - Alamofire (4.7.2)
-  - AlamofireImage (3.3.1):
-    - Alamofire (~> 4.5)
-  - BSGridCollectionViewLayout (1.2.0)
-  - BSImagePicker (2.7.1):
-    - BSGridCollectionViewLayout (~> 1.2.0)
-    - UIImageViewModeScaleAspect (= 1.5)
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - BSGridCollectionViewLayout (1.2.5)
+  - BSImagePicker (2.10.3):
+    - BSGridCollectionViewLayout (= 1.2.5)
+    - BSImageView (= 1.0.3)
+  - BSImageView (1.0.3)
   - Cosmos (15.0.0)
   - Firebase (4.13.0):
     - Firebase/Core (= 4.13.0)
@@ -42,31 +43,30 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - IQKeyboardManagerSwift (6.0.2)
+  - IQKeyboardManagerSwift (6.5.5)
+  - lottie-ios (3.1.6)
+  - MBProgressHUD (1.2.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - NVActivityIndicatorView (4.2.0):
-    - NVActivityIndicatorView/Presenter (= 4.2.0)
-  - NVActivityIndicatorView/Presenter (4.2.0)
   - Protobuf (3.5.0)
-  - SwiftLint (0.38.1)
-  - UIImageViewModeScaleAspect (1.5)
+  - SwiftLint (0.32.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireImage (~> 3.3)
-  - BSImagePicker
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.0)
+  - BSImagePicker (~> 2.0)
   - Cosmos (~> 15.0)
   - Firebase
   - Firebase/Messaging
   - GoogleMaps (= 3.0.3)
   - GooglePlaces (= 3.0.3)
   - IQKeyboardManagerSwift
-  - NVActivityIndicatorView
-  - SwiftLint
+  - lottie-ios
+  - MBProgressHUD
+  - SwiftLint (= 0.32.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -74,6 +74,7 @@ SPEC REPOS:
     - AlamofireImage
     - BSGridCollectionViewLayout
     - BSImagePicker
+    - BSImageView
     - Cosmos
     - Firebase
     - FirebaseAnalytics
@@ -84,17 +85,18 @@ SPEC REPOS:
     - GooglePlaces
     - GoogleToolboxForMac
     - IQKeyboardManagerSwift
+    - lottie-ios
+    - MBProgressHUD
     - nanopb
-    - NVActivityIndicatorView
     - Protobuf
     - SwiftLint
-    - UIImageViewModeScaleAspect
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
-  BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
-  BSImagePicker: eb12948a6e71b9855c2c37723dfd989b9b4288bd
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  BSGridCollectionViewLayout: 333dcb457a5a3bdd9212607ab5756553dcfe06cb
+  BSImagePicker: 07404254f2fcdaf5a2eb403c0f8c337267ce8738
+  BSImageView: a149459433a2687157d034c78e059d30ac7f2544
   Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
@@ -104,13 +106,13 @@ SPEC CHECKSUMS:
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  IQKeyboardManagerSwift: 59d4b0e140bc546c3c76ae5bb35b3dafd10b8172
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
-  SwiftLint: 0aeb99ca7ccfc222ef93e2560a35e669f5465e6c
-  UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
 
-PODFILE CHECKSUM: f0128c4bb45da313844c5c766c84a7b08bc2964e
+PODFILE CHECKSUM: 00874acc4114382e8d88bc20a7ffad505f26b2e0
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.5

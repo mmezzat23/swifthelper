@@ -24,7 +24,7 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
     private var picker: UIImagePickerController?
     private weak var _delegate: ImagePickerDelegate?
     private weak var viewController: UIViewController!
-    internal weak var delegate: ImagePickerDelegate? {
+    internal var delegate: ImagePickerDelegate? {
         set {
             _delegate = newValue
             viewController = _delegate as? UIViewController

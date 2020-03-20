@@ -23,7 +23,7 @@ extension ViewModelProtocol {
         ApiManager.instance.checkPaginator(respond: respnod)
     }
     func runPaginator() -> Bool {
-        if !ApiManager.instance.running && !ApiManager.instance.paginatorStop {
+        if !ApiManager.instance.isHttpRequestRun && !ApiManager.instance.paginatorStop {
             ApiManager.instance.incresePaginate()
             return true
         } else {

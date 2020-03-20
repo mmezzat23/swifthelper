@@ -19,7 +19,7 @@ class ViewController: BaseController {
     }
 
     func setup() {
-        print("sound.lan".localized)
+        print(Localizations.sure.localized)
         print("sound.lan".localized())
 
         //        let vc = controller(CustomViewController.self, storyboard: .main)

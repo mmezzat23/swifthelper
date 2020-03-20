@@ -18,7 +18,7 @@ import UIKit
 open class UISideMenuNavigationController: UINavigationController {
 
     fileprivate weak var foundDelegate: UISideMenuNavigationControllerDelegate?
-    fileprivate weak var activeDelegate: UISideMenuNavigationControllerDelegate? {
+    fileprivate var activeDelegate: UISideMenuNavigationControllerDelegate? {
         guard !view.isHidden else {
             return nil
         }

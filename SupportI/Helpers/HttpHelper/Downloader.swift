@@ -20,7 +20,7 @@ class Downloader: NSObject, URLSessionDownloadDelegate, UIDocumentInteractionCon
     //
     //delegation
     private weak var _delegate: DownloaderDelegate?
-    weak var downloaderDelegate: DownloaderDelegate? {
+    var downloaderDelegate: DownloaderDelegate? {
         set {
             if newValue is UIViewController {
                 _delegate = newValue

@@ -22,7 +22,7 @@ protocol MapPlaceHelper: class {
 }
 
 extension MapPlaceHelper where Self: GoogleMapHelper {
-    weak var placePickerDelegate: PlacesPickerDelegate? {
+    var placePickerDelegate: PlacesPickerDelegate? {
         set {
             placePickerPrivate = newValue
         } get {

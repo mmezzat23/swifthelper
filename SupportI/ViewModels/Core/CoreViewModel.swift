@@ -11,7 +11,7 @@ import Foundation
 class ViewModelCore: ViewModelProtocol {
 
     weak var _delegate: PresentingViewProtocol?
-    weak var delegate: PresentingViewProtocol? {
+    var delegate: PresentingViewProtocol? {
         set {
             _delegate = newValue
         } get {

@@ -1,9 +1,3 @@
-//
-//  ApiController.swift
-//
-//
-//  Created by Algazzar on 4/1/18.
-//
 import CoreData
 import Alamofire
 
@@ -40,7 +34,7 @@ class ApiManager: BaseApi, Api {
         }
 
     }
-    func connection(_ method: Apis, type: HTTPMethod, completionHandler: @escaping (Data?) -> Void) {
+    func connection(_ method: EndPoint, type: HTTPMethod, completionHandler: @escaping (Data?) -> Void) {
         if ApiManager.useAuth {
             Authorization.instance.refreshToken { callback in
                 if callback {

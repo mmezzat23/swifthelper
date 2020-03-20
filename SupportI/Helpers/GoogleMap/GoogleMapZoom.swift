@@ -15,6 +15,7 @@ extension GoogleMapHelper {
         case landmass = 5
         case city = 10
         case streets = 15
+        case inStreets = 17
         case buildings = 20
     }
 }

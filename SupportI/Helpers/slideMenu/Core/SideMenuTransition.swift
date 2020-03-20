@@ -30,7 +30,7 @@ open class SideMenuTransition: UIPercentDrivenInteractiveTransition {
     }
     internal weak var sideMenuManager: SideMenuManager!
     internal weak var mainViewController: UIViewController?
-    internal weak var menuViewController: UISideMenuNavigationController? {
+    internal var menuViewController: UISideMenuNavigationController? {
         return presentDirection == .left ? sideMenuManager.menuLeftNavigationController : sideMenuManager.menuRightNavigationController
     }
     internal var presentDirection: UIRectEdge = .left

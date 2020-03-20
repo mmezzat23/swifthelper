@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NVActivityIndicatorView
+import UIKit
 
 // All ViewControllers must implement this protocol
 protocol PresentingViewProtocol: class {
@@ -23,27 +23,8 @@ protocol PresentingViewProtocol: class {
 
 // implementation of PresentingViewProtocol only in cases where the presenting view is a UIViewController
 extension PresentingViewProtocol where Self: UIViewController {
-    func randomIndicatorView() {
-        // pick and return a new value
-        var rand = Int().random(32)
-        if rand == 31 || rand == 25 || rand == 19 || rand == 20 || rand == 14 || rand == 15 || rand == 4 || rand == 26 {
-            rand = 29
-        }
-        let type = NVActivityIndicatorType(rawValue: rand)
-        guard let loading = type else { return }
-        NVActivityIndicatorView.DEFAULT_TYPE = loading
-    }
     func bind() {
 
-    }
-    func startLoading() {
-        self.randomIndicatorView()
-        let activityData = ActivityData()
-        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
-    }
-
-    func stopLoading() {
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
     func snackBar(message: String, duration: TTGSnackbarDuration = .middle) {
         let snackbar = TTGSnackbar(message: message, duration: duration)

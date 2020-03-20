@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NVActivityIndicatorView
+import UIKit
 
 enum Socials: Int {
     case facebook = 1
@@ -29,10 +29,10 @@ protocol SocialIndicator {
 extension SocialIndicator {
 
     func startLoading() {
-        let activityData = ActivityData()
-        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+        UIApplication.topViewController()?.startLoading()
+
     }
     func stopLoading() {
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+        UIApplication.topViewController()?.stopLoading()
     }
 }

@@ -28,7 +28,7 @@ class LocationHelper: NSObject {
     var updateLocationInDistance: Double?
     var useOnlyoneTime: Bool = true
     private weak var _delegate: LocationDelegate?
-    weak var delegate: LocationDelegate? {
+    var delegate: LocationDelegate? {
         set {
             _delegate = newValue
         } get {

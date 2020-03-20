@@ -46,7 +46,7 @@ extension MapRouteHelper where Self: GoogleMapHelper {
             return polylineFile
         }
     }
-    weak var polylineDataSource: PolylineDataSource? {
+    var polylineDataSource: PolylineDataSource? {
         set {
             polylineAttrFile = newValue
         } get {

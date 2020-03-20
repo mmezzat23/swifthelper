@@ -1,11 +1,10 @@
 import Alamofire
-import NVActivityIndicatorView
 
 class BaseApi: Downloader, Paginator, Alertable {
     let url = Constants.url
     var paramaters: [String: Any] = [:]
     var headers: [String: String] = [:]
-    var running: Bool = false
+    var isHttpRequestRun: Bool = false
 
     override init() {
         super.init()
@@ -52,7 +51,7 @@ class BaseApi: Downloader, Paginator, Alertable {
     }
     func connection(_ method: String, type: HTTPMethod,
                     completionHandler: @escaping (Data?) -> Void) {
-        self.running = true
+        self.isHttpRequestRun = true
         let url = initURL(method: method, type: type)
         print(url)
         let paramters = self.paramaters
@@ -60,7 +59,7 @@ class BaseApi: Downloader, Paginator, Alertable {
         Alamofire.request(safeUrl(url: url), method: type, parameters: paramters, headers: self.headers)
             .responseJSON { response in
                 print(response.result.value ?? "")
-                self.running = false
+                self.isHttpRequestRun = false
                 switch response.result {
                 //case .success(let value)
                 case .success:
@@ -71,30 +70,30 @@ class BaseApi: Downloader, Paginator, Alertable {
                         completionHandler(response.data)
 
                     case 400?:
-                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                        UIApplication.topViewController()?.stopLoading()
                         self.setErrorMessage(data: response.data)
                     //completionHandler(nil)
                     case 401?:
-                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                        UIApplication.topViewController()?.stopLoading()
                         self.makeAlert("the_login_is_required.lan".localized, closure: {
                             guard let vcr = Constants.loginNav else { return }
                             UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
                         })
                     case 404?:
-                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                        UIApplication.topViewController()?.stopLoading()
                         self.makeAlert("not_found.lan".localized, closure: {})
                     case 422?:
-                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                        UIApplication.topViewController()?.stopLoading()
                         self.setErrorMessage(data: response.data)
                     //completionHandler(nil)
                     case .none:
                         break
                     case .some(let error):
-                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                        UIApplication.topViewController()?.stopLoading()
                         self.makeAlert(error.string, closure: {})
                     }
                 case .failure(let error):
-                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                    UIApplication.topViewController()?.stopLoading()
                     self.makeAlert(error.localizedDescription, closure: {})
                 }
         }

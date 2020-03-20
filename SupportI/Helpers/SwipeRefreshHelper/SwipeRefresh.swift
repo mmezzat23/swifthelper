@@ -40,7 +40,7 @@ extension SwipeRefreshDelegate {
 /** Delegation of swipe **/
 
 extension UIScrollView: SwipeRefreshProtocol {
-    weak var swipeDelegate: SwipeRefreshDelegate? {
+    var swipeDelegate: SwipeRefreshDelegate? {
         get {
             return delegateFile
         }

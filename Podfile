@@ -9,16 +9,16 @@ target 'SupportI' do
   use_frameworks!
 
   # Pods for SupportI
-
-pod 'Alamofire'
+pod 'Alamofire', '~> 4.0'
+pod 'AlamofireImage' , '~> 3.0'
 pod 'Cosmos', '~> 15.0'
-pod 'NVActivityIndicatorView'
 pod 'Firebase'
 pod 'Firebase/Messaging'
-pod 'AlamofireImage', '~> 3.3'
+pod 'lottie-ios'
+pod 'MBProgressHUD'
 pod 'IQKeyboardManagerSwift'
-pod 'BSImagePicker'
+pod 'BSImagePicker', '~> 2.0'
 pod 'GooglePlaces', '= 3.0.3'
 pod 'GoogleMaps', '= 3.0.3'
-pod 'SwiftLint'
+pod 'SwiftLint', '= 0.32.0'
 end

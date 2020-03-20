@@ -1,0 +1,13 @@
+//
+//  LocalizeDictionary.swift
+//  SupportI
+//
+//  Created by Mohamed Abdu on 3/20/20.
+//  Copyright © 2020 MohamedAbdu. All rights reserved.
+//
+
+import Foundation
+
+struct Localizations {
+    static let sure = "sure.lan"
+}

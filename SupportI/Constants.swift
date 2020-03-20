@@ -43,14 +43,6 @@ struct Constants {
     static func sleep(time: TimeInterval) {
         Constants.splash = Thread.sleep(forTimeInterval: time)
     }
-    static func initAppDelegate() {
-        initLang()
-        //Constants.sleep(time: 3)
-        //Override point for customization after application launch.
-        IQKeyboardManager.shared.enable = true
-        GMSServices.provideAPIKey(Constants.googleAPI)
-        GMSPlacesClient.provideAPIKey(Constants.googleAPI)
-    }
 }
 
 public enum Fonts: String {
@@ -58,31 +50,14 @@ public enum Fonts: String {
     //case reg = "DINNextLTW23-Regular"
     //case mid = "DINNextLTW23-Medium"
 }
-public enum Storyboards: String {
-    case main = "Main"
-    case auth = "Auth"
-}
 
-public enum Apis: String {
-    case token
-    case update = "user/update"
-    case login
-    case register
-    case logout
-    case packages
-    case locations
-    case categories
-    case ads
-    case like
-    case favorite
-    case follow
-    case comment
-    case comments
-    case report = "ads/report"
-    case favorites
-    case advertisers
-    case settings
-    case notifications
-    case banks
-    case search = "ads/search"
+extension AppDelegate {
+    func initAppDelegate() {
+        initLang()
+        //Constants.sleep(time: 3)
+        //Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
+        GMSServices.provideAPIKey(Constants.googleAPI)
+        GMSPlacesClient.provideAPIKey(Constants.googleAPI)
+    }
 }
