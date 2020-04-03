@@ -23,6 +23,8 @@ class PlacePickerController: UIViewController {
             placesTbl.dataSource = self
         }
     }
+    @IBOutlet weak var timerBtn: UIButton!
+
     var location: LocationHelper?
     var lat: Double = 0
     var lng: Double = 0
@@ -35,15 +37,10 @@ class PlacePickerController: UIViewController {
     // The currently selected place.
     internal var selectedPlace: PlacePickerModel.PlacePickerResult?
     private var  currentLocationPlace: PlacePickerModel.PlacePickerResult?
+    
+    // counter waiting
     private var isCounterRun: Bool = false
-    private lazy var counterLbl: EFCountingLabel = {
-     let myLabel = EFCountingLabel(frame: CGRect(x: self.view.width/2 - 20, y: self.placesTbl.y - 50, width: 200, height: 40))
-        self.view.addSubview(myLabel)
-        myLabel.setUpdateBlock { value, label in
-            label.text = Int(value).string
-        }
-        return myLabel
-    }()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -103,7 +100,7 @@ class PlacePickerController: UIViewController {
         currentLocationPlace?.geometry = .init()
         currentLocationPlace?.geometry?.location = .init()
         currentLocationPlace?.geometry?.location?.lat = lat
-        currentLocationPlace?.geometry?.location?.lat = lng
+        currentLocationPlace?.geometry?.location?.lng = lng
         currentLocationPlace?.icon = nil
         if title != nil {
             currentLocationPlace?.name = title
@@ -114,13 +111,14 @@ class PlacePickerController: UIViewController {
     }
     func waitTimer() {
         isCounterRun = true
-        self.counterLbl.isHidden = false
-        counterLbl.countFrom(0, to: 5, withDuration: 5.0)
-        counterLbl.completionBlock = { () in
+        self.timerBtn.isHidden = false
+        self.timerBtn.setTitle("Loading...", for: .normal)
+        DispatchQueue.main.asyncAfter(deadline: .now()+4) {
             self.isCounterRun = false
-            self.counterLbl.isHidden = true
+            self.timerBtn.isHidden = true
             self.fetchPlacesByLocation()
         }
+    
     }
     @objc func back() {
         self.dismiss(animated: true, completion: nil)
@@ -161,25 +159,19 @@ extension PlacePickerController: LocationDelegate, GoogleMapHelperDelegate {
         self.lng = lng
         self.mapHelper?.address(lat: lat, lng: lng, handler: { (title, snippet) in
             self.initCurrentLocationPlace(title: title, snippet: snippet)
-            self.fetchPlacesByLocation()
             self.mapHelper?.updateCamera(lat: lat, lng: lng)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
-            }
         })
     }
     func didChangeCameraLocation(lat: Double, lng: Double) {
+        self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+        self.fetchPlacesByLocation()
     }
-    func didClickOnMap(lat: Double, lng: Double) {
+    func didTapOnMap(lat: Double, lng: Double) {
         self.lat = lat
         self.lng = lng
         self.mapHelper?.address(lat: lat, lng: lng, handler: { (title, snippet) in
             self.initCurrentLocationPlace(title: title, snippet: snippet)
-            self.fetchPlacesByLocation()
             self.mapHelper?.updateCamera(lat: lat, lng: lng)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
-            }
         })
     }
 }
@@ -192,8 +184,5 @@ extension PlacePickerController: PlacePickerSearchDelegate {
         self.currentLocationPlace = place
         self.fetchPlacesByLocation()
         self.mapHelper?.updateCamera(lat: lat, lng: lng)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.mapHelper?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
-        }
     }
 }

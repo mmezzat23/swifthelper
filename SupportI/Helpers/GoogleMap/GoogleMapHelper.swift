@@ -18,7 +18,7 @@ class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelpe
 
     /* delegates */
     private weak var _delegate: GoogleMapHelperDelegate?
-    weak var markerDataSource: MarkerDataSource?
+    private weak var _markerDataSource: MarkerDataSource?
     /* AR*/
     private var moveMent: ARCarMovement?
     internal let geocoder = GMSGeocoder()
@@ -47,6 +47,13 @@ class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelpe
             _delegate = newValue
         }
     }
+    var markerDataSource: MarkerDataSource? {
+        get {
+            return _markerDataSource
+        } set {
+            _markerDataSource = newValue
+        }
+    }
     override init() {
         super.init()
         if useARMovement {
@@ -60,9 +67,22 @@ class GoogleMapHelper: NSObject, MapRouteHelper, MapAddressHelper, MapPlaceHelpe
 }
 
 extension GoogleMapHelper: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTapMyLocation location: CLLocationCoordinate2D) {
+        self.delegate?.didTapOnMyLocation(lat: location.latitude, lng: location.longitude)
+    }
+    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+        self.delegate?.didTapOnMyLocation()
+        return true
+        
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        self.delegate?.didTapOnMarker(marker: marker)
+        return true
+    }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print("cliecked on map")
-        self.delegate?.didClickOnMap(lat: coordinate.latitude, lng: coordinate.longitude)
+        self.delegate?.didTapOnMap(lat: coordinate.latitude, lng: coordinate.longitude)
     }
     func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
         mapView.clear()

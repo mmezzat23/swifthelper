@@ -25,20 +25,17 @@ class PlacePickerSearchController: UIViewController {
             placesTbl.dataSource = self
         }
     }
+    @IBOutlet weak var timerBtn: UIButton!
+
+    
     weak var delegate: PlacePickerSearchDelegate?
     // An array to hold the list of likely places.
     internal var likelyPlaces: [PlacePickerModel.PlacePickerResult] = []
     // The currently selected place.
     internal var selectedPlace: PlacePickerModel.PlacePickerResult?
     private var isCounterRun: Bool = false
-    private lazy var counterLbl: EFCountingLabel = {
-     let myLabel = EFCountingLabel(frame: CGRect(x: self.view.width/2 - 20, y: self.placesTbl.y - 50, width: 200, height: 40))
-        self.view.addSubview(myLabel)
-        myLabel.setUpdateBlock { value, label in
-            label.text = Int(value).string
-        }
-        return myLabel
-    }()
+    private var timer: TimeHelper?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(false, animated: false)
@@ -74,12 +71,13 @@ class PlacePickerSearchController: UIViewController {
     }
     func waitTimer() {
         isCounterRun = true
-        self.counterLbl.isHidden = false
-        counterLbl.countFrom(0, to: 5, withDuration: 5.0)
-        counterLbl.completionBlock = { () in
-            self.isCounterRun = false
-            self.counterLbl.isHidden = true
-            self.fetchPlaces()
+        self.timerBtn.isHidden = false
+        timer = TimeHelper(seconds: 4) { second in
+            if second == 4 {
+                self.isCounterRun = false
+                self.timerBtn.isHidden = true
+                self.fetchPlaces()
+            }
         }
     }
     @IBAction func back(_ sender: Any) {

@@ -3,171 +3,135 @@ import UIKit
 private var textFieldUnderlineActive: [UITextField: UIColor] = [:]
 private var textFieldUnderline: [UITextField: UIColor] = [:]
 
-extension UILabel {
-//    public func controlAlignment(){
-//        if(self.textAlignment != .center){
-//            if(getAppLang() == "ar" || getAppLang() == "AR"){
-//                self.textAlignment = .right
-//            }else{
-//                self.textAlignment = .left
-//            }
-//        }
-//    }
-//    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localization: String {
-//        get {
-//            return self.localization
-//        }
-//        set {
-//            self.controlAlignment()
-//            self.text = translate(newValue)
-//
-//        }
-//    }
-}
-extension UIButton {
-//    public func controlAlignment() {
-//        if(self.titleLabel?.textAlignment != .center){
-//            if(getAppLang() == "ar" || getAppLang() == "AR"){
-//                self.titleLabel?.textAlignment = .right
-//            }else{
-//                self.titleLabel?.textAlignment = .left
-//            }
-//        }
-//    }
-//    public func controlImageEdge() {
-//        if(LocalizationHelper.getAppLang() == "ar" || LocalizationHelper.getAppLang() == "AR"){
-//            if(self.imageEdgeInsets.right > 0){
-//                self.imageEdgeInsets.left = self.imageEdgeInsets.right
-//                self.imageEdgeInsets.right = 0
-//            }
-//            else if(self.imageEdgeInsets.left > 0){
-//                self.imageEdgeInsets.right = self.imageEdgeInsets.left
-//                self.imageEdgeInsets.left = 0
-//
-//            }
-//            if(self.titleEdgeInsets.right > 0){
-//                self.titleEdgeInsets.left = self.titleEdgeInsets.right
-//                self.titleEdgeInsets.right = 0
-//            }
-//            else if(self.titleEdgeInsets.left > 0){
-//                self.titleEdgeInsets.right = self.titleEdgeInsets.left
-//                self.titleEdgeInsets.left = 0
-//
-//            }
-//        }
-//
-//
-//    }
-//    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localization: String {
-//        get {
-//            return self.localization
-//        }
-//        set {
-//            self.controlAlignment()
-//            self.setTitle(translate(newValue), for: .normal)
-//
-//        }
-//    }
-//    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localizationImage: String {
-//        get {
-//            return self.localizationImage
-//        }
-//        set {
-//            self.controlImageEdge()
-//            if getAppLang() == "ar" {
-//                if let translate =  LocalizationHelper.keys[newValue] {
-//                    self.setImage(UIImage(named: translate), for: .normal)
-//                }
-//            } else {
-//                self.setImage(UIImage(named: newValue), for: .normal)
-//            }
-//        }
-//    }
-//    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localizationBackGroundImage: String {
-//        get {
-//            return self.localizationBackGroundImage
-//        }
-//        set {
-//            self.setBackgroundImage(UIImage(named: translate(newValue)), for: .normal)
-//        }
-//    }
+extension UIButton{
+    public func controlAlignment(){
+        if(self.titleLabel?.textAlignment != .center){
+            if(getAppLang() == "ar" || getAppLang() == "AR"){
+                self.titleLabel?.textAlignment = .right
+            }else{
+                self.titleLabel?.textAlignment = .left
+            }
+        }
+    }
+    public func controlImageEdge(){
+        if(Constants.locale == "ar" || Constants.locale == "AR"){
+            if(self.imageEdgeInsets.right > 0){
+                self.imageEdgeInsets.left = self.imageEdgeInsets.right
+                self.imageEdgeInsets.right = 0
+            }
+            else if(self.imageEdgeInsets.left > 0){
+                self.imageEdgeInsets.right = self.imageEdgeInsets.left
+                self.imageEdgeInsets.left = 0
+                
+            }
+            if(self.titleEdgeInsets.right > 0){
+                self.titleEdgeInsets.left = self.titleEdgeInsets.right
+                self.titleEdgeInsets.right = 0
+            }
+            else if(self.titleEdgeInsets.left > 0){
+                self.titleEdgeInsets.right = self.titleEdgeInsets.left
+                self.titleEdgeInsets.left = 0
+                
+            }
+        }
+    }
+    
+    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
+    @IBInspectable public var localizationImage: String {
+        get {
+            return self.localizationImage
+        }
+        set {
+            self.controlImageEdge()
+            self.setImage(UIImage(named: newValue.localized), for: .normal)
+        }
+    }
+    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
+    @IBInspectable public var localizationBackGroundImage: String {
+        get {
+            return self.localizationBackGroundImage
+        }
+        set {
+            self.setBackgroundImage(UIImage(named: newValue.localized), for: .normal)
+        }
+    }
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
     @IBInspectable public var imageEdgeChecker: Bool {
         get {
             return self.imageEdgeChecker
         }
         set {
-            if newValue {
-                //self.controlImageEdge()
+            if(newValue){
+                self.controlImageEdge()
+            }
+        }
+    }
+    
+}
+extension UIImageView {
+    
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
+        get {
+            return self.localization
+        }
+        set {
+            self.image = UIImage(named: newValue.localized)
+        }
+    }
+}
+
+extension UIBarButtonItem {
+    
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
+        get {
+            return self.localization
+        }
+        set {
+            if(self.image != nil) {
+                self.image = UIImage(named: newValue.localized)
+            } else {
+                self.title = newValue.localized
             }
         }
     }
 }
-extension UITextView {
-//    public func controlAlignment(){
-//        if(self.textAlignment != .center){
-//            if(LocalizationHelper.getAppLang() == "ar"){
-//                self.textAlignment = .right
-//            }else{
-//                self.textAlignment = .left
-//            }
-//        }
-//    }
-//    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localization: String {
-//        get {
-//            return self.localization
-//        }
-//        set {
-//            self.controlAlignment()
-//            self.text = translate(newValue)
-//        }
-//    }
-}
-extension UITextField {
-//    public func controlAlignment(){
-//        if(self.textAlignment != .center){
-//            if(LocalizationHelper.getAppLang() == "ar"){
-//                self.textAlignment = .right
-//            }else{
-//                self.textAlignment = .left
-//            }
-//        }
-//    }
-//    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localizationPlaceHolder: String {
-//        get {
-//            return self.localizationPlaceHolder
-//        }
-//        set {
-//            self.controlAlignment()
-//            self.placeholder = translate(newValue)
-//
-//        }
-//    }
-//    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localization: String {
-//        get {
-//            return self.localization
-//        }
-//        set {
-//            self.controlAlignment()
-//            self.text = translate(newValue)
-//        }
-//    }
-    /// SwifterSwift: Border width of view; also inspectable from Storyboard.
-    @IBInspectable public var placeHolderColor: UIColor {
+
+extension UITabBarItem {
+    
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
         get {
-            return self.placeHolderColor
+            return self.localization
         }
         set {
-            self.setPlaceHolderTextColor(newValue)
+            self.title = newValue.localized
         }
     }
+}
+
+extension UITextField {
+    public func controlAlignment(){
+        if(self.textAlignment != .center) {
+            if(getAppLang() == "ar" || getAppLang() == "AR") {
+                self.textAlignment = .right
+            }else{
+                self.textAlignment = .left
+            }
+        }
+    }
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localizationPlaceHolder: String {
+        get {
+            return self.localizationPlaceHolder
+        }
+        set {
+            self.placeholder = newValue.localized
+            controlAlignment()
+        }
+    }
+    
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
     @IBInspectable public var underline: UIColor? {
         get {
@@ -220,56 +184,7 @@ extension UITextField: UITextFieldDelegate {
         textField.underlined(color: underline)
     }
 }
-extension UIImageView {
-//    /// SwifterSwift:  width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localizationImage: String {
-//        get {
-//            return self.localizationImage
-//        }
-//        set {
-//            if getAppLang() == "ar" {
-//                if let translate =  LocalizationHelper.keys[newValue] {
-//                    self.image = UIImage(named: translate)
-//                }
-//            } else {
-//                self.image = UIImage(named: newValue)
-//            }
-//        }
-//    }
-}
-extension UIBarButtonItem {
-    /// SwifterSwift:  width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localization: String {
-//        get {
-//            return self.localization
-//        }
-//        set {
-//            if(self.image != nil){
-//                if getAppLang() == "ar" {
-//                    if let translate =  LocalizationHelper.keys[newValue] {
-//                        self.image = UIImage(named: translate)
-//                    }
-//                } else {
-//                    self.image = UIImage(named: newValue)
-//                }
-//            }else{
-//                self.title = translate(newValue)
-//            }
-//        }
-//    }
-}
 
-extension UISearchBar {
-    /// SwifterSwift:  width of view; also inspectable from Storyboard.
-//    @IBInspectable public var localizationCancelButton: String {
-//        get {
-//            return self.localizationCancelButton
-//        }
-//        set {
-//            self.setValue(translate(newValue), forKey:"_cancelButtonText")
-//        }
-//    }
-}
 
 extension UISearchBar {
     /// SwifterSwift:  width of view; also inspectable from Storyboard.
@@ -281,15 +196,7 @@ extension UISearchBar {
             self.textField?.textColor = newValue
         }
     }
-    /// SwifterSwift:  width of view; also inspectable from Storyboard.
-    @IBInspectable public var placeholderColor: UIColor {
-        get {
-            return self.placeholderColor
-        }
-        set {
-            self.textField?.setPlaceHolderTextColor(newValue)
-        }
-    }
+    
     private func getViewElement<T>(type: T.Type) -> T? {
         let svs = subviews.flatMap { $0.subviews }
         guard let element = (svs.filter { $0 is T }).first as? T else { return nil }
@@ -321,3 +228,4 @@ extension UISearchBar {
         }
     }
 }
+

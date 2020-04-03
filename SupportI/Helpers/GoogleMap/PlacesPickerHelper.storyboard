@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="24k-r2-7Aj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="24k-r2-7Aj">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +11,13 @@
         <!--select location-->
         <scene sceneID="F5P-11-SoG">
             <objects>
-                <viewController storyboardIdentifier="PlacePickerController" id="M8z-U0-iG3" customClass="PlacePickerController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlacePickerController" id="M8z-U0-iG3" customClass="PlacePickerController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UUU-7f-OY3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z62-Eq-y31">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rD4-zX-t1v">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
@@ -39,7 +37,7 @@
                                             <constraint firstAttribute="height" constant="250" id="CA0-PV-9Sg"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PlacePickerCell" rowHeight="83" id="7xu-dK-uuO" customClass="PlacePickerCell" customModule="SupportI" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PlacePickerCell" rowHeight="83" id="7xu-dK-uuO" customClass="PlacePickerCell" customModule="D2020" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7xu-dK-uuO" id="0cV-UQ-kty">
@@ -116,14 +114,32 @@
                                     <constraint firstAttribute="bottom" secondItem="F1p-fc-Wf7" secondAttribute="bottom" id="yHL-B8-Muc"/>
                                 </constraints>
                             </scrollView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-nb-ThP">
+                                <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="5p8-OK-l9a"/>
+                                    <constraint firstAttribute="height" constant="40" id="k1T-BJ-f2i"/>
+                                </constraints>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Mhf-ZI-mB2" firstAttribute="height" secondItem="UUU-7f-OY3" secondAttribute="height" multiplier="0.65" id="51k-pP-qhZ"/>
+                            <constraint firstItem="c3x-nb-ThP" firstAttribute="centerX" secondItem="UUU-7f-OY3" secondAttribute="centerX" id="5Et-JD-vQo"/>
                             <constraint firstItem="z62-Eq-y31" firstAttribute="top" secondItem="Hfl-z5-h7X" secondAttribute="top" id="BhX-zd-rCG"/>
                             <constraint firstItem="Hfl-z5-h7X" firstAttribute="bottom" secondItem="z62-Eq-y31" secondAttribute="bottom" id="CWD-QQ-c1G"/>
                             <constraint firstItem="z62-Eq-y31" firstAttribute="leading" secondItem="Hfl-z5-h7X" secondAttribute="leading" id="FfG-ut-gOw"/>
                             <constraint firstItem="Hfl-z5-h7X" firstAttribute="trailing" secondItem="z62-Eq-y31" secondAttribute="trailing" id="SVz-zI-0gE"/>
+                            <constraint firstItem="c3x-nb-ThP" firstAttribute="centerY" secondItem="UUU-7f-OY3" secondAttribute="centerY" id="cG3-EU-j9M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hfl-z5-h7X"/>
                     </view>
@@ -132,6 +148,7 @@
                         <outlet property="mapView" destination="Mhf-ZI-mB2" id="W6a-u4-QTW"/>
                         <outlet property="placesTbl" destination="F1p-fc-Wf7" id="Ovo-dW-DWI"/>
                         <outlet property="scrollView" destination="z62-Eq-y31" id="cvc-rn-fuY"/>
+                        <outlet property="timerBtn" destination="c3x-nb-ThP" id="Haf-fj-vDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jol-I6-YUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,34 +158,34 @@
         <!--Place Picker Search Controller-->
         <scene sceneID="uDi-nA-RT6">
             <objects>
-                <viewController storyboardIdentifier="PlacePickerSearchController" id="CpG-cV-iIc" customClass="PlacePickerSearchController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlacePickerSearchController" id="CpG-cV-iIc" customClass="PlacePickerSearchController" customModule="D2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xkt-wC-awQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Bra-i1-aHr">
-                                <rect key="frame" x="0.0" y="72" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pVE-gB-dnt"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wa6-gi-W5e">
-                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <rect key="frame" x="0.0" y="117" width="375" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PlacePickerCell" rowHeight="73" id="X9f-kc-ceQ" customClass="PlacePickerCell" customModule="SupportI" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PlacePickerCell" rowHeight="73" id="X9f-kc-ceQ" customClass="PlacePickerCell" customModule="D2020" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X9f-kc-ceQ" id="3bP-ze-Y7T">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeF-oi-RhX">
-                                                    <rect key="frame" x="12" y="12" width="50" height="50"/>
+                                                    <rect key="frame" x="12" y="12" width="50" height="50.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzG-XS-VkW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50.5"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -219,14 +236,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0s-xc-Kps">
+                                <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="eJV-4Y-Qd2"/>
+                                    <constraint firstAttribute="height" constant="40" id="mM9-dv-iMR"/>
+                                </constraints>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94886571168899536" green="0.94930487871170044" blue="0.95250123739242554" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pvw-FK-zn6" firstAttribute="bottom" secondItem="Wa6-gi-W5e" secondAttribute="bottom" id="8NZ-8g-cfS"/>
                             <constraint firstItem="Bra-i1-aHr" firstAttribute="trailing" secondItem="pvw-FK-zn6" secondAttribute="trailing" id="Cm5-aN-iui"/>
                             <constraint firstItem="pvw-FK-zn6" firstAttribute="trailing" secondItem="Wa6-gi-W5e" secondAttribute="trailing" id="EhJ-DR-vM6"/>
+                            <constraint firstItem="M0s-xc-Kps" firstAttribute="centerX" secondItem="Xkt-wC-awQ" secondAttribute="centerX" id="GlE-7r-hvA"/>
                             <constraint firstItem="Bra-i1-aHr" firstAttribute="leading" secondItem="pvw-FK-zn6" secondAttribute="leading" id="IEH-Pv-g4G"/>
                             <constraint firstItem="Bra-i1-aHr" firstAttribute="top" secondItem="pvw-FK-zn6" secondAttribute="top" constant="8" id="KlC-Yt-mcz"/>
+                            <constraint firstItem="M0s-xc-Kps" firstAttribute="centerY" secondItem="Xkt-wC-awQ" secondAttribute="centerY" id="fOR-xv-Ngg"/>
                             <constraint firstItem="Wa6-gi-W5e" firstAttribute="top" secondItem="Bra-i1-aHr" secondAttribute="bottom" constant="15" id="jeO-cJ-xR7"/>
                             <constraint firstItem="Wa6-gi-W5e" firstAttribute="leading" secondItem="pvw-FK-zn6" secondAttribute="leading" id="sG0-dY-Jac"/>
                         </constraints>
@@ -238,6 +273,7 @@
                     <connections>
                         <outlet property="placesTbl" destination="Wa6-gi-W5e" id="b1p-oh-Zdl"/>
                         <outlet property="searchBar" destination="Bra-i1-aHr" id="JK1-q2-m2v"/>
+                        <outlet property="timerBtn" destination="M0s-xc-Kps" id="Fma-F2-NAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nG-jB-faP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,7 +286,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24k-r2-7Aj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CNO-Vn-ahz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -268,7 +304,7 @@
                 <navigationController storyboardIdentifier="PlaceSearchNav" automaticallyAdjustsScrollViewInsets="NO" id="KYM-2H-zMP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kIp-Fx-cqD">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
