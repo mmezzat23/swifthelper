@@ -205,8 +205,8 @@ public protocol KWVerificationCodeViewDelegate: class {
 // MARK: - KWTextFieldDelegate
 extension KWVerificationCodeView: KWTextFieldDelegate {
     func moveToNext(_ textFieldView: KWTextFieldView) {
-        let validIndex = textFieldViews.index(of: textFieldView) == textFieldViews.count - 1 ?
-            textFieldViews.index(of: textFieldView)! : textFieldViews.index(of: textFieldView)! + 1
+        let validIndex = textFieldViews.firstIndex(of: textFieldView) == textFieldViews.count - 1 ?
+            textFieldViews.firstIndex(of: textFieldView)! : textFieldViews.firstIndex(of: textFieldView)! + 1
         textFieldViews[validIndex].activate()
     }
 
@@ -217,7 +217,7 @@ extension KWVerificationCodeView: KWTextFieldDelegate {
         }
 
         if textFieldView.code == " " {
-            let validIndex = textFieldViews.index(of: textFieldView)! == 0 ? 0 : textFieldViews.index(of: textFieldView)! - 1
+            let validIndex = textFieldViews.firstIndex(of: textFieldView)! == 0 ? 0 : textFieldViews.firstIndex(of: textFieldView)! - 1
             textFieldViews[validIndex].activate()
             textFieldViews[validIndex].reset()
         }

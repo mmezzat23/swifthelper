@@ -17,7 +17,7 @@ public func initLang() {
 public func getAppLang() -> String {
     return Localizer.current
 }
-public func setAppLang(_ lang: String) {
+public func setAppLang(_ lang: Languages) {
     Localizer.set(language: lang)
 }
 final class Localizer: NSObject {
@@ -71,7 +71,7 @@ final class Localizer: NSObject {
      */
     public static func getSelectedLanguages() -> [String] {
         var languages = Bundle.main.localizations
-        if let baseIndex = languages.index(of: "Base") {
+        if let baseIndex = languages.firstIndex(of: "Base") {
             languages.remove(at: baseIndex)
         }
         return languages
@@ -88,9 +88,9 @@ final class Localizer: NSObject {
      - parameter language: may be language sign to save it
      - returns: void
      */
-    static func set(language: String) {
+    static func set(language: Languages) {
         DispatchQueue.main.async {
-            let lang = getSelectedLanguages().contains(language) ? language : defaultSign
+            let lang = getSelectedLanguages().contains(language.rawValue) ? language.rawValue : defaultSign
             guard lang != current else { return }
             UserDefaults.standard.set(lang, forKey: defaultLanguageSign)
             UserDefaults.standard.synchronize()

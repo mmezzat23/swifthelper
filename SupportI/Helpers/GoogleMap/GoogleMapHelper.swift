@@ -73,9 +73,7 @@ extension GoogleMapHelper: GMSMapViewDelegate {
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
         self.delegate?.didTapOnMyLocation()
         return true
-        
     }
-    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.delegate?.didTapOnMarker(marker: marker)
         return true

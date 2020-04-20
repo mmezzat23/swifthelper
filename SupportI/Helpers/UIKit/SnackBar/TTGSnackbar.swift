@@ -822,6 +822,9 @@ private extension TTGSnackbar {
         }
     }
     func configStep4() {
+        guard let iconImageView = iconImageView else { return }
+        guard let actionButton = actionButton else { return }
+        guard let secondActionButton = secondActionButton else { return }
         iconImageViewWidthConstraint = NSLayoutConstraint.init(
             item: iconImageView, attribute: .width, relatedBy: .equal,
             toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: TTGSnackbar.snackbarIconImageViewWidth)
@@ -839,6 +842,11 @@ private extension TTGSnackbar {
         secondActionButton.addConstraint(secondActionButtonMaxWidthConstraint!)
     }
     func configConstraintVertical() {
+        guard let iconImageView = iconImageView else { return }
+        guard let actionButton = actionButton else { return }
+        guard let secondActionButton = secondActionButton else { return }
+        guard let messageLabel = messageLabel else { return }
+        guard let separateView = separateView else { return }
         let hConstraints = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-0-[iconImageView]-2-[messageLabel]-2-[seperateView(0.5)]-2-[actionButton(>=44@999)]-0-[secondActionButton(>=44@999)]-0-|",
             options: NSLayoutConstraint.FormatOptions(rawValue: 0),
@@ -854,6 +862,11 @@ private extension TTGSnackbar {
         contentView.addConstraints(vConstraintsForIconImageView)
     }
     func configConstaint() {
+        guard let secondActionButton = secondActionButton else { return }
+        guard let messageLabel = messageLabel else { return }
+        guard let separateView = separateView else { return }
+        guard let activityIndicatorView = activityIndicatorView else { return }
+        guard let contentView = contentView else { return }
         let vConstraintsForMessageLabel = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-0-[messageLabel]-0-|",
             options: NSLayoutConstraint.FormatOptions(rawValue: 0),
@@ -868,7 +881,7 @@ private extension TTGSnackbar {
             withVisualFormat: "V:|-0-[actionButton]-0-|",
             options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
-            views: ["actionButton": actionButton])
+            views: ["actionButton": actionButton ?? UIButton()])
         let vConstraintsForSecondActionButton = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-0-[secondActionButton]-0-|",
             options: NSLayoutConstraint.FormatOptions(rawValue: 0),

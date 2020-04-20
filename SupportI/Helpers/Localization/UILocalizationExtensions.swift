@@ -3,39 +3,34 @@ import UIKit
 private var textFieldUnderlineActive: [UITextField: UIColor] = [:]
 private var textFieldUnderline: [UITextField: UIColor] = [:]
 
-extension UIButton{
-    public func controlAlignment(){
-        if(self.titleLabel?.textAlignment != .center){
-            if(getAppLang() == "ar" || getAppLang() == "AR"){
+extension UIButton {
+    public func controlAlignment() {
+        if(self.titleLabel?.textAlignment != .center) {
+            if(getAppLang() == "ar" || getAppLang() == "AR") {
                 self.titleLabel?.textAlignment = .right
-            }else{
+            } else {
                 self.titleLabel?.textAlignment = .left
             }
         }
     }
-    public func controlImageEdge(){
-        if(Constants.locale == "ar" || Constants.locale == "AR"){
-            if(self.imageEdgeInsets.right > 0){
+    public func controlImageEdge() {
+        if(Constants.locale == "ar" || Constants.locale == "AR") {
+            if(self.imageEdgeInsets.right > 0) {
                 self.imageEdgeInsets.left = self.imageEdgeInsets.right
                 self.imageEdgeInsets.right = 0
-            }
-            else if(self.imageEdgeInsets.left > 0){
+            } else if(self.imageEdgeInsets.left > 0) {
                 self.imageEdgeInsets.right = self.imageEdgeInsets.left
                 self.imageEdgeInsets.left = 0
-                
             }
-            if(self.titleEdgeInsets.right > 0){
+            if(self.titleEdgeInsets.right > 0) {
                 self.titleEdgeInsets.left = self.titleEdgeInsets.right
                 self.titleEdgeInsets.right = 0
-            }
-            else if(self.titleEdgeInsets.left > 0){
+            } else if(self.titleEdgeInsets.left > 0) {
                 self.titleEdgeInsets.right = self.titleEdgeInsets.left
                 self.titleEdgeInsets.left = 0
-                
             }
         }
     }
-    
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
     @IBInspectable public var localizationImage: String {
         get {
@@ -61,15 +56,13 @@ extension UIButton{
             return self.imageEdgeChecker
         }
         set {
-            if(newValue){
+            if(newValue) {
                 self.controlImageEdge()
             }
         }
     }
-    
 }
 extension UIImageView {
-    
     /// SwifterSwift:  width of view; also inspectable from Storyboard.
     @IBInspectable public var localization: String {
         get {
@@ -82,7 +75,6 @@ extension UIImageView {
 }
 
 extension UIBarButtonItem {
-    
     /// SwifterSwift:  width of view; also inspectable from Storyboard.
     @IBInspectable public var localization: String {
         get {
@@ -99,7 +91,6 @@ extension UIBarButtonItem {
 }
 
 extension UITabBarItem {
-    
     /// SwifterSwift:  width of view; also inspectable from Storyboard.
     @IBInspectable public var localization: String {
         get {
@@ -112,11 +103,11 @@ extension UITabBarItem {
 }
 
 extension UITextField {
-    public func controlAlignment(){
+    public func controlAlignment() {
         if(self.textAlignment != .center) {
             if(getAppLang() == "ar" || getAppLang() == "AR") {
                 self.textAlignment = .right
-            }else{
+            } else {
                 self.textAlignment = .left
             }
         }
@@ -131,7 +122,6 @@ extension UITextField {
             controlAlignment()
         }
     }
-    
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
     @IBInspectable public var underline: UIColor? {
         get {
@@ -184,8 +174,6 @@ extension UITextField: UITextFieldDelegate {
         textField.underlined(color: underline)
     }
 }
-
-
 extension UISearchBar {
     /// SwifterSwift:  width of view; also inspectable from Storyboard.
     @IBInspectable public var textColor: UIColor {
@@ -196,7 +184,6 @@ extension UISearchBar {
             self.textField?.textColor = newValue
         }
     }
-    
     private func getViewElement<T>(type: T.Type) -> T? {
         let svs = subviews.flatMap { $0.subviews }
         guard let element = (svs.filter { $0 is T }).first as? T else { return nil }
@@ -218,6 +205,8 @@ extension UISearchBar {
                 textField.layer.cornerRadius = 6
             case .prominent, .default:
                 textField.backgroundColor = color
+            default:
+                break
             }
         }
     }
@@ -228,4 +217,3 @@ extension UISearchBar {
         }
     }
 }
-

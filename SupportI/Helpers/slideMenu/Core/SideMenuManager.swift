@@ -242,7 +242,7 @@ open class SideMenuManager: NSObject {
         guard let gesture = gesture else {
             return
         }
-
+        guard let transition = transition else { return }
         gesture.addTarget(transition, action: #selector(SideMenuTransition.handleHideMenuPan(_:)))
     }
 
@@ -371,6 +371,7 @@ open class SideMenuManager: NSObject {
         }
         if forMenu != .right {
             let leftScreenEdgeGestureRecognizer = newScreenEdgeGesture()
+            guard let transition = transition else { return [] }
             leftScreenEdgeGestureRecognizer.addTarget(transition, action: #selector(SideMenuTransition.handlePresentMenuLeftScreenEdge(_:)))
             leftScreenEdgeGestureRecognizer.edges = .left
             #if !STFU_SIDEMENU
@@ -382,6 +383,7 @@ open class SideMenuManager: NSObject {
         }
         if forMenu != .left {
             let rightScreenEdgeGestureRecognizer = newScreenEdgeGesture()
+            guard let transition = transition else { return [] }
             rightScreenEdgeGestureRecognizer.addTarget(transition, action: #selector(SideMenuTransition.handlePresentMenuRightScreenEdge(_:)))
             rightScreenEdgeGestureRecognizer.edges = .right
             #if !STFU_SIDEMENU
@@ -402,6 +404,7 @@ open class SideMenuManager: NSObject {
      */
     @discardableResult open func menuAddPanGestureToPresent(toView: UIView) -> UIPanGestureRecognizer {
         let panGestureRecognizer = UIPanGestureRecognizer()
+        guard let transition = transition else { return panGestureRecognizer }
         panGestureRecognizer.addTarget(transition, action: #selector(SideMenuTransition.handlePresentMenuPan(_:)))
         toView.addGestureRecognizer(panGestureRecognizer)
         if menuLeftNavigationController ?? menuRightNavigationController == nil {

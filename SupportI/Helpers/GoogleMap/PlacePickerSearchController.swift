@@ -27,7 +27,6 @@ class PlacePickerSearchController: UIViewController {
     }
     @IBOutlet weak var timerBtn: UIButton!
 
-    
     weak var delegate: PlacePickerSearchDelegate?
     // An array to hold the list of likely places.
     internal var likelyPlaces: [PlacePickerModel.PlacePickerResult] = []

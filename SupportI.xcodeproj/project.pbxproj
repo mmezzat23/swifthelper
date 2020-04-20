@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
+		7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709EB67244DA08E00CE7BB7 /* UIFont.swift */; };
+		77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6646F244D7B9100C44172 /* LanguangeEnum.swift */; };
 		8026194920E9796300BE7A5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8026194820E9796300BE7A5E /* README.md */; };
 		8037F0F720BFABA300162BA9 /* DynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F0F520BFABA300162BA9 /* DynamicType.swift */; };
 		8037F0F820BFABA300162BA9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8037F0F620BFABA300162BA9 /* TestViewModel.swift */; };
@@ -214,6 +216,8 @@
 
 /* Begin PBXFileReference section */
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
+		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
 		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8037F0F520BFABA300162BA9 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
 		8037F0F620BFABA300162BA9 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
@@ -443,6 +447,14 @@
 				61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7709EB66244DA08E00CE7BB7 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7709EB67244DA08E00CE7BB7 /* UIFont.swift */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		8037F0F420BFAB6F00162BA9 /* ViewModels */ = {
@@ -708,6 +720,7 @@
 				80A2FB8C215841BC00223A77 /* UILocalizationExtensions.swift */,
 				E86D96F323F4C57A0029FBAD /* Localization.swift */,
 				E84EA53C24248DEF009D3E41 /* LocalizeDictionary.swift */,
+				77A6646F244D7B9100C44172 /* LanguangeEnum.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -787,6 +800,7 @@
 		80A2FBB5215841BC00223A77 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7709EB66244DA08E00CE7BB7 /* Font */,
 				E84EA52D24247D25009D3E41 /* Lotti */,
 				E84EA52824247A92009D3E41 /* CardHolder */,
 				80A2FBB6215841BC00223A77 /* Animation */,
@@ -1334,6 +1348,7 @@
 				80DA0143211A888600817038 /* SwifterSwift.swift in Sources */,
 				80A2FC01215841BC00223A77 /* ApiHelpers.swift in Sources */,
 				80A7A5E320E69ED400F1F217 /* PresentingViewProtocol.swift in Sources */,
+				77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */,
 				80DA0147211A888600817038 /* CollectionExtensions.swift in Sources */,
 				80A2FBF7215841BC00223A77 /* ARCarMovementDelegate.swift in Sources */,
 				80A2FC37215841BC00223A77 /* UINavigationControllerExtension.swift in Sources */,
@@ -1364,6 +1379,7 @@
 				8037F0F820BFABA300162BA9 /* TestViewModel.swift in Sources */,
 				80DA0145211A888600817038 /* BoolExtensions.swift in Sources */,
 				80DA014E211A888600817038 /* OptionalExtensions.swift in Sources */,
+				7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */,
 				8050BC4B20BF89DA00E355BE /* AppDelegate.swift in Sources */,
 				80A2FC4D215841BC00223A77 /* ValidationError.swift in Sources */,
 				80A2FC35215841BC00223A77 /* CustomPresentAnimationController.swift in Sources */,

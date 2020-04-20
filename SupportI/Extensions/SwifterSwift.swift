@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WatchKit
 
 #if !os(Linux)
 // MARK: - Properties

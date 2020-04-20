@@ -37,10 +37,8 @@ class PlacePickerController: UIViewController {
     // The currently selected place.
     internal var selectedPlace: PlacePickerModel.PlacePickerResult?
     private var  currentLocationPlace: PlacePickerModel.PlacePickerResult?
-    
     // counter waiting
     private var isCounterRun: Bool = false
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -118,7 +116,6 @@ class PlacePickerController: UIViewController {
             self.timerBtn.isHidden = true
             self.fetchPlacesByLocation()
         }
-    
     }
     @objc func back() {
         self.dismiss(animated: true, completion: nil)
