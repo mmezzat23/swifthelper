@@ -8,21 +8,21 @@
 import Foundation
 import UIKit
 
-class UserRoot: Decodable {
+class UserRoot: Codable {
     public static var storeUserDefaults: String = "userDataDefaults"
     public static var storeRememberUser: String = "USER_LOGIN_REMEMBER"
 
-    var result: User?
-    var errors: Errors?
-    var expires_in: Int?
-    var access_token: String?
+    var data: User?
+    var expire: Int?
+    //var access_token: String?
+    var token: String?
     var refresh_token: String?
     var message: String?
     var loginTimeStamp: Int?
 
     public static func convertToModel(response: Data?) -> UserRoot {
         do {
-            let data = try JSONDecoder().decode(self, from: response!)
+            let data = try JSONDecoder().decode(self, from: response ?? Data())
             return data
         } catch {
             return UserRoot()
@@ -38,6 +38,10 @@ class UserRoot: Decodable {
             UserDefaults.standard.set(true, forKey: storeRememberUser)
         }
     }
+    public func save() {
+        guard let response = try? JSONEncoder().encode(self) else { return }
+        UserDefaults.standard.set(response, forKey: UserRoot.storeUserDefaults)
+    }
     public static func fetch() -> UserRoot? {
         let data = UserDefaults.standard.data(forKey: storeUserDefaults)
         let user = self.convertToModel(response: data)
@@ -46,7 +50,7 @@ class UserRoot: Decodable {
     public static func token() -> String? {
         let data = UserDefaults.standard.data(forKey: storeUserDefaults)
         let user = self.convertToModel(response: data)
-        return user.access_token
+        return user.token
     }
     public static func loginAlert(closure: HandlerView? = nil) {
         let handler: HandlerView? = {
@@ -66,14 +70,30 @@ class UserRoot: Decodable {
     }
 }
 
-class User: Decodable {
+class User: Codable {
 
     var email: String?
-    var fname: String?
-    var id: Int?
-    var image: String?
-    var lname: String?
-    var mobile: Int?
-    var password: String?
-
+    var dialCode: String?
+    var name: String?
+    var logo: String?
+    var description: String?
+    var mobile: String?
+    var images: [String]?
+    var companyOffers: [CompanyOffer]?
+    enum CodingKeys: String, CodingKey {
+        case email
+        case name
+        case logo
+        case description
+        case mobile
+        case images
+        case companyOffers = "company_offers"
+        case dialCode = "dial_code"
+        //case type
+    }
+    class CompanyOffer: Codable {
+        var id: Int?
+        var title: String?
+        var icon: String?
+    }
 }
