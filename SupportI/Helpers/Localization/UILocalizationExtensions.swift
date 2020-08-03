@@ -3,7 +3,38 @@ import UIKit
 private var textFieldUnderlineActive: [UITextField: UIColor] = [:]
 private var textFieldUnderline: [UITextField: UIColor] = [:]
 
+extension UINavigationItem {
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
+        get {
+            return self.localization
+        }
+        set {
+            self.title = newValue.localized
+        }
+    }
+}
+extension UILabel {
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
+        get {
+            return self.localization
+        }
+        set {
+            self.text = newValue.localized
+        }
+    }
+}
 extension UIButton {
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
+        get {
+            return self.localization
+        }
+        set {
+            self.setTitle(newValue.localized, for: .normal)
+        }
+    }
     public func controlAlignment() {
         if(self.titleLabel?.textAlignment != .center) {
             if(getAppLang() == "ar" || getAppLang() == "AR") {
@@ -14,7 +45,7 @@ extension UIButton {
         }
     }
     public func controlImageEdge() {
-        if(Constants.locale == "ar" || Constants.locale == "AR") {
+        if(Localizer.current == "ar" || Localizer.current == "AR") {
             if(self.imageEdgeInsets.right > 0) {
                 self.imageEdgeInsets.left = self.imageEdgeInsets.right
                 self.imageEdgeInsets.right = 0
@@ -122,6 +153,16 @@ extension UITextField {
             controlAlignment()
         }
     }
+    /// SwifterSwift:  width of view; also inspectable from Storyboard.
+    @IBInspectable public var localization: String {
+        get {
+            return self.localization
+        }
+        set {
+            self.text = newValue.localized
+            controlAlignment()
+        }
+    }
     /// SwifterSwift: Border width of view; also inspectable from Storyboard.
     @IBInspectable public var underline: UIColor? {
         get {
@@ -205,8 +246,6 @@ extension UISearchBar {
                 textField.layer.cornerRadius = 6
             case .prominent, .default:
                 textField.backgroundColor = color
-            default:
-                break
             }
         }
     }
@@ -216,4 +255,11 @@ extension UISearchBar {
                                                                  attributes: [NSAttributedString.Key.foregroundColor: color])
         }
     }
+}
+
+extension UICollectionViewFlowLayout {
+    open override var flipsHorizontallyInOppositeLayoutDirection: Bool {
+        return true
+    }
+    
 }

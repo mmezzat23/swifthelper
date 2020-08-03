@@ -110,6 +110,8 @@ extension Notification.Name {
 extension String {
     /// get localize string for key from localizable files
     var localized: String {
+        let char = "\""
+        print("\(char)\(self)\(char) = \(char) \(char);")
         guard let languageStringsFilePath = Bundle.main.path(forResource: Localizer.current, ofType: "lproj") else {
             return Bundle.main.localizedString(forKey: self, value: nil, table: nil)
         }

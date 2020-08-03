@@ -22,7 +22,53 @@ import Cocoa
 import CoreGraphics
 #endif
 
+extension NSMutableAttributedString{
+    // If no text is send, then the style will be applied to full text
+    func setColorForText(_ textToFind: String?, with color: UIColor) {
+        
+        let range:NSRange?
+        if let text = textToFind{
+            range = self.mutableString.range(of: text, options: .caseInsensitive)
+        }else{
+            range = NSMakeRange(0, self.length)
+        }
+        if range!.location != NSNotFound {
+            addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range!)
+        }
+    }
+}
+
 extension String {
+    func colorOfWord(_ textToFind: String?, with color: UIColor) -> NSMutableAttributedString {
+        let string = NSMutableAttributedString(string: self)
+        string.setColorForText(textToFind, with: color)
+        return string
+    }
+}
+
+extension String {
+    func heightWithConstrainedWidth(width: CGFloat, font: UIFont = .systemFont(ofSize: 15)) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil)
+        return boundingBox.height
+    }
+    func widthWithConstrainedWidth(width: CGFloat, font: UIFont = .systemFont(ofSize: 15)) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil)
+        return boundingBox.width
+    }
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
+    
     func capitalizingFirstLetter() -> String {
         return prefix(1).uppercased() + self.dropFirst()
     }
@@ -58,7 +104,7 @@ extension String {
     func strokeUnderline(fontSize: Int = 16) -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(fontSize)),
-            NSAttributedString.Key.foregroundColor: UIColor.appColor,
+            NSAttributedString.Key.foregroundColor: UIColor.mainColor,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         let attributeString = NSMutableAttributedString(string: self, attributes: attributes)
         return attributeString
@@ -145,10 +191,10 @@ public extension String {
         let source = lowercased()
         let first = source[..<source.index(after: source.startIndex)]
         if source.contains(" ") {
-            let connected = source.capitalized.replacingOccurrences(of: " ", with: "")
-            let camel = connected.replacingOccurrences(of: "\n", with: "")
-            let rest = String(camel.dropFirst())
-            return first + rest
+        let connected = source.capitalized.replacingOccurrences(of: " ", with: "")
+        let camel = connected.replacingOccurrences(of: "\n", with: "")
+        let rest = String(camel.dropFirst())
+        return first + rest
         }
         let rest = String(source.dropFirst())
         return first + rest
@@ -162,14 +208,14 @@ public extension String {
         // http://stackoverflow.com/questions/30757193/find-out-if-character-in-string-is-emoji
         for scalar in unicodeScalars {
             switch scalar.value {
-            case 0x3030, 0x00AE, 0x00A9, // Special Characters
-            0x1D000...0x1F77F, // Emoticons
-            0x2100...0x27BF, // Misc symbols and Dingbats
-            0xFE00...0xFE0F, // Variation Selectors
-            0x1F900...0x1F9FF: // Supplemental Symbols and Pictographs
-                return true
-            default:
-                continue
+                case 0x3030, 0x00AE, 0x00A9, // Special Characters
+                0x1D000...0x1F77F, // Emoticons
+                0x2100...0x27BF, // Misc symbols and Dingbats
+                0xFE00...0xFE0F, // Variation Selectors
+                0x1F900...0x1F9FF: // Supplemental Symbols and Pictographs
+                    return true
+                default:
+                    continue
             }
         }
         return false
@@ -237,7 +283,7 @@ public extension String {
     var isEmail: Bool {
         // http://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
         return range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
-                     options: .regularExpression, range: nil, locale: nil) != nil
+        options: .regularExpression, range: nil, locale: nil) != nil
     }
     #endif
     #if canImport(Foundation)
@@ -346,9 +392,9 @@ public extension String {
     var bool: Bool? {
         let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         if selfLowercased == "true" || selfLowercased == "1" {
-            return true
+        return true
         } else if selfLowercased == "false" || selfLowercased == "0" {
-            return false
+        return false
         }
         return nil
     }
@@ -462,7 +508,7 @@ public extension String {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: self.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: self, range: range, startingAt: 0, wrap: false,
-                                                            language: Locale.preferredLanguages.first ?? "en")
+        language: Locale.preferredLanguages.first ?? "en")
         return misspelledRange.location == NSNotFound
     }
     #endif
@@ -538,7 +584,7 @@ public extension String {
         let mostCommon = withoutSpacesAndNewLines.reduce(into: [Character: Int]()) {
             let count = $0[$1] ?? 0
             $0[$1] = count + 1
-            }.max { $0.1 < $1.1 }?.0
+        }.max { $0.1 < $1.1 }?.0
         return mostCommon
     }
     /// SwifterSwift: Array with unicodes for all characters in a string.

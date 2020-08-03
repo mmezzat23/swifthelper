@@ -74,7 +74,7 @@ open class SideMenuTransition: UIPercentDrivenInteractiveTransition {
         NotificationCenter.default.removeObserver(self)
     }
 
-    fileprivate static var visibleViewController: UIViewController? {
+    static var visibleViewController: UIViewController? {
         return getVisibleViewController(forViewController: UIApplication.shared.keyWindow?.rootViewController)
     }
 

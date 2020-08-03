@@ -9,14 +9,14 @@
 //import Foundation
 //import GoogleSignIn
 //
-//class GoogleModel:SocialModel{
+//class GoogleModel: SocialModel {
 //    var id: String?
 //    var token: String?
 //    var fullName: String?
 //    var givenName: String?
 //    var familyName: String?
 //    var email: String?
-//    init(user:GIDGoogleUser) {
+//    init(user: GIDGoogleUser) {
 //        super.init(type: .google)
 //        self.id = user.userID
 //        self.token = user.authentication.idToken

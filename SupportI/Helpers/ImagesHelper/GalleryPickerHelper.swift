@@ -32,7 +32,11 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             return _delegate
         }
     }
+    var documentPicker: UIDocumentPickerViewController = UIDocumentPickerViewController(documentTypes: ["public.data"], in: .import)
+
     internal var onPickImage: ((UIImage) -> Void)?,
+    onPickImageURL: ((URL?) -> Void)?,
+    onPickImageData: ((Data?) -> Void)?,
     onCancel: (() -> Void)?,
     placeholderImage = UIImage(),
     alertTitle, alertMessage: String?,
@@ -120,25 +124,35 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
             }
             NSLog("user picking image you can find it in `onPickImage` block")
             onPickImage?(pickedImage)
+            onPickImageURL?(getImageURL(image: pickedImage))
             delegate?.didPickItem(image: pickedImage)
-            delegate?.didPickItem(url: getImageURL(info: info))
+            delegate?.didPickItem(url: getImageURL(image: pickedImage))
         }
         picker.dismiss(animated: true)
     }
-    func getImageURL(info: [UIImagePickerController.InfoKey: Any]) -> URL? {
+    func getImageURL(image: UIImage) -> URL? {
         var photoURL: URL?
-        if let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL {
-            let imgName = imgUrl.lastPathComponent
-            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-            let localPath = documentDirectory?.appending(imgName)
-            guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return nil }
-            let data = image.pngData()! as NSData
-            data.write(toFile: localPath!, atomically: true)
-            //let imageData = NSData(contentsOfFile: localPath!)!
-            photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)
-            return photoURL
-        } else {
-            return nil
+        saveImage(image: image, name: "COMPRESSED_IMAGE.png")
+        photoURL = getSavedImage(named: "COMPRESSED_IMAGE.png")
+        
+        //photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)
+        
+        return photoURL
+    }
+    func saveImage(image: UIImage, name: String? = "fileName.png") {
+        guard let data = image.compressedData(quality: 0.5) as NSData? else { return }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else { return }
+        do {
+            try data.write(to: directory.appendingPathComponent(name ?? "")!)
+        } catch {
+            print(error.localizedDescription)
         }
     }
+    func getSavedImage(named: String) -> URL? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named)
+        }
+        return nil
+    }
+
 }

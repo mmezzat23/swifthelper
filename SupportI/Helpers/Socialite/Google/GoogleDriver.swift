@@ -9,15 +9,14 @@
 //import Foundation
 //import GoogleSignIn
 //
+//typealias CallbackGoogle = (GoogleModel) -> Void
+//private var closurePrivate: CallbackGoogle?
 //
-//typealias callbackGoogle = (GoogleModel)->()
-//fileprivate var closurePrivate:callbackGoogle?
-//
-//class GoogleDriver:UIViewController,GoogleProviderDelegate,SocialIndicator{
-//    var closure:callbackGoogle?{
-//        set{
+//class GoogleDriver:UIViewController, GoogleProviderDelegate, SocialIndicator {
+//    var closure: CallbackGoogle? {
+//        set {
 //            closurePrivate = newValue
-//        }get{
+//        } get {
 //            return closurePrivate
 //        }
 //    }
@@ -29,10 +28,10 @@
 //    func initView(){
 //        self.view.backgroundColor = UIColor.white
 //    }
-//    func googleProvider(){
+//    func googleProvider() {
 //        let topVC = UIApplication.topViewController()
 //        topVC?.present(self, animated: false, completion: {
-//            GIDSignIn.sharedInstance().uiDelegate = self
+//            GIDSignIn.sharedInstance().presentingViewController = self
 //            GIDSignIn.sharedInstance().clientID = SocialConstant.googleId
 //            GIDSignIn.sharedInstance().delegate = self
 //            GIDSignIn.sharedInstance().signIn()
@@ -73,5 +72,3 @@
 //        self.dismiss(animated: true, completion: nil)
 //    }
 //}
-//
-//

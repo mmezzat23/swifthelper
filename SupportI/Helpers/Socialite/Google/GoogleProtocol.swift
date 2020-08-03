@@ -9,6 +9,6 @@
 //import Foundation
 //import GoogleSignIn
 //
-//protocol GoogleProviderDelegate:GIDSignInUIDelegate,GIDSignInDelegate {
+//protocol GoogleProviderDelegate: GIDSignInDelegate {
 //}
 //

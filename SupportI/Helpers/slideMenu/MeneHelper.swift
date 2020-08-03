@@ -28,7 +28,7 @@ class MenuHelper {
     private var menuWidth: CGFloat = {
         let appScreenRect = UIApplication.shared.keyWindow?.bounds ?? UIWindow().bounds
         let minimumSize = min(appScreenRect.width, appScreenRect.height)
-        return max(round(minimumSize * 0.70), 240)
+        return max(round(minimumSize * 0.80), 240)
     }()
 
     private func setupMenu() {
@@ -63,13 +63,16 @@ class MenuHelper {
     }
 
     @objc func toggoleMenu() {
-        guard let sideMenu = storyboard.instantiateViewController(withIdentifier: navID) as? UISideMenuNavigationController else { return }
+//
+        var menu: UIViewController!
         if getAppLang() == "ar" {
-            sideMenu.leftSide = false
+            menu = SideMenuManager.default.menuRightNavigationController
         } else {
-            sideMenu.leftSide = true
+            menu = SideMenuManager.default.menuLeftNavigationController
         }
-        self.delegate?.present(sideMenu, animated: true, completion: nil)
+        if let visibleViewController = SideMenuTransition.visibleViewController {
+            visibleViewController.present(menu, animated: true, completion: nil)
+        }
     }
 
 }
