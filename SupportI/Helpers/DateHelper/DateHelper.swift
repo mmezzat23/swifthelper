@@ -71,9 +71,9 @@ class DateHelper {
     ///
     /// - Parameter original: string date
     /// - Returns: return Date Object
-    func originalDate(original: String) -> Date? {
+    func originalDate(original: String, oldFormat: String = "yyyy-MM-dd HH:mm:ss") -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = oldFormat
         //dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600 * 2)
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         let dateOrginial = dateFormatter.date(from: original)
@@ -88,15 +88,27 @@ class DateHelper {
         }
         return locale
     }
-    func date(date: String?, format: String) -> String? {
+    func date(date: String?, format: String, oldFormat: String = "yyyy-MM-dd HH:mm:ss") -> String? {
         guard let dateUse = date else {return nil}
-        let dateD = originalDate(original: dateUse)
+        let dateD = originalDate(original: dateUse, oldFormat: oldFormat)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         //dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600 * 2)
         dateFormatter.locale = Locale(identifier: locale()) // set locale to reliable US_POSIX
         if dateD != nil {
             let dateString = dateFormatter.string(from: dateD!)
+            return dateString
+        } else {
+            return nil
+        }
+    }
+    func date(date: Date?, format: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        //dateFormatter.timeZone = TimeZone(secondsFromGMT: 3600 * 2)
+        dateFormatter.locale = Locale(identifier: locale()) // set locale to reliable US_POSIX
+        if date != nil {
+            let dateString = dateFormatter.string(from: date!)
             return dateString
         } else {
             return nil
