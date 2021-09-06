@@ -104,7 +104,7 @@ extension String {
     func strokeUnderline(fontSize: Int = 16) -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(fontSize)),
-            NSAttributedString.Key.foregroundColor: UIColor.mainColor,
+            NSAttributedString.Key.foregroundColor: UIColor.gray,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         let attributeString = NSMutableAttributedString(string: self, attributes: attributes)
         return attributeString

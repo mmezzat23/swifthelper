@@ -101,8 +101,8 @@ class SwipeActionButton: UIButton {
 
 extension CGRect {
     func center(size: CGSize) -> CGRect {
-        let dx = width - size.width
-        let dy = height - size.height
-        return CGRect(x: origin.x + dx * 0.5, y: origin.y + dy * 0.5, width: size.width, height: size.height)
+        let dxx = width - size.width
+        let dyy = height - size.height
+        return CGRect(x: origin.x + dxx * 0.5, y: origin.y + dyy * 0.5, width: size.width, height: size.height)
     }
 }
