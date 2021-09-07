@@ -1,0 +1,154 @@
+/* 
+  Localizable.strings
+  Badawar
+
+  Created by Jamal on 11/5/18.
+  Copyright © 2018 ocs. All rights reserved.
+*/
+
+/** validation **/
+
+"registration.lan" = "Registration";
+"first.name.lan" = "First name";
+"last.name.lan" = "Last name";
+"profession.lan" = "Profession";
+"date.of.birth.lan" = "Date of birth";
+"gender.lan" = "Gender";
+"next.lan" = "Next";
+"choose.image.title.lan" = "Choose Image";
+"cancel.lan" = "Cancel";
+"ok.lan" = "Ok";
+"photo.library.lan" = "Photo library";
+"camera.lan" = "Camera";
+//
+"email.lan" = "Email";
+"password.lan" = "Password";
+"confirm.password.lan" = "Confirm password";
+"mobile.lan" = "Mobile";
+"terms.and.conditions.lan" = "Terms and conditions";
+"agreed.terms.message.lan" = "I agree on the terms and conditions";
+"register.lan" = "Register";
+//
+"empty.user.lan" = "Can't pass empty user";
+"invalid.first.name.lan" = "Invalid First name.";
+"invalid.last.name.lan" = "Invalid last name.";
+"invalid.email.or.password.lan" = "Enter valid email or password.";
+"invalid.phone.number.lan" = "Please enter your mobile number.";
+"invalid.mail.lan" = "Invalid email";
+"empty.password.field.lan" = "Please enter your password";
+"password.doesnot.match.lan" = "Password doesn’t match";
+"password.too.short.lan" = "Password is short must be 8 characters at less.";
+//
+"male.lan" = "male";
+"female.lan" = "female";
+"alert.lan" = "Alert";
+"close.lan" = "Close";
+"server.not.responding.lan" = "Server not responding.";
+"invalid.request.url.lan" = "Invalid url.";
+//
+"login.lan" = "Login";
+"forgot.password.lan" = "Forgot password?";
+"or.lan" = "OR";
+"sign.up.lan" = "Sign up";
+"login.with.face.book.lan" = "Login with facebook";
+//
+"verification.lan" = "Verification";
+"verification.subtitle.lan" = "You will receive an SMS with the verification code shortly.";
+"verification.code.lan" = "Verification code";
+"verify.lan" = "Verify";
+"resend.code.lan" = "Resend code";
+"verification.message.lan" = "If you have any problem please contacts us on";
+"done.lan" = "Done";
+"code.send.successfully.lan" = "Code sent successfully.";
+"date.of.birth.dosnot.match.greater.than.18" = "You must have greater than 18 years old.";
+"mobile.verification.lan" = "Mobile verification";
+"mobile.verification.messagr.lan" = "Please verify your mobile.";
+"confirm.lan" = "Confirm";
+"home.lan" = "Home";
+"fees.lan" = "Fees";
+"compare.lan" = "Compare";
+"menu.lan" = "Menu";
+"yes.lan" = "Yes";
+"no.lan" = "No";
+"location.service.lan" = "Location service";
+"location.service.activation.question.lan" = "Do you want to activate location service?";
+"no.branches.lan" = "No branches in this place.";
+"from.lan" = "From";
+"to.lan" = "To";
+"list.lan" = "List";
+"map.view.lan" = "Map view";
+"save.lan" = "Save";
+"new.password.lan" = "New password";
+"confirm.new.password.lan" = "Confirm new password";
+"change.password.confirmation.message.lan" = "Your password has been changed.";
+"low.to.high.lan" = "Low to high";
+"high.to.low.lan" = "High to low";
+"sort.by.lan" = "Sort by";
+"budget.lan" = "Budget:";
+"rate.lan" = "Rate:";
+"sorting.lan" = "Sorting";
+"locked.fees.lan" = "Locked Fees";
+"ibcertificate.lan" = "IB Certificate";
+"shadow.teacher.lan" = "Shadow Teacher";
+"show.results.lan" = "Show Results";
+"saved.search.lan" = "Saved Search";
+"name.lan" = "Name";
+"zone.lan" = "Zone";
+"curiculum.lan" = "Curiculum";
+"grade.lan" = "Grade";
+"budget.fees.lan" = "Budget Fees";
+"results.lan" = "Results";
+"school.lan" = "School";
+"last.used.lan" = "Last used";
+"search.lan" = "Search";
+"governorates.lan" = "Governorates";
+"cities.lan" = "Cities";
+"save.search.lan" = "Save Search";
+"delete.search.lan" = "Are you sure you want to delete this search";
+"delete.all.saved.lan" = "Are you sure you want to delete all the saved search";
+"profile.lan" = "Profile";
+"ssn.lan" = "SSN";
+"follow.lan" = "Follow";
+"facilities.lan" = "Facilities";
+"certificates.lan" = "Certificates";
+"reviews.lan" = "Reviews";
+"contacts.lan" = "Contacts";
+"new.comer.lan" = "NewComer";
+"returning.student.lan" = "Returning Student";
+"clear.lan" = "Clear";
+"apply.lan" = "Apply";
+"comment.lan" = "Comment";
+"newest.to.oldest.lan" = "Newest to old";
+"oldest.to.newest.lan" = "Oldest to newest";
+"likes.lan" = "Likes";
+"recents.lan" = "Recents";
+"not.found.lan" = "Not found url";
+"saved.lan" = "Saved";
+"search.result.lan" = "Search result";
+"favorites.lan" = "Favorites";
+"schools.lan" = "Schools";
+"add.compare.error.lan" = "You can’t add more than 3 schools, please remove one";
+"criteria.lan" = "Criteria";
+"notifications.lan" = "Notifications";
+"delete.lan" = "Delete";
+"unfollow.lan" = "Unfollow";
+"setting.lan" = "Settings";
+"terms.lan" = "Terms and conditions";
+"aboutUs.lan" = "About us";
+"contactUs.lan" = "Contact us";
+"logout.lan" = "Logout";
+"change.password.lan" = "Change Password";
+"personal.details.lan" = "Personal Details";
+"childs.details.lan" = "Child Details";
+"same.phone.lan" = "Please enter a different phone number";
+"add.lan" = "ADD";
+"add.child.lan" = "Do you want to add your child details?";
+"add.child.title.lan" = "Add Child";
+"edit.lan" = "Edit";
+"sound.lan" = "Sound";
+"lang.lan" = "Language";
+"deactivate.lan" = "Decativate";
+"deactivate.account.lan" = "Are you sure decativate your account ?";
+"not.found.items.lan" = "Not Found Items";
+"has.removed.lan" = "School has been removed";
+"sure.lan" = "Sure";
