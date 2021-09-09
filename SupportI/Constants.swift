@@ -22,7 +22,7 @@ struct Constants {
     }
     static var storyboard = Storyboards.main.rawValue
     //static var currentApp:Apps = .client
-    static let url = ""
+    static let url = "https://207.180.240.246:5000/"
     static let companyUrl = ""
     static let copyrightUrl = ""
     static let itunesURL = "itms-apps://itunes.apple.com/app/id1330387425"

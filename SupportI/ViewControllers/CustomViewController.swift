@@ -9,7 +9,6 @@
 import UIKit
 
 class CustomViewController: BaseController {
-
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         scrollView.swipeButtomRefresh {
             if case self.viewModel?.runPaginator() = true {

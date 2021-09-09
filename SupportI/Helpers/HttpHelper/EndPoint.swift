@@ -11,7 +11,7 @@ import Foundation
 public enum EndPoint: String {
     case token
     case update = "user/update"
-    case login
+    case login = "connect/token"
     case register
     case logout
     case packages

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
+		66376A8526EA0A2F0012DA28 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */; };
+		66376A8826EA0CDD0012DA28 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8726EA0CDD0012DA28 /* Login.swift */; };
 		7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709EB67244DA08E00CE7BB7 /* UIFont.swift */; };
 		77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6646F244D7B9100C44172 /* LanguangeEnum.swift */; };
 		8026194920E9796300BE7A5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8026194820E9796300BE7A5E /* README.md */; };
@@ -216,6 +218,8 @@
 
 /* Begin PBXFileReference section */
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
+		66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		66376A8726EA0CDD0012DA28 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
 		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 			children = (
 				8037F0FD20BFB1AA00162BA9 /* Core */,
 				8037F0F620BFABA300162BA9 /* TestViewModel.swift */,
+				66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 			children = (
 				8050BCF120BF8A0000E355BE /* Core */,
 				809098B223F99225000A8A71 /* CustomViewController.swift */,
+				66376A8726EA0CDD0012DA28 /* Login.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1242,6 +1248,7 @@
 				80A2FC27215841BC00223A77 /* GoogleDriver.swift in Sources */,
 				80A2FBF4215841BC00223A77 /* DateExtension.swift in Sources */,
 				8050BD7320BF8A8A00E355BE /* Constants.swift in Sources */,
+				66376A8826EA0CDD0012DA28 /* Login.swift in Sources */,
 				80A2FC0A215841BC00223A77 /* MultiImageCell.swift in Sources */,
 				80B5230923216C1800EE65DB /* PlacePickerSearchController.swift in Sources */,
 				80A2FC51215841BC00223A77 /* ExactLengthRule.swift in Sources */,
@@ -1349,6 +1356,7 @@
 				80A2FC01215841BC00223A77 /* ApiHelpers.swift in Sources */,
 				80A7A5E320E69ED400F1F217 /* PresentingViewProtocol.swift in Sources */,
 				77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */,
+				66376A8526EA0A2F0012DA28 /* AuthViewModel.swift in Sources */,
 				80DA0147211A888600817038 /* CollectionExtensions.swift in Sources */,
 				80A2FBF7215841BC00223A77 /* ARCarMovementDelegate.swift in Sources */,
 				80A2FC37215841BC00223A77 /* UINavigationControllerExtension.swift in Sources */,
