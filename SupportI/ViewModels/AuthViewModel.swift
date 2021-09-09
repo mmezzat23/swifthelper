@@ -9,7 +9,7 @@
 import Foundation
 
 class AuthViewModel: ViewModelCore {
-    var userdata: DynamicType = DynamicType<User>()
+    var userdata: DynamicType = DynamicType<UserRoot>()
     
     func login(paramters: [String: Any]) {
         delegate?.startLoading()
@@ -25,7 +25,7 @@ class AuthViewModel: ViewModelCore {
 
             }
             else {
-                self.userData.value = data
+//                self.userData.value = data
             }
         }
     }

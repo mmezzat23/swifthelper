@@ -9,7 +9,7 @@
 import Foundation
 
 public enum EndPoint: String {
-    case token
+    case token = "connect/token"
     case update = "user/update"
     case login = "connect/token"
     case register

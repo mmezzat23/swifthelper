@@ -13,8 +13,8 @@ class UserRoot: Codable {
     public static var storeRememberUser: String = "USER_LOGIN_REMEMBER"
 
     var data: User?
-    var expire: Int?
-    //var access_token: String?
+    var expires_in: Int?
+    var access_token: String?
     var token: String?
     var refresh_token: String?
     var message: String?

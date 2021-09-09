@@ -33,6 +33,10 @@ class Login: BaseController {
     }
     
     func login() {
+        parameters["username"] = "ddd"
+        parameters["password"] = "dddd"
+        parameters["scope"] = "WndoApp offline_access"
+        parameters["grant_type"] = "password"
         viewModel?.login(paramters:parameters)
     }
     

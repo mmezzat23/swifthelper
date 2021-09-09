@@ -34,6 +34,7 @@ class Authorization {
                 Authorization.running = true
                 if !setupTimestamp() {
                     ApiManager.instance.paramaters["refresh_token"] = UserDefaults.standard.string(forKey: "refresh_token")
+                    ApiManager.instance.paramaters["grant_type"] = "refresh_token"
                     ApiManager.instance.connection(.token, type: .post) { response in
                         Authorization.running = false
                         guard let data = try? JSONDecoder().decode(TokenModel.self, from: response ?? Data()) else { return }

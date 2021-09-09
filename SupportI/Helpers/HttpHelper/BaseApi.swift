@@ -25,6 +25,8 @@ class BaseApi: Downloader, Paginator, Alertable {
                 headers["Authorization"] = ""
             }
         }
+        paramaters["client_id"] = "WndoApp_App"
+        paramaters["client_secret"] = "1q2w3e*"
         paramaters["lang"] = Localizer.current
         paramaters["device_type"] = Constants.deviceType
         if let devicetoken = UserDefaults.standard.string(forKey: "deviceToken") {
