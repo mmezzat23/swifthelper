@@ -83,8 +83,11 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     _margin = 20.0f;
     _defaultMotionEffectsEnabled = NO;
 
-    _contentColor = [UIColor colorWithWhite:0.f alpha:0.7f];
-
+    if (@available(iOS 13.0, tvOS 13, *)) {
+       _contentColor = [[UIColor labelColor] colorWithAlphaComponent:0.7f];
+    } else {
+        _contentColor = [UIColor colorWithWhite:0.f alpha:0.7f];
+    }
 
     // Transparent background
     self.opaque = NO;
@@ -369,8 +372,16 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
             // Update to indeterminate indicator
             UIActivityIndicatorView *activityIndicator;
             [indicator removeFromSuperview];
-            activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-
+#if !TARGET_OS_MACCATALYST
+            if (@available(iOS 13.0, tvOS 13.0, *)) {
+#endif
+                activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+                activityIndicator.color = [UIColor whiteColor];
+#if !TARGET_OS_MACCATALYST
+            } else {
+               activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+            }
+#endif
             [activityIndicator startAnimating];
             indicator = activityIndicator;
             [self.bezelView addSubview:indicator];
@@ -1047,9 +1058,17 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         _style = MBProgressHUDBackgroundStyleBlur;
-       
-        _blurEffectStyle = UIBlurEffectStyleLight;
-        _color = [UIColor colorWithWhite:0.8f alpha:0.6f];
+        if (@available(iOS 13.0, *)) {
+            #if TARGET_OS_TV
+            _blurEffectStyle = UIBlurEffectStyleRegular;
+            #else
+            _blurEffectStyle = UIBlurEffectStyleSystemThickMaterial;
+            #endif
+            // Leaving the color unassigned yields best results.
+        } else {
+            _blurEffectStyle = UIBlurEffectStyleLight;
+            _color = [UIColor colorWithWhite:0.8f alpha:0.6f];
+        }
 
         self.clipsToBounds = YES;
 

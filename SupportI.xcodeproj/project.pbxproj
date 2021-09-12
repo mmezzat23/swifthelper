@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
+		663598DF26EE4D94002D4DA0 /* WNDo GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 663598DE26EE4D94002D4DA0 /* WNDo GIF.gif */; };
 		66376A8526EA0A2F0012DA28 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */; };
-		66376A8826EA0CDD0012DA28 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8726EA0CDD0012DA28 /* Login.swift */; };
+		66376A8826EA0CDD0012DA28 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8726EA0CDD0012DA28 /* LoginController.swift */; };
 		7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709EB67244DA08E00CE7BB7 /* UIFont.swift */; };
 		77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6646F244D7B9100C44172 /* LanguangeEnum.swift */; };
 		8026194920E9796300BE7A5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8026194820E9796300BE7A5E /* README.md */; };
@@ -218,8 +219,9 @@
 
 /* Begin PBXFileReference section */
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
+		663598DE26EE4D94002D4DA0 /* WNDo GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "WNDo GIF.gif"; path = "../../../../../../../../../Downloads/Downloads/WNDo GIF.gif"; sourceTree = "<group>"; };
 		66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		66376A8726EA0CDD0012DA28 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		66376A8726EA0CDD0012DA28 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
 		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -453,6 +455,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		663598DD26EE4D79002D4DA0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				663598DE26EE4D94002D4DA0 /* WNDo GIF.gif */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7709EB66244DA08E00CE7BB7 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +522,7 @@
 		8050BC4920BF89DA00E355BE /* SupportI */ = {
 			isa = PBXGroup;
 			children = (
+				663598DD26EE4D79002D4DA0 /* Resources */,
 				8050BC4A20BF89DA00E355BE /* AppDelegate.swift */,
 				8050BD7220BF8A8A00E355BE /* Constants.swift */,
 				8050BC4C20BF89DA00E355BE /* ViewController.swift */,
@@ -568,7 +579,7 @@
 			children = (
 				8050BCF120BF8A0000E355BE /* Core */,
 				809098B223F99225000A8A71 /* CustomViewController.swift */,
-				66376A8726EA0CDD0012DA28 /* Login.swift */,
+				66376A8726EA0CDD0012DA28 /* LoginController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1091,7 +1102,6 @@
 				8050BC4520BF89DA00E355BE /* Resources */,
 				F733DDE39B85647451275093 /* [CP] Embed Pods Frameworks */,
 				01C5625F6DD3F13753AB34FA /* [CP] Copy Pods Resources */,
-				E84EA53B242488AB009D3E41 /* Swift lint */,
 			);
 			buildRules = (
 			);
@@ -1156,6 +1166,7 @@
 				809098B123F991C3000A8A71 /* Auth.storyboard in Resources */,
 				E84EA53524247D6C009D3E41 /* loading.json in Resources */,
 				80A2FC0B215841BC00223A77 /* MultiImageCell.xib in Resources */,
+				663598DF26EE4D94002D4DA0 /* WNDo GIF.gif in Resources */,
 				803E666D231D78A2005D6CB7 /* ImageDisplayController.storyboard in Resources */,
 				E86D96F123F4C5330029FBAD /* Localizable.strings in Resources */,
 				8026194920E9796300BE7A5E /* README.md in Resources */,
@@ -1203,24 +1214,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E84EA53B242488AB009D3E41 /* Swift lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Swift lint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n\n";
-		};
 		F733DDE39B85647451275093 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1248,7 +1241,7 @@
 				80A2FC27215841BC00223A77 /* GoogleDriver.swift in Sources */,
 				80A2FBF4215841BC00223A77 /* DateExtension.swift in Sources */,
 				8050BD7320BF8A8A00E355BE /* Constants.swift in Sources */,
-				66376A8826EA0CDD0012DA28 /* Login.swift in Sources */,
+				66376A8826EA0CDD0012DA28 /* LoginController.swift in Sources */,
 				80A2FC0A215841BC00223A77 /* MultiImageCell.swift in Sources */,
 				80B5230923216C1800EE65DB /* PlacePickerSearchController.swift in Sources */,
 				80A2FC51215841BC00223A77 /* ExactLengthRule.swift in Sources */,
