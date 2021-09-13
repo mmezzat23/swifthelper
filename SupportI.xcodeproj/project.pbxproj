@@ -463,6 +463,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		663D34E126EF411D008CE1B9 /* ِAuth */ = {
+			isa = PBXGroup;
+			children = (
+				66376A8726EA0CDD0012DA28 /* LoginController.swift */,
+			);
+			path = "ِAuth";
+			sourceTree = "<group>";
+		};
 		7709EB66244DA08E00CE7BB7 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,8 +586,8 @@
 			isa = PBXGroup;
 			children = (
 				8050BCF120BF8A0000E355BE /* Core */,
+				663D34E126EF411D008CE1B9 /* ِAuth */,
 				809098B223F99225000A8A71 /* CustomViewController.swift */,
-				66376A8726EA0CDD0012DA28 /* LoginController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
