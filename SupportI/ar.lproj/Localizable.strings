@@ -161,3 +161,26 @@
 "not.found.items.lan" = "لا يوجد بيانات";
 "has.removed.lan" = "تم مسح المدرسة";
 "sure.lan" = "تأكيد";
+"Skip" = "Skip";
+"Email/Phone" = "Email/Phone";
+"Enter your Email/Phone" = "Enter your Email/Phone";
+"Send" = "Send";
+"Don’t have an account?" = "Don’t have an account?";
+"Sign Up" = "Sign Up";
+"Code Has Been Sent,Check Your Email/Phone" = "Code Has Been Sent,Check Your Email/Phone"
+;
+"We've sent you instructions on how to reset the password" = "We've sent you instructions on how to reset the password";
+"Login" = "Login";
+"Confirm Password" = "Confirm Password";
+"Please enter your new password" = "Please enter your new password";
+"Password" = "Password";
+"Enter your password" = "Enter your password";
+"Confirm" = "Confirm";
+"Your Password Is Successfully Changed" = "Your Password Is Successfully Changed"
+;
+"Now you're ready to go shopping" = "Now you're ready to go shopping";
+"CODE VERIFICATION" = "CODE VERIFICATION";
+"We sent your code to" = "We sent your code to";
+"This code will expired in" = "This code will expired in 00:30";
+"Resend OTP Code" = "Resend OTP Code";
+"Account Is Created Successfuly" = "Account Is Created Successfuly";
