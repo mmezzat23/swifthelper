@@ -98,6 +98,7 @@ PODS:
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.12)
   - Protobuf (3.13.0)
+  - SwiftyGif (5.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -111,6 +112,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - lottie-ios
   - MBProgressHUD
+  - SwiftyGif
 
 SPEC REPOS:
   trunk:
@@ -138,6 +140,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - SwiftyGif
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -164,7 +167,8 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
+  SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: 884c9717b895f562bcd2743803b23a3c2723699d
+PODFILE CHECKSUM: 88373ee5d8cd5ffc18fd5eb68947d451af7b66d1
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

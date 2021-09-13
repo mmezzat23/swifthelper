@@ -7,44 +7,15 @@ target 'SupportI' do
 
   # Pods for SupportI
 pod 'Alamofire', '~> 4.0'
-
-
-
 pod 'AlamofireImage' , '~> 3.0'
-
-
-
 pod 'Cosmos', '~> 15.0'
-
-
-
 pod 'Firebase'
-
-
-
 pod 'Firebase/Messaging'
-
-
-
 pod 'lottie-ios'
-
-
-
 pod 'MBProgressHUD'
-
-
-
 pod 'IQKeyboardManagerSwift'
-
-
-
 pod 'BSImagePicker', '~> 2.0'
-
-
-
 pod 'GooglePlaces', '= 3.0.3'
-
-
-
 pod 'GoogleMaps', '= 3.0.3'
+pod 'SwiftyGif'
 end
