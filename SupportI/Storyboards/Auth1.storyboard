@@ -488,6 +488,13 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                             <constraint firstAttribute="height" constant="40" id="Nlk-Kt-Db7"/>
                                         </constraints>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock" translatesAutoresizingMaskIntoConstraints="NO" id="J6K-pn-Wmj">
+                                        <rect key="frame" x="354" y="246" width="15" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="93D-c7-NJv"/>
+                                            <constraint firstAttribute="height" constant="18" id="FHW-gr-Ciq"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -504,9 +511,11 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                     <constraint firstAttribute="trailing" secondItem="ed7-Mo-Hhk" secondAttribute="trailing" constant="32" id="gZE-Je-hmS"/>
                                     <constraint firstItem="ryZ-pg-uhg" firstAttribute="top" secondItem="4ge-FM-5hp" secondAttribute="bottom" constant="25.5" id="hDg-8l-05o"/>
                                     <constraint firstItem="ed7-Mo-Hhk" firstAttribute="top" secondItem="Rp2-Ao-scQ" secondAttribute="bottom" constant="25" id="hsm-ch-XAj"/>
+                                    <constraint firstItem="J6K-pn-Wmj" firstAttribute="centerY" secondItem="Rp2-Ao-scQ" secondAttribute="centerY" id="iSz-OR-yRl"/>
                                     <constraint firstItem="4ge-FM-5hp" firstAttribute="leading" secondItem="AuV-J2-aK7" secondAttribute="leading" constant="32" id="iT5-on-qlv"/>
                                     <constraint firstItem="ryZ-pg-uhg" firstAttribute="leading" secondItem="AuV-J2-aK7" secondAttribute="leading" constant="50" id="lbH-BY-yGR"/>
                                     <constraint firstItem="Rp2-Ao-scQ" firstAttribute="leading" secondItem="AuV-J2-aK7" secondAttribute="leading" constant="32" id="qb1-Fl-1b1"/>
+                                    <constraint firstAttribute="trailing" secondItem="J6K-pn-Wmj" secondAttribute="trailing" constant="45" id="r86-fC-81c"/>
                                     <constraint firstAttribute="trailing" secondItem="o2N-qc-ybg" secondAttribute="trailing" constant="26" id="rPS-Fj-WhS"/>
                                     <constraint firstItem="LjR-9d-orf" firstAttribute="top" secondItem="avY-u3-6Nu" secondAttribute="bottom" constant="28" id="tH7-QQ-3HQ"/>
                                     <constraint firstItem="ed7-Mo-Hhk" firstAttribute="leading" secondItem="AuV-J2-aK7" secondAttribute="leading" constant="32" id="uwM-kc-lEl"/>
@@ -1046,6 +1055,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
         <image name="Group 10764" width="140" height="144"/>
         <image name="Group 10765" width="140" height="144"/>
         <image name="Group 10766" width="140" height="144"/>
+        <image name="Lock" width="15" height="18"/>
         <image name="log" width="1000" height="667"/>
         <image name="modern_woman" width="3000" height="2000"/>
         <image name="sign" width="1280" height="853"/>
