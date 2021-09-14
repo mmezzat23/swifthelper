@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eko-FC-fXB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eko-FC-fXB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -178,6 +178,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                     <constraint firstAttribute="width" constant="30" id="pN4-wI-vyx"/>
                                                 </constraints>
                                                 <state key="normal" image="Check Box Area"/>
+                                                <connections>
+                                                    <action selector="rememberMeClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="UQm-W8-vN5"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktn-Or-K2c">
                                                 <rect key="frame" x="55" y="194.5" width="102" height="25"/>
@@ -235,6 +238,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Forgot Password"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="forgetPasswordClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="yeU-HZ-W54"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEA-Wk-bFF">
                                                 <rect key="frame" x="25" y="249.5" width="371" height="55"/>
@@ -251,6 +257,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="loginClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="1wx-82-bCN"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VJY-7B-Ahh">
                                                 <rect key="frame" x="115.5" y="369.5" width="190" height="30"/>
@@ -262,6 +271,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                             <constraint firstAttribute="width" constant="30" id="yfb-vI-4AW"/>
                                                         </constraints>
                                                         <state key="normal" image="icons8-apple-logo"/>
+                                                        <connections>
+                                                            <action selector="loginWithAppleClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="hPU-qd-zdd"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h33-pU-0cs">
                                                         <rect key="frame" x="80" y="0.0" width="30" height="30"/>
@@ -270,6 +282,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                             <constraint firstAttribute="width" constant="30" id="hMv-UW-qPV"/>
                                                         </constraints>
                                                         <state key="normal" image="facebook-2"/>
+                                                        <connections>
+                                                            <action selector="loginWithFacebookClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="2YJ-Ap-GCw"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wog-uD-gcf">
                                                         <rect key="frame" x="160" y="0.0" width="30" height="30"/>
@@ -278,6 +293,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                             <constraint firstAttribute="height" constant="30" id="rSf-Ey-3Nj"/>
                                                         </constraints>
                                                         <state key="normal" image="google-icon"/>
+                                                        <connections>
+                                                            <action selector="loginWithGoogleClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="WTj-T1-esT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -292,6 +310,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Sign Up"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="signUpClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="b8O-Fv-Kbg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -366,6 +387,10 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                     </view>
                     <navigationItem key="navigationItem" id="fbr-1i-yEC"/>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="emialOrPhoneTxt" destination="zVP-R0-QKD" id="6Xl-qj-Ss9"/>
+                        <outlet property="passwordTxt" destination="dF5-46-bVT" id="s4v-Yn-7yG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxu-lg-uTP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -490,12 +515,12 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p48-rT-dGr">
                                                 <rect key="frame" x="25" y="122" width="364" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWj-gS-PKn">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWj-gS-PKn">
                                                         <rect key="frame" x="10" y="8" width="349" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter your password"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter username"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
@@ -522,7 +547,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3T-Vi-qI9">
                                                 <rect key="frame" x="35" y="112" width="100" height="25"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AM-ti-nWn">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AM-ti-nWn">
                                                         <rect key="frame" x="4" y="0.0" width="94" height="25"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -532,7 +557,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Password"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Username"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -550,12 +575,12 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwL-hf-LeX">
                                                 <rect key="frame" x="25" y="202" width="364" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjR-cy-IfY">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjR-cy-IfY">
                                                         <rect key="frame" x="10" y="8" width="349" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Re-enter your password"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter your password"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
@@ -582,7 +607,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaG-kp-lU7">
                                                 <rect key="frame" x="35" y="192" width="160" height="25"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4I-Ls-aWz">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4I-Ls-aWz">
                                                         <rect key="frame" x="4" y="0.0" width="154" height="25"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -592,7 +617,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Confirm Password"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Password"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
@@ -649,6 +674,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="signUpClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="QE3-Ai-ohI"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Lw-NM-Ra0">
                                                 <rect key="frame" x="112" y="402" width="190" height="30"/>
@@ -660,6 +688,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                             <constraint firstAttribute="height" constant="30" id="Nco-bT-1fo"/>
                                                         </constraints>
                                                         <state key="normal" image="icons8-apple-logo"/>
+                                                        <connections>
+                                                            <action selector="signUpWithAppleClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="q4O-a8-uvi"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-ST-Dx9">
                                                         <rect key="frame" x="80" y="0.0" width="30" height="30"/>
@@ -668,6 +699,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                             <constraint firstAttribute="height" constant="30" id="wmR-9P-QnT"/>
                                                         </constraints>
                                                         <state key="normal" image="facebook-2"/>
+                                                        <connections>
+                                                            <action selector="signUpWithFacebookClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="jPq-p2-qXV"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulz-9X-LwQ">
                                                         <rect key="frame" x="160" y="0.0" width="30" height="30"/>
@@ -676,6 +710,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                             <constraint firstAttribute="width" constant="30" id="efG-Nm-e1p"/>
                                                         </constraints>
                                                         <state key="normal" image="google-icon"/>
+                                                        <connections>
+                                                            <action selector="signUpWithGoogleClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="ca6-4d-xow"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -690,6 +727,9 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Sign Up"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="loginClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="R6a-QK-dvJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -771,6 +811,11 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                     </view>
                     <navigationItem key="navigationItem" id="OvA-mZ-ee3"/>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="emialOrPhoneTxt" destination="xmD-95-VpQ" id="Wes-E1-cyC"/>
+                        <outlet property="passwordTxt" destination="fjR-cy-IfY" id="icN-WX-w1h"/>
+                        <outlet property="userNameTxt" destination="RWj-gS-PKn" id="12m-Rd-l2J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuw-ia-b4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,10 @@
 import UIKit
 
 class LoginController: BaseController {
+    
+    @IBOutlet weak var emialOrPhoneTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
     var viewModel : AuthViewModel?
     var parameters : [String : Any] = [:]
     override func viewDidLoad() {
@@ -32,6 +36,22 @@ class LoginController: BaseController {
 //            self?.push(scene)
             
         })
+    }
+    
+    @IBAction func forgetPasswordClicked(_ sender: UIButton) {
+    }
+    @IBAction func loginClicked(_ sender: UIButton) {
+    }
+    @IBAction func loginWithAppleClicked(_ sender: UIButton) {
+    }
+    @IBAction func loginWithGoogleClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func loginWithFacebookClicked(_ sender: UIButton) {
+    }
+    @IBAction func signUpClicked(_ sender: UIButton) {
+    }
+    @IBAction func rememberMeClicked(_ sender: UIButton) {
     }
     
     func makelogin() {

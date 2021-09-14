@@ -9,13 +9,29 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+   
+    @IBOutlet weak var userNameTxt: UITextField!
+    @IBOutlet weak var emialOrPhoneTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func loginClicked(_ sender: UIButton) {
+    }
+    @IBAction func signUpClicked(_ sender: UIButton) {
+    }
+
+    @IBAction func signUpWithAppleClicked(_ sender: UIButton) {
+    }
+    @IBAction func signUpWithGoogleClicked(_ sender: UIButton) {
+    }
     
+    @IBAction func signUpWithFacebookClicked(_ sender: UIButton) {
+    }
+
 
     /*
     // MARK: - Navigation
