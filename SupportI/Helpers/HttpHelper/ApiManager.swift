@@ -54,5 +54,25 @@ class ApiManager: BaseApi, Api {
         }
 
     }
+    func connectionRaw(_ method: EndPoint, type: HTTPMethod, completionHandler: @escaping (Data?) -> Void) {
+        if ApiManager.useAuth {
+            Authorization.instance.refreshToken { callback in
+                if callback {
+                    super.refresh()
+                    super.connectionRaw(method.rawValue, type: type, completionHandler: completionHandler)
+                } else {
+                    self.makeAlert("aunthorized.lan".localized, closure: {
+                        print("Go TO Login")
+                        guard let vcr = Constants.loginNav else { return }
+                        UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
+                    })
+                }
+            }
+        } else {
+            super.refresh()
+            super.connectionRaw(method.rawValue, type: type, completionHandler: completionHandler)
+        }
+
+    }
 
 }

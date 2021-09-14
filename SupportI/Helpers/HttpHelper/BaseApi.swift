@@ -110,6 +110,78 @@ class BaseApi: Downloader, Paginator, Alertable {
                 }
         }
     }
+    func connectionRaw(_ method: String, type: HTTPMethod,
+                        completionHandler: @escaping (Data?) -> Void) {
+            self.isHttpRequestRun = true
+            
+            let url = initURL(method: method, type: type)
+            print(url)
+            let paramters = self.paramaters
+            self.resetObject()
+            //        if (self.paramater1 == ""){
+            let manager = Alamofire.SessionManager.default
+            manager.session.configuration.timeoutIntervalForRequest = 30
+            manager.session.configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+            var request = URLRequest(url: URL(string: safeUrl(url: url))!)
+            do {
+                let data = try JSONSerialization.data(withJSONObject: paramters, options: [])
+                let paramString = String(data: data, encoding: String.Encoding.utf8)
+                request.httpBody = paramString?.data(using: .utf8)
+            } catch let error {
+                print("Error : \(error.localizedDescription)")
+            }
+            headers["Content-Type"] =  "application/json"
+            request.httpMethod = type.rawValue
+            request.allHTTPHeaderFields = headers
+            request.cachePolicy = .reloadIgnoringCacheData // <<== Cache disabled
+
+            Alamofire.request(request)
+                .responseJSON { response in
+                    print(response.result.value ?? "")
+                    self.isHttpRequestRun = false
+                    switch response.result {
+                        //case .success(let value)
+                        case .success:
+                            switch response.response?.statusCode {
+                                case 200?:
+                                    completionHandler(response.data)
+                                case 201?:
+                                    completionHandler(response.data)
+                                
+                                case 400?:
+                                    UIApplication.topViewController()?.stopLoading()
+                                    self.setErrorMessage(data: response.data)
+                                //completionHandler(nil)
+                                case 401?:
+                                    if (url.contains("connect/token")){
+                                        UIApplication.topViewController()?.stopLoading()
+                                        self.makeAlert("the_login_is_required.lan".localized, closure: {
+                                            guard let vcr = Constants.loginNav else { return }
+                                            UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
+                                        })
+                                    }else{
+                                        UIApplication.topViewController()?.stopLoading()
+                                        self.setErrorMessage(data: response.data)
+                                    }
+                                case 404?:
+                                    UIApplication.topViewController()?.stopLoading()
+                                    self.makeAlert("not_found.lan".localized, closure: {})
+                                case 422?:
+                                    UIApplication.topViewController()?.stopLoading()
+                                    self.setErrorMessage(data: response.data)
+                                //completionHandler(nil)
+                                case .none:
+                                    break
+                                case .some(let error):
+                                    UIApplication.topViewController()?.stopLoading()
+                                    self.makeAlert(error.string, closure: {})
+                        }
+                        case .failure(let error):
+                            UIApplication.topViewController()?.stopLoading()
+                            self.makeAlert(error.localizedDescription, closure: {})
+                    }
+            }
+    }
     func uploadMultiFiles(_ method: String , type: HTTPMethod, files: [UIImage], key: String, file: [String: URL?]? = nil, completionHandler: @escaping (Data?) -> ()) {
         
         self.isHttpRequestRun = true

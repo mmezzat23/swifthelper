@@ -11,10 +11,10 @@ import Foundation
 class AuthViewModel: ViewModelCore {
     var userdata: DynamicType = DynamicType<UserRoot>()
     
-    func loginapi(paramters: [String: Any], remember: Bool) {
+    func loginapi(paramters: [String: Any] , remember : Bool) {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
-        ApiManager.instance.connection(.loginurl, type: .post) { (response) in
+        ApiManager.instance.connectionRaw(.loginurl, type: .post) { (response) in
             self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.token != nil)

@@ -40,6 +40,8 @@ class LoginController: BaseController {
     }
     
     @IBAction func forgetPasswordClicked(_ sender: UIButton) {
+        let vcc = self.controller(ForgetpassController.self,storyboard: .auth)
+        self.push(vcc)
     }
     @IBAction func loginClicked(_ sender: UIButton) {
         if (validateTextFields()){
