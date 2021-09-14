@@ -11,7 +11,7 @@ import Foundation
 class AuthViewModel: ViewModelCore {
     var userdata: DynamicType = DynamicType<UserRoot>()
     
-    func loginapi(paramters: [String: Any]) {
+    func loginapi(paramters: [String: Any], remember: Bool) {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connection(.loginurl, type: .post) { (response) in

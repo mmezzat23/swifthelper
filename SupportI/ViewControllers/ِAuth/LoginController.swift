@@ -15,6 +15,7 @@ class LoginController: BaseController {
     
     var viewModel : AuthViewModel?
     var parameters : [String : Any] = [:]
+    var isrember = false
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -53,8 +54,18 @@ class LoginController: BaseController {
     @IBAction func loginWithFacebookClicked(_ sender: UIButton) {
     }
     @IBAction func signUpClicked(_ sender: UIButton) {
+        let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
+        self.push(vcc)
     }
     @IBAction func rememberMeClicked(_ sender: UIButton) {
+        if (isrember == true){
+            sender.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
+            isrember = false
+        }else{
+            sender.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
+            isrember = true
+        }
+        
     }
     func validateTextFields() -> Bool {
        
@@ -66,7 +77,7 @@ class LoginController: BaseController {
     func makelogin() {
         parameters["emailOrPhone"] = emialOrPhoneTxt.text
         parameters["password"] = passwordTxt.text
-        viewModel?.loginapi(paramters:parameters)
+        viewModel?.loginapi(paramters:parameters, remember: isrember)
     }
     
 

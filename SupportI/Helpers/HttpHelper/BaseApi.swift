@@ -61,6 +61,7 @@ class BaseApi: Downloader, Paginator, Alertable {
         Alamofire.request(safeUrl(url: url), method: type, parameters: paramters, headers: self.headers)
             .responseJSON { response in
                 print(response.result.value ?? "")
+                print(response.response?.statusCode ?? 0)
                 self.isHttpRequestRun = false
                 switch response.result {
                 //case .success(let value)
