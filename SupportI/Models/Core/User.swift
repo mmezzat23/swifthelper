@@ -11,7 +11,7 @@ import UIKit
 class UserRoot: Codable {
     public static var storeUserDefaults: String = "userDataDefaults"
     public static var storeRememberUser: String = "USER_LOGIN_REMEMBER"
-
+    var responseData: Token?
     var data: User?
     var expires_in: Int?
     var access_token: String?
@@ -96,4 +96,11 @@ class User: Codable {
         var title: String?
         var icon: String?
     }
+}
+
+class Token: Codable {
+    var access_Token: String?
+    var refresh_Token: String?
+    var expires_In: String?
+    
 }

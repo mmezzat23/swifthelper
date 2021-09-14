@@ -22,7 +22,7 @@ class BaseApi: Downloader, Paginator, Alertable {
             if let token = UserDefaults.standard.string(forKey: "access_token") {
                 headers["Authorization"] = "Bearer "+token
             } else {
-                headers["Authorization"] = ""
+                headers["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImQ4ZTFjMGEyZWMwZGU1ZTJmNzYwNDYzMzk0NjE4ZTdjMzA1YmY2MGU2ZWI1YmVmMDBiMmQ2ZDY4NzA1NDM5MDM3YmE3YjU1Y2EzNGU0YjljIn0.eyJhdWQiOiIxIiwianRpIjoiZDhlMWMwYTJlYzBkZTVlMmY3NjA0NjMzOTQ2MThlN2MzMDViZjYwZTZlYjViZWYwMGIyZDZkNjg3MDU0MzkwMzdiYTdiNTVjYTM0ZTRiOWMiLCJpYXQiOjE2MDIxNjQyMzAsIm5iZiI6MTYwMjE2NDIzMCwiZXhwIjoxNjMzNzAwMjMwLCJzdWIiOiI0MjAiLCJzY29wZXMiOltdfQ.I1GMEn6utB8tmPOooaxN1hXU17TeQecQRXnVgXhn21dQIHpFVvwWkXStTtdU3xAQcZeDXaGZcTlhI3jVKJtjulrSGh8RbYRRyNcxWpzgl8Iu0Cf88NIyNktoaZMR8_mzJXVfFWgVfOCG_-UoghNMm_4VY5FspD9xwE2v3DEf8FSYwOMsiPJfYMX2y18wwOb9vU-sBUa5vSC73hcJ8o0aJfAegD55JyeErEUYBSRpMdy3iYG54ug30dMxcYlrnhNEasu8cQLWztwnvfmroTbwOYf5efM9UHoWELdxZTfbhPbgYI0IzRihfz10Vry5ZC1eb5qqIpigvFf2jC-59FXC2s76Sfv1oqXoeSas2GPA9ok8uhbCKyqZp4qcA6vbdG0wnm_AsBPH_ke0wXZe1W2Y8y1EdhkuexQ6VpugAOHD43S1fIHk4ZvPIRkRY3lTLN-y3WOCI1eDoFuA0fXkVPVfgqk2Yca-geRTEpsxX-JMXuGiA-x9kFW88867zVEd7GcqI0LYIhLW6iUWpaDfsFS6Xhg8VxRYuZMvYvdVFmgnz0061QrgrpFWp9zjNHGRtDyJXsXTxPro8ba25jbS1fe4TxvOJ22lKAcp0iuKHCr6YEhnenrrqYIdlrwYpI8YRSN677q6mhWFn_i9KXp0sO-Ozoi1JdghBR11eTEEM7NN6XA"
             }
         }
         paramaters["client_id"] = "WndoApp_App"
