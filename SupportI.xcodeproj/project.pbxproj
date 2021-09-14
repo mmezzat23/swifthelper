@@ -10,6 +10,7 @@
 		143D3DFB26EF89F40031C74E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3DFA26EF89F40031C74E /* RegisterViewController.swift */; };
 		143D3E0326EF8AC20031C74E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143D3E0226EF8AC20031C74E /* Auth.storyboard */; };
 		143D3E0626EF8C460031C74E /* SplashGIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */; };
+		143D3E6726F0A9BF0031C74E /* Auth1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */; };
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
 		66376A8526EA0A2F0012DA28 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */; };
 		66376A8826EA0CDD0012DA28 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8726EA0CDD0012DA28 /* LoginController.swift */; };
@@ -230,6 +231,7 @@
 		143D3DFA26EF89F40031C74E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		143D3E0226EF8AC20031C74E /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashGIFViewController.swift; sourceTree = "<group>"; };
+		143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth1ViewModel.swift; sourceTree = "<group>"; };
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
 		66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		66376A8726EA0CDD0012DA28 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				8037F0FD20BFB1AA00162BA9 /* Core */,
 				8037F0F620BFABA300162BA9 /* TestViewModel.swift */,
 				66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */,
+				143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1366,6 +1369,7 @@
 				80DA0157211A888600817038 /* UIApplicationExtensions.swift in Sources */,
 				80DA014C211A888600817038 /* FloatingPointExtensions.swift in Sources */,
 				E86D96F423F4C57A0029FBAD /* Localization.swift in Sources */,
+				143D3E6726F0A9BF0031C74E /* Auth1ViewModel.swift in Sources */,
 				80A2FC25215841BC00223A77 /* FacebookDriver.swift in Sources */,
 				80A2FC52215841BC00223A77 /* FloatRule.swift in Sources */,
 				80A2FC4C215841BC00223A77 /* ValidationDelegate.swift in Sources */,

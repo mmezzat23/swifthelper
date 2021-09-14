@@ -12,7 +12,7 @@ public enum EndPoint: String {
     case token = "connect/token"
     case update = "user/update"
 //    case login1 = "connect/token"
-    case register
+    case register = "1/api/app/register/login"
     case logout
     case packages
     case locations
