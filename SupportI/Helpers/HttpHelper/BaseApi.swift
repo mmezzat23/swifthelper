@@ -72,8 +72,17 @@ class BaseApi: Downloader, Paginator, Alertable {
                         completionHandler(response.data)
 
                     case 400?:
-                        UIApplication.topViewController()?.stopLoading()
-                        self.setErrorMessage(data: response.data)
+                        if (url.contains("connect/token")){
+                            UIApplication.topViewController()?.stopLoading()
+                            self.makeAlert("the_login_is_required.lan".localized, closure: {
+                                guard let vcr = Constants.loginNav else { return }
+                                UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
+                            })
+                        }else{
+                            UIApplication.topViewController()?.stopLoading()
+                            self.setErrorMessage(data: response.data)
+                        }
+                        
                     //completionHandler(nil)
                     case 401?:
                         UIApplication.topViewController()?.stopLoading()

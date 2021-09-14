@@ -37,6 +37,11 @@ extension BaseApi {
                 errors.message = error.message
             }
             self.makeAlert(errors.message ?? "", closure: {})
+        }else if let errors = error.error {
+            if error.message != nil {
+                errors.message = error.message
+            }
+            self.makeAlert(errors.message ?? "", closure: {})
         } else {
             if error.message != nil {
                 self.makeAlert(error.message!, closure: {})
