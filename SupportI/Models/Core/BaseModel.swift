@@ -13,6 +13,6 @@ class BaseModel: Decodable {
     var success: Bool?
     var message: String?
     var errors: Errors?
-    var error: Error?
+    var error: Erro?
 
 }

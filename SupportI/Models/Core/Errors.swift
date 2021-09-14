@@ -51,7 +51,7 @@ class Errors: Decodable {
 }
 
 
-class Error: Decodable {
+class Erro: Decodable {
 
     var email: String?
     var fname: String?
@@ -90,12 +90,12 @@ class Error: Decodable {
 //        return str as String
 //    }
 
-    public static func convertToModel(response: Data?) -> Error {
+    public static func convertToModel(response: Data?) -> Erro {
         do {
             let data = try JSONDecoder().decode(self, from: response!)
             return data
         } catch {
-            return Error()
+            return Erro()
         }
     }
 
