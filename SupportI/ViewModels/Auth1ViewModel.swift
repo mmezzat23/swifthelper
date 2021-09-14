@@ -13,7 +13,7 @@ class Auth1ViewModel: ViewModelCore {
     func RegisterApi(paramters: [String: Any]) {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
-        ApiManager.instance.connection(.register, type: .post) { (response) in
+        ApiManager.instance.connection(.registerUrl, type: .post) { (response) in
             self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.token != nil)
