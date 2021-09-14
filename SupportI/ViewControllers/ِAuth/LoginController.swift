@@ -17,9 +17,9 @@ class LoginController: BaseController {
     var parameters : [String : Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
         setup()
         bind()
-        makelogin()
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +41,9 @@ class LoginController: BaseController {
     @IBAction func forgetPasswordClicked(_ sender: UIButton) {
     }
     @IBAction func loginClicked(_ sender: UIButton) {
+        if (validateTextFields()){
+            makelogin()
+        }
     }
     @IBAction func loginWithAppleClicked(_ sender: UIButton) {
     }
@@ -53,12 +56,16 @@ class LoginController: BaseController {
     }
     @IBAction func rememberMeClicked(_ sender: UIButton) {
     }
-    
+    func validateTextFields() -> Bool {
+       
+           emialOrPhoneTxt.customValidationRules = [RequiredRule()]
+           passwordTxt.customValidationRules = [RequiredRule()]
+           let validator = Validation(textFields: [emialOrPhoneTxt,passwordTxt])
+           return validator.success
+       }
     func makelogin() {
-        parameters["username"] = "admin"
-        parameters["password"] = "1q2w3E*"
-        parameters["scope"] = "WndoApp offline_access"
-        parameters["grant_type"] = "password"
+        parameters["emailOrPhone"] = emialOrPhoneTxt.text
+        parameters["password"] = passwordTxt.text
         viewModel?.loginapi(paramters:parameters)
     }
     
