@@ -16,6 +16,8 @@ class UserRoot: Codable {
     var expires_in: Int?
     var access_token: String?
     var token: String?
+    var isSuccess: Bool?
+    var errorMessage: String?
     var refresh_token: String?
     var message: String?
     var loginTimeStamp: Int?

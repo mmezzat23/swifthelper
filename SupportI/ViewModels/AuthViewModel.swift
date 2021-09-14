@@ -10,22 +10,23 @@ import Foundation
 
 class AuthViewModel: ViewModelCore {
     var userdata: DynamicType = DynamicType<UserRoot>()
-    
+    var errordata: DynamicType = DynamicType<String>()
+
     func loginapi(paramters: [String: Any] , remember : Bool) {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.loginurl, type: .post) { (response) in
             self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
-            if (data?.token != nil)
+            if (data?.isSuccess == true)
             {
-                UserRoot.save(response: response)
+                UserRoot.save(response: response , remember: remember)
                 let userdata = UserRoot.fetch()
                 self.userdata.value = userdata
 
             }
             else {
-//                self.userData.value = data
+                self.errordata.value = data?.errorMessage
             }
         }
     }

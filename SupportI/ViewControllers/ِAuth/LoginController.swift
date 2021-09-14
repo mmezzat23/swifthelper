@@ -37,6 +37,12 @@ class LoginController: BaseController {
 //            self?.push(scene)
             
         })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+            
+        })
     }
     
     @IBAction func forgetPasswordClicked(_ sender: UIButton) {
