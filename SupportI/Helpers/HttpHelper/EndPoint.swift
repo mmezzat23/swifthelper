@@ -14,6 +14,8 @@ public enum EndPoint: String {
     case loginurl = "1/api/app/register/login"
 //    case login1 = "connect/token"
     case registerUrl = "1/api/app/register"
+    case verifyRegisterationOTP = "1/api​/app​/register​/verify-code"
+    case verifyForgetPasswordOTP = "1/api/app/register/verify-code-for-forget-password"
     case logout
     case packages
     case locations

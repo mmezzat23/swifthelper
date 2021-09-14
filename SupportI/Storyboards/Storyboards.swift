@@ -9,6 +9,6 @@
 import Foundation
 
 public enum Storyboards: String {
-    case main = "Main"
+    case main = "Auth1"
     case auth = "Auth"
 }

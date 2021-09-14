@@ -16,13 +16,21 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     @IBOutlet weak var code4: UITextField!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var resend: UILabel!
+    var isCommingFromForgetPassword = false
     var code = ""
     var timerHelper: TimeHelper?
+    var viewModel : Auth1ViewModel?
+    var parameters : [String : Any] = [:]
+    var userName : String = ""
+    var sendTo : String = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
-
+        self.phone.text = "We sent your code to".localized + " " + sendTo
+        setup()
+        bind()
         code1.delegate = self
         code2.delegate = self
         code3.delegate = self
@@ -32,17 +40,36 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         code3.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         code4.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         timerHelper = .init(seconds: 1, numberOfCycle: 120, closure: { [weak self] (cycle) in
-                   if cycle >= 60 {
-                       self?.time.text = "01:\(cycle-60)"
-                   } else {
-                       self?.time.text = "00:\(cycle)"
-                   }
-                   if cycle == 0 {
-                       self?.time.isHidden = true
-                   }
-               })
+            if cycle >= 60 {
+                self?.time.text = "01:\(cycle-60)"
+            } else {
+                self?.time.text = "00:\(cycle)"
+            }
+            if cycle == 0 {
+                self?.time.isHidden = true
+            }
+        })
     }
+    
+    override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+          // GO TO LOGIN
+        })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+    }
+    
+    func setup() {
+       viewModel = .init()
+       viewModel?.delegate = self
+   }
     @IBAction func confirm(_ sender: Any) {
+        self.verifyOtpApi()
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -57,8 +84,6 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
                         if (code1.text != ""){
                             code += (code1.text ?? "")
                             print(code,"code")
-                            
-                            
                         }
                     }
                 }
@@ -106,7 +131,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
                             {
                                 code += (code4.text ?? "")
                             }
-                           
+                            
                         }
                     }
                 }
@@ -189,4 +214,15 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         return true
     }
     
+    
+    func verifyOtpApi() {
+        parameters["userName"] = self.userName
+        parameters["code"] = self.code
+        print("coddeeeee\(self.code)")
+         if isCommingFromForgetPassword {
+          viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyForgetPasswordOTP)
+        } else {
+          viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyRegisterationOTP)
+        }
+    }
 }

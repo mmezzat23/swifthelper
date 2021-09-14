@@ -8,25 +8,43 @@
 
 import Foundation
 class Auth1ViewModel: ViewModelCore {
+    
     var userdata: DynamicType = DynamicType<UserRoot>()
+    var errordata: DynamicType = DynamicType<String>()
     
     func RegisterApi(paramters: [String: Any]) {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
-        ApiManager.instance.connection(.registerUrl, type: .post) { (response) in
+        ApiManager.instance.connectionRaw(.registerUrl, type: .post) { (response) in
             self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
-            if (data?.token != nil)
+            if (data?.isSuccess == true)
             {
-                UserRoot.save(response: response)
                 let userdata = UserRoot.fetch()
                 self.userdata.value = userdata
-
             }
             else {
-//                self.userData.value = data
+                self.errordata.value = data?.errorMessage
             }
         }
     }
+    
+    func VerifyOtpApi(paramters: [String: Any] , url : EndPoint ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(url, type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                let userdata = UserRoot.fetch()
+                self.userdata.value = userdata
+            }
+            else {
+                self.errordata.value = data?.errorMessage
+            }
+        }
+    }
+
 
 }

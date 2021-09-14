@@ -17,9 +17,11 @@ class RegisterViewController: BaseController {
     
     var viewModel : Auth1ViewModel?
     var parameters : [String : Any] = [:]
+    var isPhoneNumber = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
         setup()
         bind()
     }
@@ -28,6 +30,13 @@ class RegisterViewController: BaseController {
         self.push(scene)
     }
     @IBAction func signUpClicked(_ sender: UIButton) {
+        if emialOrPhoneTxt.text?.isNumeric == true {
+            parameters["phone"] = emialOrPhoneTxt.text ?? ""
+            isPhoneNumber =  true
+        } else {
+            parameters["email"] =  emialOrPhoneTxt.text ?? ""
+            isPhoneNumber =  false
+        }
         if (validateTextFields()) {
             signUp()
         }
@@ -40,10 +49,14 @@ class RegisterViewController: BaseController {
     @IBAction func signUpWithFacebookClicked(_ sender: UIButton) {
     }
     func validateTextFields() -> Bool {
-        emialOrPhoneTxt.customValidationRules = [RequiredRule() , EmailRule()]
-        userNameTxt.customValidationRules = [RequiredRule()]
-        passwordTxt.customValidationRules = [RequiredRule(), MinLengthRule(length: 6)]
-        let validator = Validation(textFields: [emialOrPhoneTxt,passwordTxt])
+        if !isPhoneNumber {
+            emialOrPhoneTxt.customValidationRules = [RequiredRule() , EmailRule()]
+        } else {
+            emialOrPhoneTxt.customValidationRules = [RequiredRule() , MinLengthRule(length: 11)]
+        }
+        userNameTxt.customValidationRules = [RequiredRule() , MaxLengthRule(length: 16)]
+        passwordTxt.customValidationRules = [RequiredRule(), MinLengthRule(length: 8)]
+        let validator = Validation(textFields: [emialOrPhoneTxt , userNameTxt ,passwordTxt])
         return validator.success
     }
     
@@ -54,8 +67,6 @@ class RegisterViewController: BaseController {
     
     func signUp() {
         parameters["username"] = userNameTxt.text ?? ""
-        parameters["email"] = emialOrPhoneTxt.text ?? ""
-        parameters["phone"] = emialOrPhoneTxt.text ?? ""
         parameters["password"] = passwordTxt.text ?? ""
         parameters["scope"] = "WndoApp offline_access"
         parameters["grant_type"] = "password"
@@ -65,7 +76,18 @@ class RegisterViewController: BaseController {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
             print(data)
+            let scene = self?.controller(CodeverficationController.self,storyboard: .main)
+            scene?.isCommingFromForgetPassword = false
+            scene?.userName =  self?.userNameTxt.text ?? ""
+            scene?.sendTo = self?.emialOrPhoneTxt.text ?? ""
+            self?.push(scene!)
+        })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
         })
     }
     
 }
+

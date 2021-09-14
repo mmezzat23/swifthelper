@@ -23,12 +23,10 @@ class AuthViewModel: ViewModelCore {
                 UserRoot.save(response: response , remember: remember)
                 let userdata = UserRoot.fetch()
                 self.userdata.value = userdata
-
             }
             else {
                 self.errordata.value = data?.errorMessage
             }
         }
     }
-
 }
