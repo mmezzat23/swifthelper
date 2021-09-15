@@ -22,6 +22,9 @@ class ConfirmpassController: BaseController {
             let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
             self.push(vcc)
         }
+        password.setLeftPaddingPoints(10)
+        password.setRightPaddingPoints(10)
+
     }
     func setup() {
        viewModel = .init()

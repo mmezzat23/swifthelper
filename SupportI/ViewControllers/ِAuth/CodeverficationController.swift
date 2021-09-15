@@ -52,7 +52,9 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
             }
         })
         resend.UIViewAction { [self] in
+            if (isCommingFromForgetPassword == true){
             authModel?.forgetapi(paramters: parameters)
+            }
         }
     }
     

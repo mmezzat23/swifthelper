@@ -12,12 +12,15 @@ class PassconfirmController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
 
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func login(_ sender: Any) {
+        let vcc = self.controller(LoginController.self,storyboard: .auth)
+        self.push(vcc)
     }
     /*
     // MARK: - Navigation

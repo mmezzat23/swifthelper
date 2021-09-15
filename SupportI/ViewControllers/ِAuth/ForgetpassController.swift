@@ -22,6 +22,8 @@ class ForgetpassController: BaseController {
             let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
             self.push(vcc)
         }
+        email.setLeftPaddingPoints(10)
+        email.setRightPaddingPoints(10)
 
         // Do any additional setup after loading the view.
     }
@@ -47,10 +49,16 @@ class ForgetpassController: BaseController {
             
         })
     }
-    
+    func validateTextFields() -> Bool {
+           email.customValidationRules = [RequiredRule()]
+           let validator = Validation(textFields: [email])
+           return validator.success
+       }
     @IBAction func send(_ sender: Any) {
+        if (validateTextFields()){
         parameters["emailOrPhone"] = email.text
         viewModel?.forgetapi(paramters:parameters)
+        }
     }
     
     

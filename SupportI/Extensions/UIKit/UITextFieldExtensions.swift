@@ -122,6 +122,7 @@ extension UITextField {
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
+    
     func changeColor() {
         let str = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor:
             UIColor(red: 129/255, green: 186/255, blue: 0/255, alpha: 1)])
