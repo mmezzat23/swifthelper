@@ -18,8 +18,10 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     @IBOutlet weak var resend: UILabel!
     var isCommingFromForgetPassword = false
     var code = ""
+    var userid = ""
     var timerHelper: TimeHelper?
     var viewModel : Auth1ViewModel?
+    var authModel : AuthViewModel?
     var parameters : [String : Any] = [:]
     var userName : String = ""
     var sendTo : String = ""
@@ -49,13 +51,22 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
                 self?.time.isHidden = true
             }
         })
+        resend.UIViewAction { [self] in
+            authModel?.forgetapi(paramters: parameters)
+        }
     }
     
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
-            print(data)
-          // GO TO LOGIN
+            if (self?.isCommingFromForgetPassword == true){
+                let scene = self?.controller(ConfirmpassController.self,storyboard: .auth1)
+                scene?.parameters = self!.parameters
+                self?.push(scene!)
+            }
+        })
+        authModel?.resendforget.bind({ [weak self](data) in
+            self?.stopLoading()
         })
         viewModel?.errordata.bind({ [weak self](data) in
             self?.stopLoading()
@@ -67,6 +78,8 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     func setup() {
        viewModel = .init()
        viewModel?.delegate = self
+        authModel = .init()
+        authModel?.delegate = self
    }
     @IBAction func confirm(_ sender: Any) {
         self.verifyOtpApi()
@@ -216,12 +229,13 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     
     
     func verifyOtpApi() {
-        parameters["userName"] = self.userName
         parameters["code"] = self.code
         print("coddeeeee\(self.code)")
          if isCommingFromForgetPassword {
+            parameters["userName"] = self.userName
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyForgetPasswordOTP)
         } else {
+          parameters["userId"] = self.userid
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyRegisterationOTP)
         }
     }

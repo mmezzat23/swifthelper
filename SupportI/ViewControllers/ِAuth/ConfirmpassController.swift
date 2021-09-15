@@ -11,24 +11,47 @@ import UIKit
 class ConfirmpassController: BaseController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var signup: UIStackView!
-    
+    var viewModel : AuthViewModel?
+    var parameters : [String : Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        hiddenNav = true
+        setup()
+        bind()
+        signup.UIViewAction {
+            let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
+            self.push(vcc)
+        }
     }
-    
+    func setup() {
+       viewModel = .init()
+       viewModel?.delegate = self
+   }
+   
+   override func bind() {
+       viewModel?.userdata.bind({ [weak self](data) in
+           self?.stopLoading()
+           let scene = self?.controller(PassconfirmController.self,storyboard: .auth1)
+           self?.push(scene!)
+       })
+       viewModel?.errordata.bind({ [weak self](data) in
+           self?.stopLoading()
+           print(data)
+           self?.makeAlert(data, closure: {})
+           
+       })
+   }
+    func validateTextFields() -> Bool {
+        
+        password.customValidationRules = [RequiredRule(), MinLengthRule(length: 8)]
+        let validator = Validation(textFields: [password])
+        return validator.success
+    }
     @IBAction func confirm(_ sender: Any) {
+        if (validateTextFields()){
+            parameters["password"] = password.text
+            viewModel?.resetapi(paramters:parameters)
+        }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

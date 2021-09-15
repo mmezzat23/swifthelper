@@ -76,7 +76,7 @@ class RegisterViewController: BaseController {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
             print(data)
-            let scene = self?.controller(CodeverficationController.self,storyboard: .main)
+            let scene = self?.controller(CodeverficationController.self,storyboard: .auth1)
             scene?.isCommingFromForgetPassword = false
             scene?.userName =  self?.userNameTxt.text ?? ""
             scene?.sendTo = self?.emialOrPhoneTxt.text ?? ""

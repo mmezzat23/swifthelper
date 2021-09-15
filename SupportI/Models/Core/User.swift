@@ -104,5 +104,6 @@ class Token: Codable {
     var access_Token: String?
     var refresh_Token: String?
     var expires_In: String?
+    var userId: String?
     
 }
