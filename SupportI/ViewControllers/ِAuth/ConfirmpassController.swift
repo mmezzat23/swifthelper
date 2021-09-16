@@ -13,6 +13,7 @@ class ConfirmpassController: BaseController {
     @IBOutlet weak var signup: UIStackView!
     var viewModel : AuthViewModel?
     var parameters : [String : Any] = [:]
+    var userid = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -52,7 +53,9 @@ class ConfirmpassController: BaseController {
     }
     @IBAction func confirm(_ sender: Any) {
         if (validateTextFields()){
+            parameters["userId"] = self.userid
             parameters["password"] = password.text
+            print(parameters)
             viewModel?.resetapi(paramters:parameters)
         }
     }

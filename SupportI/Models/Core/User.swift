@@ -103,7 +103,8 @@ class User: Codable {
 class Token: Codable {
     var access_Token: String?
     var refresh_Token: String?
-    var expires_In: String?
+    var expires_In: Int?
     var userId: String?
-    
+    var userName: String?
+    var isVerified: Bool?
 }

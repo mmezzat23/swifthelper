@@ -25,7 +25,9 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     var parameters : [String : Any] = [:]
     var userName : String = ""
     var sendTo : String = ""
-    
+    var attrs = [
+        NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
+    var attributedString = NSMutableAttributedString(string:"")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +56,13 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         resend.UIViewAction { [self] in
             if (isCommingFromForgetPassword == true){
             authModel?.forgetapi(paramters: parameters)
+            }else {
+                viewModel?.resendApi(username: userName)
             }
         }
+        let buttonTitleStr = NSMutableAttributedString(string:"Resend OTP Code".localized, attributes:attrs)
+        attributedString.append(buttonTitleStr)
+        resend.attributedText = attributedString
     }
     
     override func bind() {
@@ -63,9 +70,16 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
             self?.stopLoading()
             if (self?.isCommingFromForgetPassword == true){
                 let scene = self?.controller(ConfirmpassController.self,storyboard: .auth1)
-                scene?.parameters = self!.parameters
+                scene?.userid = data.responseData?.userId ?? ""
+                self?.push(scene!)
+            }else{
+                let scene = self?.controller(AccountsuccessController.self,storyboard: .auth1)
                 self?.push(scene!)
             }
+        })
+        viewModel?.resenddata.bind({ [weak self](data) in
+            self?.stopLoading()
+            
         })
         authModel?.resendforget.bind({ [weak self](data) in
             self?.stopLoading()
@@ -234,10 +248,11 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         parameters["code"] = self.code
         print("coddeeeee\(self.code)")
          if isCommingFromForgetPassword {
-            parameters["userName"] = self.userName
+            parameters["userId"] = self.userid
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyForgetPasswordOTP)
         } else {
-          parameters["userId"] = self.userid
+          parameters["userName"] = self.userName
+          print(parameters)
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyRegisterationOTP)
         }
     }

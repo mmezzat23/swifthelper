@@ -33,6 +33,13 @@ class LoginController: BaseController {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
             print(data)
+            if (data.responseData?.isVerified == false){
+                let scene = self?.controller(CodeverficationController.self,storyboard: .auth1)
+                scene?.isCommingFromForgetPassword = false
+                scene?.userName =  data.responseData?.userName ?? ""
+                scene?.sendTo = self?.emialOrPhoneTxt.text ?? ""
+                self?.push(scene!)
+            }
 //            guard let scene = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
 //            self?.push(scene)
             

@@ -17,6 +17,8 @@ class AccountsuccessController: BaseController {
     }
     
     @IBAction func login(_ sender: Any) {
+        let vcc = self.controller(LoginController.self,storyboard: .auth)
+        self.push(vcc)
     }
     
     /*
