@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyGif
-class SplashGIFViewController: UIViewController {
+class SplashGIFViewController: BaseController {
     
     //MARK:- @IBOutlet
     @IBOutlet weak var animatedGifImage: UIImageView!
@@ -17,6 +17,7 @@ class SplashGIFViewController: UIViewController {
     //MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
         animatedGifImage.delegate = self
 //        if UserStatus.lang == nil {
 //            UserStatus.lang = "en"
@@ -37,6 +38,8 @@ class SplashGIFViewController: UIViewController {
     //Mark:- Methods
     func goToMainScreen() {
         initLang()
+        let vcc = self.controller(LoginController.self,storyboard: .auth)
+        self.push(vcc)
         //        SVProgressHUD.dismiss()
         //        if case UserStatus.isEnterIntro = true {
         //            if case UserStatus.isLogged = true {

@@ -43,6 +43,22 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         code2.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         code3.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         code4.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+       starttime()
+        resend.UIViewAction { [self] in
+            
+            if (isCommingFromForgetPassword == true){
+            authModel?.resendgorget(paramters: parameters)
+            }else {
+                viewModel?.resendApi(username: userName)
+            }
+        }
+        let buttonTitleStr = NSMutableAttributedString(string:"Resend OTP Code".localized, attributes:attrs)
+        attributedString.append(buttonTitleStr)
+        resend.attributedText = attributedString
+    }
+    
+    func starttime() {
+        self.time.isHidden = false
         timerHelper = .init(seconds: 1, numberOfCycle: 120, closure: { [weak self] (cycle) in
             if cycle >= 60 {
                 self?.time.text = "01:\(cycle-60)"
@@ -53,16 +69,6 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
                 self?.time.isHidden = true
             }
         })
-        resend.UIViewAction { [self] in
-            if (isCommingFromForgetPassword == true){
-            authModel?.forgetapi(paramters: parameters)
-            }else {
-                viewModel?.resendApi(username: userName)
-            }
-        }
-        let buttonTitleStr = NSMutableAttributedString(string:"Resend OTP Code".localized, attributes:attrs)
-        attributedString.append(buttonTitleStr)
-        resend.attributedText = attributedString
     }
     
     override func bind() {
@@ -79,10 +85,12 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         })
         viewModel?.resenddata.bind({ [weak self](data) in
             self?.stopLoading()
+            self?.starttime()
             
         })
         authModel?.resendforget.bind({ [weak self](data) in
             self?.stopLoading()
+            self?.starttime()
         })
         viewModel?.errordata.bind({ [weak self](data) in
             self?.stopLoading()
@@ -248,7 +256,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         parameters["code"] = self.code
         print("coddeeeee\(self.code)")
          if isCommingFromForgetPassword {
-            parameters["userId"] = self.userid
+        parameters["userId"] = self.userid
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyForgetPasswordOTP)
         } else {
           parameters["userName"] = self.userName

@@ -47,7 +47,7 @@ class ConfirmpassController: BaseController {
    }
     func validateTextFields() -> Bool {
         
-        password.customValidationRules = [RequiredRule(), MinLengthRule(length: 8)]
+        password.customValidationRules = [RequiredRule(), MinLengthRule(length: 8) , PasswordRule()]
         let validator = Validation(textFields: [password])
         return validator.success
     }
