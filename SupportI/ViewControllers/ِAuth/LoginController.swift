@@ -39,9 +39,10 @@ class LoginController: BaseController {
                 scene?.userName =  data.responseData?.userName ?? ""
                 scene?.sendTo = self?.emialOrPhoneTxt.text ?? ""
                 self?.push(scene!)
+            }else {
+            guard let scene = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+            self?.push(scene)
             }
-//            guard let scene = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
-//            self?.push(scene)
             
         })
         viewModel?.errordata.bind({ [weak self](data) in

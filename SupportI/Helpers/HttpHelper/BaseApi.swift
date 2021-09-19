@@ -18,15 +18,21 @@ class BaseApi: Downloader, Paginator, Alertable {
         headers["version"] = Constants.version
         headers["Device"] = Constants.deviceId
         headers["lang"] = Localizer.current
-        if UserDefaults.standard.bool(forKey: "LOGIN") {
-            if let token = UserDefaults.standard.string(forKey: "access_token") {
-                headers["Authorization"] = "Bearer "+token
-            } else {
-                headers["Authorization"] = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkMyMjRGNzI4Q0JDQjgxQzlEM0FEOEM4RDM4NDk0RDNDIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2MzE2MzE5NzYsImV4cCI6MTk0Njk5MTk3NiwiaXNzIjoiaHR0cHM6Ly93bmRvLm5ldDo1MDAwIiwiYXVkIjoiV25kb0FwcCIsImNsaWVudF9pZCI6IlduZG9BcHBfVG9rZW4iLCJzdWIiOiJmZDA1NGNmMi01NjE1LTljNjQtZDBlYy0zOWZlZjZmOWI0MDEiLCJhdXRoX3RpbWUiOjE2MzE2MzE5NzUsImlkcCI6ImxvY2FsIiwicm9sZSI6ImFkbWluIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJlbWFpbCI6ImFkbWluQGFicC5pbyIsImVtYWlsX3ZlcmlmaWVkIjoiRmFsc2UiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MzE2MzE5NzYsInNjb3BlIjpbIlduZG9BcHAiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.qwhi4QLiwL5nFIhzTYjasP5FnhGkUhVbpd0h-kMDEBTQRXX7No84Ibx4TQbAPrID8gwIIMl1ZU9D1Qnj4fQESxCuAL1ofI9koboIwKTFH1G0M5jZYUFnwSQ6JYAugcoltC_0xjWQDr2pBuzPYSwBc7AI4ja4wsDJLLK9hqWD7YEm-TpuXVse6AEHfxAXspeYCSu3RVMlOx66PrN3f5i00J7X_YlppwCGvRMfGO0k8Q2y0fnD0IxmFE6RzOVGB6JsE9ZX3w-JCv-dcbN7NJ9kQeKHLN0BgHjYYVGcEZDtuViu_s78Au0XvPA0t5-I_0x1xX6ndkZ3viOGmz2VXA7yRQ"
-            }
-        }else {
-            headers["Authorization"] = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkMyMjRGNzI4Q0JDQjgxQzlEM0FEOEM4RDM4NDk0RDNDIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2MzE2MzE5NzYsImV4cCI6MTk0Njk5MTk3NiwiaXNzIjoiaHR0cHM6Ly93bmRvLm5ldDo1MDAwIiwiYXVkIjoiV25kb0FwcCIsImNsaWVudF9pZCI6IlduZG9BcHBfVG9rZW4iLCJzdWIiOiJmZDA1NGNmMi01NjE1LTljNjQtZDBlYy0zOWZlZjZmOWI0MDEiLCJhdXRoX3RpbWUiOjE2MzE2MzE5NzUsImlkcCI6ImxvY2FsIiwicm9sZSI6ImFkbWluIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJlbWFpbCI6ImFkbWluQGFicC5pbyIsImVtYWlsX3ZlcmlmaWVkIjoiRmFsc2UiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MzE2MzE5NzYsInNjb3BlIjpbIlduZG9BcHAiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.qwhi4QLiwL5nFIhzTYjasP5FnhGkUhVbpd0h-kMDEBTQRXX7No84Ibx4TQbAPrID8gwIIMl1ZU9D1Qnj4fQESxCuAL1ofI9koboIwKTFH1G0M5jZYUFnwSQ6JYAugcoltC_0xjWQDr2pBuzPYSwBc7AI4ja4wsDJLLK9hqWD7YEm-TpuXVse6AEHfxAXspeYCSu3RVMlOx66PrN3f5i00J7X_YlppwCGvRMfGO0k8Q2y0fnD0IxmFE6RzOVGB6JsE9ZX3w-JCv-dcbN7NJ9kQeKHLN0BgHjYYVGcEZDtuViu_s78Au0XvPA0t5-I_0x1xX6ndkZ3viOGmz2VXA7yRQ"
+        if let token = UserRoot.token() {
+            headers["Authorization"] =  "Bearer "+token
         }
+        else {
+            headers["Authorization"] = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkMyMjRGNzI4Q0JDQjgxQzlEM0FEOEM4RDM4NDk0RDNDIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2MzE2MzE5NzYsImV4cCI6MTk0Njk5MTk3NiwiaXNzIjoiaHR0cHM6Ly93bmRvLm5ldDo1MDAwIiwiYXVkIjoiV25kb0FwcCIsImNsaWVudF9pZCI6IlduZG9BcHBfVG9rZW4iLCJzdWIiOiJmZDA1NGNmMi01NjE1LTljNjQtZDBlYy0zOWZlZjZmOWI0MDEiLCJhdXRoX3RpbWUiOjE2MzE2MzE5NzUsImlkcCI6ImxvY2FsIiwicm9sZSI6ImFkbWluIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJlbWFpbCI6ImFkbWluQGFicC5pbyIsImVtYWlsX3ZlcmlmaWVkIjoiRmFsc2UiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MzE2MzE5NzYsInNjb3BlIjpbIlduZG9BcHAiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.qwhi4QLiwL5nFIhzTYjasP5FnhGkUhVbpd0h-kMDEBTQRXX7No84Ibx4TQbAPrID8gwIIMl1ZU9D1Qnj4fQESxCuAL1ofI9koboIwKTFH1G0M5jZYUFnwSQ6JYAugcoltC_0xjWQDr2pBuzPYSwBc7AI4ja4wsDJLLK9hqWD7YEm-TpuXVse6AEHfxAXspeYCSu3RVMlOx66PrN3f5i00J7X_YlppwCGvRMfGO0k8Q2y0fnD0IxmFE6RzOVGB6JsE9ZX3w-JCv-dcbN7NJ9kQeKHLN0BgHjYYVGcEZDtuViu_s78Au0XvPA0t5-I_0x1xX6ndkZ3viOGmz2VXA7yRQ"        }
+        
+//        if UserDefaults.standard.bool(forKey: "LOGIN") {
+//            if let token = UserDefaults.standard.string(forKey: "access_token") {
+//                headers["Authorization"] = "Bearer "+token
+//            } else {
+//                headers["Authorization"] = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkMyMjRGNzI4Q0JDQjgxQzlEM0FEOEM4RDM4NDk0RDNDIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2MzE2MzE5NzYsImV4cCI6MTk0Njk5MTk3NiwiaXNzIjoiaHR0cHM6Ly93bmRvLm5ldDo1MDAwIiwiYXVkIjoiV25kb0FwcCIsImNsaWVudF9pZCI6IlduZG9BcHBfVG9rZW4iLCJzdWIiOiJmZDA1NGNmMi01NjE1LTljNjQtZDBlYy0zOWZlZjZmOWI0MDEiLCJhdXRoX3RpbWUiOjE2MzE2MzE5NzUsImlkcCI6ImxvY2FsIiwicm9sZSI6ImFkbWluIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJlbWFpbCI6ImFkbWluQGFicC5pbyIsImVtYWlsX3ZlcmlmaWVkIjoiRmFsc2UiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MzE2MzE5NzYsInNjb3BlIjpbIlduZG9BcHAiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.qwhi4QLiwL5nFIhzTYjasP5FnhGkUhVbpd0h-kMDEBTQRXX7No84Ibx4TQbAPrID8gwIIMl1ZU9D1Qnj4fQESxCuAL1ofI9koboIwKTFH1G0M5jZYUFnwSQ6JYAugcoltC_0xjWQDr2pBuzPYSwBc7AI4ja4wsDJLLK9hqWD7YEm-TpuXVse6AEHfxAXspeYCSu3RVMlOx66PrN3f5i00J7X_YlppwCGvRMfGO0k8Q2y0fnD0IxmFE6RzOVGB6JsE9ZX3w-JCv-dcbN7NJ9kQeKHLN0BgHjYYVGcEZDtuViu_s78Au0XvPA0t5-I_0x1xX6ndkZ3viOGmz2VXA7yRQ"
+//            }
+//        }else {
+//            headers["Authorization"] = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkMyMjRGNzI4Q0JDQjgxQzlEM0FEOEM4RDM4NDk0RDNDIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2MzE2MzE5NzYsImV4cCI6MTk0Njk5MTk3NiwiaXNzIjoiaHR0cHM6Ly93bmRvLm5ldDo1MDAwIiwiYXVkIjoiV25kb0FwcCIsImNsaWVudF9pZCI6IlduZG9BcHBfVG9rZW4iLCJzdWIiOiJmZDA1NGNmMi01NjE1LTljNjQtZDBlYy0zOWZlZjZmOWI0MDEiLCJhdXRoX3RpbWUiOjE2MzE2MzE5NzUsImlkcCI6ImxvY2FsIiwicm9sZSI6ImFkbWluIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJlbWFpbCI6ImFkbWluQGFicC5pbyIsImVtYWlsX3ZlcmlmaWVkIjoiRmFsc2UiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MzE2MzE5NzYsInNjb3BlIjpbIlduZG9BcHAiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsicHdkIl19.qwhi4QLiwL5nFIhzTYjasP5FnhGkUhVbpd0h-kMDEBTQRXX7No84Ibx4TQbAPrID8gwIIMl1ZU9D1Qnj4fQESxCuAL1ofI9koboIwKTFH1G0M5jZYUFnwSQ6JYAugcoltC_0xjWQDr2pBuzPYSwBc7AI4ja4wsDJLLK9hqWD7YEm-TpuXVse6AEHfxAXspeYCSu3RVMlOx66PrN3f5i00J7X_YlppwCGvRMfGO0k8Q2y0fnD0IxmFE6RzOVGB6JsE9ZX3w-JCv-dcbN7NJ9kQeKHLN0BgHjYYVGcEZDtuViu_s78Au0XvPA0t5-I_0x1xX6ndkZ3viOGmz2VXA7yRQ"
+//        }
         paramaters["client_id"] = "WndoApp_App"
         paramaters["client_secret"] = "1q2w3e*"
         paramaters["lang"] = Localizer.current

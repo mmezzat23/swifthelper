@@ -52,7 +52,11 @@ class UserRoot: Codable {
     public static func token() -> String? {
         let data = UserDefaults.standard.data(forKey: storeUserDefaults)
         let user = self.convertToModel(response: data)
-        return user.token
+        return user.responseData?.access_Token
+    }
+    public static func isrember() -> Bool? {
+        let data = UserDefaults.standard.bool(forKey: storeRememberUser)
+        return data
     }
     public static func loginAlert(closure: HandlerView? = nil) {
         let handler: HandlerView? = {

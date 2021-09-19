@@ -38,8 +38,14 @@ class SplashGIFViewController: BaseController {
     //Mark:- Methods
     func goToMainScreen() {
         initLang()
-        let vcc = self.controller(LoginController.self,storyboard: .auth)
-        self.push(vcc)
+        if (UserRoot.token() != nil && UserRoot.isrember() == true){
+            guard let scene = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+            push(scene)
+        }else {
+            UserRoot.save(response: Data())
+            let vcc = self.controller(LoginController.self,storyboard: .auth)
+            self.push(vcc)
+        }
         //        SVProgressHUD.dismiss()
         //        if case UserStatus.isEnterIntro = true {
         //            if case UserStatus.isLogged = true {

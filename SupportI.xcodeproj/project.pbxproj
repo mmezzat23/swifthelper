@@ -21,6 +21,7 @@
 		663D34F426EF552D008CE1B9 /* ConfirmpassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F326EF552D008CE1B9 /* ConfirmpassController.swift */; };
 		663D34F726EF57B0008CE1B9 /* PassconfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F626EF57B0008CE1B9 /* PassconfirmController.swift */; };
 		663D34FA26EF5F64008CE1B9 /* CodeverficationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F926EF5F64008CE1B9 /* CodeverficationController.swift */; };
+		6648B75D26F7895B0019338A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6648B75C26F7895B0019338A /* MainController.swift */; };
 		664A9DDF26EF674400CB7D3D /* AccountsuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */; };
 		7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709EB67244DA08E00CE7BB7 /* UIFont.swift */; };
 		77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6646F244D7B9100C44172 /* LanguangeEnum.swift */; };
@@ -242,6 +243,7 @@
 		663D34F326EF552D008CE1B9 /* ConfirmpassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmpassController.swift; sourceTree = "<group>"; };
 		663D34F626EF57B0008CE1B9 /* PassconfirmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassconfirmController.swift; sourceTree = "<group>"; };
 		663D34F926EF5F64008CE1B9 /* CodeverficationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeverficationController.swift; sourceTree = "<group>"; };
+		6648B75C26F7895B0019338A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsuccessController.swift; sourceTree = "<group>"; };
 		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
@@ -498,6 +500,14 @@
 			path = "ِAuth";
 			sourceTree = "<group>";
 		};
+		6648B75B26F789420019338A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6648B75C26F7895B0019338A /* MainController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		7709EB66244DA08E00CE7BB7 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -615,6 +625,7 @@
 			children = (
 				8050BCF120BF8A0000E355BE /* Core */,
 				663D34E126EF411D008CE1B9 /* ِAuth */,
+				6648B75B26F789420019338A /* Main */,
 				809098B223F99225000A8A71 /* CustomViewController.swift */,
 				143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */,
 			);
@@ -1313,6 +1324,7 @@
 				80A2FC30215841BC00223A77 /* AnimationDirectionType.swift in Sources */,
 				80D11D4722F0899900CACFD4 /* AppDelegateExtension.swift in Sources */,
 				80EA0059231DF7CD0008E68B /* PlacePickerModel.swift in Sources */,
+				6648B75D26F7895B0019338A /* MainController.swift in Sources */,
 				80A2FC50215841BC00223A77 /* EmailRule.swift in Sources */,
 				8050BC4D20BF89DA00E355BE /* ViewController.swift in Sources */,
 				E84EA53D24248DEF009D3E41 /* LocalizeDictionary.swift in Sources */,
