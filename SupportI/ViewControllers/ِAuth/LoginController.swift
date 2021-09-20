@@ -12,17 +12,22 @@ class LoginController: BaseController {
     
     @IBOutlet weak var emialOrPhoneTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var forget: UIButton!
     
     var viewModel : AuthViewModel?
     var parameters : [String : Any] = [:]
     var isrember = false
+    var attrs = [
+        NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
+    var attributedString = NSMutableAttributedString(string:"")
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         setup()
         bind()
-
-        // Do any additional setup after loading the view.
+        let buttonTitleStr = NSMutableAttributedString(string:"Forgot Password".localized, attributes:attrs)
+        attributedString.append(buttonTitleStr)
+        forget.setAttributedTitle(attributedString, for: .normal)
     }
      func setup() {
         viewModel = .init()

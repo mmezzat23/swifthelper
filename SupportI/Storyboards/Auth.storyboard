@@ -8,6 +8,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
+        <array key="Muli.ttf">
+            <string>Muli</string>
+        </array>
+        <array key="all_round.ttf">
+            <string>AllRoundGothicW03-Demi</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login Controller-->
         <scene sceneID="wRS-6q-KF4">
@@ -27,36 +38,36 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emd-Mr-SyG">
-                                        <rect key="frame" x="25" y="128" width="364" height="32.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <rect key="frame" x="25" y="128" width="364" height="33"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulx-fc-iGN">
-                                        <rect key="frame" x="25" y="50" width="364" height="32.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <rect key="frame" x="25" y="50" width="364" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-2l-g1k">
-                                        <rect key="frame" x="40" y="166.5" width="334" height="54"/>
+                                        <rect key="frame" x="40" y="167" width="334" height="49"/>
                                         <string key="text" base64-UTF8="YES">
 U2lnbiBpbiALd2l0aCB5b3VyIEVtYWlsIC8gUGhvbmUgbnVtYmVyIGFuZCBwYXNzd29yZCBvciBjb250
 aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
 </string>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbB-iR-pnD">
-                                        <rect key="frame" x="0.0" y="240.5" width="414" height="469.5"/>
+                                        <rect key="frame" x="0.0" y="236" width="414" height="489.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3W-ZZ-vBm">
                                                 <rect key="frame" x="25" y="42" width="364" height="50"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Email/Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-R0-QKD">
                                                         <rect key="frame" x="10" y="8" width="349" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter your Email/Phone"/>
@@ -92,7 +103,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="AJK-wO-ZX0"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -116,7 +127,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dF5-46-bVT">
                                                         <rect key="frame" x="10" y="8" width="349" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter your password"/>
@@ -152,7 +163,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="7pN-ao-JuZ"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -183,12 +194,12 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktn-Or-K2c">
-                                                <rect key="frame" x="55" y="194.5" width="102" height="25"/>
+                                                <rect key="frame" x="55" y="194.5" width="92.5" height="25"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="Jip-0r-LBD"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -196,12 +207,12 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Login With" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R26-zp-3gN">
-                                                <rect key="frame" x="162.5" y="324.5" width="96" height="25"/>
+                                                <rect key="frame" x="161.5" y="324.5" width="98.5" height="25"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="e5b-gz-P6J"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -209,31 +220,24 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have account?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="km5-PI-Wvp">
-                                                <rect key="frame" x="114.5" y="419.5" width="144" height="25"/>
+                                                <rect key="frame" x="112.5" y="439.5" width="148.5" height="25"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Ah8-4v-ARS"/>
                                                     <constraint firstAttribute="height" constant="25" id="o7a-8i-nwa"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Don't have account?"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ulo-4l-xuv">
-                                                <rect key="frame" x="281" y="192" width="115" height="30"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Forgot Password">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                                <integer key="NSUnderline" value="1"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulo-4l-xuv">
+                                                <rect key="frame" x="289" y="192.5" width="107" height="29"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
+                                                <state key="normal" title="Forgot Password">
+                                                    <color key="titleColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Forgot Password"/>
@@ -248,6 +252,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="jhU-3o-qNh"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -261,38 +266,74 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                     <action selector="loginClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="1wx-82-bCN"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VJY-7B-Ahh">
-                                                <rect key="frame" x="115.5" y="369.5" width="190" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VJY-7B-Ahh">
+                                                <rect key="frame" x="105.5" y="369.5" width="210" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o80-Mf-ORj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="VSA-Z8-m1y"/>
-                                                            <constraint firstAttribute="width" constant="30" id="yfb-vI-4AW"/>
+                                                            <constraint firstAttribute="height" constant="50" id="VSA-Z8-m1y"/>
+                                                            <constraint firstAttribute="width" constant="50" id="yfb-vI-4AW"/>
                                                         </constraints>
                                                         <state key="normal" image="icons8-apple-logo"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                <size key="value" width="0.0" height="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="loginWithAppleClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="hPU-qd-zdd"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h33-pU-0cs">
-                                                        <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="80" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="Tpi-fK-Kzd"/>
-                                                            <constraint firstAttribute="width" constant="30" id="hMv-UW-qPV"/>
+                                                            <constraint firstAttribute="height" constant="50" id="Tpi-fK-Kzd"/>
+                                                            <constraint firstAttribute="width" constant="50" id="hMv-UW-qPV"/>
                                                         </constraints>
                                                         <state key="normal" image="facebook-2"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                <size key="value" width="0.0" height="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="loginWithFacebookClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="2YJ-Ap-GCw"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wog-uD-gcf">
-                                                        <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="160" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="KaL-kq-VhZ"/>
-                                                            <constraint firstAttribute="height" constant="30" id="rSf-Ey-3Nj"/>
+                                                            <constraint firstAttribute="width" constant="50" id="KaL-kq-VhZ"/>
+                                                            <constraint firstAttribute="height" constant="50" id="rSf-Ey-3Nj"/>
                                                         </constraints>
                                                         <state key="normal" image="google-icon"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                <size key="value" width="0.0" height="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="loginWithGoogleClicked:" destination="jM4-PM-Frn" eventType="touchUpInside" id="WTj-T1-esT"/>
                                                         </connections>
@@ -300,10 +341,11 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxS-E3-Rhs">
-                                                <rect key="frame" x="263.5" y="417" width="54" height="30"/>
+                                                <rect key="frame" x="266" y="437" width="58" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="PJp-mL-SfB"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <state key="normal" title="Sign Up">
                                                     <color key="titleColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -389,6 +431,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="emialOrPhoneTxt" destination="zVP-R0-QKD" id="6Xl-qj-Ss9"/>
+                        <outlet property="forget" destination="ulo-4l-xuv" id="MDg-3g-Fz7"/>
                         <outlet property="passwordTxt" destination="dF5-46-bVT" id="s4v-Yn-7yG"/>
                     </connections>
                 </viewController>
@@ -432,8 +475,8 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6V-6j-Umu">
-                                        <rect key="frame" x="25" y="50" width="364" height="32.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <rect key="frame" x="25" y="50" width="364" height="33"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -441,8 +484,8 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete your details or continue with social media" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-JE-P6B">
-                                        <rect key="frame" x="40" y="88.5" width="334" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <rect key="frame" x="40" y="89" width="334" height="41.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -450,14 +493,14 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0w-Lm-fbv">
-                                        <rect key="frame" x="0.0" y="144.5" width="414" height="502"/>
+                                        <rect key="frame" x="0.0" y="150.5" width="414" height="522"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMl-LH-WUW">
                                                 <rect key="frame" x="25" y="42" width="364" height="50"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Email/Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xmD-95-VpQ">
                                                         <rect key="frame" x="10" y="8" width="349" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter your Email/Phone"/>
@@ -493,7 +536,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="pLd-GW-xfR"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -517,7 +560,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWj-gS-PKn">
                                                         <rect key="frame" x="10" y="8" width="349" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter username"/>
@@ -553,7 +596,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="s4y-wg-aq1"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -577,7 +620,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjR-cy-IfY">
                                                         <rect key="frame" x="10" y="8" width="349" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Enter your password"/>
@@ -613,7 +656,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="xSL-HL-bAk"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -633,12 +676,12 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Sign Up With" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-3L-xSy">
-                                                <rect key="frame" x="151" y="357" width="112.5" height="25"/>
+                                                <rect key="frame" x="145.5" y="357" width="123.5" height="25"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="146-U3-6Rk"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -646,13 +689,13 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have account?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-UY-fMr">
-                                                <rect key="frame" x="103.5" y="452" width="159" height="25"/>
+                                                <rect key="frame" x="95.5" y="472" width="175.5" height="25"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="U19-y9-kCN"/>
                                                     <constraint firstAttribute="height" constant="25" id="kZQ-Tf-Icc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -665,6 +708,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="ZLB-ps-X6u"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                                 <state key="normal" title="Sign Up">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -678,38 +722,74 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                     <action selector="signUpClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="QE3-Ai-ohI"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Lw-NM-Ra0">
-                                                <rect key="frame" x="112" y="402" width="190" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Lw-NM-Ra0">
+                                                <rect key="frame" x="102" y="402" width="210" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHe-7r-07g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="KqE-dq-6Rk"/>
-                                                            <constraint firstAttribute="height" constant="30" id="Nco-bT-1fo"/>
+                                                            <constraint firstAttribute="width" constant="50" id="KqE-dq-6Rk"/>
+                                                            <constraint firstAttribute="height" constant="50" id="Nco-bT-1fo"/>
                                                         </constraints>
                                                         <state key="normal" image="icons8-apple-logo"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                <size key="value" width="0.0" height="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signUpWithAppleClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="q4O-a8-uvi"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-ST-Dx9">
-                                                        <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="80" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="Tnb-n1-CHz"/>
-                                                            <constraint firstAttribute="height" constant="30" id="wmR-9P-QnT"/>
+                                                            <constraint firstAttribute="width" constant="50" id="Tnb-n1-CHz"/>
+                                                            <constraint firstAttribute="height" constant="50" id="wmR-9P-QnT"/>
                                                         </constraints>
                                                         <state key="normal" image="facebook-2"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                <size key="value" width="0.0" height="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signUpWithFacebookClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="jPq-p2-qXV"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulz-9X-LwQ">
-                                                        <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="160" y="0.0" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="UQS-Ow-ziq"/>
-                                                            <constraint firstAttribute="width" constant="30" id="efG-Nm-e1p"/>
+                                                            <constraint firstAttribute="height" constant="50" id="UQS-Ow-ziq"/>
+                                                            <constraint firstAttribute="width" constant="50" id="efG-Nm-e1p"/>
                                                         </constraints>
                                                         <state key="normal" image="google-icon"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                <size key="value" width="0.0" height="30"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signUpWithGoogleClicked:" destination="QeZ-0Z-lyV" eventType="touchUpInside" id="ca6-4d-xow"/>
                                                         </connections>
@@ -717,10 +797,11 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SiL-FT-ZAj">
-                                                <rect key="frame" x="267.5" y="449.5" width="38" height="30"/>
+                                                <rect key="frame" x="276" y="469.5" width="43" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="ePo-lM-zIN"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -769,8 +850,8 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMO-gf-UGe">
-                                        <rect key="frame" x="153.5" y="5" width="107" height="32.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <rect key="frame" x="170" y="5" width="74" height="27"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -778,7 +859,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bY-79-TmK">
-                                        <rect key="frame" x="20" y="6.5" width="30" height="30"/>
+                                        <rect key="frame" x="20" y="3.5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="GzJ-9q-K5Z"/>
                                             <constraint firstAttribute="height" constant="30" id="g3r-Or-Ffn"/>

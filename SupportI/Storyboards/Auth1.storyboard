@@ -8,6 +8,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
+        <array key="Muli.ttf">
+            <string>Muli</string>
+        </array>
+        <array key="all_round.ttf">
+            <string>AllRoundGothicW03-Demi</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Forgetpass Controller-->
         <scene sceneID="fK7-ah-u8m">
@@ -27,8 +38,8 @@
                                 <rect key="frame" x="0.0" y="-16" width="414" height="472"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgz-LZ-150">
-                                        <rect key="frame" x="120.33333333333333" y="80" width="173.33333333333337" height="21.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <rect key="frame" x="117" y="80" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -36,7 +47,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GQ-3c-QHC">
-                                        <rect key="frame" x="376" y="79" width="12" height="24"/>
+                                        <rect key="frame" x="376" y="78.666666666666657" width="12" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="4T7-NM-HI7"/>
                                             <constraint firstAttribute="width" constant="12" id="GKT-mK-mD5"/>
@@ -50,8 +61,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye4-4L-cIq">
-                                        <rect key="frame" x="340" y="82.333333333333329" width="28" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="340" y="82.333333333333329" width="28" height="16.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -59,8 +70,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbE-Z2-Nzv">
-                                        <rect key="frame" x="106.66666666666667" y="129.66666666666669" width="200.66666666666663" height="33.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <rect key="frame" x="100.33333333333333" y="129" width="213.33333333333337" height="32.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -68,8 +79,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your Email/Phone and we will send you a code to return to your account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYT-k9-DAW">
-                                        <rect key="frame" x="32" y="178.33333333333334" width="350" height="33.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="32" y="176.66666666666666" width="350" height="32.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -77,11 +88,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXv-xR-mhF">
-                                        <rect key="frame" x="32" y="247" width="350" height="50"/>
+                                        <rect key="frame" x="32" y="244.33333333333337" width="350" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Pe9-iA-Zdj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -97,12 +108,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email/Phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mme-QY-BxK">
-                                        <rect key="frame" x="50" y="237.66666666666666" width="100" height="17"/>
+                                        <rect key="frame" x="50" y="235" width="100" height="16.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="4xX-c1-9br"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -110,12 +121,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXh-em-sQK">
-                                        <rect key="frame" x="32" y="322" width="350" height="56"/>
+                                        <rect key="frame" x="32" y="319.33333333333331" width="350" height="56"/>
                                         <color key="backgroundColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="ThZ-Cd-iYk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                         <state key="normal" title="Send">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -130,11 +141,11 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wde-Iy-pJb">
-                                        <rect key="frame" x="70" y="403" width="274" height="40"/>
+                                        <rect key="frame" x="50" y="400.33333333333331" width="314" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNn-BT-FGB">
-                                                <rect key="frame" x="0.0" y="0.0" width="200.66666666666666" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="229.66666666666666" height="40"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -142,8 +153,8 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piK-w4-MBL">
-                                                <rect key="frame" x="205.66666666666669" y="0.0" width="68.333333333333314" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <rect key="frame" x="234.66666666666671" y="0.0" width="79.333333333333343" height="40"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -170,9 +181,9 @@
                                     <constraint firstAttribute="trailing" secondItem="aXh-em-sQK" secondAttribute="trailing" constant="32" id="OJu-HH-wfd"/>
                                     <constraint firstAttribute="trailing" secondItem="5GQ-3c-QHC" secondAttribute="trailing" constant="26" id="Qbh-xo-inV"/>
                                     <constraint firstItem="aXh-em-sQK" firstAttribute="top" secondItem="wXv-xR-mhF" secondAttribute="bottom" constant="25" id="Qx2-NL-Vtu"/>
-                                    <constraint firstItem="wde-Iy-pJb" firstAttribute="leading" secondItem="p44-Rs-eTK" secondAttribute="leading" constant="70" id="RJy-jQ-0FZ"/>
+                                    <constraint firstItem="wde-Iy-pJb" firstAttribute="leading" secondItem="p44-Rs-eTK" secondAttribute="leading" constant="50" id="RJy-jQ-0FZ"/>
                                     <constraint firstItem="wde-Iy-pJb" firstAttribute="top" secondItem="aXh-em-sQK" secondAttribute="bottom" constant="25" id="Tja-34-H6d"/>
-                                    <constraint firstAttribute="trailing" secondItem="wde-Iy-pJb" secondAttribute="trailing" constant="70" id="Tus-XR-G5y"/>
+                                    <constraint firstAttribute="trailing" secondItem="wde-Iy-pJb" secondAttribute="trailing" constant="50" id="Tus-XR-G5y"/>
                                     <constraint firstItem="5GQ-3c-QHC" firstAttribute="centerY" secondItem="Bgz-LZ-150" secondAttribute="centerY" id="ZGW-6n-tA1"/>
                                     <constraint firstItem="aXh-em-sQK" firstAttribute="leading" secondItem="p44-Rs-eTK" secondAttribute="leading" constant="32" id="eMj-ej-f6W"/>
                                     <constraint firstItem="DYT-k9-DAW" firstAttribute="top" secondItem="KbE-Z2-Nzv" secondAttribute="bottom" constant="15" id="fG6-iN-EFi"/>
@@ -222,18 +233,18 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 10764" translatesAutoresizingMaskIntoConstraints="NO" id="Xh2-sS-7dV">
-                                <rect key="frame" x="167" y="324" width="80" height="80"/>
+                                <rect key="frame" x="167" y="274" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="1c9-tq-gcj"/>
                                     <constraint firstAttribute="height" constant="80" id="JSp-FV-Cb8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-5E-CMd">
-                                <rect key="frame" x="11" y="474" width="392" height="67"/>
+                                <rect key="frame" x="11" y="424" width="392" height="66"/>
                                 <string key="text" base64-UTF8="YES">
 Q29kZSBIYXMgQmVlbiBTZW50LAtDaGVjayBZb3VyIEVtYWlsL1Bob25lA
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -245,11 +256,11 @@ Q29kZSBIYXMgQmVlbiBTZW50LAtDaGVjayBZb3VyIEVtYWlsL1Bob25lA
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehN-K9-smN">
-                                <rect key="frame" x="37" y="603" width="340" height="43"/>
+                                <rect key="frame" x="37" y="552" width="340" height="53.333333333333371"/>
                                 <string key="text" base64-UTF8="YES">
 V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -261,12 +272,13 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfX-CB-nuR">
-                                <rect key="frame" x="112" y="678" width="190" height="56"/>
+                                <rect key="frame" x="112" y="637.33333333333337" width="190" height="56"/>
                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="QiD-vc-VLQ"/>
                                     <constraint firstAttribute="width" constant="190" id="ncm-As-FJG"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -286,7 +298,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                         <constraints>
                             <constraint firstItem="Xh2-sS-7dV" firstAttribute="centerX" secondItem="OW1-x6-oB8" secondAttribute="centerX" id="0IZ-gu-dMe"/>
                             <constraint firstItem="igs-tV-fAv" firstAttribute="trailing" secondItem="ehN-K9-smN" secondAttribute="trailing" constant="37" id="Dln-Bd-fsJ"/>
-                            <constraint firstItem="Xh2-sS-7dV" firstAttribute="top" secondItem="igs-tV-fAv" secondAttribute="top" constant="280" id="W9H-Zo-7U8"/>
+                            <constraint firstItem="Xh2-sS-7dV" firstAttribute="top" secondItem="igs-tV-fAv" secondAttribute="top" constant="230" id="W9H-Zo-7U8"/>
                             <constraint firstItem="igs-tV-fAv" firstAttribute="trailing" secondItem="SLU-5E-CMd" secondAttribute="trailing" constant="11" id="cQ4-9X-8Yq"/>
                             <constraint firstItem="igs-tV-fAv" firstAttribute="trailing" secondItem="DJY-SO-QfG" secondAttribute="trailing" id="dTx-7e-8de"/>
                             <constraint firstItem="igs-tV-fAv" firstAttribute="bottom" secondItem="DJY-SO-QfG" secondAttribute="bottom" id="e1R-qG-Iia"/>
@@ -360,8 +372,8 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                 <rect key="frame" x="0.0" y="-16" width="414" height="472"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avY-u3-6Nu">
-                                        <rect key="frame" x="120.33333333333333" y="80" width="173.33333333333337" height="21.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <rect key="frame" x="117" y="80" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -369,7 +381,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2N-qc-ybg">
-                                        <rect key="frame" x="376" y="79" width="12" height="24"/>
+                                        <rect key="frame" x="376" y="78.666666666666657" width="12" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="1EC-EB-ai1"/>
                                             <constraint firstAttribute="width" constant="12" id="DFx-Ff-Ryb"/>
@@ -383,8 +395,8 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpl-fy-hmx">
-                                        <rect key="frame" x="340" y="82.333333333333329" width="28" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="340" y="82.333333333333329" width="28" height="16.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -392,8 +404,8 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjR-9d-orf">
-                                        <rect key="frame" x="97.333333333333329" y="129.66666666666669" width="219.66666666666669" height="33.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <rect key="frame" x="91.333333333333329" y="129" width="231.33333333333337" height="32.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -401,8 +413,8 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your new password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ge-FM-5hp">
-                                        <rect key="frame" x="32" y="178.33333333333334" width="350" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="32" y="176.66666666666666" width="350" height="16.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -410,11 +422,11 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rp2-Ao-scQ">
-                                        <rect key="frame" x="32" y="230.33333333333334" width="350" height="50.000000000000028"/>
+                                        <rect key="frame" x="32" y="228" width="350" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KDN-9B-2Ih"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -430,12 +442,12 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryZ-pg-uhg">
-                                        <rect key="frame" x="50" y="221" width="100" height="17"/>
+                                        <rect key="frame" x="50" y="218.66666666666666" width="100" height="16.333333333333343"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Bf9-Sg-8vI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -443,12 +455,12 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed7-Mo-Hhk">
-                                        <rect key="frame" x="32" y="305.33333333333331" width="350" height="56"/>
+                                        <rect key="frame" x="32" y="303" width="350" height="56"/>
                                         <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="ZPI-l6-o1e"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                         <state key="normal" title="Confirm">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -463,11 +475,11 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vfe-TG-fHH">
-                                        <rect key="frame" x="70" y="386.33333333333331" width="274" height="40"/>
+                                        <rect key="frame" x="50" y="384" width="314" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbq-rf-Hb2">
-                                                <rect key="frame" x="0.0" y="0.0" width="200.66666666666666" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="229.66666666666666" height="40"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -475,8 +487,8 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXe-bF-VKn">
-                                                <rect key="frame" x="205.66666666666669" y="0.0" width="68.333333333333314" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <rect key="frame" x="234.66666666666671" y="0.0" width="79.333333333333343" height="40"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -489,7 +501,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock" translatesAutoresizingMaskIntoConstraints="NO" id="J6K-pn-Wmj">
-                                        <rect key="frame" x="354" y="246.33333333333334" width="15" height="18.000000000000028"/>
+                                        <rect key="frame" x="354" y="244" width="15" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="93D-c7-NJv"/>
                                             <constraint firstAttribute="height" constant="18" id="FHW-gr-Ciq"/>
@@ -498,8 +510,8 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="vfe-TG-fHH" firstAttribute="leading" secondItem="AuV-J2-aK7" secondAttribute="leading" constant="70" id="KHV-8p-LVp"/>
-                                    <constraint firstAttribute="trailing" secondItem="vfe-TG-fHH" secondAttribute="trailing" constant="70" id="KkO-Pv-JlT"/>
+                                    <constraint firstItem="vfe-TG-fHH" firstAttribute="leading" secondItem="AuV-J2-aK7" secondAttribute="leading" constant="50" id="KHV-8p-LVp"/>
+                                    <constraint firstAttribute="trailing" secondItem="vfe-TG-fHH" secondAttribute="trailing" constant="50" id="KkO-Pv-JlT"/>
                                     <constraint firstAttribute="trailing" secondItem="4ge-FM-5hp" secondAttribute="trailing" constant="32" id="O7V-58-F1R"/>
                                     <constraint firstItem="LjR-9d-orf" firstAttribute="centerX" secondItem="AuV-J2-aK7" secondAttribute="centerX" id="SpZ-gB-hTX"/>
                                     <constraint firstItem="Rp2-Ao-scQ" firstAttribute="top" secondItem="4ge-FM-5hp" secondAttribute="bottom" constant="35" id="ZWz-8G-fNH"/>
@@ -582,18 +594,18 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 10765" translatesAutoresizingMaskIntoConstraints="NO" id="NQS-ai-F2d">
-                                <rect key="frame" x="167" y="324" width="80" height="80"/>
+                                <rect key="frame" x="167" y="294" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="HSb-OL-sev"/>
                                     <constraint firstAttribute="height" constant="80" id="TXL-UM-EJp"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgz-A7-Lhh">
-                                <rect key="frame" x="11" y="474" width="392" height="67"/>
+                                <rect key="frame" x="11" y="444" width="392" height="66"/>
                                 <string key="text" base64-UTF8="YES">
 WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -605,8 +617,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now you're ready to go shopping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4x-xl-BCk">
-                                <rect key="frame" x="37" y="603" width="340" height="21.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="37" y="572" width="340" height="26.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -614,12 +626,13 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zN-In-FpY">
-                                <rect key="frame" x="112" y="656.66666666666663" width="190" height="56"/>
+                                <rect key="frame" x="112" y="630.66666666666663" width="190" height="56"/>
                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="aGw-Co-7xS"/>
                                     <constraint firstAttribute="width" constant="190" id="y9f-xg-ZQ9"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -649,7 +662,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                             <constraint firstItem="0zN-In-FpY" firstAttribute="centerX" secondItem="gkj-sy-hAW" secondAttribute="centerX" id="hNT-IK-Gwd"/>
                             <constraint firstItem="ciM-A7-CZo" firstAttribute="leading" secondItem="9Nu-Qj-zs0" secondAttribute="leading" id="jKc-NB-afm"/>
                             <constraint firstItem="xgz-A7-Lhh" firstAttribute="leading" secondItem="9Nu-Qj-zs0" secondAttribute="leading" constant="11" id="krY-YN-V8Y"/>
-                            <constraint firstItem="NQS-ai-F2d" firstAttribute="top" secondItem="9Nu-Qj-zs0" secondAttribute="top" constant="280" id="mAM-rr-A8t"/>
+                            <constraint firstItem="NQS-ai-F2d" firstAttribute="top" secondItem="9Nu-Qj-zs0" secondAttribute="top" constant="250" id="mAM-rr-A8t"/>
                             <constraint firstItem="9Nu-Qj-zs0" firstAttribute="trailing" secondItem="M4x-xl-BCk" secondAttribute="trailing" constant="37" id="rph-O1-iDy"/>
                         </constraints>
                     </view>
@@ -695,8 +708,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                 <rect key="frame" x="0.0" y="-16" width="414" height="472"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE VERIFICATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9J-nW-zSN">
-                                        <rect key="frame" x="122.66666666666669" y="80" width="169" height="21.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <rect key="frame" x="116.33333333333333" y="80" width="181.33333333333337" height="26.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -704,7 +717,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMg-Sz-NqD">
-                                        <rect key="frame" x="376" y="79" width="12" height="24"/>
+                                        <rect key="frame" x="376" y="81.333333333333329" width="12" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0eP-1g-oC3"/>
                                             <constraint firstAttribute="width" constant="12" id="8yR-my-Vgg"/>
@@ -718,8 +731,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbu-9C-A7Q">
-                                        <rect key="frame" x="340" y="82.333333333333329" width="28" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="339.66666666666669" y="83" width="28.333333333333314" height="20.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -727,8 +740,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE VERIFICATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07p-yf-6lE">
-                                        <rect key="frame" x="76.666666666666657" y="121.66666666666667" width="260.66666666666674" height="33.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <rect key="frame" x="71.333333333333343" y="126.66666666666669" width="271.66666666666663" height="33"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -736,8 +749,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent your code to +1 898 860 **" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogs-iJ-5oJ">
-                                        <rect key="frame" x="32" y="170.33333333333334" width="350" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="32" y="174.66666666666666" width="350" height="20.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -745,11 +758,11 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Y2-03-8Gr">
-                                        <rect key="frame" x="57" y="202.33333333333334" width="300" height="60.000000000000028"/>
+                                        <rect key="frame" x="57" y="210.33333333333334" width="300" height="60.000000000000028"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l2j-ow-kqH">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -765,7 +778,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFB-dd-Bmj">
                                                 <rect key="frame" x="80" y="0.0" width="60" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -781,7 +794,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C4k-cI-cMW">
                                                 <rect key="frame" x="160" y="0.0" width="60" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -797,7 +810,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0r-UT-48p">
                                                 <rect key="frame" x="240" y="0.0" width="60" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -817,25 +830,25 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                             <constraint firstAttribute="height" constant="60" id="kcK-gs-T5S"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TwV-5x-jfj">
-                                        <rect key="frame" x="50" y="274.33333333333331" width="314" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="TwV-5x-jfj">
+                                        <rect key="frame" x="90" y="282.33333333333331" width="234" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This code will expired in" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmr-8u-Pzu">
-                                                <rect key="frame" x="0.0" y="0.0" width="245" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This code will expired in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmr-8u-Pzu">
+                                                <rect key="frame" x="0.0" y="0.0" width="189.33333333333334" height="40"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="This code will expired in"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-Cd-P0o">
-                                                <rect key="frame" x="250" y="0.0" width="64" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-Cd-P0o">
+                                                <rect key="frame" x="189.33333333333331" y="0.0" width="44.666666666666657" height="40"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="00:30"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="3:00"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
@@ -844,12 +857,12 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="704-6N-5p9">
-                                        <rect key="frame" x="30" y="326.33333333333331" width="354" height="56"/>
+                                        <rect key="frame" x="30" y="334.33333333333331" width="354" height="56"/>
                                         <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="mEz-vt-zVE"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                         <state key="normal" title="Confirm">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -864,8 +877,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend OTP Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeH-tU-UDt">
-                                        <rect key="frame" x="148" y="440" width="118" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="147.33333333333334" y="436.33333333333331" width="119.66666666666666" height="20.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -875,14 +888,14 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="TwV-5x-jfj" firstAttribute="leading" secondItem="kyr-wq-svk" secondAttribute="leading" constant="50" id="54B-v6-KrH"/>
+                                    <constraint firstItem="TwV-5x-jfj" firstAttribute="leading" secondItem="kyr-wq-svk" secondAttribute="leading" constant="90" id="54B-v6-KrH"/>
                                     <constraint firstItem="ogs-iJ-5oJ" firstAttribute="top" secondItem="07p-yf-6lE" secondAttribute="bottom" constant="15" id="93t-9h-51Q"/>
                                     <constraint firstItem="TwV-5x-jfj" firstAttribute="top" secondItem="0Y2-03-8Gr" secondAttribute="bottom" constant="12" id="Aqg-Uj-a7A"/>
                                     <constraint firstItem="HMg-Sz-NqD" firstAttribute="centerY" secondItem="N9J-nW-zSN" secondAttribute="centerY" id="C3w-NJ-fnp"/>
                                     <constraint firstItem="704-6N-5p9" firstAttribute="leading" secondItem="kyr-wq-svk" secondAttribute="leading" constant="30" id="E55-fU-FOT"/>
                                     <constraint firstItem="07p-yf-6lE" firstAttribute="centerX" secondItem="kyr-wq-svk" secondAttribute="centerX" id="GnR-E6-2Od"/>
                                     <constraint firstAttribute="trailing" secondItem="704-6N-5p9" secondAttribute="trailing" constant="30" id="IFh-Vv-qgJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="TwV-5x-jfj" secondAttribute="trailing" constant="50" id="O0P-J9-YqN"/>
+                                    <constraint firstAttribute="trailing" secondItem="TwV-5x-jfj" secondAttribute="trailing" constant="90" id="O0P-J9-YqN"/>
                                     <constraint firstItem="ogs-iJ-5oJ" firstAttribute="leading" secondItem="kyr-wq-svk" secondAttribute="leading" constant="32" id="XjS-GF-bCQ"/>
                                     <constraint firstItem="N9J-nW-zSN" firstAttribute="top" secondItem="kyr-wq-svk" secondAttribute="top" constant="80" id="ZNc-40-41a"/>
                                     <constraint firstItem="0Y2-03-8Gr" firstAttribute="centerX" secondItem="kyr-wq-svk" secondAttribute="centerX" id="Zyl-RF-YlE"/>
@@ -961,15 +974,15 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 10766" translatesAutoresizingMaskIntoConstraints="NO" id="qXa-xO-Fmw">
-                                <rect key="frame" x="167" y="324" width="80" height="80"/>
+                                <rect key="frame" x="167" y="294" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="qyO-SR-kWG"/>
                                     <constraint firstAttribute="width" constant="80" id="tlx-wu-6vu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Is Created Successfuly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVD-OQ-ipB">
-                                <rect key="frame" x="30" y="474" width="354" height="67"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <rect key="frame" x="30" y="444" width="354" height="66"/>
+                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -977,8 +990,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now you're ready to go shopping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrn-VI-mE6">
-                                <rect key="frame" x="37" y="603" width="340" height="21.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="37" y="572" width="340" height="26.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -986,12 +999,13 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCZ-r2-DnD">
-                                <rect key="frame" x="112" y="656.66666666666663" width="190" height="56"/>
+                                <rect key="frame" x="112" y="630.66666666666663" width="190" height="56"/>
                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="5V5-VU-yI4"/>
                                     <constraint firstAttribute="width" constant="190" id="UQ7-dQ-Zfs"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="18"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1022,7 +1036,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                             <constraint firstItem="WCZ-r2-DnD" firstAttribute="centerX" secondItem="uTf-If-Ymf" secondAttribute="centerX" id="izT-Ny-ekb"/>
                             <constraint firstItem="MVD-OQ-ipB" firstAttribute="top" secondItem="qXa-xO-Fmw" secondAttribute="bottom" constant="70" id="jh1-t9-HXj"/>
                             <constraint firstItem="qXa-xO-Fmw" firstAttribute="centerX" secondItem="uTf-If-Ymf" secondAttribute="centerX" id="jqU-g0-SEf"/>
-                            <constraint firstItem="qXa-xO-Fmw" firstAttribute="top" secondItem="fPO-0m-YEV" secondAttribute="top" constant="280" id="o8A-aU-Ufk"/>
+                            <constraint firstItem="qXa-xO-Fmw" firstAttribute="top" secondItem="fPO-0m-YEV" secondAttribute="top" constant="250" id="o8A-aU-Ufk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BS6-LC-gj9"/>

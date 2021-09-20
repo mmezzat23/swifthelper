@@ -12,6 +12,7 @@ class AccountsuccessController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
 
         // Do any additional setup after loading the view.
     }

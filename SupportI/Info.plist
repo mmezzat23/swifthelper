@@ -54,5 +54,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIAppFonts</key>
+        <array>
+            <string>Multi-Bold.ttf</string>
+            <string>Multi-BoldItalic.ttf</string>
+            <string>Multi-ExtraLight.ttf</string>
+            <string>Multi-ExtraLightItalic.ttf</string>
+            <string>Multi-Italic.ttf</string>
+            <string>Multi-Light.ttf</string>
+            <string>Multi-LightItalic.ttf</string>
+            <string>Multi-semi-BoldItalic.ttf</string>
+            <string>Multi-SemiBold.ttf</string>
+            <string>Multi.ttf</string>
+            <string>all_round.ttf</string>
+        </array>
 </dict>
 </plist>

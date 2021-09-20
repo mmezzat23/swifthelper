@@ -28,7 +28,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     var attrs = [
         NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
     var attributedString = NSMutableAttributedString(string:"")
-
+    var timestamp = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -43,6 +43,11 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         code2.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         code3.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         code4.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        if (isCommingFromForgetPassword == true){
+            timestamp = 300
+        }else{
+            timestamp = 120
+        }
        starttime()
         resend.UIViewAction { [self] in
             
@@ -59,12 +64,12 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     
     func starttime() {
         self.time.isHidden = false
-        timerHelper = .init(seconds: 1, numberOfCycle: 120, closure: { [weak self] (cycle) in
-            if cycle >= 60 {
-                self?.time.text = "01:\(cycle-60)"
-            } else {
-                self?.time.text = "00:\(cycle)"
-            }
+        timerHelper = .init(seconds: 1, numberOfCycle: timestamp, closure: { [weak self] (cycle) in
+//            if cycle >= 60 {
+                self?.time.text = "0\(cycle/60):\(cycle%60)"
+//            } else {
+//                self?.time.text = "00:\(cycle)"
+//            }
             if cycle == 0 {
                 self?.time.isHidden = true
             }

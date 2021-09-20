@@ -23,6 +23,7 @@
 		663D34FA26EF5F64008CE1B9 /* CodeverficationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F926EF5F64008CE1B9 /* CodeverficationController.swift */; };
 		6648B75D26F7895B0019338A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6648B75C26F7895B0019338A /* MainController.swift */; };
 		664A9DDF26EF674400CB7D3D /* AccountsuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */; };
+		665163C726F88558007B69C2 /* all_round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665163C626F88558007B69C2 /* all_round.ttf */; };
 		7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709EB67244DA08E00CE7BB7 /* UIFont.swift */; };
 		77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6646F244D7B9100C44172 /* LanguangeEnum.swift */; };
 		8026194920E9796300BE7A5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8026194820E9796300BE7A5E /* README.md */; };
@@ -245,6 +246,17 @@
 		663D34F926EF5F64008CE1B9 /* CodeverficationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeverficationController.swift; sourceTree = "<group>"; };
 		6648B75C26F7895B0019338A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsuccessController.swift; sourceTree = "<group>"; };
+		665163C626F88558007B69C2 /* all_round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = all_round.ttf; sourceTree = "<group>"; };
+		665163C926F88586007B69C2 /* Muli-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		665163CA26F88586007B69C2 /* Muli-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-BoldItalic.ttf"; sourceTree = "<group>"; };
+		665163CB26F88586007B69C2 /* Muli-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Italic.ttf"; sourceTree = "<group>"; };
+		665163CC26F88587007B69C2 /* Muli-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Light.ttf"; sourceTree = "<group>"; };
+		665163CD26F88587007B69C2 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
+		665163CE26F88587007B69C2 /* Muli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Muli.ttf; sourceTree = "<group>"; };
+		665163CF26F88588007B69C2 /* Muli-Semi-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Semi-BoldItalic.ttf"; sourceTree = "<group>"; };
+		665163D026F88588007B69C2 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
+		665163D126F88588007B69C2 /* Muli-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLight.ttf"; sourceTree = "<group>"; };
+		665163D226F88588007B69C2 /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
 		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
 		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -480,6 +492,17 @@
 		663598DD26EE4D79002D4DA0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				665163D026F88588007B69C2 /* Muli-Bold.ttf */,
+				665163CA26F88586007B69C2 /* Muli-BoldItalic.ttf */,
+				665163D126F88588007B69C2 /* Muli-ExtraLight.ttf */,
+				665163C926F88586007B69C2 /* Muli-ExtraLightItalic.ttf */,
+				665163CB26F88586007B69C2 /* Muli-Italic.ttf */,
+				665163CC26F88587007B69C2 /* Muli-Light.ttf */,
+				665163D226F88588007B69C2 /* Muli-LightItalic.ttf */,
+				665163CF26F88588007B69C2 /* Muli-Semi-BoldItalic.ttf */,
+				665163CD26F88587007B69C2 /* Muli-SemiBold.ttf */,
+				665163CE26F88587007B69C2 /* Muli.ttf */,
+				665163C626F88558007B69C2 /* all_round.ttf */,
 				663D34E626EF4449008CE1B9 /* WNDo GIF.gif */,
 			);
 			path = Resources;
@@ -1223,6 +1246,7 @@
 				663D34EA26EF4596008CE1B9 /* Auth1.storyboard in Resources */,
 				143D3E0326EF8AC20031C74E /* Auth.storyboard in Resources */,
 				80A2FC40215841BC00223A77 /* Radio.xib in Resources */,
+				665163C726F88558007B69C2 /* all_round.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
