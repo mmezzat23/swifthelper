@@ -24,6 +24,7 @@
 		6648B75D26F7895B0019338A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6648B75C26F7895B0019338A /* MainController.swift */; };
 		664A9DDF26EF674400CB7D3D /* AccountsuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */; };
 		665163C726F88558007B69C2 /* all_round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665163C626F88558007B69C2 /* all_round.ttf */; };
+		6684EF8126F9E0D7005B4122 /* Profilebuyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6684EF8026F9E0D7005B4122 /* Profilebuyer.swift */; };
 		7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709EB67244DA08E00CE7BB7 /* UIFont.swift */; };
 		77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6646F244D7B9100C44172 /* LanguangeEnum.swift */; };
 		8026194920E9796300BE7A5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8026194820E9796300BE7A5E /* README.md */; };
@@ -257,6 +258,7 @@
 		665163D026F88588007B69C2 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
 		665163D126F88588007B69C2 /* Muli-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLight.ttf"; sourceTree = "<group>"; };
 		665163D226F88588007B69C2 /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
+		6684EF8026F9E0D7005B4122 /* Profilebuyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profilebuyer.swift; sourceTree = "<group>"; };
 		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
 		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -531,6 +533,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		6684EF7A26F9E077005B4122 /* Buyer */ = {
+			isa = PBXGroup;
+			children = (
+				6684EF8026F9E0D7005B4122 /* Profilebuyer.swift */,
+			);
+			path = Buyer;
+			sourceTree = "<group>";
+		};
 		7709EB66244DA08E00CE7BB7 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,6 +656,7 @@
 		8050BCF020BF8A0000E355BE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6684EF7A26F9E077005B4122 /* Buyer */,
 				8050BCF120BF8A0000E355BE /* Core */,
 				663D34E126EF411D008CE1B9 /* ِAuth */,
 				6648B75B26F789420019338A /* Main */,
@@ -1432,6 +1443,7 @@
 				80DA0147211A888600817038 /* CollectionExtensions.swift in Sources */,
 				80A2FBF7215841BC00223A77 /* ARCarMovementDelegate.swift in Sources */,
 				80A2FC37215841BC00223A77 /* UINavigationControllerExtension.swift in Sources */,
+				6684EF8126F9E0D7005B4122 /* Profilebuyer.swift in Sources */,
 				80A2FC0C215841BC00223A77 /* MultiSelectImagesHelper.swift in Sources */,
 				80A2FBF5215841BC00223A77 /* AddressHelper.swift in Sources */,
 				8050BC5320BF89DA00E355BE /* SupportI.xcdatamodeld in Sources */,
