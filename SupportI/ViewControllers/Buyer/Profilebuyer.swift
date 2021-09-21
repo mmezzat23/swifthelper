@@ -30,6 +30,7 @@ class Profilebuyer: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
+        onclick()
 
         // Do any additional setup after loading the view.
     }
@@ -40,5 +41,12 @@ class Profilebuyer: BaseController {
     }
     
     @IBAction func back(_ sender: Any) {
+    }
+    
+    func onclick(){
+        help.UIViewAction {
+            let vcc = self.controller(Help.self,storyboard: .setting)
+            self.push(vcc)
+        }
     }
 }

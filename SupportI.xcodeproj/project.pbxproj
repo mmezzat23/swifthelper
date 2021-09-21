@@ -12,6 +12,7 @@
 		143D3E0626EF8C460031C74E /* SplashGIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */; };
 		143D3E6726F0A9BF0031C74E /* Auth1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */; };
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
+		662C538C26FA0D1000AFC952 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C538B26FA0D1000AFC952 /* About.swift */; };
 		66376A8526EA0A2F0012DA28 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */; };
 		66376A8826EA0CDD0012DA28 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8726EA0CDD0012DA28 /* LoginController.swift */; };
 		663D34E726EF4449008CE1B9 /* WNDo GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 663D34E626EF4449008CE1B9 /* WNDo GIF.gif */; };
@@ -25,6 +26,8 @@
 		664A9DDF26EF674400CB7D3D /* AccountsuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */; };
 		665163C726F88558007B69C2 /* all_round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665163C626F88558007B69C2 /* all_round.ttf */; };
 		6684EF8126F9E0D7005B4122 /* Profilebuyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6684EF8026F9E0D7005B4122 /* Profilebuyer.swift */; };
+		669034E126F9FF3D006A861A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669034E026F9FF3D006A861A /* Setting.storyboard */; };
+		669034E526F9FF86006A861A /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669034E426F9FF86006A861A /* Help.swift */; };
 		7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709EB67244DA08E00CE7BB7 /* UIFont.swift */; };
 		77A66470244D7B9100C44172 /* LanguangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6646F244D7B9100C44172 /* LanguangeEnum.swift */; };
 		8026194920E9796300BE7A5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8026194820E9796300BE7A5E /* README.md */; };
@@ -236,6 +239,7 @@
 		143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashGIFViewController.swift; sourceTree = "<group>"; };
 		143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth1ViewModel.swift; sourceTree = "<group>"; };
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
+		662C538B26FA0D1000AFC952 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		66376A8726EA0CDD0012DA28 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		663D34E626EF4449008CE1B9 /* WNDo GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "WNDo GIF.gif"; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 		665163D126F88588007B69C2 /* Muli-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLight.ttf"; sourceTree = "<group>"; };
 		665163D226F88588007B69C2 /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
 		6684EF8026F9E0D7005B4122 /* Profilebuyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profilebuyer.swift; sourceTree = "<group>"; };
+		669034E026F9FF3D006A861A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		669034E426F9FF86006A861A /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
 		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -541,6 +547,15 @@
 			path = Buyer;
 			sourceTree = "<group>";
 		};
+		669034E326F9FF6F006A861A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				669034E426F9FF86006A861A /* Help.swift */,
+				662C538B26FA0D1000AFC952 /* About.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		7709EB66244DA08E00CE7BB7 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,6 +671,7 @@
 		8050BCF020BF8A0000E355BE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				669034E326F9FF6F006A861A /* Setting */,
 				6684EF7A26F9E077005B4122 /* Buyer */,
 				8050BCF120BF8A0000E355BE /* Core */,
 				663D34E126EF411D008CE1B9 /* ِAuth */,
@@ -1152,6 +1168,7 @@
 				8050BC4E20BF89DA00E355BE /* Main.storyboard */,
 				E84EA52624247949009D3E41 /* Storyboards.swift */,
 				663D34E926EF4596008CE1B9 /* Auth1.storyboard */,
+				669034E026F9FF3D006A861A /* Setting.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1258,6 +1275,7 @@
 				143D3E0326EF8AC20031C74E /* Auth.storyboard in Resources */,
 				80A2FC40215841BC00223A77 /* Radio.xib in Resources */,
 				665163C726F88558007B69C2 /* all_round.ttf in Resources */,
+				669034E126F9FF3D006A861A /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,6 +1379,7 @@
 				80EA0059231DF7CD0008E68B /* PlacePickerModel.swift in Sources */,
 				6648B75D26F7895B0019338A /* MainController.swift in Sources */,
 				80A2FC50215841BC00223A77 /* EmailRule.swift in Sources */,
+				669034E526F9FF86006A861A /* Help.swift in Sources */,
 				8050BC4D20BF89DA00E355BE /* ViewController.swift in Sources */,
 				E84EA53D24248DEF009D3E41 /* LocalizeDictionary.swift in Sources */,
 				80A2FC23215841BC00223A77 /* SocialError.swift in Sources */,
@@ -1398,6 +1417,7 @@
 				80DA014B211A888600817038 /* FloatExtensions.swift in Sources */,
 				80A2FBF1215841BC00223A77 /* TimerHelper.swift in Sources */,
 				E84EA52724247949009D3E41 /* Storyboards.swift in Sources */,
+				662C538C26FA0D1000AFC952 /* About.swift in Sources */,
 				80A2FC4A215841BC00223A77 /* UIValidation.swift in Sources */,
 				80DA0148211A888600817038 /* SwiftStdlibDeprecated.swift in Sources */,
 				8037F10120BFB5B800162BA9 /* ViewModelProtocol.swift in Sources */,
