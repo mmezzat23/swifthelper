@@ -14,7 +14,7 @@ class Logoutconfirm: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
-        let when = DispatchTime.now() + 5
+        let when = DispatchTime.now() + 3
         DispatchQueue.main.asyncAfter(deadline: when){
             self.dismiss(animated: true, completion: nil)
             let controller = UIStoryboard(name: "Auth", bundle: nil).instantiateInitialViewController()
