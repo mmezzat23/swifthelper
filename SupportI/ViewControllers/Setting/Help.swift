@@ -16,11 +16,16 @@ class Help: BaseController {
     @IBOutlet weak var privacy: UIView!
     @IBOutlet weak var logout: UIView!
     @IBOutlet weak var sendmessage: UIView!
+    @IBOutlet weak var logouthight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         onclick()
+        if (UserRoot.token() == nil){
+            logouthight.constant = 0
+            logout.isHidden = true
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -44,6 +49,10 @@ class Help: BaseController {
         sendmessage.UIViewAction {
             let vcc = self.controller(Contactus.self,storyboard: .setting)
             self.push(vcc)
+        }
+        logout.UIViewAction { [self] in
+            let vcc = self.pushViewController(Logout.self,storyboard: .setting)
+            pushPop(vcr: vcc)
         }
     }
 }

@@ -12,6 +12,8 @@
 		143D3E0626EF8C460031C74E /* SplashGIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */; };
 		143D3E6726F0A9BF0031C74E /* Auth1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */; };
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
+		660336D326FB49F000411ADE /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660336D226FB49F000411ADE /* Logout.swift */; };
+		660336D626FB4BC100411ADE /* Logoutconfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660336D526FB4BC100411ADE /* Logoutconfirm.swift */; };
 		662A036326FB2351002493D7 /* Faq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A036226FB2351002493D7 /* Faq.swift */; };
 		662A036726FB267F002493D7 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A036526FB267F002493D7 /* FaqTableViewCell.swift */; };
 		662A036826FB267F002493D7 /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662A036626FB267F002493D7 /* FaqTableViewCell.xib */; };
@@ -245,6 +247,8 @@
 		143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashGIFViewController.swift; sourceTree = "<group>"; };
 		143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth1ViewModel.swift; sourceTree = "<group>"; };
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
+		660336D226FB49F000411ADE /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
+		660336D526FB4BC100411ADE /* Logoutconfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logoutconfirm.swift; sourceTree = "<group>"; };
 		662A036226FB2351002493D7 /* Faq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faq.swift; sourceTree = "<group>"; };
 		662A036526FB267F002493D7 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		662A036626FB267F002493D7 /* FaqTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
@@ -568,6 +572,8 @@
 				669CDB7226FB2CC500E1081D /* Terms.swift */,
 				669CDB7526FB2CD500E1081D /* Privacy.swift */,
 				669CDB7826FB2F6500E1081D /* Contactus.swift */,
+				660336D226FB49F000411ADE /* Logout.swift */,
+				660336D526FB4BC100411ADE /* Logoutconfirm.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1492,6 +1498,7 @@
 				80A2FBF5215841BC00223A77 /* AddressHelper.swift in Sources */,
 				8050BC5320BF89DA00E355BE /* SupportI.xcdatamodeld in Sources */,
 				80A2FC05215841BC00223A77 /* BaseApi.swift in Sources */,
+				660336D626FB4BC100411ADE /* Logoutconfirm.swift in Sources */,
 				80DA0164211A888600817038 /* UINavigationItemExtensions.swift in Sources */,
 				80DA016D211A888700817038 /* UITableViewExtensions.swift in Sources */,
 				80DA015B211A888600817038 /* UIColorExtensions.swift in Sources */,
@@ -1513,6 +1520,7 @@
 				80A2FC24215841BC00223A77 /* FacebookDelegate.swift in Sources */,
 				808565CE23F4540D002717CB /* SideMenuManager.swift in Sources */,
 				663D34FA26EF5F64008CE1B9 /* CodeverficationController.swift in Sources */,
+				660336D326FB49F000411ADE /* Logout.swift in Sources */,
 				80A2FC46215841BC00223A77 /* TapticEngine.swift in Sources */,
 				8037F0F820BFABA300162BA9 /* TestViewModel.swift in Sources */,
 				80DA0145211A888600817038 /* BoolExtensions.swift in Sources */,

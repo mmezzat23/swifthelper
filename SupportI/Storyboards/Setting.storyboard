@@ -674,6 +674,7 @@
                         <outlet property="about" destination="M3X-mR-xRy" id="kdL-QX-1Tl"/>
                         <outlet property="faq" destination="nHE-lc-lBa" id="nut-o5-ryZ"/>
                         <outlet property="logout" destination="f2m-7p-7cu" id="p21-59-hbR"/>
+                        <outlet property="logouthight" destination="2hn-bA-WTr" id="p0O-Eq-xmT"/>
                         <outlet property="privacy" destination="wO7-s2-cYt" id="HQZ-L2-0L7"/>
                         <outlet property="request" destination="5wd-ZK-P7t" id="t6d-Rt-YNc"/>
                         <outlet property="sendmessage" destination="FL3-ek-LpB" id="wUn-Kt-xwz"/>
@@ -1499,6 +1500,172 @@
             </objects>
             <point key="canvasLocation" x="12105.797101449276" y="4169.8660714285716"/>
         </scene>
+        <!--Logout-->
+        <scene sceneID="wYV-os-5s9">
+            <objects>
+                <viewController storyboardIdentifier="Logout" id="s1J-qy-pEN" customClass="Logout" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fSk-hB-X3T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPX-Zw-h97">
+                                <rect key="frame" x="30" y="328" width="354" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-sg-cyt">
+                                        <rect key="frame" x="133" y="24" width="88" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Logout"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to log out?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb0-7q-JIq">
+                                        <rect key="frame" x="47" y="94.5" width="260" height="24"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.5607843137254902" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Are you sure you want to log out?"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MTv-Ar-XiH">
+                                        <rect key="frame" x="89.5" y="176" width="175" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZl-JO-YgD">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
+                                                <color key="backgroundColor" red="0.58431372549019611" green="0.59999999999999998" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                <state key="normal" title="SKIP">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="SKIP"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="skip:" destination="s1J-qy-pEN" eventType="touchUpInside" id="uT2-lh-xR2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvP-qB-u7b">
+                                                <rect key="frame" x="95" y="0.0" width="80" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                <state key="normal" title="YES">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirm:" destination="s1J-qy-pEN" eventType="touchUpInside" id="Oz5-NJ-bNy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="oNy-ut-4nO"/>
+                                            <constraint firstAttribute="width" constant="175" id="rMW-Gf-Eke"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="bb0-7q-JIq" firstAttribute="top" secondItem="Qfc-sg-cyt" secondAttribute="bottom" constant="32" id="5nc-sk-PBR"/>
+                                    <constraint firstAttribute="bottom" secondItem="MTv-Ar-XiH" secondAttribute="bottom" constant="20" id="6K1-BJ-r9g"/>
+                                    <constraint firstItem="bb0-7q-JIq" firstAttribute="centerX" secondItem="tPX-Zw-h97" secondAttribute="centerX" id="EFd-Lr-0El"/>
+                                    <constraint firstItem="Qfc-sg-cyt" firstAttribute="top" secondItem="tPX-Zw-h97" secondAttribute="top" constant="24" id="Isp-qX-LJd"/>
+                                    <constraint firstAttribute="height" constant="240" id="Krp-Af-adg"/>
+                                    <constraint firstItem="Qfc-sg-cyt" firstAttribute="centerX" secondItem="tPX-Zw-h97" secondAttribute="centerX" id="LCt-Nf-SIb"/>
+                                    <constraint firstItem="MTv-Ar-XiH" firstAttribute="centerX" secondItem="tPX-Zw-h97" secondAttribute="centerX" id="nl0-SS-1JI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fu1-Sv-5Y4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fu1-Sv-5Y4" firstAttribute="trailing" secondItem="tPX-Zw-h97" secondAttribute="trailing" constant="30" id="0KN-LA-1tv"/>
+                            <constraint firstItem="tPX-Zw-h97" firstAttribute="centerY" secondItem="fSk-hB-X3T" secondAttribute="centerY" id="84p-Pu-Dyx"/>
+                            <constraint firstItem="tPX-Zw-h97" firstAttribute="leading" secondItem="fu1-Sv-5Y4" secondAttribute="leading" constant="30" id="kud-tE-m1m"/>
+                            <constraint firstItem="tPX-Zw-h97" firstAttribute="centerX" secondItem="fSk-hB-X3T" secondAttribute="centerX" id="lrR-6F-sdb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fa8-pn-s3I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGR-Ow-t2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13704.347826086958" y="4101.5625"/>
+        </scene>
+        <!--Logoutconfirm-->
+        <scene sceneID="L1i-R5-1c2">
+            <objects>
+                <viewController storyboardIdentifier="Logoutconfirm" id="q4J-6V-wO9" customClass="Logoutconfirm" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PR1-Ze-ahh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEn-Fj-HcX">
+                                <rect key="frame" x="0.0" y="38" width="414" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TpD-bi-c87">
+                                        <rect key="frame" x="25" y="80" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="i6U-8G-fQw"/>
+                                            <constraint firstAttribute="height" constant="35" id="noX-Tx-kAQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wRr-Np-ifz">
+                                        <rect key="frame" x="354" y="80" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="85q-UA-rju"/>
+                                            <constraint firstAttribute="height" constant="35" id="jGI-Kg-3Ua"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout Confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ee-O4-H4v">
+                                        <rect key="frame" x="70" y="85" width="171.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Logout Confirmation"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="TpD-bi-c87" firstAttribute="leading" secondItem="SEn-Fj-HcX" secondAttribute="leading" constant="25" id="7Hi-jU-wsA"/>
+                                    <constraint firstItem="7Ee-O4-H4v" firstAttribute="leading" secondItem="TpD-bi-c87" secondAttribute="trailing" constant="10" id="JnS-H3-PL6"/>
+                                    <constraint firstItem="wRr-Np-ifz" firstAttribute="top" secondItem="SEn-Fj-HcX" secondAttribute="top" constant="80" id="Ydb-2T-LOf"/>
+                                    <constraint firstAttribute="trailing" secondItem="wRr-Np-ifz" secondAttribute="trailing" constant="25" id="erX-bN-aSc"/>
+                                    <constraint firstItem="TpD-bi-c87" firstAttribute="top" secondItem="SEn-Fj-HcX" secondAttribute="top" constant="80" id="o0w-r2-2Ri"/>
+                                    <constraint firstItem="7Ee-O4-H4v" firstAttribute="centerY" secondItem="TpD-bi-c87" secondAttribute="centerY" id="raM-XP-a6M"/>
+                                    <constraint firstAttribute="height" constant="150" id="xGI-Gh-c7h"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Qx-fD-B9L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SEn-Fj-HcX" firstAttribute="top" secondItem="0Qx-fD-B9L" secondAttribute="top" constant="-50" id="W6q-5h-gTp"/>
+                            <constraint firstItem="0Qx-fD-B9L" firstAttribute="trailing" secondItem="SEn-Fj-HcX" secondAttribute="trailing" id="aBu-bC-IjW"/>
+                            <constraint firstItem="SEn-Fj-HcX" firstAttribute="leading" secondItem="0Qx-fD-B9L" secondAttribute="leading" id="sBg-W1-4m5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Xs-Cm-31k"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xya-pM-DHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15408.695652173914" y="4120.9821428571431"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="8eb-pS-HRs">
             <objects>
@@ -1516,6 +1683,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZA-cZ-BCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11195.652173913044" y="4169.8660714285716"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J10-pw-NXB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vNh-IU-tSw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gof-OC-qX5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s1J-qy-pEN" kind="relationship" relationship="rootViewController" id="u7a-8c-Bw7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lU-GO-Ooq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12794.202898550726" y="4101.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DFs-HE-Jhf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F70-aF-rmP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Jk-tE-LDy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q4J-6V-wO9" kind="relationship" relationship="rootViewController" id="HTn-78-QBk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qX-cf-z0S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14498.550724637682" y="4120.9821428571431"/>
         </scene>
     </scenes>
     <resources>
