@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+var attrs = [
+    NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
+var attributedString = NSMutableAttributedString(string:"")
 // MARK: - Properties
 public extension UIButton {
 
@@ -160,6 +162,11 @@ public extension UIButton {
     func setTitleForAllStates(_ title: String) {
 		states.forEach { self.setTitle(title, for: $0) }
 	}
+    func setunderline(title:String){
+        let buttonTitleStr = NSMutableAttributedString(string:title.localized, attributes:attrs)
+        attributedString.append(buttonTitleStr)
+        setAttributedTitle(attributedString, for: .normal)
+    }
 
     /// SwifterSwift: Center align title text and image on UIButton
     ///

@@ -29,5 +29,21 @@ class Help: BaseController {
             let vcc = self.controller(About.self,storyboard: .setting)
             self.push(vcc)
         }
+        faq.UIViewAction {
+            let vcc = self.controller(Faq.self,storyboard: .setting)
+            self.push(vcc)
+        }
+        terms.UIViewAction {
+            let vcc = self.controller(Terms.self,storyboard: .setting)
+            self.push(vcc)
+        }
+        privacy.UIViewAction {
+            let vcc = self.controller(Privacy.self,storyboard: .setting)
+            self.push(vcc)
+        }
+        sendmessage.UIViewAction {
+            let vcc = self.controller(Contactus.self,storyboard: .setting)
+            self.push(vcc)
+        }
     }
 }
