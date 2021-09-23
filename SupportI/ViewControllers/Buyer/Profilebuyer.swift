@@ -48,5 +48,13 @@ class Profilebuyer: BaseController {
             let vcc = self.controller(Help.self,storyboard: .setting)
             self.push(vcc)
         }
+        payment.UIViewAction {
+            let vcc = self.controller(Paymentmethod.self,storyboard: .profile)
+            self.push(vcc)
+        }
+        address.UIViewAction {
+            let vcc = self.controller(Address.self,storyboard: .profile)
+            self.push(vcc)
+        }
     }
 }

@@ -198,4 +198,21 @@
 "Send us an message and we will get back to you shortly" = "Send us an message and we will get back to you shortly";
 "For More Details, please visit us" = "For More Details, please visit us";
 "About Wndo" = "About Wndo";
-
+"Choose Your Default Payment Method" = "Choose Your Default Payment Method";
+"Credit Card" = "Credit Card";
+"Cash on Delievery" = "Cash on Delievery";
+"Deduct from Walet" = "Deduct from Walet";
+"Saved Credit Card" = "Saved Credit Card";
+"ADD NEW CARD" = "ADD NEW CARD";
+"PAYMENT METHOD" = "PAYMENT METHOD";
+"Card Name" = "Card Name";
+"Name on Card" = "Name on Card";
+"Card Number" = "Card Number";
+"Expiry Date" = "Expiry Date";
+"CANCEL" = "CANCEL";
+"SAVE" = "SAVE";
+"Delete Credit Card" = "Delete Credit Card";
+"You want to delete the credit card ends with" = "You want to delete the credit card ends with";
+"DISCARD" = "DISCARD";
+"MY ADDRESSESS" = "MY ADDRESSESS";
+"ADD NEW ADDRESS" = "ADD NEW ADDRESS";

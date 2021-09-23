@@ -54,6 +54,7 @@ PODS:
     - GoogleUtilities/Reachability (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - Protobuf (>= 3.9.2, ~> 3.9)
+  - FormTextField (3.0.0)
   - GoogleAppMeasurement (6.8.3):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -107,6 +108,7 @@ DEPENDENCIES:
   - Cosmos (~> 15.0)
   - Firebase
   - Firebase/Messaging
+  - FormTextField
   - GoogleMaps (= 3.0.3)
   - GooglePlaces (= 3.0.3)
   - IQKeyboardManagerSwift
@@ -129,6 +131,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
+    - FormTextField
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleMaps
@@ -156,6 +159,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseInstanceID: ac5a82fcd21f804dbfc8f318eff9e1d7a9916e49
   FirebaseMessaging: fc1f98b4592f8f2ea538169b1c317c6e76f81300
+  FormTextField: fd5dc441ad40ba12d08ef66aeb0453ee9bf55e6d
   GoogleAppMeasurement: 966e88df9d19c15715137bb2ddaf52373f111436
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
@@ -169,6 +173,6 @@ SPEC CHECKSUMS:
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: 88373ee5d8cd5ffc18fd5eb68947d451af7b66d1
+PODFILE CHECKSUM: b2564ae8d05b89bbd6b1864259f81836c4f3d184
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.8.4

@@ -13,5 +13,6 @@ public enum Storyboards: String {
     case auth = "Auth"
     case auth1 = "Auth1"
     case setting = "Setting"
+    case profile = "Profile"
 
 }

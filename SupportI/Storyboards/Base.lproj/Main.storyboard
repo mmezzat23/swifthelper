@@ -196,6 +196,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="XdL-0Z-O1K" kind="relationship" relationship="viewControllers" id="3DG-iK-KMQ"/>
@@ -267,13 +269,15 @@
                                             <constraint firstAttribute="height" constant="250" id="1I7-kK-0lz"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQG-Df-Hzb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQG-Df-Hzb">
                                         <rect key="frame" x="359" y="25" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.38823529410000002" green="0.45098039220000002" blue="0.50588235290000005" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="HWZ-R1-fLe"/>
                                             <constraint firstAttribute="height" constant="40" id="lgR-6z-DrY"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="Icon-6"/>
                                         <connections>
                                             <action selector="calender:" destination="M7h-ry-BXp" eventType="touchUpInside" id="gcl-i6-FnB"/>
                                         </connections>
@@ -455,7 +459,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40N-TS-RLL">
                                                 <rect key="frame" x="25" y="265.5" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AoB-wj-3ne">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="AoB-wj-3ne">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="1t7-AM-dS9"/>
@@ -477,7 +481,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="bYI-ou-s01">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-1" translatesAutoresizingMaskIntoConstraints="NO" id="bYI-ou-s01">
                                                         <rect key="frame" x="335" y="28.5" width="4" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="4" id="5Qq-WK-TGl"/>
@@ -512,7 +516,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xoy-4l-VoV">
                                                 <rect key="frame" x="25" y="355.5" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-uH-xfW">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wishlist" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-uH-xfW">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="fVn-JZ-dL9"/>
@@ -528,7 +532,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My Wishlist"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-fX-Xzz">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-1" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-fX-Xzz">
                                                         <rect key="frame" x="335" y="28.5" width="4" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="8" id="kTX-eK-K7w"/>
@@ -561,7 +565,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTD-o5-H0t">
                                                 <rect key="frame" x="25" y="435.5" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBv-QZ-NIr">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wishlist-1" translatesAutoresizingMaskIntoConstraints="NO" id="iBv-QZ-NIr">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Je6-W5-8fR"/>
@@ -577,7 +581,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My Addresses"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="dka-tE-426">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-1" translatesAutoresizingMaskIntoConstraints="NO" id="dka-tE-426">
                                                         <rect key="frame" x="335" y="28.5" width="4" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="4" id="B5G-2a-vxg"/>
@@ -610,7 +614,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78y-Vc-8fG">
                                                 <rect key="frame" x="25" y="515.5" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Pd-2h-c8w">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Track Order" translatesAutoresizingMaskIntoConstraints="NO" id="0Pd-2h-c8w">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="4rO-ZT-0fM"/>
@@ -626,7 +630,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="My Order"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="i5o-q8-MCW">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-1" translatesAutoresizingMaskIntoConstraints="NO" id="i5o-q8-MCW">
                                                         <rect key="frame" x="335" y="28.5" width="4" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="8" id="asr-qx-ppE"/>
@@ -659,7 +663,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L9-T8-keo">
                                                 <rect key="frame" x="25" y="595.5" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-mP-pJL">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_Payment" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-mP-pJL">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="bvc-Aj-9s2"/>
@@ -675,7 +679,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Payment"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="NjN-fc-lj4">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-1" translatesAutoresizingMaskIntoConstraints="NO" id="NjN-fc-lj4">
                                                         <rect key="frame" x="335" y="28.5" width="4" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="8" id="2eg-HV-8BU"/>
@@ -708,7 +712,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKa-Uf-FWq">
                                                 <rect key="frame" x="25" y="675.5" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beu-nv-9pM">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1157" translatesAutoresizingMaskIntoConstraints="NO" id="beu-nv-9pM">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="QfK-w2-lnn"/>
@@ -724,7 +728,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Setting"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dcy-Dk-4L0">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dcy-Dk-4L0">
                                                         <rect key="frame" x="335" y="28.5" width="4" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="4" id="jEr-fw-WW5"/>
@@ -757,7 +761,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hu-QS-Mdp">
                                                 <rect key="frame" x="25" y="755.5" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95Z-Ma-adL">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 969-1" translatesAutoresizingMaskIntoConstraints="NO" id="95Z-Ma-adL">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="E8a-w3-ZHM"/>
@@ -773,7 +777,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Help"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-wQ-KON">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-wQ-KON">
                                                         <rect key="frame" x="335" y="28.5" width="4" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="4" id="3Xe-ed-bEU"/>
@@ -845,13 +849,15 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sv9-RK-bFF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sv9-RK-bFF">
                                         <rect key="frame" x="17" y="25" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.38823529411764707" green="0.45098039215686275" blue="0.50588235294117645" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="FHS-hg-Oux"/>
                                             <constraint firstAttribute="width" constant="40" id="ZKw-vE-f7f"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="Back Button"/>
                                         <connections>
                                             <action selector="back:" destination="M7h-ry-BXp" eventType="touchUpInside" id="VOD-28-1YB"/>
                                         </connections>
@@ -959,11 +965,11 @@
             </objects>
             <point key="canvasLocation" x="1889.8550724637682" y="4305.8035714285716"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="oon-Ix-1Va">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XdL-0Z-O1K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="v77-8r-Stn"/>
+                    <tabBarItem key="tabBarItem" title="" image="Bottom" id="v77-8r-Stn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SrW-cP-sWU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -978,11 +984,11 @@
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="1582.3660714285713"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="odS-OE-Xer">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lyu-Jl-lec" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="wUM-wu-YN3"/>
+                    <tabBarItem key="tabBarItem" title="" image="Group 10763" id="wUM-wu-YN3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hh8-6n-R3d">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -997,11 +1003,11 @@
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="2236.6071428571427"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ZtP-aY-cxK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQp-Wi-hra" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="T35-21-CHh"/>
+                    <tabBarItem key="tabBarItem" title="" image="sell" id="T35-21-CHh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pdC-hx-qjs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1016,11 +1022,11 @@
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="2925.6696428571427"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="IYe-NN-hQ1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LkY-pr-hVe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gd1-eK-1d1"/>
+                    <tabBarItem key="tabBarItem" title="" image="Fill 1187" id="gd1-eK-1d1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BI7-dM-LuF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1035,15 +1041,11 @@
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="3614.7321428571427"/>
         </scene>
-        <!--title-->
+        <!--Navigation Controller-->
         <scene sceneID="TxK-uH-lTd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pl3-0t-e3b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="title" id="Iqb-CI-DXL">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="eer"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="Icon_User" id="Iqb-CI-DXL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbd-eR-T3X">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1059,10 +1061,29 @@
             <point key="canvasLocation" x="979.71014492753636" y="4306.4732142857138"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="vpH-rV-Otc">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="arrow_down.png" width="6.4000000953674316" height="6.4000000953674316"/>
+        <image name="Back Button" width="8" height="15"/>
+        <image name="Back Button-1" width="8.5" height="15"/>
+        <image name="Bottom" width="22" height="22"/>
+        <image name="Fill 1157" width="22.5" height="24"/>
+        <image name="Fill 1187" width="22.5" height="22.5"/>
+        <image name="Fill 969-1" width="19" height="19"/>
+        <image name="Group 10763" width="24" height="18"/>
+        <image name="Icon-6" width="20.5" height="20.5"/>
+        <image name="Icon_Payment" width="55" height="53"/>
+        <image name="Icon_User" width="24" height="24"/>
+        <image name="Track Order" width="55" height="55"/>
+        <image name="Wishlist" width="21.5" height="20"/>
+        <image name="Wishlist-1" width="14" height="20"/>
+        <image name="bell" width="16" height="16"/>
         <image name="modern_woman" width="3000" height="2000"/>
         <image name="placeHolder" width="12" height="16"/>
+        <image name="sell" width="26" height="26"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
