@@ -26,6 +26,7 @@ public extension UITextField {
 }
 
 // MARK: - Properties
+private var maxLengths = [UITextField: Int]()
 public extension UITextField {
 
 	/// SwifterSwift: Set textField for common text types.
@@ -196,6 +197,25 @@ public extension UITextField {
 		self.leftView?.frame.size = CGSize(width: image.size.width + padding, height: image.size.height)
         self.leftViewMode = UITextField.ViewMode.always
 	}
+   
+    
+    @IBInspectable var maxLength: Int {
+            get {
+                guard let lll = maxLengths[self] else {
+                    return 150 // (global default-limit. or just, Int.max)
+                }
+                return lll
+            }
+            set {
+                maxLengths[self] = newValue
+                addTarget(self, action: #selector(fix), for: .editingChanged)
+            }
+        }
+        @objc func fix(textField: UITextField) {
+            if let ttt = textField.text {
+                textField.text = String(ttt.prefix(maxLength))
+            }
+        }
 
 }
 
