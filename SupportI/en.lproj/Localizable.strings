@@ -216,3 +216,11 @@
 "DISCARD" = "DISCARD";
 "MY ADDRESSESS" = "MY ADDRESSESS";
 "ADD NEW ADDRESS" = "ADD NEW ADDRESS";
+"Name" = "Name";
+"Bio" = "Bio";
+"Gender" = "Gender";
+"Female" = "Female";
+"Male" = "Male";
+"Date of Birth" = "Date of Birth";
+"SAVE CHANGES" = "SAVE CHANGES";
+

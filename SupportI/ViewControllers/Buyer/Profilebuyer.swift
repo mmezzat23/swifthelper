@@ -36,6 +36,8 @@ class Profilebuyer: BaseController {
     }
     
     @IBAction func edit(_ sender: Any) {
+        let vcc = self.controller(Editprofile.self,storyboard: .main)
+        self.push(vcc)
     }
     @IBAction func calender(_ sender: Any) {
     }

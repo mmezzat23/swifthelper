@@ -18,6 +18,7 @@
 		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
 		660336D326FB49F000411ADE /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660336D226FB49F000411ADE /* Logout.swift */; };
 		660336D626FB4BC100411ADE /* Logoutconfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660336D526FB4BC100411ADE /* Logoutconfirm.swift */; };
+		6620CAEB2700648500AB1A38 /* Editprofile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620CAEA2700648500AB1A38 /* Editprofile.swift */; };
 		662A036326FB2351002493D7 /* Faq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A036226FB2351002493D7 /* Faq.swift */; };
 		662A036726FB267F002493D7 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A036526FB267F002493D7 /* FaqTableViewCell.swift */; };
 		662A036826FB267F002493D7 /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662A036626FB267F002493D7 /* FaqTableViewCell.xib */; };
@@ -266,6 +267,7 @@
 		61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.release.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.release.xcconfig"; sourceTree = "<group>"; };
 		660336D226FB49F000411ADE /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
 		660336D526FB4BC100411ADE /* Logoutconfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logoutconfirm.swift; sourceTree = "<group>"; };
+		6620CAEA2700648500AB1A38 /* Editprofile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editprofile.swift; sourceTree = "<group>"; };
 		662A036226FB2351002493D7 /* Faq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faq.swift; sourceTree = "<group>"; };
 		662A036526FB267F002493D7 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		662A036626FB267F002493D7 /* FaqTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				6684EF8026F9E0D7005B4122 /* Profilebuyer.swift */,
+				6620CAEA2700648500AB1A38 /* Editprofile.swift */,
 			);
 			path = Buyer;
 			sourceTree = "<group>";
@@ -1612,6 +1615,7 @@
 				80A2FC46215841BC00223A77 /* TapticEngine.swift in Sources */,
 				669A59C826FC9A3D007615D9 /* Address.swift in Sources */,
 				8037F0F820BFABA300162BA9 /* TestViewModel.swift in Sources */,
+				6620CAEB2700648500AB1A38 /* Editprofile.swift in Sources */,
 				80DA0145211A888600817038 /* BoolExtensions.swift in Sources */,
 				80DA014E211A888600817038 /* OptionalExtensions.swift in Sources */,
 				7709EB68244DA08E00CE7BB7 /* UIFont.swift in Sources */,
