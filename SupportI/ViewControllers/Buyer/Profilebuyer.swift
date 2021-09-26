@@ -58,5 +58,13 @@ class Profilebuyer: BaseController {
             let vcc = self.controller(Address.self,storyboard: .profile)
             self.push(vcc)
         }
+        setting.UIViewAction {
+            let vcc = self.controller(SettingsProfile.self,storyboard: .profile)
+            self.push(vcc)
+        }
+        notification.UIViewAction {
+            let vcc = self.controller(NotificationsViewController.self,storyboard: .setting)
+            self.push(vcc)
+        }
     }
 }
