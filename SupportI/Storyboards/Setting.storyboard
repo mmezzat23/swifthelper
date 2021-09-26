@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fAE-vU-Uar">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U8W-oZ-I5U">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1924,6 +1924,142 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpY-ax-1Kf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16235" y="4121"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="TtB-jF-Jft">
+            <objects>
+                <viewController storyboardIdentifier="mapViewController" id="U8W-oZ-I5U" customClass="mapViewController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EHf-Ro-a9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-zi-x0S">
+                                <rect key="frame" x="30" y="124" width="354" height="613"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJC-8p-4cM">
+                                        <rect key="frame" x="148.5" y="24" width="57" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Map"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your location form the map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGC-22-i4Q">
+                                        <rect key="frame" x="46" y="94.5" width="262" height="24"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Select your location form the map"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move the pin on the map to find your location and select the delivery address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLj-zf-hQS">
+                                        <rect key="frame" x="40" y="432.5" width="274" height="41.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Move the pin on the map to find your location and select the delivery address."/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEa-Yz-SnA" customClass="GMSMapView">
+                                        <rect key="frame" x="0.0" y="143.5" width="354" height="264"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="264" id="xfR-Ak-3NJ"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-yI-TBR">
+                                        <rect key="frame" x="39.5" y="504" width="275" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-OH-3yS">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
+                                                <color key="backgroundColor" red="0.58431372550000005" green="0.59999999999999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="4X9-jB-CDZ"/>
+                                                    <constraint firstAttribute="height" constant="44" id="9ik-dI-spC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                <state key="normal" title="DISCARD">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="DISCARD"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="discardClicked:" destination="U8W-oZ-I5U" eventType="touchUpInside" id="0Mm-lq-uPI"/>
+                                                    <action selector="skip:" destination="s1J-qy-pEN" eventType="touchUpInside" id="aRt-Yd-tIt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u6-mB-J19">
+                                                <rect key="frame" x="145" y="0.0" width="130" height="44"/>
+                                                <color key="backgroundColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="9Qu-ys-aeQ"/>
+                                                    <constraint firstAttribute="width" constant="130" id="rrr-yt-nEP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                <state key="normal" title="YES">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirm:" destination="s1J-qy-pEN" eventType="touchUpInside" id="Rak-Vf-ymT"/>
+                                                    <action selector="yesClicked:" destination="U8W-oZ-I5U" eventType="touchUpInside" id="m7j-ch-qvV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="UE6-yI-TBR" firstAttribute="centerX" secondItem="tIT-zi-x0S" secondAttribute="centerX" id="0Ac-M4-QJw"/>
+                                    <constraint firstAttribute="trailing" secondItem="sLj-zf-hQS" secondAttribute="trailing" constant="40" id="1WG-sp-QgO"/>
+                                    <constraint firstItem="cGC-22-i4Q" firstAttribute="top" secondItem="mJC-8p-4cM" secondAttribute="bottom" constant="32" id="7zD-bX-cpN"/>
+                                    <constraint firstItem="cGC-22-i4Q" firstAttribute="centerX" secondItem="tIT-zi-x0S" secondAttribute="centerX" id="FQY-Ey-m54"/>
+                                    <constraint firstAttribute="trailing" secondItem="QEa-Yz-SnA" secondAttribute="trailing" id="FWc-2L-5FI"/>
+                                    <constraint firstItem="mJC-8p-4cM" firstAttribute="top" secondItem="tIT-zi-x0S" secondAttribute="top" constant="24" id="HN3-tz-6YN"/>
+                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" id="LVW-aF-gqi"/>
+                                    <constraint firstItem="sLj-zf-hQS" firstAttribute="top" secondItem="QEa-Yz-SnA" secondAttribute="bottom" constant="25" id="Tqc-Cr-CvL"/>
+                                    <constraint firstItem="mJC-8p-4cM" firstAttribute="centerX" secondItem="tIT-zi-x0S" secondAttribute="centerX" id="Tvt-8t-8CT"/>
+                                    <constraint firstItem="UE6-yI-TBR" firstAttribute="top" secondItem="sLj-zf-hQS" secondAttribute="bottom" constant="30" id="X2y-y4-2c6"/>
+                                    <constraint firstAttribute="height" constant="613" id="hLV-fu-zVl"/>
+                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="top" secondItem="cGC-22-i4Q" secondAttribute="bottom" constant="25" id="upq-ZO-eMd"/>
+                                    <constraint firstItem="sLj-zf-hQS" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" constant="40" id="wCu-xx-9VM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="POt-SI-Xqt"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tIT-zi-x0S" firstAttribute="centerX" secondItem="EHf-Ro-a9Z" secondAttribute="centerX" id="V9Z-Xh-bcN"/>
+                            <constraint firstItem="tIT-zi-x0S" firstAttribute="top" secondItem="POt-SI-Xqt" secondAttribute="top" constant="80" id="cfv-x6-Yub"/>
+                            <constraint firstItem="POt-SI-Xqt" firstAttribute="trailing" secondItem="tIT-zi-x0S" secondAttribute="trailing" constant="30" id="gXw-wi-f43"/>
+                            <constraint firstItem="tIT-zi-x0S" firstAttribute="leading" secondItem="POt-SI-Xqt" secondAttribute="leading" constant="30" id="mtq-A6-7qW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TRK-em-764"/>
+                    <connections>
+                        <outlet property="mapView" destination="QEa-Yz-SnA" id="0x8-sc-OoS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7e-Dn-UYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17931.884057971016" y="4120.9821428571431"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,7 @@
 		143D3E0326EF8AC20031C74E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143D3E0226EF8AC20031C74E /* Auth.storyboard */; };
 		143D3E0626EF8C460031C74E /* SplashGIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */; };
 		143D3E6726F0A9BF0031C74E /* Auth1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */; };
+		144F35192700C8F6001C97F6 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F35182700C8F6001C97F6 /* mapViewController.swift */; };
 		14D902BC26FB86B300DFD75D /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D902BB26FB86B300DFD75D /* NotificationsViewController.swift */; };
 		14D902C526FB872500DFD75D /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D902C326FB872500DFD75D /* NotificationsTableViewCell.swift */; };
 		14D902C626FB872500DFD75D /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D902C426FB872500DFD75D /* NotificationsTableViewCell.xib */; };
@@ -263,6 +264,7 @@
 		143D3E0226EF8AC20031C74E /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashGIFViewController.swift; sourceTree = "<group>"; };
 		143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth1ViewModel.swift; sourceTree = "<group>"; };
+		144F35182700C8F6001C97F6 /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		14D902BB26FB86B300DFD75D /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		14D902C326FB872500DFD75D /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		14D902C426FB872500DFD75D /* NotificationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsTableViewCell.xib; sourceTree = "<group>"; };
@@ -620,6 +622,7 @@
 				660336D226FB49F000411ADE /* Logout.swift */,
 				660336D526FB4BC100411ADE /* Logoutconfirm.swift */,
 				14D902BB26FB86B300DFD75D /* NotificationsViewController.swift */,
+				144F35182700C8F6001C97F6 /* mapViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1512,6 +1515,7 @@
 				80DA0159211A888600817038 /* UIButtonExtensions.swift in Sources */,
 				80A7A5ED20E69FFB00F1F217 /* ExtensionUICollectionViewCell.swift in Sources */,
 				803E6664231D73A2005D6CB7 /* GalleryPickerHelper.swift in Sources */,
+				144F35192700C8F6001C97F6 /* mapViewController.swift in Sources */,
 				8050BD6A20BF8A0000E355BE /* Errors.swift in Sources */,
 				80A2FC42215841BC00223A77 /* RadioView.swift in Sources */,
 				80D11D4622F0899900CACFD4 /* NotificationSetup.swift in Sources */,
