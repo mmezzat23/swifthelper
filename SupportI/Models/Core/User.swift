@@ -111,4 +111,10 @@ class Token: Codable {
     var userId: String?
     var userName: String?
     var isVerified: Bool?
+    var name: String?
+    var bio: String?
+    var cover: String?
+    var profile: String?
+    var picWithId: String?
+
 }

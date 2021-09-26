@@ -255,7 +255,11 @@
                     <navigationItem key="navigationItem" id="bia-8W-0XV"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="cardshight" destination="b25-c6-C4y" id="LKt-DG-YIq"/>
+                        <outlet property="cash" destination="Aow-jN-b7d" id="gs5-Dh-if5"/>
+                        <outlet property="credit" destination="5j0-IF-1q9" id="opJ-Rb-B8w"/>
                         <outlet property="payment" destination="fGM-OD-rMm" id="GHm-Zt-FEX"/>
+                        <outlet property="wallet" destination="4PU-eD-Gfw" id="ml3-ry-pRx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3j-Pl-vBk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -366,13 +370,13 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqM-z8-81o">
-                                                <rect key="frame" x="50" y="198.5" width="314" height="29.5"/>
+                                                <rect key="frame" x="50" y="198.5" width="314" height="36"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Holder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhB-53-FYD">
-                                                <rect key="frame" x="50" y="250" width="70" height="18"/>
+                                                <rect key="frame" x="50" y="256.5" width="70" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -381,13 +385,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PB-3m-vam">
-                                                <rect key="frame" x="50" y="273" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="50" y="279.5" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKo-Kv-OjJ">
-                                                <rect key="frame" x="279" y="250" width="35" height="18"/>
+                                                <rect key="frame" x="279" y="256.5" width="35" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -396,7 +400,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNe-rH-wUi">
-                                                <rect key="frame" x="279" y="273" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="279" y="279.5" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -693,7 +697,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="skip:" destination="aER-Pz-nQO" eventType="touchUpInside" id="5lM-R2-ckb"/>
+                                                    <action selector="discard:" destination="aER-Pz-nQO" eventType="touchUpInside" id="SMV-AL-Pb3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvF-2L-c8i">
@@ -710,7 +714,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="confirm:" destination="aER-Pz-nQO" eventType="touchUpInside" id="0O5-s9-aQi"/>
+                                                    <action selector="yes:" destination="aER-Pz-nQO" eventType="touchUpInside" id="Pek-8h-xdd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -743,6 +747,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QOG-Fa-ozv"/>
+                    <connections>
+                        <outlet property="name" destination="VfE-Dg-cbA" id="6DX-Uf-UWG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1k-Ct-mbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

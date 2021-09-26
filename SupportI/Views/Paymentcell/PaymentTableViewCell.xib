@@ -70,6 +70,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="isdefult" destination="5HS-Ln-zFQ" id="DYV-V1-IYY"/>
+                <outlet property="name" destination="s9w-iu-tXA" id="tgq-UZ-0Wg"/>
+                <outlet property="visanumber" destination="ndP-Jq-89z" id="uDv-ja-fy3"/>
+            </connections>
             <point key="canvasLocation" x="82.608695652173921" y="69.308035714285708"/>
         </tableViewCell>
     </objects>

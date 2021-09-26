@@ -17,16 +17,69 @@ class Addcard: BaseController , UITextFieldDelegate{
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var number: FormTextField!
     @IBOutlet weak var expiry: FormTextField!
-    
+    var viewModel : ProfileViewModel?
+    var parameters : [String : Any] = [:]
+    var isedit = false
+    var id = 0
+    var num = ""
+    var expirytxt = ""
+    var nametxt = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         number.delegate = self
         expiry.delegate = self
-       
+        setup()
+        bind()
+        if (isedit == true){
+            name.text = nametxt
+            number.text = num
+            expiry.text = expirytxt
+            visacardname.text = nametxt
+            visanumber.text = num
+            visaexpiry.text = expirytxt
+        }
     }
-    
+    func setup() {
+       viewModel = .init()
+       viewModel?.delegate = self
+   }
+    func validateTextFields() -> Bool {
+        cardname.customValidationRules = [RequiredRule()]
+        name.customValidationRules = [RequiredRule()]
+        number.customValidationRules = [RequiredRule() , MinLengthRule(length: 19) , MaxLengthRule(length: 19)]
+        expiry.customValidationRules = [RequiredRule() , MinLengthRule(length: 5) , MaxLengthRule(length: 5)]
+        let validator = Validation(textFields: [name , number ,expiry , cardname])
+        return validator.success
+    }
+    override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+            self?.stopLoading()
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                   guard let nav = controller else { return }
+                   let delegate = UIApplication.shared.delegate as? AppDelegate
+                   delegate?.window?.rootViewController = nav
+           
+        })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+    }
     @IBAction func save(_ sender: Any) {
+        if (validateTextFields()){
+            parameters["holderName"] = name.text ?? ""
+            parameters["expiry"] = visaexpiry.text ?? ""
+            parameters["cardNumber"] = visanumber.text?.trim() ?? ""
+            if (isedit == true){
+                parameters["id"] = id
+                viewModel?.editcard(paramters: parameters)
+            }else{
+                viewModel?.addcard(paramters: parameters)
+            }
+            print(parameters)
+        }
     }
     
     @IBAction func expirychange(_ sender: Any) {

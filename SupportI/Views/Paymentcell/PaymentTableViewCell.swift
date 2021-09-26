@@ -8,17 +8,16 @@
 
 import UIKit
 
-class PaymentTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+class PaymentTableViewCell: UITableViewCell , CellProtocol{
+    @IBOutlet weak var isdefult: UILabel!
+    @IBOutlet weak var visanumber: UILabel!
+    @IBOutlet weak var name: UILabel!
+    
+    func setup() {
+        guard let model = model as? CardsItem else { return }
+        name.text = model.holderName
+        visanumber.text = model.cardNumber
+        
     }
     
 }
