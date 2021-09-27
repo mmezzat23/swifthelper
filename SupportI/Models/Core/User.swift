@@ -116,5 +116,7 @@ class Token: Codable {
     var cover: String?
     var profile: String?
     var picWithId: String?
+    var dateOfBirth: String?
+    var gender: Int?
 
 }

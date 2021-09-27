@@ -32,6 +32,7 @@
 		663932102701DB2C00874342 /* PickersPOP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6639320F2701DB2C00874342 /* PickersPOP.swift */; };
 		663932142701ED6E00874342 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663932132701ED6E00874342 /* AddressModel.swift */; };
 		663932172701F3AC00874342 /* SingleaddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663932162701F3AC00874342 /* SingleaddressModel.swift */; };
+		66393235270207E200874342 /* GenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66393234270207E200874342 /* GenderModel.swift */; };
 		663D34E726EF4449008CE1B9 /* WNDo GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 663D34E626EF4449008CE1B9 /* WNDo GIF.gif */; };
 		663D34EA26EF4596008CE1B9 /* Auth1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663D34E926EF4596008CE1B9 /* Auth1.storyboard */; };
 		663D34ED26EF4635008CE1B9 /* ForgetpassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34EC26EF4635008CE1B9 /* ForgetpassController.swift */; };
@@ -290,6 +291,7 @@
 		6639320F2701DB2C00874342 /* PickersPOP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickersPOP.swift; sourceTree = "<group>"; };
 		663932132701ED6E00874342 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		663932162701F3AC00874342 /* SingleaddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleaddressModel.swift; sourceTree = "<group>"; };
+		66393234270207E200874342 /* GenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderModel.swift; sourceTree = "<group>"; };
 		663D34E626EF4449008CE1B9 /* WNDo GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "WNDo GIF.gif"; sourceTree = "<group>"; };
 		663D34E926EF4596008CE1B9 /* Auth1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth1.storyboard; sourceTree = "<group>"; };
 		663D34EC26EF4635008CE1B9 /* ForgetpassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpassController.swift; sourceTree = "<group>"; };
@@ -771,6 +773,7 @@
 				66342A0D2701CD580048BE3C /* CityModel.swift */,
 				663932132701ED6E00874342 /* AddressModel.swift */,
 				663932162701F3AC00874342 /* SingleaddressModel.swift */,
+				66393234270207E200874342 /* GenderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1669,6 +1672,7 @@
 				80A2FBFA215841BC00223A77 /* GoogleMapZoom.swift in Sources */,
 				80A2FC59215841BC00223A77 /* RequiredRule.swift in Sources */,
 				80A2FC54215841BC00223A77 /* MaxLengthRule.swift in Sources */,
+				66393235270207E200874342 /* GenderModel.swift in Sources */,
 				80A2FC4B215841BC00223A77 /* Validation.swift in Sources */,
 				80A2FBFB215841BC00223A77 /* MapRouteHelper.swift in Sources */,
 				664A9DDF26EF674400CB7D3D /* AccountsuccessController.swift in Sources */,

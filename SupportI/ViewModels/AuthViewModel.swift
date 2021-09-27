@@ -12,6 +12,7 @@ class AuthViewModel: ViewModelCore {
     var userdata: DynamicType = DynamicType<UserRoot>()
     var errordata: DynamicType = DynamicType<String>()
     var resendforget: DynamicType = DynamicType<UserRoot>()
+    var editdata: DynamicType = DynamicType<UserRoot>()
 
     func loginapi(paramters: [String: Any] , remember : Bool) {
         delegate?.startLoading()
@@ -84,6 +85,35 @@ class AuthViewModel: ViewModelCore {
             if (data?.isSuccess == true)
             {
                 self.userdata.value = data
+            }
+            else {
+                self.errordata.value = data?.errorMessage
+            }
+        }
+    }
+    func getprofile() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.profile, type: .get) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                self.errordata.value = data?.errorMessage
+            }
+        }
+    }
+    func editprofile(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connection(.editprofile, type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.editdata.value = data
             }
             else {
                 self.errordata.value = data?.errorMessage

@@ -26,15 +26,45 @@ class Profilebuyer: BaseController {
     @IBOutlet weak var help: UIView!
     @IBOutlet weak var wallet: UILabel!
     @IBOutlet weak var image: UIImageView!
-    
+    var viewModel : AuthViewModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         onclick()
-
-        // Do any additional setup after loading the view.
+        setup()
+        bind()
     }
     
+    func setup() {
+        viewModel = .init()
+        viewModel?.delegate = self
+        if (UserRoot.token() != nil){
+        viewModel?.getprofile()
+        }else{
+            let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .auth)
+            pushPop(vcr: vcc)
+        }
+    }
+    override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+            self?.stopLoading()
+            if (data.responseData?.cover != ""){
+                self?.image.setImage(url: Constants.url + "1/" + (data.responseData?.cover)! ?? "")
+            }
+            if (data.responseData?.profile != ""){
+                self?.image.setImage(url: Constants.url + "1/" + (data.responseData?.profile)! ?? "")
+            }
+            self?.name.text = data.responseData?.name
+            self?.bio.text = data.responseData?.bio
+            
+        })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+    }
     @IBAction func edit(_ sender: Any) {
         let vcc = self.controller(Editprofile.self,storyboard: .main)
         self.push(vcc)

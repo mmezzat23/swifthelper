@@ -8,10 +8,11 @@
 
 import UIKit
 
-class GuestPopUpViewController: UIViewController {
+class GuestPopUpViewController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
 
         // Do any additional setup after loading the view.
     }

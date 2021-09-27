@@ -22,6 +22,8 @@ public enum EndPoint: String {
     case addcard = "1/api/app/credit-card"
     case city = "1/api/app/city"
     case address = "1/api/app/address"
+    case profile = "1/api/app/my-profile"
+    case editprofile = "1/api/app/my-profile/edit"
     case logout
     case packages
     case locations

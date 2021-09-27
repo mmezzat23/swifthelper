@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PickersPOPDelegate:class {
-//    func callbackCountry(item: ItemCity)
+    func callbackgenders(item: GenderModel)
     func callbackCity(item:ItemCity)
 //    func callbackCategory(item:Category )
 //    func callbacksubcat(item:Category)
@@ -19,9 +19,9 @@ protocol PickersPOPDelegate:class {
     //func callbackDate(countryItem:CountryData , returnedKey:String)
 }
 extension PickersPOPDelegate {
-//    func callbackCountry(item:ItemCity ){
-//
-//    }
+    func callbackgenders(item:GenderModel ){
+
+    }
 //    func callbackOrders(item:OrderModel ){
 //
 //    }
@@ -53,6 +53,7 @@ class PickersPOP:BaseController {
     enum PickerSelection {
         case country
         case city
+        case gender
         case category
         case custom
         case subcat
@@ -71,7 +72,7 @@ class PickersPOP:BaseController {
     var pickerSelection:PickerSelection = .country
     var dateSelection:DateSelection = .date
     var returnedKey:String = ""
-//    var countries:[Location] = []
+    var genders:[GenderModel] = []
     var cities:[ItemCity] = []
 //    var categories:[Category] = []
 //    var orders:[OrderModel] = []
@@ -150,14 +151,14 @@ class PickersPOP:BaseController {
                 }
                 
             }
-//            else if pickerSelection == .subcat {
-//                let path = pickerView.selectedRow(inComponent: 0)
-//                if subcategories.isset(path){
-//                    let item = subcategories[pickerView.selectedRow(inComponent: 0)]
-//                    self.dismiss(animated: true) {
-//                        self.delegate?.callbacksubcat(item: item)
-//                    }
-//                }
+            else if pickerSelection == .gender {
+                let path = pickerView.selectedRow(inComponent: 0)
+                if genders.isset(path){
+                    let item = genders[pickerView.selectedRow(inComponent: 0)]
+                    self.dismiss(animated: true) {
+                        self.delegate?.callbackgenders(item: item)
+                    }
+                }
 //
 //            }else if pickerSelection == .category {
 //                let path = pickerView.selectedRow(inComponent: 0)
@@ -188,12 +189,12 @@ class PickersPOP:BaseController {
 //                }
                 
             
-//        }
+        }
     }else{
             
             if dateSelection == .date {
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd"
+                formatter.dateFormat = "yyy/MM/dd"
                 let date = formatter.string(from: datePicker.date)
                 self.view.endEditing(true)
                 self.dismiss(animated: true) {
@@ -229,9 +230,10 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         if pickerSelection == .city{
             return cities.count
         }
-//        else if pickerSelection == .category {
-//            return categories.count
-//        }else if pickerSelection == .subcat {
+        else if pickerSelection == .gender {
+            return genders.count
+        }
+//        else if pickerSelection == .subcat {
 //            return subcategories.count
 //        } else if pickerSelection == .custom {
 //            return customs.count
@@ -250,9 +252,10 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         if pickerSelection == .city{
             return cities[row].name
         }
-//        else if pickerSelection == .category {
-//            return categories[row].name
-//        }else if pickerSelection == .subcat {
+        else if pickerSelection == .gender {
+            return genders[row].name
+        }
+//        else if pickerSelection == .subcat {
 //            return subcategories[row].name
 //        } else if pickerSelection == .custom {
 //            return customs[row].title
