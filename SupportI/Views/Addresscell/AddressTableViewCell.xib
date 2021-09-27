@@ -47,7 +47,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Dad Cars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc9-NV-QxV">
-                        <rect key="frame" x="55" y="56" width="74.5" height="18"/>
+                        <rect key="frame" x="55" y="61" width="74.5" height="18"/>
                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -76,10 +76,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Nc9-NV-QxV" firstAttribute="leading" secondItem="NeX-P2-kRz" secondAttribute="leading" id="6ah-Yp-PRM"/>
-                    <constraint firstItem="kMb-hx-lGc" firstAttribute="top" secondItem="Nc9-NV-QxV" secondAttribute="bottom" constant="20" id="DS2-Iv-Esg"/>
+                    <constraint firstItem="kMb-hx-lGc" firstAttribute="top" secondItem="Nc9-NV-QxV" secondAttribute="bottom" constant="15" id="DS2-Iv-Esg"/>
                     <constraint firstItem="kMb-hx-lGc" firstAttribute="leading" secondItem="ovj-KT-NMt" secondAttribute="leading" id="DoB-Ih-wZG"/>
                     <constraint firstItem="NeX-P2-kRz" firstAttribute="top" secondItem="ovj-KT-NMt" secondAttribute="top" constant="30" id="EQH-NP-6gc"/>
-                    <constraint firstItem="Nc9-NV-QxV" firstAttribute="top" secondItem="NeX-P2-kRz" secondAttribute="bottom" constant="5" id="Icq-GC-JtU"/>
+                    <constraint firstItem="Nc9-NV-QxV" firstAttribute="top" secondItem="NeX-P2-kRz" secondAttribute="bottom" constant="10" id="Icq-GC-JtU"/>
                     <constraint firstItem="sEe-3U-7yY" firstAttribute="centerY" secondItem="NeX-P2-kRz" secondAttribute="centerY" id="M6O-Jm-eAw"/>
                     <constraint firstAttribute="bottom" secondItem="kMb-hx-lGc" secondAttribute="bottom" constant="8" id="PnE-DT-49y"/>
                     <constraint firstItem="NeX-P2-kRz" firstAttribute="leading" secondItem="XBa-R2-0uo" secondAttribute="trailing" constant="15" id="V5i-XG-QGF"/>
@@ -90,6 +90,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="DlF-Kp-dqn"/>
+            <connections>
+                <outlet property="address" destination="Nc9-NV-QxV" id="JdR-JD-4Sa"/>
+                <outlet property="addresstitle" destination="NeX-P2-kRz" id="8x0-Cm-GBJ"/>
+                <outlet property="imageicon" destination="XBa-R2-0uo" id="j2c-cU-m5E"/>
+                <outlet property="isdefult" destination="sEe-3U-7yY" id="0em-Is-QtA"/>
+            </connections>
             <point key="canvasLocation" x="82.608695652173921" y="69.308035714285708"/>
         </tableViewCell>
     </objects>

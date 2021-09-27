@@ -25,8 +25,13 @@
 		662A036826FB267F002493D7 /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662A036626FB267F002493D7 /* FaqTableViewCell.xib */; };
 		662C538C26FA0D1000AFC952 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C538B26FA0D1000AFC952 /* About.swift */; };
 		6632E565270079790095221D /* SettingsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632E564270079790095221D /* SettingsProfile.swift */; };
+		66342A0B2701BCFC0048BE3C /* Addaddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66342A0A2701BCFC0048BE3C /* Addaddress.swift */; };
+		66342A0E2701CD580048BE3C /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66342A0D2701CD580048BE3C /* CityModel.swift */; };
 		66376A8526EA0A2F0012DA28 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */; };
 		66376A8826EA0CDD0012DA28 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66376A8726EA0CDD0012DA28 /* LoginController.swift */; };
+		663932102701DB2C00874342 /* PickersPOP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6639320F2701DB2C00874342 /* PickersPOP.swift */; };
+		663932142701ED6E00874342 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663932132701ED6E00874342 /* AddressModel.swift */; };
+		663932172701F3AC00874342 /* SingleaddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663932162701F3AC00874342 /* SingleaddressModel.swift */; };
 		663D34E726EF4449008CE1B9 /* WNDo GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 663D34E626EF4449008CE1B9 /* WNDo GIF.gif */; };
 		663D34EA26EF4596008CE1B9 /* Auth1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663D34E926EF4596008CE1B9 /* Auth1.storyboard */; };
 		663D34ED26EF4635008CE1B9 /* ForgetpassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34EC26EF4635008CE1B9 /* ForgetpassController.swift */; };
@@ -278,8 +283,13 @@
 		662A036626FB267F002493D7 /* FaqTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
 		662C538B26FA0D1000AFC952 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		6632E564270079790095221D /* SettingsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfile.swift; sourceTree = "<group>"; };
+		66342A0A2701BCFC0048BE3C /* Addaddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addaddress.swift; sourceTree = "<group>"; };
+		66342A0D2701CD580048BE3C /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		66376A8726EA0CDD0012DA28 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		6639320F2701DB2C00874342 /* PickersPOP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickersPOP.swift; sourceTree = "<group>"; };
+		663932132701ED6E00874342 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		663932162701F3AC00874342 /* SingleaddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleaddressModel.swift; sourceTree = "<group>"; };
 		663D34E626EF4449008CE1B9 /* WNDo GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "WNDo GIF.gif"; sourceTree = "<group>"; };
 		663D34E926EF4596008CE1B9 /* Auth1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth1.storyboard; sourceTree = "<group>"; };
 		663D34EC26EF4635008CE1B9 /* ForgetpassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetpassController.swift; sourceTree = "<group>"; };
@@ -644,6 +654,8 @@
 				669A59C426FC94B7007615D9 /* Deletecard.swift */,
 				669A59C726FC9A3D007615D9 /* Address.swift */,
 				6632E564270079790095221D /* SettingsProfile.swift */,
+				66342A0A2701BCFC0048BE3C /* Addaddress.swift */,
+				6639320F2701DB2C00874342 /* PickersPOP.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -756,6 +768,9 @@
 			children = (
 				8050BCE820BF89FF00E355BE /* Core */,
 				66F9029D2700A2A100BBE00A /* Cards.swift */,
+				66342A0D2701CD580048BE3C /* CityModel.swift */,
+				663932132701ED6E00874342 /* AddressModel.swift */,
+				663932162701F3AC00874342 /* SingleaddressModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1478,9 +1493,11 @@
 				80DA0161211A888600817038 /* UILabelExtensions.swift in Sources */,
 				662A036326FB2351002493D7 /* Faq.swift in Sources */,
 				80DA0151211A888600817038 /* SignedNumericExtensions.swift in Sources */,
+				66342A0E2701CD580048BE3C /* CityModel.swift in Sources */,
 				80EA0057231DA69F0008E68B /* PlacePickerCell.swift in Sources */,
 				80A2FC2C215841BC00223A77 /* TwitterModel.swift in Sources */,
 				80A2FC39215841BC00223A77 /* UIView+AutoLayoutHelper.swift in Sources */,
+				663932102701DB2C00874342 /* PickersPOP.swift in Sources */,
 				80A2FC32215841BC00223A77 /* CustomDismissAnimationController.swift in Sources */,
 				80A2FC58215841BC00223A77 /* RegexRule.swift in Sources */,
 				80DA0160211A888600817038 /* UIImageViewExtensions.swift in Sources */,
@@ -1530,6 +1547,7 @@
 				80A2FC03215841BC00223A77 /* ApiProtocol.swift in Sources */,
 				80A2FC0E215841BC00223A77 /* ChangeLangHelper.swift in Sources */,
 				14D902BC26FB86B300DFD75D /* NotificationsViewController.swift in Sources */,
+				663932142701ED6E00874342 /* AddressModel.swift in Sources */,
 				80A2FBF6215841BC00223A77 /* ARCarMovement.swift in Sources */,
 				669A59C526FC94B7007615D9 /* Deletecard.swift in Sources */,
 				80A2FC1E215841BC00223A77 /* MenuCell.swift in Sources */,
@@ -1541,6 +1559,7 @@
 				80A2FC08215841BC00223A77 /* ImageHelper.swift in Sources */,
 				80DA0152211A888600817038 /* StringExtensions.swift in Sources */,
 				80A2FC5B215841BC00223A77 /* ValidationRule.swift in Sources */,
+				66342A0B2701BCFC0048BE3C /* Addaddress.swift in Sources */,
 				80A7A5E420E69ED400F1F217 /* BaseController.swift in Sources */,
 				80A2FC4F215841BC00223A77 /* ConfirmRule.swift in Sources */,
 				80DA0171211A888700817038 /* UIViewExtensions.swift in Sources */,
@@ -1612,6 +1631,7 @@
 				8037F0FF20BFB1B800162BA9 /* CoreViewModel.swift in Sources */,
 				80DA014D211A888600817038 /* IntExtensions.swift in Sources */,
 				808565CC23F4540D002717CB /* SideMenuTransition.swift in Sources */,
+				663932172701F3AC00874342 /* SingleaddressModel.swift in Sources */,
 				80DA0162211A888600817038 /* UINavigationBarExtensions.swift in Sources */,
 				663D34F126EF541E008CE1B9 /* CodesentController.swift in Sources */,
 				80EA0055231DA6820008E68B /* PlacePickerController.swift in Sources */,

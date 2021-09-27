@@ -243,3 +243,14 @@
 "I'm Leaving Because" = "I'm Leaving Because";
 "Choose a reason" = "Choose a reason";
 "DELETE ACCOUNT" = "DELETE ACCOUNT";
+"Address Name" = "Address Name";
+"Address Icon" = "Address Icon";
+"Street Address" = "Street Address";
+"PIN ON MAP" = "PIN ON MAP";
+"City" = "City";
+"Building No." = "Building No.";
+"Landmark" = "Landmark";
+"(Optional)" = "(Optional)";
+"Set as defualt" = "Set as defualt";
+"Delete address" = "Delete address";
+"You want to delete the address that name" = "You want to delete the address that name";

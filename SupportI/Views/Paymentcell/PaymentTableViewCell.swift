@@ -16,7 +16,9 @@ class PaymentTableViewCell: UITableViewCell , CellProtocol{
     func setup() {
         guard let model = model as? CardsItem else { return }
         name.text = model.holderName
-        visanumber.text = model.cardNumber
+        let index = model.cardNumber!.index(model.cardNumber!.endIndex, offsetBy: -4)
+        let mySubstring = model.cardNumber!.suffix(from: index) // playground
+         visanumber.text = "****\(mySubstring)"
         
     }
     

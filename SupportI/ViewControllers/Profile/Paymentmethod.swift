@@ -91,7 +91,7 @@ extension Paymentmethod:UITableViewDelegate , UITableViewDataSource {
             
             action.image = UIImage(named: "Fill -2")
             
-            action.backgroundColor = .red
+        action.backgroundColor = UIColor(red: 0x01, green: 0x14, blue: 0x47)
         let editaction =  UIContextualAction(style: .destructive, title: "", handler: { [self] (action, view, completionHandler ) in
                 self.startLoading()
                 let vcc = self.pushViewController(Addcard.self,storyboard: .profile)
@@ -106,7 +106,7 @@ extension Paymentmethod:UITableViewDelegate , UITableViewDataSource {
             
             editaction.image = UIImage(named: "edit-1")
 
-            editaction.backgroundColor = .clear
+            editaction.backgroundColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             let confrigation = UISwipeActionsConfiguration(actions: [action , editaction])
             return confrigation
         

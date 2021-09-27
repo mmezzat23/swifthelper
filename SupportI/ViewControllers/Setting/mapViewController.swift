@@ -8,20 +8,57 @@
 
 import UIKit
 import GoogleMaps
-
-class mapViewController: UIViewController {
-
+protocol SelectLocationDelegate: class {
+    func didSelectLocation(lat: Double, lng: Double)
+    func didSelectLocation(address: String?)
+}
+class mapViewController: BaseController {
+    var location: LocationHelper?
+    var google: GoogleMapHelper?
+    var lat: Double?
+    var lng: Double?
+    weak var delegate: SelectLocationDelegate?
     @IBOutlet weak var mapView: GMSMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
+        setup()
+        
 
         // Do any additional setup after loading the view.
     }
-    
+    func setup() {
+        google = .init()
+        google?.mapView = mapView
+        google?.delegate = self
+        location = .init()
+//        location?.onUpdateLocation = { degree in
+//            self.google?.updateCamera(lat: degree?.latitude ?? 0, lng: degree?.longitude ?? 0)
+//        }
+        location?.currentLocation()
+    }
     @IBAction func yesClicked(_ sender: UIButton) {
+        self.delegate?.didSelectLocation(lat: lat ?? 0, lng: lng ?? 0)
+        self.google?.address(lat: lat ?? 0, lng: lng ?? 0, handler: { title, snippet in
+            self.delegate?.didSelectLocation(address: title)
+        })
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func discardClicked(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
+}
+extension mapViewController: GoogleMapHelperDelegate {
+    func didChangeCameraLocation(lat: Double, lng: Double) {
+//        self.lat = lat
+//        self.lng = lng
+        google?.setMarker(position: CLLocationCoordinate2D(latitude: self.lat ?? 0, longitude: self.lng ?? 0))
+    }
+    func didTapOnMap(lat: Double, lng: Double) {
+        self.lat = lat
+        self.lng = lng
+        google?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+    }
 }

@@ -30,9 +30,9 @@ struct Constants {
     static let deviceType = "2"
     static let deviceToken = "deviceToken"
     static let deviceId = UIDevice.current.identifierForVendor!.uuidString
-    static let googleAPI = "AIzaSyAAap7IKyuO8zQ58Erx5n_NPr_HQOrdM84"
-    static let googleRoutesAPI = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
-    static let googleNotRestrictionKey = "AIzaSyBAb_tULoOvteP6YBIvOPmb_gGO_VMDHus"
+    static let googleAPI = "AIzaSyAi8-pd3Pi9VqBOyMtWfQDYr0ALqxEktQk"
+    static let googleRoutesAPI = "AIzaSyBdPtdiMjaOFebshmW61RPxRUfYa4zUzbE"
+    static let googleNotRestrictionKey = "AIzaSyBdPtdiMjaOFebshmW61RPxRUfYa4zUzbE"
     static var useAuth: Bool = false
     static var placeHolderImage: UIImage = UIImage(named: "placeHolder") ?? UIImage()
     static var splash: Void!

@@ -33,10 +33,10 @@ class Addcard: BaseController , UITextFieldDelegate{
         bind()
         if (isedit == true){
             name.text = nametxt
-            number.text = num
+            number.text = customStringFormatting(of: num, num: 4, ch: " ")
             expiry.text = expirytxt
             visacardname.text = nametxt
-            visanumber.text = num
+            visanumber.text = customStringFormatting(of: num, num: 4, ch: " ")
             visaexpiry.text = expirytxt
         }
     }
@@ -71,7 +71,7 @@ class Addcard: BaseController , UITextFieldDelegate{
         if (validateTextFields()){
             parameters["holderName"] = name.text ?? ""
             parameters["expiry"] = visaexpiry.text ?? ""
-            parameters["cardNumber"] = visanumber.text?.trim() ?? ""
+            parameters["cardNumber"] = visanumber.text?.replacingOccurrences(of: " ", with: "")
             if (isedit == true){
                 parameters["id"] = id
                 viewModel?.editcard(paramters: parameters)

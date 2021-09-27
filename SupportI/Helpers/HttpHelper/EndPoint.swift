@@ -20,6 +20,8 @@ public enum EndPoint: String {
     case reset = "1/api/app/register/reset-password"
     case resend = "1/api/app/register/re-send-new-code"
     case addcard = "1/api/app/credit-card"
+    case city = "1/api/app/city"
+    case address = "1/api/app/address"
     case logout
     case packages
     case locations

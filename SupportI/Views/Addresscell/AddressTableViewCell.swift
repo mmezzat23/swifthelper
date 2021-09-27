@@ -8,17 +8,22 @@
 
 import UIKit
 
-class AddressTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+class AddressTableViewCell: UITableViewCell , CellProtocol {
+    @IBOutlet weak var imageicon: UIButton!
+    @IBOutlet weak var isdefult: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var addresstitle: UILabel!
     
+    
+    func setup() {
+        guard let model = model as? ItemAddress else { return }
+        addresstitle.text = model.name
+        address.text = "\(model.buildingNo ?? 0) , \(model.street ?? "") , \(model.city?.name ?? "")"
+        if (model.isDefault == true){
+            isdefult.isHidden = false
+        }else{
+            isdefult.isHidden = true
+        }
+        
+    }
 }
