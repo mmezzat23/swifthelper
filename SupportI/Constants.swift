@@ -13,10 +13,24 @@ import GooglePlaces
 struct Constants {
     static let locale = Localizer.current
     static var loginNavInd: String = "LoginNav"
+    static var registerNavInd: String = "RegNav"
+    static var contactNavInd: String = "ContactNav"
     static var login: String = "LoginNav"
     static var loginNav: UINavigationController? {
         let storyboard = UIStoryboard(name: Storyboards.auth.rawValue, bundle: nil)
         let nav = storyboard.instantiateViewController(withIdentifier: loginNavInd) as? UINavigationController
+        return nav
+        // Constants.storyboard = Storyboards.main.rawValue
+    }
+    static var regNav: UINavigationController? {
+        let storyboard = UIStoryboard(name: Storyboards.auth.rawValue, bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: registerNavInd) as? UINavigationController
+        return nav
+        // Constants.storyboard = Storyboards.main.rawValue
+    }
+    static var contactNav: UINavigationController? {
+        let storyboard = UIStoryboard(name: Storyboards.setting.rawValue, bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: contactNavInd) as? UINavigationController
         return nav
         // Constants.storyboard = Storyboards.main.rawValue
     }

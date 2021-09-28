@@ -163,6 +163,7 @@ public extension UIButton {
 		states.forEach { self.setTitle(title, for: $0) }
 	}
     func setunderline(title:String){
+        attributedString =  NSMutableAttributedString(string:"")
         let buttonTitleStr = NSMutableAttributedString(string:title.localized, attributes:attrs)
         attributedString.append(buttonTitleStr)
         setAttributedTitle(attributedString, for: .normal)

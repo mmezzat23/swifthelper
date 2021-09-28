@@ -10,23 +10,40 @@ import UIKit
 
 class Privacy: BaseController {
     @IBOutlet weak var txt: UITextView!
+    var viewModel : ProfileViewModel?
+    var parameters : [String : Any] = [:]
+    var type = 0
+    @IBOutlet weak var titlelbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
-
-        // Do any additional setup after loading the view.
+        if (type == 2){
+            titlelbl.text = "Request A Refund".localized()
+        }
+        setup()
+        bind()
     }
+    func setup() {
+       viewModel = .init()
+       viewModel?.delegate = self
+       parameters["isSeller"] = UserRoot.saller()
+       parameters["dto"] = type
+       viewModel?.getinfo(paramters: parameters)
+   }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+            self?.stopLoading()
+            self?.txt.text = data.responseData?.text?.htmlToString
+           
+        })
+        
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
     }
-    */
 
 }

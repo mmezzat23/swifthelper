@@ -48,7 +48,13 @@ class Address: BaseController {
 }
 extension Address:UITableViewDelegate , UITableViewDataSource {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
+        address.swipeButtomRefresh {
+            if case self.viewModel?.runPaginator() = true {
+                self.viewModel?.getaddresss()
+            } else {
+                self.address.stopSwipeButtom()
+            }
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addressdata.count

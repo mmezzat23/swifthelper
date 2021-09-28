@@ -44,6 +44,12 @@ class Help: BaseController {
         }
         privacy.UIViewAction {
             let vcc = self.controller(Privacy.self,storyboard: .setting)
+            vcc.type = 4
+            self.push(vcc)
+        }
+        request.UIViewAction {
+            let vcc = self.controller(Privacy.self,storyboard: .setting)
+            vcc.type = 2
             self.push(vcc)
         }
         sendmessage.UIViewAction {

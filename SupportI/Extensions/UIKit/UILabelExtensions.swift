@@ -37,6 +37,7 @@ public extension UILabel {
 // MARK: - Methods
 public extension UILabel {
     func setunderline(title:String){
+        attributedString =  NSMutableAttributedString(string:"")
         let buttonTitleStr = NSMutableAttributedString(string:title.localized, attributes:attrs)
         attributedString.append(buttonTitleStr)
         attributedText = attributedString

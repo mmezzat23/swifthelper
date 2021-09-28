@@ -42,7 +42,7 @@ class Profilebuyer: BaseController {
         if (UserRoot.token() != nil){
         viewModel?.getprofile()
         }else{
-            let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .auth)
+            let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
             pushPop(vcr: vcc)
         }
     }
@@ -50,10 +50,10 @@ class Profilebuyer: BaseController {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
             if (data.responseData?.cover != ""){
-                self?.image.setImage(url: Constants.url + "1/" + (data.responseData?.cover)! ?? "")
+                self?.banner.setImage(url: data.responseData?.cover)
             }
             if (data.responseData?.profile != ""){
-                self?.image.setImage(url: Constants.url + "1/" + (data.responseData?.profile)! ?? "")
+                self?.image.setImage(url: data.responseData?.cover)
             }
             self?.name.text = data.responseData?.name
             self?.bio.text = data.responseData?.bio

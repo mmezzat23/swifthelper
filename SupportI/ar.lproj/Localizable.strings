@@ -262,3 +262,7 @@
 "Set as defualt" = "Set as defualt";
 "Delete address" = "Delete address";
 "You want to delete the address that name" = "You want to delete the address that name";
+"select gender" = "select gender";
+"Select birthdate" = "Select birthdate";
+"select city" = "select city";
+"Select type of address" = "Select type of address";

@@ -11,6 +11,8 @@ import UIKit
 class UserRoot: Codable {
     public static var storeUserDefaults: String = "userDataDefaults"
     public static var storeRememberUser: String = "USER_LOGIN_REMEMBER"
+    public static var issaller: String = "saller"
+
     var responseData: Token?
     var data: User?
     var expires_in: Int?
@@ -40,6 +42,9 @@ class UserRoot: Codable {
             UserDefaults.standard.set(true, forKey: storeRememberUser)
         }
     }
+    public static func savesaller( remember: Bool = false) {
+        UserDefaults.standard.set(remember, forKey: issaller)
+    }
     public func save() {
         guard let response = try? JSONEncoder().encode(self) else { return }
         UserDefaults.standard.set(response, forKey: UserRoot.storeUserDefaults)
@@ -56,6 +61,10 @@ class UserRoot: Codable {
     }
     public static func isrember() -> Bool? {
         let data = UserDefaults.standard.bool(forKey: storeRememberUser)
+        return data
+    }
+    public static func saller() -> Bool? {
+        let data = UserDefaults.standard.bool(forKey: issaller)
         return data
     }
     public static func loginAlert(closure: HandlerView? = nil) {
@@ -118,5 +127,9 @@ class Token: Codable {
     var picWithId: String?
     var dateOfBirth: String?
     var gender: Int?
+    var text: String?
+    var twitter: String?
+    var facebook: String?
+    var website: String?
 
 }

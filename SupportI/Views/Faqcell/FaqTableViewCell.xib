@@ -31,12 +31,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-5o-ER4">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-5o-ER4">
                         <rect key="frame" x="474" y="0.0" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="2qg-EL-t68"/>
                             <constraint firstAttribute="width" constant="30" id="a50-bp-Lai"/>
                         </constraints>
+                        <state key="normal" image="icon_plus"/>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-XQ-mcw">
                         <rect key="frame" x="0.0" y="40" width="504" height="1"/>
@@ -70,7 +71,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="add" destination="xnl-5o-ER4" id="GSz-K4-Mty"/>
+                <outlet property="des" destination="oQC-CC-Szl" id="x7E-Ur-QRb"/>
+                <outlet property="titlelbl" destination="nAr-Uu-BFZ" id="HTC-zh-UMT"/>
+            </connections>
             <point key="canvasLocation" x="142.02898550724638" y="83.370535714285708"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_plus" width="14" height="24"/>
+    </resources>
 </document>

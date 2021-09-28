@@ -11,20 +11,41 @@ import UIKit
 class Faq: BaseController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var sendmessage: UIView!
-    
+    var faqsdata : [ItemFaq] = []
+    var viewModel : ProfileViewModel?
+    var parameters : [String : Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         setup()
-
-        // Do any additional setup after loading the view.
+        bind()
+        sendmessage.UIViewAction {
+            let vcc = self.controller(Contactus.self,storyboard: .setting)
+            self.push(vcc)
+        }
     }
     
     func setup() {
         tableview.delegate = self
         tableview.dataSource = self
+        viewModel = .init()
+        viewModel?.delegate = self
+        parameters["isSeller"] = UserRoot.saller()
+        viewModel?.getfaqs(paramters: parameters)
     }
-    
+    override func bind() {
+        viewModel?.faqsData.bind({ [weak self](data) in
+            self?.stopLoading()
+            self?.faqsdata.append(contentsOf: data.responseData?.items ?? [])
+            self?.tableview.reloadData()
+            
+        })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+    }
 
     /*
     // MARK: - Navigation
@@ -39,16 +60,23 @@ class Faq: BaseController {
 }
 extension Faq:UITableViewDelegate , UITableViewDataSource {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
+        tableview.swipeButtomRefresh {
+            if case self.viewModel?.runPaginator() = true {
+                self.viewModel?.getfaqs(paramters: self.parameters)
+            } else {
+                self.tableview.stopSwipeButtom()
+            }
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return faqsdata.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: FaqTableViewCell.self, indexPath)
-        
+        cell.model = faqsdata[indexPath.row]
+        cell.setup()
         return cell
         
     }

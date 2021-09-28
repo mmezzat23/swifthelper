@@ -32,6 +32,9 @@ class Contactus: BaseController {
     @IBOutlet weak var order: UIView!
     @IBOutlet weak var reasonhight: NSLayoutConstraint!
     @IBOutlet weak var reason: UIView!
+    @IBOutlet weak var reasontop: NSLayoutConstraint!
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -55,11 +58,15 @@ class Contactus: BaseController {
             reasonhight.constant = 0
             ordertxthight.constant = 0
             reasontxthight.constant = 0
-            emailcostant.constant = 0
             orderconstant.constant = 0
+            reasontop.constant = 0
         }
         message.setLeftPaddingPoints(10)
         message.setRightPaddingPoints(10)
+        email.setLeftPaddingPoints(10)
+        email.setRightPaddingPoints(10)
+        phone.setLeftPaddingPoints(10)
+        phone.setRightPaddingPoints(10)
         ordertxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         emailtxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         phonetxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)

@@ -442,7 +442,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
         <!--Navigation Controller-->
         <scene sceneID="He8-0D-oRi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i6p-z0-7mX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNav" automaticallyAdjustsScrollViewInsets="NO" id="i6p-z0-7mX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CSn-mB-fwS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -921,7 +921,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
         <!--Navigation Controller-->
         <scene sceneID="7FE-fi-mGU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FcT-pe-FZE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RegNav" automaticallyAdjustsScrollViewInsets="NO" id="FcT-pe-FZE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="qbS-vm-wse"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wLK-4G-4vy">

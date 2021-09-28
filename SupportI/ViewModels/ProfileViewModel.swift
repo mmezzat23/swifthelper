@@ -10,6 +10,7 @@ import Foundation
 
 class ProfileViewModel: ViewModelCore {
     var userdata: DynamicType = DynamicType<UserRoot>()
+    var socialdata: DynamicType = DynamicType<UserRoot>()
     var errordata: DynamicType = DynamicType<String>()
     var resendforget: DynamicType = DynamicType<UserRoot>()
     var cardsData: DynamicType = DynamicType<Cards>()
@@ -17,12 +18,12 @@ class ProfileViewModel: ViewModelCore {
     var cityData: DynamicType = DynamicType<CityModel>()
     var addressData: DynamicType = DynamicType<AddressModel>()
     var singleaddressData: DynamicType = DynamicType<SingleaddressModel>()
+    var faqsData: DynamicType = DynamicType<FaqsModel>()
 
     func addcard(paramters: [String: Any] ) {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.addcard, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -38,7 +39,6 @@ class ProfileViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.addcard, type: .put) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -52,7 +52,6 @@ class ProfileViewModel: ViewModelCore {
     func deletecard(id : Int) {
         delegate?.startLoading()
         ApiManager.instance.connection("\(EndPoint.addcard.rawValue)/\(id)", type: .delete) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(Deletecards.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -66,7 +65,6 @@ class ProfileViewModel: ViewModelCore {
     func getcards() {
         delegate?.startLoading()
         ApiManager.instance.connection(.addcard, type: .get) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(Cards.self, from: response ?? Data())
             self.cardsData.value = data
             self.paginator(respnod: data?.responseData?.items)
@@ -75,7 +73,6 @@ class ProfileViewModel: ViewModelCore {
     func getcity() {
         delegate?.startLoading()
         ApiManager.instance.connection(.city, type: .get) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(CityModel.self, from: response ?? Data())
             self.cityData.value = data
             self.paginator(respnod: data?.responseData?.items)
@@ -85,7 +82,6 @@ class ProfileViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.address, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -100,7 +96,6 @@ class ProfileViewModel: ViewModelCore {
     func getaddresss() {
         delegate?.startLoading()
         ApiManager.instance.connection(.address, type: .get) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(AddressModel.self, from: response ?? Data())
             self.addressData.value = data
             self.paginator(respnod: data?.responseData?.items)
@@ -109,7 +104,6 @@ class ProfileViewModel: ViewModelCore {
     func deleteaddress(id : Int) {
         delegate?.startLoading()
         ApiManager.instance.connection("\(EndPoint.address.rawValue)/\(id)", type: .delete) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(Deletecards.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -123,7 +117,6 @@ class ProfileViewModel: ViewModelCore {
     func getsingleaddress(id : Int) {
         delegate?.startLoading()
         ApiManager.instance.connection("\(EndPoint.address.rawValue)/\(id)", type: .get) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(SingleaddressModel.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -138,7 +131,6 @@ class ProfileViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.address, type: .put) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -147,6 +139,42 @@ class ProfileViewModel: ViewModelCore {
             else {
                 self.errordata.value = data?.errorMessage
             }
+        }
+    }
+    func getinfo(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connection(.help, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                self.errordata.value = data?.errorMessage
+            }
+        }
+    }
+    func getsocial() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.socialabout, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.socialdata.value = data
+            }
+            else {
+                self.errordata.value = data?.errorMessage
+            }
+        }
+    }
+    func getfaqs(paramters: [String: Any]) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connection(.faqs, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(FaqsModel.self, from: response ?? Data())
+            self.faqsData.value = data
+            self.paginator(respnod: data?.responseData?.items)
         }
     }
 }

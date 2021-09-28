@@ -42,7 +42,8 @@ extension Paginator {
         }
     }
     func paginate() {
-       ApiManager.instance.paramaters["page"] = paginator
+       ApiManager.instance.paramaters["skipCount"] = (paginator - 1) * 10
+       ApiManager.instance.paramaters["maxResultCount"] =  10
         if ApiManager.instance.paramaters["custom_page"] != nil {
             ApiManager.instance.paramaters["page"] = ApiManager.instance.paramaters["custom_page"]
         }
