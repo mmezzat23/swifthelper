@@ -39,6 +39,9 @@ class Profilebuyer: BaseController {
     func setup() {
         viewModel = .init()
         viewModel?.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if (UserRoot.token() != nil){
         viewModel?.getprofile()
         }else{

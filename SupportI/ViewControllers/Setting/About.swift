@@ -48,14 +48,27 @@ class About: BaseController {
         })
     }
     @IBAction func website(_ sender: Any) {
+        if (social?.responseData?.website!.contains("http") == true){
         openUrl(text: social?.responseData?.website ?? "")
+        }else{
+            openUrl(text: "http://" + (social?.responseData?.website)! ?? "")
+        }
     }
     
     @IBAction func twitt(_ sender: Any) {
+        if (social?.responseData?.twitter!.contains("http") == true){
         openUrl(text: social?.responseData?.twitter ?? "")
+        }else{
+            openUrl(text: "http://" + (social?.responseData?.twitter)! ?? "")
+        }
     }
     
     @IBAction func face(_ sender: Any) {
+        if (social?.responseData?.facebook!.contains("http") == true){
         openUrl(text: social?.responseData?.facebook ?? "")
+        }else{
+            openUrl(text: "http://" + (social?.responseData?.facebook)! ?? "")
+        }
+        
     }
 }

@@ -12,6 +12,7 @@ class UserRoot: Codable {
     public static var storeUserDefaults: String = "userDataDefaults"
     public static var storeRememberUser: String = "USER_LOGIN_REMEMBER"
     public static var issaller: String = "saller"
+    public static var mode: String = "mode"
 
     var responseData: Token?
     var data: User?
@@ -20,6 +21,7 @@ class UserRoot: Codable {
     var token: String?
     var isSuccess: Bool?
     var errorMessage: String?
+    var statusCode: Int?
     var refresh_token: String?
     var message: String?
     var loginTimeStamp: Int?
@@ -41,6 +43,9 @@ class UserRoot: Codable {
         if remember {
             UserDefaults.standard.set(true, forKey: storeRememberUser)
         }
+    }
+    public static func savemode( remember: String = "light") {
+        UserDefaults.standard.set(remember, forKey: mode)
     }
     public static func savesaller( remember: Bool = false) {
         UserDefaults.standard.set(remember, forKey: issaller)
@@ -66,6 +71,14 @@ class UserRoot: Codable {
     public static func saller() -> Bool? {
         let data = UserDefaults.standard.bool(forKey: issaller)
         return data
+    }
+    public static func modetype() -> String? {
+        let data = UserDefaults.standard.string(forKey: mode)
+        if (data == nil){
+            return "light"
+        }else{
+        return data
+        }
     }
     public static func loginAlert(closure: HandlerView? = nil) {
         let handler: HandlerView? = {
@@ -131,5 +144,12 @@ class Token: Codable {
     var twitter: String?
     var facebook: String?
     var website: String?
-
+    var email: String?
+    var password: String?
+    var phone: String?
+    var isNotificationOn: Bool?
+    var status: Int?
+    var isDarkMode: Bool?
+    var paymentType: Int?
+    var city: ItemCity?
 }

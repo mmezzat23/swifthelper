@@ -82,11 +82,11 @@ class BaseApi: Downloader, Paginator, Alertable {
 
                     case 400?:
                         if (url.contains("connect/token")){
-                            UIApplication.topViewController()?.stopLoading()
-                            self.makeAlert("the_login_is_required.lan".localized, closure: {
-                                guard let vcr = Constants.loginNav else { return }
-                                UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
-                            })
+                            UserRoot.save(response: Data())
+                            guard let vcr = Constants.loginNav else { return }
+                            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                            appDelegate?.window?.rootViewController = vcr
+
                         }else{
                             UIApplication.topViewController()?.stopLoading()
                             self.setErrorMessage(data: response.data)
@@ -94,11 +94,11 @@ class BaseApi: Downloader, Paginator, Alertable {
                         
                     //completionHandler(nil)
                     case 401?:
-                        UIApplication.topViewController()?.stopLoading()
-                        self.makeAlert("the_login_is_required.lan".localized, closure: {
-                            guard let vcr = Constants.loginNav else { return }
-                            UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
-                        })
+                        UserRoot.save(response: Data())
+                        guard let vcr = Constants.loginNav else { return }
+                        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                        appDelegate?.window?.rootViewController = vcr
+
                     case 404?:
                         UIApplication.topViewController()?.stopLoading()
                         self.makeAlert("not_found.lan".localized, closure: {})

@@ -40,8 +40,8 @@ class Editprofile: BaseController {
         viewModel?.delegate = self
         viewModel?.getprofile()
         self.genders.removeAll()
-        self.genders.append(GenderModel(type: "1", name: "Male".localized()))
-        self.genders.append(GenderModel(type: "2", name: "Female".localized()))
+        self.genders.append(GenderModel(type: "0", name: "Male".localized()))
+        self.genders.append(GenderModel(type: "1", name: "Female".localized()))
         birthdate.UIViewAction { [self] in
             let vcc = self.pushViewController(PickersPOP.self,storyboard: .profile)
             vcc.openWhat = "date"
@@ -91,14 +91,15 @@ class Editprofile: BaseController {
             }
             self?.name.text = data.responseData?.name
             self?.bio.text = data.responseData?.bio
-            if (data.responseData?.gender  == 1){
+            if (data.responseData?.gender  == 0){
                 self?.gendertype.text = "Male".localized()
-                self?.type = "1"
-            }else if (data.responseData?.gender == 2){
+                self?.type = "0"
+            }else if (data.responseData?.gender == 1){
                 self?.gendertype.text = "Female".localized()
-                self?.type = "2"
+                self?.type = "1"
             }
             if (data.responseData?.dateOfBirth != "" && data.responseData?.dateOfBirth != nil){
+                self?.date = data.responseData?.dateOfBirth ?? ""
             self?.birthdate.text = data.responseData?.dateOfBirth
             }
             

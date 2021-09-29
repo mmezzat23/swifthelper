@@ -15,10 +15,18 @@ struct Constants {
     static var loginNavInd: String = "LoginNav"
     static var registerNavInd: String = "RegNav"
     static var contactNavInd: String = "ContactNav"
+    static var termsNavInd: String = "termsNav"
     static var login: String = "LoginNav"
+    static var lang: String = ""
     static var loginNav: UINavigationController? {
         let storyboard = UIStoryboard(name: Storyboards.auth.rawValue, bundle: nil)
         let nav = storyboard.instantiateViewController(withIdentifier: loginNavInd) as? UINavigationController
+        return nav
+        // Constants.storyboard = Storyboards.main.rawValue
+    }
+    static var termsNav: UINavigationController? {
+        let storyboard = UIStoryboard(name: Storyboards.setting.rawValue, bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: termsNavInd) as? UINavigationController
         return nav
         // Constants.storyboard = Storyboards.main.rawValue
     }

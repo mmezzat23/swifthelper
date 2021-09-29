@@ -12,10 +12,12 @@ class Buyerswitch: BaseController {
     @IBOutlet weak var accountmode: UILabel!
     @IBOutlet weak var switchmode: UILabel!
     @IBOutlet weak var terms: UILabel!
-    
+    var viewModel : ProfileViewModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
+        setup()
         terms.setunderline(title: "Privacy Policy and Terms.".localized())
         if (UserRoot.saller() == true){
             accountmode.text = "Seller Mode.".localized()
@@ -25,11 +27,20 @@ class Buyerswitch: BaseController {
             accountmode.text = "Buyer Mode.".localized()
         }
         terms.UIViewAction {
+            self.dismiss(animated: true, completion: nil)
+//         guard let vcr = Constants.loginNav else { return }
+//         let appDelegate = UIApplication.shared.delegate as? AppDelegate
+//         appDelegate?.window?.rootViewController = vcr
+
             let vcc = self.controller(Terms.self,storyboard: .setting)
             self.push(vcc)
         }
 
         // Do any additional setup after loading the view.
+    }
+    func setup() {
+        viewModel = .init()
+        viewModel?.delegate = self
     }
     
     @IBAction func discard(_ sender: Any) {
@@ -39,6 +50,7 @@ class Buyerswitch: BaseController {
     @IBAction func confirm(_ sender: Any) {
         if (UserRoot.saller() == true){
             UserRoot.savesaller(remember: false)
+            viewModel?.changetosaller()
             let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                    guard let nav = controller else { return }
                    let delegate = UIApplication.shared.delegate as? AppDelegate

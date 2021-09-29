@@ -19,6 +19,7 @@ class ProfileViewModel: ViewModelCore {
     var addressData: DynamicType = DynamicType<AddressModel>()
     var singleaddressData: DynamicType = DynamicType<SingleaddressModel>()
     var faqsData: DynamicType = DynamicType<FaqsModel>()
+    var editdata: DynamicType = DynamicType<UserRoot>()
 
     func addcard(paramters: [String: Any] ) {
         delegate?.startLoading()
@@ -30,7 +31,17 @@ class ProfileViewModel: ViewModelCore {
                 self.userdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.addcard(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -45,7 +56,17 @@ class ProfileViewModel: ViewModelCore {
                 self.userdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.editcard(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -58,7 +79,17 @@ class ProfileViewModel: ViewModelCore {
                 self.deletedata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.deletecard(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -66,16 +97,44 @@ class ProfileViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.connection(.addcard, type: .get) { (response) in
             let data = try? JSONDecoder().decode(Cards.self, from: response ?? Data())
+            if (data?.isSuccess == true){
             self.cardsData.value = data
             self.paginator(respnod: data?.responseData?.items)
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getcards()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
         }
     }
     func getcity() {
         delegate?.startLoading()
         ApiManager.instance.connection(.city, type: .get) { (response) in
             let data = try? JSONDecoder().decode(CityModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
             self.cityData.value = data
             self.paginator(respnod: data?.responseData?.items)
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getcity()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
         }
     }
     func addaddress(paramters: [String: Any] ) {
@@ -88,7 +147,17 @@ class ProfileViewModel: ViewModelCore {
                 self.userdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.addaddress(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -97,8 +166,22 @@ class ProfileViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.connection(.address, type: .get) { (response) in
             let data = try? JSONDecoder().decode(AddressModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
             self.addressData.value = data
             self.paginator(respnod: data?.responseData?.items)
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getaddresss()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
         }
     }
     func deleteaddress(id : Int) {
@@ -110,7 +193,17 @@ class ProfileViewModel: ViewModelCore {
                 self.deletedata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.deleteaddress(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -123,7 +216,17 @@ class ProfileViewModel: ViewModelCore {
                 self.singleaddressData.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getsingleaddress(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -137,7 +240,17 @@ class ProfileViewModel: ViewModelCore {
                 self.userdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.editaddress(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -151,7 +264,17 @@ class ProfileViewModel: ViewModelCore {
                 self.userdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getinfo(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -164,7 +287,17 @@ class ProfileViewModel: ViewModelCore {
                 self.socialdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getsocial()
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -173,8 +306,94 @@ class ProfileViewModel: ViewModelCore {
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connection(.faqs, type: .get) { (response) in
             let data = try? JSONDecoder().decode(FaqsModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
             self.faqsData.value = data
             self.paginator(respnod: data?.responseData?.items)
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getfaqs(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getaccountsetting() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.settings, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getaccountsetting()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func editaccountsetting(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.settingsedit, type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.editdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.editaccountsetting(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func changetosaller() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.buyerassaller, type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.editdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.changetosaller()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
         }
     }
 }

@@ -18,7 +18,6 @@ class AuthViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.loginurl, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -35,7 +34,6 @@ class AuthViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.forget, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -50,7 +48,6 @@ class AuthViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.forget, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -65,7 +62,6 @@ class AuthViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.verifyForgetPasswordOTP, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -80,7 +76,6 @@ class AuthViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.reset, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -94,14 +89,23 @@ class AuthViewModel: ViewModelCore {
     func getprofile() {
         delegate?.startLoading()
         ApiManager.instance.connection(.profile, type: .get) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
                 self.userdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getprofile()
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
@@ -109,15 +113,25 @@ class AuthViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connection(.editprofile, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
                 self.editdata.value = data
             }
             else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.editprofile(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
                 self.errordata.value = data?.errorMessage
+                }
             }
         }
     }
+    
 }

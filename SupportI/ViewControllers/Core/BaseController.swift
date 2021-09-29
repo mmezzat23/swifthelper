@@ -41,6 +41,12 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
     //public static var setting:SettingData?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        if #available(iOS 13.0, *) {
+//            overrideUserInterfaceStyle = .dark
+//        } else {
+//            // Fallback on earlier versions
+//        }
         self.navigationController?.navigationBar.removeSubviews()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.setupBase()

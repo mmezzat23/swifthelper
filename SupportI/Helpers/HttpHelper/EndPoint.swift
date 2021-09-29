@@ -9,7 +9,7 @@
 import Foundation
 
 public enum EndPoint: String {
-    case token = "connect/token"
+    case token = "0/connect/token"
     case update = "user/update"
     case loginurl = "1/api/app/register/login"
 //    case login1 = "connect/token"
@@ -20,13 +20,16 @@ public enum EndPoint: String {
     case reset = "1/api/app/register/reset-password"
     case resend = "1/api/app/register/re-send-new-code"
     case addcard = "1/api/app/credit-card"
-    case city = "1/api/app/city"
+    case city = "1/api/app/city/cities"
     case address = "1/api/app/address"
     case profile = "1/api/app/my-profile"
     case editprofile = "1/api/app/my-profile/edit"
     case help = "1/api/app/help"
     case socialabout = "1/api/app/help/social-links"
     case faqs = "1/api/app/help/faqs"
+    case settings = "1/api/app/account-setting"
+    case settingsedit = "1/api/app/account-setting/edit"
+    case buyerassaller = "1/api/app/account-setting/set-buyer-as-seller"
     case logout
     case packages
     case locations
@@ -40,7 +43,6 @@ public enum EndPoint: String {
     case report = "ads/report"
     case favorites
     case advertisers
-    case settings
     case notifications
     case banks
     case search = "ads/search"

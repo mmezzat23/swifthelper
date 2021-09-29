@@ -13,12 +13,15 @@ class Buyer: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
-        let vcc = self.pushViewController(Buyerswitch.self,storyboard: .main)
-        pushPop(vcr: vcc)
+       
         // Do any additional setup after loading the view.
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let vcc = self.pushViewController(Buyerswitch.self,storyboard: .main)
+        pushPop(vcr: vcc)
+    }
 
     /*
     // MARK: - Navigation

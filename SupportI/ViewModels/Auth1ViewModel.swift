@@ -17,7 +17,6 @@ class Auth1ViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(.registerUrl, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -33,7 +32,6 @@ class Auth1ViewModel: ViewModelCore {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
         ApiManager.instance.connectionRaw(url, type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -47,7 +45,6 @@ class Auth1ViewModel: ViewModelCore {
     func resendApi(username:String  ) {
         delegate?.startLoading()
         ApiManager.instance.connectionRaw("\(EndPoint.resend.rawValue)?userName=\(username)", type: .post) { (response) in
-            self.delegate?.stopLoading()
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {

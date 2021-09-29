@@ -145,12 +145,12 @@ class Addaddress: BaseController {
             home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             cars.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
             home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             type = "1"
         }
         home.UIViewAction { [self] in
@@ -158,12 +158,12 @@ class Addaddress: BaseController {
             cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             home.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
             cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             type = "2"
         }
         job.UIViewAction { [self] in
@@ -171,12 +171,12 @@ class Addaddress: BaseController {
             home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             job.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
             home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             type = "3"
         }
         web.UIViewAction { [self] in
@@ -184,27 +184,27 @@ class Addaddress: BaseController {
             home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
             home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             type = "4"
         }
-        gift.UIViewAction { [self] in
-            gift.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
-            home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            gift.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
-            home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            type = "5"
-        }
+//        gift.UIViewAction { [self] in
+//            gift.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+//            home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            gift.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+//            home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+//            type = "5"
+//        }
         pinlbl.UIViewAction { [self] in
             let vcc = self.pushViewController(mapViewController.self,storyboard: .setting)
             vcc.delegate = self
