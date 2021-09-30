@@ -42,6 +42,19 @@ class Auth1ViewModel: ViewModelCore {
             }
         }
     }
+    func Verifyphone(code: String , url : EndPoint ) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(url.rawValue)?code=\(code)", type: .post) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                self.errordata.value = data?.errorMessage
+            }
+        }
+    }
     func resendApi(username:String  ) {
         delegate?.startLoading()
         ApiManager.instance.connectionRaw("\(EndPoint.resend.rawValue)?userName=\(username)", type: .post) { (response) in

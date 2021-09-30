@@ -44,6 +44,7 @@ class SettingsProfile: BaseController {
     var cities : [ItemCity] = []
     var genders : [GenderModel] = []
     var reasontype = ""
+    var phonetxt = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +100,7 @@ class SettingsProfile: BaseController {
             self?.stopLoading()
             self?.email.text = data.responseData?.email
             self?.phone.text = data.responseData?.phone
+            self?.phonetxt = data.responseData?.phone ?? ""
             self?.password.placeholder = "********"
             self?.darkmodeswitch.isOn = data.responseData?.isDarkMode ?? false
             self?.notificatinswitch.isOn = data.responseData?.isNotificationOn ?? false
@@ -128,7 +130,24 @@ class SettingsProfile: BaseController {
             }
             
         })
-        
+        viewModel?.deleteaccount.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data.responseData ?? "", closure: {
+                let vcc = self?.pushViewController(Passworddelete.self,storyboard: .profile)
+                self?.pushPop(vcr: vcc!)
+            })
+        })
+        viewModel?.verifyphone.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data.responseData ?? "", closure: {
+                let vcc = self?.pushViewController(CodeverficationController.self,storyboard: .auth1)
+                vcc?.delegate = self
+                vcc?.isverify = true
+                self?.pushPop(vcr: vcc!)
+            })
+        })
         viewModel?.errordata.bind({ [weak self](data) in
             self?.stopLoading()
             print(data)
@@ -168,6 +187,11 @@ class SettingsProfile: BaseController {
         })
     }
     @IBAction func deleteaccount(_ sender: Any) {
+        if (reasontype == ""){
+            makeAlert("Select reason of delete", closure: {})
+        }else{
+            viewModel?.deleteaccountapi(reason: reasontype)
+        }
     }
     @IBAction func save(_ sender: Any) {
         var error : String = ""
@@ -177,6 +201,7 @@ class SettingsProfile: BaseController {
         if (error != ""){
           makeAlert(error, closure: {})
         }else{
+        if (phonetxt == phone.text){
         parameters["email"] = email.text
         parameters["phone"] = phone.text
         parameters["cityId"] = cityid
@@ -187,6 +212,9 @@ class SettingsProfile: BaseController {
             parameters["password"] = password.text
         }
         viewModel?.editaccountsetting(paramters: parameters)
+        }else{
+            viewModel?.verfiyaccountsetting(phone: phone.text ?? "")
+        }
         }
         print(parameters)
     }
@@ -239,6 +267,23 @@ extension SettingsProfile : PickersPOPDelegate {
     func callbackgenders(item: GenderModel) {
         reasontxt.text = item.name
         reasontype = item.type ?? ""
+    }
+}
+extension SettingsProfile : PhoneverifyDelegate {
+    func verify(item: Bool) {
+        if (item == true){
+            parameters["email"] = email.text
+            parameters["phone"] = phone.text
+            parameters["cityId"] = cityid
+            parameters["isNotificationOn"] = isnotication
+            parameters["status"] = isactive
+            parameters["isDarkMode"] = isdark
+            if (password.text != ""){
+                parameters["password"] = password.text
+            }
+            viewModel?.editaccountsetting(paramters: parameters)
+            
+        }
     }
 }
 

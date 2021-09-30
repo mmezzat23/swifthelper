@@ -9,6 +9,8 @@ import UIKit
 
 protocol PickersPOPDelegate:class {
     func callbackgenders(item: GenderModel)
+    func callbackreasons(item: ResponseDatum)
+
     func callbackCity(item:ItemCity)
 //    func callbackCategory(item:Category )
 //    func callbacksubcat(item:Category)
@@ -20,6 +22,9 @@ protocol PickersPOPDelegate:class {
 }
 extension PickersPOPDelegate {
     func callbackgenders(item:GenderModel ){
+
+    }
+    func callbackreasons(item:ResponseDatum ){
 
     }
 //    func callbackOrders(item:OrderModel ){
@@ -58,6 +63,7 @@ class PickersPOP:BaseController {
         case custom
         case subcat
         case order
+        case raeson
     }
     enum DateSelection {
         case date
@@ -73,6 +79,8 @@ class PickersPOP:BaseController {
     var dateSelection:DateSelection = .date
     var returnedKey:String = ""
     var genders:[GenderModel] = []
+    var raesons:[ResponseDatum] = []
+
     var cities:[ItemCity] = []
 //    var categories:[Category] = []
 //    var orders:[OrderModel] = []
@@ -159,6 +167,15 @@ class PickersPOP:BaseController {
                         self.delegate?.callbackgenders(item: item)
                     }
                 }
+                } else if pickerSelection == .raeson {
+                    let path = pickerView.selectedRow(inComponent: 0)
+                    if raesons.isset(path){
+                        let item = raesons[pickerView.selectedRow(inComponent: 0)]
+                        self.dismiss(animated: true) {
+                            self.delegate?.callbackreasons(item: item)
+                        }
+                    }
+                
 //
 //            }else if pickerSelection == .category {
 //                let path = pickerView.selectedRow(inComponent: 0)
@@ -233,9 +250,10 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         else if pickerSelection == .gender {
             return genders.count
         }
-//        else if pickerSelection == .subcat {
-//            return subcategories.count
-//        } else if pickerSelection == .custom {
+        else if pickerSelection == .raeson {
+            return raesons.count
+        }
+//        else if pickerSelection == .custom {
 //            return customs.count
 //        }
         return 0
@@ -255,9 +273,10 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         else if pickerSelection == .gender {
             return genders[row].name
         }
-//        else if pickerSelection == .subcat {
-//            return subcategories[row].name
-//        } else if pickerSelection == .custom {
+        else if pickerSelection == .raeson {
+            return raesons[row].name
+        }
+//        else if pickerSelection == .custom {
 //            return customs[row].title
 //        }
         

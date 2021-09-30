@@ -53,8 +53,8 @@ class Help: BaseController {
             self.push(vcc)
         }
         sendmessage.UIViewAction {
-            let vcc = self.controller(Contactus.self,storyboard: .setting)
-            self.push(vcc)
+//            let vcc = self.controller(Contactus.self,storyboard: .setting)
+//            self.push(vcc)
         }
         logout.UIViewAction { [self] in
             let vcc = self.pushViewController(Logout.self,storyboard: .setting)

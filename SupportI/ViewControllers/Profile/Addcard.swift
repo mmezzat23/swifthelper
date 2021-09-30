@@ -8,6 +8,7 @@
 
 import UIKit
 import FormTextField
+import CreditCardValidator
 
 class Addcard: BaseController , UITextFieldDelegate{
     @IBOutlet weak var cardname: UITextField!
@@ -68,7 +69,23 @@ class Addcard: BaseController , UITextFieldDelegate{
         })
     }
     @IBAction func save(_ sender: Any) {
+        var error : String = ""
+       
+        if !CreditCardValidator(visanumber.text!).isValid {
+            error = "\(error)\n \("Card number is invalid".localized)"
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yy"
+        let enteredDate = dateFormatter.date(from: visaexpiry.text!)!
+        let endOfMonth = Calendar.current.date(byAdding: .month, value: 1, to: enteredDate)!
+        let now = Date()
+        if (endOfMonth < now) {
+            error = "\(error)\n \("Card expiry is invalid".localized)"
+        }
         if (validateTextFields()){
+            if (error != ""){
+              makeAlert(error, closure: {})
+            }else{
             parameters["holderName"] = name.text ?? ""
             parameters["expiry"] = visaexpiry.text ?? ""
             parameters["cardNumber"] = visanumber.text?.replacingOccurrences(of: " ", with: "")
@@ -77,6 +94,7 @@ class Addcard: BaseController , UITextFieldDelegate{
                 viewModel?.editcard(paramters: parameters)
             }else{
                 viewModel?.addcard(paramters: parameters)
+            }
             }
             print(parameters)
         }

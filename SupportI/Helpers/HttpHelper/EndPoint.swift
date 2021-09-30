@@ -30,6 +30,12 @@ public enum EndPoint: String {
     case settings = "1/api/app/account-setting"
     case settingsedit = "1/api/app/account-setting/edit"
     case buyerassaller = "1/api/app/account-setting/set-buyer-as-seller"
+    case deleteaccount = "1/api/app/account-setting/send-on-time-password"
+    case deleteaccountdelete = "1/api/app/account-setting/confirm-delete"
+    case verfiysetting = "1/api/app/account-setting/send-verify-phone-code"
+    case confirmverfiy = "1/api/app/account-setting/confirm-verify-phone-code"
+    case reasons = "1/api/app/contact-us/reason-list"
+    case contactus = "1/api/app/contact-us"
     case logout
     case packages
     case locations

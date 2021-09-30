@@ -68,7 +68,7 @@ class Authorization {
         if UserRoot.fetch()?.responseData?.refresh_Token != nil {
             if !Authorization.running {
                 Authorization.running = true
-                    ApiManager.instance.paramaters["refresh_token"] = UserRoot.fetch()?.responseData?.refresh_Token
+                    ApiManager.instance.paramaters["refresh_token"] = UserRoot.fetch()?.responseData?.refresh_Token ?? ""
                 print(UserRoot.fetch()?.responseData?.refresh_Token)
                     ApiManager.instance.paramaters["grant_type"] = "refresh_token"
                 ApiManager.instance.paramaters["client_id"] = "WndoApp_App"

@@ -20,6 +20,9 @@ class ProfileViewModel: ViewModelCore {
     var singleaddressData: DynamicType = DynamicType<SingleaddressModel>()
     var faqsData: DynamicType = DynamicType<FaqsModel>()
     var editdata: DynamicType = DynamicType<UserRoot>()
+    var deleteaccount: DynamicType = DynamicType<DeleteaccountModel>()
+    var verifyphone: DynamicType = DynamicType<DeleteaccountModel>()
+    var reasons: DynamicType = DynamicType<ReasonsModel>()
 
     func addcard(paramters: [String: Any] ) {
         delegate?.startLoading()
@@ -372,6 +375,54 @@ class ProfileViewModel: ViewModelCore {
             }
         }
     }
+    func verfiyaccountsetting(phone : String ) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.verfiysetting.rawValue)?phone=\(phone)", type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(DeleteaccountModel.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.verifyphone.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.verfiyaccountsetting(phone: phone)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func confirmaccountsetting(code : String ) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.confirmverfiy.rawValue)?code=\(code)", type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(DeleteaccountModel.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.verifyphone.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.confirmaccountsetting(code: code)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
     func changetosaller() {
         delegate?.startLoading()
         ApiManager.instance.connection(.buyerassaller, type: .post) { (response) in
@@ -386,6 +437,102 @@ class ProfileViewModel: ViewModelCore {
                     Authorization.instance.refreshToken1{callback in
                         if (callback){
                             self.changetosaller()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func deleteaccountapi(reason: String) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.deleteaccount.rawValue)?reason=\(reason)", type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(DeleteaccountModel.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.deleteaccount.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.deleteaccountapi(reason: reason)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func deleteaccountconfirm(paramters: [String: Any]) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.deleteaccountdelete, type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(Deletecards.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.deletedata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.deleteaccountconfirm(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getreasons(type : String) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters["reasonType"] = type
+        ApiManager.instance.connection(.reasons, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(ReasonsModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+            self.reasons.value = data
+                self.paginator(respnod: data?.responseData)
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getreasons(type: type)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func contactus(paramters: [String: Any]) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.contactus, type: .post) { (response) in
+            let data = try? JSONDecoder().decode(Deletecards.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.deletedata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.contactus(paramters: paramters)
                         }else{
                             
                         }

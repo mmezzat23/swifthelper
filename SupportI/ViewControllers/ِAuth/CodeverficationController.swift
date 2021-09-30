@@ -7,7 +7,16 @@
 //
 
 import UIKit
+protocol PhoneverifyDelegate:class {
+    func verify(item: Bool)
+    
+}
+extension PhoneverifyDelegate {
+    func verify(item:Bool ){
 
+    }
+
+}
 class CodeverficationController: BaseController , UITextFieldDelegate{
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var code1: UITextField!
@@ -17,11 +26,14 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var resend: UILabel!
     var isCommingFromForgetPassword = false
+    var isverify = false
     var code = ""
     var userid = ""
     var timerHelper: TimeHelper?
     var viewModel : Auth1ViewModel?
     var authModel : AuthViewModel?
+    var profileModel : ProfileViewModel?
+
     var parameters : [String : Any] = [:]
     var userName : String = ""
     var sendTo : String = ""
@@ -29,6 +41,8 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
     var attributedString = NSMutableAttributedString(string:"")
     var timestamp = 0
+    weak var delegate:PhoneverifyDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -54,7 +68,11 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
             if (isCommingFromForgetPassword == true){
             authModel?.resendgorget(paramters: parameters)
             }else {
+                if (isverify == true){
+                profileModel?.verfiyaccountsetting(phone: sendTo)
+                }else{
                 viewModel?.resendApi(username: userName)
+                }
             }
         }
         let buttonTitleStr = NSMutableAttributedString(string:"Resend OTP Code".localized, attributes:attrs)
@@ -84,9 +102,22 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
                 scene?.userid = data.responseData?.userId ?? ""
                 self?.push(scene!)
             }else{
-                let scene = self?.controller(AccountsuccessController.self,storyboard: .auth1)
-                self?.push(scene!)
+                if (self?.isverify == true){
+                    self?.dismiss(animated: true) {
+                        self?.delegate?.verify(item: true)
+                    }
+                }else{
+                    let scene = self?.controller(AccountsuccessController.self,storyboard: .auth1)
+                    self?.push(scene!)
+                }
             }
+        })
+        profileModel?.verifyphone.bind({ [weak self](data) in
+            self?.stopLoading()
+            self?.dismiss(animated: true) {
+                self?.delegate?.verify(item: true)
+            }
+            
         })
         viewModel?.resenddata.bind({ [weak self](data) in
             self?.stopLoading()
@@ -102,6 +133,11 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
             print(data)
             self?.makeAlert(data, closure: {})
         })
+        profileModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
     }
     
     func setup() {
@@ -109,6 +145,8 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
        viewModel?.delegate = self
         authModel = .init()
         authModel?.delegate = self
+        profileModel = .init()
+        profileModel?.delegate = self
    }
     @IBAction func confirm(_ sender: Any) {
         self.verifyOtpApi()
@@ -264,9 +302,13 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         parameters["userId"] = self.userid
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyForgetPasswordOTP)
         } else {
+            if (isverify == true){
+                profileModel?.confirmaccountsetting(code: self.code)
+            }else{
           parameters["userName"] = self.userName
           print(parameters)
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyRegisterationOTP)
+            }
         }
     }
 }

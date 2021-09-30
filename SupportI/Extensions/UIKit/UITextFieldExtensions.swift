@@ -10,6 +10,7 @@ import UIKit
 
 #if !os(watchOS)
 // MARK: - Enums
+
 public extension UITextField {
 
 	/// SwifterSwift: UITextField text type.
@@ -156,6 +157,7 @@ extension UITextField {
         self.rightView = paddingView
         self.rightViewMode = .always
     }
+    
     // Next step here
 }
 

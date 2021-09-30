@@ -10,6 +10,8 @@ import UIKit
 
 class Contactus: BaseController {
 
+    @IBOutlet weak var orderlbl: UILabel!
+    @IBOutlet weak var reasonlbl: UILabel!
     @IBOutlet weak var orderconstant: NSLayoutConstraint!
     @IBOutlet weak var phoneconstant: NSLayoutConstraint!
     @IBOutlet weak var emailcostant: NSLayoutConstraint!
@@ -33,11 +35,17 @@ class Contactus: BaseController {
     @IBOutlet weak var reasonhight: NSLayoutConstraint!
     @IBOutlet weak var reason: UIView!
     @IBOutlet weak var reasontop: NSLayoutConstraint!
-    
-  
+    var viewModel : ProfileViewModel?
+    var parameters : [String : Any] = [:]
+    var reasons : [ResponseDatum] = []
+    var reasonid = 0
+    var orderid = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
+        setup()
+        bind()
         if (UserRoot.token() != nil) {
             phone.isHidden = true
             email.isHidden = true
@@ -49,6 +57,11 @@ class Contactus: BaseController {
             emailtxthight.constant = 0
             emailcostant.constant = 0
             phoneconstant.constant = 0
+            if (UserRoot.saller() == true){
+            viewModel?.getreasons(type: "0")
+            }else{
+                viewModel?.getreasons(type: "1")
+            }
         }else{
             order.isHidden = true
             reason.isHidden = true
@@ -75,15 +88,84 @@ class Contactus: BaseController {
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setup() {
+       viewModel = .init()
+       viewModel?.delegate = self
+        reason.UIViewAction {
+            let vcc = self.pushViewController(PickersPOP.self,storyboard: .profile)
+            vcc.openWhat = "picker"
+            vcc.raesons = self.reasons
+            vcc.pickerSelection = .raeson
+            vcc.delegate = self
+            self.pushPop(vcr: vcc)
+        }
+        contact.UIViewAction { [self] in
+            if (validateTextFields()){
+                if (UserRoot.token() != nil){
+                    var error : String = ""
+                    if (reasonid == 0){
+                        error = "\(error)\n \("select reason".localized)"
+                    }
+                    if (error != ""){
+                      makeAlert(error, closure: {})
+                    }else{
+                        parameters["reasonId"] = reasonid
+                        parameters["orderId"] = orderid
+                        parameters["message"] = message.text
+                        viewModel?.contactus(paramters: parameters)
+                    }
+                }else{
+                    parameters["email"] = email.text
+                    parameters["phone"] = phone.text
+                    parameters["message"] = message.text
+                    viewModel?.contactus(paramters: parameters)
+                }
+            }
+        }
+   }
+    
+    override func bind() {
+        viewModel?.reasons.bind({ [weak self](data) in
+            self?.stopLoading()
+            self?.reasons.append(contentsOf: data.responseData ?? [])
+           
+        })
+        viewModel?.deletedata.bind({ [weak self](data) in
+            self?.stopLoading()
+            if (UserRoot.saller() == true){
+                let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
+                       guard let nav = controller else { return }
+                       let delegate = UIApplication.shared.delegate as? AppDelegate
+                       delegate?.window?.rootViewController = nav
+            }else{
+                let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                       guard let nav = controller else { return }
+                       let delegate = UIApplication.shared.delegate as? AppDelegate
+                       delegate?.window?.rootViewController = nav
+            }
+           
+        })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
     }
-    */
+    func validateTextFields() -> Bool {
+       
+           message.customValidationRules = [RequiredRule()]
+           if (UserRoot.token() == nil){
+            email.customValidationRules = [RequiredRule() , EmailRule()]
+            phone.customValidationRules = [RequiredRule() , PhoneNumberRule()]
+           }
+           let validator = Validation(textFields: [message,phone , email])
+           return validator.success
+       }
+}
 
+extension Contactus : PickersPOPDelegate {
+    func callbackreasons(item: ResponseDatum) {
+        reasonlbl.text = item.name
+        reasonid = item.id ?? 0
+    }
 }

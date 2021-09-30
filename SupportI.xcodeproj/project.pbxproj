@@ -44,6 +44,8 @@
 		663D34F726EF57B0008CE1B9 /* PassconfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F626EF57B0008CE1B9 /* PassconfirmController.swift */; };
 		663D34FA26EF5F64008CE1B9 /* CodeverficationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D34F926EF5F64008CE1B9 /* CodeverficationController.swift */; };
 		6641D7752703359600469D4F /* FaqsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6641D7742703359600469D4F /* FaqsModel.swift */; };
+		664282D52705AE6800822053 /* Passworddelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664282D42705AE6800822053 /* Passworddelete.swift */; };
+		664282D82705B14700822053 /* Deleteaccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664282D72705B14700822053 /* Deleteaccount.swift */; };
 		6648B75D26F7895B0019338A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6648B75C26F7895B0019338A /* MainController.swift */; };
 		664A9DDF26EF674400CB7D3D /* AccountsuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */; };
 		665163C726F88558007B69C2 /* all_round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665163C626F88558007B69C2 /* all_round.ttf */; };
@@ -58,6 +60,7 @@
 		669CDB7326FB2CC500E1081D /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDB7226FB2CC500E1081D /* Terms.swift */; };
 		669CDB7626FB2CD500E1081D /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDB7526FB2CD500E1081D /* Privacy.swift */; };
 		669CDB7926FB2F6500E1081D /* Contactus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDB7826FB2F6500E1081D /* Contactus.swift */; };
+		66B71D482705ECC50044969E /* ReasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B71D472705ECC50044969E /* ReasonModel.swift */; };
 		66BE7BA226FC71D400B19CC9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66BE7BA126FC71D400B19CC9 /* Profile.storyboard */; };
 		66BE7BA626FC721800B19CC9 /* Paymentmethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BE7BA526FC721800B19CC9 /* Paymentmethod.swift */; };
 		66BE7BB126FC777900B19CC9 /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BE7BAF26FC777900B19CC9 /* PaymentTableViewCell.swift */; };
@@ -307,6 +310,8 @@
 		663D34F626EF57B0008CE1B9 /* PassconfirmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassconfirmController.swift; sourceTree = "<group>"; };
 		663D34F926EF5F64008CE1B9 /* CodeverficationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeverficationController.swift; sourceTree = "<group>"; };
 		6641D7742703359600469D4F /* FaqsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqsModel.swift; sourceTree = "<group>"; };
+		664282D42705AE6800822053 /* Passworddelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passworddelete.swift; sourceTree = "<group>"; };
+		664282D72705B14700822053 /* Deleteaccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deleteaccount.swift; sourceTree = "<group>"; };
 		6648B75C26F7895B0019338A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		664A9DDE26EF674400CB7D3D /* AccountsuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsuccessController.swift; sourceTree = "<group>"; };
 		665163C626F88558007B69C2 /* all_round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = all_round.ttf; sourceTree = "<group>"; };
@@ -331,6 +336,7 @@
 		669CDB7226FB2CC500E1081D /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
 		669CDB7526FB2CD500E1081D /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
 		669CDB7826FB2F6500E1081D /* Contactus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactus.swift; sourceTree = "<group>"; };
+		66B71D472705ECC50044969E /* ReasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonModel.swift; sourceTree = "<group>"; };
 		66BE7BA126FC71D400B19CC9 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		66BE7BA526FC721800B19CC9 /* Paymentmethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paymentmethod.swift; sourceTree = "<group>"; };
 		66BE7BAF26FC777900B19CC9 /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewCell.swift; sourceTree = "<group>"; };
@@ -668,6 +674,7 @@
 				6632E564270079790095221D /* SettingsProfile.swift */,
 				66342A0A2701BCFC0048BE3C /* Addaddress.swift */,
 				6639320F2701DB2C00874342 /* PickersPOP.swift */,
+				664282D42705AE6800822053 /* Passworddelete.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -785,6 +792,8 @@
 				663932162701F3AC00874342 /* SingleaddressModel.swift */,
 				66393234270207E200874342 /* GenderModel.swift */,
 				6641D7742703359600469D4F /* FaqsModel.swift */,
+				664282D72705B14700822053 /* Deleteaccount.swift */,
+				66B71D472705ECC50044969E /* ReasonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1606,6 +1615,7 @@
 				80DA014C211A888600817038 /* FloatingPointExtensions.swift in Sources */,
 				E86D96F423F4C57A0029FBAD /* Localization.swift in Sources */,
 				143D3E6726F0A9BF0031C74E /* Auth1ViewModel.swift in Sources */,
+				664282D82705B14700822053 /* Deleteaccount.swift in Sources */,
 				80A2FC25215841BC00223A77 /* FacebookDriver.swift in Sources */,
 				80A2FC52215841BC00223A77 /* FloatRule.swift in Sources */,
 				80A2FC4C215841BC00223A77 /* ValidationDelegate.swift in Sources */,
@@ -1635,6 +1645,7 @@
 				80A2FBF7215841BC00223A77 /* ARCarMovementDelegate.swift in Sources */,
 				80A2FC37215841BC00223A77 /* UINavigationControllerExtension.swift in Sources */,
 				6684EF8126F9E0D7005B4122 /* Profilebuyer.swift in Sources */,
+				66B71D482705ECC50044969E /* ReasonModel.swift in Sources */,
 				80A2FC0C215841BC00223A77 /* MultiSelectImagesHelper.swift in Sources */,
 				669A59D026FC9AC6007615D9 /* AddressTableViewCell.swift in Sources */,
 				66BE7BA626FC721800B19CC9 /* Paymentmethod.swift in Sources */,
@@ -1724,6 +1735,7 @@
 				80DA016C211A888700817038 /* UITabBarExtensions.swift in Sources */,
 				14D902CA26FB9B8400DFD75D /* GuestPopUpViewController.swift in Sources */,
 				80A2FC34215841BC00223A77 /* CustomNavigationAnimationController.swift in Sources */,
+				664282D52705AE6800822053 /* Passworddelete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1882,13 +1894,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF7RTUV4X;
+				DEVELOPMENT_TEAM = UL4L86WK78;
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedAbdu.Helper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wndo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1905,13 +1917,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DKF7RTUV4X;
+				DEVELOPMENT_TEAM = UL4L86WK78;
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedAbdu.Helper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wndo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

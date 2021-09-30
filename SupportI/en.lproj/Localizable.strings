@@ -269,3 +269,7 @@
 "CONFIRM" = "CONFIRM";
 "reason1" = "reason1";
 "reason2" = "reason2";
+"Select reason of delete" = "Select reason of delete";
+"Enter password send to you to delete account" = "Enter password send to you to delete account";
+"Card number is invalid" = "Card number is invalid";
+"Card expiry is invalid" = "Card expiry is invalid";

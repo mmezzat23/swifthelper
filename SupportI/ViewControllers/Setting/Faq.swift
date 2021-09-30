@@ -20,8 +20,8 @@ class Faq: BaseController {
         setup()
         bind()
         sendmessage.UIViewAction {
-            let vcc = self.controller(Contactus.self,storyboard: .setting)
-            self.push(vcc)
+//            let vcc = self.controller(Contactus.self,storyboard: .setting)
+//            self.push(vcc)
         }
     }
     

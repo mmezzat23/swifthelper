@@ -17,9 +17,9 @@ class GuestPopUpViewController: BaseController {
 
         sendmessage.UIViewAction {
             self.dismiss(animated: true, completion: nil)
-         guard let vcr = Constants.contactNav else { return }
-         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-         appDelegate?.window?.rootViewController = vcr
+//         guard let vcr = Constants.contactNav else { return }
+//         let appDelegate = UIApplication.shared.delegate as? AppDelegate
+//         appDelegate?.window?.rootViewController = vcr
 
         }
     }

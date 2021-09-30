@@ -1511,6 +1511,7 @@
                         <outlet property="order" destination="RIt-tz-Ydg" id="3Yo-vc-M7N"/>
                         <outlet property="orderconstant" destination="iWK-gA-8f6" id="UVt-on-G6n"/>
                         <outlet property="orderhight" destination="k4V-Ve-lkH" id="LhO-Uh-fdy"/>
+                        <outlet property="orderlbl" destination="ymk-ro-Hrd" id="Arf-ue-IO8"/>
                         <outlet property="ordertxt" destination="cAF-cw-fQ8" id="ARR-Ya-VGc"/>
                         <outlet property="ordertxthight" destination="YrG-3S-Bec" id="QcZ-bB-xzb"/>
                         <outlet property="phone" destination="beX-BF-Ffd" id="Z3q-PU-fUj"/>
@@ -1520,6 +1521,7 @@
                         <outlet property="phonetxthight" destination="iwT-fu-Sch" id="ZeL-ta-CsE"/>
                         <outlet property="reason" destination="piC-3j-IB0" id="5PP-QA-x9G"/>
                         <outlet property="reasonhight" destination="Y6B-f2-odG" id="YYA-V2-8wY"/>
+                        <outlet property="reasonlbl" destination="T24-i7-BEF" id="owI-n1-u7I"/>
                         <outlet property="reasontop" destination="0F4-lQ-Xnw" id="ko7-BA-rTx"/>
                         <outlet property="reasontxt" destination="dVN-oH-aBr" id="FHk-mU-7Ee"/>
                         <outlet property="reasontxthight" destination="DXd-xB-BY3" id="BKU-HS-GrO"/>
@@ -1541,7 +1543,7 @@
                                 <rect key="frame" x="30" y="328" width="354" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-sg-cyt">
-                                        <rect key="frame" x="136" y="24" width="82" height="30.5"/>
+                                        <rect key="frame" x="133" y="24" width="88" height="38.5"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1550,7 +1552,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to log out?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb0-7q-JIq">
-                                        <rect key="frame" x="56.5" y="86.5" width="241" height="19"/>
+                                        <rect key="frame" x="47" y="94.5" width="260" height="24"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.5607843137254902" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1960,7 +1962,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move the pin on the map to find your location and select the delivery address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLj-zf-hQS">
-                                        <rect key="frame" x="40" y="432.5" width="274" height="41.5"/>
+                                        <rect key="frame" x="40" y="487.5" width="274" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1969,14 +1971,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEa-Yz-SnA" customClass="GMSMapView">
-                                        <rect key="frame" x="0.0" y="143.5" width="354" height="264"/>
+                                        <rect key="frame" x="0.0" y="198.5" width="354" height="264"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="264" id="xfR-Ak-3NJ"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-yI-TBR">
-                                        <rect key="frame" x="39.5" y="504" width="275" height="44"/>
+                                        <rect key="frame" x="39.5" y="559" width="275" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-OH-3yS">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
@@ -2024,6 +2026,48 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sca-83-wfq">
+                                        <rect key="frame" x="25" y="133.5" width="304" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1187" translatesAutoresizingMaskIntoConstraints="NO" id="SGs-YA-Qvb">
+                                                <rect key="frame" x="15" y="7.5" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="PGo-c7-AfR"/>
+                                                    <constraint firstAttribute="height" constant="25" id="uoO-io-5M2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Vv-D2-7Sd">
+                                                <rect key="frame" x="55" y="0.0" width="249" height="40"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Search on the map"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="SGs-YA-Qvb" firstAttribute="leading" secondItem="sca-83-wfq" secondAttribute="leading" constant="15" id="6vP-7p-w4V"/>
+                                            <constraint firstAttribute="height" constant="40" id="Mkb-KQ-Eds"/>
+                                            <constraint firstItem="4Vv-D2-7Sd" firstAttribute="leading" secondItem="SGs-YA-Qvb" secondAttribute="trailing" constant="15" id="PJQ-EY-Y6n"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Vv-D2-7Sd" secondAttribute="trailing" id="Vqp-WE-YBJ"/>
+                                            <constraint firstItem="4Vv-D2-7Sd" firstAttribute="top" secondItem="sca-83-wfq" secondAttribute="top" id="i1c-lD-o7N"/>
+                                            <constraint firstItem="SGs-YA-Qvb" firstAttribute="centerY" secondItem="sca-83-wfq" secondAttribute="centerY" id="mBv-ZP-9A8"/>
+                                            <constraint firstAttribute="bottom" secondItem="4Vv-D2-7Sd" secondAttribute="bottom" id="sT3-Pr-fIQ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.80392156862745101" green="0.83137254901960778" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -2037,9 +2081,12 @@
                                     <constraint firstItem="sLj-zf-hQS" firstAttribute="top" secondItem="QEa-Yz-SnA" secondAttribute="bottom" constant="25" id="Tqc-Cr-CvL"/>
                                     <constraint firstItem="mJC-8p-4cM" firstAttribute="centerX" secondItem="tIT-zi-x0S" secondAttribute="centerX" id="Tvt-8t-8CT"/>
                                     <constraint firstItem="UE6-yI-TBR" firstAttribute="top" secondItem="sLj-zf-hQS" secondAttribute="bottom" constant="30" id="X2y-y4-2c6"/>
+                                    <constraint firstAttribute="trailing" secondItem="sca-83-wfq" secondAttribute="trailing" constant="25" id="e4C-ta-F65"/>
                                     <constraint firstAttribute="height" constant="613" id="hLV-fu-zVl"/>
-                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="top" secondItem="cGC-22-i4Q" secondAttribute="bottom" constant="25" id="upq-ZO-eMd"/>
+                                    <constraint firstItem="sca-83-wfq" firstAttribute="top" secondItem="cGC-22-i4Q" secondAttribute="bottom" constant="15" id="iEM-1f-Bmd"/>
+                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="top" secondItem="cGC-22-i4Q" secondAttribute="bottom" constant="80" id="upq-ZO-eMd"/>
                                     <constraint firstItem="sLj-zf-hQS" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" constant="40" id="wCu-xx-9VM"/>
+                                    <constraint firstItem="sca-83-wfq" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" constant="25" id="zgl-Vo-47A"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2059,6 +2106,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="TRK-em-764"/>
                     <connections>
+                        <outlet property="edit" destination="4Vv-D2-7Sd" id="eJd-he-ELr"/>
                         <outlet property="mapView" destination="QEa-Yz-SnA" id="0x8-sc-OoS"/>
                     </connections>
                 </viewController>
@@ -2075,6 +2123,7 @@
         <image name="Fill 1152-2" width="19" height="19"/>
         <image name="Fill 1160" width="22" height="22"/>
         <image name="Fill 1168-1" width="20" height="24"/>
+        <image name="Fill 1187" width="22.5" height="22.5"/>
         <image name="Fill 969" width="19" height="19"/>
         <image name="Fill 977" width="21" height="21"/>
         <image name="Group 10756" width="31.5" height="35.5"/>

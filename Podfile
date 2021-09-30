@@ -19,4 +19,6 @@ pod 'GooglePlaces', '= 3.0.3'
 pod 'GoogleMaps', '= 3.0.3'
 pod 'SwiftyGif'
 pod 'FormTextField'
+pod "CreditCardValidator"
+pod 'GooglePlacesSearchController'
 end

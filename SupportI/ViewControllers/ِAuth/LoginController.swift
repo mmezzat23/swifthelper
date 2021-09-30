@@ -58,6 +58,10 @@ class LoginController: BaseController {
         })
     }
     
+    @IBAction func skip(_ sender: Any) {
+        guard let scene = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+        self.push(scene)
+    }
     @IBAction func forgetPasswordClicked(_ sender: UIButton) {
         let vcc = self.controller(ForgetpassController.self,storyboard: .auth1)
         self.push(vcc)

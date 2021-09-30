@@ -8,6 +8,7 @@ PODS:
     - BSImageView (= 1.0.3)
   - BSImageView (1.0.3)
   - Cosmos (15.0.0)
+  - CreditCardValidator (0.5.1)
   - Firebase (6.33.0):
     - Firebase/Core (= 6.33.0)
   - Firebase/Core (6.33.0):
@@ -70,6 +71,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.0.3):
     - GoogleMaps/Base (= 3.0.3)
+  - GooglePlacesSearchController (0.2.3)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -106,11 +108,13 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.0)
   - BSImagePicker (~> 2.0)
   - Cosmos (~> 15.0)
+  - CreditCardValidator
   - Firebase
   - Firebase/Messaging
   - FormTextField
   - GoogleMaps (= 3.0.3)
   - GooglePlaces (= 3.0.3)
+  - GooglePlacesSearchController
   - IQKeyboardManagerSwift
   - lottie-ios
   - MBProgressHUD
@@ -124,6 +128,7 @@ SPEC REPOS:
     - BSImagePicker
     - BSImageView
     - Cosmos
+    - CreditCardValidator
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -136,6 +141,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleMaps
     - GooglePlaces
+    - GooglePlacesSearchController
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - lottie-ios
@@ -152,6 +158,7 @@ SPEC CHECKSUMS:
   BSImagePicker: 07404254f2fcdaf5a2eb403c0f8c337267ce8738
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
   Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
+  CreditCardValidator: b312e6d6df827d5828eae3905da6812262715b32
   Firebase: 8db6f2d1b2c5e2984efba4949a145875a8f65fe5
   FirebaseAnalytics: 5dd088bd2e67bb9d13dbf792d1164ceaf3052193
   FirebaseCore: d889d9e12535b7f36ac8bfbf1713a0836a3012cd
@@ -164,6 +171,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
+  GooglePlacesSearchController: f8c7da8c3bf0bcf901c5873c22fda7db5fbfc15e
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
@@ -173,6 +181,6 @@ SPEC CHECKSUMS:
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: b2564ae8d05b89bbd6b1864259f81836c4f3d184
+PODFILE CHECKSUM: 7e3cdd219dec46d1d4441648452fae61d842bd3e
 
 COCOAPODS: 1.8.4
