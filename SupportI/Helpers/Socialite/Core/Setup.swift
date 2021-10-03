@@ -12,5 +12,5 @@ struct SocialConstant {
     static var twitterId: String = "8JzP8E6au4jJcDFIkJId1RADJ"
     static var twitterKey: String = "salLYxDeWlriyelo9mC50RDMCFXLNq5mzzgSsPlGVg9nKAgg5r"
 
-    static var googleId: String = "264068904775-porr32n6g3efj2hv78lcjena4hnk4vis.apps.googleusercontent.com"
+    static var googleId: String = "925439958349-g67qmrnrn1k68d48g7u5g1nsbpk7t92a.apps.googleusercontent.com"
 }

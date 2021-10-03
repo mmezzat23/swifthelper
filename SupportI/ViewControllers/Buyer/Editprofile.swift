@@ -46,6 +46,7 @@ class Editprofile: BaseController {
             let vcc = self.pushViewController(PickersPOP.self,storyboard: .profile)
             vcc.openWhat = "date"
             vcc.returnedKey = "start"
+            vcc.date = date
             vcc.delegate = self
             pushPop(vcr: vcc)
         }

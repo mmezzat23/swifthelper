@@ -36,6 +36,8 @@ public enum EndPoint: String {
     case confirmverfiy = "1/api/app/account-setting/confirm-verify-phone-code"
     case reasons = "1/api/app/contact-us/reason-list"
     case contactus = "1/api/app/contact-us"
+    case socaillogin = "1/api/app/register/external-login"
+    case paymentdefualt = "1/api/app/account-setting/set-default-payment-method"
     case logout
     case packages
     case locations
@@ -52,4 +54,5 @@ public enum EndPoint: String {
     case notifications
     case banks
     case search = "ads/search"
+   
 }

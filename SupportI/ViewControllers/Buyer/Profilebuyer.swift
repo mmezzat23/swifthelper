@@ -46,6 +46,7 @@ class Profilebuyer: BaseController {
         viewModel?.getprofile()
         }else{
             let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
+            vcc.delegate = self
             pushPop(vcr: vcc)
         }
     }
@@ -100,4 +101,19 @@ class Profilebuyer: BaseController {
             self.push(vcc)
         }
     }
+}
+
+extension Profilebuyer : GuestPopUpDelegate {
+    func settype(type: String?) {
+        if (type == "contact"){
+            let vcc = self.controller(Contactus.self,storyboard: .setting)
+            self.push(vcc)
+        }else if (type == "signup"){
+            let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
+            self.push(vcc)
+        }
+        
+    }
+    
+    
 }

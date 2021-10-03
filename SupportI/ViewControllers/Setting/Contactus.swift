@@ -47,21 +47,22 @@ class Contactus: BaseController {
         setup()
         bind()
         if (UserRoot.token() != nil) {
-            phone.isHidden = true
-            email.isHidden = true
-            phonetxt.isHidden = true
-            emailtxt.isHidden = true
-            phonehight.constant = 0
-            emailhight.constant = 0
-            phonetxthight.constant = 0
-            emailtxthight.constant = 0
-            emailcostant.constant = 0
-            phoneconstant.constant = 0
+//            phone.isHidden = true
+//            email.isHidden = true
+//            phonetxt.isHidden = true
+//            emailtxt.isHidden = true
+//            phonehight.constant = 0
+//            emailhight.constant = 0
+//            phonetxthight.constant = 0
+//            emailtxthight.constant = 0
+//            emailcostant.constant = 0
+//            phoneconstant.constant = 0
             if (UserRoot.saller() == true){
             viewModel?.getreasons(type: "0")
             }else{
                 viewModel?.getreasons(type: "1")
             }
+            viewModel?.getaccountsetting()
         }else{
             order.isHidden = true
             reason.isHidden = true
@@ -111,6 +112,8 @@ class Contactus: BaseController {
                     }else{
                         parameters["reasonId"] = reasonid
                         parameters["orderId"] = orderid
+                        parameters["email"] = email.text
+                        parameters["phone"] = phone.text
                         parameters["message"] = message.text
                         viewModel?.contactus(paramters: parameters)
                     }
@@ -125,6 +128,11 @@ class Contactus: BaseController {
    }
     
     override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+            self?.stopLoading()
+            self?.email.text = data.responseData?.email
+            self?.phone.text = data.responseData?.phone
+        })
         viewModel?.reasons.bind({ [weak self](data) in
             self?.stopLoading()
             self?.reasons.append(contentsOf: data.responseData ?? [])
@@ -154,10 +162,10 @@ class Contactus: BaseController {
     func validateTextFields() -> Bool {
        
            message.customValidationRules = [RequiredRule()]
-           if (UserRoot.token() == nil){
-            email.customValidationRules = [RequiredRule() , EmailRule()]
-            phone.customValidationRules = [RequiredRule() , PhoneNumberRule()]
-           }
+//           if (UserRoot.token() == nil){
+//            email.customValidationRules = [RequiredRule() , EmailRule()]
+//            phone.customValidationRules = [RequiredRule() , PhoneNumberRule()]
+//           }
            let validator = Validation(textFields: [message,phone , email])
            return validator.success
        }

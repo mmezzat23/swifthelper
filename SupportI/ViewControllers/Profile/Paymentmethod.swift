@@ -31,23 +31,13 @@ class Paymentmethod: BaseController {
         viewModel = .init()
         viewModel?.delegate = self
         viewModel?.getcards()
-        viewModel?.getaccountsetting()
     }
     override func bind() {
         viewModel?.cardsData.bind({ [weak self](data) in
             self?.stopLoading()
-            self?.cardsdata.append(contentsOf: data.responseData?.items ?? [])
+            self?.cardsdata.append(contentsOf: data.responseData?.credits?.items ?? [])
             self?.payment.reloadData()
-            
-        })
-        viewModel?.errordata.bind({ [weak self](data) in
-            self?.stopLoading()
-            print(data)
-            self?.makeAlert(data, closure: {})
-        })
-        viewModel?.userdata.bind({ [weak self](data) in
-            self?.stopLoading()
-            self?.type = data.responseData?.paymentType ?? 0
+            self?.type = data.responseData?.paymentMethod ?? 0
             if (self?.type == 0){
                 self?.cash.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
                 self?.credit.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
@@ -63,14 +53,19 @@ class Paymentmethod: BaseController {
             }
             
         })
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+       
     }
     @IBAction func credit(_ sender: Any) {
         type = 1
         credit.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
         cash.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
         wallet.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-        parameters["paymentType"] = type
-        viewModel?.editaccountsetting(paramters: parameters)
+        viewModel?.editpayment(type: String(type))
 
         
     }
@@ -79,8 +74,7 @@ class Paymentmethod: BaseController {
         cash.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
         credit.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
         wallet.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-        parameters["paymentType"] = type
-        viewModel?.editaccountsetting(paramters: parameters)
+        viewModel?.editpayment(type: String(type))
 
 
     }
@@ -89,8 +83,7 @@ class Paymentmethod: BaseController {
         wallet.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
         credit.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
         cash.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-        parameters["paymentType"] = type
-        viewModel?.editaccountsetting(paramters: parameters)
+        viewModel?.editpayment(type: String(type))
 
     }
     

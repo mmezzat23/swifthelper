@@ -28,12 +28,16 @@ struct Deletecards: Codable {
     let errorMessage: String?
     let statusCode: Int?
 }
-// MARK: - ResponseData
 struct ResponseData: Codable {
+    let credits: Credits?
+    let paymentMethod: Int?
+}
+struct Credits: Codable {
     let totalCount: Int?
     let items: [CardsItem]?
-
 }
+// MARK: - ResponseData
+
 
 // MARK: - Item
 struct CardsItem: Codable {

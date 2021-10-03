@@ -102,7 +102,7 @@ class ProfileViewModel: ViewModelCore {
             let data = try? JSONDecoder().decode(Cards.self, from: response ?? Data())
             if (data?.isSuccess == true){
             self.cardsData.value = data
-            self.paginator(respnod: data?.responseData?.items)
+                self.paginator(respnod: data?.responseData?.credits?.items)
             }else{
                 if (data?.statusCode == 401){
                     Authorization.instance.refreshToken1{callback in
@@ -533,6 +533,30 @@ class ProfileViewModel: ViewModelCore {
                     Authorization.instance.refreshToken1{callback in
                         if (callback){
                             self.contactus(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func editpayment(type: String ) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.paymentdefualt.rawValue)?paymentMethod=\(type)", type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.editdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.editpayment(type: type)
                         }else{
                             
                         }

@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+protocol BuyerswitchDelegate: class {
+    func settype(type: String?)
+}
 class Buyerswitch: BaseController {
     @IBOutlet weak var accountmode: UILabel!
     @IBOutlet weak var switchmode: UILabel!
     @IBOutlet weak var terms: UILabel!
     var viewModel : ProfileViewModel?
+    weak var delegate: BuyerswitchDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +31,7 @@ class Buyerswitch: BaseController {
         }
         terms.UIViewAction {
             self.dismiss(animated: true, completion: nil)
-//         guard let vcr = Constants.loginNav else { return }
-//         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-//         appDelegate?.window?.rootViewController = vcr
-
-            let vcc = self.controller(Terms.self,storyboard: .setting)
-            self.push(vcc)
+            self.delegate?.settype(type: "terms")
         }
 
         // Do any additional setup after loading the view.

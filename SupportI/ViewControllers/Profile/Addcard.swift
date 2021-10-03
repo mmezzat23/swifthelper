@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FormTextField
 import CreditCardValidator
 
 class Addcard: BaseController , UITextFieldDelegate{
@@ -16,8 +15,8 @@ class Addcard: BaseController , UITextFieldDelegate{
     @IBOutlet weak var visacardname: UILabel!
     @IBOutlet weak var visaexpiry: UILabel!
     @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var number: FormTextField!
-    @IBOutlet weak var expiry: FormTextField!
+    @IBOutlet weak var number: UITextField!
+    @IBOutlet weak var expiry: UITextField!
     var viewModel : ProfileViewModel?
     var parameters : [String : Any] = [:]
     var isedit = false

@@ -18,7 +18,10 @@ pod 'BSImagePicker', '~> 2.0'
 pod 'GooglePlaces', '= 3.0.3'
 pod 'GoogleMaps', '= 3.0.3'
 pod 'SwiftyGif'
-pod 'FormTextField'
 pod "CreditCardValidator"
 pod 'GooglePlacesSearchController'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+pod 'GoogleSignIn'
 end

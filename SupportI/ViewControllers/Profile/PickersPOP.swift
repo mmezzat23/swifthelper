@@ -80,6 +80,7 @@ class PickersPOP:BaseController {
     var returnedKey:String = ""
     var genders:[GenderModel] = []
     var raesons:[ResponseDatum] = []
+    var date = ""
 
     var cities:[ItemCity] = []
 //    var categories:[Category] = []
@@ -94,6 +95,7 @@ class PickersPOP:BaseController {
         super.viewWillAppear(animated)
         setup()
         bind()
+
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -110,6 +112,12 @@ class PickersPOP:BaseController {
             pickerView.reloadAllComponents()
         }else{
             datePicker.isHidden = false
+            datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+            if (date != ""){
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yyyy"
+                datePicker.date = dateFormatter.date (from: date)!
+            }
             //Formate Date
             if dateSelection == .date {
                 datePicker.datePickerMode = .date
@@ -211,8 +219,11 @@ class PickersPOP:BaseController {
             
             if dateSelection == .date {
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyy/MM/dd"
+                formatter.dateFormat = "yyyy/MM/dd"
                 let date = formatter.string(from: datePicker.date)
+//                datePicker.maximumDate = Date()
+                datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+
                 self.view.endEditing(true)
                 self.dismiss(animated: true) {
                     self.delegate?.callbackDate(item: date, returnedKey: self.returnedKey)
@@ -221,6 +232,8 @@ class PickersPOP:BaseController {
                 let formatter = DateFormatter()
                 formatter.timeStyle = .short
                 let time = formatter.string(from: datePicker.date)
+                datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+//                datePicker.maximumDate = Date()
                 print(time)
                 self.view.endEditing(true)
                 self.dismiss(animated: true) {

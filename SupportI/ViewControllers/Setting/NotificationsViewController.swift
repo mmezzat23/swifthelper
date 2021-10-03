@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController {
+class NotificationsViewController: BaseController {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var notificationsTableView: UITableView! {

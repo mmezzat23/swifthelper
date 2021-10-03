@@ -7,16 +7,19 @@
 //
 
 import UIKit
-
+protocol GuestPopUpDelegate: class {
+    func settype(type: String?)
+}
 class GuestPopUpViewController: BaseController {
-
+    weak var delegate: GuestPopUpDelegate?
     @IBOutlet weak var sendmessage: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
 
-        sendmessage.UIViewAction {
+        sendmessage.UIViewAction { [self] in
             self.dismiss(animated: true, completion: nil)
+            delegate?.settype(type: "contact")
 //         guard let vcr = Constants.contactNav else { return }
 //         let appDelegate = UIApplication.shared.delegate as? AppDelegate
 //         appDelegate?.window?.rootViewController = vcr
@@ -37,11 +40,7 @@ class GuestPopUpViewController: BaseController {
     
     @IBAction func signup(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-     guard let vcr = Constants.regNav else { return }
-     let appDelegate = UIApplication.shared.delegate as? AppDelegate
-     appDelegate?.window?.rootViewController = vcr
-
-
+        delegate?.settype(type: "signup")
     }
     /*
     // MARK: - Navigation

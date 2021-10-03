@@ -23,7 +23,7 @@
         <!--Login Controller-->
         <scene sceneID="wRS-6q-KF4">
             <objects>
-                <viewController storyboardIdentifier="LoginController" id="jM4-PM-Frn" customClass="LoginController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="jM4-PM-Frn" customClass="LoginController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IeU-mF-QVZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,12 +31,27 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNV-Y2-JVJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="group_woman" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-di-iGh">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="group_woman" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-di-iGh">
                                         <rect key="frame" x="0.0" y="-159" width="414" height="688"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="688" id="pBV-E8-jUS"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcu-wG-5u6" customClass="viewshadow" customModule="Wndo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-71" width="414" height="600"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="600" id="PIA-7P-uuN"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="firstcolor">
+                                                <color key="value" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="secondcolor">
+                                                <color key="value" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emd-Mr-SyG">
                                         <rect key="frame" x="25" y="128" width="364" height="33"/>
                                         <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
@@ -420,7 +435,10 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                     <constraint firstItem="emd-Mr-SyG" firstAttribute="leading" secondItem="tNV-Y2-JVJ" secondAttribute="leading" constant="25" id="4Ng-c6-BNg"/>
                                     <constraint firstItem="uxX-di-iGh" firstAttribute="centerX" secondItem="tNV-Y2-JVJ" secondAttribute="centerX" id="5Dj-Dy-DIb"/>
                                     <constraint firstItem="WPa-2l-g1k" firstAttribute="centerX" secondItem="emd-Mr-SyG" secondAttribute="centerX" id="5he-ma-Zlh"/>
+                                    <constraint firstItem="Dcu-wG-5u6" firstAttribute="leading" secondItem="tNV-Y2-JVJ" secondAttribute="leading" id="799-86-veM"/>
+                                    <constraint firstItem="Dcu-wG-5u6" firstAttribute="top" secondItem="tNV-Y2-JVJ" secondAttribute="top" constant="-71" id="8Lh-BA-XIe"/>
                                     <constraint firstItem="uxX-di-iGh" firstAttribute="top" secondItem="tNV-Y2-JVJ" secondAttribute="top" constant="-71" id="8in-jK-cPy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dcu-wG-5u6" secondAttribute="trailing" id="98N-Mg-Cd3"/>
                                     <constraint firstItem="bbB-iR-pnD" firstAttribute="leading" secondItem="tNV-Y2-JVJ" secondAttribute="leading" id="I2I-da-Hrn"/>
                                     <constraint firstItem="bbB-iR-pnD" firstAttribute="centerX" secondItem="tNV-Y2-JVJ" secondAttribute="centerX" id="LWd-bB-8ds"/>
                                     <constraint firstAttribute="bottom" secondItem="bbB-iR-pnD" secondAttribute="bottom" id="Of5-hl-gIx"/>
@@ -445,10 +463,16 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                             <constraint firstItem="tNV-Y2-JVJ" firstAttribute="leading" secondItem="32Y-Zg-ydu" secondAttribute="leading" id="old-hf-k3v"/>
                             <constraint firstAttribute="bottom" secondItem="tNV-Y2-JVJ" secondAttribute="bottom" id="pJl-1j-SDq"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstcolor">
+                                <color key="value" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="fbr-1i-yEC"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="appleview" destination="o80-Mf-ORj" id="apH-lR-qHV"/>
                         <outlet property="emialOrPhoneTxt" destination="zVP-R0-QKD" id="6Xl-qj-Ss9"/>
                         <outlet property="forget" destination="ulo-4l-xuv" id="MDg-3g-Fz7"/>
                         <outlet property="passwordTxt" destination="dF5-46-bVT" id="s4v-Yn-7yG"/>
@@ -479,7 +503,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
         <!--Register View Controller-->
         <scene sceneID="LyT-gv-N6y">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="QeZ-0Z-lyV" customClass="RegisterViewController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="QeZ-0Z-lyV" customClass="RegisterViewController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PkF-vi-mek">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,12 +511,27 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="540-LM-W1R">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="smill-girl" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-hh-OZq">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="smill-girl" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8m-hh-OZq">
                                         <rect key="frame" x="0.0" y="-157" width="414" height="447"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="447" id="Moo-le-Xhb"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umk-R9-RLm" customClass="viewshadow" customModule="Wndo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-69" width="414" height="450"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="450" id="DGL-5U-Iqo"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="firstcolor">
+                                                <color key="value" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="secondcolor">
+                                                <color key="value" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6V-6j-Umu">
                                         <rect key="frame" x="25" y="50" width="364" height="33"/>
                                         <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
@@ -894,12 +933,15 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="k8m-hh-OZq" firstAttribute="top" secondItem="540-LM-W1R" secondAttribute="top" constant="-69" id="4FC-J8-T8T"/>
+                                    <constraint firstItem="Umk-R9-RLm" firstAttribute="leading" secondItem="540-LM-W1R" secondAttribute="leading" id="ALQ-lx-KaC"/>
                                     <constraint firstItem="a9p-JE-P6B" firstAttribute="top" secondItem="L6V-6j-Umu" secondAttribute="bottom" constant="6" id="I3p-uL-Uy6"/>
                                     <constraint firstAttribute="trailing" secondItem="L6V-6j-Umu" secondAttribute="trailing" constant="25" id="JL1-A8-ZCI"/>
+                                    <constraint firstItem="Umk-R9-RLm" firstAttribute="top" secondItem="540-LM-W1R" secondAttribute="top" constant="-69" id="JaN-K5-ry2"/>
                                     <constraint firstItem="a9p-JE-P6B" firstAttribute="centerX" secondItem="L6V-6j-Umu" secondAttribute="centerX" id="Jpo-g7-mNO"/>
                                     <constraint firstItem="k8m-hh-OZq" firstAttribute="leading" secondItem="540-LM-W1R" secondAttribute="leading" id="K0b-ru-df9"/>
                                     <constraint firstAttribute="trailing" secondItem="a9p-JE-P6B" secondAttribute="trailing" constant="40" id="M72-ss-GpV"/>
                                     <constraint firstItem="PMO-gf-UGe" firstAttribute="top" secondItem="540-LM-W1R" secondAttribute="top" constant="5" id="Msp-1M-nnR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Umk-R9-RLm" secondAttribute="trailing" id="N0r-HS-MN1"/>
                                     <constraint firstAttribute="trailing" secondItem="x0w-Lm-fbv" secondAttribute="trailing" id="N49-6e-PHz"/>
                                     <constraint firstItem="x0w-Lm-fbv" firstAttribute="centerX" secondItem="540-LM-W1R" secondAttribute="centerX" id="PRg-3Y-QIk"/>
                                     <constraint firstItem="k8m-hh-OZq" firstAttribute="centerX" secondItem="540-LM-W1R" secondAttribute="centerX" id="Tkn-Bx-Occ"/>
@@ -928,6 +970,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
                     <navigationItem key="navigationItem" id="OvA-mZ-ee3"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="appleview" destination="hHe-7r-07g" id="lcJ-WR-d1m"/>
                         <outlet property="emialOrPhoneTxt" destination="xmD-95-VpQ" id="Wes-E1-cyC"/>
                         <outlet property="passwordTxt" destination="fjR-cy-IfY" id="icN-WX-w1h"/>
                         <outlet property="userNameTxt" destination="RWj-gS-PKn" id="12m-Rd-l2J"/>
@@ -959,7 +1002,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
         <!--SplashGIF View Controller-->
         <scene sceneID="rnd-M7-L5h">
             <objects>
-                <viewController storyboardIdentifier="SplashGIFViewController" id="Eko-FC-fXB" customClass="SplashGIFViewController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashGIFViewController" id="Eko-FC-fXB" customClass="SplashGIFViewController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="My9-if-llb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

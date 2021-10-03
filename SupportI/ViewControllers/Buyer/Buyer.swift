@@ -19,8 +19,17 @@ class Buyer: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let vcc = self.pushViewController(Buyerswitch.self,storyboard: .main)
-        pushPop(vcr: vcc)
+        if (UserRoot.token() != nil){
+            let vcc = self.pushViewController(Buyerswitch.self,storyboard: .main)
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+            
+        }else{
+            let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
+        
     }
 
     /*
@@ -33,4 +42,20 @@ class Buyer: BaseController {
     }
     */
 
+}
+extension Buyer : BuyerswitchDelegate , GuestPopUpDelegate {
+    func settype(type: String?) {
+        if (type == "terms"){
+            let vcc = self.controller(Terms.self,storyboard: .setting)
+            self.push(vcc)
+        }else if (type == "contact"){
+            let vcc = self.controller(Contactus.self,storyboard: .setting)
+            self.push(vcc)
+        }else if (type == "signup"){
+            let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
+            self.push(vcc)
+        }
+    }
+    
+    
 }
