@@ -48,7 +48,6 @@ class Buyerswitch: BaseController {
     @IBAction func confirm(_ sender: Any) {
         if (UserRoot.saller() == true){
             UserRoot.savesaller(remember: false)
-            viewModel?.changetosaller()
             let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                    guard let nav = controller else { return }
                    let delegate = UIApplication.shared.delegate as? AppDelegate
@@ -56,6 +55,7 @@ class Buyerswitch: BaseController {
             
         }else{
             UserRoot.savesaller(remember: true)
+            viewModel?.changetosaller()
             let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
                    guard let nav = controller else { return }
                    let delegate = UIApplication.shared.delegate as? AppDelegate

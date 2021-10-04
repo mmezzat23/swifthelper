@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFPRODISPLAYBOLD.OTF">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFPRODISPLAYMEDIUM.OTF">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StattistecsCollectionViewCell" customModule="Wndo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="212" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="212" height="153"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzV-FS-cWu">
+                        <rect key="frame" x="0.0" y="0.0" width="197" height="153"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdJ-Wt-H95">
+                                <rect key="frame" x="20" y="30" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.46666666670000001" green="0.76078431369999999" blue="0.52156862749999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="2ot-iK-jFf"/>
+                                    <constraint firstAttribute="height" constant="48" id="XNT-9c-T9z"/>
+                                </constraints>
+                                <state key="normal" image="Back Button-3"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do0-GM-rb9">
+                                <rect key="frame" x="88" y="45.5" width="26.5" height="17"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                                <color key="textColor" red="0.5607843137254902" green="0.5725490196078431" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4,800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jd3-yj-nIf">
+                                <rect key="frame" x="20" y="93" width="69.5" height="29"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" red="0.11764705882352941" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY7-vn-vl8">
+                                <rect key="frame" x="66" y="130" width="65" height="17"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                                <color key="textColor" red="0.5607843137254902" green="0.5725490196078431" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="do0-GM-rb9" firstAttribute="centerY" secondItem="cdJ-Wt-H95" secondAttribute="centerY" id="69L-4k-GNp"/>
+                            <constraint firstItem="do0-GM-rb9" firstAttribute="leading" secondItem="cdJ-Wt-H95" secondAttribute="trailing" constant="20" id="KnR-Is-ziz"/>
+                            <constraint firstItem="Jd3-yj-nIf" firstAttribute="top" secondItem="cdJ-Wt-H95" secondAttribute="bottom" constant="15" id="YS5-fT-wxL"/>
+                            <constraint firstItem="kY7-vn-vl8" firstAttribute="top" secondItem="Jd3-yj-nIf" secondAttribute="bottom" constant="8" id="iz8-wn-e8r"/>
+                            <constraint firstItem="Jd3-yj-nIf" firstAttribute="leading" secondItem="LzV-FS-cWu" secondAttribute="leading" constant="20" id="kxw-fR-5QW"/>
+                            <constraint firstItem="cdJ-Wt-H95" firstAttribute="top" secondItem="LzV-FS-cWu" secondAttribute="top" constant="30" id="qzC-ZE-55h"/>
+                            <constraint firstItem="kY7-vn-vl8" firstAttribute="centerX" secondItem="LzV-FS-cWu" secondAttribute="centerX" id="xFE-LY-KRd"/>
+                            <constraint firstItem="cdJ-Wt-H95" firstAttribute="leading" secondItem="LzV-FS-cWu" secondAttribute="leading" constant="20" id="xUF-la-BBx"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="LzV-FS-cWu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9j8-q0-Y6w"/>
+                <constraint firstAttribute="bottom" secondItem="LzV-FS-cWu" secondAttribute="bottom" id="CbK-MX-8BX"/>
+                <constraint firstAttribute="trailing" secondItem="LzV-FS-cWu" secondAttribute="trailing" constant="15" id="tgq-DQ-De8"/>
+                <constraint firstItem="LzV-FS-cWu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yag-ia-SbA"/>
+            </constraints>
+            <size key="customSize" width="212" height="153"/>
+            <connections>
+                <outlet property="amount" destination="Jd3-yj-nIf" id="2dM-hy-4RX"/>
+                <outlet property="icon" destination="cdJ-Wt-H95" id="5ad-dS-yJE"/>
+                <outlet property="symbol" destination="do0-GM-rb9" id="Lrq-vg-NXX"/>
+                <outlet property="title" destination="kY7-vn-vl8" id="QHG-Ue-sgQ"/>
+            </connections>
+            <point key="canvasLocation" x="126.08695652173914" y="82.03125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Back Button-3" width="8.5" height="15"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

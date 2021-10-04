@@ -39,8 +39,13 @@ class SplashGIFViewController: BaseController {
     func goToMainScreen() {
         initLang()
         if (UserRoot.token() != nil && UserRoot.isrember() == true){
-            guard let scene = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
-            push(scene)
+            if (UserRoot.saller() == true){
+                guard let scene = UIStoryboard(name: Storyboards.saller.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+                push(scene)
+            }else{
+                guard let scene = UIStoryboard(name: Storyboards.main.rawValue, bundle: nil).instantiateInitialViewController() else { return }
+                push(scene)
+            }
         }else {
             UserRoot.save(response: Data())
             let vcc = self.controller(LoginController.self,storyboard: .auth)
