@@ -84,6 +84,7 @@ class BaseApi: Downloader, Paginator, Alertable {
 
                     case 400?:
                         if (url.contains("connect/token")){
+                            UserRoot.savesaller(remember: false)
                             UserRoot.save(response: Data())
                             guard let vcr = Constants.loginNav else { return }
                             let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -97,6 +98,7 @@ class BaseApi: Downloader, Paginator, Alertable {
                     //completionHandler(nil)
                     case 401?:
                         UserRoot.save(response: Data())
+                        UserRoot.savesaller(remember: false)
                         guard let vcr = Constants.loginNav else { return }
                         let appDelegate = UIApplication.shared.delegate as? AppDelegate
                         appDelegate?.window?.rootViewController = vcr

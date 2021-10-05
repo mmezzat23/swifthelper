@@ -15,28 +15,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="103" id="1Fi-D2-Bie" customClass="AddressTableViewCell" customModule="SupportI" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="103" id="1Fi-D2-Bie" customClass="AddressTableViewCell" customModule="Wndo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="422" height="103"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Fi-D2-Bie" id="ovj-KT-NMt">
                 <rect key="frame" x="0.0" y="0.0" width="422" height="103"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBa-R2-0uo">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBa-R2-0uo">
                         <rect key="frame" x="0.0" y="30" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="9wE-eo-wwH"/>
                             <constraint firstAttribute="height" constant="40" id="eT1-mH-Bcx"/>
                         </constraints>
+                        <state key="normal" image="building-1"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="7"/>
+                                <real key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
@@ -73,9 +74,17 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Default"/>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Other_button" translatesAutoresizingMaskIntoConstraints="NO" id="sKO-aQ-654">
+                        <rect key="frame" x="402" y="41.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="0EY-iQ-Zm5"/>
+                            <constraint firstAttribute="width" constant="20" id="Dh0-21-rN8"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Nc9-NV-QxV" firstAttribute="leading" secondItem="NeX-P2-kRz" secondAttribute="leading" id="6ah-Yp-PRM"/>
+                    <constraint firstAttribute="trailing" secondItem="sKO-aQ-654" secondAttribute="trailing" id="CG6-nw-vcs"/>
                     <constraint firstItem="kMb-hx-lGc" firstAttribute="top" secondItem="Nc9-NV-QxV" secondAttribute="bottom" constant="15" id="DS2-Iv-Esg"/>
                     <constraint firstItem="kMb-hx-lGc" firstAttribute="leading" secondItem="ovj-KT-NMt" secondAttribute="leading" id="DoB-Ih-wZG"/>
                     <constraint firstItem="NeX-P2-kRz" firstAttribute="top" secondItem="ovj-KT-NMt" secondAttribute="top" constant="30" id="EQH-NP-6gc"/>
@@ -87,6 +96,7 @@
                     <constraint firstItem="XBa-R2-0uo" firstAttribute="leading" secondItem="ovj-KT-NMt" secondAttribute="leading" id="aU7-Fe-mOq"/>
                     <constraint firstItem="XBa-R2-0uo" firstAttribute="top" secondItem="ovj-KT-NMt" secondAttribute="top" constant="30" id="gxB-DX-cfr"/>
                     <constraint firstItem="sEe-3U-7yY" firstAttribute="leading" secondItem="NeX-P2-kRz" secondAttribute="trailing" constant="40" id="uzw-bZ-zYH"/>
+                    <constraint firstItem="sKO-aQ-654" firstAttribute="centerY" secondItem="ovj-KT-NMt" secondAttribute="centerY" id="wgl-3e-6O3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="DlF-Kp-dqn"/>
@@ -95,8 +105,13 @@
                 <outlet property="addresstitle" destination="NeX-P2-kRz" id="8x0-Cm-GBJ"/>
                 <outlet property="imageicon" destination="XBa-R2-0uo" id="j2c-cU-m5E"/>
                 <outlet property="isdefult" destination="sEe-3U-7yY" id="0em-Is-QtA"/>
+                <outlet property="more" destination="sKO-aQ-654" id="emI-JO-Ofu"/>
             </connections>
             <point key="canvasLocation" x="82.608695652173921" y="69.308035714285708"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Other_button" width="5" height="23"/>
+        <image name="building-1" width="15.5" height="18"/>
+    </resources>
 </document>

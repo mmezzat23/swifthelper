@@ -24,6 +24,7 @@ class Logout: BaseController {
     @IBAction func confirm(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         UserRoot.save(response: Data())
+        UserRoot.savesaller(remember: false)
         let when = DispatchTime.now() + 1
         DispatchQueue.main.asyncAfter(deadline: when){ [self] in
             let vcc = self.pushViewController(Logoutconfirm.self,storyboard: .setting)

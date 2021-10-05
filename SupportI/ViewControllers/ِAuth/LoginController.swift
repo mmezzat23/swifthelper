@@ -39,20 +39,8 @@ class LoginController: BaseController {
                 } else {
                     // Fallback on earlier versions
                 }
-        print(convertDateFormat(inputDate: "2021-09-29T19:13:37"))
     }
-    func convertDateFormat(inputDate: String) -> String {
-
-         let olDateFormatter = DateFormatter()
-         olDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-
-         let oldDate = olDateFormatter.date(from: inputDate)
-
-         let convertDateFormatter = DateFormatter()
-         convertDateFormatter.dateFormat = "dd MMM"
-
-         return convertDateFormatter.string(from: oldDate!)
-    }
+   
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()

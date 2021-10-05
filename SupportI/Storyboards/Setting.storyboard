@@ -56,7 +56,7 @@
                                             <constraint firstAttribute="width" constant="40" id="9nI-aI-YBT"/>
                                         </constraints>
                                         <color key="tintColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="Icon-6"/>
+                                        <state key="normal" image="Fill 669"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12"/>
@@ -274,7 +274,7 @@
                                             <constraint firstAttribute="height" constant="40" id="B6e-wS-pWt"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="Icon-6"/>
+                                        <state key="normal" image="Fill 669"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12"/>
@@ -730,7 +730,7 @@
                                     <constraint firstAttribute="height" constant="40" id="jeJ-pQ-CN4"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Icon-6"/>
+                                <state key="normal" image="Fill 669"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -911,7 +911,7 @@
                                     <constraint firstAttribute="height" constant="40" id="kDx-OI-1xb"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Icon-6"/>
+                                <state key="normal" image="Fill 669"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -1029,7 +1029,7 @@
                                     <constraint firstAttribute="height" constant="40" id="hbR-Ql-cPA"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Icon-6"/>
+                                <state key="normal" image="Fill 669"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -1148,7 +1148,7 @@
                                     <constraint firstAttribute="height" constant="40" id="N54-gg-v0V"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Icon-6"/>
+                                <state key="normal" image="Fill 669"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -1785,7 +1785,7 @@
                                     <constraint firstAttribute="height" constant="40" id="fXx-YK-aWF"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Icon-6"/>
+                                <state key="normal" image="Fill 669"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -1982,19 +1982,24 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-OH-3yS">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
-                                                <color key="backgroundColor" red="0.58431372550000005" green="0.59999999999999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="4X9-jB-CDZ"/>
                                                     <constraint firstAttribute="height" constant="44" id="9ik-dI-spC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
                                                 <state key="normal" title="DISCARD">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="DISCARD"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -2004,7 +2009,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u6-mB-J19">
                                                 <rect key="frame" x="145" y="0.0" width="130" height="44"/>
-                                                <color key="backgroundColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="9Qu-ys-aeQ"/>
                                                     <constraint firstAttribute="width" constant="130" id="rrr-yt-nEP"/>
@@ -2124,11 +2129,11 @@
         <image name="Fill 1160" width="22" height="22"/>
         <image name="Fill 1168-1" width="20" height="24"/>
         <image name="Fill 1187" width="22.5" height="22.5"/>
+        <image name="Fill 669" width="23.5" height="23.5"/>
         <image name="Fill 969" width="19" height="19"/>
         <image name="Fill 977" width="21" height="21"/>
         <image name="Group 10756" width="31.5" height="35.5"/>
         <image name="Group 10762" width="22.5" height="25.5"/>
-        <image name="Icon-6" width="20.5" height="20.5"/>
         <image name="icon-5" width="36" height="36"/>
         <image name="icon-close" width="36" height="36"/>
         <image name="icon-twitter" width="22" height="18"/>

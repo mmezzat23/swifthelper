@@ -13,6 +13,7 @@ class AddressTableViewCell: UITableViewCell , CellProtocol {
     @IBOutlet weak var isdefult: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var addresstitle: UILabel!
+    @IBOutlet weak var more: UIImageView!
     
     
     func setup() {

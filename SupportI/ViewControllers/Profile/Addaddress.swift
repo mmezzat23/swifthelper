@@ -76,7 +76,7 @@ class Addaddress: BaseController {
             self?.addressname.text = data.responseData?.name ?? ""
             self?.address.text = data.responseData?.street ?? ""
             self?.citylbl.text = data.responseData?.city?.name ?? ""
-            self?.cityid = data.responseData?.id ?? 0
+            self?.cityid = data.responseData?.city?.id ?? 0
             self?.bulidno.text = String(data.responseData?.buildingNo ?? 0)
             self?.landmark.text = data.responseData?.landMark ?? ""
             self?.addressstr = data.responseData?.location ?? ""

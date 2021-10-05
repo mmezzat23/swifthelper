@@ -23,7 +23,11 @@ class Addcard: BaseController , UITextFieldDelegate{
     var id = 0
     var num = ""
     var expirytxt = ""
+    var cardtxt = ""
     var nametxt = ""
+    @IBOutlet weak var isdefult: RadioButton!
+    var isdefultvalue = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -33,16 +37,28 @@ class Addcard: BaseController , UITextFieldDelegate{
         bind()
         if (isedit == true){
             name.text = nametxt
+            cardname.text = cardtxt
             number.text = customStringFormatting(of: num, num: 4, ch: " ")
             expiry.text = expirytxt
             visacardname.text = nametxt
             visanumber.text = customStringFormatting(of: num, num: 4, ch: " ")
             visaexpiry.text = expirytxt
+            if (isdefultvalue == true){
+                isdefult.select()
+            }else{
+                isdefult.deselect()
+            }
         }
     }
     func setup() {
        viewModel = .init()
        viewModel?.delegate = self
+        isdefult.onSelect { [self] in
+            isdefultvalue = true
+        }
+        isdefult.onDeselect { [self] in
+            isdefultvalue = false
+        }
    }
     func validateTextFields() -> Bool {
         cardname.customValidationRules = [RequiredRule()]
@@ -75,7 +91,7 @@ class Addcard: BaseController , UITextFieldDelegate{
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/yy"
-        let enteredDate = dateFormatter.date(from: visaexpiry.text!)!
+        let enteredDate = dateFormatter.date(from: expiry.text!)!
         let endOfMonth = Calendar.current.date(byAdding: .month, value: 1, to: enteredDate)!
         let now = Date()
         if (endOfMonth < now) {
@@ -85,8 +101,10 @@ class Addcard: BaseController , UITextFieldDelegate{
             if (error != ""){
               makeAlert(error, closure: {})
             }else{
+            parameters["cardName"] = cardname.text ?? ""
             parameters["holderName"] = name.text ?? ""
             parameters["expiry"] = visaexpiry.text ?? ""
+            parameters["isDefault"] = isdefultvalue
             parameters["cardNumber"] = visanumber.text?.replacingOccurrences(of: " ", with: "")
             if (isedit == true){
                 parameters["id"] = id

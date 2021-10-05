@@ -130,7 +130,7 @@ class RegisterViewController: BaseController {
             print(data)
             self?.makeAlert(data, closure: {})
         })
-        viewModel?.userdata.bind({ [weak self](data) in
+        authModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
             print(data)
             if (data.responseData?.isVerified == false){

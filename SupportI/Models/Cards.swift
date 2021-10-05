@@ -41,8 +41,7 @@ struct Credits: Codable {
 
 // MARK: - Item
 struct CardsItem: Codable {
-    let holderName, expiry, cardNumber: String?
+    let holderName, expiry, cardNumber, cardName: String?
     let id: Int?
-
-    
+    let isDefault: Bool?
 }

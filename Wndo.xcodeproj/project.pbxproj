@@ -76,6 +76,7 @@
 		669A59C826FC9A3D007615D9 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669A59C726FC9A3D007615D9 /* Address.swift */; };
 		669A59D026FC9AC6007615D9 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669A59CE26FC9AC6007615D9 /* AddressTableViewCell.swift */; };
 		669A59D126FC9AC6007615D9 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 669A59CF26FC9AC6007615D9 /* AddressTableViewCell.xib */; };
+		669B1CD8270C90D800D93C64 /* Editdeleteoption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669B1CD7270C90D800D93C64 /* Editdeleteoption.swift */; };
 		669CDB7326FB2CC500E1081D /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDB7226FB2CC500E1081D /* Terms.swift */; };
 		669CDB7626FB2CD500E1081D /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDB7526FB2CD500E1081D /* Privacy.swift */; };
 		669CDB7926FB2F6500E1081D /* Contactus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CDB7826FB2F6500E1081D /* Contactus.swift */; };
@@ -372,6 +373,7 @@
 		669A59C726FC9A3D007615D9 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		669A59CE26FC9AC6007615D9 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		669A59CF26FC9AC6007615D9 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		669B1CD7270C90D800D93C64 /* Editdeleteoption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editdeleteoption.swift; sourceTree = "<group>"; };
 		669CDB7226FB2CC500E1081D /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
 		669CDB7526FB2CD500E1081D /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
 		669CDB7826FB2F6500E1081D /* Contactus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactus.swift; sourceTree = "<group>"; };
@@ -753,6 +755,7 @@
 				66342A0A2701BCFC0048BE3C /* Addaddress.swift */,
 				6639320F2701DB2C00874342 /* PickersPOP.swift */,
 				664282D42705AE6800822053 /* Passworddelete.swift */,
+				669B1CD7270C90D800D93C64 /* Editdeleteoption.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1746,6 +1749,7 @@
 				66B71D482705ECC50044969E /* ReasonModel.swift in Sources */,
 				66729D03270B116700F25A7D /* HomeproductTableViewCell.swift in Sources */,
 				80A2FC0C215841BC00223A77 /* MultiSelectImagesHelper.swift in Sources */,
+				669B1CD8270C90D800D93C64 /* Editdeleteoption.swift in Sources */,
 				669A59D026FC9AC6007615D9 /* AddressTableViewCell.swift in Sources */,
 				66BE7BA626FC721800B19CC9 /* Paymentmethod.swift in Sources */,
 				80A2FBF5215841BC00223A77 /* AddressHelper.swift in Sources */,

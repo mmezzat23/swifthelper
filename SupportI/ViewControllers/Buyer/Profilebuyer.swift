@@ -24,10 +24,15 @@ class Profilebuyer: BaseController {
     @IBOutlet weak var payment: UIView!
     @IBOutlet weak var setting: UIView!
     @IBOutlet weak var help: UIView!
-    @IBOutlet weak var wallet: UILabel!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var walletview: UIView!
+    @IBOutlet weak var walletnym: UILabel!
+    
     var viewModel : AuthViewModel?
-
+    var typeimage = ""
+    var picker: GalleryPickerHelper?
+    var imageURL: URL?
+    var coverURL: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -39,6 +44,46 @@ class Profilebuyer: BaseController {
     func setup() {
         viewModel = .init()
         viewModel?.delegate = self
+        picker = .init()
+        picker?.onPickImageURL = { [self] url in
+                    if (typeimage == "1"){
+                    self.imageURL = url
+                        ApiManager.instance.uploadFile(EndPoint.editprofile.rawValue, type: .post, file: [["profile": self.imageURL] ]) { [self] (response) in
+                                         self.stopLoading()
+                                         let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                            if (data?.isSuccess == true)
+                            {
+                                
+                            }
+                            else {
+                                makeAlert((data?.errorMessage)!, closure: {})
+                            }
+                                         
+                                     }
+                    }else{
+                    self.coverURL = url
+                        ApiManager.instance.uploadFile(EndPoint.editprofile.rawValue, type: .post, file: [ ["cover": self.coverURL]]) { [self] (response) in
+                                         self.stopLoading()
+                                         let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                            if (data?.isSuccess == true)
+                            {
+                                
+                            }
+                            else {
+                                makeAlert((data?.errorMessage)!, closure: {})
+                            }
+                                         
+                                     }
+                    }
+                    
+                }
+        picker?.onPickImage = { [self] image in
+                    if (typeimage == "1"){
+                    self.banner.image = image
+                    }else{
+                    self.banner.image = image
+                    }
+                }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -57,7 +102,7 @@ class Profilebuyer: BaseController {
                 self?.banner.setImage(url: data.responseData?.cover)
             }
             if (data.responseData?.profile != ""){
-                self?.image.setImage(url: data.responseData?.cover)
+                self?.image.setImage(url: data.responseData?.profile)
             }
             self?.name.text = data.responseData?.name
             self?.bio.text = data.responseData?.bio
@@ -79,6 +124,14 @@ class Profilebuyer: BaseController {
     @IBAction func back(_ sender: Any) {
     }
     
+    @IBAction func imgprofile(_ sender: Any) {
+        typeimage = "1"
+        self.picker?.pick(in: self)
+    }
+    @IBAction func imgcover(_ sender: Any) {
+        typeimage = "2"
+        self.picker?.pick(in: self)
+    }
     func onclick(){
         help.UIViewAction {
             let vcc = self.controller(Help.self,storyboard: .setting)

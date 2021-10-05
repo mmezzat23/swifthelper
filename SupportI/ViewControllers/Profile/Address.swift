@@ -12,6 +12,8 @@ class Address: BaseController {
     @IBOutlet weak var address: UITableView!
     var addressdata : [ItemAddress] = []
     var viewModel : ProfileViewModel?
+    @IBOutlet weak var saerchtxt: UITextField!
+    var path = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -45,6 +47,10 @@ class Address: BaseController {
         self.push(vcc)
     }
     
+
+    @IBAction func search(_ sender: Any) {
+    }
+    
 }
 extension Address:UITableViewDelegate , UITableViewDataSource {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -64,43 +70,46 @@ extension Address:UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.cell(type: AddressTableViewCell.self, indexPath)
         cell.model = addressdata[indexPath.row]
+        cell.more.UIViewAction { [self] in
+            path = indexPath.row
+            let vcc = self.pushViewController(Editdeleteoption.self,storyboard: .profile)
+            vcc.delegate = self
+            vcc.type = "1"
+            self.pushPop(vcr: vcc)
+        }
         cell.setup()
         return cell
         
     }
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action =  UIContextualAction(style: .destructive, title: "", handler: { [self] (action,view,completionHandler ) in
-            let vcc = self.pushViewController(Deletecard.self,storyboard: .profile)
-            vcc.id = addressdata[indexPath.row].id ?? 0
-            vcc.txt =  addressdata[indexPath.row].name ?? ""
-            vcc.type = "1"
-            pushPop(vcr: vcc)
-            completionHandler(true)
-            })
-            
-            action.image = UIImage(named: "Fill -2")
-            
-            action.backgroundColor = UIColor(red: 0x01, green: 0x14, blue: 0x47)
-        let editaction =  UIContextualAction(style: .destructive, title: "", handler: { [self] (action, view, completionHandler ) in
-                self.startLoading()
-                let vcc = self.pushViewController(Addaddress.self,storyboard: .profile)
-                vcc.id = addressdata[indexPath.row].id ?? 0
-                vcc.isedit = true
-                self.push(vcc)
-                completionHandler(true)
-            })
-            
-            editaction.image = UIImage(named: "edit-1")
-
-            editaction.backgroundColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            let confrigation = UISwipeActionsConfiguration(actions: [action , editaction])
-            return confrigation
-        
-    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        removeAnimate {
 //            self.delegate?.setcatogary(title: self.contries[indexPath.row].title!, image: self.contries[indexPath.row].image! , id : self.contries[indexPath.row].id!)
 //        }
     }
+    
+}
+extension Address : EditdeleteoptionDelegate  {
+    
+    func settype(type: String?, action: String?) {
+        if (action == "delete") {
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self.pushViewController(Deletecard.self,storyboard: .profile)
+                vcc.id = addressdata[path].id ?? 0
+                vcc.txt =  addressdata[path].name ?? ""
+                vcc.type = "1"
+                pushPop(vcr: vcc)
+            }
+           
+        }else{
+            let vcc = self.pushViewController(Addaddress.self,storyboard: .profile)
+            vcc.id = addressdata[path].id ?? 0
+            vcc.type = "1"
+            vcc.isedit = true
+            self.push(vcc)
+        }
+    }
+    
     
 }
