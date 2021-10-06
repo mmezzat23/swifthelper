@@ -37,12 +37,13 @@ class Deletecard: BaseController {
     override func bind() {
         viewModel?.deletedata.bind({ [weak self](data) in
             self?.stopLoading()
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
             self?.dismiss(animated: true, completion: nil)
-            
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self?.pushViewController(Deletesuccess.self,storyboard: .profile)
+                vcc?.type = self?.type ?? ""
+                self?.pushPop(vcr: vcc!)
+            }
         })
         viewModel?.errordata.bind({ [weak self](data) in
             self?.stopLoading()

@@ -131,6 +131,7 @@ extension GoogleMapHelper: GMSMapViewDelegate {
                 marker.iconView = view
             }
         }
+        marker.icon = #imageLiteral(resourceName: "Slider")
         marker.map = mapView
     }
 }

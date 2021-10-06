@@ -296,5 +296,10 @@
 "Delete The Address" = "Delete The Address";
 "Edit The credit card" = "Edit The credit card";
 "Delete The credit card" = "Delete The credit card";
-
+"Save this card ad default payment method" = "Save this card ad default payment method";
+"Your new card has added" = "Your new card has added";
+"Your new address has added" = "Your new address has added";
+"Your credit card deleted" = "Your credit card deleted";
+"Your address deleted" = "Your address deleted";
+"Your changes saved" = "Your changes saved";
 

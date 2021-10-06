@@ -52,9 +52,9 @@ class Paymentmethod: BaseController {
             self?.payment.reloadData()
             self?.type = data.responseData?.paymentMethod ?? 0
             if (self?.type == 0){
-                self?.cash.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
-                self?.credit.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-                self?.wallet.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
+                self?.cash.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+                self?.credit.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+                self?.wallet.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
                 self?.cashtxt.textColor = UIColor(red: 0x01, green: 0x14, blue: 0x47)
                 self?.cashview.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
                 self?.credittxt.textColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
@@ -62,9 +62,9 @@ class Paymentmethod: BaseController {
                 self?.wallettxt.textColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
                 self?.walletview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
             }else if (self?.type == 1){
-                self?.credit.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
-                self?.cash.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-                self?.wallet.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
+                self?.credit.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+                self?.cash.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+                self?.wallet.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
                 self?.credittxt.textColor = UIColor(red: 0x01, green: 0x14, blue: 0x47)
                 self?.creditview.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
                 self?.cashtxt.textColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
@@ -78,9 +78,9 @@ class Paymentmethod: BaseController {
                 self?.cashview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
                 self?.credittxt.textColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
                 self?.creditview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
-                self?.wallet.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
-                self?.credit.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-                self?.cash.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
+                self?.wallet.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+                self?.credit.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+                self?.cash.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
             }
             
         })
@@ -99,9 +99,9 @@ class Paymentmethod: BaseController {
         cashview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
         wallettxt.textColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
         walletview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
-        credit.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
-        cash.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-        wallet.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
+        credit.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+        cash.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+        wallet.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
         viewModel?.editpayment(type: String(type))
 
         
@@ -114,9 +114,9 @@ class Paymentmethod: BaseController {
         creditview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
         wallettxt.textColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
         walletview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
-        cash.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
-        credit.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-        wallet.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
+        cash.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+        credit.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+        wallet.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
         viewModel?.editpayment(type: String(type))
 
 
@@ -129,9 +129,9 @@ class Paymentmethod: BaseController {
         cashview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
         credittxt.textColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
         creditview.borderColor = UIColor(red: 0x96, green: 0xA1, blue: 0xAB)
-        wallet.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
-        credit.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
-        cash.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
+        wallet.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+        credit.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+        cash.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
         viewModel?.editpayment(type: String(type))
 
     }

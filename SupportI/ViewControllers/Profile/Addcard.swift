@@ -45,8 +45,10 @@ class Addcard: BaseController , UITextFieldDelegate{
             visaexpiry.text = expirytxt
             if (isdefultvalue == true){
                 isdefult.select()
+                isdefult.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
             }else{
                 isdefult.deselect()
+                isdefult.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
             }
         }
     }
@@ -55,9 +57,11 @@ class Addcard: BaseController , UITextFieldDelegate{
        viewModel?.delegate = self
         isdefult.onSelect { [self] in
             isdefultvalue = true
+            isdefult.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
         }
         isdefult.onDeselect { [self] in
             isdefultvalue = false
+            isdefult.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
         }
    }
     func validateTextFields() -> Bool {
@@ -71,10 +75,12 @@ class Addcard: BaseController , UITextFieldDelegate{
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
+                let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
+                if (self?.isedit == false){
+                    vcc?.txtstring = "Your new card has added".localized()
+                }
+                self?.pushPop(vcr: vcc!)
+        
            
         })
         viewModel?.errordata.bind({ [weak self](data) in

@@ -429,9 +429,20 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o2L-ot-IKX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.58431372550000005" green="0.59999999999999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="XdL-0Z-O1K" kind="relationship" relationship="viewControllers" id="3DG-iK-KMQ"/>
@@ -535,7 +546,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddt-UC-wra">
-                                        <rect key="frame" x="0.0" y="210" width="414" height="946"/>
+                                        <rect key="frame" x="0.0" y="210" width="414" height="945.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpH-rV-Otc" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="264" y="15" width="125" height="30"/>
@@ -569,7 +580,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elisabeth Ali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OV-wl-Z4O">
-                                                <rect key="frame" x="25" y="60" width="244" height="36"/>
+                                                <rect key="frame" x="25" y="60" width="244" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -596,19 +607,19 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vzq-VI-8RA">
-                                                <rect key="frame" x="57" y="151" width="300" height="70"/>
+                                                <rect key="frame" x="57" y="150.5" width="300" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08E-R7-tkt">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-IB-vju">
-                                                                <rect key="frame" x="41" y="15" width="18" height="21"/>
+                                                                <rect key="frame" x="41" y="15" width="18" height="20.5"/>
                                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9d-xB-DTh">
-                                                                <rect key="frame" x="10" y="41" width="79" height="18"/>
+                                                                <rect key="frame" x="10" y="40.5" width="79" height="18"/>
                                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -640,13 +651,13 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         <rect key="frame" x="100" y="0.0" width="100" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-0v-DGo">
-                                                                <rect key="frame" x="41" y="15" width="18" height="21"/>
+                                                                <rect key="frame" x="41" y="15" width="18" height="20.5"/>
                                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-Ro-uhJ">
-                                                                <rect key="frame" x="10" y="41" width="79" height="18"/>
+                                                                <rect key="frame" x="10" y="40.5" width="79" height="18"/>
                                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -678,13 +689,13 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         <rect key="frame" x="200" y="0.0" width="100" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-Kp-Wrk">
-                                                                <rect key="frame" x="41" y="15" width="18" height="21"/>
+                                                                <rect key="frame" x="41" y="15" width="18" height="20.5"/>
                                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likes received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkS-BT-AEq">
-                                                                <rect key="frame" x="10" y="41" width="80" height="18"/>
+                                                                <rect key="frame" x="10" y="40.5" width="80" height="18"/>
                                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -709,13 +720,13 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elisabeth Ali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TP-j5-2h5">
-                                                <rect key="frame" x="25" y="104" width="364" height="18"/>
+                                                <rect key="frame" x="25" y="103.5" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.16862745100000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78y-Vc-8fG">
-                                                <rect key="frame" x="25" y="266" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="265.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 929-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Pd-2h-c8w">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -766,7 +777,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40N-TS-RLL">
-                                                <rect key="frame" x="25" y="351" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="350.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1172-3" translatesAutoresizingMaskIntoConstraints="NO" id="AoB-wj-3ne">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -777,7 +788,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJW-0q-0HB">
-                                                        <rect key="frame" x="65" y="20.5" width="127" height="24"/>
+                                                        <rect key="frame" x="65" y="20.5" width="126.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -786,7 +797,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKs-Ce-meU">
-                                                        <rect key="frame" x="197" y="20.5" width="20" height="24"/>
+                                                        <rect key="frame" x="196.5" y="20.5" width="20" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -824,7 +835,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lE7-hz-vXc">
-                                                <rect key="frame" x="25" y="441" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="440.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 197-2" translatesAutoresizingMaskIntoConstraints="NO" id="Cig-H1-baj">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -835,7 +846,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnF-1N-Q7i">
-                                                        <rect key="frame" x="65" y="20.5" width="78" height="24"/>
+                                                        <rect key="frame" x="65" y="20.5" width="77.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -844,7 +855,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( EGP 1,500 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AZ-C8-0PD">
-                                                        <rect key="frame" x="148" y="20.5" width="98" height="24"/>
+                                                        <rect key="frame" x="147.5" y="20.5" width="97.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -882,7 +893,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xoy-4l-VoV">
-                                                <rect key="frame" x="25" y="531" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="530.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-alt" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-uH-xfW">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -933,7 +944,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTD-o5-H0t">
-                                                <rect key="frame" x="25" y="611" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="610.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 11092" translatesAutoresizingMaskIntoConstraints="NO" id="iBv-QZ-NIr">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -984,7 +995,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L9-T8-keo">
-                                                <rect key="frame" x="25" y="696" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="695.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 197-1" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-mP-pJL">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1035,7 +1046,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKa-Uf-FWq">
-                                                <rect key="frame" x="25" y="776" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="775.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1157-3" translatesAutoresizingMaskIntoConstraints="NO" id="beu-nv-9pM">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1086,7 +1097,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hu-QS-Mdp">
-                                                <rect key="frame" x="25" y="856" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="855.5" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 969-3" translatesAutoresizingMaskIntoConstraints="NO" id="95Z-Ma-adL">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1295,11 +1306,15 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
             </objects>
             <point key="canvasLocation" x="1889.8550724637682" y="4305.8035714285716"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Explore-->
         <scene sceneID="oon-Ix-1Va">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XdL-0Z-O1K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Bottom" id="v77-8r-Stn"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="Fill 1095-1" id="v77-8r-Stn">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Explore"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SrW-cP-sWU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1314,11 +1329,15 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="1582.3660714285713"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Cart-->
         <scene sceneID="odS-OE-Xer">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lyu-Jl-lec" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Group 10763" id="wUM-wu-YN3"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="Fill 929-1" id="wUM-wu-YN3">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Cart"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hh8-6n-R3d">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1333,11 +1352,15 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="2236.6071428571427"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Be A Seller-->
         <scene sceneID="ZtP-aY-cxK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQp-Wi-hra" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="sell" id="T35-21-CHh"/>
+                    <tabBarItem key="tabBarItem" title="Be A Seller" image="sell-4" id="T35-21-CHh">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Be A Seller"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pdC-hx-qjs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1352,11 +1375,15 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="2925.6696428571427"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="IYe-NN-hQ1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LkY-pr-hVe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Fill 1187" id="gd1-eK-1d1"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Fill 1187-3" id="gd1-eK-1d1">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Search"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BI7-dM-LuF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1371,11 +1398,15 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="3614.7321428571427"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="TxK-uH-lTd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pl3-0t-e3b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Icon_User" id="Iqb-CI-DXL"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Fill 943" id="Iqb-CI-DXL">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Profile"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbd-eR-T3X">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -2037,32 +2068,31 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
         </designable>
     </designables>
     <resources>
-        <image name="Back Button" width="8" height="15"/>
+        <image name="Back Button" width="9" height="15"/>
         <image name="Back Button-1" width="8.5" height="15"/>
-        <image name="Bottom" width="22" height="22"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
+        <image name="Fill 1095-1" width="24" height="25"/>
         <image name="Fill 1108" width="24" height="18"/>
         <image name="Fill 1157-3" width="22.5" height="24"/>
         <image name="Fill 1172-3" width="18.5" height="23"/>
-        <image name="Fill 1187" width="22.5" height="22.5"/>
+        <image name="Fill 1187-3" width="22.5" height="22.5"/>
         <image name="Fill 669" width="23.5" height="23.5"/>
         <image name="Fill 929-1" width="21.5" height="25"/>
+        <image name="Fill 943" width="22" height="22"/>
         <image name="Fill 969-3" width="22" height="22"/>
-        <image name="Group 10763" width="24" height="18"/>
         <image name="Group 11092" width="14" height="20"/>
         <image name="Group 190" width="12" height="9.5"/>
         <image name="Group 1900" width="13" height="10.5"/>
         <image name="Group 1901" width="12" height="9.5"/>
         <image name="Group 197-1" width="49.5" height="38.5"/>
         <image name="Group 197-2" width="49.5" height="38.5"/>
-        <image name="Icon_User" width="24" height="24"/>
         <image name="arrow_down.png" width="6.4000000953674316" height="6.4000000953674316"/>
         <image name="creative-of-default-avatar-vector-21118312" width="84" height="84"/>
         <image name="heart-alt" width="22" height="20.5"/>
         <image name="icon-close" width="36" height="36"/>
         <image name="mask" width="388.5" height="257"/>
         <image name="placeHolder" width="12" height="16"/>
-        <image name="sell" width="26" height="26"/>
+        <image name="sell-4" width="26" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

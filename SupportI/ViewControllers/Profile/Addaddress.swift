@@ -65,10 +65,11 @@ class Addaddress: BaseController {
         })
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
+            let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
+            if (self?.isedit == false){
+                vcc?.txtstring = "Your new address has added".localized()
+            }
+            self?.pushPop(vcr: vcc!)
            
         })
         viewModel?.singleaddressData.bind({ [weak self](data) in
