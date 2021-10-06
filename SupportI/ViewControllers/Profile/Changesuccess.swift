@@ -7,10 +7,13 @@
 //
 
 import UIKit
-
+protocol ChangesuccessDelegate: class {
+    func settype()
+}
 class Changesuccess: BaseController {
     @IBOutlet weak var txt: UILabel!
     var txtstring = ""
+    var delegate : ChangesuccessDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -20,17 +23,7 @@ class Changesuccess: BaseController {
         let when = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: when){
             self.dismiss(animated: true, completion: nil)
-            if (UserRoot.saller() == false){
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
-            }else {
-                let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
-                       guard let nav = controller else { return }
-                       let delegate = UIApplication.shared.delegate as? AppDelegate
-                       delegate?.window?.rootViewController = nav
-            }
+            self.delegate?.settype()
         }
     }
     

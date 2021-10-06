@@ -69,6 +69,7 @@ class Addaddress: BaseController {
             if (self?.isedit == false){
                 vcc?.txtstring = "Your new address has added".localized()
             }
+            vcc?.delegate = self
             self?.pushPop(vcr: vcc!)
            
         })
@@ -272,4 +273,9 @@ extension Addaddress : SelectLocationDelegate {
     }
     
     
+}
+extension Addaddress : ChangesuccessDelegate {
+    func settype() {
+        self.navigationController?.popViewController()
+    }
 }

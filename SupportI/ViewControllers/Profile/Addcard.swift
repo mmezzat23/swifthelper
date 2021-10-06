@@ -79,6 +79,7 @@ class Addcard: BaseController , UITextFieldDelegate{
                 if (self?.isedit == false){
                     vcc?.txtstring = "Your new card has added".localized()
                 }
+                vcc?.delegate = self
                 self?.pushPop(vcr: vcc!)
         
            
@@ -199,5 +200,10 @@ extension String {
         withSeparator separator: Character = "/") -> String {
         return characters.filter { $0 != separator }.chunk(n: chunkSize)
             .map{ String($0) }.joined(separator: String(separator))
+    }
+}
+extension Addcard : ChangesuccessDelegate {
+    func settype() {
+        self.navigationController?.popViewController()
     }
 }

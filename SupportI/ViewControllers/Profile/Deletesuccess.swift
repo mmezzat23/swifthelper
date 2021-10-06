@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+protocol DeletesuccessDelegate: class {
+    func settype()
+}
 class Deletesuccess: BaseController {
     @IBOutlet weak var txt: UILabel!
     var type = ""
-
+    var delegate : DeletesuccessDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -21,19 +23,20 @@ class Deletesuccess: BaseController {
     }
     
     @IBAction func done(_ sender: Any) {
-        if (UserRoot.saller() == false){
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
+//        if (UserRoot.saller() == false){
+//            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+//                   guard let nav = controller else { return }
+//                   let delegate = UIApplication.shared.delegate as? AppDelegate
+//                   delegate?.window?.rootViewController = nav
             self.dismiss(animated: true, completion: nil)
-        }else {
-            let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
-            self.dismiss(animated: true, completion: nil)
-        }
+            delegate?.settype()
+//        }else {
+//            let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
+//                   guard let nav = controller else { return }
+//                   let delegate = UIApplication.shared.delegate as? AppDelegate
+//                   delegate?.window?.rootViewController = nav
+//            self.dismiss(animated: true, completion: nil)
+//        }
     }
     
     /*

@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol DeletecardDelegate: class {
+    func settypeoptin()
+}
 class Deletecard: BaseController {
     var id = 0 ;
     var viewModel : ProfileViewModel?
@@ -15,6 +17,7 @@ class Deletecard: BaseController {
     var type = ""
     @IBOutlet weak var titlelbl: UILabel!
     @IBOutlet weak var name: UILabel!
+    var delgate : DeletecardDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -40,9 +43,7 @@ class Deletecard: BaseController {
             self?.dismiss(animated: true, completion: nil)
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when){ [self] in
-                let vcc = self?.pushViewController(Deletesuccess.self,storyboard: .profile)
-                vcc?.type = self?.type ?? ""
-                self?.pushPop(vcr: vcc!)
+                self?.delgate?.settypeoptin()
             }
         })
         viewModel?.errordata.bind({ [weak self](data) in

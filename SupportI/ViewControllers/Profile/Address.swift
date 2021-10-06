@@ -17,15 +17,20 @@ class Address: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setup()
         bind()
     }
-    
     func setup() {
         address.delegate = self
         address.dataSource = self
         viewModel = .init()
         viewModel?.delegate = self
+        viewModel?.resetPaginator()
+        addressdata.removeAll()
         viewModel?.getaddresss()
     }
     override func bind() {
@@ -89,7 +94,20 @@ extension Address:UITableViewDelegate , UITableViewDataSource {
     }
     
 }
-extension Address : EditdeleteoptionDelegate  {
+extension Address : EditdeleteoptionDelegate , DeletesuccessDelegate , DeletecardDelegate  {
+    func settype() {
+        viewModel?.resetPaginator()
+        addressdata.removeAll()
+        viewModel?.getaddresss()
+    }
+    
+    func settypeoptin() {
+        let vcc = self.pushViewController(Deletesuccess.self,storyboard: .profile)
+        vcc.type = "1"
+        vcc.delegate = self
+        self.pushPop(vcr: vcc)
+    }
+    
     
     func settype(type: String?, action: String?) {
         if (action == "delete") {
@@ -98,6 +116,7 @@ extension Address : EditdeleteoptionDelegate  {
                 let vcc = self.pushViewController(Deletecard.self,storyboard: .profile)
                 vcc.id = addressdata[path].id ?? 0
                 vcc.txt =  addressdata[path].name ?? ""
+                vcc.delgate = self
                 vcc.type = "1"
                 pushPop(vcr: vcc)
             }

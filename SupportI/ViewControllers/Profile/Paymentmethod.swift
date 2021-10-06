@@ -34,6 +34,10 @@ class Paymentmethod: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setup()
         bind()
     }
@@ -43,6 +47,8 @@ class Paymentmethod: BaseController {
         payment.dataSource = self
         viewModel = .init()
         viewModel?.delegate = self
+        viewModel?.resetPaginator()
+        cardsdata.removeAll()
         viewModel?.getcards()
     }
     override func bind() {
@@ -181,7 +187,19 @@ extension Paymentmethod:UITableViewDelegate , UITableViewDataSource {
     }
     
 }
-extension Paymentmethod : EditdeleteoptionDelegate  {
+extension Paymentmethod : EditdeleteoptionDelegate , DeletesuccessDelegate , DeletecardDelegate  {
+    func settype() {
+        viewModel?.resetPaginator()
+        cardsdata.removeAll()
+        viewModel?.getcards()
+    }
+    
+    func settypeoptin() {
+        let vcc = self.pushViewController(Deletesuccess.self,storyboard: .profile)
+        vcc.type = "2"
+        vcc.delegate = self
+        self.pushPop(vcr: vcc)
+    }
     func settype(type: String?, action: String?) {
         if (action == "delete") {
             let when = DispatchTime.now() + 1
@@ -189,6 +207,7 @@ extension Paymentmethod : EditdeleteoptionDelegate  {
                 let vcc = self.pushViewController(Deletecard.self,storyboard: .profile)
                 vcc.id = cardsdata[path].id ?? 0
                 vcc.txt =  cardsdata[path].cardNumber ?? ""
+                vcc.delgate = self
                 vcc.type =  "2"
                 pushPop(vcr: vcc)
             }

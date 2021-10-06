@@ -108,6 +108,7 @@ class Editprofile: BaseController {
         viewModel?.editdata.bind({ [weak self](data) in
             self?.stopLoading()
             let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
+            vcc?.delegate = self
             self?.pushPop(vcr: vcc!)
         })
         viewModel?.errordata.bind({ [weak self](data) in
@@ -196,5 +197,10 @@ extension Editprofile : PickersPOPDelegate {
     func callbackgenders(item: GenderModel) {
         gendertype.text = item.name
         type = item.type ?? ""
+    }
+}
+extension Editprofile : ChangesuccessDelegate {
+    func settype() {
+        self.navigationController?.popViewController()
     }
 }

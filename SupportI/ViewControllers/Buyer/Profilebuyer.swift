@@ -37,8 +37,7 @@ class Profilebuyer: BaseController {
         super.viewDidLoad()
         hiddenNav = true
         onclick()
-        setup()
-        bind()
+       
     }
     
     func setup() {
@@ -87,6 +86,8 @@ class Profilebuyer: BaseController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setup()
+        bind()
         if (UserRoot.token() != nil){
         viewModel?.getprofile()
         }else{
