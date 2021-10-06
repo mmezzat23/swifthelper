@@ -40,23 +40,17 @@ class Contactus: BaseController {
     var reasons : [ResponseDatum] = []
     var reasonid = 0
     var orderid = 0
-
+    @IBOutlet var banner: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         setup()
         bind()
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+        }
         if (UserRoot.token() != nil) {
-//            phone.isHidden = true
-//            email.isHidden = true
-//            phonetxt.isHidden = true
-//            emailtxt.isHidden = true
-//            phonehight.constant = 0
-//            emailhight.constant = 0
-//            phonetxthight.constant = 0
-//            emailtxthight.constant = 0
-//            emailcostant.constant = 0
-//            phoneconstant.constant = 0
             if (UserRoot.saller() == true){
             viewModel?.getreasons(type: "0")
             }else{

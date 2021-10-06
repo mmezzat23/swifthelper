@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Muli-SemiBold.ttf">
-            <string>Muli-SemiBold</string>
-        </array>
         <array key="Muli.ttf">
             <string>Muli</string>
         </array>
@@ -18,61 +15,95 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="145" id="KGk-i7-Jjw" customClass="FaqTableViewCell" customModule="SupportI" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="145" id="KGk-i7-Jjw" customClass="FaqTableViewCell" customModule="Wndo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="504" height="145"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="504" height="145"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why are some titles discounted while others are not?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAr-Uu-BFZ">
-                        <rect key="frame" x="0.0" y="0.0" width="459" height="30"/>
-                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-5o-ER4">
-                        <rect key="frame" x="474" y="0.0" width="30" height="30"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSq-Nh-B59">
+                        <rect key="frame" x="0.0" y="0.0" width="504" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why are some titles discounted while others are not?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAr-Uu-BFZ">
+                                <rect key="frame" x="10" y="8" width="456" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-5o-ER4">
+                                <rect key="frame" x="466" y="8" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="SMD-wd-kg2"/>
+                                    <constraint firstAttribute="height" constant="30" id="yeT-L3-mOH"/>
+                                </constraints>
+                                <state key="normal" image="icon_plus"/>
+                            </button>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="2qg-EL-t68"/>
-                            <constraint firstAttribute="width" constant="30" id="a50-bp-Lai"/>
+                            <constraint firstItem="xnl-5o-ER4" firstAttribute="leading" secondItem="nAr-Uu-BFZ" secondAttribute="trailing" id="2zw-uc-2uF"/>
+                            <constraint firstAttribute="height" constant="50" id="NQF-hE-iGm"/>
+                            <constraint firstAttribute="trailing" secondItem="xnl-5o-ER4" secondAttribute="trailing" constant="8" id="TRi-28-h17"/>
+                            <constraint firstItem="xnl-5o-ER4" firstAttribute="top" secondItem="OSq-Nh-B59" secondAttribute="top" constant="8" id="Y6g-lB-ocQ"/>
+                            <constraint firstItem="nAr-Uu-BFZ" firstAttribute="leading" secondItem="OSq-Nh-B59" secondAttribute="leading" constant="10" id="lOS-hH-DYw"/>
+                            <constraint firstItem="nAr-Uu-BFZ" firstAttribute="top" secondItem="OSq-Nh-B59" secondAttribute="top" constant="8" id="p3R-aB-BB0"/>
                         </constraints>
-                        <state key="normal" image="icon_plus"/>
-                    </button>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-XQ-mcw">
-                        <rect key="frame" x="0.0" y="40" width="504" height="1"/>
-                        <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="ajs-qm-At8"/>
-                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.41960784313725491" green="0.41960784313725491" blue="0.41960784313725491" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQC-CC-Szl">
-                        <rect key="frame" x="0.0" y="56" width="504" height="79"/>
-                        <string key="text">Our decision to discount products is made internally and based on a number of strategic considerations which can vary over time. As it stands now, we offer discounts on hundreds of thousands of selected titles. However we cannot confirm when, if ever, a title will be discounted or how long a title once discounted will remain so.</string>
-                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-XQ-mcw">
+                        <rect key="frame" x="0.0" y="62" width="504" height="82"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQC-CC-Szl">
+                                <rect key="frame" x="10" y="8" width="484" height="64"/>
+                                <string key="text">Our decision to discount products is made internally and based on a number of strategic considerations which can vary over time. As it stands now, we offer discounts on hundreds of thousands of selected titles. However we cannot confirm when, if ever, a title will be discounted or how long a title once discounted will remain so.</string>
+                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
+                                <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="oQC-CC-Szl" firstAttribute="top" secondItem="SZ8-XQ-mcw" secondAttribute="top" constant="8" id="3A2-wy-ZBX"/>
+                            <constraint firstItem="oQC-CC-Szl" firstAttribute="leading" secondItem="SZ8-XQ-mcw" secondAttribute="leading" constant="10" id="YJV-CS-scM"/>
+                            <constraint firstAttribute="bottom" secondItem="oQC-CC-Szl" secondAttribute="bottom" constant="10" id="uWf-Bh-Zi7"/>
+                            <constraint firstAttribute="trailing" secondItem="oQC-CC-Szl" secondAttribute="trailing" constant="10" id="zcD-vc-Qf5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.41960784313725491" green="0.41960784313725491" blue="0.41960784313725491" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="nAr-Uu-BFZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0Lg-bV-6ZR"/>
-                    <constraint firstItem="SZ8-XQ-mcw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9oG-lT-PTM"/>
-                    <constraint firstAttribute="trailing" secondItem="oQC-CC-Szl" secondAttribute="trailing" id="Arx-Cw-mBt"/>
-                    <constraint firstItem="nAr-Uu-BFZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DuD-xh-epc"/>
-                    <constraint firstItem="xnl-5o-ER4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RcO-Db-fWw"/>
-                    <constraint firstAttribute="trailing" secondItem="xnl-5o-ER4" secondAttribute="trailing" id="Vbj-mK-OTt"/>
-                    <constraint firstItem="oQC-CC-Szl" firstAttribute="top" secondItem="SZ8-XQ-mcw" secondAttribute="bottom" constant="15" id="bDJ-14-mTc"/>
-                    <constraint firstAttribute="bottom" secondItem="oQC-CC-Szl" secondAttribute="bottom" constant="10" id="faw-s0-lQ7"/>
-                    <constraint firstItem="SZ8-XQ-mcw" firstAttribute="top" secondItem="nAr-Uu-BFZ" secondAttribute="bottom" constant="10" id="hVE-Oz-Min"/>
-                    <constraint firstItem="oQC-CC-Szl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hvo-P5-OIk"/>
-                    <constraint firstItem="xnl-5o-ER4" firstAttribute="leading" secondItem="nAr-Uu-BFZ" secondAttribute="trailing" constant="15" id="itD-Sb-xs2"/>
-                    <constraint firstAttribute="trailing" secondItem="SZ8-XQ-mcw" secondAttribute="trailing" id="n9b-ed-N3R"/>
-                    <constraint firstItem="nAr-Uu-BFZ" firstAttribute="centerY" secondItem="xnl-5o-ER4" secondAttribute="centerY" id="tk6-Xx-uqH"/>
+                    <constraint firstItem="OSq-Nh-B59" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Uz-fy-2ej"/>
+                    <constraint firstAttribute="bottom" secondItem="SZ8-XQ-mcw" secondAttribute="bottom" constant="1" id="8jv-Pv-h0Z"/>
+                    <constraint firstAttribute="trailing" secondItem="SZ8-XQ-mcw" secondAttribute="trailing" id="9kh-Yo-9V2"/>
+                    <constraint firstAttribute="trailing" secondItem="OSq-Nh-B59" secondAttribute="trailing" id="BEr-q6-Cqm"/>
+                    <constraint firstItem="OSq-Nh-B59" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cRY-xf-TdY"/>
+                    <constraint firstItem="SZ8-XQ-mcw" firstAttribute="top" secondItem="OSq-Nh-B59" secondAttribute="bottom" constant="12" id="ka3-DY-aXI"/>
+                    <constraint firstItem="SZ8-XQ-mcw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xax-ad-2Rj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="add" destination="xnl-5o-ER4" id="GSz-K4-Mty"/>
+                <outlet property="answerview" destination="SZ8-XQ-mcw" id="mlc-QK-9g1"/>
                 <outlet property="des" destination="oQC-CC-Szl" id="x7E-Ur-QRb"/>
                 <outlet property="titlelbl" destination="nAr-Uu-BFZ" id="HTC-zh-UMT"/>
             </connections>

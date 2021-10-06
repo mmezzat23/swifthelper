@@ -706,48 +706,6 @@
                                                     <constraint firstAttribute="height" constant="1" id="snL-Oh-3qb"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="smf-oP-8hx">
-                                                <rect key="frame" x="30" y="720" width="354" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZN-eg-Uhw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="50"/>
-                                                        <color key="backgroundColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
-                                                        <state key="normal" title="CANCEL">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="CANCEL"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="backBtn:" destination="uKU-cW-qJX" eventType="touchUpInside" id="h5k-Tx-cZ3"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qf-aa-gjz">
-                                                        <rect key="frame" x="184.5" y="0.0" width="169.5" height="50"/>
-                                                        <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
-                                                        <state key="normal" title="SAVE">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="SAVE"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="25"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="save:" destination="QcJ-Kr-S6n" eventType="touchUpInside" id="eWX-Mk-IGX"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="23B-Kn-ZeM"/>
-                                                </constraints>
-                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="As3-8c-IfP">
                                                 <rect key="frame" x="30" y="260" width="66" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
@@ -775,24 +733,16 @@
                                                     <constraint firstAttribute="height" constant="1" id="b7H-LN-HlB"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-Jz-vR7" customClass="RadioButton" customModule="Wndo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-Jz-vR7">
                                                 <rect key="frame" x="30" y="660" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="NlL-74-jg1"/>
                                                     <constraint firstAttribute="height" constant="30" id="c69-GX-zTW"/>
                                                 </constraints>
+                                                <state key="normal" image="radio button-1"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="radioColor">
                                                         <color key="value" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
@@ -805,21 +755,65 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Save this card ad default payment method"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRd-fQ-v3F">
+                                                <rect key="frame" x="87" y="735.5" width="240" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="Hdp-1z-TcD"/>
+                                                    <constraint firstAttribute="height" constant="44" id="kBj-zk-8hh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
+                                                <state key="normal" title="SAVE CHANGES">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="SAVE CHANGES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="save:" destination="QcJ-Kr-S6n" eventType="touchUpInside" id="55B-ER-khK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgw-Sj-r5w">
+                                                <rect key="frame" x="97" y="789.5" width="220" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="MAa-aZ-8CS"/>
+                                                    <constraint firstAttribute="width" constant="220" id="qmf-Tb-d60"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                <state key="normal" title="DISCARD">
+                                                    <color key="titleColor" red="0.58431372550000005" green="0.59999999999999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="DISCARD"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="backBtn:" destination="uKU-cW-qJX" eventType="touchUpInside" id="459-ze-xMd"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="AJ9-ud-XQq" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="0zg-IO-yY7"/>
                                             <constraint firstAttribute="trailing" secondItem="8AW-X5-LGk" secondAttribute="trailing" id="1Gz-2R-DCE"/>
+                                            <constraint firstItem="Dgw-Sj-r5w" firstAttribute="top" secondItem="bRd-fQ-v3F" secondAttribute="bottom" constant="10" id="2H7-pn-4Xl"/>
                                             <constraint firstItem="ojB-TZ-qT7" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="4PI-uA-hIh"/>
                                             <constraint firstAttribute="trailing" secondItem="ISE-gU-v2I" secondAttribute="trailing" constant="30" id="5xJ-wg-sCV"/>
                                             <constraint firstItem="AJ9-ud-XQq" firstAttribute="top" secondItem="ISE-gU-v2I" secondAttribute="bottom" constant="30" id="6Yj-jV-gyu"/>
                                             <constraint firstItem="Fkd-NW-p1S" firstAttribute="top" secondItem="6is-bW-g3X" secondAttribute="bottom" constant="15" id="9F3-oW-5Tp"/>
+                                            <constraint firstItem="bRd-fQ-v3F" firstAttribute="top" secondItem="Qev-3X-p4u" secondAttribute="bottom" constant="50" id="9mZ-f4-UCy"/>
                                             <constraint firstAttribute="trailing" secondItem="WKo-Kv-OjJ" secondAttribute="trailing" constant="100" id="9xU-Ry-UIy"/>
                                             <constraint firstItem="Fkd-NW-p1S" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="B2i-az-UlF"/>
-                                            <constraint firstItem="smf-oP-8hx" firstAttribute="top" secondItem="g4A-Jz-vR7" secondAttribute="bottom" constant="30" id="FSS-cV-VUl"/>
+                                            <constraint firstItem="Dgw-Sj-r5w" firstAttribute="centerX" secondItem="98d-tm-qel" secondAttribute="centerX" id="Fo8-hq-g4s"/>
                                             <constraint firstItem="6is-bW-g3X" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="Fzp-R4-ELq"/>
                                             <constraint firstItem="cmb-DN-QGv" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="GFU-iz-93b"/>
                                             <constraint firstItem="QBm-dc-gkv" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="GK6-hm-Fap"/>
                                             <constraint firstItem="cIW-zi-cH9" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="GzR-od-dO0"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dgw-Sj-r5w" secondAttribute="bottom" constant="20" id="Gzv-He-5II"/>
                                             <constraint firstAttribute="trailing" secondItem="cIW-zi-cH9" secondAttribute="trailing" constant="30" id="JTR-C5-DWo"/>
                                             <constraint firstItem="8AW-X5-LGk" firstAttribute="top" secondItem="98d-tm-qel" secondAttribute="top" id="JbT-5f-Nhd"/>
                                             <constraint firstItem="bz5-4S-Mj7" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="KOj-Ig-Kiy"/>
@@ -838,22 +832,20 @@
                                             <constraint firstItem="WKo-Kv-OjJ" firstAttribute="top" secondItem="eqM-z8-81o" secondAttribute="bottom" constant="22" id="UOm-7T-hpF"/>
                                             <constraint firstItem="cmb-DN-QGv" firstAttribute="top" secondItem="Fkd-NW-p1S" secondAttribute="bottom" constant="1" id="Wh3-Ax-7kL"/>
                                             <constraint firstItem="8AW-X5-LGk" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" id="Zw9-16-Wad"/>
-                                            <constraint firstAttribute="bottom" secondItem="smf-oP-8hx" secondAttribute="bottom" constant="70" id="ZwJ-Es-LmX"/>
                                             <constraint firstItem="Gja-Ee-yQ0" firstAttribute="top" secondItem="AJ9-ud-XQq" secondAttribute="bottom" constant="15" id="Zzh-bd-38C"/>
                                             <constraint firstItem="PRd-Nf-AaL" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="aGj-IU-eT6"/>
                                             <constraint firstAttribute="width" secondItem="8AW-X5-LGk" secondAttribute="width" id="aXW-WG-a1h"/>
+                                            <constraint firstItem="bRd-fQ-v3F" firstAttribute="centerX" secondItem="98d-tm-qel" secondAttribute="centerX" id="dCJ-qp-MyY"/>
                                             <constraint firstItem="6is-bW-g3X" firstAttribute="top" secondItem="QBm-dc-gkv" secondAttribute="bottom" constant="30" id="dHr-PA-enX"/>
                                             <constraint firstItem="ISE-gU-v2I" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="djG-p8-4OL"/>
                                             <constraint firstAttribute="trailing" secondItem="Qev-3X-p4u" secondAttribute="trailing" constant="30" id="eAG-uV-i5b"/>
                                             <constraint firstItem="2PB-3m-vam" firstAttribute="top" secondItem="GhB-53-FYD" secondAttribute="bottom" constant="8" id="eL4-l2-rzO"/>
                                             <constraint firstItem="QBm-dc-gkv" firstAttribute="top" secondItem="PRd-Nf-AaL" secondAttribute="bottom" constant="1" id="eNo-oo-3Ac"/>
                                             <constraint firstItem="GhB-53-FYD" firstAttribute="top" secondItem="eqM-z8-81o" secondAttribute="bottom" constant="22" id="gUd-An-511"/>
-                                            <constraint firstAttribute="trailing" secondItem="smf-oP-8hx" secondAttribute="trailing" constant="30" id="iBO-tR-Api"/>
                                             <constraint firstItem="jNe-rH-wUi" firstAttribute="top" secondItem="WKo-Kv-OjJ" secondAttribute="bottom" constant="8" id="kQm-jd-WtQ"/>
                                             <constraint firstItem="cIW-zi-cH9" firstAttribute="top" secondItem="As3-8c-IfP" secondAttribute="bottom" constant="15" id="lSi-WP-Oxn"/>
                                             <constraint firstItem="Gja-Ee-yQ0" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="nDQ-67-2j8"/>
                                             <constraint firstAttribute="trailing" secondItem="Gja-Ee-yQ0" secondAttribute="trailing" constant="30" id="oZz-9P-AQj"/>
-                                            <constraint firstItem="smf-oP-8hx" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="owi-LL-YZf"/>
                                             <constraint firstItem="ojB-TZ-qT7" firstAttribute="top" secondItem="9L8-8K-1hp" secondAttribute="bottom" constant="30" id="pIZ-O3-ONU"/>
                                             <constraint firstItem="As3-8c-IfP" firstAttribute="top" secondItem="bz5-4S-Mj7" secondAttribute="bottom" constant="30" id="pr2-LG-NIk"/>
                                             <constraint firstItem="eqM-z8-81o" firstAttribute="top" secondItem="8AW-X5-LGk" secondAttribute="bottom" constant="100" id="ro5-EG-W7C"/>
@@ -911,7 +903,7 @@
                     <connections>
                         <outlet property="cardname" destination="cIW-zi-cH9" id="cQg-U4-Kno"/>
                         <outlet property="expiry" destination="Fkd-NW-p1S" id="u5V-8i-OZx"/>
-                        <outlet property="isdefult" destination="g4A-Jz-vR7" id="gfe-Yh-Lfb"/>
+                        <outlet property="isdefult" destination="g4A-Jz-vR7" id="H3P-8e-KLY"/>
                         <outlet property="name" destination="Gja-Ee-yQ0" id="fgA-Bn-hir"/>
                         <outlet property="number" destination="PRd-Nf-AaL" id="YU0-zu-hps"/>
                         <outlet property="visacardname" destination="2PB-3m-vam" id="I6d-to-AdN"/>
@@ -2960,17 +2952,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHb-0k-u8g">
-                                <rect key="frame" x="0.0" y="-12" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="-12" width="414" height="170"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 11181" translatesAutoresizingMaskIntoConstraints="NO" id="nTa-pF-Mve">
-                                        <rect key="frame" x="100" y="150" width="30" height="30"/>
+                                        <rect key="frame" x="100" y="120" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2U8-qQ-1cZ"/>
                                             <constraint firstAttribute="width" constant="30" id="UGP-Yi-F0f"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your changes saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8I-Oe-dKX">
-                                        <rect key="frame" x="145" y="156" width="116.5" height="18"/>
+                                        <rect key="frame" x="145" y="126" width="116.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <color key="textColor" red="0.0078431372549019607" green="0.65490196078431373" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2978,11 +2970,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Cyp-x9-Iqf"/>
+                                    <constraint firstAttribute="height" constant="170" id="Cyp-x9-Iqf"/>
                                     <constraint firstItem="nTa-pF-Mve" firstAttribute="leading" secondItem="fHb-0k-u8g" secondAttribute="leading" constant="100" id="LIp-SJ-vSY"/>
                                     <constraint firstItem="Q8I-Oe-dKX" firstAttribute="centerY" secondItem="nTa-pF-Mve" secondAttribute="centerY" id="Ml3-cX-mff"/>
                                     <constraint firstItem="Q8I-Oe-dKX" firstAttribute="leading" secondItem="nTa-pF-Mve" secondAttribute="trailing" constant="15" id="uFW-LU-B4I"/>
-                                    <constraint firstItem="nTa-pF-Mve" firstAttribute="top" secondItem="fHb-0k-u8g" secondAttribute="top" constant="150" id="yMp-BX-VEw"/>
+                                    <constraint firstItem="nTa-pF-Mve" firstAttribute="top" secondItem="fHb-0k-u8g" secondAttribute="top" constant="120" id="yMp-BX-VEw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -3142,11 +3134,6 @@
             <point key="canvasLocation" x="28084" y="3931"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="g4A-Jz-vR7">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Back Button" width="9" height="15"/>
         <image name="Back Button-2" width="8.5" height="15"/>

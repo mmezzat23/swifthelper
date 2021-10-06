@@ -14,14 +14,19 @@ class Faq: BaseController {
     var faqsdata : [ItemFaq] = []
     var viewModel : ProfileViewModel?
     var parameters : [String : Any] = [:]
+    @IBOutlet var banner: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         setup()
         bind()
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+        }
         sendmessage.UIViewAction {
-//            let vcc = self.controller(Contactus.self,storyboard: .setting)
-//            self.push(vcc)
+            let vcc = self.controller(Contactus.self,storyboard: .setting)
+            self.push(vcc)
         }
     }
     

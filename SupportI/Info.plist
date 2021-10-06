@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -59,14 +59,14 @@
 		<string>Multi-SemiBold.ttf</string>
 		<string>Multi.ttf</string>
 		<string>SFPRODISPLAYBLACKITALIC.OTF</string>
-        <string>SFPRODISPLAYBOLD.OTF</string>
-        <string>SFPRODISPLAYHEAVYITALIC.OTF</string>
-        <string>SFPRODISPLAYLIGHTITALIC.OTF</string>
-        <string>SFPRODISPLAYMEDIUM.OTF</string>
-        <string>SFPRODISPLAYREGULAR.OTF</string>
-        <string>SFPRODISPLAYSEMIBOLDITALIC.OTF</string>
-        <string>SFPRODISPLAYTHINITALIC.OTF</string>
-        <string>SFPRODISPLAYULTRALIGHTITALIC.OTF</string>
+		<string>SFPRODISPLAYBOLD.OTF</string>
+		<string>SFPRODISPLAYHEAVYITALIC.OTF</string>
+		<string>SFPRODISPLAYLIGHTITALIC.OTF</string>
+		<string>SFPRODISPLAYMEDIUM.OTF</string>
+		<string>SFPRODISPLAYREGULAR.OTF</string>
+		<string>SFPRODISPLAYSEMIBOLDITALIC.OTF</string>
+		<string>SFPRODISPLAYTHINITALIC.OTF</string>
+		<string>SFPRODISPLAYULTRALIGHTITALIC.OTF</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

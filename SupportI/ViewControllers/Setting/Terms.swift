@@ -12,11 +12,16 @@ class Terms: BaseController {
     @IBOutlet weak var txt: UITextView!
     var viewModel : ProfileViewModel?
     var parameters : [String : Any] = [:]
+    @IBOutlet var banner: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         setup()
         bind()
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+        }
     }
     func setup() {
        viewModel = .init()

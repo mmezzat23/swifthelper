@@ -14,6 +14,7 @@ class Privacy: BaseController {
     var parameters : [String : Any] = [:]
     var type = 0
     @IBOutlet weak var titlelbl: UILabel!
+    @IBOutlet var banner: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class Privacy: BaseController {
         }
         setup()
         bind()
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+        }
     }
     func setup() {
        viewModel = .init()

@@ -27,6 +27,7 @@
 		662A036726FB267F002493D7 /* FaqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A036526FB267F002493D7 /* FaqTableViewCell.swift */; };
 		662A036826FB267F002493D7 /* FaqTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662A036626FB267F002493D7 /* FaqTableViewCell.xib */; };
 		662C538C26FA0D1000AFC952 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C538B26FA0D1000AFC952 /* About.swift */; };
+		66305EAC270DDDAE0074C6C8 /* ProfileSaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66305EAB270DDDAE0074C6C8 /* ProfileSaller.swift */; };
 		6632E565270079790095221D /* SettingsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632E564270079790095221D /* SettingsProfile.swift */; };
 		663422C727034B340003FA0C /* Buyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663422C627034B340003FA0C /* Buyer.swift */; };
 		663422CA27034B5F0003FA0C /* Buyerswitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663422C927034B5F0003FA0C /* Buyerswitch.swift */; };
@@ -316,6 +317,7 @@
 		662A036526FB267F002493D7 /* FaqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqTableViewCell.swift; sourceTree = "<group>"; };
 		662A036626FB267F002493D7 /* FaqTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaqTableViewCell.xib; sourceTree = "<group>"; };
 		662C538B26FA0D1000AFC952 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		66305EAB270DDDAE0074C6C8 /* ProfileSaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSaller.swift; sourceTree = "<group>"; };
 		6632E564270079790095221D /* SettingsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfile.swift; sourceTree = "<group>"; };
 		663422C627034B340003FA0C /* Buyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buyer.swift; sourceTree = "<group>"; };
 		663422C927034B5F0003FA0C /* Buyerswitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buyerswitch.swift; sourceTree = "<group>"; };
@@ -694,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				66758FC7270B028600D7917E /* Homesaller.swift */,
+				66305EAB270DDDAE0074C6C8 /* ProfileSaller.swift */,
 			);
 			path = Saller;
 			sourceTree = "<group>";
@@ -1637,6 +1640,7 @@
 				8050BD8020BF8CC100E355BE /* User.swift in Sources */,
 				80A2FC00215841BC00223A77 /* RouteModel.swift in Sources */,
 				80EA006A231DFE7C0008E68B /* EFCount.swift in Sources */,
+				66305EAC270DDDAE0074C6C8 /* ProfileSaller.swift in Sources */,
 				669CDB7626FB2CD500E1081D /* Privacy.swift in Sources */,
 				80DA014F211A888600817038 /* SequenceExtensions.swift in Sources */,
 				80A2FBFF215841BC00223A77 /* PolylineAttrbuite.swift in Sources */,
@@ -2009,6 +2013,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportI/SupportI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UL4L86WK78;
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2033,6 +2038,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportI/SupportI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UL4L86WK78;
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

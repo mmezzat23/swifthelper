@@ -88,7 +88,7 @@ class Editprofile: BaseController {
                 self?.banner.setImage(url: data.responseData?.cover)
             }
             if (data.responseData?.profile != ""){
-                self?.image.setImage(url: data.responseData?.cover)
+                self?.image.setImage(url: data.responseData?.profile)
             }
             self?.name.text = data.responseData?.name
             self?.bio.text = data.responseData?.bio
@@ -107,11 +107,8 @@ class Editprofile: BaseController {
         })
         viewModel?.editdata.bind({ [weak self](data) in
             self?.stopLoading()
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
-            
+            let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
+            self?.pushPop(vcr: vcc!)
         })
         viewModel?.errordata.bind({ [weak self](data) in
             self?.stopLoading()

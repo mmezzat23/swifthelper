@@ -25,7 +25,7 @@ class Addcard: BaseController , UITextFieldDelegate{
     var expirytxt = ""
     var cardtxt = ""
     var nametxt = ""
-    @IBOutlet weak var isdefult: RadioButton!
+    @IBOutlet weak var isdefult: UIButton!
     var isdefultvalue = false
 
     override func viewDidLoad() {
@@ -44,10 +44,8 @@ class Addcard: BaseController , UITextFieldDelegate{
             visanumber.text = customStringFormatting(of: num, num: 4, ch: " ")
             visaexpiry.text = expirytxt
             if (isdefultvalue == true){
-                isdefult.select()
                 isdefult.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
             }else{
-                isdefult.deselect()
                 isdefult.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
             }
         }
@@ -55,14 +53,16 @@ class Addcard: BaseController , UITextFieldDelegate{
     func setup() {
        viewModel = .init()
        viewModel?.delegate = self
-        isdefult.onSelect { [self] in
-            isdefultvalue = true
-            isdefult.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+        isdefult.UIViewAction { [self] in
+            if (isdefultvalue == false){
+                isdefultvalue = true
+                isdefult.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+            }else{
+                isdefultvalue = false
+                isdefult.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+            }
         }
-        isdefult.onDeselect { [self] in
-            isdefultvalue = false
-            isdefult.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
-        }
+        
    }
     func validateTextFields() -> Bool {
         cardname.customValidationRules = [RequiredRule()]
@@ -90,20 +90,20 @@ class Addcard: BaseController , UITextFieldDelegate{
         })
     }
     @IBAction func save(_ sender: Any) {
-        var error : String = ""
-       
-        if !CreditCardValidator(visanumber.text!).isValid {
-            error = "\(error)\n \("Card number is invalid".localized)"
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/yy"
-        let enteredDate = dateFormatter.date(from: expiry.text!)!
-        let endOfMonth = Calendar.current.date(byAdding: .month, value: 1, to: enteredDate)!
-        let now = Date()
-        if (endOfMonth < now) {
-            error = "\(error)\n \("Card expiry is invalid".localized)"
-        }
+    
         if (validateTextFields()){
+            var error : String = ""
+            if !CreditCardValidator(visanumber.text!).isValid {
+                error = "\(error)\n \("Card number is invalid".localized)"
+            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/yy"
+            let enteredDate = dateFormatter.date(from: expiry.text!)!
+            let endOfMonth = Calendar.current.date(byAdding: .month, value: 1, to: enteredDate)!
+            let now = Date()
+            if (endOfMonth < now) {
+                error = "\(error)\n \("Card expiry is invalid".localized)"
+            }
             if (error != ""){
               makeAlert(error, closure: {})
             }else{

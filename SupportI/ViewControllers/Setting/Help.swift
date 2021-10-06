@@ -18,9 +18,13 @@ class Help: BaseController {
     @IBOutlet weak var sendmessage: UIView!
     @IBOutlet weak var logouthight: NSLayoutConstraint!
     
+    @IBOutlet weak var banner: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+        }
         onclick()
         if (UserRoot.token() == nil){
             logouthight.constant = 0

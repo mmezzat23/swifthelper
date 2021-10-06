@@ -14,12 +14,17 @@ class About: BaseController {
     var viewModel : ProfileViewModel?
     var parameters : [String : Any] = [:]
     var social : UserRoot?
+    @IBOutlet weak var banner: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         more.setunderline(title: "For More Details, please visit us")
         setup()
         bind()
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+        }
     }
     func setup() {
        viewModel = .init()

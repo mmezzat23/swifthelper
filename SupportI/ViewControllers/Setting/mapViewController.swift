@@ -20,6 +20,8 @@ class mapViewController: BaseController {
     var lat: Double?
     var lng: Double?
     @IBOutlet weak var edit: UITextField!
+    @IBOutlet weak var discard: UIButton!
+    @IBOutlet weak var yes: UIButton!
     
     weak var delegate: SelectLocationDelegate?
     @IBOutlet weak var mapView: GMSMapView!
@@ -28,7 +30,12 @@ class mapViewController: BaseController {
         hiddenNav = true
         setup()
         
-
+        if (UserRoot.saller() == true){
+            yes.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+            discard.borderColor = UIColor(red: 01, green: 14, blue: 47)
+            discard.setTitleColor( UIColor(red: 01, green: 14, blue: 47)
+, for: .normal) 
+        }
         // Do any additional setup after loading the view.
     }
     func setup() {
