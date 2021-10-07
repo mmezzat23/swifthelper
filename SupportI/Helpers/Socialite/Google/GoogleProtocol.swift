@@ -9,6 +9,6 @@
 import Foundation
 import GoogleSignIn
 
-protocol GoogleProviderDelegate: GIDSignInDelegate {
-}
+//protocol GoogleProviderDelegate: GIDSignInDelegate {
+//}
 

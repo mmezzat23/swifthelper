@@ -26,7 +26,8 @@ class ProfileSaller: BaseController {
     @IBOutlet weak var walletview: UIView!
     @IBOutlet weak var walletnym: UILabel!
     @IBOutlet weak var callender: UIView!
-    
+    var birthdate = ""
+
     var viewModel : AuthViewModel?
     var typeimage = ""
     var picker: GalleryPickerHelper?
@@ -47,6 +48,7 @@ class ProfileSaller: BaseController {
         picker?.onPickImageURL = { [self] url in
                     if (typeimage == "1"){
                     self.imageURL = url
+                        ApiManager.instance.paramaters["DateOfBirth"] = self.birthdate
                         ApiManager.instance.uploadFile(EndPoint.editprofile.rawValue, type: .post, file: [["profile": self.imageURL] ]) { [self] (response) in
                                          self.stopLoading()
                                          let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
@@ -61,6 +63,7 @@ class ProfileSaller: BaseController {
                                      }
                     }else{
                     self.coverURL = url
+                        ApiManager.instance.paramaters["DateOfBirth"] = self.birthdate
                         ApiManager.instance.uploadFile(EndPoint.editprofile.rawValue, type: .post, file: [ ["cover": self.coverURL]]) { [self] (response) in
                                          self.stopLoading()
                                          let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
@@ -78,7 +81,7 @@ class ProfileSaller: BaseController {
                 }
         picker?.onPickImage = { [self] image in
                     if (typeimage == "1"){
-                    self.banner.image = image
+                    self.image.image = image
                     }else{
                     self.banner.image = image
                     }

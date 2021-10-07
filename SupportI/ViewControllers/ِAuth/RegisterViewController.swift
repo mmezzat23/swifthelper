@@ -8,6 +8,7 @@
 
 import UIKit
 import AuthenticationServices
+import GoogleSignIn
 
 class RegisterViewController: BaseController {
     
@@ -46,26 +47,22 @@ class RegisterViewController: BaseController {
     @IBAction func signUpWithAppleClicked(_ sender: UIButton) {
     }
     @IBAction func signUpWithGoogleClicked(_ sender: UIButton) {
-        let driver = GoogleDriver()
-        driver.closure = { user in
-            self.startLoading()
-            self.startLoading()
-            ApiManager.instance.paramaters["providerId"] = user.id
-            ApiManager.instance.paramaters["providerName"] = "google"
-            ApiManager.instance.paramaters["email"] = user.email
-            print(ApiManager.instance.paramaters)
-            ApiManager.instance.connectionRaw(.socaillogin, type: .post) { [self] (response) in
-                self.stopLoading()
-                let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
-                parameters["emailOrPhone"] = data?.responseData?.userName
-                parameters["password"] = data?.responseData?.password
-                authModel?.loginapi(paramters:parameters, remember: true)
-//                data?.save()
-//                let homeVC = self.controller(HomeTabBarVC.self,storyboard:.main)
-//                self.push(homeVC)
-            }
-        }
-        driver.googleProvider()
+        let signInConfig = GIDConfiguration.init(clientID: SocialConstant.googleId)
+             GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+                self.startLoading()
+                ApiManager.instance.paramaters["providerId"] = user?.userID
+                           ApiManager.instance.paramaters["providerName"] = "google"
+                ApiManager.instance.paramaters["email"] = user?.profile?.email
+                           print(ApiManager.instance.paramaters)
+                           ApiManager.instance.connectionRaw(.socaillogin, type: .post) { [self] (response) in
+                               self.stopLoading()
+                               let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                               parameters["emailOrPhone"] = data?.responseData?.userName
+                               parameters["password"] = data?.responseData?.password
+                               authModel?.loginapi(paramters:parameters, remember: true)
+                           }
+             }
+
     }
     
     @IBAction func signUpWithFacebookClicked(_ sender: UIButton) {

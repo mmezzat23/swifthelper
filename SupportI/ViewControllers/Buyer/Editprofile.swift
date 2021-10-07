@@ -69,7 +69,7 @@ class Editprofile: BaseController {
                 }
         picker?.onPickImage = { [self] image in
                     if (typeimage == "1"){
-                    self.banner.image = image
+                    self.image.image = image
                     }else{
                     self.banner.image = image
                     }

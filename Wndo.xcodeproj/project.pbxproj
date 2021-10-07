@@ -16,7 +16,6 @@
 		14D902C526FB872500DFD75D /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D902C326FB872500DFD75D /* NotificationsTableViewCell.swift */; };
 		14D902C626FB872500DFD75D /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D902C426FB872500DFD75D /* NotificationsTableViewCell.xib */; };
 		14D902CA26FB9B8400DFD75D /* GuestPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D902C926FB9B8400DFD75D /* GuestPopUpViewController.swift */; };
-		57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */; };
 		660336D326FB49F000411ADE /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660336D226FB49F000411ADE /* Logout.swift */; };
 		660336D626FB4BC100411ADE /* Logoutconfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660336D526FB4BC100411ADE /* Logoutconfirm.swift */; };
 		6620CAEB2700648500AB1A38 /* Editprofile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620CAEA2700648500AB1A38 /* Editprofile.swift */; };
@@ -280,6 +279,7 @@
 		80EA0059231DF7CD0008E68B /* PlacePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0058231DF7CD0008E68B /* PlacePickerModel.swift */; };
 		80EA006A231DFE7C0008E68B /* EFCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0067231DFE7C0008E68B /* EFCount.swift */; };
 		80EA006B231DFE7C0008E68B /* EFCountAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */; };
+		94742B26632569A0858F008E /* Pods_Wndo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6BEE5221108A0D9051D4F8 /* Pods_Wndo.framework */; };
 		E84EA525242477AD009D3E41 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84EA524242477AD009D3E41 /* EndPoint.swift */; };
 		E84EA52724247949009D3E41 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84EA52624247949009D3E41 /* Storyboards.swift */; };
 		E84EA52A24247AA2009D3E41 /* CardHolderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84EA52924247AA2009D3E41 /* CardHolderHelper.swift */; };
@@ -296,6 +296,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6BEE5221108A0D9051D4F8 /* Pods_Wndo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wndo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		143D3DFA26EF89F40031C74E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		143D3E0226EF8AC20031C74E /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		143D3E0526EF8C450031C74E /* SplashGIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashGIFViewController.swift; sourceTree = "<group>"; };
@@ -391,6 +392,7 @@
 		66F9029D2700A2A100BBE00A /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		66F9DEF0270D9D6100B39650 /* Changesuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Changesuccess.swift; sourceTree = "<group>"; };
 		66F9DEF3270DA72000B39650 /* Deletesuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deletesuccess.swift; sourceTree = "<group>"; };
+		71A92E3B409D6723E56ADA14 /* Pods-Wndo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wndo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wndo/Pods-Wndo.release.xcconfig"; sourceTree = "<group>"; };
 		7709EB67244DA08E00CE7BB7 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		77A6646F244D7B9100C44172 /* LanguangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguangeEnum.swift; sourceTree = "<group>"; };
 		8026194820E9796300BE7A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -583,8 +585,8 @@
 		80EA0058231DF7CD0008E68B /* PlacePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePickerModel.swift; sourceTree = "<group>"; };
 		80EA0067231DFE7C0008E68B /* EFCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFCount.swift; path = SupportI/Helpers/CountLabelHelper/EFCount.swift; sourceTree = SOURCE_ROOT; };
 		80EA0068231DFE7C0008E68B /* EFCountAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFCountAdapter.swift; path = SupportI/Helpers/CountLabelHelper/EFCountAdapter.swift; sourceTree = SOURCE_ROOT; };
-		C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupportI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6B730607EBE0D31A9D800B /* Pods-SupportI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupportI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SupportI/Pods-SupportI.debug.xcconfig"; sourceTree = "<group>"; };
+		E04E2E9EA4E2B9C8ADFC5665 /* Pods-Wndo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wndo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wndo/Pods-Wndo.debug.xcconfig"; sourceTree = "<group>"; };
 		E84EA524242477AD009D3E41 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		E84EA52624247949009D3E41 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		E84EA52924247AA2009D3E41 /* CardHolderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHolderHelper.swift; sourceTree = "<group>"; };
@@ -606,7 +608,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B951B2C4139BCBE9AAA037 /* Pods_SupportI.framework in Frameworks */,
+				94742B26632569A0858F008E /* Pods_Wndo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +629,8 @@
 			children = (
 				DA6B730607EBE0D31A9D800B /* Pods-SupportI.debug.xcconfig */,
 				61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */,
+				E04E2E9EA4E2B9C8ADFC5665 /* Pods-Wndo.debug.xcconfig */,
+				71A92E3B409D6723E56ADA14 /* Pods-Wndo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1405,7 +1409,7 @@
 		88517BB257EFF489ADE9F488 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C5A8EBF96DCFC7C9AA6A6AC5 /* Pods_SupportI.framework */,
+				0B6BEE5221108A0D9051D4F8 /* Pods_Wndo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1563,7 +1567,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SupportI-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Wndo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1576,15 +1580,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SupportI/Pods-SupportI-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Wndo/Pods-Wndo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SupportI/Pods-SupportI-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Wndo/Pods-Wndo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SupportI/Pods-SupportI-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wndo/Pods-Wndo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F733DDE39B85647451275093 /* [CP] Embed Pods Frameworks */ = {
@@ -1593,15 +1597,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SupportI/Pods-SupportI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Wndo/Pods-Wndo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SupportI/Pods-SupportI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Wndo/Pods-Wndo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SupportI/Pods-SupportI-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wndo/Pods-Wndo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2006,7 +2010,7 @@
 		};
 		8050BC5D20BF89DC00E355BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA6B730607EBE0D31A9D800B /* Pods-SupportI.debug.xcconfig */;
+			baseConfigurationReference = E04E2E9EA4E2B9C8ADFC5665 /* Pods-Wndo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2031,7 +2035,7 @@
 		};
 		8050BC5E20BF89DC00E355BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61D958BE99C6F1A1824C7177 /* Pods-SupportI.release.xcconfig */;
+			baseConfigurationReference = 71A92E3B409D6723E56ADA14 /* Pods-Wndo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

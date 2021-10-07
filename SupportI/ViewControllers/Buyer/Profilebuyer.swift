@@ -33,6 +33,7 @@ class Profilebuyer: BaseController {
     var picker: GalleryPickerHelper?
     var imageURL: URL?
     var coverURL: URL?
+    var birthdate = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -47,6 +48,7 @@ class Profilebuyer: BaseController {
         picker?.onPickImageURL = { [self] url in
                     if (typeimage == "1"){
                     self.imageURL = url
+                        ApiManager.instance.paramaters["DateOfBirth"] = self.birthdate
                         ApiManager.instance.uploadFile(EndPoint.editprofile.rawValue, type: .post, file: [["profile": self.imageURL] ]) { [self] (response) in
                                          self.stopLoading()
                                          let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
@@ -61,6 +63,8 @@ class Profilebuyer: BaseController {
                                      }
                     }else{
                     self.coverURL = url
+                        ApiManager.instance.paramaters["DateOfBirth"] = self.birthdate
+
                         ApiManager.instance.uploadFile(EndPoint.editprofile.rawValue, type: .post, file: [ ["cover": self.coverURL]]) { [self] (response) in
                                          self.stopLoading()
                                          let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
@@ -78,7 +82,7 @@ class Profilebuyer: BaseController {
                 }
         picker?.onPickImage = { [self] image in
                     if (typeimage == "1"){
-                    self.banner.image = image
+                    self.image.image = image
                     }else{
                     self.banner.image = image
                     }
@@ -105,6 +109,7 @@ class Profilebuyer: BaseController {
             if (data.responseData?.profile != ""){
                 self?.image.setImage(url: data.responseData?.profile)
             }
+            self?.birthdate = data.responseData?.dateOfBirth ?? ""
             self?.name.text = data.responseData?.name
             self?.bio.text = data.responseData?.bio
             

@@ -16,17 +16,18 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#import "TargetConditionals.h"
+
 #if !TARGET_OS_TV
 
-#import "FBSDKAuthenticationStatusUtility.h"
+ #import "FBSDKAuthenticationStatusUtility.h"
 
-#ifdef FBSDKCOCOAPODS
- #import <FBSDKCoreKit/FBSDKCoreKit+Internal.h>
-#else
- #import "FBSDKCoreKit+Internal.h"
-#endif
-
-#import "FBSDKAuthenticationToken+Internal.h"
+ #import "FBSDKAccessToken.h"
+ #import "FBSDKAuthenticationToken.h"
+ #import "FBSDKCoreKitBasicsImport.h"
+ #import "FBSDKInternalUtility.h"
+ #import "FBSDKLogger.h"
+ #import "FBSDKProfile.h"
 
 static NSString *const FBSDKOIDCStatusPath = @"/platform/oidc/status";
 
@@ -49,7 +50,7 @@ static NSString *const FBSDKOIDCStatusPath = @"/platform/oidc/status";
                                        });
                                      } else {
                                        [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorNetworkRequests
-                                                          formatString:@"%@", [error localizedDescription]];
+                                                              logEntry:error.localizedDescription];
                                      }
                                    }] resume];
   }

@@ -20,10 +20,10 @@ class GoogleModel: SocialModel {
         super.init(type: .google)
         self.id = user.userID
         self.token = user.authentication.idToken
-        self.fullName = user.profile.name
-        self.givenName = user.profile.givenName
-        self.familyName = user.profile.familyName
-        self.email = user.profile.email
+        self.fullName = user.profile?.name
+        self.givenName = user.profile?.givenName
+        self.familyName = user.profile?.familyName
+        self.email = user.profile?.email
     }
     
 }
