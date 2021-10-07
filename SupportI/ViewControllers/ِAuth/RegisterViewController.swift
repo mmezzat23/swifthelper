@@ -49,6 +49,7 @@ class RegisterViewController: BaseController {
     @IBAction func signUpWithGoogleClicked(_ sender: UIButton) {
         let signInConfig = GIDConfiguration.init(clientID: SocialConstant.googleId)
              GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+                 if ((user?.userID != nil)) {
                 self.startLoading()
                 ApiManager.instance.paramaters["providerId"] = user?.userID
                            ApiManager.instance.paramaters["providerName"] = "google"
@@ -62,7 +63,7 @@ class RegisterViewController: BaseController {
                                authModel?.loginapi(paramters:parameters, remember: true)
                            }
              }
-
+             }
     }
     
     @IBAction func signUpWithFacebookClicked(_ sender: UIButton) {

@@ -158,10 +158,9 @@ class Editprofile: BaseController {
                                      let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
                         if (data?.isSuccess == true)
                         {
-                            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                                   guard let nav = controller else { return }
-                                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                                   delegate?.window?.rootViewController = nav
+                            let vcc = self.pushViewController(Changesuccess.self,storyboard: .profile)
+                            vcc.delegate = self
+                            self.pushPop(vcr: vcc)
                         }
                         else {
                             makeAlert((data?.errorMessage)!, closure: {})

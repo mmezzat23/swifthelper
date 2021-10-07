@@ -83,6 +83,7 @@ class LoginController: BaseController {
     @IBAction func loginWithGoogleClicked(_ sender: UIButton) {
         let signInConfig = GIDConfiguration.init(clientID: SocialConstant.googleId)
              GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+                 if ((user?.userID != nil)) {
                 self.startLoading()
                 ApiManager.instance.paramaters["providerId"] = user?.userID
                             ApiManager.instance.paramaters["providerName"] = "google"
@@ -96,7 +97,7 @@ class LoginController: BaseController {
                                 viewModel?.loginapi(paramters:parameters, remember: isrember)
                                
                             }
-                
+                 }
              }
 //        let driver = GoogleDriver()
 //        driver.closure = { user in
