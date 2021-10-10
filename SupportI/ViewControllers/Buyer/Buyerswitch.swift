@@ -16,7 +16,9 @@ class Buyerswitch: BaseController {
     @IBOutlet weak var terms: UILabel!
     var viewModel : ProfileViewModel?
     weak var delegate: BuyerswitchDelegate?
-
+    @IBOutlet weak var discard: UIButton!
+    
+    @IBOutlet weak var confirm: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -32,6 +34,14 @@ class Buyerswitch: BaseController {
         terms.UIViewAction {
             self.dismiss(animated: true, completion: nil)
             self.delegate?.settype(type: "terms")
+        }
+        if (UserRoot.saller() == true){
+            switchmode.textColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+            accountmode.textColor = UIColor(red: 0x01, green: 0x14, blue: 0x47)
+//            confirm.backgroundColor = UIColor(red: 0x01, green: 0x14, blue: 0x47)
+//            discard.borderColor = UIColor(red: 0x01, green: 0x14, blue: 0x47)
+//            discard.setTitleColor( UIColor(red: 0x01, green: 0x14, blue: 0x47), for: .normal)
+
         }
 
         // Do any additional setup after loading the view.

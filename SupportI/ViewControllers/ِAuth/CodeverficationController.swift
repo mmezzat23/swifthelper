@@ -8,11 +8,11 @@
 
 import UIKit
 protocol PhoneverifyDelegate:class {
-    func verify(item: Bool)
+    func verify(item: Bool , type : String)
     
 }
 extension PhoneverifyDelegate {
-    func verify(item:Bool ){
+    func verify(item:Bool , type : String){
 
     }
 
@@ -33,7 +33,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     var viewModel : Auth1ViewModel?
     var authModel : AuthViewModel?
     var profileModel : ProfileViewModel?
-
+    var type = ""
     var parameters : [String : Any] = [:]
     var userName : String = ""
     var sendTo : String = ""
@@ -103,8 +103,8 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
                 self?.push(scene!)
             }else{
                 if (self?.isverify == true){
-                    self?.dismiss(animated: true) {
-                        self?.delegate?.verify(item: true)
+                    self?.dismiss(animated: true) { [self] in
+                        self?.delegate?.verify(item: true, type: self?.type ?? "")
                     }
                 }else{
                     let scene = self?.controller(AccountsuccessController.self,storyboard: .auth1)
@@ -115,7 +115,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         profileModel?.verifyphone.bind({ [weak self](data) in
             self?.stopLoading()
             self?.dismiss(animated: true) {
-                self?.delegate?.verify(item: true)
+                self?.delegate?.verify(item: true, type: self?.type ?? "")
             }
             
         })

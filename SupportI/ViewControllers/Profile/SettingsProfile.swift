@@ -37,6 +37,7 @@ class SettingsProfile: BaseController {
     @IBOutlet weak var accountactive: UIView!
     var isdark = false
     var isnotication = false
+    var isshop = 0
     var isactive = 0
     var cityid = 0
     var viewModel : ProfileViewModel?
@@ -45,29 +46,45 @@ class SettingsProfile: BaseController {
     var genders : [GenderModel] = []
     var reasontype = ""
     var phonetxt = ""
-
+    var type = ""
+    var responseData: Token?
+    @IBOutlet weak var editloc: UIImageView!
+    @IBOutlet weak var editpass: UIImageView!
+    @IBOutlet weak var editphone: UIImageView!
+    @IBOutlet weak var editemail: UIImageView!
+    @IBOutlet weak var shopswitch: UISwitch!
+    @IBOutlet weak var shopstatustxt: UILabel!
+    @IBOutlet weak var shopstatustop: NSLayoutConstraint!
+    @IBOutlet weak var shopstatushight: NSLayoutConstraint!
+    @IBOutlet weak var shopstatus: UIView!
+    @IBOutlet var banner: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         setup()
         bind()
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandler(_:)))
-            leftSwipe.direction = .left
-            emailview.addGestureRecognizer(leftSwipe)
-        if (getAppLang() == "ar"){
-            languagetxt.text = "العربيه"
-        }else {
+        if (getAppLang() == "en"){
             languagetxt.text = "English"
+        }else {
+            languagetxt.text = "العربيه"
         }
         language.UIViewAction {
             changeLang {
                 self.lang = Constants.lang
-                 if (self.lang == "ar"){
+                 if (Constants.lang == "ar"){
                      self.languagetxt.text! = "العربيه"
                  }else {
                      self.languagetxt.text! = "English"
                  }
              }
+        }
+        if (UserRoot.saller() == false){
+            shopstatus.isHidden = true
+            shopstatustop.constant = 0
+            shopstatushight.constant = 0
+        }else {
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
         }
     }
     func setup() {
@@ -94,10 +111,38 @@ class SettingsProfile: BaseController {
             vcc.delegate = self
             pushPop(vcr: vcc)
         }
+        editphone.UIViewAction { [self] in
+            type = "phone"
+            let vcc = self.pushViewController(Editemail.self,storyboard: .profile)
+            vcc.cities = cities
+            vcc.type = type
+            vcc.responseData = responseData
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
+        editemail.UIViewAction { [self] in
+            type = "email"
+            let vcc = self.pushViewController(Editemail.self,storyboard: .profile)
+            vcc.cities = cities
+            vcc.type = type
+            vcc.responseData = responseData
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
+        editloc.UIViewAction { [self] in
+            type = "loc"
+            let vcc = self.pushViewController(Editemail.self,storyboard: .profile)
+            vcc.cities = cities
+            vcc.type = type
+            vcc.responseData = responseData
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
     }
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
+            self?.responseData = data.responseData
             self?.email.text = data.responseData?.email
             self?.phone.text = data.responseData?.phone
             self?.phonetxt = data.responseData?.phone ?? ""
@@ -111,6 +156,7 @@ class SettingsProfile: BaseController {
                 self?.accountswitch.isOn = false
                 self?.notificationtxt.text = "Notactive".localized()
             }
+            
             self?.isdark = data.responseData?.isDarkMode ?? false
             self?.isnotication = data.responseData?.isNotificationOn ?? false
             self?.isactive = data.responseData?.status ?? 0
@@ -159,30 +205,36 @@ class SettingsProfile: BaseController {
             
         })
         viewModel?.editdata.bind({ [weak self](data) in
-            self?.stopLoading()
-            if (self?.lang == "ar"){
-                setAppLang(.arabic)
-            }else{
-                setAppLang(.english)
-            }
-            Localizer.initLang()
-            if (self?.isdark == true){
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                   return
+            if (self?.type == ""){
+                self?.stopLoading()
+                if (self?.lang == "ar"){
+                    setAppLang(.arabic)
+                }else{
+                    setAppLang(.english)
                 }
-                appDelegate.changeTheme(themeVal: "dark")
-                UserRoot.savemode(remember: "dark")
-            }else{
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                   return
+                Localizer.initLang()
+                if (self?.isdark == true){
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                       return
+                    }
+                    appDelegate.changeTheme(themeVal: "dark")
+                    UserRoot.savemode(remember: "dark")
+                }else{
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                       return
+                    }
+                    UserRoot.savemode(remember: "light")
+                    appDelegate.changeTheme(themeVal: "light")
                 }
-                UserRoot.savemode(remember: "light")
-                appDelegate.changeTheme(themeVal: "light")
+                let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                       guard let nav = controller else { return }
+                       let delegate = UIApplication.shared.delegate as? AppDelegate
+                       delegate?.window?.rootViewController = nav
+            }else {
+                let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
+                vcc?.delegate = self
+                self?.pushPop(vcr: vcc!)
             }
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                   guard let nav = controller else { return }
-                   let delegate = UIApplication.shared.delegate as? AppDelegate
-                   delegate?.window?.rootViewController = nav
             
         })
     }
@@ -235,6 +287,16 @@ class SettingsProfile: BaseController {
             darkmodetxt.text = "Off".localized()
         }
     }
+    
+    @IBAction func shop(_ sender: Any) {
+        if (isshop == 1){
+            isshop = 0
+            shopstatustxt.text = "Notactive".localized()
+        }else {
+            isshop = 1
+            shopstatustxt.text = "Active".localized()
+        }
+    }
     @IBAction func notifiy(_ sender: Any) {
         isnotication = !isnotication
         if (isnotication == true){
@@ -269,18 +331,47 @@ extension SettingsProfile : PickersPOPDelegate {
         reasontype = item.type ?? ""
     }
 }
-extension SettingsProfile : PhoneverifyDelegate {
-    func verify(item: Bool) {
-        if (item == true){
-            parameters["email"] = email.text
-            parameters["phone"] = phone.text
-            parameters["cityId"] = cityid
-            parameters["isNotificationOn"] = isnotication
-            parameters["status"] = isactive
-            parameters["isDarkMode"] = isdark
-            if (password.text != ""){
-                parameters["password"] = password.text
+extension SettingsProfile : EditemailDelegate {
+    func settype(type: String) {
+        if (type == "loc"){
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self.pushViewController(Changesuccess.self,storyboard: .profile)
+                vcc.delegate = self
+                self.pushPop(vcr: vcc)
             }
+           
+        }else if (type == "phone"){
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self.pushViewController(CodeverficationController.self,storyboard: .auth1)
+                vcc.delegate = self
+                vcc.isverify = true
+                vcc.type = "phone"
+                self.push(vcc)
+            }
+           
+        }else {
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self.pushViewController(CodeverficationController.self,storyboard: .auth1)
+                vcc.delegate = self
+                vcc.isverify = true
+                vcc.type = "email"
+                self.push(vcc)
+            }
+        }
+    }
+}
+extension SettingsProfile : PhoneverifyDelegate {
+    func verify(item: Bool , type : String) {
+        if (item == true){
+            if (type == "phone") {
+                parameters["phone"] = phone.text
+            }else {
+                parameters["email"] = email.text
+            }
+            parameters["cityId"] = cityid
             viewModel?.editaccountsetting(paramters: parameters)
             
         }
@@ -288,3 +379,9 @@ extension SettingsProfile : PhoneverifyDelegate {
 }
 
 
+extension SettingsProfile : ChangesuccessDelegate {
+    func settype() {
+        type = ""
+        viewModel?.getaccountsetting()
+    }
+}

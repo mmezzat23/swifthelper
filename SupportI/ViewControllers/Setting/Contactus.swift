@@ -42,6 +42,9 @@ class Contactus: BaseController {
     var orderid = 0
     @IBOutlet var banner: UIView!
     
+    @IBOutlet weak var or: UILabel!
+    @IBOutlet weak var custmerphone: UILabel!
+    @IBOutlet weak var call: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -69,18 +72,7 @@ class Contactus: BaseController {
             orderconstant.constant = 0
             reasontop.constant = 0
         }
-        message.setLeftPaddingPoints(10)
-        message.setRightPaddingPoints(10)
-        email.setLeftPaddingPoints(10)
-        email.setRightPaddingPoints(10)
-        phone.setLeftPaddingPoints(10)
-        phone.setRightPaddingPoints(10)
-        ordertxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-        emailtxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-        phonetxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-        reasontxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-        messagetxt.padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-
+        or.setunderline(title: "OR")
     }
     
     func setup() {

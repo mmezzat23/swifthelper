@@ -86,6 +86,7 @@ class ProfileSaller: BaseController {
                     self.banner.image = image
                     }
                 }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -117,7 +118,7 @@ class ProfileSaller: BaseController {
         })
     }
     @IBAction func edit(_ sender: Any) {
-        let vcc = self.controller(Editprofile.self,storyboard: .main)
+        let vcc = self.controller(Editprofilesaller.self,storyboard: .saller)
         self.push(vcc)
     }
     @IBAction func calender(_ sender: Any) {
