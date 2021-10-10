@@ -143,21 +143,47 @@ class Profilebuyer: BaseController {
             let vcc = self.controller(Help.self,storyboard: .setting)
             self.push(vcc)
         }
-        payment.UIViewAction {
-            let vcc = self.controller(Paymentmethod.self,storyboard: .profile)
-            self.push(vcc)
+        payment.UIViewAction { [self] in
+            if (UserRoot.token() != nil){
+                let vcc = self.controller(Paymentmethod.self,storyboard: .profile)
+                self.push(vcc)
+            }else {
+                let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
+                vcc.delegate = self
+                pushPop(vcr: vcc)
+            }
         }
-        address.UIViewAction {
-            let vcc = self.controller(Address.self,storyboard: .profile)
-            self.push(vcc)
+        address.UIViewAction { [self] in
+            if (UserRoot.token() != nil){
+                let vcc = self.controller(Address.self,storyboard: .profile)
+                self.push(vcc)
+            }else {
+                let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
+                vcc.delegate = self
+                pushPop(vcr: vcc)
+            }
+            
         }
-        setting.UIViewAction {
+        setting.UIViewAction { [self] in
+            if (UserRoot.token() != nil){
             let vcc = self.controller(SettingsProfile.self,storyboard: .profile)
             self.push(vcc)
+            }else {
+                let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
+                vcc.delegate = self
+                pushPop(vcr: vcc)
+            }
         }
-        notification.UIViewAction {
-            let vcc = self.controller(NotificationsViewController.self,storyboard: .setting)
-            self.push(vcc)
+        notification.UIViewAction { [self] in
+                if (UserRoot.token() != nil){
+                    let vcc = self.controller(NotificationsViewController.self,storyboard: .setting)
+                    self.push(vcc)
+                }else {
+                    let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
+                    vcc.delegate = self
+                    pushPop(vcr: vcc)
+                }
+           
         }
     }
 }
@@ -176,3 +202,5 @@ extension Profilebuyer : GuestPopUpDelegate {
     
     
 }
+
+

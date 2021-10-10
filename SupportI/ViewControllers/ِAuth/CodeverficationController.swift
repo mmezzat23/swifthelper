@@ -81,6 +81,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     }
     
     func starttime() {
+        self.resend.isHidden = true
         self.time.isHidden = false
         timerHelper = .init(seconds: 1, numberOfCycle: timestamp, closure: { [weak self] (cycle) in
 //            if cycle >= 60 {
@@ -90,6 +91,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
 //            }
             if cycle == 0 {
                 self?.time.isHidden = true
+                self?.resend.isHidden = false
             }
         })
     }
