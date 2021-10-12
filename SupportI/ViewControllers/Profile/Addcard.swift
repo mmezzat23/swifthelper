@@ -99,7 +99,7 @@ class Addcard: BaseController , UITextFieldDelegate{
             }
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/yy"
-            let enteredDate = dateFormatter.date(from: expiry.text!)!
+            let enteredDate = dateFormatter.date(from: expiry.text ?? "" ) ?? Date()
             let endOfMonth = Calendar.current.date(byAdding: .month, value: 1, to: enteredDate)!
             let now = Date()
             if (endOfMonth < now) {
