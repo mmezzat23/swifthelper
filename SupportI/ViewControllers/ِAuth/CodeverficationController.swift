@@ -298,6 +298,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
     
     
     func verifyOtpApi() {
+        if (self.code.length == 4){
         parameters["code"] = self.code
         print("coddeeeee\(self.code)")
          if isCommingFromForgetPassword {
@@ -315,6 +316,9 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
           print(parameters)
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyRegisterationOTP)
             }
+        }
+        }else {
+            makeAlert("invalid code", closure: {})
         }
     }
 }
