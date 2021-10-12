@@ -33,6 +33,7 @@ class Editprofilesaller: BaseController {
     @IBOutlet weak var notactive: UIView!
     @IBOutlet weak var idimage: UIImageView!
     @IBOutlet weak var idclick: UIImageView!
+    var picurl = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -113,6 +114,7 @@ class Editprofilesaller: BaseController {
             if (data.responseData?.isActiveSeller == true){
                 self?.notactive.isHidden = true
             }
+            self?.picurl = data.responseData?.picWithId ?? ""
             self?.name.text = data.responseData?.name
             self?.bio.text = data.responseData?.bio
             if (data.responseData?.gender  == 0){
@@ -157,7 +159,9 @@ class Editprofilesaller: BaseController {
             if (date == ""){
                 error = "\(error)\n \("Select birthdate".localized)"
             }
-            
+            if (self.idURL == nil && picurl == ""){
+                error = "\(error)\n \("Select id image".localized)"
+            }
             if (error != ""){
               makeAlert(error, closure: {})
             }else{
