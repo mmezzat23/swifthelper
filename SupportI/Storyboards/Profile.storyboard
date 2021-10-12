@@ -1271,7 +1271,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Email"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztz-0m-kEc">
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztz-0m-kEc">
                                                         <rect key="frame" x="0.0" y="31" width="364" height="34"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="14"/>
@@ -1293,10 +1293,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit-4" translatesAutoresizingMaskIntoConstraints="NO" id="8tZ-wa-IMv">
-                                                        <rect key="frame" x="344" y="5" width="15" height="15"/>
+                                                        <rect key="frame" x="339" y="5" width="20" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="15" id="HWL-0J-7AT"/>
-                                                            <constraint firstAttribute="width" constant="15" id="LYV-Fr-bkH"/>
+                                                            <constraint firstAttribute="height" constant="20" id="HWL-0J-7AT"/>
+                                                            <constraint firstAttribute="width" constant="20" id="LYV-Fr-bkH"/>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
@@ -1335,7 +1335,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Phone"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNf-9o-HhX">
+                                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNf-9o-HhX">
                                                         <rect key="frame" x="0.0" y="31" width="364" height="34"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="14"/>
@@ -1345,10 +1345,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit-4" translatesAutoresizingMaskIntoConstraints="NO" id="EtG-L1-kWS">
-                                                        <rect key="frame" x="344" y="5" width="15" height="15"/>
+                                                        <rect key="frame" x="339" y="5" width="20" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="15" id="VM6-eC-Ftd"/>
-                                                            <constraint firstAttribute="width" constant="15" id="lyi-ZN-Cwd"/>
+                                                            <constraint firstAttribute="height" constant="20" id="VM6-eC-Ftd"/>
+                                                            <constraint firstAttribute="width" constant="20" id="lyi-ZN-Cwd"/>
                                                         </constraints>
                                                     </imageView>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4o-5j-0nq">
@@ -1409,10 +1409,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit-4" translatesAutoresizingMaskIntoConstraints="NO" id="Vqf-xD-REv">
-                                                        <rect key="frame" x="344" y="5" width="15" height="15"/>
+                                                        <rect key="frame" x="339" y="5" width="20" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="15" id="E5Q-ed-xCl"/>
-                                                            <constraint firstAttribute="width" constant="15" id="Ord-Vn-jBt"/>
+                                                            <constraint firstAttribute="height" constant="20" id="E5Q-ed-xCl"/>
+                                                            <constraint firstAttribute="width" constant="20" id="Ord-Vn-jBt"/>
                                                         </constraints>
                                                     </imageView>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cD4-7J-hLD">
@@ -1473,10 +1473,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit-4" translatesAutoresizingMaskIntoConstraints="NO" id="9e0-bL-dcg">
-                                                        <rect key="frame" x="344" y="5" width="15" height="15"/>
+                                                        <rect key="frame" x="339" y="5" width="20" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="15" id="rmo-fk-gGN"/>
-                                                            <constraint firstAttribute="width" constant="15" id="s1i-AI-xE9"/>
+                                                            <constraint firstAttribute="height" constant="20" id="rmo-fk-gGN"/>
+                                                            <constraint firstAttribute="width" constant="20" id="s1i-AI-xE9"/>
                                                         </constraints>
                                                     </imageView>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-0n-z3m">

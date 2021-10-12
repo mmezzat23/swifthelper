@@ -39,6 +39,9 @@ class Editemail: BaseController {
             input.text = responseData?.city?.name
             cityid = responseData?.city?.id ?? 0
             namelbl.text = "Edit city".localized()
+            if (cityid == 0){
+                input.text = "Edit city".localized()
+            }
         }
     }
     func setup() {
