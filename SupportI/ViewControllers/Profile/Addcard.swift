@@ -110,7 +110,7 @@ class Addcard: BaseController , UITextFieldDelegate{
             }else{
             parameters["cardName"] = cardname.text ?? ""
             parameters["holderName"] = name.text ?? ""
-            parameters["expiry"] = visaexpiry.text ?? ""
+            parameters["expiry"] = expiry.text ?? ""
             parameters["isDefault"] = isdefultvalue
             parameters["cardNumber"] = visanumber.text?.replacingOccurrences(of: " ", with: "")
             if (isedit == true){

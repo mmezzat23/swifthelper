@@ -2951,7 +2951,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit The Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hN-Uj-25g">
-                                                <rect key="frame" x="55" y="18" width="129.5" height="24"/>
+                                                <rect key="frame" x="55" y="18" width="319" height="24"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2967,6 +2967,7 @@
                                             <constraint firstItem="HvT-gd-n9m" firstAttribute="leading" secondItem="Ipl-Gw-2Wo" secondAttribute="leading" constant="15" id="YuV-bT-AG4"/>
                                             <constraint firstItem="HvT-gd-n9m" firstAttribute="centerY" secondItem="Ipl-Gw-2Wo" secondAttribute="centerY" id="h3K-eT-DZ5"/>
                                             <constraint firstItem="8hN-Uj-25g" firstAttribute="centerY" secondItem="HvT-gd-n9m" secondAttribute="centerY" id="ve1-FL-4dO"/>
+                                            <constraint firstAttribute="trailing" secondItem="8hN-Uj-25g" secondAttribute="trailing" id="zG5-fE-MfV"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2991,7 +2992,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete The Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgI-5w-7Q0">
-                                                <rect key="frame" x="55" y="18" width="150" height="24"/>
+                                                <rect key="frame" x="55" y="18" width="319" height="24"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3004,6 +3005,7 @@
                                         <constraints>
                                             <constraint firstItem="PbD-jr-1fN" firstAttribute="leading" secondItem="Qfc-Ja-zsx" secondAttribute="leading" constant="15" id="0tv-0G-WcA"/>
                                             <constraint firstItem="HgI-5w-7Q0" firstAttribute="leading" secondItem="PbD-jr-1fN" secondAttribute="trailing" constant="20" id="63E-Uq-pVa"/>
+                                            <constraint firstAttribute="trailing" secondItem="HgI-5w-7Q0" secondAttribute="trailing" id="F4e-3x-xGX"/>
                                             <constraint firstItem="HgI-5w-7Q0" firstAttribute="centerY" secondItem="PbD-jr-1fN" secondAttribute="centerY" id="SFl-co-l9Y"/>
                                             <constraint firstItem="PbD-jr-1fN" firstAttribute="centerY" secondItem="Qfc-Ja-zsx" secondAttribute="centerY" id="jUd-Vv-0RT"/>
                                             <constraint firstAttribute="height" constant="60" id="wME-it-Vgd"/>
@@ -3078,7 +3080,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your changes saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8I-Oe-dKX">
-                                        <rect key="frame" x="145" y="126" width="116.5" height="18"/>
+                                        <rect key="frame" x="145" y="126" width="229" height="18"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <color key="textColor" red="0.0078431372549019607" green="0.65490196078431373" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3090,6 +3092,7 @@
                                     <constraint firstItem="nTa-pF-Mve" firstAttribute="leading" secondItem="fHb-0k-u8g" secondAttribute="leading" constant="100" id="LIp-SJ-vSY"/>
                                     <constraint firstItem="Q8I-Oe-dKX" firstAttribute="centerY" secondItem="nTa-pF-Mve" secondAttribute="centerY" id="Ml3-cX-mff"/>
                                     <constraint firstItem="Q8I-Oe-dKX" firstAttribute="leading" secondItem="nTa-pF-Mve" secondAttribute="trailing" constant="15" id="uFW-LU-B4I"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q8I-Oe-dKX" secondAttribute="trailing" constant="40" id="xxb-R3-oBE"/>
                                     <constraint firstItem="nTa-pF-Mve" firstAttribute="top" secondItem="fHb-0k-u8g" secondAttribute="top" constant="120" id="yMp-BX-VEw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
