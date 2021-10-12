@@ -152,4 +152,8 @@ class Token: Codable {
     var isDarkMode: Bool?
     var paymentType: Int?
     var city: ItemCity?
+    var isActiveSeller: Bool?
+    var shopStatus: Bool?
+    var isValid: Bool?
+    var number: String?
 }

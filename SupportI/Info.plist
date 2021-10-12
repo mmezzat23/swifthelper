@@ -29,6 +29,10 @@
 			</array>
 		</dict>
 	</array>
+    <key>FacebookAppID</key>
+    <string>320360728928529</string>
+    <key>FacebookDisplayName</key>
+    <string>Wndo</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>

@@ -14,6 +14,8 @@ class ConfirmpassController: BaseController {
     var viewModel : AuthViewModel?
     var parameters : [String : Any] = [:]
     var userid = ""
+    
+    @IBOutlet weak var lock: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -30,6 +32,13 @@ class ConfirmpassController: BaseController {
     func setup() {
        viewModel = .init()
        viewModel?.delegate = self
+        lock.UIViewAction { [self] in
+            if (password.isSecureTextEntry){
+                password.isSecureTextEntry = false
+            }else{
+                password.isSecureTextEntry = true
+            }
+        }
    }
    
    override func bind() {

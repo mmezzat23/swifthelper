@@ -64,6 +64,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="calender:" destination="sO1-je-XUA" eventType="touchUpInside" id="pHK-hE-hd7"/>
+                                            <action selector="notifyBtn:" destination="b9m-fQ-JvB" eventType="touchUpInside" id="0ep-o0-KDn"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJI-x7-pOI">
@@ -172,8 +173,11 @@
                                             <action selector="backBtn:" destination="b9m-fQ-JvB" eventType="touchUpInside" id="Ism-Tw-yud"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RY-gA-DC9">
-                                        <rect key="frame" x="182" y="31" width="50" height="28.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RY-gA-DC9">
+                                        <rect key="frame" x="107" y="31" width="200" height="28.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="xQ3-qm-Nks"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="19"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -217,6 +221,7 @@
                     <connections>
                         <outlet property="banner" destination="F6q-Nk-vOK" id="CHO-7K-Hmh"/>
                         <outlet property="more" destination="e1f-In-fRi" id="ELH-3g-NGN"/>
+                        <outlet property="notify" destination="L9t-pI-Uhm" id="9cc-1Z-e2n"/>
                         <outlet property="txt" destination="ZfO-5i-jlX" id="SUI-DT-7Wn"/>
                     </connections>
                 </viewController>
@@ -283,6 +288,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="calender:" destination="Xv8-2t-Zla" eventType="touchUpInside" id="Inu-Rm-ee8"/>
+                                            <action selector="notifyBtn:" destination="DsP-sX-xje" eventType="touchUpInside" id="Zpy-Y4-odb"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-uY-kuV">
@@ -641,8 +647,11 @@
                                             <action selector="backBtn:" destination="DsP-sX-xje" eventType="touchUpInside" id="Ocb-sI-DqS"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WR-fc-V2c">
-                                        <rect key="frame" x="182" y="31" width="50" height="28.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WR-fc-V2c">
+                                        <rect key="frame" x="107" y="31" width="200" height="28.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="OD6-8N-V9u"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="19"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -689,6 +698,7 @@
                         <outlet property="faq" destination="nHE-lc-lBa" id="nut-o5-ryZ"/>
                         <outlet property="logout" destination="f2m-7p-7cu" id="p21-59-hbR"/>
                         <outlet property="logouthight" destination="2hn-bA-WTr" id="p0O-Eq-xmT"/>
+                        <outlet property="notify" destination="1Bi-uv-bkU" id="qgM-CU-UQ6"/>
                         <outlet property="privacy" destination="wO7-s2-cYt" id="HQZ-L2-0L7"/>
                         <outlet property="request" destination="5wd-ZK-P7t" id="t6d-Rt-YNc"/>
                         <outlet property="sendmessage" destination="FL3-ek-LpB" id="wUn-Kt-xwz"/>
@@ -739,6 +749,9 @@
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="notifyBtn:" destination="p1P-xe-RKl" eventType="touchUpInside" id="How-TN-UUs"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyf-cn-7UW">
                                 <rect key="frame" x="0.0" y="168" width="414" height="754"/>
@@ -820,8 +833,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFG-st-ki1">
-                                <rect key="frame" x="182" y="109" width="50" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFG-st-ki1">
+                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LSz-4r-0Ka"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -848,6 +864,7 @@
                     <navigationItem key="navigationItem" id="e0X-A9-DXb"/>
                     <connections>
                         <outlet property="banner" destination="NKt-43-ppN" id="mWa-it-O4W"/>
+                        <outlet property="notify" destination="ROX-CS-3QN" id="nyo-Ts-KFK"/>
                         <outlet property="sendmessage" destination="ARg-l6-JOZ" id="K1k-Sh-3yh"/>
                         <outlet property="tableview" destination="v9l-ng-ubb" id="FvR-XJ-XQ4"/>
                     </connections>
@@ -932,6 +949,9 @@
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="notifyBtn:" destination="b2m-qu-Jss" eventType="touchUpInside" id="jLC-Jt-Wfl"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vqc-zH-Jcl">
                                 <rect key="frame" x="0.0" y="168" width="414" height="754"/>
@@ -958,8 +978,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7U-y5-iep">
-                                <rect key="frame" x="182" y="109" width="50" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7U-y5-iep">
+                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Yyc-Or-iTr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -986,6 +1009,7 @@
                     <navigationItem key="navigationItem" id="Hki-IM-gED"/>
                     <connections>
                         <outlet property="banner" destination="grq-HY-umc" id="JCj-WU-QqX"/>
+                        <outlet property="notify" destination="Kfd-CO-c3R" id="0W9-le-aI7"/>
                         <outlet property="txt" destination="Urn-g7-RIa" id="VhS-j2-nQV"/>
                     </connections>
                 </viewController>
@@ -1051,6 +1075,9 @@
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="notifyBtn:" destination="be9-fI-J5w" eventType="touchUpInside" id="2sa-bo-90m"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yp0-vz-Jsb">
                                 <rect key="frame" x="0.0" y="168" width="414" height="754"/>
@@ -1077,8 +1104,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azY-j3-C3k">
-                                <rect key="frame" x="182" y="109" width="50" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azY-j3-C3k">
+                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="oJt-tN-4bT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1105,6 +1135,7 @@
                     <navigationItem key="navigationItem" id="fDq-8z-2Al"/>
                     <connections>
                         <outlet property="banner" destination="PVf-w9-2XE" id="0pA-pz-8n0"/>
+                        <outlet property="notify" destination="rbc-df-iqr" id="lbK-9m-OHO"/>
                         <outlet property="titlelbl" destination="azY-j3-C3k" id="rZ4-E1-JJa"/>
                         <outlet property="txt" destination="MVx-3p-s9I" id="484-Ju-WCf"/>
                     </connections>
@@ -1171,6 +1202,9 @@
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="notifyBtn:" destination="nxV-aH-loi" eventType="touchUpInside" id="L6K-H9-ZFJ"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qy-oK-CWj">
                                 <rect key="frame" x="0.0" y="168" width="414" height="1058"/>
@@ -1587,8 +1621,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-hK-fQz">
-                                <rect key="frame" x="182" y="109" width="50" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-hK-fQz">
+                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="tcf-fA-pD2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1626,6 +1663,7 @@
                         <outlet property="emailtxthight" destination="f05-fc-TCc" id="YxN-2T-RMJ"/>
                         <outlet property="message" destination="Sat-Jf-YAd" id="N9j-Oe-uqI"/>
                         <outlet property="messagetxt" destination="7Yl-5k-P1y" id="gE9-wh-gwd"/>
+                        <outlet property="notify" destination="kLD-QB-B59" id="sqR-IN-H6X"/>
                         <outlet property="or" destination="hxI-ps-YrB" id="L7d-1I-dBP"/>
                         <outlet property="order" destination="RIt-tz-Ydg" id="3Yo-vc-M7N"/>
                         <outlet property="orderconstant" destination="iWK-gA-8f6" id="UVt-on-G6n"/>
@@ -1784,7 +1822,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout Confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ee-O4-H4v">
-                                        <rect key="frame" x="70" y="125" width="171.5" height="25.5"/>
+                                        <rect key="frame" x="70" y="125" width="264" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1796,6 +1834,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="TpD-bi-c87" firstAttribute="leading" secondItem="SEn-Fj-HcX" secondAttribute="leading" constant="25" id="7Hi-jU-wsA"/>
+                                    <constraint firstItem="wRr-Np-ifz" firstAttribute="leading" secondItem="7Ee-O4-H4v" secondAttribute="trailing" constant="20" id="Gs8-zI-K8v"/>
                                     <constraint firstItem="7Ee-O4-H4v" firstAttribute="leading" secondItem="TpD-bi-c87" secondAttribute="trailing" constant="10" id="JnS-H3-PL6"/>
                                     <constraint firstItem="wRr-Np-ifz" firstAttribute="top" secondItem="SEn-Fj-HcX" secondAttribute="top" constant="120" id="Ydb-2T-LOf"/>
                                     <constraint firstAttribute="trailing" secondItem="wRr-Np-ifz" secondAttribute="trailing" constant="25" id="erX-bN-aSc"/>
@@ -2006,8 +2045,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-2t-2Dn">
-                                <rect key="frame" x="148.5" y="109" width="117" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-2t-2Dn">
+                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="fdu-9Q-gtc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2251,7 +2293,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="8" height="15"/>
+        <image name="Back Button" width="9" height="15"/>
         <image name="Fill -1" width="22.5" height="22.5"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
         <image name="Fill 1036-2" width="24" height="24"/>

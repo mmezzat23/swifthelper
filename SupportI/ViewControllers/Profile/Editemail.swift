@@ -8,7 +8,7 @@
 
 import UIKit
 protocol EditemailDelegate: class {
-    func settype(type : String)
+    func settype(type : String , sendto : String)
 }
 class Editemail: BaseController {
     @IBOutlet weak var namelbl: UILabel!
@@ -69,13 +69,13 @@ class Editemail: BaseController {
         viewModel?.verifyphone.bind({ [weak self](data) in
             self?.stopLoading()
             self?.makeAlert(data.responseData ?? "", closure: { [self] in
-                self?.delegate?.settype(type: self!.type)
+                self?.delegate?.settype(type: self!.type, sendto: self?.input.text ?? "")
                 self?.dismiss(animated: true, completion: nil)
             })
         })
         viewModel?.editdata.bind({ [weak self](data) in
             self?.stopLoading()
-            self?.delegate?.settype(type: self!.type)
+            self?.delegate?.settype(type: self!.type, sendto: "")
             self?.dismiss(animated: true, completion: nil)
         })
     }
@@ -86,7 +86,7 @@ class Editemail: BaseController {
                     self.dismiss(animated: true, completion: nil)
                 }else{
                     parameters["email"] = input.text
-                    viewModel?.verfiyaccountsetting(phone: self.input.text ?? "")
+                    viewModel?.verfiyemailaccountsetting(phone: self.input.text ?? "")
                 }
             }else  if (type == "phone"){
                 if (input.text == responseData?.phone){

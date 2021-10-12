@@ -14,6 +14,8 @@ class Address: BaseController {
     var viewModel : ProfileViewModel?
     @IBOutlet weak var saerchtxt: UITextField!
     var path = 0
+    @IBOutlet var banner: UIView!
+    @IBOutlet weak var notify: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -32,6 +34,10 @@ class Address: BaseController {
         viewModel?.resetPaginator()
         addressdata.removeAll()
         viewModel?.getaddresss()
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+            notify.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
+        }
     }
     override func bind() {
         viewModel?.addressData.bind({ [weak self](data) in
@@ -124,7 +130,7 @@ extension Address : EditdeleteoptionDelegate , DeletesuccessDelegate , Deletecar
         }else{
             let vcc = self.pushViewController(Addaddress.self,storyboard: .profile)
             vcc.id = addressdata[path].id ?? 0
-            vcc.type = "1"
+            vcc.type = Int(addressdata[path].icon ?? "") ?? 0
             vcc.isedit = true
             self.push(vcc)
         }

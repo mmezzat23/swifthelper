@@ -12,11 +12,13 @@ import GoogleSignIn
 
 class RegisterViewController: BaseController {
     
+    @IBOutlet weak var eye: UIImageView!
     @IBOutlet weak var userNameTxt: UITextField!
     @IBOutlet weak var emialOrPhoneTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var appleview: UIButton!
 
+    @IBOutlet weak var terms: UILabel!
     var authModel : AuthViewModel?
     var viewModel : Auth1ViewModel?
     var parameters : [String : Any] = [:]
@@ -67,20 +69,20 @@ class RegisterViewController: BaseController {
     }
     
     @IBAction func signUpWithFacebookClicked(_ sender: UIButton) {
-        let driver = FacebookDriver(delegate: self)
-        driver.callback { user in
-            self.startLoading()
-            ApiManager.instance.paramaters["providerId"] = user.id
-            ApiManager.instance.paramaters["providerName"] = "facebook"
-            ApiManager.instance.paramaters["email"] = user.email
-            ApiManager.instance.connectionRaw(.socaillogin, type: .post) { [self] (response) in
-                self.stopLoading()
-                let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
-                parameters["emailOrPhone"] = data?.responseData?.userName
-                parameters["password"] = data?.responseData?.password
-                authModel?.loginapi(paramters:parameters, remember: true)
-            }
-        }
+//        let driver = FacebookDriver(delegate: self)
+//        driver.callback { user in
+//            self.startLoading()
+//            ApiManager.instance.paramaters["providerId"] = user.id
+//            ApiManager.instance.paramaters["providerName"] = "facebook"
+//            ApiManager.instance.paramaters["email"] = user.email
+//            ApiManager.instance.connectionRaw(.socaillogin, type: .post) { [self] (response) in
+//                self.stopLoading()
+//                let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+//                parameters["emailOrPhone"] = data?.responseData?.userName
+//                parameters["password"] = data?.responseData?.password
+//                authModel?.loginapi(paramters:parameters, remember: true)
+//            }
+//        }
     }
     func validateTextFields() -> Bool {
         if !isPhoneNumber {
@@ -89,7 +91,7 @@ class RegisterViewController: BaseController {
             emialOrPhoneTxt.customValidationRules = [RequiredRule() , MinLengthRule(length: 11)]
         }
         userNameTxt.customValidationRules = [RequiredRule() , MaxLengthRule(length: 16)]
-        passwordTxt.customValidationRules = [RequiredRule(), MinLengthRule(length: 8),  PasswordRule()]
+        passwordTxt.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),  PasswordRule()]
         let validator = Validation(textFields: [emialOrPhoneTxt , userNameTxt ,passwordTxt])
         return validator.success
     }
@@ -104,6 +106,19 @@ class RegisterViewController: BaseController {
                 } else {
                     // Fallback on earlier versions
                 }
+        terms.UIViewAction {
+            let vcc = self.controller(Terms.self,storyboard: .setting)
+            self.push(vcc)
+        }
+        eye.UIViewAction { [self] in
+            if (passwordTxt.isSecureTextEntry){
+                passwordTxt.isSecureTextEntry = false
+                eye.image = #imageLiteral(resourceName: "eye Active")
+            }else{
+                passwordTxt.isSecureTextEntry = true
+                eye.image = #imageLiteral(resourceName: "eye")
+            }
+        }
    }
     
     func signUp() {

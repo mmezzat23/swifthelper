@@ -8,11 +8,11 @@
 
 import UIKit
 protocol PhoneverifyDelegate:class {
-    func verify(item: Bool , type : String)
+    func verify(item: Bool , type : String , sendto : String)
     
 }
 extension PhoneverifyDelegate {
-    func verify(item:Bool , type : String){
+    func verify(item:Bool , type : String , sendto : String){
 
     }
 
@@ -106,7 +106,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
             }else{
                 if (self?.isverify == true){
                     self?.dismiss(animated: true) { [self] in
-                        self?.delegate?.verify(item: true, type: self?.type ?? "")
+                        self?.delegate?.verify(item: true, type: self?.type ?? "", sendto: self?.sendTo ?? "")
                     }
                 }else{
                     let scene = self?.controller(AccountsuccessController.self,storyboard: .auth1)
@@ -117,7 +117,7 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         profileModel?.verifyphone.bind({ [weak self](data) in
             self?.stopLoading()
             self?.dismiss(animated: true) {
-                self?.delegate?.verify(item: true, type: self?.type ?? "")
+                self?.delegate?.verify(item: true, type: self?.type ?? "", sendto: self?.sendTo ?? "")
             }
             
         })
@@ -305,7 +305,11 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
           viewModel?.VerifyOtpApi(paramters: parameters , url: .verifyForgetPasswordOTP)
         } else {
             if (isverify == true){
-                profileModel?.confirmaccountsetting(code: self.code)
+                if (type == "phone"){
+                    profileModel?.confirmaccountsetting(code: self.code)
+                }else {
+                    profileModel?.confirmaccountsettingemail(code: self.code)
+                }
             }else{
           parameters["userName"] = self.userName
           print(parameters)

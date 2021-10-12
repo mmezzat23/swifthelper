@@ -16,6 +16,7 @@ class Privacy: BaseController {
     @IBOutlet weak var titlelbl: UILabel!
     @IBOutlet var banner: UIView!
     
+    @IBOutlet weak var notify: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -26,6 +27,7 @@ class Privacy: BaseController {
         bind()
         if (UserRoot.saller() == true){
             banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+            notify.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
         }
     }
     func setup() {

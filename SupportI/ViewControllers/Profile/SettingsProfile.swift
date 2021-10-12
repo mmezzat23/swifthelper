@@ -37,7 +37,7 @@ class SettingsProfile: BaseController {
     @IBOutlet weak var accountactive: UIView!
     var isdark = false
     var isnotication = false
-    var isshop = 0
+    var isshop = false
     var isactive = 0
     var cityid = 0
     var viewModel : ProfileViewModel?
@@ -59,6 +59,7 @@ class SettingsProfile: BaseController {
     @IBOutlet weak var shopstatus: UIView!
     @IBOutlet var banner: UIView!
     
+    @IBOutlet weak var notify: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -85,6 +86,7 @@ class SettingsProfile: BaseController {
             shopstatushight.constant = 0
         }else {
             banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+            notify.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
         }
     }
     func setup() {
@@ -138,6 +140,11 @@ class SettingsProfile: BaseController {
             vcc.delegate = self
             pushPop(vcr: vcc)
         }
+        editpass.UIViewAction { [self] in
+            let vcc = self.pushViewController(Editpassword.self,storyboard: .profile)
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
     }
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
@@ -149,14 +156,21 @@ class SettingsProfile: BaseController {
             self?.password.placeholder = "********"
             self?.darkmodeswitch.isOn = data.responseData?.isDarkMode ?? false
             self?.notificatinswitch.isOn = data.responseData?.isNotificationOn ?? false
+            self?.isshop = data.responseData?.shopStatus ?? false
             if (data.responseData?.status ?? 0 == 1){
                 self?.accountswitch.isOn = true
                 self?.accounttxt.text = "Active".localized()
             }else {
                 self?.accountswitch.isOn = false
-                self?.notificationtxt.text = "Notactive".localized()
+                self?.accounttxt.text = "Notactive".localized()
             }
-            
+            if (data.responseData?.shopStatus == true){
+                self?.shopswitch.isOn = true
+                self?.shopstatustxt.text = "Active".localized()
+            }else {
+                self?.shopswitch.isOn = false
+                self?.shopstatustxt.text = "Notactive".localized()
+            }
             self?.isdark = data.responseData?.isDarkMode ?? false
             self?.isnotication = data.responseData?.isNotificationOn ?? false
             self?.isactive = data.responseData?.status ?? 0
@@ -260,6 +274,9 @@ class SettingsProfile: BaseController {
         parameters["isNotificationOn"] = isnotication
         parameters["status"] = isactive
         parameters["isDarkMode"] = isdark
+            if (UserRoot.saller() == true){
+                parameters["shopStatus"] = isshop
+            }
         if (password.text != ""){
             parameters["password"] = password.text
         }
@@ -289,11 +306,11 @@ class SettingsProfile: BaseController {
     }
     
     @IBAction func shop(_ sender: Any) {
-        if (isshop == 1){
-            isshop = 0
+        if (isshop == true){
+            isshop = false
             shopstatustxt.text = "Notactive".localized()
         }else {
-            isshop = 1
+            isshop = true
             shopstatustxt.text = "Active".localized()
         }
     }
@@ -332,7 +349,7 @@ extension SettingsProfile : PickersPOPDelegate {
     }
 }
 extension SettingsProfile : EditemailDelegate {
-    func settype(type: String) {
+    func settype(type: String , sendto : String) {
         if (type == "loc"){
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when){ [self] in
@@ -347,8 +364,9 @@ extension SettingsProfile : EditemailDelegate {
                 let vcc = self.pushViewController(CodeverficationController.self,storyboard: .auth1)
                 vcc.delegate = self
                 vcc.isverify = true
+                vcc.sendTo = sendto
                 vcc.type = "phone"
-                self.push(vcc)
+                self.pushPop(vcr: vcc)
             }
            
         }else {
@@ -358,18 +376,19 @@ extension SettingsProfile : EditemailDelegate {
                 vcc.delegate = self
                 vcc.isverify = true
                 vcc.type = "email"
-                self.push(vcc)
+                vcc.sendTo = sendto
+                self.pushPop(vcr: vcc)
             }
         }
     }
 }
 extension SettingsProfile : PhoneverifyDelegate {
-    func verify(item: Bool , type : String) {
+    func verify(item: Bool , type : String , sendto : String) {
         if (item == true){
             if (type == "phone") {
-                parameters["phone"] = phone.text
+                parameters["phone"] = sendto
             }else {
-                parameters["email"] = email.text
+                parameters["email"] = sendto
             }
             parameters["cityId"] = cityid
             viewModel?.editaccountsetting(paramters: parameters)
@@ -384,4 +403,23 @@ extension SettingsProfile : ChangesuccessDelegate {
         type = ""
         viewModel?.getaccountsetting()
     }
+}
+
+extension SettingsProfile : EditpasswordDelegate {
+    
+    func settype(type: Bool , pass : String) {
+        let when = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+        if (type == true){
+            parameters["password"] = pass
+            parameters["cityId"] = cityid
+            self.type = "pass"
+            viewModel?.editaccountsetting(paramters: parameters)
+        }else {
+            makeAlert("Old password is not same", closure: {})
+        }
+        }
+    }
+    
+  
 }

@@ -17,6 +17,7 @@ class Paymentmethod: BaseController {
     @IBOutlet weak var wallet: UIButton!
     @IBOutlet weak var cardshight: NSLayoutConstraint!
     
+    @IBOutlet weak var notify: UIButton!
     @IBOutlet weak var getpromotxt: UILabel!
     @IBOutlet weak var getpromoimg: UIImageView!
     @IBOutlet weak var promotxt: UILabel!

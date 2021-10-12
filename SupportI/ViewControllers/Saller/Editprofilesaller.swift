@@ -29,6 +29,8 @@ class Editprofilesaller: BaseController {
     var idURL: URL?
     var parameters : [String : Any] = [:]
 
+    @IBOutlet weak var seesamole: UILabel!
+    @IBOutlet weak var notactive: UIView!
     @IBOutlet weak var idimage: UIImageView!
     @IBOutlet weak var idclick: UIImageView!
     override func viewDidLoad() {
@@ -85,6 +87,10 @@ class Editprofilesaller: BaseController {
             self.typeimage = "3"
             self.picker?.pick(in: self)
         }
+        seesamole.UIViewAction { [self] in
+            let vcc = self.pushViewController(Samplesaller.self,storyboard: .saller)
+            pushPop(vcr: vcc)
+        }
     }
     func validateTextFields() -> Bool {
         name.customValidationRules = [RequiredRule()]
@@ -103,6 +109,9 @@ class Editprofilesaller: BaseController {
             }
             if (data.responseData?.picWithId != ""){
                 self?.idimage.setImage(url: data.responseData?.picWithId)
+            }
+            if (data.responseData?.isActiveSeller == true){
+                self?.notactive.isHidden = true
             }
             self?.name.text = data.responseData?.name
             self?.bio.text = data.responseData?.bio

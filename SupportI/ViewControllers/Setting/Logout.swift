@@ -14,9 +14,9 @@ class Logout: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
-        if (UserRoot.saller() == true){
-            yes.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
-        }
+//        if (UserRoot.saller() == true){
+//            yes.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+//        }
         // Do any additional setup after loading the view.
     }
     

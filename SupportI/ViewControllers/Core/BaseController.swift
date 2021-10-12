@@ -29,11 +29,17 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
     @IBOutlet weak var menuBtnButton: UIButton!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var titleBar: UIBarButtonItem!
+    @IBOutlet weak var notificationBtnButton: UIButton!
 
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController()
     }
-
+    @IBAction func notifyBtn(_ sender: Any) {
+        if (UserRoot.saller() == true){
+        let vcc = self.controller(NotificationsViewController.self,storyboard: .setting)
+        self.push(vcc)
+        }
+    }
     //var baseViewModel:SettingViewModel?
     //public static var config:Config?
     public static var configLoaded = false
@@ -50,6 +56,9 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
         self.navigationController?.navigationBar.removeSubviews()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.setupBase()
+//        if (UserRoot.saller() == true){
+//            notificationBtnButton.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
+//        }
 
     }
 

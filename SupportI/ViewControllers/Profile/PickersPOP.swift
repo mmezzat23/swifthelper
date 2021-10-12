@@ -219,7 +219,7 @@ class PickersPOP:BaseController {
             
             if dateSelection == .date {
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy/MM/dd"
+                formatter.dateFormat = "MM/dd/yyyy"
                 let date = formatter.string(from: datePicker.date)
 //                datePicker.maximumDate = Date()
                 datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())

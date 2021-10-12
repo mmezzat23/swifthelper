@@ -24,7 +24,7 @@ struct ResponseDataAddress: Codable {
 
 // MARK: - Item
 struct ItemAddress: Codable {
-    let name, street: String?
+    let name, icon, street: String?
     let buildingNo: Int?
     let landMark: String?
     let isDefault: Bool?

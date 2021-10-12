@@ -58,6 +58,7 @@ class ForgetpassController: BaseController {
         if (validateTextFields()){
         parameters["emailOrPhone"] = email.text
         viewModel?.forgetapi(paramters:parameters)
+            email.borderColor = UIColor(red: 0x75, green: 0x75, blue: 0x75)
         }
     }
     

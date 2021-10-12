@@ -304,6 +304,29 @@ class ProfileViewModel: ViewModelCore {
             }
         }
     }
+    func getcontact() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.customerservice, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.socialdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getcontact()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
     func getfaqs(paramters: [String: Any]) {
         delegate?.startLoading()
         ApiManager.instance.paramaters = paramters
@@ -375,6 +398,31 @@ class ProfileViewModel: ViewModelCore {
             }
         }
     }
+    func editpasswodr(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.passwordsedit, type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.editdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.editpasswodr(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
     func verfiyaccountsetting(phone : String ) {
         delegate?.startLoading()
         ApiManager.instance.connection("\(EndPoint.verfiysetting.rawValue)?phone=\(phone)", type: .post) { (response) in
@@ -413,6 +461,54 @@ class ProfileViewModel: ViewModelCore {
                     Authorization.instance.refreshToken1{callback in
                         if (callback){
                             self.confirmaccountsetting(code: code)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func verfiyemailaccountsetting(phone : String ) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.verfiysettingemail.rawValue)?email=\(phone)", type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(DeleteaccountModel.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.verifyphone.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.verfiyemailaccountsetting(phone: phone)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func confirmaccountsettingemail(code : String ) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.confirmverfiyemail.rawValue)?code=\(code)", type: .post) { (response) in
+            self.delegate?.stopLoading()
+            let data = try? JSONDecoder().decode(DeleteaccountModel.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.verifyphone.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.confirmaccountsettingemail(code: code)
                         }else{
                             
                         }

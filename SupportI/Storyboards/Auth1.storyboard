@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c3Y-Ic-ZsU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c3Y-Ic-ZsU">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +23,7 @@
         <!--Forgetpass Controller-->
         <scene sceneID="fK7-ah-u8m">
             <objects>
-                <viewController storyboardIdentifier="ForgetpassController" id="yXY-19-1tM" customClass="ForgetpassController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgetpassController" id="yXY-19-1tM" customClass="ForgetpassController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fu8-hd-3IP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p44-Rs-eTK">
                                 <rect key="frame" x="0.0" y="-16" width="414" height="472"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgz-LZ-150">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgz-LZ-150">
                                         <rect key="frame" x="115.00000000000001" y="80" width="184.33333333333337" height="26.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,7 +53,7 @@
                                             <constraint firstAttribute="width" constant="12" id="GKT-mK-mD5"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="Back Button">
+                                        <state key="normal" backgroundImage="Back Button-4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -69,7 +69,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Skip"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbE-Z2-Nzv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbE-Z2-Nzv">
                                         <rect key="frame" x="91.000000000000014" y="134.66666666666669" width="232.33333333333337" height="33"/>
                                         <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,6 +87,24 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Please enter your Email/Phone and we will send you a code to return to your account"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOq-eB-0ux">
+                                        <rect key="frame" x="32" y="259" width="350" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TmU-eq-18e"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXv-xR-mhF">
                                         <rect key="frame" x="32" y="259" width="350" height="50"/>
                                         <constraints>
@@ -174,6 +192,7 @@
                                     <constraint firstItem="Bgz-LZ-150" firstAttribute="top" secondItem="p44-Rs-eTK" secondAttribute="top" constant="80" id="509-eV-FKO"/>
                                     <constraint firstAttribute="trailing" secondItem="DYT-k9-DAW" secondAttribute="trailing" constant="32" id="9C3-8D-EvN"/>
                                     <constraint firstItem="DYT-k9-DAW" firstAttribute="leading" secondItem="p44-Rs-eTK" secondAttribute="leading" constant="32" id="Avg-sN-jUz"/>
+                                    <constraint firstItem="aOq-eB-0ux" firstAttribute="top" secondItem="DYT-k9-DAW" secondAttribute="bottom" constant="35" id="CN3-jk-3tQ"/>
                                     <constraint firstItem="Bgz-LZ-150" firstAttribute="centerX" secondItem="p44-Rs-eTK" secondAttribute="centerX" id="F0S-Hr-tX5"/>
                                     <constraint firstItem="ye4-4L-cIq" firstAttribute="centerY" secondItem="Bgz-LZ-150" secondAttribute="centerY" id="KXT-fj-EIY"/>
                                     <constraint firstItem="wXv-xR-mhF" firstAttribute="top" secondItem="DYT-k9-DAW" secondAttribute="bottom" constant="35" id="L2h-4T-Y5E"/>
@@ -187,8 +206,10 @@
                                     <constraint firstItem="5GQ-3c-QHC" firstAttribute="centerY" secondItem="Bgz-LZ-150" secondAttribute="centerY" id="ZGW-6n-tA1"/>
                                     <constraint firstItem="aXh-em-sQK" firstAttribute="leading" secondItem="p44-Rs-eTK" secondAttribute="leading" constant="32" id="eMj-ej-f6W"/>
                                     <constraint firstItem="DYT-k9-DAW" firstAttribute="top" secondItem="KbE-Z2-Nzv" secondAttribute="bottom" constant="15" id="fG6-iN-EFi"/>
+                                    <constraint firstAttribute="trailing" secondItem="aOq-eB-0ux" secondAttribute="trailing" constant="32" id="gKh-Rd-tcf"/>
                                     <constraint firstItem="5GQ-3c-QHC" firstAttribute="leading" secondItem="ye4-4L-cIq" secondAttribute="trailing" constant="8" id="jhH-et-Fg5"/>
                                     <constraint firstItem="wXv-xR-mhF" firstAttribute="leading" secondItem="p44-Rs-eTK" secondAttribute="leading" constant="32" id="p8b-tv-67C"/>
+                                    <constraint firstItem="aOq-eB-0ux" firstAttribute="leading" secondItem="p44-Rs-eTK" secondAttribute="leading" constant="32" id="pKv-8Z-CaW"/>
                                     <constraint firstItem="KbE-Z2-Nzv" firstAttribute="top" secondItem="Bgz-LZ-150" secondAttribute="bottom" constant="28" id="sQd-1t-ve1"/>
                                     <constraint firstAttribute="trailing" secondItem="wXv-xR-mhF" secondAttribute="trailing" constant="32" id="vfN-T2-cQd"/>
                                 </constraints>
@@ -224,7 +245,7 @@
         <!--Codesent Controller-->
         <scene sceneID="YWP-H2-Fbh">
             <objects>
-                <viewController storyboardIdentifier="CodesentController" id="02D-0b-LyH" customClass="CodesentController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CodesentController" id="02D-0b-LyH" customClass="CodesentController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OW1-x6-oB8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,7 +378,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
         <!--Confirmpass Controller-->
         <scene sceneID="S7R-MM-Er0">
             <objects>
-                <viewController storyboardIdentifier="ConfirmpassController" id="maz-nD-2O1" customClass="ConfirmpassController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmpassController" id="maz-nD-2O1" customClass="ConfirmpassController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w26-Zm-O4G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,7 +392,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuV-J2-aK7">
                                 <rect key="frame" x="0.0" y="-16" width="414" height="472"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avY-u3-6Nu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avY-u3-6Nu">
                                         <rect key="frame" x="115.00000000000001" y="80" width="184.33333333333337" height="26.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -387,7 +408,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                             <constraint firstAttribute="width" constant="12" id="DFx-Ff-Ryb"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="Back Button">
+                                        <state key="normal" backgroundImage="Back Button-4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -403,7 +424,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Skip"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjR-9d-orf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjR-9d-orf">
                                         <rect key="frame" x="81" y="134.66666666666669" width="252" height="33"/>
                                         <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -556,6 +577,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
                     </view>
                     <navigationItem key="navigationItem" id="Vc0-wt-YCs"/>
                     <connections>
+                        <outlet property="lock" destination="J6K-pn-Wmj" id="tTq-Az-EXX"/>
                         <outlet property="password" destination="Rp2-Ao-scQ" id="SsG-sm-khf"/>
                         <outlet property="signup" destination="vfe-TG-fHH" id="ejz-nr-dyw"/>
                     </connections>
@@ -585,7 +607,7 @@ V2UndmUgc2VudCB5b3UgaW5zdHJ1Y3Rpb25zIG9uIGhvdyALdG8gcmVzZXQgdGhlIHBhc3N3b3JkA
         <!--Passconfirm Controller-->
         <scene sceneID="Y1I-GB-V3r">
             <objects>
-                <viewController storyboardIdentifier="PassconfirmController" id="dEO-n5-Jks" customClass="PassconfirmController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PassconfirmController" id="dEO-n5-Jks" customClass="PassconfirmController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gkj-sy-hAW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -693,7 +715,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
         <!--Codeverfication Controller-->
         <scene sceneID="wu8-kD-qnq">
             <objects>
-                <viewController storyboardIdentifier="CodeverficationController" id="EUw-MU-mGy" customClass="CodeverficationController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CodeverficationController" id="EUw-MU-mGy" customClass="CodeverficationController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cSJ-OH-iqk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -707,8 +729,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-wq-svk">
                                 <rect key="frame" x="0.0" y="-16" width="414" height="472"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE VERIFICATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9J-nW-zSN">
-                                        <rect key="frame" x="120.00000000000001" y="80" width="174.33333333333337" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE VERIFICATION" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9J-nW-zSN">
+                                        <rect key="frame" x="116.33333333333333" y="80" width="181.33333333333337" height="26.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -717,13 +739,13 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMg-Sz-NqD">
-                                        <rect key="frame" x="376" y="78.666666666666657" width="12" height="24"/>
+                                        <rect key="frame" x="376" y="81.333333333333329" width="12" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0eP-1g-oC3"/>
                                             <constraint firstAttribute="width" constant="12" id="8yR-my-Vgg"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="Back Button">
+                                        <state key="normal" backgroundImage="Back Button-4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -731,7 +753,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbu-9C-A7Q">
-                                        <rect key="frame" x="340" y="82.333333333333329" width="28" height="16.333333333333329"/>
+                                        <rect key="frame" x="339.66666666666669" y="83" width="28.333333333333314" height="20.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -739,8 +761,8 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Skip"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE VERIFICATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07p-yf-6lE">
-                                        <rect key="frame" x="71.666666666666686" y="121.00000000000001" width="271" height="32.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE VERIFICATION" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07p-yf-6lE">
+                                        <rect key="frame" x="71.333333333333343" y="126.66666666666669" width="271.66666666666663" height="33"/>
                                         <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="28"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -749,7 +771,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We sent your code to +1 898 860 **" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogs-iJ-5oJ">
-                                        <rect key="frame" x="32" y="168.66666666666666" width="350" height="16.333333333333343"/>
+                                        <rect key="frame" x="32" y="174.66666666666666" width="350" height="20.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -758,7 +780,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Y2-03-8Gr">
-                                        <rect key="frame" x="57" y="200" width="300" height="60"/>
+                                        <rect key="frame" x="57" y="210.33333333333334" width="300" height="60.000000000000028"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l2j-ow-kqH">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -831,10 +853,10 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TwV-5x-jfj">
-                                        <rect key="frame" x="90" y="272" width="234" height="40"/>
+                                        <rect key="frame" x="90" y="282.33333333333331" width="234" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This code will expired in" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmr-8u-Pzu">
-                                                <rect key="frame" x="0.0" y="0.0" width="179.66666666666666" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="40"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -843,7 +865,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-Cd-P0o">
-                                                <rect key="frame" x="189.66666666666669" y="0.0" width="44.333333333333343" height="40"/>
+                                                <rect key="frame" x="190" y="0.0" width="44" height="40"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -857,7 +879,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="704-6N-5p9">
-                                        <rect key="frame" x="30" y="324" width="354" height="56"/>
+                                        <rect key="frame" x="30" y="334.33333333333331" width="354" height="56"/>
                                         <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="mEz-vt-zVE"/>
@@ -877,7 +899,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend OTP Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeH-tU-UDt">
-                                        <rect key="frame" x="148.33333333333334" y="440.66666666666669" width="117.33333333333334" height="16.333333333333314"/>
+                                        <rect key="frame" x="147.33333333333334" y="436.33333333333331" width="119.66666666666666" height="20.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -965,7 +987,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
         <!--Accountsuccess Controller-->
         <scene sceneID="KNx-oW-9hb">
             <objects>
-                <viewController storyboardIdentifier="AccountsuccessController" id="ju2-YZ-zkE" customClass="AccountsuccessController" customModule="SupportI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountsuccessController" id="ju2-YZ-zkE" customClass="AccountsuccessController" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTf-If-Ymf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1065,7 +1087,7 @@ WW91ciBQYXNzd29yZCBJcyALU3VjY2Vzc2Z1bGx5IENoYW5nZWQ
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="8" height="15"/>
+        <image name="Back Button-4" width="9" height="15"/>
         <image name="Group 10764" width="140" height="144"/>
         <image name="Group 10765" width="140" height="144"/>
         <image name="Group 10766" width="140" height="144"/>

@@ -17,6 +17,7 @@ class Help: BaseController {
     @IBOutlet weak var logout: UIView!
     @IBOutlet weak var sendmessage: UIView!
     @IBOutlet weak var logouthight: NSLayoutConstraint!
+    @IBOutlet weak var notify: UIButton!
     
     @IBOutlet weak var banner: UIImageView!
     override func viewDidLoad() {
@@ -30,7 +31,9 @@ class Help: BaseController {
             logouthight.constant = 0
             logout.isHidden = true
         }
-
+        if (UserRoot.saller() == true){
+             notify.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
+         }
         // Do any additional setup after loading the view.
     }
     func onclick() {

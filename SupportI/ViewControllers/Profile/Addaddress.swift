@@ -23,9 +23,11 @@ class Addaddress: BaseController {
     @IBOutlet weak var bulidno: UITextField!
     @IBOutlet weak var landmark: UITextField!
     @IBOutlet weak var defult: UISwitch!
+    @IBOutlet var banner: UIView!
     
+    @IBOutlet weak var notify: UIButton!
     var isedit = false
-    var type = ""
+    var type = 0
     var lat : Double = 0
     var lng : Double = 0
     var cityid = 0
@@ -50,6 +52,10 @@ class Addaddress: BaseController {
         viewModel?.getcity()
         if (isedit == true){
             viewModel?.getsingleaddress(id: id)
+        }
+        if (UserRoot.saller() == true){
+            banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+            notify.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
         }
     }
     override func bind() {
@@ -86,6 +92,48 @@ class Addaddress: BaseController {
             self?.lng = Double(data.responseData?.long ?? "") ?? 0
             self?.defult.isOn = data.responseData?.isDefault ?? false
             self?.isdefult = data.responseData?.isDefault ?? false
+            self?.type = Int(data.responseData?.icon ?? "") ?? 0
+            if (self?.type == 1){
+                self?.cars.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+    //            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.cars.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+            }else if (self?.type == 2){
+                self?.home.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+    //            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.home.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+            }else if (self?.type == 3){
+                self?.job.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.web.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+    //            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.job.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+            }else if (self?.type == 4){
+                self?.web.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.cars.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.job.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.home.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+    //            gift.borderColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.web.tintColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
+                self?.cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+                self?.home.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
+            }
         })
     }
     @IBAction func defult(_ sender: Any) {
@@ -103,7 +151,7 @@ class Addaddress: BaseController {
 //            if (!not.isChecked){
 //                error = "\(error)\n \("must open notification".localized)"
 //            }
-            if (type == ""){
+            if (type == 0){
                 error = "\(error)\n \("Select type of address".localized)"
             }
             
@@ -117,6 +165,7 @@ class Addaddress: BaseController {
                 parameters["landMark"] = landmark.text
                 parameters["cityId"] = cityid
                 parameters["isDefault"] = isdefult
+                parameters["icon"] = type
                 if (lat > 0){
                     parameters["lat"] = String(lat)
                     parameters["long"] = String(lng)
@@ -153,7 +202,7 @@ class Addaddress: BaseController {
             job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
 //            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            type = "1"
+            type = 1
         }
         home.UIViewAction { [self] in
             home.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
@@ -166,7 +215,7 @@ class Addaddress: BaseController {
             job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
 //            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            type = "2"
+            type = 2
         }
         job.UIViewAction { [self] in
             job.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
@@ -179,7 +228,7 @@ class Addaddress: BaseController {
             cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             web.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
 //            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            type = "3"
+            type = 3
         }
         web.UIViewAction { [self] in
             web.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)
@@ -192,7 +241,7 @@ class Addaddress: BaseController {
             job.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
             cars.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
 //            gift.tintColor = UIColor(red: 0x95, green: 0x99, blue: 0xB3)
-            type = "4"
+            type = 4
         }
 //        gift.UIViewAction { [self] in
 //            gift.borderColor = UIColor(red: 0xFF, green: 0x0E, blue: 0x34)

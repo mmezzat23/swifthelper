@@ -42,6 +42,7 @@ class Contactus: BaseController {
     var orderid = 0
     @IBOutlet var banner: UIView!
     
+    @IBOutlet weak var notify: UIButton!
     @IBOutlet weak var or: UILabel!
     @IBOutlet weak var custmerphone: UILabel!
     @IBOutlet weak var call: UIView!
@@ -52,6 +53,7 @@ class Contactus: BaseController {
         bind()
         if (UserRoot.saller() == true){
             banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
+            notify.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
         }
         if (UserRoot.token() != nil) {
             if (UserRoot.saller() == true){
@@ -73,11 +75,17 @@ class Contactus: BaseController {
             reasontop.constant = 0
         }
         or.setunderline(title: "OR")
+        call.UIViewAction { [self] in
+            if (custmerphone.text != "") {
+                Wndo.call(text: custmerphone.text)
+            }
+        }
     }
     
     func setup() {
        viewModel = .init()
        viewModel?.delegate = self
+        viewModel?.getcontact()
         reason.UIViewAction {
             let vcc = self.pushViewController(PickersPOP.self,storyboard: .profile)
             vcc.openWhat = "picker"
@@ -122,6 +130,11 @@ class Contactus: BaseController {
         viewModel?.reasons.bind({ [weak self](data) in
             self?.stopLoading()
             self?.reasons.append(contentsOf: data.responseData ?? [])
+           
+        })
+        viewModel?.socialdata.bind({ [weak self](data) in
+            self?.stopLoading()
+            self?.custmerphone.text = data.responseData?.number ?? ""
            
         })
         viewModel?.deletedata.bind({ [weak self](data) in

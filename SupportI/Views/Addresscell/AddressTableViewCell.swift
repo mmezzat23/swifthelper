@@ -25,6 +25,15 @@ class AddressTableViewCell: UITableViewCell , CellProtocol {
         }else{
             isdefult.isHidden = true
         }
+        if (model.icon == "1"){
+            imageicon.setImage(#imageLiteral(resourceName: "building"), for: .normal)
+        }else if (model.icon == "2"){
+            imageicon.setImage(#imageLiteral(resourceName: "home"), for: .normal)
+        }else if (model.icon == "3"){
+            imageicon.setImage(#imageLiteral(resourceName: "parthenon"), for: .normal)
+        }else if (model.icon == "4"){
+            imageicon.setImage(#imageLiteral(resourceName: "location"), for: .normal)
+        }
         
     }
 }
