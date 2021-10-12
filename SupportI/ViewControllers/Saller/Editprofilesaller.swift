@@ -161,17 +161,22 @@ class Editprofilesaller: BaseController {
             if (error != ""){
               makeAlert(error, closure: {})
             }else{
+                let inputFormatter = DateFormatter()
+                inputFormatter.dateFormat = "MM/dd/yyyy"
+                let showDate = inputFormatter.date(from: date)
+                inputFormatter.dateFormat = "yyyy/MM/dd"
+                let resultString = inputFormatter.string(from: showDate!)
                 if ((imageURL) == nil && (coverURL) == nil && (idURL) == nil){
                     parameters["name"] = name.text
                     parameters["bio"] = bio.text
-                    parameters["DateOfBirth"] = date
+                    parameters["DateOfBirth"] = resultString
                     parameters["gender"] = type
                     viewModel?.editprofile(paramters: parameters)
                 }else {
                     var parameters1 : [String : Any] = [:]
                     parameters1["name"] = name.text
                     parameters1["bio"] = bio.text
-                    parameters1["DateOfBirth"] = date
+                    parameters1["DateOfBirth"] = resultString
                     parameters1["gender"] = type
                     ApiManager.instance.paramaters = parameters1
                     self.startLoading()

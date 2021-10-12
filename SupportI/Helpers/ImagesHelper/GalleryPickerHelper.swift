@@ -132,8 +132,9 @@ internal final class GalleryPickerHelper: NSObject, VideoPickerDelegate {
     }
     func getImageURL(image: UIImage) -> URL? {
         var photoURL: URL?
-        saveImage(image: image, name: "COMPRESSED_IMAGE.png")
-        photoURL = getSavedImage(named: "COMPRESSED_IMAGE.png")
+        let date1 = String(NSDate().timeIntervalSince1970) + ".png"
+        saveImage(image: image, name: date1)
+        photoURL = getSavedImage(named: date1)
         
         //photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)
         

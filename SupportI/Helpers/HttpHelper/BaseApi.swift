@@ -207,6 +207,7 @@ class BaseApi: Downloader, Paginator, Alertable {
             file.forEach { (fileDic) in
                 fileDic.forEach { (dic) in
                     if let url = dic.value {
+                        print(url)
                         multipartFormData.append(url, withName: dic.key)
                     }
                 }
