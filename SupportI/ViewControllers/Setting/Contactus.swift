@@ -144,17 +144,7 @@ class Contactus: BaseController {
         viewModel?.deletedata.bind({ [weak self](data) in
             self?.stopLoading()
             self?.makeAlert("Message sent successfully".localized(), closure: {
-                if (UserRoot.saller() == true){
-                    let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
-                           guard let nav = controller else { return }
-                           let delegate = UIApplication.shared.delegate as? AppDelegate
-                           delegate?.window?.rootViewController = nav
-                }else{
-                    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                           guard let nav = controller else { return }
-                           let delegate = UIApplication.shared.delegate as? AppDelegate
-                           delegate?.window?.rootViewController = nav
-                }
+                self?.navigationController?.popViewController()
             })
            
         })

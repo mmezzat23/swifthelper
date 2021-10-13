@@ -74,10 +74,8 @@ class SettingsProfile: BaseController {
             changeLang {
                 self.lang = Constants.lang
                  if (Constants.lang == "ar"){
-                     self.lang = "1"
                      self.languagetxt.text! = "العربيه"
                  }else {
-                     self.lang = "0"
                      self.languagetxt.text! = "English"
                  }
              }
@@ -229,7 +227,7 @@ class SettingsProfile: BaseController {
                 }else{
                     setAppLang(.english)
                 }
-                Localizer.initLang()
+                initLang()
                 if (self?.isdark == true){
                     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                        return
@@ -244,10 +242,27 @@ class SettingsProfile: BaseController {
                     appDelegate.changeTheme(themeVal: "light")
                 }
                 self?.makeAlert("Your changes saved".localized(), closure: {
-                    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                           guard let nav = controller else { return }
-                           let delegate = UIApplication.shared.delegate as? AppDelegate
-                           delegate?.window?.rootViewController = nav
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                       return
+                    }
+                    if (UserRoot.saller() == false){
+                        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                               guard let nav = controller else { return }
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                            Localizer.initLang()
+                            let delegate = UIApplication.shared.delegate as? AppDelegate
+                            delegate?.window?.rootViewController = nav
+                        }
+                    }else {
+                        let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
+                               guard let nav = controller else { return }
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                            Localizer.initLang()
+                            let delegate = UIApplication.shared.delegate as? AppDelegate
+                            delegate?.window?.rootViewController = nav
+                        }
+                    }
+                    
                 })
                
             }else {
@@ -274,13 +289,18 @@ class SettingsProfile: BaseController {
 //          makeAlert(error, closure: {})
 //        }else{
         if (phonetxt == phone.text){
-        parameters["email"] = email.text
-        parameters["phone"] = phone.text
-        parameters["cityId"] = cityid
+//        parameters["email"] = email.text
+//        parameters["phone"] = phone.text
+//        parameters["cityId"] = cityid
         parameters["isNotificationOn"] = isnotication
         parameters["status"] = isactive
-//        parameters["language"] = lang
+        parameters["language"] = lang
         parameters["isDarkMode"] = isdark
+            if (lang == "ar"){
+                parameters["language"] = 1
+            }else {
+                parameters["language"] = 0
+            }
             if (UserRoot.saller() == true){
                 parameters["shopStatus"] = isshop
             }

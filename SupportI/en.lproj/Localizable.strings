@@ -7,6 +7,18 @@
 */
 
 /** validation **/
+"this_field_is_required.lan" = "this field is required";
+"you_must_be_logged_in.lan" = "you must be login";
+"sure.lan" = "Confirm";
+"does_not_match.lan" = "does not match";
+"you_are_not_allow_use_your_location.lan" = "you_are_not allow use your location";
+"location_error.lan" = "location error";
+"must_be_a_valid_email_address.lan" = "must be a valid email address";
+"change_language.lan" = "change language";
+"your_are_cancel_the_operation.lan" = "your are cancel the operation";
+"you_must_accept_the_request_to_login.lan" = "you must accept the request to login";
+"the_login_is_required.lan" = "the login is required";
+"not_found.lan" = "not found";
 
 "registration.lan" = "Registration";
 "first.name.lan" = "First name";

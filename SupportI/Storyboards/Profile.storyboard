@@ -1552,7 +1552,7 @@
                                                 <rect key="frame" x="30" y="418" width="354" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjG-P5-awU">
-                                                        <rect key="frame" x="0.0" y="5" width="67.5" height="21"/>
+                                                        <rect key="frame" x="0.0" y="5" width="354" height="21"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1561,7 +1561,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drE-fI-rTU">
-                                                        <rect key="frame" x="0.0" y="32" width="58" height="18"/>
+                                                        <rect key="frame" x="0.0" y="32" width="338" height="18"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1582,9 +1582,11 @@
                                                 <constraints>
                                                     <constraint firstItem="drE-fI-rTU" firstAttribute="leading" secondItem="P13-2K-203" secondAttribute="leading" id="7Un-RE-FC2"/>
                                                     <constraint firstItem="s6a-da-Wtb" firstAttribute="centerY" secondItem="drE-fI-rTU" secondAttribute="centerY" id="B7o-2J-E2s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GjG-P5-awU" secondAttribute="trailing" id="FFb-UH-Sk5"/>
                                                     <constraint firstItem="GjG-P5-awU" firstAttribute="leading" secondItem="P13-2K-203" secondAttribute="leading" id="Ogk-ye-vFd"/>
                                                     <constraint firstItem="GjG-P5-awU" firstAttribute="top" secondItem="P13-2K-203" secondAttribute="top" constant="5" id="X14-Qw-4op"/>
                                                     <constraint firstAttribute="trailing" secondItem="s6a-da-Wtb" secondAttribute="trailing" id="ZDA-Ux-UT2"/>
+                                                    <constraint firstItem="s6a-da-Wtb" firstAttribute="leading" secondItem="drE-fI-rTU" secondAttribute="trailing" constant="10" id="e9u-vO-hVB"/>
                                                     <constraint firstAttribute="bottom" secondItem="drE-fI-rTU" secondAttribute="bottom" constant="10" id="yU0-NL-AT0"/>
                                                     <constraint firstAttribute="height" constant="60" id="zjN-h7-N0n"/>
                                                 </constraints>
@@ -3647,7 +3649,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="9" height="15"/>
+        <image name="Back Button" width="8" height="15"/>
         <image name="Back Button-4" width="8" height="15"/>
         <image name="Combined Shape" width="315" height="91"/>
         <image name="Delete_button_2" width="12.5" height="16"/>

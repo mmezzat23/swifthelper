@@ -796,7 +796,10 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJW-0q-0HB">
-                                                        <rect key="frame" x="65" y="20.5" width="126.5" height="24"/>
+                                                        <rect key="frame" x="65" y="20.5" width="130" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="130" id="AOB-ow-2aC"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -805,7 +808,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKs-Ce-meU">
-                                                        <rect key="frame" x="196.5" y="20.5" width="20" height="24"/>
+                                                        <rect key="frame" x="200" y="20.5" width="20" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -855,7 +858,10 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnF-1N-Q7i">
-                                                        <rect key="frame" x="65" y="20.5" width="77.5" height="24"/>
+                                                        <rect key="frame" x="65" y="20.5" width="80" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="YLp-pb-f5f"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -864,7 +870,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="( EGP 1,500 )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AZ-C8-0PD">
-                                                        <rect key="frame" x="147.5" y="20.5" width="97.5" height="24"/>
+                                                        <rect key="frame" x="150" y="20.5" width="97.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2122,8 +2128,8 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
         </designable>
     </designables>
     <resources>
-        <image name="Back Button" width="9" height="15"/>
-        <image name="Back Button-4" width="9" height="15"/>
+        <image name="Back Button" width="8" height="15"/>
+        <image name="Back Button-4" width="8" height="15"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
         <image name="Fill 1095-1" width="24" height="25"/>
         <image name="Fill 1108" width="24" height="18"/>
