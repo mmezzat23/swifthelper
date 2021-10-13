@@ -16,6 +16,10 @@ class Addvediooption: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
+        self.view.UIViewAction {
+            self.dismiss(animated: true) { [self] in
+            }
+        }
     }
     
 }

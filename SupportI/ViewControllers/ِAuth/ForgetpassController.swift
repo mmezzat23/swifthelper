@@ -22,10 +22,7 @@ class ForgetpassController: BaseController {
             let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
             self.push(vcc)
         }
-        email.setLeftPaddingPoints(10)
-        email.setRightPaddingPoints(10)
-
-        // Do any additional setup after loading the view.
+       
     }
      func setup() {
         viewModel = .init()

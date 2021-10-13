@@ -276,23 +276,42 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         return 1
 
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        if pickerSelection == .country {
-//            return countries[row].name
-//        }else
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+////        if pickerSelection == .country {
+////            return countries[row].name
+////        }else
+//        if pickerSelection == .city{
+//            return cities[row].name
+//        }
+//        else if pickerSelection == .gender {
+//            return genders[row].name
+//        }
+//        else if pickerSelection == .raeson {
+//            return raesons[row].name
+//        }
+////        else if pickerSelection == .custom {
+////            return customs[row].title
+////        }
+//        
+//        return nil
+//    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "Muli.ttf", size: 15)
+            pickerLabel?.textAlignment = .center
+        }
         if pickerSelection == .city{
-            return cities[row].name
+            pickerLabel?.text = cities[row].name
         }
         else if pickerSelection == .gender {
-            return genders[row].name
+            pickerLabel?.text = genders[row].name
         }
         else if pickerSelection == .raeson {
-            return raesons[row].name
+            pickerLabel?.text = raesons[row].name
         }
-//        else if pickerSelection == .custom {
-//            return customs[row].title
-//        }
-        
-        return nil
+        pickerLabel?.textColor = .gray
+        return pickerLabel!
     }
 }

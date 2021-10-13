@@ -74,8 +74,10 @@ class SettingsProfile: BaseController {
             changeLang {
                 self.lang = Constants.lang
                  if (Constants.lang == "ar"){
+                     self.lang = "1"
                      self.languagetxt.text! = "العربيه"
                  }else {
+                     self.lang = "0"
                      self.languagetxt.text! = "English"
                  }
              }
@@ -97,14 +99,14 @@ class SettingsProfile: BaseController {
         self.genders.removeAll()
         self.genders.append(GenderModel(type: "1", name: "reason1".localized()))
         self.genders.append(GenderModel(type: "2", name: "reason2".localized()))
-        locationview.UIViewAction { [self] in
-            let vcc = self.pushViewController(PickersPOP.self,storyboard: .profile)
-            vcc.openWhat = "picker"
-            vcc.cities = cities
-            vcc.pickerSelection = .city
-            vcc.delegate = self
-            pushPop(vcr: vcc)
-        }
+//        locationview.UIViewAction { [self] in
+//            let vcc = self.pushViewController(PickersPOP.self,storyboard: .profile)
+//            vcc.openWhat = "picker"
+//            vcc.cities = cities
+//            vcc.pickerSelection = .city
+//            vcc.delegate = self
+//            pushPop(vcr: vcc)
+//        }
         reason.UIViewAction { [self] in
             let vcc = self.pushViewController(PickersPOP.self,storyboard: .profile)
             vcc.openWhat = "picker"
@@ -157,6 +159,7 @@ class SettingsProfile: BaseController {
             self?.darkmodeswitch.isOn = data.responseData?.isDarkMode ?? false
             self?.notificatinswitch.isOn = data.responseData?.isNotificationOn ?? false
             self?.isshop = data.responseData?.shopStatus ?? false
+            self?.lang = String(data.responseData?.language ?? 0)
             if (data.responseData?.status ?? 0 == 1){
                 self?.accountswitch.isOn = true
                 self?.accounttxt.text = "Active".localized()
@@ -219,7 +222,7 @@ class SettingsProfile: BaseController {
             
         })
         viewModel?.editdata.bind({ [weak self](data) in
-            if (self?.type == ""){
+            if (self?.lang != getAppLang() || self?.isdark != self?.responseData?.isDarkMode){
                 self?.stopLoading()
                 if (self?.lang == "ar"){
                     setAppLang(.arabic)
@@ -240,10 +243,13 @@ class SettingsProfile: BaseController {
                     UserRoot.savemode(remember: "light")
                     appDelegate.changeTheme(themeVal: "light")
                 }
-                let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                       guard let nav = controller else { return }
-                       let delegate = UIApplication.shared.delegate as? AppDelegate
-                       delegate?.window?.rootViewController = nav
+                self?.makeAlert("Your changes saved".localized(), closure: {
+                    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                           guard let nav = controller else { return }
+                           let delegate = UIApplication.shared.delegate as? AppDelegate
+                           delegate?.window?.rootViewController = nav
+                })
+               
             }else {
                 let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
                 vcc?.delegate = self
@@ -261,18 +267,19 @@ class SettingsProfile: BaseController {
     }
     @IBAction func save(_ sender: Any) {
         var error : String = ""
-        if (cityid == 0){
-            error = "\(error)\n \("select city".localized)"
-        }
-        if (error != ""){
-          makeAlert(error, closure: {})
-        }else{
+//        if (cityid == 0){
+//            error = "\(error)\n \("select city".localized)"
+//        }
+//        if (error != ""){
+//          makeAlert(error, closure: {})
+//        }else{
         if (phonetxt == phone.text){
         parameters["email"] = email.text
         parameters["phone"] = phone.text
         parameters["cityId"] = cityid
         parameters["isNotificationOn"] = isnotication
         parameters["status"] = isactive
+//        parameters["language"] = lang
         parameters["isDarkMode"] = isdark
             if (UserRoot.saller() == true){
                 parameters["shopStatus"] = isshop
@@ -284,7 +291,7 @@ class SettingsProfile: BaseController {
         }else{
             viewModel?.verfiyaccountsetting(phone: phone.text ?? "")
         }
-        }
+//        }
         print(parameters)
     }
     @IBAction func accountactive(_ sender: Any) {

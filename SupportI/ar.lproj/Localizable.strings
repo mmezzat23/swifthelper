@@ -360,4 +360,17 @@
 "Enter your new password" = "Enter your new password";
 "Re-enter your new password" = "Re-enter your new password";
 "invalid code" = "invalid code";
-
+"Loading takes few seconds, we appreciate your patience" = "Loading takes few seconds, we appreciate your patience";
+"Video Is Loading" = "Video Is Loading";
+"Confirmation  Loading" = "Confirmation  Loading";
+"Make sure that you want to upload this video" = "Make sure that you want to upload this video";
+"Confirm Password must not be password" = "Confirm Password must not be password";
+"Register" = "Register";
+"Confirm Password" = "Confirm Password";
+"Re-enter Your Password" = "Re-enter Your Password";
+"Log in" = "Log in";
+"Please enter your Email/Phone and we will send you a code to return to your account" = "Please enter your Email/Phone and we will send you a code to return to your account";
+"Forgot Password!" = "Forgot Password!";
+"SEND" = "SEND";
+"Reset Password" = "Reset Password";
+"Message sent successfully" = "Message sent successfully";

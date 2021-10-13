@@ -25,9 +25,7 @@ class ConfirmpassController: BaseController {
             let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
             self.push(vcc)
         }
-        password.setLeftPaddingPoints(10)
-        password.setRightPaddingPoints(10)
-
+      
     }
     func setup() {
        viewModel = .init()
@@ -35,8 +33,10 @@ class ConfirmpassController: BaseController {
         lock.UIViewAction { [self] in
             if (password.isSecureTextEntry){
                 password.isSecureTextEntry = false
+                lock.image = #imageLiteral(resourceName: "eye Active")
             }else{
                 password.isSecureTextEntry = true
+                lock.image = #imageLiteral(resourceName: "eye")
             }
         }
    }

@@ -99,6 +99,10 @@
 		66BE7BB126FC777900B19CC9 /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BE7BAF26FC777900B19CC9 /* PaymentTableViewCell.swift */; };
 		66BE7BB226FC777900B19CC9 /* PaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66BE7BB026FC777900B19CC9 /* PaymentTableViewCell.xib */; };
 		66BE7BB626FC7C9D00B19CC9 /* Addcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BE7BB526FC7C9D00B19CC9 /* Addcard.swift */; };
+		66D1E0642716DA3C00F5D6A6 /* Vediocache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1E0632716DA3C00F5D6A6 /* Vediocache.swift */; };
+		66D1E0662716DEEE00F5D6A6 /* Vediouoloadconfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1E0652716DEEE00F5D6A6 /* Vediouoloadconfirm.swift */; };
+		66D1E0682716DF4C00F5D6A6 /* Vedioloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1E0672716DF4C00F5D6A6 /* Vedioloading.swift */; };
+		66D1E06A2716ED4000F5D6A6 /* Vediosucessupload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1E0692716ED4000F5D6A6 /* Vediosucessupload.swift */; };
 		66D4755E27159E5F0031A356 /* Successsentproduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4755D27159E5F0031A356 /* Successsentproduct.swift */; };
 		66D475612715AC1B0031A356 /* Addvedios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D475602715AC1B0031A356 /* Addvedios.swift */; };
 		66D475632715AC750031A356 /* Vedios.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D475622715AC750031A356 /* Vedios.storyboard */; };
@@ -417,6 +421,10 @@
 		66BE7BAF26FC777900B19CC9 /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewCell.swift; sourceTree = "<group>"; };
 		66BE7BB026FC777900B19CC9 /* PaymentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentTableViewCell.xib; sourceTree = "<group>"; };
 		66BE7BB526FC7C9D00B19CC9 /* Addcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addcard.swift; sourceTree = "<group>"; };
+		66D1E0632716DA3C00F5D6A6 /* Vediocache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vediocache.swift; sourceTree = "<group>"; };
+		66D1E0652716DEEE00F5D6A6 /* Vediouoloadconfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vediouoloadconfirm.swift; sourceTree = "<group>"; };
+		66D1E0672716DF4C00F5D6A6 /* Vedioloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vedioloading.swift; sourceTree = "<group>"; };
+		66D1E0692716ED4000F5D6A6 /* Vediosucessupload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vediosucessupload.swift; sourceTree = "<group>"; };
 		66D4755D27159E5F0031A356 /* Successsentproduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Successsentproduct.swift; sourceTree = "<group>"; };
 		66D475602715AC1B0031A356 /* Addvedios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addvedios.swift; sourceTree = "<group>"; };
 		66D475622715AC750031A356 /* Vedios.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vedios.storyboard; sourceTree = "<group>"; };
@@ -847,6 +855,10 @@
 			isa = PBXGroup;
 			children = (
 				66D475602715AC1B0031A356 /* Addvedios.swift */,
+				66D1E0632716DA3C00F5D6A6 /* Vediocache.swift */,
+				66D1E0652716DEEE00F5D6A6 /* Vediouoloadconfirm.swift */,
+				66D1E0672716DF4C00F5D6A6 /* Vedioloading.swift */,
+				66D1E0692716ED4000F5D6A6 /* Vediosucessupload.swift */,
 			);
 			path = Vedios;
 			sourceTree = "<group>";
@@ -1693,6 +1705,7 @@
 				80A2FC02215841BC00223A77 /* ApiManager.swift in Sources */,
 				80A2FC28215841BC00223A77 /* GoogleModel.swift in Sources */,
 				80A2FC5E215844DD00223A77 /* GooglePlacesHelper.swift in Sources */,
+				66D1E0642716DA3C00F5D6A6 /* Vediocache.swift in Sources */,
 				80DA0161211A888600817038 /* UILabelExtensions.swift in Sources */,
 				662A036326FB2351002493D7 /* Faq.swift in Sources */,
 				80DA0151211A888600817038 /* SignedNumericExtensions.swift in Sources */,
@@ -1752,6 +1765,7 @@
 				80A2FC0E215841BC00223A77 /* ChangeLangHelper.swift in Sources */,
 				14D902BC26FB86B300DFD75D /* NotificationsViewController.swift in Sources */,
 				663932142701ED6E00874342 /* AddressModel.swift in Sources */,
+				66D1E06A2716ED4000F5D6A6 /* Vediosucessupload.swift in Sources */,
 				80A2FBF6215841BC00223A77 /* ARCarMovement.swift in Sources */,
 				66A042312712DFB90093DCA9 /* Editprofilesaller.swift in Sources */,
 				669A59C526FC94B7007615D9 /* Deletecard.swift in Sources */,
@@ -1825,6 +1839,7 @@
 				80DA0170211A888700817038 /* UIViewControllerExtensions.swift in Sources */,
 				80A2FBF8215841BC00223A77 /* GoogleMapHelper.swift in Sources */,
 				80A2FC44215841BC00223A77 /* RangeSeekSlider.swift in Sources */,
+				66D1E0662716DEEE00F5D6A6 /* Vediouoloadconfirm.swift in Sources */,
 				80DA015A211A888600817038 /* UICollectionViewExtensions.swift in Sources */,
 				80DA0143211A888600817038 /* SwifterSwift.swift in Sources */,
 				80A2FC01215841BC00223A77 /* ApiHelpers.swift in Sources */,
@@ -1877,6 +1892,7 @@
 				66F9029E2700A2A100BBE00A /* Cards.swift in Sources */,
 				669A59C826FC9A3D007615D9 /* Address.swift in Sources */,
 				8037F0F820BFABA300162BA9 /* TestViewModel.swift in Sources */,
+				66D1E0682716DF4C00F5D6A6 /* Vedioloading.swift in Sources */,
 				6620CAEB2700648500AB1A38 /* Editprofile.swift in Sources */,
 				80DA0145211A888600817038 /* BoolExtensions.swift in Sources */,
 				80DA014E211A888600817038 /* OptionalExtensions.swift in Sources */,

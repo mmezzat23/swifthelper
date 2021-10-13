@@ -22,7 +22,9 @@ class RegisterViewController: BaseController {
     var authModel : AuthViewModel?
     var viewModel : Auth1ViewModel?
     var parameters : [String : Any] = [:]
+    @IBOutlet weak var `repeat`: UITextField!
     var isPhoneNumber = false
+    @IBOutlet weak var eyerepeat: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,20 +71,20 @@ class RegisterViewController: BaseController {
     }
     
     @IBAction func signUpWithFacebookClicked(_ sender: UIButton) {
-//        let driver = FacebookDriver(delegate: self)
-//        driver.callback { user in
-//            self.startLoading()
-//            ApiManager.instance.paramaters["providerId"] = user.id
-//            ApiManager.instance.paramaters["providerName"] = "facebook"
-//            ApiManager.instance.paramaters["email"] = user.email
-//            ApiManager.instance.connectionRaw(.socaillogin, type: .post) { [self] (response) in
-//                self.stopLoading()
-//                let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
-//                parameters["emailOrPhone"] = data?.responseData?.userName
-//                parameters["password"] = data?.responseData?.password
-//                authModel?.loginapi(paramters:parameters, remember: true)
-//            }
-//        }
+        let driver = FacebookDriver(delegate: self)
+        driver.callback { user in
+            self.startLoading()
+            ApiManager.instance.paramaters["providerId"] = user.id
+            ApiManager.instance.paramaters["providerName"] = "facebook"
+            ApiManager.instance.paramaters["email"] = user.email
+            ApiManager.instance.connectionRaw(.socaillogin, type: .post) { [self] (response) in
+                self.stopLoading()
+                let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                parameters["emailOrPhone"] = data?.responseData?.userName
+                parameters["password"] = data?.responseData?.password
+                authModel?.loginapi(paramters:parameters, remember: true)
+            }
+        }
     }
     func validateTextFields() -> Bool {
         if !isPhoneNumber {
@@ -92,7 +94,8 @@ class RegisterViewController: BaseController {
         }
         userNameTxt.customValidationRules = [RequiredRule() , MaxLengthRule(length: 16)]
         passwordTxt.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),  PasswordRule()]
-        let validator = Validation(textFields: [emialOrPhoneTxt , userNameTxt ,passwordTxt])
+        `repeat`.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),  PasswordRule()]
+        let validator = Validation(textFields: [emialOrPhoneTxt , userNameTxt ,passwordTxt,`repeat`])
         return validator.success
     }
     
@@ -119,14 +122,32 @@ class RegisterViewController: BaseController {
                 eye.image = #imageLiteral(resourceName: "eye")
             }
         }
+        eyerepeat.UIViewAction { [self] in
+            if (`repeat`.isSecureTextEntry){
+                `repeat`.isSecureTextEntry = false
+                eyerepeat.image = #imageLiteral(resourceName: "eye Active")
+            }else{
+                `repeat`.isSecureTextEntry = true
+                eyerepeat.image = #imageLiteral(resourceName: "eye")
+            }
+        }
    }
     
     func signUp() {
+        var error : String = ""
+        if `repeat`.text != passwordTxt.text {
+            error = "\(error)\n \("Confirm Password must not be password".localized)"
+        }
+       
+        if (error != ""){
+          makeAlert(error, closure: {})
+        }else{
         parameters["username"] = userNameTxt.text ?? ""
         parameters["password"] = passwordTxt.text ?? ""
         parameters["scope"] = "WndoApp offline_access"
         parameters["grant_type"] = "password"
         viewModel?.RegisterApi(paramters: parameters)
+        }
     }
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in

@@ -149,6 +149,7 @@ class Token: Codable {
     var phone: String?
     var isNotificationOn: Bool?
     var status: Int?
+    var language: Int?
     var isDarkMode: Bool?
     var paymentType: Int?
     var city: ItemCity?

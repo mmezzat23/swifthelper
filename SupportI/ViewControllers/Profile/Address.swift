@@ -12,6 +12,8 @@ class Address: BaseController {
     @IBOutlet weak var address: UITableView!
     var addressdata : [ItemAddress] = []
     var viewModel : ProfileViewModel?
+    
+    @IBOutlet weak var noresult: UIView!
     @IBOutlet weak var saerchtxt: UITextField!
     var path = 0
     @IBOutlet var banner: UIView!
@@ -43,6 +45,11 @@ class Address: BaseController {
         viewModel?.addressData.bind({ [weak self](data) in
             self?.stopLoading()
             self?.addressdata.append(contentsOf: data.responseData?.items ?? [])
+            if (self?.addressdata.count == 0){
+                self?.noresult.isHidden = false
+            }else{
+                self?.noresult.isHidden = true
+            }
             self?.address.reloadData()
             
         })

@@ -165,16 +165,19 @@ class BaseApi: Downloader, Paginator, Alertable {
                                     self.setErrorMessage(data: response.data)
                                 //completionHandler(nil)
                                 case 401?:
-                                    if (url.contains("connect/token")){
-                                        UIApplication.topViewController()?.stopLoading()
-                                        self.makeAlert("the_login_is_required.lan".localized, closure: {
-                                            guard let vcr = Constants.loginNav else { return }
-                                            UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
-                                        })
-                                    }else{
-                                        UIApplication.topViewController()?.stopLoading()
-                                        self.setErrorMessage(data: response.data)
-                                    }
+                                guard let vcr = Constants.loginNav else { return }
+                                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                                appDelegate?.window?.rootViewController = vcr
+//                                    if (url.contains("connect/token")){
+//                                        UIApplication.topViewController()?.stopLoading()
+//                                        self.makeAlert("the_login_is_required.lan".localized, closure: {
+//                                            guard let vcr = Constants.loginNav else { return }
+//                                            UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
+//                                        })
+//                                    }else{
+//                                        UIApplication.topViewController()?.stopLoading()
+//                                        self.setErrorMessage(data: response.data)
+//                                    }
                                 case 404?:
                                     UIApplication.topViewController()?.stopLoading()
                                     self.makeAlert("not_found.lan".localized, closure: {})

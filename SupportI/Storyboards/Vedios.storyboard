@@ -372,6 +372,142 @@
             </objects>
             <point key="canvasLocation" x="13205.797101449276" y="3922.7678571428569"/>
         </scene>
+        <!--Vediocache-->
+        <scene sceneID="ga0-HA-SQ9">
+            <objects>
+                <viewController storyboardIdentifier="Vediocache" id="dbq-DM-kgU" customClass="Vediocache" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bzs-aP-wdV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j46-F6-CDJ">
+                                <rect key="frame" x="17" y="288" width="380" height="320"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-df-bed">
+                                        <rect key="frame" x="90" y="30" width="200" height="29.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="caV-c6-fhM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="20"/>
+                                        <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Upload Video"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WN1-Mc-eas">
+                                        <rect key="frame" x="12" y="109.5" width="356" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="aaA-8J-Yhh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse your files" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-Ps-2Op">
+                                        <rect key="frame" x="133" y="141" width="114" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
+                                        <color key="textColor" red="0.0039215686269999999" green="0.078431372550000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Browse your files"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload" translatesAutoresizingMaskIntoConstraints="NO" id="zPK-2R-LZN">
+                                        <rect key="frame" x="95" y="142" width="28" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="gOy-sj-Ic5"/>
+                                            <constraint firstAttribute="height" constant="19" id="z0e-yd-luZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rOK-GX-oKU">
+                                        <rect key="frame" x="45" y="233.5" width="290" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dL-I5-QBa">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Cancel"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancel:" destination="dbq-DM-kgU" eventType="touchUpInside" id="Yqv-mn-DSC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EH-Iz-0sv">
+                                                <rect key="frame" x="160" y="0.0" width="130" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Upload">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Upload"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="upload:" destination="dbq-DM-kgU" eventType="touchUpInside" id="hgo-cA-jTb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="DEz-TE-dju"/>
+                                            <constraint firstAttribute="width" constant="290" id="s18-fM-SV5"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="AGO-df-bed" firstAttribute="centerX" secondItem="j46-F6-CDJ" secondAttribute="centerX" id="2Uu-Fc-rC6"/>
+                                    <constraint firstItem="rOK-GX-oKU" firstAttribute="top" secondItem="WN1-Mc-eas" secondAttribute="bottom" constant="40" id="3EV-Cd-7Nj"/>
+                                    <constraint firstAttribute="trailing" secondItem="WN1-Mc-eas" secondAttribute="trailing" constant="12" id="R2E-A2-ElO"/>
+                                    <constraint firstItem="WN1-Mc-eas" firstAttribute="top" secondItem="AGO-df-bed" secondAttribute="bottom" constant="50" id="UUx-xf-AKF"/>
+                                    <constraint firstAttribute="height" constant="320" id="XGE-Dm-C6f"/>
+                                    <constraint firstItem="zPK-2R-LZN" firstAttribute="centerY" secondItem="uWO-Ps-2Op" secondAttribute="centerY" id="dCh-R3-ahy"/>
+                                    <constraint firstItem="rOK-GX-oKU" firstAttribute="centerX" secondItem="j46-F6-CDJ" secondAttribute="centerX" id="dq6-rq-ASb"/>
+                                    <constraint firstItem="WN1-Mc-eas" firstAttribute="leading" secondItem="j46-F6-CDJ" secondAttribute="leading" constant="12" id="eGN-ks-3y8"/>
+                                    <constraint firstItem="AGO-df-bed" firstAttribute="top" secondItem="j46-F6-CDJ" secondAttribute="top" constant="30" id="hUT-Fa-IOW"/>
+                                    <constraint firstItem="uWO-Ps-2Op" firstAttribute="leading" secondItem="zPK-2R-LZN" secondAttribute="trailing" constant="10" id="jdx-mf-rT3"/>
+                                    <constraint firstItem="uWO-Ps-2Op" firstAttribute="centerY" secondItem="WN1-Mc-eas" secondAttribute="centerY" id="lR1-sk-Zka"/>
+                                    <constraint firstItem="uWO-Ps-2Op" firstAttribute="centerX" secondItem="WN1-Mc-eas" secondAttribute="centerX" id="sGA-mJ-HBm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JH3-e2-AxP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j46-F6-CDJ" firstAttribute="leading" secondItem="JH3-e2-AxP" secondAttribute="leading" constant="17" id="227-rH-HZT"/>
+                            <constraint firstItem="JH3-e2-AxP" firstAttribute="trailing" secondItem="j46-F6-CDJ" secondAttribute="trailing" constant="17" id="Fxg-GV-WNz"/>
+                            <constraint firstItem="j46-F6-CDJ" firstAttribute="centerX" secondItem="Bzs-aP-wdV" secondAttribute="centerX" id="K9b-s9-L1N"/>
+                            <constraint firstItem="j46-F6-CDJ" firstAttribute="centerY" secondItem="Bzs-aP-wdV" secondAttribute="centerY" id="bL6-Ez-csa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gDf-Rv-nga"/>
+                    <connections>
+                        <outlet property="attach" destination="WN1-Mc-eas" id="jC7-Pp-6M8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjw-tU-jRY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14957.971014492754" y="3821.6517857142853"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="smQ-Pm-4MW">
             <objects>
@@ -390,10 +526,337 @@
             </objects>
             <point key="canvasLocation" x="12295.652173913044" y="3922.7678571428569"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ikG-ff-pcD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m4f-Bd-Fci" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ki-F6-ete">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dbq-DM-kgU" kind="relationship" relationship="rootViewController" id="JD3-OJ-mLL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KkV-RQ-NzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14047.826086956522" y="3821.6517857142853"/>
+        </scene>
+        <!--Vediouoloadconfirm-->
+        <scene sceneID="VPc-Xc-DsZ">
+            <objects>
+                <viewController storyboardIdentifier="Vediouoloadconfirm" id="f5o-Eb-hSv" customClass="Vediouoloadconfirm" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RiA-q7-DMr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksx-v2-3D0">
+                                <rect key="frame" x="30" y="333" width="354" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation  Loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRh-Cv-WuS">
+                                        <rect key="frame" x="20" y="24" width="314" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
+                                        <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Confirmation  Loading"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure that you want to upload this video" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uup-CT-Jhm">
+                                        <rect key="frame" x="50" y="85.5" width="254" height="41.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Make sure that you want to upload this video"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="doH-lg-XCf">
+                                        <rect key="frame" x="64.5" y="166" width="225" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8X-pd-tx5">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="44"/>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                <state key="normal" title="DISCARD">
+                                                    <color key="titleColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="DISCARD"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="discard:" destination="f5o-Eb-hSv" eventType="touchUpInside" id="JSt-Kw-Xnb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esl-cp-eGl">
+                                                <rect key="frame" x="120" y="0.0" width="105" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                <state key="normal" title="YES">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="yes:" destination="f5o-Eb-hSv" eventType="touchUpInside" id="Gfo-Fy-Ndr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="dVt-dA-wyK"/>
+                                            <constraint firstAttribute="height" constant="44" id="lJy-K2-4hm"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="doH-lg-XCf" firstAttribute="centerX" secondItem="Ksx-v2-3D0" secondAttribute="centerX" id="0TO-US-fWi"/>
+                                    <constraint firstItem="rRh-Cv-WuS" firstAttribute="centerX" secondItem="Ksx-v2-3D0" secondAttribute="centerX" id="6ya-i6-ng8"/>
+                                    <constraint firstAttribute="bottom" secondItem="doH-lg-XCf" secondAttribute="bottom" constant="20" id="809-FN-uve"/>
+                                    <constraint firstItem="uup-CT-Jhm" firstAttribute="leading" secondItem="Ksx-v2-3D0" secondAttribute="leading" constant="50" id="9Fv-Fs-bIg"/>
+                                    <constraint firstItem="uup-CT-Jhm" firstAttribute="top" secondItem="rRh-Cv-WuS" secondAttribute="bottom" constant="32" id="JYy-H9-dpf"/>
+                                    <constraint firstAttribute="height" constant="230" id="WfW-Ue-x2b"/>
+                                    <constraint firstAttribute="trailing" secondItem="uup-CT-Jhm" secondAttribute="trailing" constant="50" id="bxN-u6-gyC"/>
+                                    <constraint firstItem="rRh-Cv-WuS" firstAttribute="top" secondItem="Ksx-v2-3D0" secondAttribute="top" constant="24" id="ght-Sy-iNl"/>
+                                    <constraint firstItem="rRh-Cv-WuS" firstAttribute="leading" secondItem="Ksx-v2-3D0" secondAttribute="leading" constant="20" id="jz4-Sf-LI3"/>
+                                    <constraint firstAttribute="trailing" secondItem="rRh-Cv-WuS" secondAttribute="trailing" constant="20" id="x4K-OR-hxT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KyT-oa-1rC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ksx-v2-3D0" firstAttribute="centerY" secondItem="RiA-q7-DMr" secondAttribute="centerY" id="OI4-23-s2B"/>
+                            <constraint firstItem="Ksx-v2-3D0" firstAttribute="leading" secondItem="KyT-oa-1rC" secondAttribute="leading" constant="30" id="X8q-qA-iYf"/>
+                            <constraint firstItem="Ksx-v2-3D0" firstAttribute="centerX" secondItem="RiA-q7-DMr" secondAttribute="centerX" id="eB7-CL-FEL"/>
+                            <constraint firstItem="KyT-oa-1rC" firstAttribute="trailing" secondItem="Ksx-v2-3D0" secondAttribute="trailing" constant="30" id="xxV-h1-Hwx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Eef-hi-NPn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jnW-tM-6wi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16613.043478260872" y="3821.6517857142853"/>
+        </scene>
+        <!--Vedioloading-->
+        <scene sceneID="5rg-ca-sde">
+            <objects>
+                <viewController storyboardIdentifier="Vedioloading" id="XEv-yi-piN" customClass="Vedioloading" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="daV-dg-vZp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBW-Ka-7D6">
+                                <rect key="frame" x="30" y="308" width="354" height="280"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Is Loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWZ-lQ-6WD">
+                                        <rect key="frame" x="20" y="24" width="314" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
+                                        <color key="textColor" red="0.0039215686269999999" green="0.078431372550000003" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Video Is Loading"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loop" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-eq-qCh">
+                                        <rect key="frame" x="146" y="93.5" width="62" height="82"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="82" id="9Oa-Sr-Qqg"/>
+                                            <constraint firstAttribute="width" constant="62" id="Vpw-vT-PCH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading takes few seconds, we appreciate your patience" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwn-3h-gy7">
+                                        <rect key="frame" x="20" y="207.5" width="314" height="47.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Loading takes few seconds, we appreciate your patience"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="Eys-xa-bXk"/>
+                                    <constraint firstItem="mwn-3h-gy7" firstAttribute="leading" secondItem="mBW-Ka-7D6" secondAttribute="leading" constant="20" id="JJJ-VP-3Tr"/>
+                                    <constraint firstItem="wWZ-lQ-6WD" firstAttribute="leading" secondItem="mBW-Ka-7D6" secondAttribute="leading" constant="20" id="Kq6-aq-Bta"/>
+                                    <constraint firstAttribute="trailing" secondItem="mwn-3h-gy7" secondAttribute="trailing" constant="20" id="XAz-oS-Dio"/>
+                                    <constraint firstItem="Oxe-eq-qCh" firstAttribute="top" secondItem="wWZ-lQ-6WD" secondAttribute="bottom" constant="40" id="h9i-H7-rO0"/>
+                                    <constraint firstItem="wWZ-lQ-6WD" firstAttribute="top" secondItem="mBW-Ka-7D6" secondAttribute="top" constant="24" id="id4-zd-06D"/>
+                                    <constraint firstAttribute="trailing" secondItem="wWZ-lQ-6WD" secondAttribute="trailing" constant="20" id="jUx-mO-Slm"/>
+                                    <constraint firstItem="wWZ-lQ-6WD" firstAttribute="centerX" secondItem="mBW-Ka-7D6" secondAttribute="centerX" id="kvk-Ok-HJI"/>
+                                    <constraint firstItem="mwn-3h-gy7" firstAttribute="top" secondItem="Oxe-eq-qCh" secondAttribute="bottom" constant="32" id="oBE-x9-rlT"/>
+                                    <constraint firstItem="Oxe-eq-qCh" firstAttribute="centerX" secondItem="mBW-Ka-7D6" secondAttribute="centerX" id="yLJ-Nv-sOv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vco-3t-uqE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mBW-Ka-7D6" firstAttribute="centerY" secondItem="daV-dg-vZp" secondAttribute="centerY" id="7aZ-Ny-FNu"/>
+                            <constraint firstItem="Vco-3t-uqE" firstAttribute="trailing" secondItem="mBW-Ka-7D6" secondAttribute="trailing" constant="30" id="ChG-dJ-0X7"/>
+                            <constraint firstItem="mBW-Ka-7D6" firstAttribute="centerX" secondItem="daV-dg-vZp" secondAttribute="centerX" id="DVq-e9-E2H"/>
+                            <constraint firstItem="mBW-Ka-7D6" firstAttribute="leading" secondItem="Vco-3t-uqE" secondAttribute="leading" constant="30" id="Gey-t3-Nxr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dNp-ta-KMb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3AW-Ch-aEi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18260.869565217392" y="3821.6517857142853"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cu1-9q-zjl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6vy-Pf-mhG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9on-GH-BD8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f5o-Eb-hSv" kind="relationship" relationship="rootViewController" id="NdQ-Yk-cEu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfN-fI-r4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15702.89855072464" y="3821.6517857142853"/>
+        </scene>
+        <!--Vediosucessupload-->
+        <scene sceneID="xDH-3y-QQN">
+            <objects>
+                <viewController storyboardIdentifier="Vediosucessupload" id="ZbI-c0-Whn" customClass="Vediosucessupload" customModule="Wndo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1bU-p9-PNS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMo-9S-vBD">
+                                <rect key="frame" x="30" y="308" width="354" height="280"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 11179" translatesAutoresizingMaskIntoConstraints="NO" id="sCc-xN-4J8">
+                                        <rect key="frame" x="119.5" y="30" width="115" height="111"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="115" id="4Mc-hC-nev"/>
+                                            <constraint firstAttribute="height" constant="111" id="Mrm-nj-ys4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your video uploaded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCL-uH-Zfp">
+                                        <rect key="frame" x="77" y="171" width="200" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Your video uploaded"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCJ-Cc-uCA">
+                                        <rect key="frame" x="112" y="230.5" width="130" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="a6K-c3-2C5"/>
+                                            <constraint firstAttribute="width" constant="130" id="hWa-tg-7g5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="16"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Done"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="done:" destination="ZbI-c0-Whn" eventType="touchUpInside" id="YwL-xS-9qz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="MCL-uH-Zfp" firstAttribute="centerX" secondItem="HMo-9S-vBD" secondAttribute="centerX" id="3LB-rN-DDT"/>
+                                    <constraint firstItem="sCc-xN-4J8" firstAttribute="centerX" secondItem="HMo-9S-vBD" secondAttribute="centerX" id="4tV-Lm-EJV"/>
+                                    <constraint firstItem="uCJ-Cc-uCA" firstAttribute="top" secondItem="MCL-uH-Zfp" secondAttribute="bottom" constant="30" id="RY8-ul-JPu"/>
+                                    <constraint firstItem="sCc-xN-4J8" firstAttribute="top" secondItem="HMo-9S-vBD" secondAttribute="top" constant="30" id="Uee-HD-Pbx"/>
+                                    <constraint firstItem="MCL-uH-Zfp" firstAttribute="top" secondItem="sCc-xN-4J8" secondAttribute="bottom" constant="30" id="UnY-Tx-mcE"/>
+                                    <constraint firstItem="uCJ-Cc-uCA" firstAttribute="centerX" secondItem="HMo-9S-vBD" secondAttribute="centerX" id="anB-GE-lBR"/>
+                                    <constraint firstAttribute="height" constant="280" id="wSV-aH-IHO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qba-r2-tx0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HMo-9S-vBD" firstAttribute="centerX" secondItem="1bU-p9-PNS" secondAttribute="centerX" id="eqd-4c-aAg"/>
+                            <constraint firstItem="HMo-9S-vBD" firstAttribute="leading" secondItem="qba-r2-tx0" secondAttribute="leading" constant="30" id="i7t-fg-GSb"/>
+                            <constraint firstItem="qba-r2-tx0" firstAttribute="trailing" secondItem="HMo-9S-vBD" secondAttribute="trailing" constant="30" id="olh-T8-r3j"/>
+                            <constraint firstItem="HMo-9S-vBD" firstAttribute="centerY" secondItem="1bU-p9-PNS" secondAttribute="centerY" id="rIt-cm-PqT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xie-j9-ApO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qs-ef-oiC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19988.405797101452" y="3821.6517857142853"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Awv-Uk-ED1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W3x-j1-2PL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iRN-N1-M9n">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XEv-yi-piN" kind="relationship" relationship="rootViewController" id="dwh-fz-poi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8i9-PC-kaT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17350.72463768116" y="3821.6517857142853"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AWg-dE-7iA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ioI-OO-3nx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="End-hd-PmR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZbI-c0-Whn" kind="relationship" relationship="rootViewController" id="9ka-4c-9yg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="034-YW-aBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19078.26086956522" y="3821.6517857142853"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Back Button" width="8" height="15"/>
+        <image name="Background-1" width="341" height="84"/>
+        <image name="Group 11179" width="115.5" height="111.5"/>
+        <image name="loop" width="59.5" height="81.5"/>
         <image name="notify" width="21.5" height="25"/>
+        <image name="upload" width="28" height="19"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1129,6 +1129,36 @@
                                             <action selector="addcard:" destination="IFz-UM-ctA" eventType="touchUpInside" id="iVg-QG-pOh"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ChH-2A-Mcb">
+                                        <rect key="frame" x="32" y="267" width="350" height="220"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sorry12" translatesAutoresizingMaskIntoConstraints="NO" id="Iry-OE-E3z">
+                                                <rect key="frame" x="113" y="0.0" width="124" height="149"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="149" id="n4R-aO-Y0m"/>
+                                                    <constraint firstAttribute="width" constant="124" id="r79-MW-2JB"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You didn't publish any content yet." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-kq-k38">
+                                                <rect key="frame" x="50" y="179" width="250" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="15"/>
+                                                <color key="textColor" red="0.47843137254901957" green="0.55294117647058827" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="You didn't publish any content yet."/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Iry-OE-E3z" firstAttribute="top" secondItem="ChH-2A-Mcb" secondAttribute="top" id="1EU-fq-LHk"/>
+                                            <constraint firstItem="jZe-kq-k38" firstAttribute="top" secondItem="Iry-OE-E3z" secondAttribute="bottom" constant="30" id="FiF-w5-Ddj"/>
+                                            <constraint firstAttribute="width" constant="350" id="ZXE-ZY-3Hg"/>
+                                            <constraint firstAttribute="height" constant="220" id="fJM-p1-c5C"/>
+                                            <constraint firstItem="jZe-kq-k38" firstAttribute="centerX" secondItem="ChH-2A-Mcb" secondAttribute="centerX" id="raU-xf-WS3"/>
+                                            <constraint firstItem="Iry-OE-E3z" firstAttribute="centerX" secondItem="ChH-2A-Mcb" secondAttribute="centerX" id="zl5-pu-kQr"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1138,6 +1168,8 @@
                                     <constraint firstAttribute="bottom" secondItem="o0v-nC-Eeb" secondAttribute="bottom" constant="150" id="ZmI-bc-fYt"/>
                                     <constraint firstAttribute="bottom" secondItem="ta6-JC-fgZ" secondAttribute="bottom" constant="80" id="bvN-sX-VmO"/>
                                     <constraint firstItem="ta6-JC-fgZ" firstAttribute="centerX" secondItem="xhU-ma-8Gk" secondAttribute="centerX" id="nHJ-5g-x8Q"/>
+                                    <constraint firstItem="ChH-2A-Mcb" firstAttribute="centerX" secondItem="xhU-ma-8Gk" secondAttribute="centerX" id="q8m-bC-TBR"/>
+                                    <constraint firstItem="ChH-2A-Mcb" firstAttribute="centerY" secondItem="xhU-ma-8Gk" secondAttribute="centerY" id="ziC-Zg-Vvq"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1177,12 +1209,13 @@
                     <connections>
                         <outlet property="address" destination="o0v-nC-Eeb" id="VCm-6G-rUh"/>
                         <outlet property="banner" destination="pFS-ED-Z4y" id="Edv-gB-aZw"/>
+                        <outlet property="noresult" destination="ChH-2A-Mcb" id="pF4-6J-6OR"/>
                         <outlet property="notify" destination="eFC-rW-t6L" id="hor-RS-Smz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIn-0r-1ip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17547.826086956524" y="4169.8660714285716"/>
+            <point key="canvasLocation" x="17612" y="4175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cnq-JL-W9u">
@@ -1536,8 +1569,9 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Language"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-2" translatesAutoresizingMaskIntoConstraints="NO" id="s6a-da-Wtb">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back Button-4" translatesAutoresizingMaskIntoConstraints="NO" id="s6a-da-Wtb">
                                                         <rect key="frame" x="348" y="36" width="6" height="10"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="76C-IA-wDF"/>
                                                             <constraint firstAttribute="width" constant="6" id="uB4-xV-9Iw"/>
@@ -2832,7 +2866,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="44"/>
                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
                                                 <state key="normal" title="DISCARD">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="DISCARD"/>
@@ -3321,9 +3355,9 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpF-xM-NxK">
-                                        <rect key="frame" x="20" y="79.5" width="314" height="40"/>
+                                        <rect key="frame" x="20" y="79.5" width="314" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="tDZ-ib-0mP"/>
+                                            <constraint firstAttribute="height" constant="50" id="tDZ-ib-0mP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3332,7 +3366,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSE-br-tZS">
-                                        <rect key="frame" x="20" y="119.5" width="314" height="0.5"/>
+                                        <rect key="frame" x="20" y="129.5" width="314" height="0.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="GHr-dc-aKz"/>
@@ -3614,7 +3648,7 @@
     </scenes>
     <resources>
         <image name="Back Button" width="9" height="15"/>
-        <image name="Back Button-2" width="8.5" height="15"/>
+        <image name="Back Button-4" width="8" height="15"/>
         <image name="Combined Shape" width="315" height="91"/>
         <image name="Delete_button_2" width="12.5" height="16"/>
         <image name="Fill 1097-2" width="22.5" height="22"/>
@@ -3639,6 +3673,7 @@
         <image name="location" width="18" height="18"/>
         <image name="parthenon" width="18" height="18"/>
         <image name="radio button-1" width="30" height="30"/>
+        <image name="sorry12" width="123.5" height="148.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

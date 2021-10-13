@@ -12,15 +12,12 @@ import UIKit
 func changeLang(closure:@escaping () -> Void ) {
     let alert = UIAlertController(title: "change_language.lan".localized, message: nil, preferredStyle: .actionSheet)
     alert.addAction(UIAlertAction(title: "العربية", style: .default, handler: { _ in
-        setAppLang(.arabic)
         Constants.lang = "ar"
-        initLang()
+        
         closure()
     }))
     alert.addAction(UIAlertAction(title: "الأنجليزية", style: .default, handler: { _ in
-        setAppLang(.english)
         Constants.lang = "en"
-        initLang()
         closure()
     }))
     alert.addAction(UIAlertAction.init(title: "cancel".localized, style: .cancel, handler: nil))

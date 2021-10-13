@@ -10,6 +10,8 @@ import UIKit
 
 class Contactus: BaseController {
 
+    @IBOutlet weak var orderlblline: UILabel!
+    @IBOutlet weak var raesonlbl: UILabel!
     @IBOutlet weak var orderlbl: UILabel!
     @IBOutlet weak var reasonlbl: UILabel!
     @IBOutlet weak var orderconstant: NSLayoutConstraint!
@@ -63,6 +65,8 @@ class Contactus: BaseController {
             }
             viewModel?.getaccountsetting()
         }else{
+            orderlblline.isHidden = true
+            raesonlbl.isHidden = true
             order.isHidden = true
             reason.isHidden = true
             ordertxt.isHidden = true
@@ -139,17 +143,19 @@ class Contactus: BaseController {
         })
         viewModel?.deletedata.bind({ [weak self](data) in
             self?.stopLoading()
-            if (UserRoot.saller() == true){
-                let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
-                       guard let nav = controller else { return }
-                       let delegate = UIApplication.shared.delegate as? AppDelegate
-                       delegate?.window?.rootViewController = nav
-            }else{
-                let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-                       guard let nav = controller else { return }
-                       let delegate = UIApplication.shared.delegate as? AppDelegate
-                       delegate?.window?.rootViewController = nav
-            }
+            self?.makeAlert("Message sent successfully".localized(), closure: {
+                if (UserRoot.saller() == true){
+                    let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
+                           guard let nav = controller else { return }
+                           let delegate = UIApplication.shared.delegate as? AppDelegate
+                           delegate?.window?.rootViewController = nav
+                }else{
+                    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                           guard let nav = controller else { return }
+                           let delegate = UIApplication.shared.delegate as? AppDelegate
+                           delegate?.window?.rootViewController = nav
+                }
+            })
            
         })
         viewModel?.errordata.bind({ [weak self](data) in

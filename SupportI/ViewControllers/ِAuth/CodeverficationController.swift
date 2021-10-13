@@ -80,6 +80,14 @@ class CodeverficationController: BaseController , UITextFieldDelegate{
         resend.attributedText = attributedString
     }
     
+    @IBAction func back(_ sender: Any) {
+        if (self.isverify == true){
+            self.dismiss(animated: true) { [self] in
+            }
+        }else{
+            self.navigationController?.popViewController()
+        }
+    }
     func starttime() {
         self.resend.isHidden = true
         self.time.isHidden = false

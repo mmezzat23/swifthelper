@@ -55,6 +55,8 @@ class Editemail: BaseController {
                 vcc.pickerSelection = .city
                 vcc.delegate = self
                 pushPop(vcr: vcc)
+            }else {
+                input.becomeFirstResponder()
             }
         }
     }

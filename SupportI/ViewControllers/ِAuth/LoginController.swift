@@ -16,6 +16,7 @@ class LoginController: BaseController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var forget: UIButton!
     
+    @IBOutlet weak var eye: UIImageView!
     var viewModel : AuthViewModel?
     var parameters : [String : Any] = [:]
     var isrember = false
@@ -30,6 +31,12 @@ class LoginController: BaseController {
         let buttonTitleStr = NSMutableAttributedString(string:"Forgot Password".localized, attributes:attrs)
         attributedString.append(buttonTitleStr)
         forget.setAttributedTitle(attributedString, for: .normal)
+        if (getAppLang() == "en"){
+            forget.contentHorizontalAlignment = .left
+        }else {
+            forget.contentHorizontalAlignment = .right
+        }
+
     }
      func setup() {
         viewModel = .init()
@@ -39,6 +46,15 @@ class LoginController: BaseController {
                 } else {
                     // Fallback on earlier versions
                 }
+         eye.UIViewAction { [self] in
+             if (passwordTxt.isSecureTextEntry){
+                 passwordTxt.isSecureTextEntry = false
+                 eye.image = #imageLiteral(resourceName: "eye Active")
+             }else{
+                 passwordTxt.isSecureTextEntry = true
+                 eye.image = #imageLiteral(resourceName: "eye")
+             }
+         }
     }
    
     override func bind() {
@@ -127,12 +143,15 @@ class LoginController: BaseController {
         let vcc = self.controller(RegisterViewController.self,storyboard: .auth)
         self.push(vcc)
     }
+    @IBAction func back(_ sender: Any) {
+        exit(0)
+    }
     @IBAction func rememberMeClicked(_ sender: UIButton) {
         if (isrember == true){
             sender.setImage(#imageLiteral(resourceName: "Check Box Area"), for: .normal)
             isrember = false
         }else{
-            sender.setImage(#imageLiteral(resourceName: "Check Box"), for: .normal)
+            sender.setImage(#imageLiteral(resourceName: "Check Box-1"), for: .normal)
             isrember = true
         }
         
@@ -159,7 +178,7 @@ extension LoginController: ASAuthorizationControllerDelegate {
         let authorizationButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .whiteOutline)
         authorizationButton.addTarget(self, action: #selector(handleAppleIdRequest), for: .touchUpInside)
         (authorizationButton as UIControl).cornerRadius = 25
-        (authorizationButton as UIControl).borderWidth = 0.5
+        (authorizationButton as UIControl).borderWidth = 1
         (authorizationButton as UIControl).borderColor = .clear
         authorizationButton.frame = CGRect(x: 0, y: 0, width: appleview.frame.width, height: appleview.frame.height)
         //Add button on some view or stack
