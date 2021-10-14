@@ -73,9 +73,9 @@ class BaseApi: Downloader, Paginator, Alertable {
                 print(response.result.value ?? "")
                 print(response.response?.statusCode ?? 0)
                 self.isHttpRequestRun = false
-                switch response.result {
-                //case .success(let value)
-                case .success:
+//                switch response.result {
+//                //case .success(let value)
+//                case .success:
                     switch response.response?.statusCode {
                     case 200?:
                         completionHandler(response.data)
@@ -116,10 +116,10 @@ class BaseApi: Downloader, Paginator, Alertable {
                         UIApplication.topViewController()?.stopLoading()
                         self.makeAlert(error.string, closure: {})
                     }
-                case .failure(let error):
-                    UIApplication.topViewController()?.stopLoading()
-                    self.makeAlert(error.localizedDescription, closure: {})
-                }
+//                case .failure(let error):
+//                    UIApplication.topViewController()?.stopLoading()
+//                    self.makeAlert(error.localizedDescription, closure: {})
+//                }
         }
     }
     func connectionRaw(_ method: String, type: HTTPMethod,
@@ -151,9 +151,9 @@ class BaseApi: Downloader, Paginator, Alertable {
                 .responseJSON { response in
                     print(response.result.value ?? "")
                     self.isHttpRequestRun = false
-                    switch response.result {
-                        //case .success(let value)
-                        case .success:
+//                    switch response.result {
+//                        //case .success(let value)
+//                        case .success:
                             switch response.response?.statusCode {
                                 case 200?:
                                     completionHandler(response.data)
@@ -191,10 +191,10 @@ class BaseApi: Downloader, Paginator, Alertable {
                                     UIApplication.topViewController()?.stopLoading()
                                     self.makeAlert(error.string, closure: {})
                         }
-                        case .failure(let error):
-                            UIApplication.topViewController()?.stopLoading()
-                            self.makeAlert(error.localizedDescription, closure: {})
-                    }
+//                        case .failure(let error):
+//                            UIApplication.topViewController()?.stopLoading()
+//                            self.makeAlert(error.localizedDescription, closure: {})
+//                    }
             }
     }
     func uploadFile(_ method: String , type: HTTPMethod, file: [[String: URL?]], completionHandler: @escaping (Data?) -> ()) {

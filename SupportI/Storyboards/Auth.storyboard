@@ -1182,7 +1182,7 @@ aW51ZSB3aXRoIHNvY2lhbCBtZWRpYQ
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="9" height="15"/>
+        <image name="Back Button" width="8" height="15"/>
         <image name="Check Box Area" width="14" height="14"/>
         <image name="eye" width="22.5" height="19.5"/>
         <image name="facebook" width="37" height="37"/>

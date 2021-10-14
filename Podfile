@@ -24,5 +24,8 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 pod 'GoogleSignIn'
+pod 'SCRecorder'
+pod 'KDCircularProgress'
+
 
 end

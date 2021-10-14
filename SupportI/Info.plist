@@ -19,13 +19,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleURLTypes</key>
-    <array>
-    <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>fb139927698347638</string>
-        </array>
-    </dict>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb139927698347638</string>
+			</array>
+		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -35,12 +35,12 @@
 			</array>
 		</dict>
 	</array>
-    <key>FacebookAppID</key>
-    <string>139927698347638</string>
-    <key>FacebookDisplayName</key>
-    <string>Wndo</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>139927698347638</string>
+	<key>FacebookDisplayName</key>
+	<string>Wndo</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -54,6 +54,8 @@
 	<string>Allow to use your location to find nearest places</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow to use your location to find nearest places</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Need microphone access for uploading videos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow to use photo library for update your image</string>
 	<key>UIAppFonts</key>
@@ -89,6 +91,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
