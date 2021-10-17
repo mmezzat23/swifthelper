@@ -1603,9 +1603,9 @@
                                                         <state key="normal" image="Group 11316"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-wk-2IA">
-                                                        <rect key="frame" x="65" y="19.5" width="120" height="21"/>
+                                                        <rect key="frame" x="60" y="19.5" width="110" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="V7y-sh-rHL"/>
+                                                            <constraint firstAttribute="width" constant="110" id="V7y-sh-rHL"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -1615,7 +1615,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX8-YK-yKf">
-                                                        <rect key="frame" x="195" y="21" width="58" height="18"/>
+                                                        <rect key="frame" x="180" y="21" width="105" height="18"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1637,12 +1637,13 @@
                                                     <constraint firstItem="rX8-YK-yKf" firstAttribute="centerY" secondItem="gcY-bh-TtM" secondAttribute="centerY" id="4gW-wk-2Vj"/>
                                                     <constraint firstItem="CPi-z4-1ht" firstAttribute="centerY" secondItem="gcY-bh-TtM" secondAttribute="centerY" id="7WC-IO-foj"/>
                                                     <constraint firstItem="o6g-5b-qDp" firstAttribute="centerY" secondItem="gcY-bh-TtM" secondAttribute="centerY" id="8Cx-bb-Xp2"/>
+                                                    <constraint firstItem="o6g-5b-qDp" firstAttribute="leading" secondItem="rX8-YK-yKf" secondAttribute="trailing" constant="20" id="9fe-9s-52X"/>
                                                     <constraint firstItem="CPi-z4-1ht" firstAttribute="leading" secondItem="gcY-bh-TtM" secondAttribute="leading" id="IZ8-hR-4pL"/>
                                                     <constraint firstItem="rX8-YK-yKf" firstAttribute="leading" secondItem="FFf-wk-2IA" secondAttribute="trailing" constant="10" id="TMY-AM-WwS"/>
                                                     <constraint firstItem="FFf-wk-2IA" firstAttribute="centerY" secondItem="gcY-bh-TtM" secondAttribute="centerY" id="mI6-n7-FR8"/>
                                                     <constraint firstAttribute="trailing" secondItem="o6g-5b-qDp" secondAttribute="trailing" id="sBL-09-p3K"/>
                                                     <constraint firstAttribute="height" constant="60" id="sl0-LY-7Jf"/>
-                                                    <constraint firstItem="FFf-wk-2IA" firstAttribute="leading" secondItem="CPi-z4-1ht" secondAttribute="trailing" constant="25" id="tEh-Vf-hiz"/>
+                                                    <constraint firstItem="FFf-wk-2IA" firstAttribute="leading" secondItem="CPi-z4-1ht" secondAttribute="trailing" constant="20" id="tEh-Vf-hiz"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bJ-2y-Tei">
@@ -1657,9 +1658,9 @@
                                                         <state key="normal" image="Group 11315"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W90-8j-zUl">
-                                                        <rect key="frame" x="65" y="19.5" width="120" height="21"/>
+                                                        <rect key="frame" x="60" y="19.5" width="110" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="wfx-4b-98D"/>
+                                                            <constraint firstAttribute="width" constant="110" id="wfx-4b-98D"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -1669,7 +1670,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgM-Py-4ot">
-                                                        <rect key="frame" x="195" y="21" width="58" height="18"/>
+                                                        <rect key="frame" x="180" y="21" width="105" height="18"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1688,7 +1689,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="W90-8j-zUl" firstAttribute="leading" secondItem="9bX-8L-a03" secondAttribute="trailing" constant="25" id="HdL-tG-Z3c"/>
+                                                    <constraint firstItem="W90-8j-zUl" firstAttribute="leading" secondItem="9bX-8L-a03" secondAttribute="trailing" constant="20" id="HdL-tG-Z3c"/>
+                                                    <constraint firstItem="hKA-c9-efe" firstAttribute="leading" secondItem="OgM-Py-4ot" secondAttribute="trailing" constant="20" id="J0c-ys-OA4"/>
                                                     <constraint firstItem="W90-8j-zUl" firstAttribute="centerY" secondItem="3bJ-2y-Tei" secondAttribute="centerY" id="JOj-iW-RvU"/>
                                                     <constraint firstItem="OgM-Py-4ot" firstAttribute="leading" secondItem="W90-8j-zUl" secondAttribute="trailing" constant="10" id="Tdx-lD-WSq"/>
                                                     <constraint firstItem="9bX-8L-a03" firstAttribute="centerY" secondItem="3bJ-2y-Tei" secondAttribute="centerY" id="UGt-cu-wmg"/>
@@ -1711,9 +1713,9 @@
                                                         <state key="normal" image="Group 11317"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A56-mY-UAa">
-                                                        <rect key="frame" x="65" y="19.5" width="120" height="21"/>
+                                                        <rect key="frame" x="60" y="19.5" width="110" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="H3j-hy-fc6"/>
+                                                            <constraint firstAttribute="width" constant="110" id="H3j-hy-fc6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -1723,7 +1725,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be3-5W-5zA">
-                                                        <rect key="frame" x="195" y="21" width="58" height="18"/>
+                                                        <rect key="frame" x="180" y="21" width="105" height="18"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1743,7 +1745,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="be3-5W-5zA" firstAttribute="leading" secondItem="A56-mY-UAa" secondAttribute="trailing" constant="10" id="2rA-vh-CJY"/>
-                                                    <constraint firstItem="A56-mY-UAa" firstAttribute="leading" secondItem="jxA-ju-5bD" secondAttribute="trailing" constant="25" id="3Y5-Bc-EUa"/>
+                                                    <constraint firstItem="A56-mY-UAa" firstAttribute="leading" secondItem="jxA-ju-5bD" secondAttribute="trailing" constant="20" id="3Y5-Bc-EUa"/>
                                                     <constraint firstAttribute="trailing" secondItem="6Io-JW-evT" secondAttribute="trailing" id="HHW-XZ-7d1"/>
                                                     <constraint firstItem="be3-5W-5zA" firstAttribute="centerY" secondItem="kti-Fr-j4T" secondAttribute="centerY" id="KjX-ch-J9a"/>
                                                     <constraint firstAttribute="height" constant="60" id="TH9-QL-E7f"/>
@@ -1751,6 +1753,7 @@
                                                     <constraint firstItem="jxA-ju-5bD" firstAttribute="centerY" secondItem="kti-Fr-j4T" secondAttribute="centerY" id="crs-0h-qyy"/>
                                                     <constraint firstItem="A56-mY-UAa" firstAttribute="centerY" secondItem="kti-Fr-j4T" secondAttribute="centerY" id="iXL-Ln-CI3"/>
                                                     <constraint firstItem="6Io-JW-evT" firstAttribute="centerY" secondItem="kti-Fr-j4T" secondAttribute="centerY" id="o7V-ka-cPE"/>
+                                                    <constraint firstItem="6Io-JW-evT" firstAttribute="leading" secondItem="be3-5W-5zA" secondAttribute="trailing" constant="20" id="uFp-22-ggK"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgi-AE-9IF">
@@ -1765,9 +1768,9 @@
                                                         <state key="normal" image="Group 11314"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydA-So-bHy">
-                                                        <rect key="frame" x="65" y="19.5" width="120" height="21"/>
+                                                        <rect key="frame" x="60" y="19.5" width="110" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="fcK-zZ-HxK"/>
+                                                            <constraint firstAttribute="width" constant="110" id="fcK-zZ-HxK"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -1777,7 +1780,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6do-wK-bPi">
-                                                        <rect key="frame" x="195" y="21" width="58" height="18"/>
+                                                        <rect key="frame" x="180" y="21" width="105" height="18"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1799,12 +1802,13 @@
                                                     <constraint firstItem="uNz-FK-XrY" firstAttribute="centerY" secondItem="Zgi-AE-9IF" secondAttribute="centerY" id="0bC-TU-nEA"/>
                                                     <constraint firstAttribute="trailing" secondItem="uNz-FK-XrY" secondAttribute="trailing" id="6V9-Pf-tXu"/>
                                                     <constraint firstItem="6do-wK-bPi" firstAttribute="centerY" secondItem="Zgi-AE-9IF" secondAttribute="centerY" id="DIT-Yq-WB2"/>
+                                                    <constraint firstItem="uNz-FK-XrY" firstAttribute="leading" secondItem="6do-wK-bPi" secondAttribute="trailing" constant="20" id="Kl8-BA-PDW"/>
                                                     <constraint firstItem="FkH-Od-2dt" firstAttribute="leading" secondItem="Zgi-AE-9IF" secondAttribute="leading" id="Kqu-f6-2ZC"/>
                                                     <constraint firstAttribute="height" constant="60" id="Xhi-eU-XBJ"/>
                                                     <constraint firstItem="FkH-Od-2dt" firstAttribute="centerY" secondItem="Zgi-AE-9IF" secondAttribute="centerY" id="mig-UD-kdB"/>
                                                     <constraint firstItem="6do-wK-bPi" firstAttribute="leading" secondItem="ydA-So-bHy" secondAttribute="trailing" constant="10" id="sM5-AL-xNY"/>
                                                     <constraint firstItem="ydA-So-bHy" firstAttribute="centerY" secondItem="Zgi-AE-9IF" secondAttribute="centerY" id="vmm-rO-qZh"/>
-                                                    <constraint firstItem="ydA-So-bHy" firstAttribute="leading" secondItem="FkH-Od-2dt" secondAttribute="trailing" constant="25" id="xd2-QZ-TWw"/>
+                                                    <constraint firstItem="ydA-So-bHy" firstAttribute="leading" secondItem="FkH-Od-2dt" secondAttribute="trailing" constant="20" id="xd2-QZ-TWw"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zb0-6Q-lMR">
@@ -3299,8 +3303,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zna-IW-S0J">
                                 <rect key="frame" x="30" y="328" width="354" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit E-Mail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-nO-jza">
-                                        <rect key="frame" x="132.5" y="24" width="89.5" height="25.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit E-Mail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-nO-jza">
+                                        <rect key="frame" x="20" y="24" width="314" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3381,11 +3385,13 @@
                                     <constraint firstItem="LAB-IY-MA0" firstAttribute="centerX" secondItem="Zna-IW-S0J" secondAttribute="centerX" id="8Lm-HF-7pg"/>
                                     <constraint firstItem="jpF-xM-NxK" firstAttribute="leading" secondItem="Zna-IW-S0J" secondAttribute="leading" constant="20" id="EE3-S7-8lW"/>
                                     <constraint firstAttribute="bottom" secondItem="LAB-IY-MA0" secondAttribute="bottom" constant="20" id="HA1-cs-YJ9"/>
+                                    <constraint firstAttribute="trailing" secondItem="eH0-nO-jza" secondAttribute="trailing" constant="20" id="ZDA-hl-MWF"/>
                                     <constraint firstItem="eH0-nO-jza" firstAttribute="centerX" secondItem="Zna-IW-S0J" secondAttribute="centerX" id="cfs-ec-kjH"/>
                                     <constraint firstAttribute="trailing" secondItem="jpF-xM-NxK" secondAttribute="trailing" constant="20" id="fKV-iV-Dkj"/>
                                     <constraint firstItem="fSE-br-tZS" firstAttribute="top" secondItem="jpF-xM-NxK" secondAttribute="bottom" id="fnc-PD-VhD"/>
                                     <constraint firstItem="eH0-nO-jza" firstAttribute="top" secondItem="Zna-IW-S0J" secondAttribute="top" constant="24" id="iSB-DO-PCG"/>
                                     <constraint firstAttribute="height" constant="240" id="tV9-d5-MR9"/>
+                                    <constraint firstItem="eH0-nO-jza" firstAttribute="leading" secondItem="Zna-IW-S0J" secondAttribute="leading" constant="20" id="trl-mL-NY2"/>
                                     <constraint firstItem="fSE-br-tZS" firstAttribute="leading" secondItem="Zna-IW-S0J" secondAttribute="leading" constant="20" id="uwY-B3-16X"/>
                                     <constraint firstAttribute="trailing" secondItem="fSE-br-tZS" secondAttribute="trailing" constant="20" id="zMf-dS-r6M"/>
                                 </constraints>

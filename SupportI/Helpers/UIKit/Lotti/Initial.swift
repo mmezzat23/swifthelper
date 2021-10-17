@@ -20,13 +20,15 @@ extension UIViewController: MBProgressHUDDelegate {
         let progress = MBProgressHUD.showAdded(to: self.view, animated: true)
         progress.mode = .annularDeterminate
         progress.isUserInteractionEnabled = false
+        self.view.isUserInteractionEnabled = false
         progress.show(animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            self.hideSuccessProgress()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+//            self.hideSuccessProgress()
+//        }
     }
     func hideSuccessProgress() {
         MBProgressHUD.hide(for: self.view, animated: true)
+        self.view.isUserInteractionEnabled = true
     }
     func startLoading() {
         successProgress()

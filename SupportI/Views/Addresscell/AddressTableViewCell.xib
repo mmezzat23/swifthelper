@@ -43,13 +43,13 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Dad Cars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-P2-kRz">
-                        <rect key="frame" x="55" y="30" width="87" height="21"/>
+                        <rect key="frame" x="55" y="30" width="187" height="21"/>
                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Dad Cars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc9-NV-QxV">
-                        <rect key="frame" x="55" y="61" width="74.5" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Dad Cars" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc9-NV-QxV">
+                        <rect key="frame" x="55" y="61" width="347" height="18"/>
                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -62,11 +62,11 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEe-3U-7yY">
-                        <rect key="frame" x="182" y="30.5" width="70" height="20"/>
+                        <rect key="frame" x="252" y="30.5" width="70" height="20"/>
                         <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70" id="6Ns-NU-wc9"/>
-                            <constraint firstAttribute="height" constant="20" id="h0n-mU-mMl"/>
+                            <constraint firstAttribute="height" constant="20" id="1ca-pj-VUV"/>
+                            <constraint firstAttribute="width" constant="70" id="Ehi-Xo-9TP"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="11"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -84,19 +84,21 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Nc9-NV-QxV" secondAttribute="trailing" constant="20" id="1hM-nq-j68"/>
                     <constraint firstItem="Nc9-NV-QxV" firstAttribute="leading" secondItem="NeX-P2-kRz" secondAttribute="leading" id="6ah-Yp-PRM"/>
                     <constraint firstAttribute="trailing" secondItem="sKO-aQ-654" secondAttribute="trailing" id="CG6-nw-vcs"/>
                     <constraint firstItem="kMb-hx-lGc" firstAttribute="top" secondItem="Nc9-NV-QxV" secondAttribute="bottom" constant="15" id="DS2-Iv-Esg"/>
                     <constraint firstItem="kMb-hx-lGc" firstAttribute="leading" secondItem="ovj-KT-NMt" secondAttribute="leading" id="DoB-Ih-wZG"/>
                     <constraint firstItem="NeX-P2-kRz" firstAttribute="top" secondItem="ovj-KT-NMt" secondAttribute="top" constant="30" id="EQH-NP-6gc"/>
+                    <constraint firstItem="sEe-3U-7yY" firstAttribute="centerY" secondItem="NeX-P2-kRz" secondAttribute="centerY" id="G7t-jm-jHn"/>
                     <constraint firstItem="Nc9-NV-QxV" firstAttribute="top" secondItem="NeX-P2-kRz" secondAttribute="bottom" constant="10" id="Icq-GC-JtU"/>
-                    <constraint firstItem="sEe-3U-7yY" firstAttribute="centerY" secondItem="NeX-P2-kRz" secondAttribute="centerY" id="M6O-Jm-eAw"/>
+                    <constraint firstItem="sKO-aQ-654" firstAttribute="leading" secondItem="sEe-3U-7yY" secondAttribute="trailing" constant="80" id="PAi-VT-CPD"/>
                     <constraint firstAttribute="bottom" secondItem="kMb-hx-lGc" secondAttribute="bottom" constant="8" id="PnE-DT-49y"/>
+                    <constraint firstItem="sEe-3U-7yY" firstAttribute="leading" secondItem="NeX-P2-kRz" secondAttribute="trailing" constant="10" id="RUG-M7-zds"/>
                     <constraint firstItem="NeX-P2-kRz" firstAttribute="leading" secondItem="XBa-R2-0uo" secondAttribute="trailing" constant="15" id="V5i-XG-QGF"/>
                     <constraint firstAttribute="trailing" secondItem="kMb-hx-lGc" secondAttribute="trailing" id="aQs-Ih-TTi"/>
                     <constraint firstItem="XBa-R2-0uo" firstAttribute="leading" secondItem="ovj-KT-NMt" secondAttribute="leading" id="aU7-Fe-mOq"/>
                     <constraint firstItem="XBa-R2-0uo" firstAttribute="top" secondItem="ovj-KT-NMt" secondAttribute="top" constant="30" id="gxB-DX-cfr"/>
-                    <constraint firstItem="sEe-3U-7yY" firstAttribute="leading" secondItem="NeX-P2-kRz" secondAttribute="trailing" constant="40" id="uzw-bZ-zYH"/>
                     <constraint firstItem="sKO-aQ-654" firstAttribute="centerY" secondItem="ovj-KT-NMt" secondAttribute="centerY" id="wgl-3e-6O3"/>
                 </constraints>
             </tableViewCellContentView>

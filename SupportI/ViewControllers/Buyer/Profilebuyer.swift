@@ -121,8 +121,15 @@ class Profilebuyer: BaseController {
         })
     }
     @IBAction func edit(_ sender: Any) {
-        let vcc = self.controller(Editprofile.self,storyboard: .main)
-        self.push(vcc)
+        if (UserRoot.token() != nil){
+            let vcc = self.controller(Editprofile.self,storyboard: .main)
+            self.push(vcc)
+        }else {
+            let vcc = self.pushViewController(GuestPopUpViewController.self,storyboard: .main)
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
+        
     }
     @IBAction func calender(_ sender: Any) {
     }

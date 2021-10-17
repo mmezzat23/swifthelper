@@ -55,6 +55,7 @@ extension MapAddressHelper where Self: GoogleMapHelper {
                 }
                 /** call delegate **/
                 handler?(title, snippet)
+                print(title)
                 self.addressDelegate?.didGetAddress(name: title)
                 self.addressDelegate?.didGetAddress(snippet: snippet)
                 /** call **/

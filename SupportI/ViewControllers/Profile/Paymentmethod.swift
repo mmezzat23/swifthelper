@@ -169,7 +169,7 @@ extension Paymentmethod:UITableViewDelegate , UITableViewDataSource {
         var cell = tableView.cell(type: PaymentTableViewCell.self, indexPath)
         cell.model = cardsdata[indexPath.row]
         cell.setup()
-        cardshight.constant = CGFloat(cardsdata.count * 90)
+        cardshight.constant = CGFloat(cardsdata.count * 110)
         cell.more.UIViewAction { [self] in
             path = indexPath.row
             let vcc = self.pushViewController(Editdeleteoption.self,storyboard: .profile)

@@ -47,6 +47,10 @@ class Editdeleteoption: BaseController {
             self.dismiss(animated: true, completion: nil)
             self.delegate?.settype(type: type, action: "delete")
         }
+        view.UIViewAction {
+            self.dismiss(animated: true, completion: nil)
+
+        }
     }
     
 

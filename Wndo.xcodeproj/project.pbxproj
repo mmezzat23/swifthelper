@@ -2133,7 +2133,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportI/SupportI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = UL4L86WK78;
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2158,7 +2158,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportI/SupportI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = UL4L86WK78;
 				INFOPLIST_FILE = SupportI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

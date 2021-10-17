@@ -2117,7 +2117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-zi-x0S">
-                                <rect key="frame" x="30" y="124" width="354" height="613"/>
+                                <rect key="frame" x="30" y="124" width="354" height="658"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJC-8p-4cM">
                                         <rect key="frame" x="155" y="24" width="44.5" height="29.5"/>
@@ -2138,7 +2138,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move the pin on the map to find your location and select the delivery address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLj-zf-hQS">
-                                        <rect key="frame" x="40" y="478.5" width="274" height="41.5"/>
+                                        <rect key="frame" x="40" y="532.5" width="274" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                         <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2147,14 +2147,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEa-Yz-SnA" customClass="GMSMapView">
-                                        <rect key="frame" x="0.0" y="189.5" width="354" height="264"/>
+                                        <rect key="frame" x="0.0" y="189.5" width="354" height="318"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="264" id="xfR-Ak-3NJ"/>
-                                        </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UE6-yI-TBR">
-                                        <rect key="frame" x="39.5" y="550" width="275" height="44"/>
+                                        <rect key="frame" x="39.5" y="594" width="275" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-OH-3yS">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
@@ -2206,6 +2203,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="xC6-dS-Hby"/>
+                                        </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sca-83-wfq">
                                         <rect key="frame" x="25" y="124.5" width="304" height="40"/>
@@ -2252,21 +2252,22 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="UE6-yI-TBR" firstAttribute="centerX" secondItem="tIT-zi-x0S" secondAttribute="centerX" id="0Ac-M4-QJw"/>
+                                    <constraint firstAttribute="bottom" secondItem="UE6-yI-TBR" secondAttribute="bottom" constant="20" id="15R-0q-jZV"/>
                                     <constraint firstAttribute="trailing" secondItem="sLj-zf-hQS" secondAttribute="trailing" constant="40" id="1WG-sp-QgO"/>
                                     <constraint firstItem="cGC-22-i4Q" firstAttribute="top" secondItem="mJC-8p-4cM" secondAttribute="bottom" constant="32" id="7zD-bX-cpN"/>
                                     <constraint firstItem="cGC-22-i4Q" firstAttribute="centerX" secondItem="tIT-zi-x0S" secondAttribute="centerX" id="FQY-Ey-m54"/>
-                                    <constraint firstAttribute="trailing" secondItem="QEa-Yz-SnA" secondAttribute="trailing" id="FWc-2L-5FI"/>
                                     <constraint firstItem="mJC-8p-4cM" firstAttribute="top" secondItem="tIT-zi-x0S" secondAttribute="top" constant="24" id="HN3-tz-6YN"/>
-                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" id="LVW-aF-gqi"/>
-                                    <constraint firstItem="sLj-zf-hQS" firstAttribute="top" secondItem="QEa-Yz-SnA" secondAttribute="bottom" constant="25" id="Tqc-Cr-CvL"/>
+                                    <constraint firstItem="sLj-zf-hQS" firstAttribute="top" secondItem="QEa-Yz-SnA" secondAttribute="bottom" constant="25" id="KNr-pn-C9g"/>
+                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" id="MhK-DT-81i"/>
+                                    <constraint firstItem="UE6-yI-TBR" firstAttribute="top" secondItem="sLj-zf-hQS" secondAttribute="bottom" constant="20" id="TOb-6n-fLO"/>
                                     <constraint firstItem="mJC-8p-4cM" firstAttribute="centerX" secondItem="tIT-zi-x0S" secondAttribute="centerX" id="Tvt-8t-8CT"/>
-                                    <constraint firstItem="UE6-yI-TBR" firstAttribute="top" secondItem="sLj-zf-hQS" secondAttribute="bottom" constant="30" id="X2y-y4-2c6"/>
                                     <constraint firstAttribute="trailing" secondItem="sca-83-wfq" secondAttribute="trailing" constant="25" id="e4C-ta-F65"/>
-                                    <constraint firstAttribute="height" constant="613" id="hLV-fu-zVl"/>
+                                    <constraint firstItem="UE6-yI-TBR" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" constant="39.5" id="f8K-zM-vNv"/>
                                     <constraint firstItem="sca-83-wfq" firstAttribute="top" secondItem="cGC-22-i4Q" secondAttribute="bottom" constant="15" id="iEM-1f-Bmd"/>
-                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="top" secondItem="cGC-22-i4Q" secondAttribute="bottom" constant="80" id="upq-ZO-eMd"/>
+                                    <constraint firstAttribute="trailing" secondItem="UE6-yI-TBR" secondAttribute="trailing" constant="39.5" id="kHq-mQ-XbP"/>
+                                    <constraint firstAttribute="trailing" secondItem="QEa-Yz-SnA" secondAttribute="trailing" id="nLP-pA-zUB"/>
                                     <constraint firstItem="sLj-zf-hQS" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" constant="40" id="wCu-xx-9VM"/>
+                                    <constraint firstItem="QEa-Yz-SnA" firstAttribute="top" secondItem="sca-83-wfq" secondAttribute="bottom" constant="25" id="wNX-mD-who"/>
                                     <constraint firstItem="sca-83-wfq" firstAttribute="leading" secondItem="tIT-zi-x0S" secondAttribute="leading" constant="25" id="zgl-Vo-47A"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -2279,10 +2280,12 @@
                         <viewLayoutGuide key="safeArea" id="POt-SI-Xqt"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="POt-SI-Xqt" firstAttribute="bottom" secondItem="tIT-zi-x0S" secondAttribute="bottom" constant="80" id="5vu-ad-AgH"/>
                             <constraint firstItem="tIT-zi-x0S" firstAttribute="centerX" secondItem="EHf-Ro-a9Z" secondAttribute="centerX" id="V9Z-Xh-bcN"/>
                             <constraint firstItem="tIT-zi-x0S" firstAttribute="top" secondItem="POt-SI-Xqt" secondAttribute="top" constant="80" id="cfv-x6-Yub"/>
                             <constraint firstItem="POt-SI-Xqt" firstAttribute="trailing" secondItem="tIT-zi-x0S" secondAttribute="trailing" constant="30" id="gXw-wi-f43"/>
                             <constraint firstItem="tIT-zi-x0S" firstAttribute="leading" secondItem="POt-SI-Xqt" secondAttribute="leading" constant="30" id="mtq-A6-7qW"/>
+                            <constraint firstItem="tIT-zi-x0S" firstAttribute="top" secondItem="POt-SI-Xqt" secondAttribute="top" constant="80" id="wIs-YK-qAf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TRK-em-764"/>
@@ -2299,7 +2302,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="9" height="15"/>
+        <image name="Back Button" width="8" height="15"/>
         <image name="Fill -1" width="22.5" height="22.5"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
         <image name="Fill 1036-2" width="24" height="24"/>

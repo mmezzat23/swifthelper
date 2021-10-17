@@ -319,6 +319,7 @@ extension Addaddress : SelectLocationDelegate {
     
     func didSelectLocation(address: String?) {
         self.addressstr = address ?? ""
+        self.address.text = address ?? ""
     }
     
     

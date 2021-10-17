@@ -43,9 +43,9 @@ class mapViewController: BaseController {
         google?.mapView = mapView
         google?.delegate = self
         location = .init()
-//        location?.onUpdateLocation = { degree in
-//            self.google?.updateCamera(lat: degree?.latitude ?? 0, lng: degree?.longitude ?? 0)
-//        }
+        location?.onUpdateLocation = { degree in
+            self.google?.updateCamera(lat: degree?.latitude ?? 0, lng: degree?.longitude ?? 0)
+        }
         location?.currentLocation()
         edit.UIViewAction {
             let controller = GooglePlacesSearchController(delegate: self,
@@ -58,8 +58,9 @@ class mapViewController: BaseController {
         self.delegate?.didSelectLocation(lat: lat ?? 0, lng: lng ?? 0)
         self.google?.address(lat: lat ?? 0, lng: lng ?? 0, handler: { title, snippet in
             self.delegate?.didSelectLocation(address: title)
+            self.dismiss(animated: true, completion: nil)
+
         })
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func discardClicked(_ sender: UIButton) {
@@ -77,6 +78,7 @@ extension mapViewController: GoogleMapHelperDelegate {
         self.lat = lat
         self.lng = lng
         google?.setMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: lng))
+        
     }
 }
 extension mapViewController: GooglePlacesAutocompleteViewControllerDelegate {
