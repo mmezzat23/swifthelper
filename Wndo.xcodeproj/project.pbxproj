@@ -36,6 +36,7 @@
 		662C538C26FA0D1000AFC952 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C538B26FA0D1000AFC952 /* About.swift */; };
 		662E6ECA27133C9200D921DB /* Addvedio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E6EC927133C9200D921DB /* Addvedio.swift */; };
 		662E6ECC27133CEB00D921DB /* Addvediooption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E6ECB27133CEB00D921DB /* Addvediooption.swift */; };
+		662F3151271D6D6400AFB551 /* SallerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662F3150271D6D6400AFB551 /* SallerViewModel.swift */; };
 		66305EAC270DDDAE0074C6C8 /* ProfileSaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66305EAB270DDDAE0074C6C8 /* ProfileSaller.swift */; };
 		6632E565270079790095221D /* SettingsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6632E564270079790095221D /* SettingsProfile.swift */; };
 		663422C727034B340003FA0C /* Buyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663422C627034B340003FA0C /* Buyer.swift */; };
@@ -353,6 +354,7 @@
 		662C538B26FA0D1000AFC952 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		662E6EC927133C9200D921DB /* Addvedio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addvedio.swift; sourceTree = "<group>"; };
 		662E6ECB27133CEB00D921DB /* Addvediooption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addvediooption.swift; sourceTree = "<group>"; };
+		662F3150271D6D6400AFB551 /* SallerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SallerViewModel.swift; sourceTree = "<group>"; };
 		66305EAB270DDDAE0074C6C8 /* ProfileSaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSaller.swift; sourceTree = "<group>"; };
 		6632E564270079790095221D /* SettingsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfile.swift; sourceTree = "<group>"; };
 		663422C627034B340003FA0C /* Buyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buyer.swift; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 				66376A8426EA0A2F0012DA28 /* AuthViewModel.swift */,
 				143D3E6626F0A9BF0031C74E /* Auth1ViewModel.swift */,
 				66F9029A27009DFD00BBE00A /* ProfileViewModel.swift */,
+				662F3150271D6D6400AFB551 /* SallerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1816,6 +1819,7 @@
 				E84EA53924247DA4009D3E41 /* Initial.swift in Sources */,
 				8037F0F720BFABA300162BA9 /* DynamicType.swift in Sources */,
 				80A2FBEF215841BC00223A77 /* PublicHelper.swift in Sources */,
+				662F3151271D6D6400AFB551 /* SallerViewModel.swift in Sources */,
 				66230626271438AB009163AD /* Sorryactive.swift in Sources */,
 				662B25382713181600F9A1AA /* Editemail.swift in Sources */,
 				662A036726FB267F002493D7 /* FaqTableViewCell.swift in Sources */,

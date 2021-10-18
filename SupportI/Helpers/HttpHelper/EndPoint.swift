@@ -42,6 +42,7 @@ public enum EndPoint: String {
     case contactus = "1/api/app/contact-us"
     case socaillogin = "1/api/app/register/external-login"
     case paymentdefualt = "1/api/app/account-setting/set-default-payment-method"
+    case activesaller = "1/api/app/product/check-is-active-seller"
     case logout
     case packages
     case locations

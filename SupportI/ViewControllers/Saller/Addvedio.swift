@@ -19,6 +19,7 @@ class Addvedio: BaseController {
         super.viewWillAppear(animated)
         if (UserRoot.token() != nil){
             let vcc = self.pushViewController(Addvediooption.self,storyboard: .saller)
+            vcc.delegate = self
             pushPop(vcr: vcc)
             
         }else{
@@ -46,4 +47,45 @@ extension Addvedio : BuyerswitchDelegate , GuestPopUpDelegate {
     }
     
     
+}
+
+extension Addvedio : AddvediooptionDelegate {
+    func settype(type: String?, isvalid: Bool) {
+        if (type == "live"){
+            if (isvalid){
+                
+            }else {
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self.pushViewController(Sorryactive.self,storyboard: .saller)
+                vcc.txtstring = "You will not be able to go live before you are active to be saller".localized()
+                pushPop(vcr: vcc)
+                }
+            }
+        }else if (type == "vedio"){
+            if (isvalid){
+                let vcc = self.controller(Addvedios.self,storyboard: .vedios)
+                self.push(vcc)
+            }else {
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self.pushViewController(Sorryactive.self,storyboard: .saller)
+                vcc.txtstring = "You will not be able to add video before you are active to be saller".localized()
+                pushPop(vcr: vcc)
+                }
+            }
+        }else if (type == "product"){
+            if (isvalid){
+                let vcc = self.controller(Addproduct.self,storyboard: .addproduct)
+                self.push(vcc)
+            }else {
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                let vcc = self.pushViewController(Sorryactive.self,storyboard: .saller)
+                vcc.txtstring = "You will not be able to add product before you are active to be saller".localized()
+                pushPop(vcr: vcc)
+                }
+            }
+        }
+    }
 }

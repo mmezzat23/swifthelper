@@ -374,3 +374,9 @@
 "SEND" = "SEND";
 "Reset Password" = "Reset Password";
 "Message sent successfully" = "Message sent successfully";
+"You will not be able to go live before you are active to be saller" = "You will not be able to go live before you are active to be saller";
+"You will not be able to add video before you are active to be saller" = "You will not be able to add video before you are active to be saller";
+"You will not be able to add product before you are active to be saller" = "You will not be able to add product before you are active to be saller";
+"Valid till:" = "Valid till:";
+"Select subcategory" = "Select subcategory";
+"Select category" = "Select category";

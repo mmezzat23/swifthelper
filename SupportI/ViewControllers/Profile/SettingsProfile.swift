@@ -25,6 +25,9 @@ class SettingsProfile: BaseController {
     @IBOutlet weak var darkmodetxt: UILabel!
     @IBOutlet weak var darkmodeswitch: UISwitch!
     @IBOutlet weak var notificatinswitch: UISwitch!
+    @IBOutlet weak var verifyemail: UILabel!
+    @IBOutlet weak var verifyphone: UILabel!
+    
     var lang = ""
     @IBOutlet weak var locationview: UIView!
     @IBOutlet weak var passwordview: UIView!
@@ -88,6 +91,9 @@ class SettingsProfile: BaseController {
             banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
             notify.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
         }
+        verifyemail.setunderline(title: "VERIFY")
+        verifyphone.setunderline(title: "VERIFY")
+
     }
     func setup() {
         viewModel = .init()
@@ -123,6 +129,24 @@ class SettingsProfile: BaseController {
             pushPop(vcr: vcc)
         }
         editemail.UIViewAction { [self] in
+            type = "email"
+            let vcc = self.pushViewController(Editemail.self,storyboard: .profile)
+            vcc.cities = cities
+            vcc.type = type
+            vcc.responseData = responseData
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
+        verifyphone.UIViewAction { [self] in
+            type = "phone"
+            let vcc = self.pushViewController(Editemail.self,storyboard: .profile)
+            vcc.cities = cities
+            vcc.type = type
+            vcc.responseData = responseData
+            vcc.delegate = self
+            pushPop(vcr: vcc)
+        }
+        verifyemail.UIViewAction { [self] in
             type = "email"
             let vcc = self.pushViewController(Editemail.self,storyboard: .profile)
             vcc.cities = cities

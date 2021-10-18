@@ -9,12 +9,18 @@
 import UIKit
 
 class Sorryactive: BaseController {
-
+    @IBOutlet weak var txt: UILabel!
+    var txtstring = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        hiddenNav = true
+        if (txtstring != ""){
+            txt.text = txtstring
+        }
 
     }
     
     @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

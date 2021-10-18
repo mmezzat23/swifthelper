@@ -81,7 +81,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Default Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuu-vq-Myk">
-                                                <rect key="frame" x="20" y="197.5" width="281" height="22.5"/>
+                                                <rect key="frame" x="20" y="192.5" width="257.5" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                 <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7j-w0-gYy">
-                                                <rect key="frame" x="20" y="590" width="133" height="22.5"/>
+                                                <rect key="frame" x="20" y="580" width="124" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                 <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -99,14 +99,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fGM-OD-rMm">
-                                                <rect key="frame" x="20" y="622.5" width="374" height="200"/>
+                                                <rect key="frame" x="20" y="607.5" width="374" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="b25-c6-C4y"/>
                                                 </constraints>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0B-in-zH8">
-                                                <rect key="frame" x="107" y="867.5" width="200" height="50"/>
+                                                <rect key="frame" x="107" y="852.5" width="200" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="KB7-AX-Lhk"/>
@@ -127,7 +127,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Active Vouchers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyb-ZI-0JB">
-                                                <rect key="frame" x="20" y="40" width="154.5" height="22.5"/>
+                                                <rect key="frame" x="20" y="40" width="142" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                 <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -136,13 +136,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Combined Shape" translatesAutoresizingMaskIntoConstraints="NO" id="P1B-BP-MEb">
-                                                <rect key="frame" x="30" y="77.5" width="354" height="90"/>
+                                                <rect key="frame" x="30" y="72.5" width="354" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="kKJ-Ev-aLf"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(1) voucher will be expired on 12 Feb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-vO-fji">
-                                                <rect key="frame" x="65" y="128.5" width="175.5" height="15"/>
+                                                <rect key="frame" x="63.5" y="119" width="164.5" height="12"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="10"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -151,13 +151,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3g-3C-kcb">
-                                                <rect key="frame" x="40" y="105" width="15" height="35.5"/>
+                                                <rect key="frame" x="40" y="103.5" width="13.5" height="28"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Vouchers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKC-oN-A97">
-                                                <rect key="frame" x="65" y="102.5" width="107.5" height="21"/>
+                                                <rect key="frame" x="63.5" y="97.5" width="101" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -166,14 +166,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 985" translatesAutoresizingMaskIntoConstraints="NO" id="DSz-09-xcA">
-                                                <rect key="frame" x="323.5" y="90" width="27" height="27"/>
+                                                <rect key="frame" x="326" y="90" width="27" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="27" id="V8G-D1-UlU"/>
                                                     <constraint firstAttribute="height" constant="27" id="WS2-jf-kPw"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP4-5M-KCa">
-                                                <rect key="frame" x="310" y="122" width="54" height="29.5"/>
+                                                <rect key="frame" x="314.5" y="122" width="49.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -182,7 +182,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zva-ep-jia">
-                                                <rect key="frame" x="30" y="235" width="354" height="100"/>
+                                                <rect key="frame" x="30" y="225" width="354" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ag-mg-YbK">
                                                         <rect key="frame" x="10" y="25" width="50" height="50"/>
@@ -199,7 +199,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on Delievery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2v0-12-1yr">
-                                                        <rect key="frame" x="70" y="25" width="131.5" height="22.5"/>
+                                                        <rect key="frame" x="70" y="25" width="121.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -208,7 +208,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extra fee will be applied" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hww-8P-avU">
-                                                        <rect key="frame" x="70" y="57.5" width="115" height="15"/>
+                                                        <rect key="frame" x="70" y="52.5" width="106.5" height="12"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="10"/>
                                                         <color key="textColor" red="0.58431372549019611" green="0.59999999999999998" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -253,7 +253,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBR-yu-atf">
-                                                <rect key="frame" x="30" y="350" width="354" height="100"/>
+                                                <rect key="frame" x="30" y="340" width="354" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-r6-hyq">
                                                         <rect key="frame" x="10" y="25" width="50" height="50"/>
@@ -270,7 +270,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTc-4W-RcS">
-                                                        <rect key="frame" x="70" y="25" width="83.5" height="22.5"/>
+                                                        <rect key="frame" x="70" y="25" width="77.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -279,7 +279,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="**** **** **** 1284" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBV-9K-NIk">
-                                                        <rect key="frame" x="70" y="57.5" width="98" height="15"/>
+                                                        <rect key="frame" x="70" y="52.5" width="73" height="12"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="10"/>
                                                         <color key="textColor" red="0.58431372550000005" green="0.59999999999999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -321,7 +321,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLa-lp-4Ie">
-                                                <rect key="frame" x="30" y="465" width="354" height="100"/>
+                                                <rect key="frame" x="30" y="455" width="354" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d2-zF-9Qm">
                                                         <rect key="frame" x="10" y="25" width="50" height="50"/>
@@ -338,7 +338,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-Dm-6ge">
-                                                        <rect key="frame" x="70" y="25" width="62" height="22.5"/>
+                                                        <rect key="frame" x="70" y="25" width="56" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -347,7 +347,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Balance: EGP 1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoC-tc-a32">
-                                                        <rect key="frame" x="70" y="57.5" width="124.5" height="15"/>
+                                                        <rect key="frame" x="70" y="52.5" width="117" height="12"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="10"/>
                                                         <color key="textColor" red="0.58431372550000005" green="0.59999999999999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -445,7 +445,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-0V-dYO">
-                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <rect key="frame" x="107" y="112" width="200" height="22.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="3ek-Lc-sH1"/>
                                 </constraints>
@@ -589,7 +589,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Holder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhB-53-FYD">
-                                                <rect key="frame" x="50" y="169" width="70" height="18"/>
+                                                <rect key="frame" x="50" y="169" width="65.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -598,13 +598,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PB-3m-vam">
-                                                <rect key="frame" x="50" y="195" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="50" y="191" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKo-Kv-OjJ">
-                                                <rect key="frame" x="279" y="169" width="35" height="18"/>
+                                                <rect key="frame" x="280.5" y="169" width="33.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -613,13 +613,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNe-rH-wUi">
-                                                <rect key="frame" x="279" y="195" width="85" height="0.0"/>
+                                                <rect key="frame" x="280.5" y="191" width="83.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name on Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJ9-ud-XQq">
-                                                <rect key="frame" x="30" y="360" width="84.5" height="18"/>
+                                                <rect key="frame" x="30" y="356" width="78.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -628,7 +628,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gja-Ee-yQ0">
-                                                <rect key="frame" x="30" y="393" width="354" height="35"/>
+                                                <rect key="frame" x="30" y="385" width="354" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="E6U-fp-pxn"/>
                                                 </constraints>
@@ -642,14 +642,14 @@
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9L8-8K-1hp">
-                                                <rect key="frame" x="30" y="429" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="421" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="xaC-zk-EY2"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojB-TZ-qT7">
-                                                <rect key="frame" x="30" y="460" width="78" height="18"/>
+                                                <rect key="frame" x="30" y="452" width="72.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -658,7 +658,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PRd-Nf-AaL">
-                                                <rect key="frame" x="30" y="493" width="354" height="35"/>
+                                                <rect key="frame" x="30" y="481" width="354" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Xdd-IM-UGl"/>
                                                 </constraints>
@@ -675,14 +675,14 @@
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-dc-gkv">
-                                                <rect key="frame" x="30" y="529" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="517" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="5vI-dV-Lf6"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6is-bW-g3X">
-                                                <rect key="frame" x="30" y="560" width="66.5" height="18"/>
+                                                <rect key="frame" x="30" y="548" width="62" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -691,7 +691,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-NW-p1S">
-                                                <rect key="frame" x="30" y="593" width="100" height="35"/>
+                                                <rect key="frame" x="30" y="577" width="100" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="95i-KD-4LI"/>
                                                     <constraint firstAttribute="height" constant="35" id="Lzy-pU-3C7"/>
@@ -709,7 +709,7 @@
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmb-DN-QGv">
-                                                <rect key="frame" x="30" y="629" width="100" height="1"/>
+                                                <rect key="frame" x="30" y="613" width="100" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="DND-Qw-yqx"/>
@@ -717,7 +717,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="As3-8c-IfP">
-                                                <rect key="frame" x="30" y="260" width="66" height="18"/>
+                                                <rect key="frame" x="30" y="260" width="61.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -726,7 +726,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-zi-cH9">
-                                                <rect key="frame" x="30" y="293" width="354" height="35"/>
+                                                <rect key="frame" x="30" y="289" width="354" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="sVN-hH-zGP"/>
                                                 </constraints>
@@ -737,14 +737,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISE-gU-v2I">
-                                                <rect key="frame" x="30" y="329" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="325" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="b7H-LN-HlB"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-Jz-vR7">
-                                                <rect key="frame" x="30" y="660" width="30" height="30"/>
+                                                <rect key="frame" x="30" y="644" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="NlL-74-jg1"/>
                                                     <constraint firstAttribute="height" constant="30" id="c69-GX-zTW"/>
@@ -757,7 +757,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save this card ad default payment method " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qev-3X-p4u">
-                                                <rect key="frame" x="75" y="664.5" width="309" height="21"/>
+                                                <rect key="frame" x="75" y="651" width="309" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -766,7 +766,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRd-fQ-v3F">
-                                                <rect key="frame" x="87" y="735.5" width="240" height="44"/>
+                                                <rect key="frame" x="87" y="717.5" width="240" height="44"/>
                                                 <color key="backgroundColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="Hdp-1z-TcD"/>
@@ -787,7 +787,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgw-Sj-r5w">
-                                                <rect key="frame" x="97" y="789.5" width="220" height="44"/>
+                                                <rect key="frame" x="97" y="771.5" width="220" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="MAa-aZ-8CS"/>
                                                     <constraint firstAttribute="width" constant="220" id="qmf-Tb-d60"/>
@@ -884,7 +884,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQb-dg-DBl">
-                                <rect key="frame" x="107" y="65" width="200" height="28.5"/>
+                                <rect key="frame" x="107" y="68" width="200" height="22.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="EZF-op-iEu"/>
                                 </constraints>
@@ -940,7 +940,7 @@
                                 <rect key="frame" x="30" y="328" width="354" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8k-mv-3h4">
-                                        <rect key="frame" x="61" y="24" width="232" height="38.5"/>
+                                        <rect key="frame" x="69.5" y="24" width="215.5" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -949,7 +949,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You want to delete the credit card ends with 4543?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfE-Dg-cbA">
-                                        <rect key="frame" x="40" y="94.5" width="274" height="47.5"/>
+                                        <rect key="frame" x="40" y="86.5" width="274" height="37.5"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1140,7 +1140,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You didn't publish any content yet." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-kq-k38">
-                                                <rect key="frame" x="50" y="179" width="250" height="22.5"/>
+                                                <rect key="frame" x="59" y="179" width="232.5" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="15"/>
                                                 <color key="textColor" red="0.47843137254901957" green="0.55294117647058827" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1178,7 +1178,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQL-xO-nBi">
-                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <rect key="frame" x="107" y="112" width="200" height="22.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="XMN-ii-uJd"/>
                                 </constraints>
@@ -1332,6 +1332,18 @@
                                                             <constraint firstAttribute="width" constant="20" id="LYV-Fr-bkH"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERIFY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knx-bu-T7b">
+                                                        <rect key="frame" x="174" y="40" width="80" height="16.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="uDX-wU-96Q"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                        <color key="textColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="VERIFY"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -1343,7 +1355,9 @@
                                                     <constraint firstItem="uSJ-aO-mFn" firstAttribute="top" secondItem="80k-zl-yle" secondAttribute="top" constant="10" id="8YT-wd-lTe"/>
                                                     <constraint firstItem="8tZ-wa-IMv" firstAttribute="top" secondItem="80k-zl-yle" secondAttribute="top" constant="5" id="NhD-1g-uIS"/>
                                                     <constraint firstItem="oXj-Bk-7C8" firstAttribute="leading" secondItem="80k-zl-yle" secondAttribute="leading" id="dML-Wp-Te9"/>
+                                                    <constraint firstItem="knx-bu-T7b" firstAttribute="centerY" secondItem="ztz-0m-kEc" secondAttribute="centerY" id="eHE-lQ-4KA"/>
                                                     <constraint firstAttribute="trailing" secondItem="ztz-0m-kEc" secondAttribute="trailing" constant="20" id="eRz-mR-EAd"/>
+                                                    <constraint firstItem="uSJ-aO-mFn" firstAttribute="leading" secondItem="knx-bu-T7b" secondAttribute="trailing" constant="120" id="ffe-En-saH"/>
                                                     <constraint firstItem="oXj-Bk-7C8" firstAttribute="top" secondItem="80k-zl-yle" secondAttribute="top" constant="5" id="nUf-Vh-w5m"/>
                                                     <constraint firstItem="ztz-0m-kEc" firstAttribute="leading" secondItem="80k-zl-yle" secondAttribute="leading" id="rQ5-yi-VSU"/>
                                                     <constraint firstAttribute="bottom" secondItem="ztz-0m-kEc" secondAttribute="bottom" id="ywE-yl-EDB"/>
@@ -1384,6 +1398,18 @@
                                                             <constraint firstAttribute="width" constant="20" id="lyi-ZN-Cwd"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERIFY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFM-XZ-vB0">
+                                                        <rect key="frame" x="174" y="40" width="80" height="16.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Na2-hX-dat"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="14"/>
+                                                        <color key="textColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="VERIFY"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4o-5j-0nq">
                                                         <rect key="frame" x="374" y="10" width="20" height="45"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -1405,6 +1431,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="b4o-5j-0nq" secondAttribute="trailing" constant="-10" id="QO8-Vu-vwO"/>
                                                     <constraint firstAttribute="bottom" secondItem="PNf-9o-HhX" secondAttribute="bottom" id="S9i-hD-je8"/>
                                                     <constraint firstItem="EtG-L1-kWS" firstAttribute="top" secondItem="68p-Bh-s8N" secondAttribute="top" constant="5" id="UEp-d4-CfS"/>
+                                                    <constraint firstItem="VFM-XZ-vB0" firstAttribute="centerY" secondItem="PNf-9o-HhX" secondAttribute="centerY" id="Uf9-fP-Rzm"/>
+                                                    <constraint firstItem="b4o-5j-0nq" firstAttribute="leading" secondItem="VFM-XZ-vB0" secondAttribute="trailing" constant="120" id="WQs-zV-rvh"/>
                                                     <constraint firstItem="PNf-9o-HhX" firstAttribute="leading" secondItem="68p-Bh-s8N" secondAttribute="leading" id="fGG-NH-0z8"/>
                                                     <constraint firstItem="ufu-oy-t7U" firstAttribute="top" secondItem="68p-Bh-s8N" secondAttribute="top" constant="5" id="jCM-nj-zBa"/>
                                                     <constraint firstAttribute="height" constant="65" id="oT1-9G-vb8"/>
@@ -2195,6 +2223,8 @@
                         <outlet property="shopstatustop" destination="wvd-rH-hT1" id="JUd-hz-v1F"/>
                         <outlet property="shopstatustxt" destination="6do-wK-bPi" id="NME-sT-AGo"/>
                         <outlet property="shopswitch" destination="uNz-FK-XrY" id="3mW-7P-sMt"/>
+                        <outlet property="verifyemail" destination="knx-bu-T7b" id="5m5-Rb-P8o"/>
+                        <outlet property="verifyphone" destination="VFM-XZ-vB0" id="L8s-t0-sxn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTS-xe-GMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2277,7 +2307,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84V-sY-M9s">
-                                                <rect key="frame" x="30" y="60" width="84.5" height="18"/>
+                                                <rect key="frame" x="30" y="60" width="79.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2286,7 +2316,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3DC-C7-4gG">
-                                                <rect key="frame" x="30" y="88" width="354" height="35"/>
+                                                <rect key="frame" x="30" y="84" width="354" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="YHm-ap-dAm"/>
                                                 </constraints>
@@ -2298,14 +2328,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-Gx-8Xp">
-                                                <rect key="frame" x="30" y="123" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="119" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="AfG-Rl-Eye"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-dQ-UVH">
-                                                <rect key="frame" x="30" y="139" width="74" height="18"/>
+                                                <rect key="frame" x="30" y="135" width="71" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2314,7 +2344,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="57j-eO-2CM">
-                                                <rect key="frame" x="109.5" y="172" width="195" height="40"/>
+                                                <rect key="frame" x="109.5" y="164" width="195" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ga-lg-fmf">
                                                         <rect key="frame" x="0.0" y="0.0" width="37.5" height="40"/>
@@ -2387,14 +2417,14 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTP-SV-OtS">
-                                                <rect key="frame" x="30" y="217" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="209" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="E8Z-Qp-gGe"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-Ah-k4d">
-                                                <rect key="frame" x="30" y="233" width="84.5" height="18"/>
+                                                <rect key="frame" x="30" y="225" width="80" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2403,7 +2433,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-l5-NX7">
-                                                <rect key="frame" x="30" y="261" width="354" height="80"/>
+                                                <rect key="frame" x="30" y="249" width="354" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="bt2-7A-uTy"/>
                                                 </constraints>
@@ -2415,14 +2445,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsK-5V-pkr">
-                                                <rect key="frame" x="30" y="341" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="329" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="sCX-ae-fQJ"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN ON MAP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpl-j5-Kct">
-                                                <rect key="frame" x="311" y="313" width="73" height="18"/>
+                                                <rect key="frame" x="313.5" y="305" width="70.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2431,17 +2461,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1097-2" translatesAutoresizingMaskIntoConstraints="NO" id="jcO-SA-PCK">
-                                                <rect key="frame" x="276" y="309.5" width="25" height="25"/>
+                                                <rect key="frame" x="278.5" y="299.5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="7rq-bc-rhr"/>
                                                     <constraint firstAttribute="width" constant="25" id="MGS-MB-GHH"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xas-ty-Tqb">
-                                                <rect key="frame" x="30" y="357" width="354" height="60"/>
+                                                <rect key="frame" x="30" y="345" width="354" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uk-o5-S4W">
-                                                        <rect key="frame" x="0.0" y="5" width="22.5" height="18"/>
+                                                        <rect key="frame" x="0.0" y="5" width="21.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2450,7 +2480,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8Y-Eh-l4l">
-                                                        <rect key="frame" x="0.0" y="28" width="354" height="21"/>
+                                                        <rect key="frame" x="0.0" y="24" width="354" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2470,14 +2500,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaG-g8-2Oz">
-                                                <rect key="frame" x="30" y="417" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="405" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="h8m-XW-U1Z"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2v-c6-P8N">
-                                                <rect key="frame" x="30" y="433" width="70" height="18"/>
+                                                <rect key="frame" x="30" y="421" width="66" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2486,7 +2516,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7k-6f-iQs">
-                                                <rect key="frame" x="30" y="461" width="354" height="35"/>
+                                                <rect key="frame" x="30" y="445" width="354" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="YCQ-Ud-qrg"/>
                                                 </constraints>
@@ -2501,14 +2531,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJn-yE-LrT">
-                                                <rect key="frame" x="30" y="496" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="480" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="LHj-cg-hPf"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSa-if-RYH">
-                                                <rect key="frame" x="30" y="512" width="58.5" height="18"/>
+                                                <rect key="frame" x="30" y="496" width="54" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2517,7 +2547,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eL1-zA-Wm7">
-                                                <rect key="frame" x="30" y="540" width="354" height="35"/>
+                                                <rect key="frame" x="30" y="520" width="354" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="s6T-Kk-fpX"/>
                                                 </constraints>
@@ -2529,14 +2559,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dk-1c-2Ae">
-                                                <rect key="frame" x="30" y="575" width="354" height="1"/>
+                                                <rect key="frame" x="30" y="555" width="354" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Wtt-vJ-fBj"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnz-jb-3a4">
-                                                <rect key="frame" x="326.5" y="547" width="57.5" height="18"/>
+                                                <rect key="frame" x="332" y="531" width="52" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2545,14 +2575,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="be0-td-aO3">
-                                                <rect key="frame" x="30" y="591" width="51" height="31"/>
+                                                <rect key="frame" x="30" y="571" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="defult:" destination="NoZ-pM-NEa" eventType="valueChanged" id="jLP-oG-rox"/>
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set as defualt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUg-km-dw6">
-                                                <rect key="frame" x="89" y="596" width="93.5" height="21"/>
+                                                <rect key="frame" x="89" y="578.5" width="86.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2561,7 +2591,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7L-sc-WUl">
-                                                <rect key="frame" x="97" y="667" width="220" height="44"/>
+                                                <rect key="frame" x="97" y="645" width="220" height="44"/>
                                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="220" id="PLv-3T-jpi"/>
@@ -2583,7 +2613,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAs-yC-O2f">
-                                                <rect key="frame" x="97" y="731" width="220" height="44"/>
+                                                <rect key="frame" x="97" y="709" width="220" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="OEW-id-Vy8"/>
                                                     <constraint firstAttribute="width" constant="220" id="aBT-FP-cAQ"/>
@@ -2686,7 +2716,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dh-Hc-82h">
-                                <rect key="frame" x="107" y="109" width="200" height="28.5"/>
+                                <rect key="frame" x="107" y="112" width="200" height="22.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="2FA-Ma-AaD"/>
                                 </constraints>
@@ -2848,7 +2878,7 @@
                                 <rect key="frame" x="30" y="308" width="354" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Your Account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hC-aa-Ohs">
-                                        <rect key="frame" x="49" y="24" width="256" height="38.5"/>
+                                        <rect key="frame" x="58.5" y="24" width="237.5" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2857,7 +2887,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter password send to you to delete account" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj9-dq-gg2">
-                                        <rect key="frame" x="20" y="94.5" width="314" height="21"/>
+                                        <rect key="frame" x="20" y="86.5" width="314" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.56078431370000004" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2914,7 +2944,7 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IxJ-QS-th4">
-                                        <rect key="frame" x="20" y="130.5" width="314" height="40"/>
+                                        <rect key="frame" x="20" y="118" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OsR-nm-SQd"/>
                                         </constraints>
@@ -2925,7 +2955,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc0-bv-jhZ">
-                                        <rect key="frame" x="20" y="185.5" width="314" height="0.5"/>
+                                        <rect key="frame" x="20" y="173" width="314" height="0.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="RdE-SA-JFu"/>
@@ -2991,7 +3021,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit The Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hN-Uj-25g">
-                                                <rect key="frame" x="55" y="18" width="319" height="24"/>
+                                                <rect key="frame" x="55" y="20.5" width="319" height="19"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3032,7 +3062,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete The Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgI-5w-7Q0">
-                                                <rect key="frame" x="55" y="18" width="319" height="24"/>
+                                                <rect key="frame" x="55" y="20.5" width="319" height="19"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3120,7 +3150,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your changes saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8I-Oe-dKX">
-                                        <rect key="frame" x="145" y="126" width="229" height="18"/>
+                                        <rect key="frame" x="145" y="128" width="229" height="14"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <color key="textColor" red="0.0078431372549019607" green="0.65490196078431373" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3232,7 +3262,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credit card deleted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FM3-cZ-Is5">
-                                        <rect key="frame" x="84.5" y="120" width="185.5" height="24"/>
+                                        <rect key="frame" x="91.5" y="120" width="171" height="19"/>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                         <color key="textColor" red="0.0078431372550000003" green="0.65490196079999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3241,7 +3271,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDL-3W-P4Q">
-                                        <rect key="frame" x="112" y="174" width="130" height="44"/>
+                                        <rect key="frame" x="112" y="169" width="130" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kDB-jj-UUz"/>
@@ -3304,7 +3334,7 @@
                                 <rect key="frame" x="30" y="328" width="354" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit E-Mail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-nO-jza">
-                                        <rect key="frame" x="20" y="24" width="314" height="25.5"/>
+                                        <rect key="frame" x="20" y="24" width="314" height="20"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3361,7 +3391,7 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpF-xM-NxK">
-                                        <rect key="frame" x="20" y="79.5" width="314" height="50"/>
+                                        <rect key="frame" x="20" y="74" width="314" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="tDZ-ib-0mP"/>
                                         </constraints>
@@ -3372,7 +3402,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSE-br-tZS">
-                                        <rect key="frame" x="20" y="129.5" width="314" height="0.5"/>
+                                        <rect key="frame" x="20" y="124" width="314" height="0.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="GHr-dc-aKz"/>
@@ -3446,7 +3476,7 @@
                                 <rect key="frame" x="30" y="273" width="354" height="350"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM6-yz-Lmw">
-                                        <rect key="frame" x="103" y="24" width="148" height="25.5"/>
+                                        <rect key="frame" x="107.5" y="24" width="139.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="0.0039215686269999999" green="0.078431372550000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3503,7 +3533,7 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your old password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bg0-kH-Omc">
-                                        <rect key="frame" x="20" y="79.5" width="314" height="40"/>
+                                        <rect key="frame" x="20" y="74" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kPG-Fp-9yq"/>
                                         </constraints>
@@ -3514,14 +3544,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rG3-We-Tu9">
-                                        <rect key="frame" x="20" y="119.5" width="314" height="0.5"/>
+                                        <rect key="frame" x="20" y="114" width="314" height="0.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="AZm-yE-75X"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZf-du-ByQ">
-                                        <rect key="frame" x="20" y="140" width="314" height="40"/>
+                                        <rect key="frame" x="20" y="134.5" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="y67-SF-wBU"/>
                                         </constraints>
@@ -3532,14 +3562,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyb-gg-EXa">
-                                        <rect key="frame" x="20" y="185" width="314" height="0.5"/>
+                                        <rect key="frame" x="20" y="179.5" width="314" height="0.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="HTp-WF-Mqv"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-enter your new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-Gn-0tF">
-                                        <rect key="frame" x="20" y="205.5" width="314" height="40"/>
+                                        <rect key="frame" x="20" y="200" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="JBk-HH-lgA"/>
                                         </constraints>
@@ -3550,28 +3580,28 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJN-6B-fiy">
-                                        <rect key="frame" x="20" y="250.5" width="314" height="0.5"/>
+                                        <rect key="frame" x="20" y="245" width="314" height="0.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="r0K-DT-3dz"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="6yB-WY-49Q">
-                                        <rect key="frame" x="314" y="89.5" width="20" height="20"/>
+                                        <rect key="frame" x="314" y="84" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="GGj-fs-Vpz"/>
                                             <constraint firstAttribute="width" constant="20" id="GHx-nF-1T4"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="iaa-d2-d3i">
-                                        <rect key="frame" x="314" y="150" width="20" height="20"/>
+                                        <rect key="frame" x="314" y="144.5" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="X6T-fM-7Ux"/>
                                             <constraint firstAttribute="height" constant="20" id="dlf-bJ-MbA"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="lCU-O3-h9V">
-                                        <rect key="frame" x="314" y="215.5" width="20" height="20"/>
+                                        <rect key="frame" x="314" y="210" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="X9M-Bc-6WA"/>
                                             <constraint firstAttribute="height" constant="20" id="zWC-1e-xNq"/>
@@ -3656,7 +3686,7 @@
     </scenes>
     <resources>
         <image name="Back Button" width="8" height="15"/>
-        <image name="Back Button-4" width="8" height="15"/>
+        <image name="Back Button-4" width="9" height="15"/>
         <image name="Combined Shape" width="315" height="91"/>
         <image name="Delete_button_2" width="12.5" height="16"/>
         <image name="Fill 1097-2" width="22.5" height="22"/>
