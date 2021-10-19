@@ -26,6 +26,7 @@ pod 'FBSDKShareKit'
 pod 'GoogleSignIn'
 pod 'SCRecorder'
 pod 'KDCircularProgress'
+pod 'BMPlayer', '~> 1.2.0'
 
 
 end

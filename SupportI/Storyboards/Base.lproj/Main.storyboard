@@ -1480,7 +1480,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover with overlay" translatesAutoresizingMaskIntoConstraints="NO" id="DP0-my-OXe">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="MiT-F6-m98"/>
+                                            <constraint firstAttribute="height" constant="250" id="486-uJ-S3y"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1w-eT-NfD">
@@ -1808,8 +1808,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="DP0-my-OXe" firstAttribute="top" secondItem="qX0-wI-Y5R" secondAttribute="top" id="0SS-YF-Zg8"/>
-                                    <constraint firstItem="DP0-my-OXe" firstAttribute="leading" secondItem="qX0-wI-Y5R" secondAttribute="leading" id="2rG-XO-qSn"/>
+                                    <constraint firstAttribute="trailing" secondItem="DP0-my-OXe" secondAttribute="trailing" id="6Oa-hq-KoU"/>
                                     <constraint firstItem="T1w-eT-NfD" firstAttribute="top" secondItem="7sH-C5-Qwm" secondAttribute="bottom" constant="15" id="8e5-Xh-j92"/>
                                     <constraint firstAttribute="trailing" secondItem="Sqd-w0-lXE" secondAttribute="trailing" constant="20" id="9nr-lB-7hV"/>
                                     <constraint firstItem="rvo-Zc-qdy" firstAttribute="leading" secondItem="qX0-wI-Y5R" secondAttribute="leading" constant="85" id="ExI-1G-0Sl"/>
@@ -1821,13 +1820,14 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                     <constraint firstAttribute="bottom" secondItem="yES-pQ-jPq" secondAttribute="bottom" id="Ppg-Xc-MvF"/>
                                     <constraint firstItem="ocp-HR-jxw" firstAttribute="leading" secondItem="qX0-wI-Y5R" secondAttribute="leading" constant="25" id="SH5-oz-9Xv"/>
                                     <constraint firstAttribute="trailing" secondItem="T1w-eT-NfD" secondAttribute="trailing" constant="15" id="UYf-Ng-Heg"/>
+                                    <constraint firstItem="DP0-my-OXe" firstAttribute="leading" secondItem="qX0-wI-Y5R" secondAttribute="leading" id="YB6-cC-etj"/>
                                     <constraint firstItem="7ts-9k-I6z" firstAttribute="leading" secondItem="qX0-wI-Y5R" secondAttribute="leading" constant="17" id="Zwx-xT-6ad"/>
                                     <constraint firstItem="7sH-C5-Qwm" firstAttribute="leading" secondItem="qX0-wI-Y5R" secondAttribute="leading" id="b5C-06-QBK"/>
                                     <constraint firstItem="7sH-C5-Qwm" firstAttribute="trailing" secondItem="qX0-wI-Y5R" secondAttribute="trailing" id="c8t-uP-RAS"/>
                                     <constraint firstItem="yES-pQ-jPq" firstAttribute="leading" secondItem="qX0-wI-Y5R" secondAttribute="leading" id="g2O-WT-V8a"/>
                                     <constraint firstItem="7ts-9k-I6z" firstAttribute="top" secondItem="7sH-C5-Qwm" secondAttribute="bottom" constant="15" id="hcf-Xu-NL3"/>
+                                    <constraint firstItem="DP0-my-OXe" firstAttribute="top" secondItem="qX0-wI-Y5R" secondAttribute="top" id="tKk-Md-zNZ"/>
                                     <constraint firstItem="yES-pQ-jPq" firstAttribute="top" secondItem="Sqd-w0-lXE" secondAttribute="bottom" constant="15" id="tfU-7Y-M8P"/>
-                                    <constraint firstAttribute="trailing" secondItem="DP0-my-OXe" secondAttribute="trailing" id="u1c-yq-hDA"/>
                                     <constraint firstItem="rvo-Zc-qdy" firstAttribute="top" secondItem="7ts-9k-I6z" secondAttribute="bottom" constant="160" id="wqu-6d-MmA"/>
                                 </constraints>
                             </scrollView>
@@ -2129,8 +2129,8 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
         </designable>
     </designables>
     <resources>
-        <image name="Back Button" width="8" height="15"/>
-        <image name="Back Button-4" width="8" height="15"/>
+        <image name="Back Button" width="9" height="15"/>
+        <image name="Back Button-4" width="9" height="15"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
         <image name="Fill 1095-1" width="24" height="25"/>
         <image name="Fill 1108" width="24" height="18"/>

@@ -906,7 +906,7 @@
                                             <action selector="backBtn:" destination="Q7O-Pp-M9L" eventType="touchUpInside" id="ghm-2e-msS"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask" translatesAutoresizingMaskIntoConstraints="NO" id="maI-cY-6fF">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover with overlay" translatesAutoresizingMaskIntoConstraints="NO" id="maI-cY-6fF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="OoA-f3-lWO"/>
@@ -982,7 +982,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elisabeth Ali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvS-EQ-DRG">
-                                                <rect key="frame" x="25" y="100" width="244" height="35.5"/>
+                                                <rect key="frame" x="25" y="100" width="244" height="36"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1009,19 +1009,19 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mUe-U7-DMF">
-                                                <rect key="frame" x="57" y="190.5" width="300" height="70"/>
+                                                <rect key="frame" x="57" y="191" width="300" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4c-cH-f42">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIa-08-p99">
-                                                                <rect key="frame" x="41" y="15" width="18" height="20.5"/>
+                                                                <rect key="frame" x="41" y="15" width="18" height="21"/>
                                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecX-y6-Zrx">
-                                                                <rect key="frame" x="10" y="40.5" width="79" height="18"/>
+                                                                <rect key="frame" x="10" y="41" width="79" height="18"/>
                                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1053,13 +1053,13 @@
                                                         <rect key="frame" x="100" y="0.0" width="100" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4b-5K-Ta9">
-                                                                <rect key="frame" x="41" y="15" width="18" height="20.5"/>
+                                                                <rect key="frame" x="41" y="15" width="18" height="21"/>
                                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3w-nx-e5n">
-                                                                <rect key="frame" x="10" y="40.5" width="79" height="18"/>
+                                                                <rect key="frame" x="10" y="41" width="79" height="18"/>
                                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1091,13 +1091,13 @@
                                                         <rect key="frame" x="200" y="0.0" width="100" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jb3-1w-Dm9">
-                                                                <rect key="frame" x="41" y="15" width="18" height="20.5"/>
+                                                                <rect key="frame" x="41" y="15" width="18" height="21"/>
                                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likes received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZn-6z-ni4">
-                                                                <rect key="frame" x="10" y="40.5" width="80" height="18"/>
+                                                                <rect key="frame" x="10" y="41" width="80" height="18"/>
                                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1122,13 +1122,13 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elisabeth Ali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nF-eY-VDB">
-                                                <rect key="frame" x="25" y="143.5" width="364" height="18"/>
+                                                <rect key="frame" x="25" y="144" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.16862745100000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6HS-nw-0s4">
-                                                <rect key="frame" x="25" y="305.5" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="306" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-8" translatesAutoresizingMaskIntoConstraints="NO" id="ygk-ER-x2W">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1180,7 +1180,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jyo-Bs-rKR">
-                                                <rect key="frame" x="25" y="390.5" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="391" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1172-3" translatesAutoresizingMaskIntoConstraints="NO" id="DdE-JR-8Vx">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1191,7 +1191,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoG-p8-Zsh">
-                                                        <rect key="frame" x="65" y="20.5" width="126.5" height="24"/>
+                                                        <rect key="frame" x="65" y="20.5" width="127" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1200,7 +1200,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAl-Nj-4SR">
-                                                        <rect key="frame" x="196.5" y="20.5" width="20" height="24"/>
+                                                        <rect key="frame" x="197" y="20.5" width="20" height="24"/>
                                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1239,7 +1239,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWr-sz-PUd">
-                                                <rect key="frame" x="25" y="570.5" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="571" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 197-2" translatesAutoresizingMaskIntoConstraints="NO" id="0Zr-Zx-R0V">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1302,7 +1302,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdz-xd-JCZ">
-                                                <rect key="frame" x="25" y="660.5" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="661" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 11092" translatesAutoresizingMaskIntoConstraints="NO" id="9Dg-Nt-BUg">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1354,7 +1354,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2F-ws-spQ">
-                                                <rect key="frame" x="25" y="750.5" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="751" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1157-3" translatesAutoresizingMaskIntoConstraints="NO" id="Wyv-gc-GYc">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1406,7 +1406,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-ID-Y6B">
-                                                <rect key="frame" x="25" y="830.5" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="831" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 969-3" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-B4-MkW">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -1458,7 +1458,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAI-mm-9Us">
-                                                <rect key="frame" x="25" y="480.5" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="481" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 1119-1" translatesAutoresizingMaskIntoConstraints="NO" id="CTP-Lz-WLk">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -2600,9 +2600,14 @@
             <point key="canvasLocation" x="4582.608695652174" y="4321.875"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="vJO-SD-138">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Alan-Johnson-reveals-the--1" width="173" height="104"/>
-        <image name="Back Button" width="8" height="15"/>
+        <image name="Back Button" width="9" height="15"/>
         <image name="Back Button-4" width="9" height="15"/>
         <image name="Background-1" width="341" height="84"/>
         <image name="Fill 1036-2" width="24" height="24"/>
@@ -2637,7 +2642,6 @@
         <image name="fill-905" width="22" height="22"/>
         <image name="filter" width="24" height="24"/>
         <image name="icon-8" width="47" height="43"/>
-        <image name="mask" width="388.5" height="257"/>
         <image name="notify" width="21.5" height="25"/>
         <image name="sorry12" width="123.5" height="148.5"/>
         <image name="upload" width="28" height="19"/>

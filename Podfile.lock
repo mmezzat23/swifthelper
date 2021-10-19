@@ -7,6 +7,13 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - BMPlayer (1.2.1):
+    - BMPlayer/Full (= 1.2.1)
+  - BMPlayer/Core (1.2.1)
+  - BMPlayer/Full (1.2.1):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 4.6.1)
+    - SnapKit (~> 4.2.0)
   - BSGridCollectionViewLayout (1.2.5)
   - BSImagePicker (2.10.3):
     - BSGridCollectionViewLayout (= 1.2.5)
@@ -141,13 +148,18 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - NVActivityIndicatorView (4.6.1):
+    - NVActivityIndicatorView/Presenter (= 4.6.1)
+  - NVActivityIndicatorView/Presenter (4.6.1)
   - PromisesObjC (1.2.12)
   - SCRecorder (2.7.0)
+  - SnapKit (4.2.0)
   - SwiftyGif (5.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.0)
+  - BMPlayer (~> 1.2.0)
   - BSImagePicker (~> 2.0)
   - Cosmos (~> 15.0)
   - CreditCardValidator
@@ -172,6 +184,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - AppAuth
+    - BMPlayer
     - BSGridCollectionViewLayout
     - BSImagePicker
     - BSImageView
@@ -201,14 +214,17 @@ SPEC REPOS:
     - lottie-ios
     - MBProgressHUD
     - nanopb
+    - NVActivityIndicatorView
     - PromisesObjC
     - SCRecorder
+    - SnapKit
     - SwiftyGif
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  BMPlayer: ea12f9d82e37f968dea2078b5e58e356ee4439d8
   BSGridCollectionViewLayout: 333dcb457a5a3bdd9212607ab5756553dcfe06cb
   BSImagePicker: 07404254f2fcdaf5a2eb403c0f8c337267ce8738
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
@@ -238,10 +254,12 @@ SPEC CHECKSUMS:
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: 3682b3ab40742a1c6c67a7f5f1f59f475cd11acb
+PODFILE CHECKSUM: 28528218462e26178cd20e036d0d0c8c03b692fe
 
 COCOAPODS: 1.11.2

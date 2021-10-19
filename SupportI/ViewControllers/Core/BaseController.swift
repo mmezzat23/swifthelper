@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Network
 
+@available(iOS 12.0, *)
 class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alertable {
 
     var hiddenNav: Bool = false
@@ -30,6 +32,8 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var titleBar: UIBarButtonItem!
     @IBOutlet weak var notificationBtnButton: UIButton!
+    let monitor = NWPathMonitor()
+    let queue = DispatchQueue(label: "InternetConnectionMonitor")
 
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController()
@@ -56,10 +60,19 @@ class BaseController: UIViewController, PresentingViewProtocol, POPUPView, Alert
         self.navigationController?.navigationBar.removeSubviews()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.setupBase()
-//        if (UserRoot.saller() == true){
-//            notificationBtnButton.setImage(#imageLiteral(resourceName: "notify"), for: .normal)
-//        }
+        monitor.pathUpdateHandler = { [self] path in
+            if path.status == .satisfied {
+                print("We're connected!")
+            } else {
+                let vcc = self.pushViewController(Sorryactive.self,storyboard: .saller)
+                vcc.txtstring = "No Connection".localized()
+                pushPop(vcr: vcc)
+            }
 
+            print(path.isExpensive)
+            monitor.start(queue: queue)
+
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

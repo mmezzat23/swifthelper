@@ -292,7 +292,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-uY-kuV">
-                                        <rect key="frame" x="0.0" y="90" width="414" height="711.5"/>
+                                        <rect key="frame" x="0.0" y="90" width="414" height="791.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3X-mR-xRy">
                                                 <rect key="frame" x="25" y="50" width="364" height="65"/>
@@ -501,7 +501,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-7p-7cu">
-                                                <rect key="frame" x="25" y="450" width="364" height="65"/>
+                                                <rect key="frame" x="25" y="530" width="364" height="65"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-7" translatesAutoresizingMaskIntoConstraints="NO" id="2Ju-GF-vdj">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
@@ -541,8 +541,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCc-H5-mFN">
-                                                <rect key="frame" x="25" y="550" width="97" height="27"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCc-H5-mFN">
+                                                <rect key="frame" x="25" y="630" width="97" height="27"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -550,8 +550,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Contact Us"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-ek-LpB">
-                                                <rect key="frame" x="25" y="602" width="364" height="50"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-ek-LpB">
+                                                <rect key="frame" x="25" y="682" width="364" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill -3" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-jq-V6i">
                                                         <rect key="frame" x="20" y="14" width="22" height="22"/>
@@ -584,8 +584,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send us an message and we will get back to you shortly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRN-Xa-DTd">
-                                                <rect key="frame" x="32.5" y="677" width="349" height="19.5"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send us an message and we will get back to you shortly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRN-Xa-DTd">
+                                                <rect key="frame" x="32.5" y="757" width="349" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
                                                 <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -593,13 +593,56 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Send us an message and we will get back to you shortly"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6W-6C-gFQ">
+                                                <rect key="frame" x="25" y="450" width="364" height="65"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fill 529-1" translatesAutoresizingMaskIntoConstraints="NO" id="PYz-qX-bWy">
+                                                        <rect key="frame" x="20" y="22.5" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="W9a-uK-YBg"/>
+                                                            <constraint firstAttribute="height" constant="20" id="dcU-FG-Oie"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkp-cE-mgI">
+                                                        <rect key="frame" x="65" y="20.5" width="274" height="24"/>
+                                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Contact Us"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="PYz-qX-bWy" firstAttribute="centerY" secondItem="q6W-6C-gFQ" secondAttribute="centerY" id="6x3-bJ-SL3"/>
+                                                    <constraint firstItem="jkp-cE-mgI" firstAttribute="leading" secondItem="PYz-qX-bWy" secondAttribute="trailing" constant="25" id="GnL-eF-6lh"/>
+                                                    <constraint firstAttribute="height" constant="65" id="QIE-lN-pHr"/>
+                                                    <constraint firstItem="jkp-cE-mgI" firstAttribute="centerY" secondItem="q6W-6C-gFQ" secondAttribute="centerY" id="Tfk-hz-gRu"/>
+                                                    <constraint firstItem="PYz-qX-bWy" firstAttribute="leading" secondItem="q6W-6C-gFQ" secondAttribute="leading" constant="20" id="xto-hu-czd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jkp-cE-mgI" secondAttribute="trailing" constant="25" id="ybk-oM-4tI"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemGray4Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="i79-AV-KAV" firstAttribute="leading" secondItem="Ekc-uY-kuV" secondAttribute="leading" constant="25" id="11Q-P8-QNn"/>
                                             <constraint firstAttribute="trailing" secondItem="wO7-s2-cYt" secondAttribute="trailing" constant="25" id="1sq-PY-HcU"/>
+                                            <constraint firstAttribute="trailing" secondItem="q6W-6C-gFQ" secondAttribute="trailing" constant="25" id="23v-g9-gaL"/>
                                             <constraint firstItem="M3X-mR-xRy" firstAttribute="top" secondItem="Ekc-uY-kuV" secondAttribute="top" constant="50" id="AfJ-IR-eLC"/>
                                             <constraint firstItem="5wd-ZK-P7t" firstAttribute="leading" secondItem="Ekc-uY-kuV" secondAttribute="leading" constant="25" id="FKt-hp-A50"/>
+                                            <constraint firstItem="q6W-6C-gFQ" firstAttribute="leading" secondItem="Ekc-uY-kuV" secondAttribute="leading" constant="25" id="Gc9-Nd-RGl"/>
                                             <constraint firstItem="FL3-ek-LpB" firstAttribute="top" secondItem="yCc-H5-mFN" secondAttribute="bottom" constant="25" id="J6W-P0-lYT"/>
                                             <constraint firstItem="yCc-H5-mFN" firstAttribute="top" secondItem="f2m-7p-7cu" secondAttribute="bottom" constant="35" id="JOR-HE-ayi"/>
                                             <constraint firstAttribute="trailing" secondItem="M3X-mR-xRy" secondAttribute="trailing" constant="25" id="Oyb-n8-fAn"/>
@@ -610,8 +653,8 @@
                                             <constraint firstAttribute="trailing" secondItem="nHE-lc-lBa" secondAttribute="trailing" constant="25" id="Ygk-HL-mOg"/>
                                             <constraint firstItem="FL3-ek-LpB" firstAttribute="leading" secondItem="Ekc-uY-kuV" secondAttribute="leading" constant="25" id="a8D-Ba-uzG"/>
                                             <constraint firstItem="JRN-Xa-DTd" firstAttribute="top" secondItem="FL3-ek-LpB" secondAttribute="bottom" constant="25" id="e7S-c3-H4U"/>
-                                            <constraint firstItem="f2m-7p-7cu" firstAttribute="top" secondItem="wO7-s2-cYt" secondAttribute="bottom" constant="15" id="eMD-IQ-MgC"/>
                                             <constraint firstItem="i79-AV-KAV" firstAttribute="top" secondItem="5wd-ZK-P7t" secondAttribute="bottom" constant="15" id="fG7-lr-4Qc"/>
+                                            <constraint firstItem="f2m-7p-7cu" firstAttribute="top" secondItem="q6W-6C-gFQ" secondAttribute="bottom" constant="15" id="gHc-vA-JbR"/>
                                             <constraint firstAttribute="trailing" secondItem="i79-AV-KAV" secondAttribute="trailing" constant="25" id="grZ-TB-dGo"/>
                                             <constraint firstItem="f2m-7p-7cu" firstAttribute="leading" secondItem="Ekc-uY-kuV" secondAttribute="leading" constant="25" id="hpK-J4-GGp"/>
                                             <constraint firstItem="yCc-H5-mFN" firstAttribute="leading" secondItem="Ekc-uY-kuV" secondAttribute="leading" constant="25" id="k3Q-Kg-zzX"/>
@@ -622,6 +665,7 @@
                                             <constraint firstItem="5wd-ZK-P7t" firstAttribute="top" secondItem="nHE-lc-lBa" secondAttribute="bottom" constant="15" id="v3b-bg-dVn"/>
                                             <constraint firstItem="nHE-lc-lBa" firstAttribute="leading" secondItem="Ekc-uY-kuV" secondAttribute="leading" constant="25" id="w53-AQ-mQ5"/>
                                             <constraint firstItem="JRN-Xa-DTd" firstAttribute="centerX" secondItem="Ekc-uY-kuV" secondAttribute="centerX" id="wi8-g1-K4x"/>
+                                            <constraint firstItem="q6W-6C-gFQ" firstAttribute="top" secondItem="wO7-s2-cYt" secondAttribute="bottom" constant="15" id="yEE-zX-8E6"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -701,7 +745,7 @@
                         <outlet property="notify" destination="1Bi-uv-bkU" id="qgM-CU-UQ6"/>
                         <outlet property="privacy" destination="wO7-s2-cYt" id="HQZ-L2-0L7"/>
                         <outlet property="request" destination="5wd-ZK-P7t" id="t6d-Rt-YNc"/>
-                        <outlet property="sendmessage" destination="FL3-ek-LpB" id="wUn-Kt-xwz"/>
+                        <outlet property="sendmessage" destination="q6W-6C-gFQ" id="2ua-2H-6yp"/>
                         <outlet property="terms" destination="i79-AV-KAV" id="vZ2-Sy-shp"/>
                     </connections>
                 </viewController>
@@ -2302,13 +2346,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="8" height="15"/>
+        <image name="Back Button" width="9" height="15"/>
         <image name="Fill -1" width="22.5" height="22.5"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
         <image name="Fill 1036-2" width="24" height="24"/>
         <image name="Fill 1160-2" width="24" height="24"/>
         <image name="Fill 1168-2" width="24" height="29"/>
         <image name="Fill 1187" width="22.5" height="22.5"/>
+        <image name="Fill 529-1" width="22" height="22"/>
         <image name="Fill 669" width="23.5" height="23.5"/>
         <image name="Fill 977-2" width="24" height="24"/>
         <image name="Group 10756" width="31.5" height="35.5"/>
