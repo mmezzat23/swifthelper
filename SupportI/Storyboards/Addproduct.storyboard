@@ -90,7 +90,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td6-dH-n6y">
-                                                <rect key="frame" x="133" y="40" width="148.5" height="29.5"/>
+                                                <rect key="frame" x="138.5" y="40" width="137.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                                 <color key="textColor" red="0.023529411760000001" green="0.094117647060000004" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -99,7 +99,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw1-Ob-msr">
-                                                <rect key="frame" x="27" y="109.5" width="360" height="18"/>
+                                                <rect key="frame" x="27" y="103.5" width="360" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brief Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhP-Ah-mCl">
-                                                <rect key="frame" x="27" y="481.5" width="360" height="18"/>
+                                                <rect key="frame" x="27" y="475.5" width="360" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hU-wb-UFl">
-                                                <rect key="frame" x="87" y="797.5" width="240" height="44"/>
+                                                <rect key="frame" x="87" y="791.5" width="240" height="44"/>
                                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="6rN-dw-uaj"/>
@@ -137,7 +137,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYw-Yw-cgx">
-                                                <rect key="frame" x="87" y="856.5" width="240" height="44"/>
+                                                <rect key="frame" x="87" y="850.5" width="240" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="7VO-kg-zjt"/>
                                                     <constraint firstAttribute="height" constant="44" id="pwo-Mo-zBl"/>
@@ -155,7 +155,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Les-Py-UD2">
-                                                <rect key="frame" x="27" y="202.5" width="360" height="18"/>
+                                                <rect key="frame" x="27" y="196.5" width="360" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -164,7 +164,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-PP-LKZ">
-                                                <rect key="frame" x="17" y="230.5" width="380" height="45"/>
+                                                <rect key="frame" x="17" y="224.5" width="380" height="45"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="SWz-9R-Pv4">
                                                         <rect key="frame" x="356" y="20.5" width="9" height="4.5"/>
@@ -205,7 +205,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG8-8X-WvF">
-                                                <rect key="frame" x="27" y="295.5" width="360" height="18"/>
+                                                <rect key="frame" x="27" y="289.5" width="360" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PA-F1-hPY">
-                                                <rect key="frame" x="17" y="323.5" width="380" height="45"/>
+                                                <rect key="frame" x="17" y="317.5" width="380" height="45"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="UnS-89-3In">
                                                         <rect key="frame" x="356" y="20.5" width="9" height="4.5"/>
@@ -255,7 +255,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-Ea-LVD">
-                                                <rect key="frame" x="27" y="388.5" width="360" height="18"/>
+                                                <rect key="frame" x="27" y="382.5" width="360" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -264,7 +264,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-iq-L92">
-                                                <rect key="frame" x="17" y="416.5" width="380" height="45"/>
+                                                <rect key="frame" x="17" y="410.5" width="380" height="45"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="dXu-ji-96u">
                                                         <rect key="frame" x="356" y="20.5" width="9" height="4.5"/>
@@ -305,7 +305,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3L-9u-ZHX">
-                                                <rect key="frame" x="17" y="137.5" width="380" height="45"/>
+                                                <rect key="frame" x="17" y="131.5" width="380" height="45"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Product  Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZmB-iH-xxH">
                                                         <rect key="frame" x="10" y="0.0" width="370" height="45"/>
@@ -338,7 +338,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ay2-iP-IiL">
-                                                <rect key="frame" x="17" y="509.5" width="380" height="120"/>
+                                                <rect key="frame" x="17" y="503.5" width="380" height="120"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Brief Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pql-yp-QPs">
                                                         <rect key="frame" x="10" y="0.0" width="360" height="120"/>
@@ -714,7 +714,7 @@ and microphone</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB8-9I-KUC">
-                                                <rect key="frame" x="17" y="135" width="380" height="29.5"/>
+                                                <rect key="frame" x="17" y="135" width="380" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                                 <color key="textColor" red="0.023529411760000001" green="0.094117647060000004" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -723,7 +723,7 @@ and microphone</string>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNc-EA-FWC">
-                                                <rect key="frame" x="17" y="184.5" width="380" height="200"/>
+                                                <rect key="frame" x="17" y="178.5" width="380" height="200"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S5u-Jk-ae0">
                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="200"/>
@@ -751,7 +751,7 @@ and microphone</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8V-yN-HSS">
-                                                <rect key="frame" x="27" y="414.5" width="360" height="18"/>
+                                                <rect key="frame" x="27" y="408.5" width="360" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -760,13 +760,13 @@ and microphone</string>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample: IOS, iPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zl-GE-8qY">
-                                                <rect key="frame" x="17" y="492.5" width="380" height="18"/>
+                                                <rect key="frame" x="17" y="486.5" width="380" height="18"/>
                                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-7z-46k">
-                                                <rect key="frame" x="87" y="550.5" width="240" height="44"/>
+                                                <rect key="frame" x="87" y="544.5" width="240" height="44"/>
                                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="aw2-fw-ica"/>
@@ -786,7 +786,7 @@ and microphone</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkX-xC-AVK">
-                                                <rect key="frame" x="87" y="624.5" width="240" height="44"/>
+                                                <rect key="frame" x="87" y="618.5" width="240" height="44"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="YY0-hd-LXc"/>
@@ -818,7 +818,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaW-A7-bYG">
-                                                        <rect key="frame" x="1.5" y="35" width="37" height="18"/>
+                                                        <rect key="frame" x="3.5" y="35" width="33.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" name="darkblue"/>
                                                         <nil key="highlightedColor"/>
@@ -834,7 +834,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-pm-DlI">
-                                                        <rect key="frame" x="345.5" y="35" width="29" height="18"/>
+                                                        <rect key="frame" x="346.5" y="35" width="27.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -853,7 +853,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1i-Sl-dGq">
-                                                                <rect key="frame" x="-5" y="35" width="40.5" height="18"/>
+                                                                <rect key="frame" x="-3" y="35" width="36.5" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" name="darkblue"/>
                                                                 <nil key="highlightedColor"/>
@@ -869,7 +869,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onB-4u-AIk">
-                                                                <rect key="frame" x="110" y="35" width="50" height="18"/>
+                                                                <rect key="frame" x="111" y="35" width="48" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -949,7 +949,7 @@ and microphone</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weU-Pz-cVK">
-                                                <rect key="frame" x="17" y="442.5" width="380" height="45"/>
+                                                <rect key="frame" x="17" y="436.5" width="380" height="45"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLE-FV-dRz">
                                                         <rect key="frame" x="10" y="0.0" width="360" height="45"/>
@@ -1352,7 +1352,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cef-TM-VaO">
-                                                        <rect key="frame" x="1.5" y="35" width="37" height="18"/>
+                                                        <rect key="frame" x="3.5" y="35" width="33.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" name="darkblue"/>
                                                         <nil key="highlightedColor"/>
@@ -1368,7 +1368,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-1n-pe6">
-                                                        <rect key="frame" x="345.5" y="35" width="29" height="18"/>
+                                                        <rect key="frame" x="346.5" y="35" width="27.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1387,7 +1387,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKD-rp-gRy">
-                                                                <rect key="frame" x="-5" y="35" width="40.5" height="18"/>
+                                                                <rect key="frame" x="-3" y="35" width="36.5" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" name="darkblue"/>
                                                                 <nil key="highlightedColor"/>
@@ -1403,7 +1403,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiF-mH-1H7">
-                                                                <rect key="frame" x="110" y="35" width="50" height="18"/>
+                                                                <rect key="frame" x="111" y="35" width="48" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" name="darkblue"/>
                                                                 <nil key="highlightedColor"/>
@@ -1816,7 +1816,7 @@ and microphone</string>
                                                 <rect key="frame" x="30" y="481" width="354" height="320"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Price Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEZ-bg-aeq">
-                                                        <rect key="frame" x="81" y="30" width="192" height="25.5"/>
+                                                        <rect key="frame" x="86.5" y="30" width="181.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                         <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1825,7 +1825,7 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buyer Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeR-UZ-ni3">
-                                                        <rect key="frame" x="26" y="95.5" width="92.5" height="25.5"/>
+                                                        <rect key="frame" x="26" y="90" width="88" height="20"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                         <color key="textColor" red="0.0039215686269999999" green="0.078431372550000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1834,7 +1834,7 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buyer Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-p6-djE">
-                                                        <rect key="frame" x="235.5" y="95.5" width="92.5" height="25.5"/>
+                                                        <rect key="frame" x="240" y="90" width="88" height="20"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                         <color key="textColor" red="0.0039215686269999999" green="0.078431372550000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1843,7 +1843,7 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4k-wS-4jK">
-                                                        <rect key="frame" x="26" y="145" width="36" height="22.5"/>
+                                                        <rect key="frame" x="26" y="134" width="34.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1852,13 +1852,13 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veB-cF-jZf">
-                                                        <rect key="frame" x="328" y="156.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="328" y="143" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pb-Ib-UxG">
-                                                        <rect key="frame" x="26" y="179.5" width="63.5" height="22.5"/>
+                                                        <rect key="frame" x="26" y="163.5" width="59.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1867,13 +1867,13 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saG-V8-Ieo">
-                                                        <rect key="frame" x="328" y="191" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="328" y="172.5" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WDNO Commission (5%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9u5-dW-txT">
-                                                        <rect key="frame" x="26" y="214" width="181" height="22.5"/>
+                                                        <rect key="frame" x="26" y="193" width="170" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1882,13 +1882,13 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IM-Ph-sWx">
-                                                        <rect key="frame" x="328" y="225.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="328" y="202" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-36-rXU">
-                                                        <rect key="frame" x="26" y="248.5" width="91" height="22.5"/>
+                                                        <rect key="frame" x="26" y="222.5" width="84.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1897,13 +1897,13 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrs-qV-GCf">
-                                                        <rect key="frame" x="328" y="260" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="328" y="231.5" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taxes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1k-SV-I2p">
-                                                        <rect key="frame" x="26" y="283" width="42" height="22.5"/>
+                                                        <rect key="frame" x="26" y="252" width="38.5" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1912,7 +1912,7 @@ and microphone</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fh-he-tfO">
-                                                        <rect key="frame" x="328" y="294.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="328" y="261" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1977,7 +1977,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Before Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGL-dY-d2f">
-                                                        <rect key="frame" x="58" y="9" width="142" height="22.5"/>
+                                                        <rect key="frame" x="58" y="11.5" width="132" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <color key="textColor" red="0.0039215686274509803" green="0.078431372549019607" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2117,7 +2117,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytc-s7-cTC">
-                                                        <rect key="frame" x="1.5" y="35" width="37" height="18"/>
+                                                        <rect key="frame" x="3.5" y="35" width="33.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" name="darkblue"/>
                                                         <nil key="highlightedColor"/>
@@ -2133,7 +2133,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5i-n9-jlo">
-                                                        <rect key="frame" x="345.5" y="35" width="29" height="18"/>
+                                                        <rect key="frame" x="346.5" y="35" width="27.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" name="darkblue"/>
                                                         <nil key="highlightedColor"/>
@@ -2152,7 +2152,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OY7-bO-DjS">
-                                                                <rect key="frame" x="-5" y="35" width="40.5" height="18"/>
+                                                                <rect key="frame" x="-3" y="35" width="36.5" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" name="darkblue"/>
                                                                 <nil key="highlightedColor"/>
@@ -2168,7 +2168,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e6-Cb-8nz">
-                                                                <rect key="frame" x="110" y="35" width="50" height="18"/>
+                                                                <rect key="frame" x="111" y="35" width="48" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" name="darkblue"/>
                                                                 <nil key="highlightedColor"/>
@@ -2429,7 +2429,7 @@ and microphone</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Sent For Approval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljy-AM-GMg">
-                                        <rect key="frame" x="20" y="375" width="374" height="29.5"/>
+                                        <rect key="frame" x="20" y="375" width="374" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.054901960780000002" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2438,7 +2438,7 @@ and microphone</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Sent For Approval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-JP-tU5">
-                                        <rect key="frame" x="20" y="419.5" width="374" height="21"/>
+                                        <rect key="frame" x="20" y="413.5" width="374" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="14"/>
                                         <color key="textColor" red="0.58431372549019611" green="0.59999999999999998" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2721,7 +2721,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deU-qx-cze">
-                                                        <rect key="frame" x="1.5" y="35" width="37" height="18"/>
+                                                        <rect key="frame" x="3.5" y="35" width="33.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" name="darkblue"/>
                                                         <nil key="highlightedColor"/>
@@ -2737,7 +2737,7 @@ and microphone</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vE-fF-iT8">
-                                                        <rect key="frame" x="345.5" y="35" width="29" height="18"/>
+                                                        <rect key="frame" x="346.5" y="35" width="27.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2756,7 +2756,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-Ko-wBb">
-                                                                <rect key="frame" x="-5" y="35" width="40.5" height="18"/>
+                                                                <rect key="frame" x="-3" y="35" width="36.5" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -2772,7 +2772,7 @@ and microphone</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxL-it-u1G">
-                                                                <rect key="frame" x="110" y="35" width="50" height="18"/>
+                                                                <rect key="frame" x="111" y="35" width="48" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                                 <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -3120,7 +3120,7 @@ and microphone</string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-6I-9Qf">
-                                                <rect key="frame" x="87" y="1617" width="240" height="44"/>
+                                                <rect key="frame" x="87" y="1546" width="240" height="44"/>
                                                 <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="ejn-w2-dg7"/>
@@ -3137,10 +3137,11 @@ and microphone</string>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="continue:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="SBh-qQ-k1p"/>
+                                                    <action selector="post:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="MPS-ta-v2i"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReH-Ve-SI5">
-                                                <rect key="frame" x="87" y="1691" width="240" height="44"/>
+                                                <rect key="frame" x="87" y="1620" width="240" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="240" id="H5O-ZW-gPJ"/>
@@ -3161,6 +3162,7 @@ and microphone</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="edit:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="q4J-Ka-ZHc"/>
                                                     <action selector="save:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="hPE-Yd-QGP"/>
                                                     <action selector="savedraft:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="fNx-gI-J27"/>
                                                 </connections>
@@ -3319,36 +3321,6 @@ and microphone</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-tk-CEy">
-                                                <rect key="frame" x="97" y="1536" width="220" height="40"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye Active" translatesAutoresizingMaskIntoConstraints="NO" id="z3p-Ux-ior">
-                                                        <rect key="frame" x="15" y="10" width="33" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="33" id="CGC-5m-4o7"/>
-                                                            <constraint firstAttribute="height" constant="20" id="dw5-ow-YRC"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Before Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSS-T8-ORK">
-                                                        <rect key="frame" x="58" y="9" width="142" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
-                                                        <color key="textColor" red="0.0039215686269999999" green="0.078431372550000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Review Before Post"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="KSS-T8-ORK" firstAttribute="centerY" secondItem="z3p-Ux-ior" secondAttribute="centerY" id="1lV-3T-QCf"/>
-                                                    <constraint firstItem="z3p-Ux-ior" firstAttribute="leading" secondItem="2Wk-tk-CEy" secondAttribute="leading" constant="15" id="3ec-lL-2sv"/>
-                                                    <constraint firstAttribute="height" constant="40" id="JqK-Hg-H1b"/>
-                                                    <constraint firstItem="z3p-Ux-ior" firstAttribute="centerY" secondItem="2Wk-tk-CEy" secondAttribute="centerY" id="SID-EO-0k2"/>
-                                                    <constraint firstItem="KSS-T8-ORK" firstAttribute="leading" secondItem="z3p-Ux-ior" secondAttribute="trailing" constant="10" id="mMk-vz-k6H"/>
-                                                    <constraint firstAttribute="width" constant="220" id="rUV-ZF-azF"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Used Apple Phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwd-MH-ATV">
                                                 <rect key="frame" x="20" y="40" width="374" height="25.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
@@ -3375,6 +3347,9 @@ and microphone</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="edit-3"/>
+                                                <connections>
+                                                    <action selector="editname:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="IYJ-Nm-xzP"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-Nq-WWF">
                                                 <rect key="frame" x="20" y="144" width="374" height="1"/>
@@ -3399,6 +3374,9 @@ and microphone</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="edit-3"/>
+                                                <connections>
+                                                    <action selector="editmedia:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="N6C-am-QDR"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hg-aA-qjc">
                                                 <rect key="frame" x="20" y="385" width="374" height="19.5"/>
@@ -3456,6 +3434,9 @@ and microphone</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="edit-3"/>
+                                                <connections>
+                                                    <action selector="editinfo:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="lJL-AK-m8A"/>
+                                                </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rPr-Gt-lyL">
                                                 <rect key="frame" x="20" y="586.5" width="374" height="150"/>
@@ -3528,6 +3509,9 @@ and microphone</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="edit-3"/>
+                                                <connections>
+                                                    <action selector="editship:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="Cd0-Np-9E6"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBs-KC-d6c">
                                                 <rect key="frame" x="20" y="951" width="150" height="19.5"/>
@@ -3708,6 +3692,9 @@ and microphone</string>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="edit-3"/>
+                                                <connections>
+                                                    <action selector="editprice:" destination="FWs-0h-1Iz" eventType="touchUpInside" id="2ZG-aI-W8R"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -3734,11 +3721,10 @@ and microphone</string>
                                             <constraint firstItem="fwd-MH-ATV" firstAttribute="top" secondItem="bMv-Ls-kfP" secondAttribute="bottom" constant="30" id="CZj-iK-n05"/>
                                             <constraint firstItem="8Yr-RM-5Ck" firstAttribute="centerY" secondItem="55U-HF-dPq" secondAttribute="centerY" id="Ejy-D6-o1Y"/>
                                             <constraint firstItem="X8A-W7-UKZ" firstAttribute="leading" secondItem="Kte-jF-LZT" secondAttribute="leading" constant="20" id="EzB-uq-WD6"/>
+                                            <constraint firstItem="KDU-6I-9Qf" firstAttribute="top" secondItem="Z94-qa-mYy" secondAttribute="bottom" constant="30" id="FJ6-br-j8b"/>
                                             <constraint firstAttribute="trailing" secondItem="X8A-W7-UKZ" secondAttribute="trailing" constant="20" id="GFP-Ff-Vh3"/>
                                             <constraint firstItem="8Yr-RM-5Ck" firstAttribute="leading" secondItem="55U-HF-dPq" secondAttribute="trailing" id="GMF-60-qSz"/>
                                             <constraint firstItem="b2y-ch-b1J" firstAttribute="top" secondItem="fwd-MH-ATV" secondAttribute="bottom" constant="10" id="HHM-dr-ebJ"/>
-                                            <constraint firstItem="2Wk-tk-CEy" firstAttribute="top" secondItem="Z94-qa-mYy" secondAttribute="bottom" constant="20" id="IaR-LN-dew"/>
-                                            <constraint firstItem="2Wk-tk-CEy" firstAttribute="centerX" secondItem="Kte-jF-LZT" secondAttribute="centerX" id="Ioj-dD-Zh2"/>
                                             <constraint firstItem="kBs-KC-d6c" firstAttribute="leading" secondItem="Kte-jF-LZT" secondAttribute="leading" constant="20" id="LVy-7b-LLF"/>
                                             <constraint firstItem="b2y-ch-b1J" firstAttribute="leading" secondItem="Kte-jF-LZT" secondAttribute="leading" constant="20" id="M0W-3s-LPN"/>
                                             <constraint firstItem="Un6-yj-9jm" firstAttribute="leading" secondItem="Kte-jF-LZT" secondAttribute="leading" constant="20" id="M5E-Hl-FUn"/>
@@ -3776,7 +3762,6 @@ and microphone</string>
                                             <constraint firstAttribute="trailing" secondItem="C8F-8L-RWv" secondAttribute="trailing" constant="20" id="dsz-vQ-ely"/>
                                             <constraint firstItem="KDU-6I-9Qf" firstAttribute="centerX" secondItem="Kte-jF-LZT" secondAttribute="centerX" id="e7f-CD-vaX"/>
                                             <constraint firstItem="Of5-TY-uob" firstAttribute="leading" secondItem="Kte-jF-LZT" secondAttribute="leading" constant="20" id="eI8-M1-Kc4"/>
-                                            <constraint firstItem="KDU-6I-9Qf" firstAttribute="top" secondItem="2Wk-tk-CEy" secondAttribute="bottom" constant="41" id="f2e-Pq-6wv"/>
                                             <constraint firstItem="C8F-8L-RWv" firstAttribute="top" secondItem="UZf-Ec-08G" secondAttribute="bottom" constant="16" id="gOj-gv-ynj"/>
                                             <constraint firstItem="3FB-LP-k5P" firstAttribute="top" secondItem="pNW-Nq-WWF" secondAttribute="bottom" constant="10" id="iA1-o2-ROj"/>
                                             <constraint firstAttribute="trailing" secondItem="Bc3-aa-BTn" secondAttribute="trailing" constant="20" id="iJq-5E-03U"/>
@@ -3851,15 +3836,31 @@ and microphone</string>
                     <navigationItem key="navigationItem" id="xQD-pK-lE4"/>
                     <size key="freeformSize" width="414" height="2367"/>
                     <connections>
+                        <outlet property="addresslbl" destination="8Yr-RM-5Ck" id="37u-Q5-9EM"/>
                         <outlet property="buyerprice" destination="sWO-nk-QTs" id="2xP-bY-j7P"/>
                         <outlet property="commisionlbl" destination="VY5-bh-SkH" id="opg-ai-4TH"/>
+                        <outlet property="datehight" destination="RQ5-XW-2xm" id="tHP-FC-wpc"/>
+                        <outlet property="datelbl" destination="9fh-ol-b7Q" id="YYd-1E-4iH"/>
+                        <outlet property="dateview" destination="HMW-if-xpk" id="c2b-wd-360"/>
+                        <outlet property="delivarylbl" destination="Bc3-aa-BTn" id="oao-x0-crg"/>
                         <outlet property="dicountlbl" destination="j2T-d4-mv1" id="1Bt-oZ-G84"/>
+                        <outlet property="discountlbl" destination="lx5-FQ-d4A" id="fkF-xC-G94"/>
                         <outlet property="fees" destination="Xz3-TS-59s" id="f1y-R8-sfl"/>
-                        <outlet property="pricelbl" destination="YDs-Vp-JhV" id="BKV-kB-Vgf"/>
+                        <outlet property="photos" destination="UZf-Ec-08G" id="2ml-Cb-TLr"/>
+                        <outlet property="picktimelbl" destination="45I-tJ-Yms" id="dRU-PA-JCh"/>
+                        <outlet property="player" destination="H0T-uO-NzD" id="mnr-Qv-o0l"/>
+                        <outlet property="pricelbl" destination="YDs-Vp-JhV" id="bc0-IB-DrN"/>
                         <outlet property="pricesummary" destination="8c6-qj-Vmr" id="T9g-Gp-9GJ"/>
-                        <outlet property="reviewlbl" destination="KSS-T8-ORK" id="iv7-yA-2Qg"/>
-                        <outlet property="reviewview" destination="2Wk-tk-CEy" id="6j4-iE-m6e"/>
+                        <outlet property="pricetxtlbl" destination="T5j-5M-N71" id="bPi-q0-3Dh"/>
+                        <outlet property="productdep" destination="b2y-ch-b1J" id="Y3Y-DK-Dmd"/>
+                        <outlet property="productdes" destination="gdC-zM-nNW" id="30U-2n-paV"/>
+                        <outlet property="productinfo" destination="rPr-Gt-lyL" id="aBM-Ne-w7S"/>
+                        <outlet property="productname" destination="fwd-MH-ATV" id="Zzv-WR-Pw0"/>
+                        <outlet property="sizehight" destination="mni-PE-I0J" id="wbz-bk-D2m"/>
+                        <outlet property="sizes" destination="o6v-EO-GSB" id="vJB-fS-5Wv"/>
+                        <outlet property="sizeview" destination="eXn-kh-Fgg" id="zQo-Cr-vZd"/>
                         <outlet property="taxes" destination="LOD-rV-u1i" id="F7f-mM-zVf"/>
+                        <outlet property="timelbl" destination="nqW-6h-DJm" id="pzE-ZJ-6GK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQ2-7s-Ms6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
