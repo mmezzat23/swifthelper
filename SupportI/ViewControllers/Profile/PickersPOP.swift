@@ -12,8 +12,9 @@ protocol PickersPOPDelegate:class {
     func callbackreasons(item: ResponseDatum)
 
     func callbackCity(item:ItemCity)
-//    func callbackCategory(item:Category )
-//    func callbacksubcat(item:Category)
+    func callbacksection(item:SectionItem )
+    func callbackCategory(item:SectionItem )
+    func callbacksubcat(item:SectionItem)
     func callbackCustom(item:PickerModel ,returnedKey: String)
     func callbackDate(item:String , returnedKey:String)
 //    func callbackOrders(item:OrderModel)
@@ -33,12 +34,15 @@ extension PickersPOPDelegate {
     func callbackCity(item:ItemCity){
 
     }
-//    func callbackCategory(item:Category ){
-//
-//    }
-//    func callbacksubcat(item:Category){
-//
-//    }
+    func callbacksection(item:SectionItem ){
+
+    }
+    func callbackCategory(item:SectionItem ){
+
+    }
+    func callbacksubcat(item:SectionItem){
+
+    }
     func callbackCustom(item:PickerModel ,returnedKey: String){
         
     }
@@ -60,6 +64,7 @@ class PickersPOP:BaseController {
         case city
         case gender
         case category
+        case section
         case custom
         case subcat
         case order
@@ -81,7 +86,9 @@ class PickersPOP:BaseController {
     var genders:[GenderModel] = []
     var raesons:[ResponseDatum] = []
     var date = ""
-
+    var sections : [SectionItem] = []
+    var cats : [SectionItem] = []
+    var subcats : [SectionItem] = []
     var cities:[ItemCity] = []
 //    var categories:[Category] = []
 //    var orders:[OrderModel] = []
@@ -185,14 +192,31 @@ class PickersPOP:BaseController {
                     }
                 
 //
-//            }else if pickerSelection == .category {
-//                let path = pickerView.selectedRow(inComponent: 0)
-//                if categories.isset(path){
-//                    let item = categories[pickerView.selectedRow(inComponent: 0)]
-//                    self.dismiss(animated: true) {
-//                        self.delegate?.callbackCategory(item: item)
-//                    }
-//                }
+            }else if pickerSelection == .category {
+                let path = pickerView.selectedRow(inComponent: 0)
+                if cats.isset(path){
+                    let item = cats[pickerView.selectedRow(inComponent: 0)]
+                    self.dismiss(animated: true) {
+                        self.delegate?.callbackCategory(item: item)
+                    }
+                }
+                }else if pickerSelection == .subcat {
+                    let path = pickerView.selectedRow(inComponent: 0)
+                    if subcats.isset(path){
+                        let item = subcats[pickerView.selectedRow(inComponent: 0)]
+                        self.dismiss(animated: true) {
+                            self.delegate?.callbacksubcat(item: item)
+                        }
+                    }
+                    }else if pickerSelection == .section {
+                        let path = pickerView.selectedRow(inComponent: 0)
+                        if sections.isset(path){
+                            let item = sections[pickerView.selectedRow(inComponent: 0)]
+                            self.dismiss(animated: true) {
+                                self.delegate?.callbacksection(item: item)
+                            }
+                        
+                        }
 //
 //
 //        }else if pickerSelection == .order {
@@ -263,6 +287,15 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         else if pickerSelection == .gender {
             return genders.count
         }
+        else if pickerSelection == .category {
+            return cats.count
+        }
+        else if pickerSelection == .subcat {
+            return subcats.count
+        }
+        else if pickerSelection == .section {
+            return sections.count
+        }
         else if pickerSelection == .raeson {
             return raesons.count
         }
@@ -307,6 +340,15 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         }
         else if pickerSelection == .gender {
             pickerLabel?.text = genders[row].name
+        }
+        else if pickerSelection == .category {
+            pickerLabel?.text = cats[row].name
+        }
+        else if pickerSelection == .section {
+            pickerLabel?.text = sections[row].name
+        }
+        else if pickerSelection == .subcat {
+            pickerLabel?.text = subcats[row].name
         }
         else if pickerSelection == .raeson {
             pickerLabel?.text = raesons[row].name

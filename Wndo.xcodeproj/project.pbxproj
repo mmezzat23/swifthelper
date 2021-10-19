@@ -67,6 +67,7 @@
 		665163C726F88558007B69C2 /* all_round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665163C626F88558007B69C2 /* all_round.ttf */; };
 		665794C82715D264001E92E0 /* Samplesaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665794C72715D264001E92E0 /* Samplesaller.swift */; };
 		66585CEC2718247A0026225F /* Vedioattachorrecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66585CEB271824790026225F /* Vedioattachorrecord.swift */; };
+		6658D992271F1C8800DE1C3E /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658D991271F1C8800DE1C3E /* SectionModel.swift */; };
 		665AB37526FCA76600A2048B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665AB37426FCA76500A2048B /* Assets.xcassets */; };
 		665ACFD9271F01430020A84E /* Reviewproduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665ACFD8271F01430020A84E /* Reviewproduct.swift */; };
 		666D6AC0271EDAAB00968FB6 /* Addproductmedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666D6ABF271EDAAB00968FB6 /* Addproductmedia.swift */; };
@@ -397,6 +398,7 @@
 		665163D226F88588007B69C2 /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
 		665794C72715D264001E92E0 /* Samplesaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Samplesaller.swift; sourceTree = "<group>"; };
 		66585CEB271824790026225F /* Vedioattachorrecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vedioattachorrecord.swift; sourceTree = "<group>"; };
+		6658D991271F1C8800DE1C3E /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		665AB37426FCA76500A2048B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		665ACFD8271F01430020A84E /* Reviewproduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviewproduct.swift; sourceTree = "<group>"; };
 		666D6ABF271EDAAB00968FB6 /* Addproductmedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addproductmedia.swift; sourceTree = "<group>"; };
@@ -983,6 +985,7 @@
 				6641D7742703359600469D4F /* FaqsModel.swift */,
 				664282D72705B14700822053 /* Deleteaccount.swift */,
 				66B71D472705ECC50044969E /* ReasonModel.swift */,
+				6658D991271F1C8800DE1C3E /* SectionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1980,6 +1983,7 @@
 				80DA0166211A888600817038 /* UISearchBarExtensions.swift in Sources */,
 				80DA0150211A888600817038 /* SignedIntegerExtensions.swift in Sources */,
 				80A2FC2A215841BC00223A77 /* TwitterDelegate.swift in Sources */,
+				6658D992271F1C8800DE1C3E /* SectionModel.swift in Sources */,
 				80A2FC49215841BC00223A77 /* UILabelAutoScroll.swift in Sources */,
 				E84EA52A24247AA2009D3E41 /* CardHolderHelper.swift in Sources */,
 				80DA016C211A888700817038 /* UITabBarExtensions.swift in Sources */,
