@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddvediooptionDelegate: class {
-    func settype(type: String? , isvalid: Bool)
+    func settype(type: String? , isvalid: Bool , hasproduct: Bool)
 }
 
 
@@ -51,16 +51,16 @@ class Addvediooption: BaseController {
     func onclick() {
         live.UIViewAction { [self] in
             self.dismiss(animated: true, completion: nil)
-            self.delegate?.settype(type: "live", isvalid: user?.responseData?.isValid ?? false )
+            self.delegate?.settype(type: "live", isvalid: user?.responseData?.isActiveSeller ?? false , hasproduct: user?.responseData?.hasProduct ?? false)
         }
         vedio.UIViewAction { [self] in
             self.dismiss(animated: true, completion: nil)
-            self.delegate?.settype(type: "vedio", isvalid: user?.responseData?.isValid ?? false )
+            self.delegate?.settype(type: "vedio", isvalid: user?.responseData?.isActiveSeller ?? false , hasproduct: user?.responseData?.hasProduct ?? false)
            
         }
         product.UIViewAction { [self] in
             self.dismiss(animated: true, completion: nil)
-            self.delegate?.settype(type: "product", isvalid: user?.responseData?.isValid ?? false )
+            self.delegate?.settype(type: "product", isvalid: user?.responseData?.isActiveSeller ?? false, hasproduct: user?.responseData?.hasProduct ?? false)
            
         }
     }

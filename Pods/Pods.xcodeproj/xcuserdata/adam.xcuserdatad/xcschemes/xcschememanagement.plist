@@ -263,26 +263,33 @@
 			<key>orderHint</key>
 			<integer>38</integer>
 		</dict>
-		<key>SCRecorder.xcscheme</key>
+		<key>Publitio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>39</integer>
 		</dict>
-		<key>SnapKit.xcscheme</key>
+		<key>SCRecorder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>40</integer>
 		</dict>
-		<key>SwiftyGif.xcscheme</key>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>41</integer>
+		</dict>
+		<key>SwiftyGif.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>42</integer>
 		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>

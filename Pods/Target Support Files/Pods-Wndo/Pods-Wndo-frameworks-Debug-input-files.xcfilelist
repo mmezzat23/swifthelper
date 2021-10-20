@@ -27,6 +27,7 @@ ${BUILT_PRODUCTS_DIR}/KDCircularProgress/KDCircularProgress.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${PODS_ROOT}/Publitio/Publitio.framework
 ${BUILT_PRODUCTS_DIR}/SCRecorder/SCRecorder.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework

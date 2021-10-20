@@ -27,6 +27,7 @@ pod 'GoogleSignIn'
 pod 'SCRecorder'
 pod 'KDCircularProgress'
 pod 'BMPlayer', '~> 1.2.0'
+pod 'Publitio', '~> 1.3'
 
 
 end

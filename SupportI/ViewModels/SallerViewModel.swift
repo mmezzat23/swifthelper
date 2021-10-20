@@ -103,4 +103,124 @@ class SallerViewModel: ViewModelCore {
             }
         }
     }
+    func addscreen1(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.addproductscreen1, type: .post) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.addscreen1(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func addscreen2(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.addproductscreen2, type: .post) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.addscreen2(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func addscreen3(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.addproductscreen3, type: .post) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.addscreen3(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func addscreen4(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.addproductscreen4, type: .post) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.addscreen4(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func addscreen5(paramters: [String: Any] ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connectionRaw(.addproductscreen5, type: .post) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.userdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.addscreen5(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
 }

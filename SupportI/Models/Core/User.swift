@@ -154,7 +154,10 @@ class Token: Codable {
     var paymentType: Int?
     var city: ItemCity?
     var isActiveSeller: Bool?
+    var hasProduct: Bool?
     var shopStatus: Bool?
     var isValid: Bool?
     var number: String?
+    var productId: String?
+    var screen: Int?
 }

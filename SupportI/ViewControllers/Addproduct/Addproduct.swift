@@ -40,6 +40,12 @@ class Addproduct: BaseController {
        viewModel?.getsection()
     }
     override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+                self?.stopLoading()
+                let vcc = self?.pushViewController(Addproductmedia.self,storyboard: .addproduct)
+                vcc?.productid = data.responseData?.productId ?? ""
+                self?.push(vcc!)
+        })
         viewModel?.sectiondata.bind({ [weak self](data) in
             self?.stopLoading()
             self?.sections.removeAll()
@@ -112,7 +118,7 @@ class Addproduct: BaseController {
     }
     func validateTextFields() -> Bool {
         productname.customValidationRules = [RequiredRule() ]
-        productdescription.customValidationRules = [RequiredRule(), MinLengthRule(length: 200)]
+        productdescription.customValidationRules = [RequiredRule(), MaxLengthRule(length: 200)]
         let validator = Validation(textFields: [productname , productdescription])
         return validator.success
     }
@@ -141,7 +147,7 @@ class Addproduct: BaseController {
 //                parameters["id"] = id
 //                viewModel?.editcard(paramters: parameters)
 //            }else{
-//                viewModel?.addcard(paramters: parameters)
+                viewModel?.addscreen1(paramters: parameters)
 //            }
             }
         }
@@ -153,14 +159,22 @@ extension Addproduct : PickersPOPDelegate {
         sec_id = item.id ?? 0
         sectxt.text = item.name ?? ""
         viewModel?.getcats(id: sec_id)
+        sectxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+        cattxt.textColor = UIColor(red: 150, green: 161, blue: 171)
+        subcattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+
     }
     func callbacksubcat(item: SectionItem) {
         subcat_id = item.id ?? 0
         subcattxt.text = item.name ?? ""
+        subcattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+
     }
     func callbackCategory(item: SectionItem) {
         cat_id = item.id ?? 0
         cattxt.text = item.name ?? ""
         viewModel?.getsubcats(id: cat_id)
+        cattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+        subcattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
     }
 }

@@ -46,6 +46,11 @@ public enum EndPoint: String {
     case section = "1/api/app/section/sections"
     case catogary = "1/api/app/category/categories"
     case subcat = "1/api/app/sub-category/sub-categories"
+    case addproductscreen1 = "1/api/app/product/screen1"
+    case addproductscreen2 = "1/api/app/product/screen2"
+    case addproductscreen3 = "1/api/app/product/screen3"
+    case addproductscreen4 = "1/api/app/product/product-shipping"
+    case addproductscreen5 = "1/api/app/product/product-price"
     case logout
     case packages
     case locations

@@ -50,10 +50,18 @@ extension Addvedio : BuyerswitchDelegate , GuestPopUpDelegate {
 }
 
 extension Addvedio : AddvediooptionDelegate {
-    func settype(type: String?, isvalid: Bool) {
+    func settype(type: String?, isvalid: Bool, hasproduct: Bool) {
         if (type == "live"){
             if (isvalid){
-                
+                if (hasproduct == false){
+                    let when = DispatchTime.now() + 1
+                    DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                    let vcc = self.pushViewController(Sorryactive.self,storyboard: .saller)
+                    pushPop(vcr: vcc)
+                    }
+                }else {
+                    
+                }
             }else {
                 let when = DispatchTime.now() + 1
                 DispatchQueue.main.asyncAfter(deadline: when){ [self] in
@@ -64,8 +72,16 @@ extension Addvedio : AddvediooptionDelegate {
             }
         }else if (type == "vedio"){
             if (isvalid){
+                if (hasproduct == false){
+                    let when = DispatchTime.now() + 1
+                    DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+                    let vcc = self.pushViewController(Sorryactive.self,storyboard: .saller)
+                    pushPop(vcr: vcc)
+                    }
+                }else {
                 let vcc = self.controller(Addvedios.self,storyboard: .vedios)
                 self.push(vcc)
+                }
             }else {
                 let when = DispatchTime.now() + 1
                 DispatchQueue.main.asyncAfter(deadline: when){ [self] in
@@ -88,4 +104,6 @@ extension Addvedio : AddvediooptionDelegate {
             }
         }
     }
+    
+    
 }

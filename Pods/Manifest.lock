@@ -152,6 +152,7 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.6.1)
   - NVActivityIndicatorView/Presenter (4.6.1)
   - PromisesObjC (1.2.12)
+  - Publitio (1.4)
   - SCRecorder (2.7.0)
   - SnapKit (4.2.0)
   - SwiftyGif (5.4.0)
@@ -176,6 +177,7 @@ DEPENDENCIES:
   - KDCircularProgress
   - lottie-ios
   - MBProgressHUD
+  - Publitio (~> 1.3)
   - SCRecorder
   - SwiftyGif
 
@@ -216,6 +218,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - PromisesObjC
+    - Publitio
     - SCRecorder
     - SnapKit
     - SwiftyGif
@@ -256,10 +259,11 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Publitio: 3789d401433bb12ff18f014446b1d8dc5d5a4701
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: 28528218462e26178cd20e036d0d0c8c03b692fe
+PODFILE CHECKSUM: e695d23c5c5b8959328cea5d6c8c1b18a434271b
 
 COCOAPODS: 1.11.2
