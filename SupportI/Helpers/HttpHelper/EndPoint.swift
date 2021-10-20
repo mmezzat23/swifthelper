@@ -44,6 +44,7 @@ public enum EndPoint: String {
     case paymentdefualt = "1/api/app/account-setting/set-default-payment-method"
     case activesaller = "1/api/app/product/check-is-active-seller"
     case section = "1/api/app/section/sections"
+    case seginure = "1/api/app/product/signature"
     case catogary = "1/api/app/category/categories"
     case subcat = "1/api/app/sub-category/sub-categories"
     case addproductscreen1 = "1/api/app/product/screen1"
@@ -51,6 +52,9 @@ public enum EndPoint: String {
     case addproductscreen3 = "1/api/app/product/screen3"
     case addproductscreen4 = "1/api/app/product/product-shipping"
     case addproductscreen5 = "1/api/app/product/product-price"
+    case lookup = "1/api/app/lookup/by-sub-id/"
+    case color = "1/api/app/color/colors/"
+    case size = "1/api/app/size"
     case logout
     case packages
     case locations

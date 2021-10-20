@@ -177,7 +177,7 @@ DEPENDENCIES:
   - KDCircularProgress
   - lottie-ios
   - MBProgressHUD
-  - Publitio (~> 1.3)
+  - Publitio
   - SCRecorder
   - SwiftyGif
 
@@ -264,6 +264,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: e695d23c5c5b8959328cea5d6c8c1b18a434271b
+PODFILE CHECKSUM: d2613d9dde8dc08d55e067ac8a8eff16f28c9aa3
 
 COCOAPODS: 1.11.2

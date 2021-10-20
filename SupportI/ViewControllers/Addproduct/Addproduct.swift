@@ -44,6 +44,7 @@ class Addproduct: BaseController {
                 self?.stopLoading()
                 let vcc = self?.pushViewController(Addproductmedia.self,storyboard: .addproduct)
                 vcc?.productid = data.responseData?.productId ?? ""
+                vcc?.catid = self?.subcat_id ?? 0
                 self?.push(vcc!)
         })
         viewModel?.sectiondata.bind({ [weak self](data) in

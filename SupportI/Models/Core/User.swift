@@ -160,4 +160,9 @@ class Token: Codable {
     var number: String?
     var productId: String?
     var screen: Int?
+    var api_key: String?
+    var api_timestamp: String?
+    var api_nonce: String?
+    var api_signature: String?
+
 }

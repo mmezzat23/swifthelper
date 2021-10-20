@@ -14,6 +14,8 @@ class SallerViewModel: ViewModelCore {
     var sectiondata: DynamicType = DynamicType<SectionModel>()
     var catdata: DynamicType = DynamicType<SectionModel>()
     var subcatdata: DynamicType = DynamicType<SectionModel>()
+    var lookupdata: DynamicType = DynamicType<LockupModel>()
+    var sizedata: DynamicType = DynamicType<SizeModel>()
 
     func isactivesaller( ) {
         delegate?.startLoading()
@@ -57,6 +59,57 @@ class SallerViewModel: ViewModelCore {
                 self.errordata.value = data?.errorMessage
                 }
             }
+        }
+    }
+    func getcolors(id : Int) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.color.rawValue)\(id)", type: .get) { (response) in
+            let data = try? JSONDecoder().decode(SectionModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+            self.sectiondata.value = data
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getcolors(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getlokup(id : Int) {
+        delegate?.startLoading()
+        print("\(EndPoint.lookup.rawValue)\(id)")
+        ApiManager.instance.connection("\(EndPoint.lookup.rawValue)\(id)", type: .get) { (response) in
+            let data = try? JSONDecoder().decode(LockupModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+            self.lookupdata.value = data
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getlokup(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getsizes(id : Int) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters["SubCategoryId"] = id
+        ApiManager.instance.connection(.size, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(SizeModel.self, from: response ?? Data())
+            self.sizedata.value = data
         }
     }
     func getcats(id : Int) {

@@ -8,7 +8,6 @@
 
 import UIKit
 import BMPlayer
-import Publitio
 class Addproductmedia: BaseController {
     @IBOutlet weak var viewvedio: UIView!
     @IBOutlet weak var play: UIImageView!
@@ -32,13 +31,19 @@ class Addproductmedia: BaseController {
     let imagePickerController = UIImagePickerController()
     var videoURL: URL?
     var isedit = false
+    var vedioid = ""
+    var catid = 0
+    var vediothum = ""
+    var selectedImagesString: [UploadModel] = []
+    var userupload : UploadModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
         setup()
-        if (videoURL == nil){
-            play.isHidden = true
-        }
+        bind()
+//        if (videoURL == nil){
+//            play.isHidden = true
+//        }
         if (isedit == false){
             vedioline.isHidden = true
             vediolinehight.constant = 0
@@ -57,7 +62,7 @@ class Addproductmedia: BaseController {
         picker = .init()
         picker?.onPickImageURL = { [self] url in
             selectedImagesURL.append(url!)
-                    
+                    addimage(file: url!)
                 }
         picker?.onPickImage = { [self] image in
             selectedImages.append(image)
@@ -69,14 +74,178 @@ class Addproductmedia: BaseController {
              imagePickerController.mediaTypes = ["public.movie"]
             present(imagePickerController, animated: true, completion: nil)
         }
+        delete.UIViewAction { [self] in
+            deletevedio()
+        }
     }
-   
+    override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+                self?.stopLoading()
+                let vcc = self?.pushViewController(Addproductstep1.self,storyboard: .addproduct)
+                vcc?.productid = data.responseData?.productId ?? ""
+                vcc?.catid = self?.catid ?? 0
+                self?.push(vcc!)
+        })
+       
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+    }
     @IBAction func `continue`(_ sender: Any) {
+        var error : String = ""
+        if vedioid == "" {
+            error = "\(error)\n \("Select vedio".localized)"
+        }
+        if selectedImagesString.count == 0 {
+            error = "\(error)\n \("Select at least one image".localized)"
+        }
+        
+        if (error != ""){
+          makeAlert(error, closure: {})
+        }else{
+            let jsonObject: [String: Any] = [
+                "videoId": userupload?.id ?? "",
+                "urlThumbnail": userupload?.urlthumbnail ?? "",
+                "urlPreview": userupload?.urlPreview ?? "",
+                "urlDownload": userupload?.urldownload ?? ""
+            ]
+
+        parameters["productId"] = productid
+            var images : [[String: Any]] = []
+            for item in selectedImagesString {
+                let jsonObject: [String: Any] = [
+                    "imageId": item.id ?? "",
+                    "urlThumbnail": item.urlthumbnail ?? "",
+                    "urlPreview": item.urlPreview ?? "",
+                    "urlDownload": item.urldownload ?? ""
+                ]
+                images.append(jsonObject)
+            }
+        parameters["images"] = images
+        parameters["video"] = jsonObject
+        print(parameters)
+
+//            if (isedit == true){
+//                parameters["id"] = id
+//                viewModel?.editcard(paramters: parameters)
+//            }else{
+            viewModel?.addscreen2(paramters: parameters)
+//            }
+        }
     }
     
     @IBAction func savedraft(_ sender: Any) {
+        var error : String = ""
+        if vedioid == "" {
+            error = "\(error)\n \("Select vedio".localized)"
+        }
+        if selectedImagesString.count == 0 {
+            error = "\(error)\n \("Select at least one image".localized)"
+        }
+        
+        if (error != ""){
+          makeAlert(error, closure: {})
+        }else{
+            let jsonObject: [String: Any] = [
+                "videoId": userupload?.id ?? "",
+                "urlThumbnail": userupload?.urlthumbnail ?? "",
+                "urlPreview": userupload?.urlPreview ?? "",
+                "urlDownload": userupload?.urldownload ?? ""
+            ]
+
+        parameters["productId"] = productid
+            var images : [[String: Any]] = []
+            for item in selectedImagesString {
+                let jsonObject: [String: Any] = [
+                    "imageId": item.id ?? "",
+                    "urlThumbnail": item.urlthumbnail ?? "",
+                    "urlPreview": item.urlPreview ?? "",
+                    "urlDownload": item.urldownload ?? ""
+                ]
+                images.append(jsonObject)
+            }
+        parameters["images"] = images
+        parameters["video"] = jsonObject
+        print(parameters)
+
+//            if (isedit == true){
+//                parameters["id"] = id
+//                viewModel?.editcard(paramters: parameters)
+//            }else{
+            viewModel?.addscreen2(paramters: parameters)
+//            }
+        }
     }
-    
+    func deletevedio() {
+        self.startLoading()
+        Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+                let url = "files/delete/\(self.vedioid)?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                ApiManager.instance.connectionpuliciti(url, type: .delete) { [self] (response) in
+                                 self.stopLoading()
+                                 let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
+                    print(data?.id)
+                    player.isHidden = false
+                    let asset = BMPlayerResource(url: videoURL!,
+                                                 name: "WNDO")
+                    player.setVideo(resource: asset)
+                    vedioid = ""
+                    vediothum = ""
+                    videoURL = nil
+                    player.isHidden = true
+                    delete.isHidden = true
+
+                                 
+                             }
+            }else{
+                
+            }
+        }
+    }
+    func deleteiamge(path : Int) {
+        self.startLoading()
+        Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+                let url = "files/delete/\(self.selectedImagesString[path])?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                ApiManager.instance.connectionpuliciti(url, type: .delete) { [self] (response) in
+                                 self.stopLoading()
+                                 let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
+                    print(data?.id)
+                    selectedImages.remove(at: path)
+                    selectedImagesURL.remove(at: path)
+                    selectedImagesString.remove(at: path)
+
+                    photos.reloadData()
+
+                                 
+                             }
+            }else{
+                
+            }
+        }
+    }
+    func addimage(file : URL) {
+        self.startLoading()
+        Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+                let url = "files/create?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                ApiManager.instance.uploadFilepulitico(url, type: .post, file: [["file": file]]) { [self] (response) in
+                                 self.stopLoading()
+                                 let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
+                    print(data?.id)
+                    selectedImagesString.append(data!)
+                                 
+                             }
+            }else{
+                
+            }
+        }
+    }
 }
 extension Addproductmedia: UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -92,9 +261,7 @@ extension Addproductmedia: UICollectionViewDelegate,UICollectionViewDataSource ,
         var cell = collectionView.cell(type: ImagesCollectionViewCell.self, indexPath)
         cell.model = selectedImages[safe: indexPath.row]
         cell.delete.UIViewAction { [self] in
-            selectedImages.remove(at: indexPath.row)
-            selectedImagesURL.remove(at: indexPath.row)
-            photos.reloadData()
+            deleteiamge(path: indexPath.row)
         }
         if (indexPath.row == selectedImages.count){
             cell.image.borderColor = .clear
@@ -109,6 +276,7 @@ extension Addproductmedia: UICollectionViewDelegate,UICollectionViewDataSource ,
         }
         return cell
     }
+    
 }
 extension Addproductmedia : UIImagePickerControllerDelegate {
     
@@ -116,21 +284,43 @@ extension Addproductmedia : UIImagePickerControllerDelegate {
             dismiss(animated: true, completion: nil)
             guard let movieUrl = info[.mediaURL] as? URL else { return }
         videoURL = movieUrl
-        player.isHidden = false
-        let asset = BMPlayerResource(url: videoURL!,
-                                     name: "WNDO")
-        player.setVideo(resource: asset)
-        self.indicatorView.startAnimating()
-        Publitio.shared.filesCreateWithCompression(localMediaPath: videoURL, videoQuality: .quality960x540, mimeType: .mov, fileUrl: nil, publicId: nil, title: nil, description: nil, tags: nil, privacy: nil, optionDownload: nil, optionTransform: nil, optionAd: nil, completion: { (success, result) in
-                            DispatchQueue.main.async {
-                                print(success,result)
-                                print(result)
-                                self.indicatorView.stopAnimating()
-                               // playCompressedVideo(compressedObj: res)
-                            }
-                        })
+     
+        self.startLoading()
+        Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+                let url = "files/create?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                ApiManager.instance.uploadFilepulitico(url, type: .post, file: [["file": self.videoURL!]]) { [self] (response) in
+                                 self.stopLoading()
+                                 let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
+                    print(data?.id)
+                    player.isHidden = false
+                    let asset = BMPlayerResource(url: videoURL!,
+                                                 name: "WNDO")
+                    userupload = data
+                    player.setVideo(resource: asset)
+                    vedioid = data?.id ?? ""
+                    vediothum = data?.urlthumbnail ?? ""
+                    delete.isHidden = false
+                                 
+                             }
+            }else{
+                
+            }
+        }
+        
+    }
+//        self.indicatorView.startAnimating()
+//        Publitio.shared.filesCreateWithCompression(localMediaPath: videoURL, videoQuality: .quality960x540, mimeType: .mov, fileUrl: nil, publicId: nil, title: nil, description: nil, tags: nil, privacy: nil, optionDownload: nil, optionTransform: nil, optionAd: nil, completion: { (success, result) in
+//                            DispatchQueue.main.async {
+//                                print(success,result)
+//                                print(result)
+//                                self.indicatorView.stopAnimating()
+//                               // playCompressedVideo(compressedObj: res)
+//                            }
+//                        })
 
 
             // work with the video URL
-    }
 }
+  

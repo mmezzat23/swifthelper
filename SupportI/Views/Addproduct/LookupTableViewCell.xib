@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
+        <array key="Muli.ttf">
+            <string>Muli</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="LookupTableViewCell" customModule="Wndo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l96-3U-lIm">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="18"/>
+                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="12"/>
+                        <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Subcategory"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gl-qh-zjg">
+                        <rect key="frame" x="0.0" y="28" width="357" height="45"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="hI7-3g-PGE">
+                                <rect key="frame" x="333" y="20.5" width="9" height="4.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="9" id="Ww0-gG-Vrd"/>
+                                    <constraint firstAttribute="height" constant="4.5" id="nOz-C8-7eS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select subcategory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptx-np-H8E">
+                                <rect key="frame" x="10" y="12" width="313" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
+                                <color key="textColor" red="0.58823529409999997" green="0.63137254899999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Select subcategory"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="5YL-h8-kcq"/>
+                            <constraint firstAttribute="trailing" secondItem="hI7-3g-PGE" secondAttribute="trailing" constant="15" id="NNs-5I-W6V"/>
+                            <constraint firstItem="Ptx-np-H8E" firstAttribute="centerY" secondItem="3Gl-qh-zjg" secondAttribute="centerY" id="QB6-p7-0lY"/>
+                            <constraint firstItem="hI7-3g-PGE" firstAttribute="leading" secondItem="Ptx-np-H8E" secondAttribute="trailing" constant="10" id="khE-vC-pqh"/>
+                            <constraint firstItem="Ptx-np-H8E" firstAttribute="leading" secondItem="3Gl-qh-zjg" secondAttribute="leading" constant="10" id="nTS-VT-VgA"/>
+                            <constraint firstItem="hI7-3g-PGE" firstAttribute="centerY" secondItem="3Gl-qh-zjg" secondAttribute="centerY" id="vuk-fx-lt7"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3Gl-qh-zjg" firstAttribute="top" secondItem="l96-3U-lIm" secondAttribute="bottom" constant="10" id="6mu-eU-vXF"/>
+                    <constraint firstAttribute="trailing" secondItem="l96-3U-lIm" secondAttribute="trailing" id="GSA-Vu-JlL"/>
+                    <constraint firstItem="l96-3U-lIm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Pmg-tU-qD4"/>
+                    <constraint firstItem="3Gl-qh-zjg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="S4L-gm-xvU"/>
+                    <constraint firstAttribute="bottom" secondItem="3Gl-qh-zjg" secondAttribute="bottom" constant="18" id="Wcm-Xf-x5j"/>
+                    <constraint firstAttribute="trailing" secondItem="3Gl-qh-zjg" secondAttribute="trailing" id="XEV-mp-k1O"/>
+                    <constraint firstItem="l96-3U-lIm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uok-Lg-oXS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lookup" destination="3Gl-qh-zjg" id="gCs-5j-YJ1"/>
+                <outlet property="lookupname" destination="l96-3U-lIm" id="DmB-Uc-pbO"/>
+                <outlet property="lookupselectlbl" destination="Ptx-np-H8E" id="JOO-PS-09o"/>
+            </connections>
+            <point key="canvasLocation" x="164.49275362318841" y="50.558035714285715"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrowdown" width="11.5" height="6.5"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

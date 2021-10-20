@@ -13,6 +13,7 @@ struct UploadModel: Codable {
     let code: Int
     let id: String
     let publicID: String?
+    let urlthumbnail ,urldownload: String?
     let title, uploadModelDescription, tags, type: String
     let uploadModelExtension: String
     let size, width, height: Int
@@ -26,6 +27,8 @@ struct UploadModel: Codable {
         case success, code, id
         case publicID = "public_id"
         case title
+        case urldownload = "url_download"
+        case urlthumbnail = "url_thumbnail"
         case uploadModelDescription = "description"
         case tags, type
         case uploadModelExtension = "extension"

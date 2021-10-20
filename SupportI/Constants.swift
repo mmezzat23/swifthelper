@@ -45,6 +45,7 @@ struct Constants {
     static var storyboard = Storyboards.main.rawValue
     //static var currentApp:Apps = .client
     static let url = "https://wndo.net:500"
+    static let pulitourl = "https://api.publit.io/v1/"
     static let companyUrl = ""
     static let copyrightUrl = ""
     static let itunesURL = "itms-apps://itunes.apple.com/app/id1330387425"

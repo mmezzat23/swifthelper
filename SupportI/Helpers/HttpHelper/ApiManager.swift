@@ -75,4 +75,24 @@ class ApiManager: BaseApi, Api {
 
     }
 
+    override func connectionpuliciti(_ method: String, type: HTTPMethod, completionHandler: @escaping (Data?) -> Void) {
+        if ApiManager.useAuth {
+            Authorization.instance.refreshToken { callback in
+                if callback {
+                    super.refresh()
+                    super.connectionpuliciti(method, type: type, completionHandler: completionHandler)
+                } else {
+                    self.makeAlert("aunthorized.lan".localized, closure: {
+                        print("Go TO Login")
+                        guard let vcr = Constants.loginNav else { return }
+                        UIApplication.topMostController().navigationController?.pushViewController(vcr, animated: true)
+                    })
+                }
+            }
+        } else {
+            super.refresh()
+            super.connectionpuliciti(method, type: type, completionHandler: completionHandler)
+        }
+
+    }
 }

@@ -10,7 +10,9 @@ import UIKit
 protocol PickersPOPDelegate:class {
     func callbackgenders(item: GenderModel)
     func callbackreasons(item: ResponseDatum)
-
+    func callbackSize(item: SectionItem, path: Int)
+    func callbackColor(item: SectionItem, path: Int)
+    func callbackLookup(item:LookupValue , path:Int)
     func callbackCity(item:ItemCity)
     func callbacksection(item:SectionItem )
     func callbackCategory(item:SectionItem )
@@ -31,6 +33,15 @@ extension PickersPOPDelegate {
 //    func callbackOrders(item:OrderModel ){
 //
 //    }
+    func callbackSize(item: SectionItem, path: Int){
+
+    }
+    func callbackColor(item: SectionItem, path: Int){
+
+    }
+    func callbackLookup(item:LookupValue , path:Int){
+
+    }
     func callbackCity(item:ItemCity){
 
     }
@@ -69,6 +80,9 @@ class PickersPOP:BaseController {
         case subcat
         case order
         case raeson
+        case lookup
+        case size
+        case color
     }
     enum DateSelection {
         case date
@@ -85,6 +99,9 @@ class PickersPOP:BaseController {
     var returnedKey:String = ""
     var genders:[GenderModel] = []
     var raesons:[ResponseDatum] = []
+    var lookups: [LookupValue] = []
+    var sizes: [SectionItem] = []
+    var colors: [SectionItem] = []
     var date = ""
     var sections : [SectionItem] = []
     var cats : [SectionItem] = []
@@ -94,6 +111,7 @@ class PickersPOP:BaseController {
 //    var orders:[OrderModel] = []
 //    var subcategories:[Category] = []
     var customs:[PickerModel] = []
+    var path = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -182,7 +200,31 @@ class PickersPOP:BaseController {
                         self.delegate?.callbackgenders(item: item)
                     }
                 }
-                } else if pickerSelection == .raeson {
+                }  else if pickerSelection == .lookup {
+                    let path = pickerView.selectedRow(inComponent: 0)
+                    if lookups.isset(path){
+                        let item = lookups[pickerView.selectedRow(inComponent: 0)]
+                        self.dismiss(animated: true) {
+                            self.delegate?.callbackLookup(item: item, path: path)
+                        }
+                    }
+                    }   else if pickerSelection == .size {
+                        let path = pickerView.selectedRow(inComponent: 0)
+                        if sizes.isset(path){
+                            let item = sizes[pickerView.selectedRow(inComponent: 0)]
+                            self.dismiss(animated: true) {
+                                self.delegate?.callbackSize(item: item, path: path)
+                            }
+                        }
+                        }  else if pickerSelection == .color {
+                            let path = pickerView.selectedRow(inComponent: 0)
+                            if colors.isset(path){
+                                let item = colors[pickerView.selectedRow(inComponent: 0)]
+                                self.dismiss(animated: true) {
+                                    self.delegate?.callbackColor(item: item, path: path)
+                                }
+                            }
+                            }else if pickerSelection == .raeson {
                     let path = pickerView.selectedRow(inComponent: 0)
                     if raesons.isset(path){
                         let item = raesons[pickerView.selectedRow(inComponent: 0)]
@@ -292,6 +334,12 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         }
         else if pickerSelection == .subcat {
             return subcats.count
+        } else if pickerSelection == .lookup {
+            return lookups.count
+        } else if pickerSelection == .size {
+            return sizes.count
+        } else if pickerSelection == .color {
+            return colors.count
         }
         else if pickerSelection == .section {
             return sections.count
@@ -340,6 +388,12 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         }
         else if pickerSelection == .gender {
             pickerLabel?.text = genders[row].name
+        }else if pickerSelection == .color {
+            pickerLabel?.text = colors[row].name
+        }else if pickerSelection == .size {
+            pickerLabel?.text = sizes[row].name
+        }else if pickerSelection == .lookup {
+            pickerLabel?.text = lookups[row].displayName
         }
         else if pickerSelection == .category {
             pickerLabel?.text = cats[row].name

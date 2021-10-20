@@ -16,7 +16,8 @@ class Addproductstep2: BaseController {
     @IBOutlet weak var time: UIView!
     @IBOutlet weak var timelbl: UILabel!
     @IBOutlet weak var times: UICollectionView!
-    
+    var productid = ""
+    var catid = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
