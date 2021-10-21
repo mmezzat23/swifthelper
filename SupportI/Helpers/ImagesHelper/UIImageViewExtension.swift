@@ -80,4 +80,24 @@ extension UIImageView {
             })
         }
     }
+    func setImage1(url: String?, animate: Bool = false) {
+        guard var string = url else { return }
+        string = ApiManager.instance.safeUrl(url: string)
+        let url = URL(string: string)
+        guard let finalUrl = url else { return }
+        if animate {
+            guard let transation = self.imageTranstion else {return}
+            self.af_setImage(withURL: finalUrl, placeholderImage: Constants.placeHolderImage,
+                             filter: nil, progress: nil, progressQueue: DispatchQueue.main,
+                             imageTransition: transation, runImageTransitionIfCached: true, completion: { _ in
+                self.isLoaded = true
+            })
+        } else {
+            self.af_setImage(withURL: finalUrl, placeholderImage: Constants.placeHolderImage,
+                             filter: nil, progress: nil, progressQueue: DispatchQueue.main,
+                             imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: true, completion: { _ in
+                self.isLoaded = true
+            })
+        }
+    }
 }

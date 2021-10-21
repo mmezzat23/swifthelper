@@ -164,5 +164,6 @@ class Token: Codable {
     var api_timestamp: String?
     var api_nonce: String?
     var api_signature: String?
+    var id: Int?
 
 }

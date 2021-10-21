@@ -52,6 +52,7 @@ public enum EndPoint: String {
     case addproductscreen3 = "1/api/app/product/screen3"
     case addproductscreen4 = "1/api/app/product/product-shipping"
     case addproductscreen5 = "1/api/app/product/product-price"
+    case addproductpuplish = "/api/app/product/"
     case lookup = "1/api/app/lookup/by-sub-id/"
     case color = "1/api/app/color/colors/"
     case size = "1/api/app/size"

@@ -258,6 +258,10 @@ extension Addproductstep1 : LookupTableViewCellDelegate , ColorsizeTableViewCell
         vcc.delegate = self
         self.pushPop(vcr: vcc)
     }
+    func addrow(wasPressedOnCell cell: ColorsizeTableViewCell, path: Int) {
+        colorsizes.append(colorsizemodel)
+        sizetable.reloadData()
+    }
     
     
     

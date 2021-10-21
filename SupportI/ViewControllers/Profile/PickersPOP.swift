@@ -9,6 +9,9 @@ import UIKit
 
 protocol PickersPOPDelegate:class {
     func callbackgenders(item: GenderModel)
+    func callbackdelivary(item: GenderModel)
+    func callbacktime(item: GenderModel)
+    func callbackaddress(item:ItemAddress)
     func callbackreasons(item: ResponseDatum)
     func callbackSize(item: SectionItem, path: Int)
     func callbackColor(item: SectionItem, path: Int)
@@ -24,6 +27,15 @@ protocol PickersPOPDelegate:class {
     //func callbackDate(countryItem:CountryData , returnedKey:String)
 }
 extension PickersPOPDelegate {
+    func callbackdelivary(item:GenderModel ){
+
+    }
+    func callbacktime(item:GenderModel ){
+
+    }
+    func callbackaddress(item:ItemAddress){
+
+    }
     func callbackgenders(item:GenderModel ){
 
     }
@@ -83,6 +95,9 @@ class PickersPOP:BaseController {
         case lookup
         case size
         case color
+        case delivary
+        case time
+        case address
     }
     enum DateSelection {
         case date
@@ -107,11 +122,16 @@ class PickersPOP:BaseController {
     var cats : [SectionItem] = []
     var subcats : [SectionItem] = []
     var cities:[ItemCity] = []
+    var isproduct = false
 //    var categories:[Category] = []
 //    var orders:[OrderModel] = []
 //    var subcategories:[Category] = []
     var customs:[PickerModel] = []
     var path = 0
+    var delevariymethods : [GenderModel] = []
+    var protimes : [GenderModel] = []
+    var addressdata : [ItemAddress] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -137,7 +157,11 @@ class PickersPOP:BaseController {
             pickerView.reloadAllComponents()
         }else{
             datePicker.isHidden = false
-            datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+            if (isproduct == false){
+                datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+            }else {
+                datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
+            }
             if (date != ""){
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -200,7 +224,31 @@ class PickersPOP:BaseController {
                         self.delegate?.callbackgenders(item: item)
                     }
                 }
-                }  else if pickerSelection == .lookup {
+                }  else if pickerSelection == .time {
+                    let path = pickerView.selectedRow(inComponent: 0)
+                    if protimes.isset(path){
+                        let item = protimes[pickerView.selectedRow(inComponent: 0)]
+                        self.dismiss(animated: true) {
+                            self.delegate?.callbacktime(item: item)
+                        }
+                    }
+                    } else if pickerSelection == .delivary {
+                        let path = pickerView.selectedRow(inComponent: 0)
+                        if delevariymethods.isset(path){
+                            let item = delevariymethods[pickerView.selectedRow(inComponent: 0)]
+                            self.dismiss(animated: true) {
+                                self.delegate?.callbackdelivary(item: item)
+                            }
+                        }
+                        } else if pickerSelection == .address {
+                            let path = pickerView.selectedRow(inComponent: 0)
+                            if addressdata.isset(path){
+                                let item = addressdata[pickerView.selectedRow(inComponent: 0)]
+                                self.dismiss(animated: true) {
+                                    self.delegate?.callbackaddress(item: item)
+                                }
+                            }
+                            } else if pickerSelection == .lookup {
                     let path = pickerView.selectedRow(inComponent: 0)
                     if lookups.isset(path){
                         let item = lookups[pickerView.selectedRow(inComponent: 0)]
@@ -403,6 +451,12 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         }
         else if pickerSelection == .subcat {
             pickerLabel?.text = subcats[row].name
+        }else if pickerSelection == .address {
+            pickerLabel?.text = addressdata[row].name
+        }else if pickerSelection == .time {
+            pickerLabel?.text = protimes[row].name
+        }else if pickerSelection == .delivary {
+            pickerLabel?.text = delevariymethods[row].name
         }
         else if pickerSelection == .raeson {
             pickerLabel?.text = raesons[row].name

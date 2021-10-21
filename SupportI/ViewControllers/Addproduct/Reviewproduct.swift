@@ -36,6 +36,8 @@ class Reviewproduct: BaseController {
     @IBOutlet weak var sizeview: UIView!
     @IBOutlet weak var sizehight: NSLayoutConstraint!
     @IBOutlet weak var sizes: UITableView!
+    var productid = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true

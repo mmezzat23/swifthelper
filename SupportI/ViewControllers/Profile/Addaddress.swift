@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol AddaddressDelegate: class {
+    func settypeoptin(id : Int , name : String)
+}
 class Addaddress: BaseController {
     @IBOutlet weak var addressname: UITextField!
     @IBOutlet weak var cars: UIButton!
@@ -24,8 +26,9 @@ class Addaddress: BaseController {
     @IBOutlet weak var landmark: UITextField!
     @IBOutlet weak var defult: UISwitch!
     @IBOutlet var banner: UIView!
-    
+    var delegate: AddaddressDelegate?
     @IBOutlet weak var notify: UIButton!
+    var ispop = false
     var isedit = false
     var type = 0
     var lat : Double = 0
@@ -71,12 +74,18 @@ class Addaddress: BaseController {
         })
         viewModel?.userdata.bind({ [weak self](data) in
             self?.stopLoading()
-            let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
-            if (self?.isedit == false){
-                vcc?.txtstring = "Your new address has added".localized()
+            if (self?.ispop == false){
+                let vcc = self?.pushViewController(Changesuccess.self,storyboard: .profile)
+                if (self?.isedit == false){
+                    vcc?.txtstring = "Your new address has added".localized()
+                }
+                vcc?.delegate = self
+                self?.pushPop(vcr: vcc!)
+            }else {
+                self?.delegate?.settypeoptin(id: data.responseData?.id ?? 0, name: data.responseData?.name ?? "")
+                self?.dismiss(animated: true, completion: nil)
+
             }
-            vcc?.delegate = self
-            self?.pushPop(vcr: vcc!)
            
         })
         viewModel?.singleaddressData.bind({ [weak self](data) in
@@ -276,16 +285,14 @@ class Addaddress: BaseController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func back(_ sender: Any) {
+        if (ispop == true) {
+            self.dismiss(animated: true, completion: nil)
+        }else {
+            self.navigationController?.popViewController()
+        }
     }
-    */
-
+    
 }
 extension Addaddress : PickersPOPDelegate {
     func callbackCity(item: ItemCity) {

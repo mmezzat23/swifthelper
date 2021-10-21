@@ -380,3 +380,22 @@
 "Valid till:" = "Valid till:";
 "Select subcategory" = "Select subcategory";
 "Select category" = "Select category";
+"select address" = "select address";
+"select Preparation Time" = "select Preparation Time";
+"select Delivery Method" = "select Delivery Method";
+"select Pickup Time" = "select Pickup Time";
+"field of tags is required" = "field of tags is required";
+"Select" = "Select";
+"Select Color" = "Select Color";
+"Select Size" = "Select Size";
+"Select quantity" = "Select quantity";
+"Select vedio" = "Select vedio";
+"Select at least one image" = "Select at least one image";
+"Vedio must be not exceeded 1 minute" = "Vedio must be not exceeded 1 minute";
+"Draft" = "Draft"
+"Pending" = "Pending"
+"Approved" = "Approved"
+"Rejected" = "Rejected"
+"Orders" = "Orders"
+"Revenue(EGP)" = "Revenue(EGP)"
+

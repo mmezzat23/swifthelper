@@ -9,7 +9,7 @@
 import UIKit
 
 class Successsentproduct: BaseController {
-
+var txt = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 

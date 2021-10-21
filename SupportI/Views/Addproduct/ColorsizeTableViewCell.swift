@@ -11,6 +11,7 @@ protocol ColorsizeTableViewCellDelegate: class {
     func setcolor(wasPressedOnCell cell: ColorsizeTableViewCell , path : Int)
     func setsize(wasPressedOnCell cell: ColorsizeTableViewCell , path : Int)
     func setqunatity(wasPressedOnCell cell: ColorsizeTableViewCell , path : Int , quantity : String)
+    func addrow(wasPressedOnCell cell: ColorsizeTableViewCell , path : Int)
 
 }
 
@@ -53,6 +54,9 @@ class ColorsizeTableViewCell: UITableViewCell , CellProtocol {
         }
         colorclickview.UIViewAction { [self] in
             delegate?.setcolor(wasPressedOnCell: self , path: indexPath())
+        }
+        add.UIViewAction { [self] in
+            delegate?.addrow(wasPressedOnCell: self , path: indexPath())
         }
     }
     

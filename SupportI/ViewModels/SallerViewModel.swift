@@ -16,6 +16,7 @@ class SallerViewModel: ViewModelCore {
     var subcatdata: DynamicType = DynamicType<SectionModel>()
     var lookupdata: DynamicType = DynamicType<LockupModel>()
     var sizedata: DynamicType = DynamicType<SizeModel>()
+    var puplishdata: DynamicType = DynamicType<UserRoot>()
 
     func isactivesaller( ) {
         delegate?.startLoading()
@@ -266,6 +267,29 @@ class SallerViewModel: ViewModelCore {
                     Authorization.instance.refreshToken1{callback in
                         if (callback){
                             self.addscreen5(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func puplishproducr(id: String ) {
+        delegate?.startLoading()
+        ApiManager.instance.connectionRaw("\(EndPoint.addproductpuplish.rawValue)\(id)/publish", type: .post) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.puplishdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.puplishproducr(id: id)
                         }else{
                             
                         }

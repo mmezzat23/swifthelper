@@ -8,6 +8,7 @@
 
 import UIKit
 import BMPlayer
+import AVFoundation
 class Addproductmedia: BaseController {
     @IBOutlet weak var viewvedio: UIView!
     @IBOutlet weak var play: UIImageView!
@@ -284,7 +285,9 @@ extension Addproductmedia : UIImagePickerControllerDelegate {
             dismiss(animated: true, completion: nil)
             guard let movieUrl = info[.mediaURL] as? URL else { return }
         videoURL = movieUrl
-     
+        let asset = AVURLAsset.init(url: videoURL!)
+        let durationInSeconds = asset.duration.seconds
+        if (durationInSeconds <= 60){
         self.startLoading()
         Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
@@ -307,6 +310,9 @@ extension Addproductmedia : UIImagePickerControllerDelegate {
             }else{
                 
             }
+        }
+        }else {
+            makeAlert("Vedio must be not exceeded 1 minute".localized(), closure: {})
         }
         
     }
