@@ -10,6 +10,7 @@ import UIKit
 
 class Addproductstep3: BaseController {
 
+    @IBOutlet weak var samary: UILabel!
     @IBOutlet weak var dateimage: UIImageView!
     @IBOutlet weak var datelbl: UILabel!
     @IBOutlet weak var validlbl: UILabel!
@@ -20,7 +21,6 @@ class Addproductstep3: BaseController {
     @IBOutlet weak var commisionlbl: UILabel!
     @IBOutlet weak var dicountlbl: UILabel!
     @IBOutlet weak var pricelbl: UILabel!
-    @IBOutlet weak var buyerprice: UILabel!
     @IBOutlet weak var pricesummary: UILabel!
     @IBOutlet weak var discount: UITextField!
     @IBOutlet weak var pricetxt: UITextField!
@@ -31,6 +31,18 @@ class Addproductstep3: BaseController {
     var viewModel : SallerViewModel?
     var parameters : [String : Any] = [:]
     var isveify = false
+    var discountval = 0
+    var priceval = 0
+    var commisionval = 0
+    var discountvalue = 0
+    var productdetails: ProductdetailModel?
+    var isperson = false
+    @IBOutlet weak var save: UIButton!
+    var isedit = false
+    @IBOutlet weak var savedraft: UIButton!
+    @IBOutlet weak var cancel: UIButton!
+    @IBOutlet weak var payed: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -38,6 +50,7 @@ class Addproductstep3: BaseController {
         bind()
         fees.text = "0 EGP"
         taxes.text = "0 EGP"
+        pricesummary.setunderline(title: "Product Price Summary")
 
     }
     func setup() {
@@ -74,6 +87,9 @@ class Addproductstep3: BaseController {
                 if (discount.text != ""){
                     parameters["discount"] = discount.text
                 }
+                if (date != ""){
+                    parameters["expiryDate"] = date
+                }
     //            if (isedit == true){
     //                parameters["id"] = id
     //                viewModel?.editcard(paramters: parameters)
@@ -83,16 +99,53 @@ class Addproductstep3: BaseController {
                 
             }
         }
+        if (isedit == true) {
+            savedraft.isHidden = true
+            cancel.isHidden = false
+            pricetxt.text = String(productdetails?.responseData?.price?.price ?? 0)
+            discount.text = String(productdetails?.responseData?.price?.discount ?? 0)
+            if (productdetails?.responseData?.price?.expiryDate ?? "" != ""){
+                datelbl.text = productdetails?.responseData?.price?.expiryDate ?? ""
+                date = productdetails?.responseData?.price?.expiryDate ?? ""
+                validlbl.isHidden = false
+                datelbl.isHidden = false
+            }
+            var priceval = productdetails?.responseData?.price?.price ?? 0
+            var dis = (productdetails?.responseData?.price?.discount)! ?? 0
+            var discountval = priceval * dis / 100
+            var commisionval = priceval * 5 / 100
+            pricelbl.text = "\(productdetails?.responseData?.price?.price ?? 0 ) EGP"
+            dicountlbl.text = "\(discountval) EGP"
+            fees.text = "\(productdetails?.responseData?.price?.shippingFees ?? 0 ) EGP"
+            taxes.text = "\(productdetails?.responseData?.price?.taxes ?? 0 ) EGP"
+            commisionlbl.text = "\(commisionval) EGP"
+            if (productdetails?.responseData?.price?.isPermanent == true){
+                isPermanent = true
+                payed.setImage(#imageLiteral(resourceName: "Group 11265"), for: .normal)
+            }else{
+                isPermanent = false
+                payed.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
+            }
+        }
+        if (isperson == true){
+            save.setTitle("SAVE".localized(), for: .normal)
+        }
     }
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
                 self?.stopLoading()
-            if (self?.isveify == true){
+            if (self?.isperson == true){
                 let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
                 vcc?.productid = data.responseData?.productId ?? ""
                 self?.push(vcc!)
             }else {
-                self?.viewModel?.puplishproducr(id: productid)
+            if (self?.isveify == false){
+                let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
+                vcc?.productid = data.responseData?.productId ?? ""
+                self?.push(vcc!)
+            }else {
+                self?.viewModel?.puplishproducr(id: self?.productid ?? "")
+            }
             }
         })
         viewModel?.puplishdata.bind({ [weak self](data) in
@@ -108,22 +161,30 @@ class Addproductstep3: BaseController {
             self?.makeAlert(data, closure: {})
         })
     }
-    @IBAction func discountchange(_ sender: Any) {
-        if (pricetxt.text != ""){
-            let discountvalue = Int(discount.text ?? "0" ) ?? 0
-            self.dicountlbl.text = "\(Int(pricetxt.text ?? "0") ?? 0 * (discountvalue / 100)) EGP"
-            totalprice.text = "\((Int(pricetxt.text ?? "") ?? 0 + (Int(pricetxt.text ?? "0") ?? 0 * (5 / 100)) ?? 0 + Int(pricetxt.text ?? "0") ?? 0 * (discountvalue / 100) ?? 0)) EGP"
-        }
-    }
-    @IBAction func pricechange(_ sender: Any) {
+    
+    @IBAction func pricechange(_ sender: UITextField) {
+        self.priceval = Int(pricetxt.text ?? "0") ?? 0
+        pricelbl.text = "\(self.priceval) EGP"
+        self.commisionlbl.text = "\(self.priceval * 5 / 100)EGP"
+        self.commisionval = (self.priceval * 5 / 100)
         if (discount.text != ""){
-            let discountvalue = Int(discount.text ?? "0" ) ?? 0
-            self.dicountlbl.text = "\(Int(pricetxt.text ?? "0") ?? 0 * (discountvalue / 100)) EGP"
+            discountval = Int(discount.text ?? "0") ?? 0
+            discountvalue = (priceval * discountval / 100)
+            self.dicountlbl.text = "\(discountvalue) EGP"
         }
-        buyerprice.text = pricetxt.text ?? "" + " EGP"
-        self.commisionlbl.text = "\(Int(pricetxt.text ?? "0") ?? 0 * (5 / 100)) EGP"
-        totalprice.text = "\((Int(pricetxt.text ?? "") ?? 0 + (Int(pricetxt.text ?? "0") ?? 0 * (5 / 100)) ?? 0 + Int(pricetxt.text ?? "0") ?? 0 * (Int(discount.text ?? "0" ) ?? 0 / 100) ?? 0)) EGP"
+     
+        totalprice.text = "\(self.priceval + self.commisionval + self.discountvalue) EGP"
     }
+    
+    @IBAction func discountchange(_ sender: UITextField) {
+        if (pricetxt.text! != ""){
+            discountval = Int(discount.text ?? "0") ?? 0
+            discountvalue = (priceval * discountval / 100)
+            self.dicountlbl.text = "\(discountvalue) EGP"
+            totalprice.text = "\(self.priceval + self.commisionval + self.discountvalue) EGP"
+        }
+    }
+    
     func validateTextFields() -> Bool {
         pricetxt.customValidationRules = [RequiredRule() ]
         let validator = Validation(textFields: [pricetxt])

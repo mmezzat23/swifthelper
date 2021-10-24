@@ -39,10 +39,10 @@ struct ProductsCategory: Codable {
 
 // MARK: - Image
 struct ProductsImage: Codable {
-    let imageID, urlThumbnail, urlPreview, urlDownload: String?
+    let imageID, urlThumbnail, urlPreview, urlDownload, videoId: String?
 
     enum CodingKeys: String, CodingKey {
         case imageID = "imageId"
-        case urlThumbnail, urlPreview, urlDownload
+        case urlThumbnail, urlPreview, urlDownload, videoId
     }
 }

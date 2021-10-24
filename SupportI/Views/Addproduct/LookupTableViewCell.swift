@@ -28,6 +28,7 @@ class LookupTableViewCell: UITableViewCell , CellProtocol {
             lookupselectlbl.textColor = UIColor(red: 150, green: 161, blue: 171)
         }
         lookup.UIViewAction { [self] in
+            print(indexPath())
             delegate?.setlookyp(wasPressedOnCell: self , path: indexPath())
         }
     }

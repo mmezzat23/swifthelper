@@ -29,6 +29,13 @@ class Addproductstep2: BaseController {
     var sallermodel : SallerViewModel?
     var viewModel : ProfileViewModel?
     var pickid = -1
+    var productdetails: ProductdetailModel?
+    var isperson = false
+    var isedit = false
+    @IBOutlet weak var save: UIButton!
+    @IBOutlet weak var savedeaft: UIButton!
+    
+    @IBOutlet weak var cancel: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -52,6 +59,31 @@ class Addproductstep2: BaseController {
         viewModel?.delegate = self
         sallermodel = .init()
         sallermodel?.delegate = self
+        if (isedit == true){
+            savedeaft.isHidden = true
+            cancel.isHidden = false
+            self.addresslbl.text = self.productdetails?.responseData?.productShipping?.addressName ?? ""
+            if (self.productdetails?.responseData?.productShipping?.deliveryMethod ?? -1 == 0){
+                self.delivarymethod.text = "ShippingCarrier".localized()
+            }else  if (self.productdetails?.responseData?.productShipping?.deliveryMethod ?? -1 == 1){
+                self.delivarymethod.text = "WndoCarrier".localized()
+            }
+            if (self.productdetails?.responseData?.productShipping?.preparationTime ?? -1 == 0){
+                self.timelbl.text = "Immediately".localized()
+            }
+            addressid = self.productdetails?.responseData?.productShipping?.addressID ?? 0
+            pickid = self.productdetails?.responseData?.productShipping?.pickUpTime ?? 0
+            delivaryid = self.productdetails?.responseData?.productShipping?.deliveryMethod ?? 0
+            protimeid = self.productdetails?.responseData?.productShipping?.preparationTime ?? 0
+            times.reloadData()
+            self.timelbl.textColor = UIColor(red: 1, green: 20, blue: 71)
+            self.addresslbl.textColor = UIColor(red: 1, green: 20, blue: 71)
+            self.delivarymethod.textColor = UIColor(red: 1, green: 20, blue: 71)
+
+        }
+        if (isperson == true){
+            save.setTitle("SAVE".localized(), for: .normal)
+        }
         viewModel?.getaddresss()
     }
     override func bind() {
@@ -65,11 +97,26 @@ class Addproductstep2: BaseController {
             print(data)
             self?.makeAlert(data, closure: {})
         })
-        viewModel?.userdata.bind({ [weak self](data) in
+        sallermodel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+        sallermodel?.userdata.bind({ [weak self](data) in
                 self?.stopLoading()
-                let vcc = self?.pushViewController(Addproductstep3.self,storyboard: .addproduct)
+            if (self?.isperson == true){
+                let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
                 vcc?.productid = data.responseData?.productId ?? ""
                 self?.push(vcc!)
+            }else {
+                let vcc = self?.pushViewController(Addproductstep3.self,storyboard: .addproduct)
+                vcc?.productid = data.responseData?.productId ?? ""
+                if (self?.isedit == true){
+                    vcc?.productdetails = self?.productdetails
+                    vcc?.isedit = true
+                }
+                self?.push(vcc!)
+            }
         })
     }
     func onclick () {
@@ -139,6 +186,38 @@ class Addproductstep2: BaseController {
         }
     }
     @IBAction func savedraft(_ sender: Any) {
+        var error : String = ""
+        if addressid == 0 {
+            error = "\(error)\n \("select address".localized)"
+        }
+        if protimeid == -1 {
+            error = "\(error)\n \("select Preparation Time".localized)"
+        }
+        if delivaryid == -1 {
+            error = "\(error)\n \("select Delivery Method".localized)"
+        }
+        if pickid == -1 {
+            error = "\(error)\n \("select Pickup Time".localized)"
+        }
+        if (error != ""){
+          makeAlert(error, closure: {})
+        }else{
+
+           parameters["productId"] = productid
+            parameters["deliveryMethod"] = delivaryid
+            parameters["pickUpTime"] = pickid
+            parameters["addressId"] = addressid
+            parameters["preparationTime"] = protimeid
+
+        print(parameters)
+//
+////            if (isedit == true){
+////                parameters["id"] = id
+////                viewModel?.editcard(paramters: parameters)
+////            }else{
+            sallermodel?.addscreen4(paramters: parameters)
+//            }
+        }
     }
     
 }
@@ -146,6 +225,15 @@ extension Addproductstep2 : PickersPOPDelegate , AddaddressDelegate {
     func callbackaddress(item: ItemAddress) {
         addresslbl.text = item.name ?? ""
         addressid = item.id ?? 0
+        if (item.icon == "1"){
+            imgaddress.image = #imageLiteral(resourceName: "building")
+        }else if (item.icon == "2"){
+            imgaddress.image = #imageLiteral(resourceName: "home")
+        }else if (item.icon == "3"){
+            imgaddress.image = #imageLiteral(resourceName: "parthenon")
+        }else if (item.icon == "4"){
+            imgaddress.image = #imageLiteral(resourceName: "location")
+        }
     }
     func callbackdelivary(item: GenderModel) {
         delivarymethod.text = item.name ?? ""
@@ -155,9 +243,18 @@ extension Addproductstep2 : PickersPOPDelegate , AddaddressDelegate {
         timelbl.text = item.name ?? ""
         protimeid = Int(item.type ?? "-1") ?? -1
     }
-    func settypeoptin(id: Int, name: String) {
+    func settypeoptin(id: Int, name: String , type: Int) {
         addresslbl.text = name
         addressid = id
+        if (type == 1){
+            imgaddress.image = #imageLiteral(resourceName: "building")
+        }else if (type == 2){
+            imgaddress.image = #imageLiteral(resourceName: "home")
+        }else if (type == 3){
+            imgaddress.image = #imageLiteral(resourceName: "parthenon")
+        }else if (type == 4){
+            imgaddress.image = #imageLiteral(resourceName: "location")
+        }
         addressdata.removeAll()
         viewModel?.getaddresss()
     }
@@ -165,7 +262,7 @@ extension Addproductstep2 : PickersPOPDelegate , AddaddressDelegate {
 extension Addproductstep2: UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width:  self.times.width / 3 - 15 , height: self.times.height)
+        return CGSize(width:  self.times.width / 3 - 8 , height: self.times.height)
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -175,12 +272,20 @@ extension Addproductstep2: UICollectionViewDelegate,UICollectionViewDataSource ,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.cell(type: PickuptimesCollectionViewCell.self, indexPath)
         cell.model = pickuptimes[safe: indexPath.row]
-        cell.timeview.UIViewAction { [self] in
-            self.pickid = Int(pickuptimes[indexPath.row].type ?? "") ?? -1
-            cell.type = self.pickid
-            times.reloadData()
-        }
+        cell.type = self.pickid
+        cell.delegate = self
+        cell.setup()
         return cell
     }
+    
+}
+
+extension Addproductstep2 : PickuptimesCollectionViewCellDelegate {
+    func setpikup(wasPressedOnCell cell: PickuptimesCollectionViewCell, path: Int) {
+        print("cc")
+        self.pickid = Int(pickuptimes[path].type ?? "") ?? -1
+        times.reloadData()
+    }
+    
     
 }

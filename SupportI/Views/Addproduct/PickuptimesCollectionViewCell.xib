@@ -25,19 +25,19 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-gq-sfU">
                         <rect key="frame" x="0.0" y="0.0" width="307" height="56"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-AQ-9ph">
-                                <rect key="frame" x="30" y="5" width="247" height="46"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="11"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-AQ-9ph">
+                                <rect key="frame" x="10" y="5" width="287" height="46"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="7"/>
                                 <color key="textColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="HS3-AQ-9ph" firstAttribute="leading" secondItem="ewG-gq-sfU" secondAttribute="leading" constant="30" id="8SC-z0-VdA"/>
+                            <constraint firstItem="HS3-AQ-9ph" firstAttribute="leading" secondItem="ewG-gq-sfU" secondAttribute="leading" constant="10" id="8SC-z0-VdA"/>
                             <constraint firstAttribute="bottom" secondItem="HS3-AQ-9ph" secondAttribute="bottom" constant="5" id="VT5-1X-547"/>
                             <constraint firstItem="HS3-AQ-9ph" firstAttribute="top" secondItem="ewG-gq-sfU" secondAttribute="top" constant="5" id="gxD-2J-htw"/>
-                            <constraint firstAttribute="trailing" secondItem="HS3-AQ-9ph" secondAttribute="trailing" constant="30" id="mmx-Nc-Ale"/>
+                            <constraint firstAttribute="trailing" secondItem="HS3-AQ-9ph" secondAttribute="trailing" constant="10" id="mmx-Nc-Ale"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -63,7 +63,7 @@
             <size key="customSize" width="307" height="56"/>
             <connections>
                 <outlet property="timelabel" destination="HS3-AQ-9ph" id="zIc-8h-fmN"/>
-                <outlet property="timeview" destination="HS3-AQ-9ph" id="t1o-FZ-C0p"/>
+                <outlet property="timeview" destination="ewG-gq-sfU" id="GMP-cq-Pe5"/>
             </connections>
             <point key="canvasLocation" x="323.91304347826087" y="36.830357142857139"/>
         </collectionViewCell>

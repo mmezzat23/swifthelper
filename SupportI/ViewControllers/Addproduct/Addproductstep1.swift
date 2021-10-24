@@ -28,6 +28,12 @@ class Addproductstep1: BaseController {
     var viewModel : SallerViewModel?
     var lookmodel : LockupModel?
     let colorsizemodel: ColorsizeModel = ColorsizeModel()
+    var productdetails: ProductdetailModel?
+    var isperson = false
+    var isedit = false
+    @IBOutlet weak var save: UIButton!
+    @IBOutlet weak var cancel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -42,15 +48,38 @@ class Addproductstep1: BaseController {
         viewModel = .init()
         viewModel?.delegate = self
         viewModel?.getlokup(id: 1)
+        if (isedit == true){
+            savedraft.isHidden = true
+            cancel.isHidden = false
+            var tagtitle = ""
+            for item in productdetails?.responseData?.productTags ?? [] {
+                tagtitle = tagtitle + item.tagName! ?? "" + " "
+            }
+            tags.text = tagtitle
+        }
+        if (isperson == true){
+            save.setTitle("SAVE".localized(), for: .normal)
+        }
+        
     }
 
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
                 self?.stopLoading()
+            if (self?.isperson == true){
+                let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
+                vcc?.productid = data.responseData?.productId ?? ""
+                self?.push(vcc!)
+            }else {
                 let vcc = self?.pushViewController(Addproductstep2.self,storyboard: .addproduct)
                 vcc?.productid = data.responseData?.productId ?? ""
                 vcc?.catid = self?.catid ?? 0
+                if (self?.isedit == true){
+                    vcc?.productdetails = self?.productdetails
+                    vcc?.isedit = true
+                }
                 self?.push(vcc!)
+            }
         })
         viewModel?.lookupdata.bind({ [weak self](data) in
             self?.stopLoading()
@@ -60,6 +89,17 @@ class Addproductstep1: BaseController {
             self?.colorsizemodel.iscolor = data.responseData.isColors
 
             self?.lookups.append(contentsOf: data.responseData.lookups ?? [])
+            var jjj = 0
+            for item in self?.lookups ?? [] {
+                for lookup in self?.productdetails?.responseData?.lookupDtos ?? [] {
+                    if item.id == lookup.id {
+                        self?.lookups[jjj].chooseid = lookup.lookupValues?[0].id ?? 0
+                        self?.lookups[jjj].choosetxt = lookup.lookupValues?[0].displayName ?? ""
+                        self?.lookups[jjj].ischoose = true
+                    }
+                }
+                jjj += 1
+            }
             if (data.responseData.isColors ) {
                 self?.viewModel?.getcolors(id: 1)
             }else {
@@ -79,7 +119,32 @@ class Addproductstep1: BaseController {
             self?.sizes.removeAll()
             self?.sizes.append(contentsOf: data.items ?? [])
             self?.colorsizemodel.sizes.append(contentsOf: self!.sizes)
-            self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+            if (self?.isedit == true){
+                for item1 in self?.productdetails?.responseData?.productColorSizes ?? [] {
+                    self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+                }
+                var jjj = 0
+                for item in self?.colorsizes ?? [] {
+//                    for lookup in self?.productdetails?.responseData?.productColorSizes ?? [] {
+//                        if item.colorid == lookup.colorID {
+//
+//                        }
+//                        if item.sizeid == lookup.sizeID {
+//
+//                        }
+//
+//                    }
+                    self?.colorsizes[jjj].sizeid = self?.productdetails?.responseData?.productColorSizes?[jjj].sizeID ?? 0
+                    self?.colorsizes[jjj].sizetxt = self?.productdetails?.responseData?.productColorSizes?[jjj].sizeName ?? ""
+                    self?.colorsizes[jjj].colorid = self?.productdetails?.responseData?.productColorSizes?[jjj].colorID ?? 0
+                    self?.colorsizes[jjj].colortxt = self?.productdetails?.responseData?.productColorSizes?[jjj].colorName ?? ""
+                    self?.colorsizes[jjj].quantity = String(self?.productdetails?.responseData?.productColorSizes?[jjj].quantity ?? 0) ?? ""
+                    jjj += 1
+                }
+            }else {
+                self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+
+            }
             self?.sizetable.reloadData()
 
         })
@@ -91,7 +156,30 @@ class Addproductstep1: BaseController {
             if (self?.lookmodel?.responseData.isSizes ?? false ) {
                 self?.viewModel?.getsizes(id: 1)
             }else {
-                self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+                if (self?.isedit == true){
+                    for item in self?.productdetails?.responseData?.productColorSizes ?? [] {
+                        self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+                    }
+                    var jjj = 0
+                    for item in self?.colorsizes ?? [] {
+                        for lookup in self?.productdetails?.responseData?.productColorSizes ?? [] {
+                            if item.colorid == lookup.colorID {
+                                self?.colorsizes[jjj].colorid = lookup.colorID ?? 0
+                                self?.colorsizes[jjj].colortxt = lookup.colorName ?? ""
+                            }
+                            if item.sizeid == lookup.sizeID {
+                                self?.colorsizes[jjj].sizeid = lookup.sizeID ?? 0
+                                self?.colorsizes[jjj].sizetxt = lookup.sizeName ?? ""
+                            }
+                            
+                        }
+                        self?.colorsizes[jjj].quantity = String(self?.productdetails?.responseData?.productColorSizes?[jjj].quantity ?? 0) ?? ""
+                        jjj += 1
+                    }
+                }else {
+                    self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+
+                }
                 self?.sizetable.reloadData()
 
             }
@@ -107,9 +195,14 @@ class Addproductstep1: BaseController {
     @IBAction func savedraft(_ sender: Any) {
     }
     @IBAction func `continue`(_ sender: Any) {
+        var tagsselect : [String] = []
+        tagsselect = tags.text!.findMentionText()
         var error : String = ""
         if tags.text == "" {
             error = "\(error)\n \("field of tags is required".localized)"
+        }
+        else if tagsselect.count == 0 {
+            error = "\(error)\n \("tags is invalid".localized)"
         }
         for item in lookups {
             if (item.ischoose ?? false == false){
@@ -140,18 +233,37 @@ class Addproductstep1: BaseController {
                 lookupselect.append(item.chooseid ?? 0)
             }
           parameters["lookups"] = lookupselect
-            var tagsselect : [String] = []
-            tagsselect.append("#test")
+            
             parameters["tags"] = tagsselect
 
-           parameters["productId"] = "68d372bc-8e2d-46cf-ab3d-7c8607c9e1bb"
+           parameters["productId"] = productid
             var sizeselect : [[String: Any]] = []
             for item in colorsizes {
-                let jsonObject: [String: Any] = [
-                    "colorId": item.colorid,
-                    "quantity": Int(item.quantity)
-                ]
-                sizeselect.append(jsonObject)
+                if (self.lookmodel?.responseData.isSizes == true && self.lookmodel?.responseData.isColors == true){
+                    let jsonObject: [String: Any] = [
+                        "colorId": item.colorid,
+                        "sizeId": item.sizeid,
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }else if (self.lookmodel?.responseData.isSizes == false && self.lookmodel?.responseData.isColors == true){
+                    let jsonObject: [String: Any] = [
+                        "colorId": item.colorid,
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }else if (self.lookmodel?.responseData.isSizes == true && self.lookmodel?.responseData.isColors == false){
+                    let jsonObject: [String: Any] = [
+                        "sizeId": item.sizeid,
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }else if (self.lookmodel?.responseData.isSizes == false && self.lookmodel?.responseData.isColors == false){
+                    let jsonObject: [String: Any] = [
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }
             }
             parameters["colorWithSizeAndQuantity"] = sizeselect
 
@@ -185,15 +297,15 @@ extension Addproductstep1:UITableViewDelegate , UITableViewDataSource {
         var cell = tableView.cell(type: LookupTableViewCell.self, indexPath)
         cell.model = lookups[indexPath.row]
         cell.setup()
-            optionhoght.constant = CGFloat(lookups.count * 90) + CGFloat(colorsizes.count * 75)
+            optionhoght.constant = CGFloat(lookups.count * 90) + CGFloat(colorsizes.count * 80)
             cell.delegate = self
         return cell
         }else {
             var cell = tableView.cell(type: ColorsizeTableViewCell.self, indexPath)
             cell.model = colorsizes[indexPath.row]
             cell.setup()
-            optionhoght.constant = CGFloat(lookups.count * 90) + CGFloat(colorsizes.count * 75)
-            sizetablehight.constant = CGFloat(colorsizes.count * 75)
+            optionhoght.constant = CGFloat(lookups.count * 90) + CGFloat(colorsizes.count * 80)
+            sizetablehight.constant = CGFloat(colorsizes.count * 80)
             cell.delegate = self
             return cell
         }
@@ -205,7 +317,7 @@ extension Addproductstep1:UITableViewDelegate , UITableViewDataSource {
 //            self.delegate?.setcatogary(title: self.contries[indexPath.row].title!, image: self.contries[indexPath.row].image! , id : self.contries[indexPath.row].id!)
 //        }
     }
-    
+   
 }
 extension Addproductstep1 : PickersPOPDelegate {
     func callbackColor(item: SectionItem, path: Int) {
@@ -219,6 +331,7 @@ extension Addproductstep1 : PickersPOPDelegate {
         sizetable.reloadData()
     }
     func callbackLookup(item: LookupValue, path: Int) {
+        print(path)
         lookups[path].ischoose = true
         lookups[path].chooseid = item.id
         lookups[path].choosetxt = item.displayName
@@ -237,7 +350,8 @@ extension Addproductstep1 : LookupTableViewCellDelegate , ColorsizeTableViewCell
     }
     
     func setqunatity(wasPressedOnCell cell: ColorsizeTableViewCell, path: Int, quantity: String) {
-        self.colorsizes[path].quantity = quantity
+        self.colorsizes[path].quantity = quantity ?? ""
+        options.reloadData()
     }
     
     func setlookyp(wasPressedOnCell cell: LookupTableViewCell, path: Int) {
@@ -265,4 +379,16 @@ extension Addproductstep1 : LookupTableViewCellDelegate , ColorsizeTableViewCell
     
     
     
+}
+extension String {
+    func findMentionText() -> [String] {
+        var arr_hasStrings:[String] = []
+        let regex = try? NSRegularExpression(pattern: "(#[a-zA-Z0-9_\\p{Arabic}\\p{N}]*)", options: [])
+        if let matches = regex?.matches(in: self, options:[], range:NSMakeRange(0, self.count)) {
+            for match in matches {
+                arr_hasStrings.append(NSString(string: self).substring(with: NSRange(location:match.range.location, length: match.range.length )))
+            }
+        }
+        return arr_hasStrings
+    }
 }

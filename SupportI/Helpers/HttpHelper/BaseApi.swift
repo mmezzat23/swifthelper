@@ -22,9 +22,12 @@ class BaseApi: Downloader, Paginator, Alertable {
         headers["lang"] = Localizer.current
         if let token = UserRoot.token() {
             headers["Authorization"] =  "Bearer "+token
+            print("zzz")
+
         }
         else {
             headers["Authorization"] = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkMyMjRGNzI4Q0JDQjgxQzlEM0FEOEM4RDM4NDk0RDNDIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2MzQxNTYxOTMsImV4cCI6MTk0OTUxNjE5MywiaXNzIjoiaHR0cHM6Ly93bmRvLm5ldDo1MDAwIiwiYXVkIjoiV25kb0FwcCIsImNsaWVudF9pZCI6IlduZG9BcHBfVG9rZW4iLCJzdWIiOiJiMGNjZmYyMy1mNGQzLWMwMWItMTY1OC0zOWZmOGIzNjVlY2QiLCJhdXRoX3RpbWUiOjE2MzQxNTYxOTMsImlkcCI6ImxvY2FsIiwicm9sZSI6ImFkbWluIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjoiRmFsc2UiLCJlbWFpbCI6ImFkbWluQGFicC5pbyIsImVtYWlsX3ZlcmlmaWVkIjoiRmFsc2UiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MzQxNTYxOTMsInNjb3BlIjpbIlduZG9BcHAiXSwiYW1yIjpbInB3ZCJdfQ.j38j8S8V8lHT2-fA1Sr8O_Dcvz8Y_UnG66qbnJ2Tc--iuTm3Mxwhmnnmr9QCCY3hG_eHxjGm2XkeVewm7g6utX8cZwCwhu10pLt3yfkJp-h74KWo8jXrb3shbcATwmrPn5OzHlHh28NmuJ01kZnGNY9T7YfKGEHAXos9wFGDN3SmrsK1S8tFl2m0aeIpgpvw1GuzMYzmNZ4Odh71zVsUYHn-pfjg172sAfDZ4OCtZuzLdGV-7zrUjWXg_s0pEl2qoHNG5h_W4rcVJSnvdVgqQ_ThwyW2IQ9eKr7IWBAjc2wTwGnUsZCSri_6Nk-IakrMlSGYTfAPjBojOO8AgJ8VwA"
+            print("xxx")
             
         }
         

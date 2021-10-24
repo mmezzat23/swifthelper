@@ -8,7 +8,7 @@
 
 import UIKit
 protocol AddaddressDelegate: class {
-    func settypeoptin(id : Int , name : String)
+    func settypeoptin(id : Int , name : String , type: Int)
 }
 class Addaddress: BaseController {
     @IBOutlet weak var addressname: UITextField!
@@ -82,7 +82,7 @@ class Addaddress: BaseController {
                 vcc?.delegate = self
                 self?.pushPop(vcr: vcc!)
             }else {
-                self?.delegate?.settypeoptin(id: data.responseData?.id ?? 0, name: data.responseData?.name ?? "")
+                self?.delegate?.settypeoptin(id: data.responseData?.id ?? 0, name: data.responseData?.name ?? "", type: self?.type ?? 0)
                 self?.dismiss(animated: true, completion: nil)
 
             }

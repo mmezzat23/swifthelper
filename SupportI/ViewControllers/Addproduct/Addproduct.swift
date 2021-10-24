@@ -26,7 +26,11 @@ class Addproduct: BaseController {
     var subcat_id = 0
     var viewModel : SallerViewModel?
     var parameters : [String : Any] = [:]
-
+    var productdetails: ProductdetailModel?
+    var isperson = false
+    var isedit = false
+    @IBOutlet weak var save: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -38,14 +42,42 @@ class Addproduct: BaseController {
        viewModel = .init()
        viewModel?.delegate = self
        viewModel?.getsection()
+        if (isedit == true){
+            cat_id = productdetails?.responseData?.category?.id ?? 0
+            subcat_id = productdetails?.responseData?.subCategory?.id ?? 0
+            sec_id = productdetails?.responseData?.section?.id ?? 0
+            cattxt.text = productdetails?.responseData?.category?.name ?? ""
+            subcattxt.text = productdetails?.responseData?.subCategory?.name ?? ""
+            sectxt.text = productdetails?.responseData?.section?.name ?? ""
+            productname.text = productdetails?.responseData?.name ?? ""
+            productdescription.text = productdetails?.responseData?.responseDataDescription ?? ""
+            sectxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+            cattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+            subcattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+
+
+        }
+        if (isperson == true){
+            save.setTitle("SAVE".localized(), for: .normal)
+        }
     }
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
                 self?.stopLoading()
+            if (self?.isperson == true){
+                let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
+                vcc?.productid = data.responseData?.productId ?? ""
+                self?.push(vcc!)
+            }else {
                 let vcc = self?.pushViewController(Addproductmedia.self,storyboard: .addproduct)
                 vcc?.productid = data.responseData?.productId ?? ""
                 vcc?.catid = self?.subcat_id ?? 0
+                if (self?.isedit == true){
+                    vcc?.productdetails = self?.productdetails
+                    vcc?.isedit = true
+                }
                 self?.push(vcc!)
+            }
         })
         viewModel?.sectiondata.bind({ [weak self](data) in
             self?.stopLoading()
@@ -144,6 +176,9 @@ class Addproduct: BaseController {
             parameters["sectionId"] = sec_id
             parameters["categoryId"] = cat_id
             parameters["subCategoryId"] = subcat_id
+                if (isedit == true){
+                    parameters["productId"] = productdetails?.responseData?.id ?? 0
+                }
 //            if (isedit == true){
 //                parameters["id"] = id
 //                viewModel?.editcard(paramters: parameters)
@@ -162,7 +197,7 @@ extension Addproduct : PickersPOPDelegate {
         viewModel?.getcats(id: sec_id)
         sectxt.textColor = UIColor(red: 1, green: 20, blue: 71)
         cattxt.textColor = UIColor(red: 150, green: 161, blue: 171)
-        subcattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+        subcattxt.textColor = UIColor(red: 150, green: 161, blue: 171)
 
     }
     func callbacksubcat(item: SectionItem) {

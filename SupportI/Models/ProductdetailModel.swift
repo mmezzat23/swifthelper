@@ -49,11 +49,11 @@ struct LookupDto: Codable {
 }
 
 // MARK: - LookupValue
-struct LookupValue: Codable {
-    let displayName: String?
-    let isSelected: Bool?
-    let id: Int?
-}
+//struct LookupValue: Codable {
+//    let displayName: String?
+//    let isSelected: Bool?
+//    let id: Int?
+//}
 
 // MARK: - Price
 struct Price: Codable {

@@ -15,16 +15,16 @@ class ImagesCollectionViewCell: UICollectionViewCell , CellProtocol{
     func setup() {
        
         if (type != 0 ){
-            guard let model = model as? String else { return setupModel() }
-            image.setImage(url: model)
+            guard let model = model as? UploadModel else { return setupModel() }
+            image.setImage(url: model.urlthumbnail)
             image.borderColor = UIColor(red: 1, green: 20, blue: 71)
             image.borderWidth = 1
             image?.cornerRadius = 10
             delete.isHidden = false
 
         }else{
-            guard let model = model as? UIImage else { return setupModel() }
-            image.image = model
+            guard let model = model as? UploadModel else { return setupModel() }
+            image.setImage(url: model.urlthumbnail)
             image.borderColor = UIColor(red: 1, green: 20, blue: 71)
             image.borderWidth = 1
             image?.cornerRadius = 10

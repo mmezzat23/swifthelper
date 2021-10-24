@@ -253,7 +253,7 @@ class PickersPOP:BaseController {
                     if lookups.isset(path){
                         let item = lookups[pickerView.selectedRow(inComponent: 0)]
                         self.dismiss(animated: true) {
-                            self.delegate?.callbackLookup(item: item, path: path)
+                            self.delegate?.callbackLookup(item: item, path: self.path)
                         }
                     }
                     }   else if pickerSelection == .size {
@@ -261,7 +261,7 @@ class PickersPOP:BaseController {
                         if sizes.isset(path){
                             let item = sizes[pickerView.selectedRow(inComponent: 0)]
                             self.dismiss(animated: true) {
-                                self.delegate?.callbackSize(item: item, path: path)
+                                self.delegate?.callbackSize(item: item, path: self.path)
                             }
                         }
                         }  else if pickerSelection == .color {
@@ -269,7 +269,7 @@ class PickersPOP:BaseController {
                             if colors.isset(path){
                                 let item = colors[pickerView.selectedRow(inComponent: 0)]
                                 self.dismiss(animated: true) {
-                                    self.delegate?.callbackColor(item: item, path: path)
+                                    self.delegate?.callbackColor(item: item, path: self.path)
                                 }
                             }
                             }else if pickerSelection == .raeson {
@@ -379,6 +379,12 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
         }
         else if pickerSelection == .category {
             return cats.count
+        }else if pickerSelection == .delivary {
+            return delevariymethods.count
+        }else if pickerSelection == .address {
+            return addressdata.count
+        }else if pickerSelection == .time {
+            return protimes.count
         }
         else if pickerSelection == .subcat {
             return subcats.count

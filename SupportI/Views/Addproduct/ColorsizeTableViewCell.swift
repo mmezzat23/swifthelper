@@ -30,6 +30,7 @@ class ColorsizeTableViewCell: UITableViewCell , CellProtocol {
     
     func setup() {
         guard let model = model as? ColorsizeModel else { return }
+        quantity.text = model.quantity
         if (model.issize == false){
             sizeview.isHidden = true
         }
@@ -40,6 +41,7 @@ class ColorsizeTableViewCell: UITableViewCell , CellProtocol {
             colorlbl.text = model.colortxt
             colorlbl.textColor = UIColor(red: 1, green: 20, blue: 71)
         }else {
+            colorlbl.text = "Select Color".localized()
             colorlbl.textColor = UIColor(red: 150, green: 161, blue: 171)
         }
         if (model.sizeid > 0){
@@ -47,6 +49,7 @@ class ColorsizeTableViewCell: UITableViewCell , CellProtocol {
             sizelbl.textColor = UIColor(red: 1, green: 20, blue: 71)
 
         }else {
+            sizelbl.text = "Select Size".localized()
             sizelbl.textColor = UIColor(red: 150, green: 161, blue: 171)
         }
         sizeviewclick.UIViewAction { [self] in
@@ -61,7 +64,7 @@ class ColorsizeTableViewCell: UITableViewCell , CellProtocol {
     }
     
     @IBAction func changequnatity(_ sender: Any) {
-        delegate?.setqunatity(wasPressedOnCell: self , path: indexPath(), quantity: quantity.text ?? "")
+        delegate?.setqunatity(wasPressedOnCell: self , path: indexPath(), quantity: quantity.text! ?? "")
 
     }
 }

@@ -37,6 +37,11 @@ class Addproductmedia: BaseController {
     var vediothum = ""
     var selectedImagesString: [UploadModel] = []
     var userupload : UploadModel?
+    var productdetails: ProductdetailModel?
+    var isperson = false
+    @IBOutlet weak var save: UIButton!
+    @IBOutlet weak var cancel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -51,6 +56,32 @@ class Addproductmedia: BaseController {
             vedios.isHidden = true
             vediohight.constant = 0
             addvediolbl.isHidden = true
+        }else {
+            if (productdetails?.responseData?.videos?.count == 1) {
+                vedioline.isHidden = true
+                vediolinehight.constant = 0
+                vedios.isHidden = true
+                vediohight.constant = 0
+                addvediolbl.isHidden = true
+            }
+            savedraft.isHidden = true
+            cancel.isHidden = false
+            for item in productdetails?.responseData?.images ?? [] {
+                var uploadimages : UploadModel = UploadModel(id: item.imageID ?? "", urldownload: item.urlDownload ?? "", urlthumbnail: item.urlThumbnail ?? "", urlPreview: item.urlPreview ?? "")
+                selectedImagesString.append(uploadimages)
+            }
+            userupload = UploadModel(id: productdetails?.responseData?.videos?[0].videoId ?? "", urldownload: productdetails?.responseData?.videos?[0].urlDownload ?? "", urlthumbnail: productdetails?.responseData?.videos?[0].urlThumbnail ?? "", urlPreview: productdetails?.responseData?.videos?[0].urlPreview ?? "")
+
+            let asset = BMPlayerResource(url: URL(string:productdetails?.responseData?.videos?[0].urlPreview ?? "")!,
+                                                  name: "WNDO")
+            self.player.setVideo(resource: asset)
+            vedioid = productdetails?.responseData?.videos?[0].videoId ?? ""
+
+            player.isHidden = false
+            photos.reloadData()
+        }
+        if (isperson == true){
+            save.setTitle("SAVE".localized(), for: .normal)
         }
 //        68d372bc-8e2d-46cf-ab3d-7c8607c9e1bb
         // Do any additional setup after loading the view.
@@ -82,10 +113,20 @@ class Addproductmedia: BaseController {
     override func bind() {
         viewModel?.userdata.bind({ [weak self](data) in
                 self?.stopLoading()
+            if (self?.isperson == true){
+                let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
+                vcc?.productid = data.responseData?.productId ?? ""
+                self?.push(vcc!)
+            }else {
                 let vcc = self?.pushViewController(Addproductstep1.self,storyboard: .addproduct)
                 vcc?.productid = data.responseData?.productId ?? ""
                 vcc?.catid = self?.catid ?? 0
+                if (self?.isedit == true){
+                    vcc?.productdetails = self?.productdetails
+                    vcc?.isedit = true
+                }
                 self?.push(vcc!)
+            }
         })
        
         viewModel?.errordata.bind({ [weak self](data) in
@@ -240,6 +281,8 @@ class Addproductmedia: BaseController {
                                  let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
                     print(data?.id)
                     selectedImagesString.append(data!)
+                    photos.reloadData()
+
                                  
                              }
             }else{
@@ -255,12 +298,12 @@ extension Addproductmedia: UICollectionViewDelegate,UICollectionViewDataSource ,
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return selectedImages.count + 1
+        return selectedImagesString.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.cell(type: ImagesCollectionViewCell.self, indexPath)
-        cell.model = selectedImages[safe: indexPath.row]
+        cell.model = selectedImagesString[safe: indexPath.row]
         cell.delete.UIViewAction { [self] in
             deleteiamge(path: indexPath.row)
         }
@@ -269,9 +312,14 @@ extension Addproductmedia: UICollectionViewDelegate,UICollectionViewDataSource ,
             cell.image.borderWidth = 0
             cell.delete.isHidden = true
             cell.image?.cornerRadius = 0
+        }else {
+            cell.image.borderColor = UIColor(red: 1, green: 20, blue: 71)
+            cell.image.borderWidth = 1
+            cell.image?.cornerRadius = 10
+            cell.delete.isHidden = false
         }
         cell.image.UIViewAction { [self] in
-            if (indexPath.row == selectedImages.count){
+            if (indexPath.row == selectedImagesString.count){
                 self.picker?.pick(in: self)
             }
         }

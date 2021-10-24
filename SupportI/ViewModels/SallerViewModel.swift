@@ -17,7 +17,7 @@ class SallerViewModel: ViewModelCore {
     var lookupdata: DynamicType = DynamicType<LockupModel>()
     var sizedata: DynamicType = DynamicType<SizeModel>()
     var puplishdata: DynamicType = DynamicType<UserRoot>()
-
+    var productdetailsdata: DynamicType = DynamicType<ProductdetailModel>()
     func isactivesaller( ) {
         delegate?.startLoading()
         ApiManager.instance.connection(.activesaller, type: .post) { (response) in
@@ -279,7 +279,7 @@ class SallerViewModel: ViewModelCore {
     }
     func puplishproducr(id: String ) {
         delegate?.startLoading()
-        ApiManager.instance.connectionRaw("\(EndPoint.addproductpuplish.rawValue)\(id)/publish", type: .post) { (response) in
+        ApiManager.instance.connection("\(EndPoint.addproductpuplish.rawValue)\(id)/publish", type: .post) { (response) in
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true)
             {
@@ -290,6 +290,30 @@ class SallerViewModel: ViewModelCore {
                     Authorization.instance.refreshToken1{callback in
                         if (callback){
                             self.puplishproducr(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getproductdetails(paramters: [String: Any]  ) {
+        delegate?.startLoading()
+        ApiManager.instance.paramaters = paramters
+        ApiManager.instance.connection(.product, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(ProductdetailModel.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.productdetailsdata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getproductdetails(paramters: paramters)
                         }else{
                             
                         }

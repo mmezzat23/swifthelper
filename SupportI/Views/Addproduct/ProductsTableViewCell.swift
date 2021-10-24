@@ -36,7 +36,7 @@ class ProductsTableViewCell: UITableViewCell , CellProtocol {
             discounthight.constant = 0
 
         }
-        catlbl.text = model.subCategory?.name ?? "" + "/" + model.category?.name ?? ""
+        catlbl.text = model.subCategory?.name ?? "" + "/" + (model.category?.name)! ?? ""
         productimg.setImage(url: model.image?.urlThumbnail ?? "")
         if (model.status == 0){
             statuslbl.text = "Draft".localized()
