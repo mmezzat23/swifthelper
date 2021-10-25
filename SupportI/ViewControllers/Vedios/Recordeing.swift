@@ -123,35 +123,40 @@ class Recordeing: BaseController {
             guard let videoURL = videoURL else {
                 return
             }
-            
             do {
-//r//                try FileManager.default.copyItem(at: videoURL, to: self.videoURLL)
                 Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
-               
-                           let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
-                           if (data?.isSuccess == true){
-                               let url = "files/create?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
-                               ApiManager.instance.uploadFilepulitico(url, type: .post, file: [["file": videoURL]]) { [self] (response) in
-                                                self.stopLoading()
-                                                let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
-                                   print(data?.id)
-               //                    player.isHidden = false
-               //                    let asset = BMPlayerResource(url: videoURL!,
-               //                                                 name: "WNDO")
-                                   userupload = data
-               //
-                                   parameters["videoId"] = userupload?.id ?? ""
-                                   parameters["urlThumbnail"] = userupload?.urlthumbnail ?? ""
-                                   parameters["urlPreview"] = userupload?.urlPreview ?? ""
-                                   parameters["urlDownload"] = userupload?.urldownload ?? ""
-                                   viewModel?.addvedio(paramters: parameters)
-                                            }
-                           }else{
-               
-                           }
-                       }
+                    
+                                                                 let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                                                                 if (data?.isSuccess == true){
+                                                                     let url = "files/create?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                                                                     ApiManager.instance.uploadFilepulitico(url, type: .post, file: [["file": videoURL]]) { [self] (response) in
+                                                                                      self.stopLoading()
+                                                                                      let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
+                                                                         print(data?.id)
+                                                     //                    player.isHidden = false
+                                                     //                    let asset = BMPlayerResource(url: videoURL!,
+                                                     //                                                 name: "WNDO")
+                                                                         userupload = data
+                                                     //
+                                                                         parameters["videoId"] = userupload?.id ?? ""
+                                                                         parameters["urlThumbnail"] = userupload?.urlthumbnail ?? ""
+                                                                         parameters["urlPreview"] = userupload?.urlPreview ?? ""
+                                                                         parameters["urlDownload"] = userupload?.urldownload ?? ""
+                                                                         viewModel?.addvedio(paramters: parameters)
+                                                                                  }
+                                                                 }else{
+             
+                                                                 }
+                                                             }
+
             }
-              
+            catch {
+                //Handle error occured during copy
+            }
+        })
+    }
             
     }
-}
+
+
+//
