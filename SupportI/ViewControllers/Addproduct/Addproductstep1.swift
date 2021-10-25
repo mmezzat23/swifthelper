@@ -28,6 +28,8 @@ class Addproductstep1: BaseController {
     var viewModel : SallerViewModel?
     var lookmodel : LockupModel?
     let colorsizemodel: ColorsizeModel = ColorsizeModel()
+    var colorsizemodel1: ColorsizeModel = ColorsizeModel()
+
     var productdetails: ProductdetailModel?
     var isperson = false
     var isedit = false
@@ -47,7 +49,7 @@ class Addproductstep1: BaseController {
         sizetable.dataSource = self
         viewModel = .init()
         viewModel?.delegate = self
-        viewModel?.getlokup(id: 1)
+        viewModel?.getlokup(id: catid)
         if (isedit == true){
             savedraft.isHidden = true
             cancel.isHidden = false
@@ -87,7 +89,8 @@ class Addproductstep1: BaseController {
             self?.lookups.removeAll()
             self?.colorsizemodel.issize = data.responseData.isSizes
             self?.colorsizemodel.iscolor = data.responseData.isColors
-
+            self?.colorsizemodel1.issize = data.responseData.isSizes
+            self?.colorsizemodel1.iscolor = data.responseData.isColors
             self?.lookups.append(contentsOf: data.responseData.lookups ?? [])
             var jjj = 0
             for item in self?.lookups ?? [] {
@@ -119,6 +122,8 @@ class Addproductstep1: BaseController {
             self?.sizes.removeAll()
             self?.sizes.append(contentsOf: data.items ?? [])
             self?.colorsizemodel.sizes.append(contentsOf: self!.sizes)
+            self?.colorsizemodel1.sizes.append(contentsOf: self!.sizes)
+
             if (self?.isedit == true){
                 for item1 in self?.productdetails?.responseData?.productColorSizes ?? [] {
                     self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
@@ -153,6 +158,8 @@ class Addproductstep1: BaseController {
             self?.colors.removeAll()
             self?.colors.append(contentsOf: data.responseData?.items ?? [])
             self?.colorsizemodel.colors.append(contentsOf: self!.colors)
+            self?.colorsizemodel1.colors.append(contentsOf: self!.colors)
+
             if (self?.lookmodel?.responseData.isSizes ?? false ) {
                 self?.viewModel?.getsizes(id: 1)
             }else {
@@ -193,6 +200,88 @@ class Addproductstep1: BaseController {
     }
   
     @IBAction func savedraft(_ sender: Any) {
+        var tagsselect : [String] = []
+        tagsselect = tags.text!.findMentionText()
+        var error : String = ""
+        if tags.text == "" {
+            error = "\(error)\n \("field of tags is required".localized)"
+        }
+        else if tagsselect.count == 0 {
+            error = "\(error)\n \("tags is invalid".localized)"
+        }
+        for item in lookups {
+            if (item.ischoose ?? false == false){
+                error = "\(error)\n \("Select".localized) \(item.displayName)"
+
+            }
+        }
+        for item in colorsizes {
+            if (item.iscolor == true && item.colorid == 0){
+                error = "\(error)\n \("Select Color".localized)"
+
+            }
+            if (item.issize == true && item.sizeid == 0){
+                error = "\(error)\n \("Select Size".localized)"
+
+            }
+            if ( item.quantity == ""){
+                error = "\(error)\n \("Select quantity".localized)"
+
+            }
+        }
+        if (error != ""){
+          makeAlert(error, closure: {})
+        }else{
+
+            var lookupselect : [Int] = []
+            for item in lookups {
+                lookupselect.append(item.chooseid ?? 0)
+            }
+          parameters["lookups"] = lookupselect
+            
+            parameters["tags"] = tagsselect
+
+           parameters["productId"] = productid
+            var sizeselect : [[String: Any]] = []
+            for item in colorsizes {
+                if (self.lookmodel?.responseData.isSizes == true && self.lookmodel?.responseData.isColors == true){
+                    let jsonObject: [String: Any] = [
+                        "colorId": item.colorid,
+                        "sizeId": item.sizeid,
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }else if (self.lookmodel?.responseData.isSizes == false && self.lookmodel?.responseData.isColors == true){
+                    let jsonObject: [String: Any] = [
+                        "colorId": item.colorid,
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }else if (self.lookmodel?.responseData.isSizes == true && self.lookmodel?.responseData.isColors == false){
+                    let jsonObject: [String: Any] = [
+                        "sizeId": item.sizeid,
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }else if (self.lookmodel?.responseData.isSizes == false && self.lookmodel?.responseData.isColors == false){
+                    let jsonObject: [String: Any] = [
+                        "quantity": Int(item.quantity) ?? 0
+                    ]
+                    sizeselect.append(jsonObject)
+                }
+            }
+            parameters["colorWithSizeAndQuantity"] = sizeselect
+
+//        parameters["images"] = images
+//        parameters["video"] = jsonObject
+        print(parameters)
+//
+////            if (isedit == true){
+////                parameters["id"] = id
+////                viewModel?.editcard(paramters: parameters)
+////            }else{
+            viewModel?.addscreen3(paramters: parameters)
+        }
     }
     @IBAction func `continue`(_ sender: Any) {
         var tagsselect : [String] = []
@@ -350,6 +439,7 @@ extension Addproductstep1 : LookupTableViewCellDelegate , ColorsizeTableViewCell
     }
     
     func setqunatity(wasPressedOnCell cell: ColorsizeTableViewCell, path: Int, quantity: String) {
+        print(path)
         self.colorsizes[path].quantity = quantity ?? ""
         options.reloadData()
     }
@@ -373,7 +463,11 @@ extension Addproductstep1 : LookupTableViewCellDelegate , ColorsizeTableViewCell
         self.pushPop(vcr: vcc)
     }
     func addrow(wasPressedOnCell cell: ColorsizeTableViewCell, path: Int) {
-        colorsizes.append(colorsizemodel)
+        print(colorsizemodel.sizeid)
+//        colorsizemodel.sizeid = 0
+//        colorsizemodel.colorid = 0
+//        colorsizemodel.quantity = ""
+        self.colorsizes.append((self.colorsizemodel1))
         sizetable.reloadData()
     }
     

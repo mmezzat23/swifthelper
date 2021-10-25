@@ -21,5 +21,13 @@ var txt = ""
         self.push(vcc)
     }
     
+    @IBAction func store(_ sender: Any) {
+        Constants.index = 1
+        let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
+            guard let nav = controller else { return }
+            let delegate = UIApplication.shared.delegate as? AppDelegate
+            delegate?.window?.rootViewController = nav
 
+    }
+    
 }

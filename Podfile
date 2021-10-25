@@ -24,10 +24,9 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 pod 'GoogleSignIn'
-pod 'SCRecorder'
 pod 'KDCircularProgress'
 pod 'BMPlayer', '~> 1.2.0'
-pod 'Publitio'
+pod 'CameraManager', '~> 5.1'
 
 
 end

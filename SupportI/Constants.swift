@@ -47,6 +47,8 @@ struct Constants {
     static let url = "https://wndo.net:500"
     static let pulitourl = "https://api.publit.io/v1/"
     static let companyUrl = ""
+    static var index = 0
+
     static let copyrightUrl = ""
     static let itunesURL = "itms-apps://itunes.apple.com/app/id1330387425"
     static let version = "v1"

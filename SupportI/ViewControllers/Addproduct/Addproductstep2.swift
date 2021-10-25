@@ -75,6 +75,15 @@ class Addproductstep2: BaseController {
             pickid = self.productdetails?.responseData?.productShipping?.pickUpTime ?? 0
             delivaryid = self.productdetails?.responseData?.productShipping?.deliveryMethod ?? 0
             protimeid = self.productdetails?.responseData?.productShipping?.preparationTime ?? 0
+            if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "1"){
+                imgaddress.image = #imageLiteral(resourceName: "building")
+            }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "2"){
+                imgaddress.image = #imageLiteral(resourceName: "home")
+            }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "3"){
+                imgaddress.image = #imageLiteral(resourceName: "parthenon")
+            }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "4"){
+                imgaddress.image = #imageLiteral(resourceName: "location")
+            }
             times.reloadData()
             self.timelbl.textColor = UIColor(red: 1, green: 20, blue: 71)
             self.addresslbl.textColor = UIColor(red: 1, green: 20, blue: 71)

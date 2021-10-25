@@ -56,6 +56,7 @@ class Buyerswitch: BaseController {
     }
     
     @IBAction func confirm(_ sender: Any) {
+        Constants.index = 0
         if (UserRoot.saller() == true){
             UserRoot.savesaller(remember: false)
             let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()

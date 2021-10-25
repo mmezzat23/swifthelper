@@ -9,6 +9,7 @@
 import UIKit
 
 class Vediouoloadconfirm: BaseController {
+    var parameters : [String : Any] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()

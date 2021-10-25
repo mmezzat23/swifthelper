@@ -19,6 +19,7 @@ PODS:
     - BSGridCollectionViewLayout (= 1.2.5)
     - BSImageView (= 1.0.3)
   - BSImageView (1.0.3)
+  - CameraManager (5.1.3)
   - Cosmos (15.0.0)
   - CreditCardValidator (0.5.2)
   - FBSDKCoreKit (11.0.1):
@@ -152,8 +153,6 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.6.1)
   - NVActivityIndicatorView/Presenter (4.6.1)
   - PromisesObjC (1.2.12)
-  - Publitio (1.4)
-  - SCRecorder (2.7.0)
   - SnapKit (4.2.0)
   - SwiftyGif (5.4.0)
 
@@ -162,6 +161,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.0)
   - BMPlayer (~> 1.2.0)
   - BSImagePicker (~> 2.0)
+  - CameraManager (~> 5.1)
   - Cosmos (~> 15.0)
   - CreditCardValidator
   - FBSDKCoreKit
@@ -177,8 +177,6 @@ DEPENDENCIES:
   - KDCircularProgress
   - lottie-ios
   - MBProgressHUD
-  - Publitio
-  - SCRecorder
   - SwiftyGif
 
 SPEC REPOS:
@@ -190,6 +188,7 @@ SPEC REPOS:
     - BSGridCollectionViewLayout
     - BSImagePicker
     - BSImageView
+    - CameraManager
     - Cosmos
     - CreditCardValidator
     - FBSDKCoreKit
@@ -218,8 +217,6 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - PromisesObjC
-    - Publitio
-    - SCRecorder
     - SnapKit
     - SwiftyGif
 
@@ -231,6 +228,7 @@ SPEC CHECKSUMS:
   BSGridCollectionViewLayout: 333dcb457a5a3bdd9212607ab5756553dcfe06cb
   BSImagePicker: 07404254f2fcdaf5a2eb403c0f8c337267ce8738
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
+  CameraManager: 73936a52093081ba5e44914e8120ab511360f5d4
   Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
   CreditCardValidator: 30a5dee5029d2af4b57105b65b5ac7d5b927b252
   FBSDKCoreKit: 38c9e29a3f1436362acacff6486d3a28628c288f
@@ -259,11 +257,9 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  Publitio: 3789d401433bb12ff18f014446b1d8dc5d5a4701
-  SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: d2613d9dde8dc08d55e067ac8a8eff16f28c9aa3
+PODFILE CHECKSUM: 4acb7813b997d8ef99bc041a13cedb9ad6e05ee1
 
 COCOAPODS: 1.11.2

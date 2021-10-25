@@ -150,8 +150,8 @@ class Addproduct: BaseController {
         }
     }
     func validateTextFields() -> Bool {
-        productname.customValidationRules = [RequiredRule() ]
-        productdescription.customValidationRules = [RequiredRule(), MaxLengthRule(length: 200)]
+        productname.customValidationRules = [RequiredRule() , MaxLengthRule(length: 16)]
+        productdescription.customValidationRules = [RequiredRule(), MaxLengthRule(length: 100)]
         let validator = Validation(textFields: [productname , productdescription])
         return validator.success
     }
@@ -211,6 +211,6 @@ extension Addproduct : PickersPOPDelegate {
         cattxt.text = item.name ?? ""
         viewModel?.getsubcats(id: cat_id)
         cattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
-        subcattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+        subcattxt.textColor = UIColor(red: 150, green: 161, blue: 171)
     }
 }

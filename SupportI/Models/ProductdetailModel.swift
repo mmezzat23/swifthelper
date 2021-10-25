@@ -80,13 +80,13 @@ struct ProductColorSize: Codable {
 // MARK: - ProductShipping
 struct ProductShipping: Codable {
     let deliveryMethod, pickUpTime, addressID: Int?
-    let addressName: String?
+    let addressName, addressIcon: String?
     let preparationTime: Int?
 
     enum CodingKeys: String, CodingKey {
         case deliveryMethod, pickUpTime
         case addressID = "addressId"
-        case addressName, preparationTime
+        case addressName, preparationTime, addressIcon
     }
 }
 

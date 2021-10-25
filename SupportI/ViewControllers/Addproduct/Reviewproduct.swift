@@ -51,7 +51,6 @@ class Reviewproduct: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
-        productid = "9029c51e-f71b-4ecc-b911-8da0e21471aa"
         setup()
         bind()
         pricesummary.setunderline(title: "Product Price Summary")

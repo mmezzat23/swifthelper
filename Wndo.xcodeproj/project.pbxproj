@@ -137,6 +137,7 @@
 		66D475612715AC1B0031A356 /* Addvedios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D475602715AC1B0031A356 /* Addvedios.swift */; };
 		66D475632715AC750031A356 /* Vedios.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D475622715AC750031A356 /* Vedios.storyboard */; };
 		66D4C8BC271EC90B00A35B79 /* WNDo GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 66D4C8BB271EC90A00A35B79 /* WNDo GIF.gif */; };
+		66D8E8992726AF0600CD2251 /* Sallertabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D8E8982726AF0600CD2251 /* Sallertabs.swift */; };
 		66DF5BD5271832ED00C50DF7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DF5BD4271832ED00C50DF7 /* Store.swift */; };
 		66F9029B27009DFD00BBE00A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F9029A27009DFD00BBE00A /* ProfileViewModel.swift */; };
 		66F9029E2700A2A100BBE00A /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F9029D2700A2A100BBE00A /* Cards.swift */; };
@@ -491,6 +492,7 @@
 		66D475602715AC1B0031A356 /* Addvedios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addvedios.swift; sourceTree = "<group>"; };
 		66D475622715AC750031A356 /* Vedios.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vedios.storyboard; sourceTree = "<group>"; };
 		66D4C8BB271EC90A00A35B79 /* WNDo GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "WNDo GIF.gif"; sourceTree = "<group>"; };
+		66D8E8982726AF0600CD2251 /* Sallertabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sallertabs.swift; sourceTree = "<group>"; };
 		66DF5BD4271832ED00C50DF7 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		66F9029A27009DFD00BBE00A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		66F9029D2700A2A100BBE00A /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
@@ -849,6 +851,7 @@
 				66230625271438AA009163AD /* Sorryactive.swift */,
 				665794C72715D264001E92E0 /* Samplesaller.swift */,
 				66DF5BD4271832ED00C50DF7 /* Store.swift */,
+				66D8E8982726AF0600CD2251 /* Sallertabs.swift */,
 			);
 			path = Saller;
 			sourceTree = "<group>";
@@ -2005,6 +2008,7 @@
 				80DA0162211A888600817038 /* UINavigationBarExtensions.swift in Sources */,
 				66A349732714723B00F15875 /* Addproductstep2.swift in Sources */,
 				663D34F126EF541E008CE1B9 /* CodesentController.swift in Sources */,
+				66D8E8992726AF0600CD2251 /* Sallertabs.swift in Sources */,
 				80EA0055231DA6820008E68B /* PlacePickerController.swift in Sources */,
 				80DA0167211A888600817038 /* UISegmentedControlExtensions.swift in Sources */,
 				662928872709EFDF0092195B /* EFCount.swift in Sources */,

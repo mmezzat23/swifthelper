@@ -80,7 +80,7 @@ class Addproductstep3: BaseController {
         }
         reviewview.UIViewAction { [self] in
             if (validateTextFields()){
-                isveify == false
+                isveify = false
                 parameters["price"] = pricetxt.text ?? ""
                 parameters["isPermanent"] = isPermanent
                 parameters["productId"] = productid
@@ -192,7 +192,7 @@ class Addproductstep3: BaseController {
     }
     @IBAction func save(_ sender: Any) {
         if (validateTextFields()){
-            isveify == true
+            isveify = false
             parameters["price"] = pricetxt.text ?? ""
             parameters["isPermanent"] = isPermanent
             parameters["productId"] = productid
@@ -210,7 +210,7 @@ class Addproductstep3: BaseController {
     }
     @IBAction func `continue`(_ sender: Any) {
         if (validateTextFields()){
-            isveify == false
+            isveify = true
             parameters["price"] = pricetxt.text ?? ""
             parameters["isPermanent"] = isPermanent
             parameters["productId"] = productid

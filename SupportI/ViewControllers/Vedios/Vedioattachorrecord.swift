@@ -9,6 +9,7 @@
 import UIKit
 
 class Vedioattachorrecord: BaseController {
+    var parameters : [String : Any] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +19,14 @@ class Vedioattachorrecord: BaseController {
     
 
     @IBAction func uploadvedio(_ sender: Any) {
+        let vcc = self.controller(Vediocache.self,storyboard: .vedios)
+        vcc.parameters = self.parameters
+        self.pushPop(vcr: vcc)
     }
     @IBAction func startrecord(_ sender: Any) {
+        let vcc = self.controller(Recordeing.self,storyboard: .vedios)
+        vcc.parameters = self.parameters
+        self.push(vcc)
     }
     
 }

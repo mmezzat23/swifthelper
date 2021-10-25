@@ -197,7 +197,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizationPlaceHolder" value="Quantity"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="changequnatity:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="2pd-dB-oP6"/>
+                                                    <action selector="change:" destination="KGk-i7-Jjw" eventType="editingChanged" id="TnB-DH-lMn"/>
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-BD-9eN">

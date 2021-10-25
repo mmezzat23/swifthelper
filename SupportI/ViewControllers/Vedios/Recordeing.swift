@@ -7,12 +7,14 @@
 //
 
 import UIKit
-import SCRecorder
 import KDCircularProgress
+import AVFoundation
+import Photos
+import CameraManager
 class Recordeing: BaseController {
-    var session = SCRecordSession()
-    let recorder = SCRecorder()
+   
     var timerHelper: TimeHelper?
+    var videoURL: URL?
 
     @IBOutlet weak var pause: UIImageView!
     @IBOutlet weak var play: UIImageView!
@@ -21,49 +23,90 @@ class Recordeing: BaseController {
     @IBOutlet weak var perview: UIView!
     var currentCount = 60
     var maxCount = 60
+    var parameters : [String : Any] = [:]
+    var userupload : UploadModel?
+    var viewModel : SallerViewModel?
+    let cameraManager = CameraManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (!recorder.startRunning()) {
-                debugPrint("Recorder error: ", recorder.error)
-            }
-            
-            recorder.session = session
-            recorder.device = AVCaptureDevice.Position.front
-        recorder.videoConfiguration.size = CGSize(width: 800,height: 800)
-        recorder.delegate = self
+        hiddenNav = true
+        setup()
+        bind()
+        cameraManager.addPreviewLayerToView(self.perview)
+        cameraManager.cameraDevice = .front
+        cameraManager.writeFilesToPhoneLibrary = true
+        let zoomScale = CGFloat(2.0)
+        cameraManager.zoom(zoomScale)
         pause.isHidden = true
         play.UIViewAction { [self] in
             starttime()
             play.isHidden = true
             pause.isHidden = false
-
+            cameraManager.startRecordingVideo()
         }
         pause.UIViewAction { [self] in
             pause.isHidden = true
             play.isHidden = false
-            recorder.pause()
+            save()
             timerHelper?.stopTimer()
         }
-        }
+        cameraManager.showErrorBlock = { (erTitle: String, erMessage: String) -> Void in
+            var alertController = UIAlertController(title: erTitle, message: erMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (alertAction) -> Void in
+            }))
 
+            let topController = UIApplication.shared.keyWindow?.rootViewController
+
+            if (topController != nil) {
+                topController?.present(alertController, animated: true, completion: { () -> Void in
+                    //
+                })
+            }
+
+        }
+        }
+    func setup() {
+       viewModel = .init()
+       viewModel?.delegate = self
+       
+    }
+    override func bind() {
+        viewModel?.userdata.bind({ [weak self](data) in
+                self?.stopLoading()
+            let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
+                guard let nav = controller else { return }
+                let delegate = UIApplication.shared.delegate as? AppDelegate
+                delegate?.window?.rootViewController = nav
+
+                
+        })
+       
+        viewModel?.errordata.bind({ [weak self](data) in
+            self?.stopLoading()
+            print(data)
+            self?.makeAlert(data, closure: {})
+        })
+    }
     func newAngle() -> Double {
         return Double(0 + ((maxCount - currentCount) * 6))
     }
-        override func viewDidLayoutSubviews() {
-            recorder.previewView = perview
-        }
+
 
     @IBAction func record(_ sender: Any) {
-        recorder.record()
         starttime()
 
     }
+    
     func starttime() {
      
         timerHelper = .init(seconds: 1, numberOfCycle: 60, closure: { [weak self] (cycle) in
             self?.timer.text = String(cycle)
             if cycle == 0 {
                 self?.currentCount = 0
+//                self?.recorder.stopRunning()
+                self?.save()
+                self?.timerHelper?.stopTimer()
                 self?.progress.animate(fromAngle: (self?.progress.angle)!, toAngle: 0, duration: 0.5, completion: nil)
 
             }else{
@@ -75,24 +118,40 @@ class Recordeing: BaseController {
         })
     }
     func save () {
-        session.mergeSegments(usingPreset: AVAssetExportPresetHighestQuality) { (url, error) in
-                if (error == nil) {
-                    print("zzz" )
-//                    url?.saveToCameraRollWithCompletion({ (path, error) in
-//                        debugPrint(path, error)
-//                    })
-                } else {
-                    debugPrint("sssss" )
-                }
+        self.startLoading()
+        cameraManager.stopVideoRecording({ (videoURL, recordError) -> Void in
+            guard let videoURL = videoURL else {
+                return
             }
-    }
-}
-extension Recordeing: SCRecorderDelegate {
-    
-    func recorder(recorder: SCRecorder, didAppendVideoSampleBufferInSession session: SCRecordSession) {
-        self.session = session
-    }
-    
-    func updateTimeText(session: SCRecordSession) {
+            
+            do {
+//r//                try FileManager.default.copyItem(at: videoURL, to: self.videoURLL)
+                Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
+               
+                           let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                           if (data?.isSuccess == true){
+                               let url = "files/create?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                               ApiManager.instance.uploadFilepulitico(url, type: .post, file: [["file": videoURL]]) { [self] (response) in
+                                                self.stopLoading()
+                                                let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
+                                   print(data?.id)
+               //                    player.isHidden = false
+               //                    let asset = BMPlayerResource(url: videoURL!,
+               //                                                 name: "WNDO")
+                                   userupload = data
+               //
+                                   parameters["videoId"] = userupload?.id ?? ""
+                                   parameters["urlThumbnail"] = userupload?.urlthumbnail ?? ""
+                                   parameters["urlPreview"] = userupload?.urlPreview ?? ""
+                                   parameters["urlDownload"] = userupload?.urldownload ?? ""
+                                   viewModel?.addvedio(paramters: parameters)
+                                            }
+                           }else{
+               
+                           }
+                       }
+            }
+              
+            
     }
 }

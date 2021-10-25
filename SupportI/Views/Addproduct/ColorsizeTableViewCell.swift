@@ -61,10 +61,14 @@ class ColorsizeTableViewCell: UITableViewCell , CellProtocol {
         add.UIViewAction { [self] in
             delegate?.addrow(wasPressedOnCell: self , path: indexPath())
         }
+        
     }
     
-    @IBAction func changequnatity(_ sender: Any) {
+    @IBAction func change(_ sender: Any) {
         delegate?.setqunatity(wasPressedOnCell: self , path: indexPath(), quantity: quantity.text! ?? "")
+    }
+    @IBAction func changequnatity(_ sender: Any) {
+       
 
     }
 }

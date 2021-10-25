@@ -22,6 +22,7 @@ protocol PickersPOPDelegate:class {
     func callbacksubcat(item:SectionItem)
     func callbackCustom(item:PickerModel ,returnedKey: String)
     func callbackDate(item:String , returnedKey:String)
+    func callbackproducts(item:ProductsResponseDatum )
 //    func callbackOrders(item:OrderModel)
 
     //func callbackDate(countryItem:CountryData , returnedKey:String)
@@ -31,6 +32,9 @@ extension PickersPOPDelegate {
 
     }
     func callbacktime(item:GenderModel ){
+
+    }
+    func callbackproducts(item:ProductsResponseDatum ){
 
     }
     func callbackaddress(item:ItemAddress){
@@ -97,6 +101,7 @@ class PickersPOP:BaseController {
         case color
         case delivary
         case time
+        case product
         case address
     }
     enum DateSelection {
@@ -122,6 +127,8 @@ class PickersPOP:BaseController {
     var cats : [SectionItem] = []
     var subcats : [SectionItem] = []
     var cities:[ItemCity] = []
+    var products : [ProductsResponseDatum] = []
+
     var isproduct = false
 //    var categories:[Category] = []
 //    var orders:[OrderModel] = []
@@ -232,7 +239,15 @@ class PickersPOP:BaseController {
                             self.delegate?.callbacktime(item: item)
                         }
                     }
-                    } else if pickerSelection == .delivary {
+                    } else if pickerSelection == .product {
+                        let path = pickerView.selectedRow(inComponent: 0)
+                        if products.isset(path){
+                            let item = products[pickerView.selectedRow(inComponent: 0)]
+                            self.dismiss(animated: true) {
+                                self.delegate?.callbackproducts(item: item)
+                            }
+                        }
+                        }else if pickerSelection == .delivary {
                         let path = pickerView.selectedRow(inComponent: 0)
                         if delevariymethods.isset(path){
                             let item = delevariymethods[pickerView.selectedRow(inComponent: 0)]
@@ -392,6 +407,8 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
             return lookups.count
         } else if pickerSelection == .size {
             return sizes.count
+        }else if pickerSelection == .product {
+            return products.count
         } else if pickerSelection == .color {
             return colors.count
         }
@@ -448,6 +465,8 @@ extension PickersPOP:UIPickerViewDelegate , UIPickerViewDataSource {
             pickerLabel?.text = sizes[row].name
         }else if pickerSelection == .lookup {
             pickerLabel?.text = lookups[row].displayName
+        }else if pickerSelection == .product {
+            pickerLabel?.text = products[row].name ?? ""
         }
         else if pickerSelection == .category {
             pickerLabel?.text = cats[row].name
