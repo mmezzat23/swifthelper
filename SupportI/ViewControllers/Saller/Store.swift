@@ -188,12 +188,17 @@ extension Store:UITableViewDelegate , UITableViewDataSource {
             cell.model = vediositems[indexPath.row]
             cell.setup()
             cell.delegate = self
+            cell.play.UIViewAction { [self] in
+                let vcc = self.controller(Playvedio.self,storyboard: .vedios)
+                vcc.playid = vediositems[indexPath.row].urlPreview ?? ""
+                self.push(vcc)
+            }
             return cell
         }else {
         var cell = tableView.cell(type: ProductsTableViewCell.self, indexPath)
         cell.model = products[indexPath.row]
         cell.setup()
-            cell.delegate = self
+        cell.delegate = self
         return cell
         }
         

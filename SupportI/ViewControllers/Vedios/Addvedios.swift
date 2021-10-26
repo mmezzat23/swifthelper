@@ -104,6 +104,7 @@ extension Addvedios : PickersPOPDelegate {
     func callbackproducts(item: ProductsResponseDatum) {
         productid = item.id ?? ""
         selectvedio.text = item.name ?? ""
-        
+        selectvedio.textColor = UIColor(red: 1, green: 20, blue: 71)
+
     }
 }

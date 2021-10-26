@@ -18,6 +18,7 @@ class VediosTableViewCell: UITableViewCell , CellProtocol {
     @IBOutlet weak var vedioname: UILabel!
     @IBOutlet weak var more: UIButton!
     @IBOutlet weak var vediodes: UILabel!
+    @IBOutlet weak var play: UIImageView!
     weak var delegate : VediosTableViewCellDelegate?
 
     @IBOutlet weak var productname: UILabel!
@@ -27,9 +28,9 @@ class VediosTableViewCell: UITableViewCell , CellProtocol {
         productname.text = model.productName ?? ""
         vediodes.text = model.itemDescription ?? ""
         vediosimage.setImage(url: model.urlThumbnail ?? "")
-        let asset = AVURLAsset(url: URL(string : model.urlPreview ?? "")!)
-        let durationInSeconds = asset.duration.seconds
-        minute.text = "0\(Int(durationInSeconds)/60):\(Int(durationInSeconds) % 60)"
+//        let asset = AVURLAsset(url: URL(string : model.urlPreview ?? "")!)
+//        let durationInSeconds = asset.duration.seconds
+//        minute.text = "0\(Int(durationInSeconds)/60):\(Int(durationInSeconds) % 60)"
         if (model.isMain ?? false == true) {
             more.isHidden = true
         }else{

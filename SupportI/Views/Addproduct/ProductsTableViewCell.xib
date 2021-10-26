@@ -41,6 +41,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yo6-7X-fTJ">
+                                <rect key="frame" x="8" y="14" width="125" height="147"/>
+                                <color key="backgroundColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="Xqw-dK-Qfu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAe-Jp-iAp">
                                 <rect key="frame" x="10" y="133" width="44" height="22"/>
                                 <subviews>
@@ -52,8 +64,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyO-wh-TjL">
-                                        <rect key="frame" x="23" y="4.5" width="16" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <rect key="frame" x="23" y="1.5" width="16" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
                                         <color key="textColor" name="darkblue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -85,8 +97,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TJ-HF-i9A">
-                                        <rect key="frame" x="23" y="4.5" width="16" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <rect key="frame" x="23" y="1.5" width="16" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
                                         <color key="textColor" name="darkblue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -239,6 +251,7 @@
                             <constraint firstAttribute="bottom" secondItem="RIE-cF-fXj" secondAttribute="bottom" constant="9" id="UV7-Dw-3Kh"/>
                             <constraint firstItem="aON-Ra-CQd" firstAttribute="leading" secondItem="WAe-Jp-iAp" secondAttribute="trailing" constant="33" id="UYu-eH-IIA"/>
                             <constraint firstItem="y57-hI-pPv" firstAttribute="leading" secondItem="fnF-5i-XNa" secondAttribute="leading" constant="8" id="Ugv-hi-ZJX"/>
+                            <constraint firstAttribute="bottom" secondItem="yo6-7X-fTJ" secondAttribute="bottom" constant="9" id="VGY-Gw-FI6"/>
                             <constraint firstItem="8ef-sA-fJ0" firstAttribute="centerY" secondItem="mui-U6-HAb" secondAttribute="centerY" id="WLE-GU-0cr"/>
                             <constraint firstAttribute="bottom" secondItem="WAe-Jp-iAp" secondAttribute="bottom" constant="15" id="XHv-SI-Jcf"/>
                             <constraint firstItem="KjB-xT-X00" firstAttribute="leading" secondItem="26a-F7-7BY" secondAttribute="trailing" constant="10" id="aX1-tg-OIT"/>
@@ -247,6 +260,8 @@
                             <constraint firstAttribute="bottom" secondItem="jRX-s6-OHG" secondAttribute="bottom" constant="9" id="iaD-v0-w03"/>
                             <constraint firstItem="26a-F7-7BY" firstAttribute="leading" secondItem="xwc-jB-dkW" secondAttribute="trailing" constant="5" id="kbD-bn-RS3"/>
                             <constraint firstItem="xwQ-TC-g9L" firstAttribute="top" secondItem="fnF-5i-XNa" secondAttribute="top" constant="18" id="lqW-s9-36o"/>
+                            <constraint firstItem="yo6-7X-fTJ" firstAttribute="leading" secondItem="fnF-5i-XNa" secondAttribute="leading" constant="8" id="nqK-fr-uBg"/>
+                            <constraint firstItem="yo6-7X-fTJ" firstAttribute="top" secondItem="fnF-5i-XNa" secondAttribute="top" constant="14" id="oER-4a-hvg"/>
                             <constraint firstItem="xwc-jB-dkW" firstAttribute="leading" secondItem="y57-hI-pPv" secondAttribute="trailing" constant="20" id="p2t-zm-cYU"/>
                             <constraint firstAttribute="bottom" secondItem="26a-F7-7BY" secondAttribute="bottom" constant="14" id="qz6-9t-Psq"/>
                             <constraint firstItem="y57-hI-pPv" firstAttribute="top" secondItem="fnF-5i-XNa" secondAttribute="top" constant="14" id="rV0-Dc-Is6"/>

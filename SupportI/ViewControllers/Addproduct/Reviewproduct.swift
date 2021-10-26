@@ -56,6 +56,10 @@ class Reviewproduct: BaseController {
         pricesummary.setunderline(title: "Product Price Summary")
 //        9029c51e-f71b-4ecc-b911-8da0e21471aa
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        player.pause()
+    }
     func setup() {
         viewModel = .init()
         viewModel?.delegate = self

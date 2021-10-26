@@ -23,6 +23,7 @@
 		661C09272728558A00D0E646 /* Rejectedproduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661C09262728558A00D0E646 /* Rejectedproduct.swift */; };
 		661C092A27285B4C00D0E646 /* RejextedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661C092827285B4C00D0E646 /* RejextedTableViewCell.swift */; };
 		661C092B27285B4C00D0E646 /* RejextedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 661C092927285B4C00D0E646 /* RejextedTableViewCell.xib */; };
+		661EACBE27289A4300DA50DF /* Playvedio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661EACBD27289A4300DA50DF /* Playvedio.swift */; };
 		6620CAEB2700648500AB1A38 /* Editprofile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620CAEA2700648500AB1A38 /* Editprofile.swift */; };
 		66230626271438AB009163AD /* Sorryactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66230625271438AA009163AD /* Sorryactive.swift */; };
 		6623062927143985009163AD /* Addproduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6623062827143985009163AD /* Addproduct.storyboard */; };
@@ -373,6 +374,7 @@
 		661C09262728558A00D0E646 /* Rejectedproduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rejectedproduct.swift; sourceTree = "<group>"; };
 		661C092827285B4C00D0E646 /* RejextedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejextedTableViewCell.swift; sourceTree = "<group>"; };
 		661C092927285B4C00D0E646 /* RejextedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RejextedTableViewCell.xib; sourceTree = "<group>"; };
+		661EACBD27289A4300DA50DF /* Playvedio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playvedio.swift; sourceTree = "<group>"; };
 		6620CAEA2700648500AB1A38 /* Editprofile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editprofile.swift; sourceTree = "<group>"; };
 		66230625271438AA009163AD /* Sorryactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorryactive.swift; sourceTree = "<group>"; };
 		6623062827143985009163AD /* Addproduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Addproduct.storyboard; sourceTree = "<group>"; };
@@ -971,6 +973,7 @@
 				66D1E0692716ED4000F5D6A6 /* Vediosucessupload.swift */,
 				66585CEB271824790026225F /* Vedioattachorrecord.swift */,
 				663C6602271856950098DF99 /* Recordeing.swift */,
+				661EACBD27289A4300DA50DF /* Playvedio.swift */,
 			);
 			path = Vedios;
 			sourceTree = "<group>";
@@ -1905,6 +1908,7 @@
 				80A2FC2F215841BC00223A77 /* AnimationConfiguration.swift in Sources */,
 				66ABA351272194A400389E02 /* ProductdetailModel.swift in Sources */,
 				6658A4992720152F00DCB95C /* ImagesCollectionViewCell.swift in Sources */,
+				661EACBE27289A4300DA50DF /* Playvedio.swift in Sources */,
 				80DA0153211A888600817038 /* StringProtocolExtensions.swift in Sources */,
 				80A2FC03215841BC00223A77 /* ApiProtocol.swift in Sources */,
 				80A2FC0E215841BC00223A77 /* ChangeLangHelper.swift in Sources */,

@@ -88,6 +88,10 @@ class Addproductmedia: BaseController {
 //        68d372bc-8e2d-46cf-ab3d-7c8607c9e1bb
         // Do any additional setup after loading the view.
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        player.pause()
+    }
     func setup() {
         viewModel = .init()
         viewModel?.delegate = self

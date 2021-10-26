@@ -16,7 +16,9 @@ class Vediocache: BaseController {
     var videoURL: URL?
     var vedioid = ""
     var viewModel : SallerViewModel?
-
+    @IBOutlet weak var player: BMPlayer!
+    @IBOutlet weak var delete: UIImageView!
+    
     @IBOutlet weak var attach: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,14 @@ class Vediocache: BaseController {
              imagePickerController.delegate = self
              imagePickerController.mediaTypes = ["public.movie"]
             present(imagePickerController, animated: true, completion: nil)
+        }
+        delete.UIViewAction { [self] in
+            vedioid = ""
+            videoURL = nil
+            player.isHidden = true
+            player.pause()
+            delete.isHidden = true
+            
         }
     }
     override func bind() {
@@ -54,18 +64,35 @@ class Vediocache: BaseController {
     }
     @IBAction func upload(_ sender: Any) {
         var error : String = ""
-        if vedioid == "" {
+        if videoURL == nil {
             error = "\(error)\n \("Select vedio".localized)"
         }
         if (error != ""){
           makeAlert(error, closure: {})
         }else{
-            parameters["videoId"] = userupload?.id ?? ""
-            parameters["urlThumbnail"] = userupload?.urlthumbnail ?? ""
-            parameters["urlPreview"] = userupload?.urlPreview ?? ""
-            parameters["urlDownload"] = userupload?.urldownload ?? ""
+            self.startLoading()
+            Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
+                let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+                if (data?.isSuccess == true){
+                    let url = "files/create?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                    ApiManager.instance.uploadFilepulitico(url, type: .post, file: [["file": self.videoURL!]]) { [self] (response) in
+                                     self.stopLoading()
+                                     let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
+                        print(data?.id)
+                        parameters["videoId"] = data?.id ?? ""
+                        parameters["urlThumbnail"] = data?.urlthumbnail ?? ""
+                        parameters["urlPreview"] = data?.urlPreview ?? ""
+                        parameters["urlDownload"] = data?.urldownload ?? ""
 
-            viewModel?.addvedio(paramters: parameters)
+                        viewModel?.addvedio(paramters: parameters)
+          
+                                     
+                                 }
+                }else{
+                    
+                }
+            }
+          
 
         }
     }
@@ -83,29 +110,13 @@ extension Vediocache : UIImagePickerControllerDelegate {
         let asset = AVURLAsset.init(url: videoURL!)
         let durationInSeconds = asset.duration.seconds
         if (durationInSeconds <= 300){
-        self.startLoading()
-        Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
-            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
-            if (data?.isSuccess == true){
-                let url = "files/create?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
-                ApiManager.instance.uploadFilepulitico(url, type: .post, file: [["file": self.videoURL!]]) { [self] (response) in
-                                 self.stopLoading()
-                                 let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
-                    print(data?.id)
-//                    player.isHidden = false
-//                    let asset = BMPlayerResource(url: videoURL!,
-//                                                 name: "WNDO")
-                    userupload = data
-//                    player.setVideo(resource: asset)
-                    vedioid = data?.id ?? ""
-//                    vediothum = data?.urlthumbnail ?? ""
-//                    delete.isHidden = false
-                                 
-                             }
-            }else{
-                
-            }
-        }
+            let asset1 = BMPlayerResource(url: videoURL!,
+                                         name: "WNDO")
+            player.setVideo(resource: asset1)
+            player.isHidden = false
+            delete.isHidden = false
+
+        
         }else {
             makeAlert("Vedio must be not exceeded 5 minute".localized(), closure: {})
         }
