@@ -28,6 +28,10 @@ class Addvedios: BaseController {
 
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
     func setup() {
         viewModel = .init()
         viewModel?.delegate = self

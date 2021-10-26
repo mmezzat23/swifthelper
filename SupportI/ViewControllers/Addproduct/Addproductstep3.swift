@@ -80,6 +80,16 @@ class Addproductstep3: BaseController {
         }
         reviewview.UIViewAction { [self] in
             if (validateTextFields()){
+                var error : String = ""
+                if pricetxt.text == "0" {
+                    error = "\(error)\n \("field of price must be more than 0".localized)"
+                }
+                if (Int(discount.text ?? "0") ?? 0 > 100 ) {
+                    error = "\(error)\n \("field of Discount must be less than 100".localized)"
+                }
+                if (error != ""){
+                  makeAlert(error, closure: {})
+                }else{
                 isveify = false
                 parameters["price"] = pricetxt.text ?? ""
                 parameters["isPermanent"] = isPermanent
@@ -90,20 +100,20 @@ class Addproductstep3: BaseController {
                 if (date != ""){
                     parameters["expiryDate"] = date
                 }
-    //            if (isedit == true){
-    //                parameters["id"] = id
-    //                viewModel?.editcard(paramters: parameters)
-    //            }else{
                     viewModel?.addscreen5(paramters: parameters)
-    //            }
+                }
                 
             }
         }
         if (isedit == true) {
             savedraft.isHidden = true
             cancel.isHidden = false
+            if (productdetails?.responseData?.price?.price ?? 0 > 0){
             pricetxt.text = String(productdetails?.responseData?.price?.price ?? 0)
+            }
+            if (productdetails?.responseData?.price?.discount ?? 0 > 0){
             discount.text = String(productdetails?.responseData?.price?.discount ?? 0)
+            }
             if (productdetails?.responseData?.price?.expiryDate ?? "" != ""){
                 datelbl.text = productdetails?.responseData?.price?.expiryDate ?? ""
                 date = productdetails?.responseData?.price?.expiryDate ?? ""
@@ -192,24 +202,40 @@ class Addproductstep3: BaseController {
     }
     @IBAction func save(_ sender: Any) {
         if (validateTextFields()){
+            var error : String = ""
+            if pricetxt.text == "0" {
+                error = "\(error)\n \("field of price must be more than 0".localized)"
+            }
+            if (Int(discount.text ?? "0") ?? 0 > 100 ) {
+                error = "\(error)\n \("field of Discount must be less than 100".localized)"
+            }
+            if (error != ""){
+              makeAlert(error, closure: {})
+            }else{
             isveify = false
             parameters["price"] = pricetxt.text ?? ""
             parameters["isPermanent"] = isPermanent
             parameters["productId"] = productid
-            if (discount.text != ""){
+            if (discount.text != "" && discount.text != "0"){
                 parameters["discount"] = discount.text
             }
-//            if (isedit == true){
-//                parameters["id"] = id
-//                viewModel?.editcard(paramters: parameters)
-//            }else{
                 viewModel?.addscreen5(paramters: parameters)
-//            }
+            }
             
         }
     }
     @IBAction func `continue`(_ sender: Any) {
         if (validateTextFields()){
+            var error : String = ""
+            if pricetxt.text == "0" {
+                error = "\(error)\n \("field of price must be more than 0".localized)"
+            }
+            if Int(discount.text!) ?? 0 > 100 {
+                error = "\(error)\n \("field of Discount must be less than 100".localized)"
+            }
+            if (error != ""){
+              makeAlert(error, closure: {})
+            }else{
             isveify = true
             parameters["price"] = pricetxt.text ?? ""
             parameters["isPermanent"] = isPermanent
@@ -217,12 +243,8 @@ class Addproductstep3: BaseController {
             if (discount.text != ""){
                 parameters["discount"] = discount.text
             }
-//            if (isedit == true){
-//                parameters["id"] = id
-//                viewModel?.editcard(paramters: parameters)
-//            }else{
                 viewModel?.addscreen5(paramters: parameters)
-//            }
+            }
             
         }
     }

@@ -20,6 +20,8 @@ public enum EndPoint: String {
     case reset = "1/api/app/register/reset-password"
     case resend = "1/api/app/register/re-send-new-code"
     case addcard = "1/api/app/credit-card"
+//    case deletevedio = "/api/app/product/"
+
     case city = "1/api/app/city/cities"
     case address = "1/api/app/address"
     case profile = "1/api/app/my-profile"
@@ -59,6 +61,10 @@ public enum EndPoint: String {
     case product = "1/api/app/product"
     case vedioproduct = "1/api/app/product/products"
     case addvedio = "1/api/app/video"
+    case offers = "1/api/app/product/seller-offers"
+    case products = "1/api/app/product/seller-products"
+    case vedios = "1/api/app/product/seller-videos"
+    case countstore = "1/api/app/product/store-counts"
     case logout
     case packages
     case locations

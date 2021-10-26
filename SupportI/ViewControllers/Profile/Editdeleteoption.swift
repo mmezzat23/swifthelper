@@ -38,6 +38,12 @@ class Editdeleteoption: BaseController {
         if (type == "2"){
             edittxt.text = "Edit The credit card".localized()
             deletetxt.text = "Delete The credit card".localized()
+        }else if (type == "vedio"){
+            edittxt.text = "Edit The vedio".localized()
+            deletetxt.text = "Delete The vedio".localized()
+        }else if (type == "product"){
+            edittxt.text = "Edit The product".localized()
+            deletetxt.text = "Delete The product".localized()
         }
         edit.UIViewAction { [self] in
             self.dismiss(animated: true, completion: nil)

@@ -28,6 +28,9 @@ class SettingsProfile: BaseController {
     @IBOutlet weak var verifyemail: UILabel!
     @IBOutlet weak var verifyphone: UILabel!
     
+    @IBOutlet weak var passwordlinehight: NSLayoutConstraint!
+    @IBOutlet weak var passwordline: UIView!
+    @IBOutlet weak var passwordhight: NSLayoutConstraint!
     var lang = ""
     @IBOutlet weak var locationview: UIView!
     @IBOutlet weak var passwordview: UIView!

@@ -66,12 +66,12 @@ struct Price: Codable {
 // MARK: - ProductColorSize
 struct ProductColorSize: Codable {
     let sizeID: Int?
-    let sizeName, colorName: String?
+    let sizeName, colorName, colorHexaCode: String?
     let colorID, quantity, id: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case sizeID = "sizeId"
-        case sizeName, colorName
+        case sizeName, colorName, colorHexaCode
         case colorID = "colorId"
         case quantity, id
     }

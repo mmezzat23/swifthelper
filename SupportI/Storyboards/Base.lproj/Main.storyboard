@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -441,13 +442,13 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                         <color key="selectedImageTintColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.58431372550000005" green="0.59999999999999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.38823529411764707" green="0.45098039215686275" blue="0.50588235294117645" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="0.0" height="1"/>
+                                <size key="value" width="0.0" height="8"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="8"/>
+                                <real key="value" value="12"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -587,26 +588,31 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elisabeth Ali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OV-wl-Z4O">
-                                                <rect key="frame" x="25" y="60" width="244" height="36"/>
+                                                <rect key="frame" x="25" y="60" width="214" height="36"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfo-7H-vOK">
-                                                <rect key="frame" x="289" y="63" width="100" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.054901960780000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="259" y="63" width="130" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="4e7-hI-oKq"/>
+                                                    <constraint firstAttribute="width" constant="130" id="4e7-hI-oKq"/>
                                                     <constraint firstAttribute="height" constant="30" id="Xtt-7H-AJn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AllRoundGothicW03-Demi" family="AllRoundGothicW03-Demi" pointSize="16"/>
                                                 <state key="normal" title="Edit Profile">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" name="darkred"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Edit Profile"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="darkred"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -849,7 +855,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lE7-hz-vXc">
                                                 <rect key="frame" x="25" y="441" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 197-2" translatesAutoresizingMaskIntoConstraints="NO" id="Cig-H1-baj">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Purse_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cig-H1-baj">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -1016,7 +1022,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L9-T8-keo">
                                                 <rect key="frame" x="25" y="696" width="364" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 197-1" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-mP-pJL">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 197-3" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-mP-pJL">
                                                         <rect key="frame" x="20" y="22.5" width="20" height="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -1378,7 +1384,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
         <scene sceneID="ZtP-aY-cxK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQp-Wi-hra" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Be A Seller" image="sell-4" id="T35-21-CHh">
+                    <tabBarItem key="tabBarItem" title="Be A Seller" image="sell-5" id="T35-21-CHh">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Be A Seller"/>
                         </userDefinedRuntimeAttributes>
@@ -2130,7 +2136,7 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
     </designables>
     <resources>
         <image name="Back Button" width="9" height="15"/>
-        <image name="Back Button-4" width="9" height="15"/>
+        <image name="Back Button-4" width="8" height="15"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
         <image name="Fill 1095-1" width="24" height="25"/>
         <image name="Fill 1108" width="24" height="18"/>
@@ -2146,15 +2152,18 @@ Qnkgc3dpdGNoaW5nIHlvdSBhZ3JlZSB0byBvdXILA
         <image name="Group 190" width="12" height="9.5"/>
         <image name="Group 1900" width="13" height="10.5"/>
         <image name="Group 1901" width="12" height="9.5"/>
-        <image name="Group 197-1" width="49.5" height="38.5"/>
-        <image name="Group 197-2" width="49.5" height="38.5"/>
+        <image name="Group 197-3" width="49.5" height="38.5"/>
+        <image name="Purse_Icon" width="46" height="43"/>
         <image name="arrow_down.png" width="6.4000000953674316" height="6.4000000953674316"/>
-        <image name="cover with overlay" width="388.5" height="257"/>
+        <image name="cover with overlay" width="375" height="257"/>
         <image name="creative-of-default-avatar-vector-21118312" width="84" height="84"/>
         <image name="heart-alt" width="22" height="20.5"/>
         <image name="icon-close-2" width="26" height="25.5"/>
         <image name="placeHolder" width="12" height="16"/>
-        <image name="sell-4" width="26" height="27"/>
+        <image name="sell-5" width="26" height="27"/>
+        <namedColor name="darkred">
+            <color red="1" green="0.054901960784313725" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

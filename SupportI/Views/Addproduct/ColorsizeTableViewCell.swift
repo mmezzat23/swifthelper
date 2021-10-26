@@ -40,9 +40,11 @@ class ColorsizeTableViewCell: UITableViewCell , CellProtocol {
         if (model.colorid > 0){
             colorlbl.text = model.colortxt
             colorlbl.textColor = UIColor(red: 1, green: 20, blue: 71)
+            colorview.backgroundColor = hexaCodeToColor(hex: "#"+model.hexaCode)
         }else {
             colorlbl.text = "Select Color".localized()
             colorlbl.textColor = UIColor(red: 150, green: 161, blue: 171)
+            colorview.isHidden = true
         }
         if (model.sizeid > 0){
             sizelbl.text = model.sizetxt

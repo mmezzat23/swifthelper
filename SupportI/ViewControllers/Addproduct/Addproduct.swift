@@ -38,6 +38,10 @@ class Addproduct: BaseController {
         bind()
         onclick()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
     func setup() {
        viewModel = .init()
        viewModel?.delegate = self

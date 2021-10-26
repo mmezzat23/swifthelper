@@ -17,6 +17,7 @@ class Addvedio: BaseController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         if (UserRoot.token() != nil){
             let vcc = self.pushViewController(Addvediooption.self,storyboard: .saller)
             vcc.delegate = self

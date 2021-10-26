@@ -24,6 +24,10 @@ class Homesaller: BaseController {
         hiddenNav = true
         setup()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     func setup() {
         statistecs.delegate = self
         statistecs.dataSource = self

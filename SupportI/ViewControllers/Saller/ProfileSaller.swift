@@ -90,6 +90,7 @@ class ProfileSaller: BaseController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         if (UserRoot.token() != nil){
         viewModel?.getprofile()
         }else{

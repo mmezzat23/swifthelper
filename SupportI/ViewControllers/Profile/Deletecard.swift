@@ -12,6 +12,7 @@ protocol DeletecardDelegate: class {
 }
 class Deletecard: BaseController {
     var id = 0 ;
+    var productid = ""
     var viewModel : ProfileViewModel?
     var txt = ""
     var type = ""
@@ -26,6 +27,12 @@ class Deletecard: BaseController {
         if (type == "1"){
             titlelbl.text = "Delete address".localized
             name.text = "\("You want to delete the address that name".localized()) \(txt)?"
+        }else if (type == "product"){
+            titlelbl.text = "Delete product".localized
+            name.text = "\("You want to delete the product that name".localized()) \(txt)?"
+        }else if (type == "vedio"){
+            titlelbl.text = "Delete vedio".localized
+            name.text = "\("You want to delete the vedio that name".localized()) \(txt)?"
         }else{
             let index = txt.index(txt.endIndex, offsetBy: -4)
             let mySubstring = txt.suffix(from: index) // playground
@@ -56,6 +63,10 @@ class Deletecard: BaseController {
     @IBAction func yes(_ sender: Any) {
         if (type == "1"){
         viewModel?.deleteaddress(id: id)
+        }else if (type == "product"){
+            viewModel?.deleteproduct(id: productid)
+        }else if (type == "vedio"){
+        viewModel?.deletevedio(id: id)
         }else{
         viewModel?.deletecard(id: id)
         }

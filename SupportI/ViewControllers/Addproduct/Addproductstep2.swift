@@ -62,7 +62,6 @@ class Addproductstep2: BaseController {
         if (isedit == true){
             savedeaft.isHidden = true
             cancel.isHidden = false
-            self.addresslbl.text = self.productdetails?.responseData?.productShipping?.addressName ?? ""
             if (self.productdetails?.responseData?.productShipping?.deliveryMethod ?? -1 == 0){
                 self.delivarymethod.text = "ShippingCarrier".localized()
             }else  if (self.productdetails?.responseData?.productShipping?.deliveryMethod ?? -1 == 1){
@@ -72,18 +71,22 @@ class Addproductstep2: BaseController {
                 self.timelbl.text = "Immediately".localized()
             }
             addressid = self.productdetails?.responseData?.productShipping?.addressID ?? 0
-            pickid = self.productdetails?.responseData?.productShipping?.pickUpTime ?? 0
-            delivaryid = self.productdetails?.responseData?.productShipping?.deliveryMethod ?? 0
-            protimeid = self.productdetails?.responseData?.productShipping?.preparationTime ?? 0
-            if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "1"){
-                imgaddress.image = #imageLiteral(resourceName: "building")
-            }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "2"){
-                imgaddress.image = #imageLiteral(resourceName: "home")
-            }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "3"){
-                imgaddress.image = #imageLiteral(resourceName: "parthenon")
-            }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "4"){
-                imgaddress.image = #imageLiteral(resourceName: "location")
+            if (addressid > 0){
+                self.addresslbl.text = self.productdetails?.responseData?.productShipping?.addressName ?? ""
+                if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "1"){
+                    imgaddress.image = #imageLiteral(resourceName: "building")
+                }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "2"){
+                    imgaddress.image = #imageLiteral(resourceName: "home")
+                }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "3"){
+                    imgaddress.image = #imageLiteral(resourceName: "parthenon")
+                }else if (self.productdetails?.responseData?.productShipping?.addressIcon ?? "" == "4"){
+                    imgaddress.image = #imageLiteral(resourceName: "location")
+                }
             }
+            pickid = self.productdetails?.responseData?.productShipping?.pickUpTime ?? -1
+            delivaryid = self.productdetails?.responseData?.productShipping?.deliveryMethod ?? -1
+            protimeid = self.productdetails?.responseData?.productShipping?.preparationTime ?? -1
+          
             times.reloadData()
             self.timelbl.textColor = UIColor(red: 1, green: 20, blue: 71)
             self.addresslbl.textColor = UIColor(red: 1, green: 20, blue: 71)

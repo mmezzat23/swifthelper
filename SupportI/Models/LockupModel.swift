@@ -19,6 +19,9 @@ struct LockupModel: Codable {
 struct LockupResponseData: Codable {
     let isColors, isSizes: Bool
     let lookups: [Lookup]
+    let colors: [SectionItem]
+    let sizes: [SectionItem]
+
 }
 
 // MARK: - Lookup

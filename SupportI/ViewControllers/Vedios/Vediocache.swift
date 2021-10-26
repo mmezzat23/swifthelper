@@ -82,7 +82,7 @@ extension Vediocache : UIImagePickerControllerDelegate {
         videoURL = movieUrl
         let asset = AVURLAsset.init(url: videoURL!)
         let durationInSeconds = asset.duration.seconds
-        if (durationInSeconds <= 60){
+        if (durationInSeconds <= 300){
         self.startLoading()
         Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
@@ -107,7 +107,7 @@ extension Vediocache : UIImagePickerControllerDelegate {
             }
         }
         }else {
-            makeAlert("Vedio must be not exceeded 1 minute".localized(), closure: {})
+            makeAlert("Vedio must be not exceeded 5 minute".localized(), closure: {})
         }
         
     }

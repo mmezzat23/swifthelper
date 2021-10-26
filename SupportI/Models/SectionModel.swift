@@ -25,4 +25,5 @@ struct SectionSectionModel: Codable {
 struct SectionItem: Codable {
     let name: String?
     let id: Int?
+    let hexaCode: String?
 }

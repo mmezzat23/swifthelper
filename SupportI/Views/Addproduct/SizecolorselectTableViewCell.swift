@@ -27,6 +27,7 @@ class SizecolorselectTableViewCell: UITableViewCell , CellProtocol {
         colorlbl.text = model.colorName ?? ""
         sizelbl.text = model.sizeName ?? ""
         qunatity.text = String(model.quantity ?? 0)
+        color.backgroundColor = hexaCodeToColor(hex: "#" + model.colorHexaCode! ?? "")
 
     }
     

@@ -27,7 +27,8 @@ class Addcard: BaseController , UITextFieldDelegate{
     var nametxt = ""
     @IBOutlet weak var isdefult: UIButton!
     var isdefultvalue = false
-
+    @IBOutlet weak var save: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -48,6 +49,8 @@ class Addcard: BaseController , UITextFieldDelegate{
             }else{
                 isdefult.setImage(#imageLiteral(resourceName: "radio button-1"), for: .normal)
             }
+        }else {
+            save.setTitle("SAVE".localized(), for: .normal)
         }
     }
     func setup() {

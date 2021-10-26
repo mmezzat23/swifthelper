@@ -23,9 +23,10 @@ struct ProductsResponseDatum: Codable {
     let price, priceAfterDiscount: Int?
     let image: ProductsImage?
     let id: String?
+    let videosCount:Int?
 
     enum CodingKeys: String, CodingKey {
-        case name
+        case name, videosCount
         case responseDatumDescription = "description"
         case status, category, subCategory, price, priceAfterDiscount, image, id
     }

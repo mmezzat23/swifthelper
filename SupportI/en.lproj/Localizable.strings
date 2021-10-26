@@ -427,3 +427,16 @@
 "Morning 9 am - 2 pm" = "Morning 9am-2pm";
 "Evening 2 pm - 8 pm" = "Evening 2pm-8pm";
 "We'll get back to you within 24 hours." = "We'll get back to you within 24 hours.";
+"Vedio must be not exceeded 5 minute" = "Vedio must be not exceeded 5 minute";
+"Delete product" = "Delete product";
+"You want to delete the product that name" = "You want to delete the product that name";
+"Delete vedio" = "Delete vedio";
+"You want to delete the vedio that name" = "You want to delete the vedio that name";
+"Edit The vedio" = "Edit The vedio";
+"Delete The vedio" = "Delete The vedio";
+"Edit The product" = "Edit The product";
+"Delete The product" = "Delete The product";
+"field of price must be more than 0" = "field of price must be more than 0";
+"field of Discount must be less than 100" = "field of Discount must be less than 100";
+"CLEAR ALL" = "CLEAR ALL";
+"SAVE" = "SAVE";

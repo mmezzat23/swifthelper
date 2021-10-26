@@ -210,6 +210,52 @@ class ProfileViewModel: ViewModelCore {
             }
         }
     }
+    func deletevedio(id : Int) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.addvedio.rawValue)/\(id)", type: .delete) { (response) in
+            let data = try? JSONDecoder().decode(Deletecards.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.deletedata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.deleteaddress(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func deleteproduct(id : String) {
+        delegate?.startLoading()
+        ApiManager.instance.connection("\(EndPoint.product.rawValue)/\(id)", type: .delete) { (response) in
+            let data = try? JSONDecoder().decode(Deletecards.self, from: response ?? Data())
+            if (data?.isSuccess == true)
+            {
+                self.deletedata.value = data
+            }
+            else {
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.deleteproduct(id: id)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
     func getsingleaddress(id : Int) {
         delegate?.startLoading()
         ApiManager.instance.connection("\(EndPoint.address.rawValue)/\(id)", type: .get) { (response) in

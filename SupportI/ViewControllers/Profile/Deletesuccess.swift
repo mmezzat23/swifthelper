@@ -19,24 +19,16 @@ class Deletesuccess: BaseController {
         hiddenNav = true
         if (type == "1"){
             txt.text = "Your address deleted".localized
+        }else  if (type == "product"){
+            txt.text = "Your product deleted".localized
+        }else  if (type == "vedio"){
+            txt.text = "Your vedio deleted".localized
         }
     }
     
     @IBAction func done(_ sender: Any) {
-//        if (UserRoot.saller() == false){
-//            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-//                   guard let nav = controller else { return }
-//                   let delegate = UIApplication.shared.delegate as? AppDelegate
-//                   delegate?.window?.rootViewController = nav
             self.dismiss(animated: true, completion: nil)
             delegate?.settype()
-//        }else {
-//            let controller = UIStoryboard(name: "Saller", bundle: nil).instantiateInitialViewController()
-//                   guard let nav = controller else { return }
-//                   let delegate = UIApplication.shared.delegate as? AppDelegate
-//                   delegate?.window?.rootViewController = nav
-//            self.dismiss(animated: true, completion: nil)
-//        }
     }
     
     /*

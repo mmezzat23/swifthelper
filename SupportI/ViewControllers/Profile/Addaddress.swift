@@ -40,6 +40,8 @@ class Addaddress: BaseController {
     var parameters : [String : Any] = [:]
     var viewModel : ProfileViewModel?
     var isdefult = false
+    @IBOutlet weak var save: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -55,6 +57,8 @@ class Addaddress: BaseController {
         viewModel?.getcity()
         if (isedit == true){
             viewModel?.getsingleaddress(id: id)
+        }else {
+            save.setTitle("SAVE".localized(), for: .normal)
         }
         if (UserRoot.saller() == true){
             banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)

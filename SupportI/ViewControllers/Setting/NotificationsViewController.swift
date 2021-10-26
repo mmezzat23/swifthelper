@@ -11,6 +11,7 @@ import UIKit
 class NotificationsViewController: BaseController {
     @IBOutlet var banner: UIView!
     
+    @IBOutlet weak var clear: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var notificationsTableView: UITableView! {
         didSet {
@@ -24,6 +25,7 @@ class NotificationsViewController: BaseController {
         if (UserRoot.saller() == true){
             banner.backgroundColor = UIColor(red: 01, green: 14, blue: 47)
         }
+        clear.setunderline(title: "CLEAR ALL")
     }
     
     @IBAction func clearBtnClicked(_ sender: UIButton) {

@@ -57,19 +57,20 @@ class Addproductmedia: BaseController {
             vediohight.constant = 0
             addvediolbl.isHidden = true
         }else {
-            if (productdetails?.responseData?.videos?.count == 1) {
+//            if (productdetails?.responseData?.videos?.count == 1) {
                 vedioline.isHidden = true
                 vediolinehight.constant = 0
                 vedios.isHidden = true
                 vediohight.constant = 0
                 addvediolbl.isHidden = true
-            }
+//            }
             savedraft.isHidden = true
             cancel.isHidden = false
             for item in productdetails?.responseData?.images ?? [] {
                 var uploadimages : UploadModel = UploadModel(id: item.imageID ?? "", urldownload: item.urlDownload ?? "", urlthumbnail: item.urlThumbnail ?? "", urlPreview: item.urlPreview ?? "")
                 selectedImagesString.append(uploadimages)
             }
+            if (productdetails?.responseData?.videos?.count ?? 0 > 0){
             userupload = UploadModel(id: productdetails?.responseData?.videos?[0].videoId ?? "", urldownload: productdetails?.responseData?.videos?[0].urlDownload ?? "", urlthumbnail: productdetails?.responseData?.videos?[0].urlThumbnail ?? "", urlPreview: productdetails?.responseData?.videos?[0].urlPreview ?? "")
 
             let asset = BMPlayerResource(url: URL(string:productdetails?.responseData?.videos?[0].urlPreview ?? "")!,
@@ -78,6 +79,7 @@ class Addproductmedia: BaseController {
             vedioid = productdetails?.responseData?.videos?[0].videoId ?? ""
 
             player.isHidden = false
+            }
             photos.reloadData()
         }
         if (isperson == true){
@@ -252,13 +254,11 @@ class Addproductmedia: BaseController {
         Wndo.ApiManager.instance.connection(.seginure, type: .get) { (response) in
             let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
             if (data?.isSuccess == true){
-                let url = "files/delete/\(self.selectedImagesString[path])?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
+                let url = "files/delete/\(self.selectedImagesString[path].id)?&api_signature=\(data?.responseData?.api_signature ?? "")&api_key=\(data?.responseData?.api_key ?? "")&api_nonce=\(data?.responseData?.api_nonce ?? "")&api_timestamp=\(data?.responseData?.api_timestamp ?? "")"
                 ApiManager.instance.connectionpuliciti(url, type: .delete) { [self] (response) in
                                  self.stopLoading()
                                  let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
                     print(data?.id)
-                    selectedImages.remove(at: path)
-                    selectedImagesURL.remove(at: path)
                     selectedImagesString.remove(at: path)
 
                     photos.reloadData()
@@ -304,10 +304,11 @@ extension Addproductmedia: UICollectionViewDelegate,UICollectionViewDataSource ,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.cell(type: ImagesCollectionViewCell.self, indexPath)
         cell.model = selectedImagesString[safe: indexPath.row]
+        cell.setup()
         cell.delete.UIViewAction { [self] in
             deleteiamge(path: indexPath.row)
         }
-        if (indexPath.row == selectedImages.count){
+        if (indexPath.row > selectedImages.count){
             cell.image.borderColor = .clear
             cell.image.borderWidth = 0
             cell.delete.isHidden = true

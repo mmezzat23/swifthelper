@@ -1826,6 +1826,11 @@
                                     <constraint firstItem="Qfc-sg-cyt" firstAttribute="centerX" secondItem="tPX-Zw-h97" secondAttribute="centerX" id="LCt-Nf-SIb"/>
                                     <constraint firstItem="MTv-Ar-XiH" firstAttribute="centerX" secondItem="tPX-Zw-h97" secondAttribute="centerX" id="nl0-SS-1JI"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fu1-Sv-5Y4"/>
@@ -2020,12 +2025,11 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8E-2t-qK1">
                                                 <rect key="frame" x="20" y="5" width="40" height="40"/>
-                                                <color key="backgroundColor" red="0.38823529410000002" green="0.45098039220000002" blue="0.50588235290000005" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="p5e-sg-yDt"/>
                                                     <constraint firstAttribute="width" constant="40" id="rP8-bM-nsQ"/>
                                                 </constraints>
-                                                <state key="normal" image="Fill -1"/>
+                                                <state key="normal" image="Icon_Search"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="12"/>
@@ -2063,15 +2067,18 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4c-kP-R1E">
-                                        <rect key="frame" x="346" y="105" width="50" height="33"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4c-kP-R1E">
+                                        <rect key="frame" x="296" y="105" width="100" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="fZD-nD-6DH"/>
+                                            <constraint firstAttribute="width" constant="100" id="fZD-nD-6DH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="14"/>
-                                        <state key="normal" title="Clear">
+                                        <state key="normal" title="CLEAR ALL">
                                             <color key="titleColor" red="0.0" green="0.027450980392156862" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="CLEAR ALL"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="clearBtnClicked:" destination="FdH-UT-u4G" eventType="touchUpInside" id="wn2-Oo-d6n"/>
                                         </connections>
@@ -2126,6 +2133,7 @@
                     <navigationItem key="navigationItem" id="1ch-8I-xES"/>
                     <connections>
                         <outlet property="banner" destination="gFb-Ak-a7A" id="0as-8W-uBs"/>
+                        <outlet property="clear" destination="Q4c-kP-R1E" id="aDd-yK-4rH"/>
                         <outlet property="notificationsTableView" destination="RGC-DC-NeS" id="Mxc-nE-fq2"/>
                         <outlet property="searchTextField" destination="d2g-eg-5LW" id="EBb-H8-Wxg"/>
                     </connections>
@@ -2347,7 +2355,6 @@
     </scenes>
     <resources>
         <image name="Back Button" width="9" height="15"/>
-        <image name="Fill -1" width="22.5" height="22.5"/>
         <image name="Fill -3" width="22.5" height="22.5"/>
         <image name="Fill 1036-2" width="24" height="24"/>
         <image name="Fill 1160-2" width="24" height="24"/>
@@ -2363,6 +2370,7 @@
         <image name="Group 11005" width="37" height="37"/>
         <image name="Group 11116" width="22" height="22"/>
         <image name="Icon-7" width="24" height="24"/>
+        <image name="Icon_Search" width="20" height="20"/>
         <image name="icon-5" width="36" height="36"/>
         <image name="icon-close" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">

@@ -806,6 +806,13 @@
                                                     <action selector="backBtn:" destination="uKU-cW-qJX" eventType="touchUpInside" id="459-ze-xMd"/>
                                                 </connections>
                                             </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="bMl-zd-66D">
+                                                <rect key="frame" x="344" y="499" width="40" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="9cz-VD-LcH"/>
+                                                    <constraint firstAttribute="height" constant="20" id="g5r-W2-CKV"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="AJ9-ud-XQq" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="0zg-IO-yY7"/>
@@ -851,7 +858,9 @@
                                             <constraint firstAttribute="trailing" secondItem="Qev-3X-p4u" secondAttribute="trailing" constant="30" id="eAG-uV-i5b"/>
                                             <constraint firstItem="2PB-3m-vam" firstAttribute="top" secondItem="GhB-53-FYD" secondAttribute="bottom" constant="8" id="eL4-l2-rzO"/>
                                             <constraint firstItem="QBm-dc-gkv" firstAttribute="top" secondItem="PRd-Nf-AaL" secondAttribute="bottom" constant="1" id="eNo-oo-3Ac"/>
+                                            <constraint firstAttribute="trailing" secondItem="bMl-zd-66D" secondAttribute="trailing" constant="30" id="fK0-s9-S2n"/>
                                             <constraint firstItem="GhB-53-FYD" firstAttribute="top" secondItem="eqM-z8-81o" secondAttribute="bottom" constant="22" id="gUd-An-511"/>
+                                            <constraint firstItem="QBm-dc-gkv" firstAttribute="top" secondItem="bMl-zd-66D" secondAttribute="bottom" constant="10" id="hrW-QR-clR"/>
                                             <constraint firstItem="jNe-rH-wUi" firstAttribute="top" secondItem="WKo-Kv-OjJ" secondAttribute="bottom" constant="8" id="kQm-jd-WtQ"/>
                                             <constraint firstItem="cIW-zi-cH9" firstAttribute="top" secondItem="As3-8c-IfP" secondAttribute="bottom" constant="15" id="lSi-WP-Oxn"/>
                                             <constraint firstItem="Gja-Ee-yQ0" firstAttribute="leading" secondItem="98d-tm-qel" secondAttribute="leading" constant="30" id="nDQ-67-2j8"/>
@@ -919,6 +928,7 @@
                         <outlet property="isdefult" destination="g4A-Jz-vR7" id="H3P-8e-KLY"/>
                         <outlet property="name" destination="Gja-Ee-yQ0" id="fgA-Bn-hir"/>
                         <outlet property="number" destination="PRd-Nf-AaL" id="YU0-zu-hps"/>
+                        <outlet property="save" destination="bRd-fQ-v3F" id="Qy8-oo-oxa"/>
                         <outlet property="visacardname" destination="2PB-3m-vam" id="I6d-to-AdN"/>
                         <outlet property="visaexpiry" destination="jNe-rH-wUi" id="sIV-s1-gko"/>
                         <outlet property="visanumber" destination="eqM-z8-81o" id="zeb-Jj-bAI"/>
@@ -926,7 +936,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKU-cW-qJX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14143" y="4170"/>
+            <point key="canvasLocation" x="14142.028985507248" y="4169.8660714285716"/>
         </scene>
         <!--Deletecard-->
         <scene sceneID="Lyv-H5-x9t">
@@ -1017,6 +1027,11 @@
                                     <constraint firstItem="Q8k-mv-3h4" firstAttribute="top" secondItem="OaY-lE-JUJ" secondAttribute="top" constant="24" id="mBa-g4-7HT"/>
                                     <constraint firstItem="Q8k-mv-3h4" firstAttribute="centerX" secondItem="OaY-lE-JUJ" secondAttribute="centerX" id="uLR-Xy-dsV"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xlO-jz-bcJ"/>
@@ -1977,7 +1992,7 @@
                                                         <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Choose a reason"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localization" value="I'm Leaving Because"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="V5A-X2-f7L">
@@ -2007,7 +2022,7 @@
                                                 <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="I'm Leaving Because"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localization" value="Choose a reason"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98U-P7-CEf">
@@ -2213,6 +2228,9 @@
                         <outlet property="notificationtxt" destination="rX8-YK-yKf" id="NFW-h2-7mC"/>
                         <outlet property="notify" destination="XIh-bI-6Dj" id="f9u-NW-K8I"/>
                         <outlet property="password" destination="ZvI-Md-e01" id="KG7-dJ-fnO"/>
+                        <outlet property="passwordhight" destination="oUK-9d-EHM" id="N8H-rc-GXd"/>
+                        <outlet property="passwordline" destination="HZg-60-IJR" id="2fv-JP-Z6U"/>
+                        <outlet property="passwordlinehight" destination="TM8-Uz-RwY" id="E7I-lG-Fxf"/>
                         <outlet property="passwordview" destination="kUw-0y-JYt" id="dB5-2Z-y8r"/>
                         <outlet property="phone" destination="PNf-9o-HhX" id="uZD-j9-7Bl"/>
                         <outlet property="phoneview" destination="68p-Bh-s8N" id="0uW-ix-SgG"/>
@@ -2760,6 +2778,7 @@
                         <outlet property="notify" destination="OFP-4d-96g" id="Ei3-jz-lDw"/>
                         <outlet property="pinimg" destination="jcO-SA-PCK" id="jrd-PU-e4m"/>
                         <outlet property="pinlbl" destination="Xpl-j5-Kct" id="Dez-IY-BUV"/>
+                        <outlet property="save" destination="S7L-sc-WUl" id="GaW-Mt-fGM"/>
                         <outlet property="web" destination="eDE-fy-XhA" id="uj1-2q-fRe"/>
                     </connections>
                 </viewController>
@@ -2979,6 +2998,11 @@
                                     <constraint firstItem="vj9-dq-gg2" firstAttribute="leading" secondItem="qpw-GK-ZC2" secondAttribute="leading" constant="20" id="rGq-6x-XlN"/>
                                     <constraint firstItem="Yc0-bv-jhZ" firstAttribute="leading" secondItem="qpw-GK-ZC2" secondAttribute="leading" constant="20" id="zAW-fQ-2b7"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mnS-Mm-Wbt"/>
@@ -3302,6 +3326,11 @@
                                     <constraint firstItem="FM3-cZ-Is5" firstAttribute="centerX" secondItem="Bys-yc-a2f" secondAttribute="centerX" id="doz-QP-nG7"/>
                                     <constraint firstItem="VDL-3W-P4Q" firstAttribute="top" secondItem="FM3-cZ-Is5" secondAttribute="bottom" constant="30" id="y01-oP-Buo"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DDP-sO-omx"/>
@@ -3425,6 +3454,11 @@
                                     <constraint firstItem="fSE-br-tZS" firstAttribute="leading" secondItem="Zna-IW-S0J" secondAttribute="leading" constant="20" id="uwY-B3-16X"/>
                                     <constraint firstAttribute="trailing" secondItem="fSE-br-tZS" secondAttribute="trailing" constant="20" id="zMf-dS-r6M"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aCA-bx-1P1"/>
@@ -3640,6 +3674,11 @@
                                     <constraint firstAttribute="trailing" secondItem="6yB-WY-49Q" secondAttribute="trailing" constant="20" id="wuz-9X-wLn"/>
                                     <constraint firstItem="sJN-6B-fiy" firstAttribute="leading" secondItem="pxw-mP-Pdb" secondAttribute="leading" constant="20" id="x0A-KB-ZD2"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uvA-hb-wzH"/>
@@ -3685,8 +3724,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="8" height="15"/>
-        <image name="Back Button-4" width="9" height="15"/>
+        <image name="Back Button" width="9" height="15"/>
+        <image name="Back Button-4" width="8" height="15"/>
         <image name="Combined Shape" width="315" height="91"/>
         <image name="Delete_button_2" width="12.5" height="16"/>
         <image name="Fill 1097-2" width="22.5" height="22"/>
@@ -3712,6 +3751,7 @@
         <image name="parthenon" width="18" height="18"/>
         <image name="radio button-1" width="30" height="30"/>
         <image name="sorry12" width="123.5" height="148.5"/>
+        <image name="visa" width="24.5" height="8"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

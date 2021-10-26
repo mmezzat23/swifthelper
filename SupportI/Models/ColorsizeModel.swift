@@ -11,6 +11,7 @@ import Foundation
 class ColorsizeModel {
     var colorid: Int = 0
     var sizeid: Int = 0
+    var hexaCode: String = ""
     var quantity: String = ""
     var colortxt: String = ""
     var sizetxt: String = ""

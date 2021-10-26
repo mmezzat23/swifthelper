@@ -20,7 +20,11 @@ class ImagesCollectionViewCell: UICollectionViewCell , CellProtocol{
             image.borderColor = UIColor(red: 1, green: 20, blue: 71)
             image.borderWidth = 1
             image?.cornerRadius = 10
-            delete.isHidden = false
+//            if (model.urlthumbnail ?? "" == ""){
+//                delete.isHidden = true
+//            }else{
+//                delete.isHidden = false
+//            }
 
         }else{
             guard let model = model as? UploadModel else { return setupModel() }
@@ -28,7 +32,11 @@ class ImagesCollectionViewCell: UICollectionViewCell , CellProtocol{
             image.borderColor = UIColor(red: 1, green: 20, blue: 71)
             image.borderWidth = 1
             image?.cornerRadius = 10
-            delete.isHidden = false
+//            if (model.urlthumbnail ?? "" == ""){
+//                delete.isHidden = true
+//            }else{
+//                delete.isHidden = false
+//            }
         }
     }
     func setupModel() {

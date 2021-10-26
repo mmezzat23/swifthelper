@@ -49,8 +49,8 @@ class Addproductstep1: BaseController {
         sizetable.dataSource = self
         viewModel = .init()
         viewModel?.delegate = self
-        viewModel?.getlokup(id: catid)
         if (isedit == true){
+            catid = productdetails?.responseData?.subCategory?.id ?? 0
             savedraft.isHidden = true
             cancel.isHidden = false
             var tagtitle = ""
@@ -62,7 +62,8 @@ class Addproductstep1: BaseController {
         if (isperson == true){
             save.setTitle("SAVE".localized(), for: .normal)
         }
-        
+        viewModel?.getlokup(id: catid)
+
     }
 
     override func bind() {
@@ -92,28 +93,65 @@ class Addproductstep1: BaseController {
             self?.colorsizemodel1.issize = data.responseData.isSizes
             self?.colorsizemodel1.iscolor = data.responseData.isColors
             self?.lookups.append(contentsOf: data.responseData.lookups ?? [])
-            var jjj = 0
-            for item in self?.lookups ?? [] {
-                for lookup in self?.productdetails?.responseData?.lookupDtos ?? [] {
-                    if item.id == lookup.id {
-                        self?.lookups[jjj].chooseid = lookup.lookupValues?[0].id ?? 0
-                        self?.lookups[jjj].choosetxt = lookup.lookupValues?[0].displayName ?? ""
-                        self?.lookups[jjj].ischoose = true
+
+            self?.sizes.removeAll()
+            self?.sizes.append(contentsOf: data.responseData.sizes ?? [])
+            self?.colorsizemodel.sizes.append(contentsOf: self!.sizes)
+            self?.colorsizemodel1.sizes.append(contentsOf: self!.sizes)
+            self?.colors.removeAll()
+            self?.colors.append(contentsOf: data.responseData.colors ?? [])
+            self?.colorsizemodel.colors.append(contentsOf: self!.colors)
+            self?.colorsizemodel1.colors.append(contentsOf: self!.colors)
+            if (self?.isedit == true && self?.productdetails?.responseData?.lookupDtos?.count ?? 0 > 0){
+//                for item1 in self?.productdetails?.responseData?.productColorSizes ?? [] {
+//                    self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+//                }
+                var jjj = 0
+                for item in self?.lookups ?? [] {
+                    for lookup in self?.productdetails?.responseData?.lookupDtos ?? [] {
+                        if item.id == lookup.id {
+                            self?.lookups[jjj].chooseid = lookup.lookupValues?[0].id ?? 0
+                            self?.lookups[jjj].choosetxt = lookup.lookupValues?[0].displayName ?? ""
+                            self?.lookups[jjj].ischoose = true
+                        }
                     }
+                    jjj += 1
                 }
-                jjj += 1
-            }
-            if (data.responseData.isColors ) {
-                self?.viewModel?.getcolors(id: 1)
+                var iii = 0
+                for item in self?.productdetails?.responseData?.productColorSizes ?? []  {
+                    let color: ColorsizeModel = ColorsizeModel()
+                    color.sizeid = item.sizeID ?? 0
+                    color.sizetxt = item.sizeName ?? ""
+                    color.colorid = item.colorID ?? 0
+                    color.colortxt = item.colorName ?? ""
+                    color.hexaCode = item.colorHexaCode ?? ""
+
+                    color.quantity = String(item.quantity ?? 0) ?? ""
+                    color.colors.append(contentsOf: self?.colors ?? [])
+                    color.sizes.append(contentsOf: self?.sizes ?? [])
+                    color.issize = data.responseData.isSizes
+                    color.iscolor = data.responseData.isColors
+                    self?.colorsizes.append(color as! ColorsizeModel)
+
+//                    print(color.sizetxt ?? "")
+
+                    iii += 1
+
+                }
             }else {
-                if (data.responseData.isSizes ) {
-                    self?.viewModel?.getsizes(id: 1)
+//                self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
+
+            }
+          
+
+                if (self?.isedit == true && self?.productdetails?.responseData?.lookupDtos?.count ?? 0 > 0){
+                    
+                  
+                
+                }else {
+            self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
                 }
-            }
-            if (data.responseData.isColors == false && data.responseData.isSizes == false){
-                self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
-                self?.sizetable.reloadData()
-            }
+            self?.sizetable.reloadData()
            
             self?.options.reloadData()
         })
@@ -412,6 +450,8 @@ extension Addproductstep1 : PickersPOPDelegate {
     func callbackColor(item: SectionItem, path: Int) {
         colorsizes[path].colorid = item.id ?? 0
         colorsizes[path].colortxt = item.name ?? ""
+        colorsizes[path].hexaCode = item.hexaCode ?? ""
+
         sizetable.reloadData()
     }
     func callbackSize(item: SectionItem, path: Int) {

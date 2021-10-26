@@ -19,6 +19,7 @@ class SallerViewModel: ViewModelCore {
     var puplishdata: DynamicType = DynamicType<UserRoot>()
     var productdetailsdata: DynamicType = DynamicType<ProductdetailModel>()
     var productssdata: DynamicType = DynamicType<ProductsModel>()
+    var vediosdata: DynamicType = DynamicType<VediosModel>()
 
     func isactivesaller( ) {
         delegate?.startLoading()
@@ -363,6 +364,93 @@ class SallerViewModel: ViewModelCore {
                     Authorization.instance.refreshToken1{callback in
                         if (callback){
                             self.addvedio(paramters: paramters)
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getsalleroffers() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.offers, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(ProductsModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+            self.productssdata.value = data
+                self.paginator(respnod: data?.responseData ?? [])
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getsalleroffers()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getsallerproducts() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.products, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(ProductsModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+            self.productssdata.value = data
+                self.paginator(respnod: data?.responseData ?? [])
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getsallerproducts()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getsallervedios() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.vedios, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(VediosModel.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+            self.vediosdata.value = data
+                self.paginator(respnod: data?.responseData?.items ?? [])
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getsallervedios()
+                        }else{
+                            
+                        }
+                    }
+                }else {
+                self.errordata.value = data?.errorMessage
+                }
+            }
+        }
+    }
+    func getcount() {
+        delegate?.startLoading()
+        ApiManager.instance.connection(.countstore, type: .get) { (response) in
+            let data = try? JSONDecoder().decode(UserRoot.self, from: response ?? Data())
+            if (data?.isSuccess == true){
+            self.userdata.value = data
+            }else{
+                if (data?.statusCode == 401){
+                    Authorization.instance.refreshToken1{callback in
+                        if (callback){
+                            self.getcount()
                         }else{
                             
                         }
