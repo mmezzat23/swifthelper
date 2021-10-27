@@ -42,6 +42,7 @@ class Addproductmedia: BaseController {
     @IBOutlet weak var save: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
+    @IBOutlet weak var delete1: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -76,9 +77,12 @@ class Addproductmedia: BaseController {
             let asset = BMPlayerResource(url: URL(string:productdetails?.responseData?.videos?[0].urlPreview ?? "")!,
                                                   name: "WNDO")
             self.player.setVideo(resource: asset)
+            self.player.pause()
             vedioid = productdetails?.responseData?.videos?[0].videoId ?? ""
 
             player.isHidden = false
+            delete1.isHidden = false
+            play.isHidden = true
             }
             photos.reloadData()
         }
@@ -107,12 +111,12 @@ class Addproductmedia: BaseController {
             photos.reloadData()
                 }
         viewvedio.UIViewAction { [self] in
-            imagePickerController.sourceType = .savedPhotosAlbum
-             imagePickerController.delegate = self
-             imagePickerController.mediaTypes = ["public.movie"]
-            present(imagePickerController, animated: true, completion: nil)
+            let vcc = self.controller(Vedioattachorrecord.self,storyboard: .vedios)
+            vcc.isproduct = true
+            vcc.delegate = self
+            self.pushPop(vcr: vcc)
         }
-        delete.UIViewAction { [self] in
+        delete1.UIViewAction { [self] in
             deletevedio()
         }
     }
@@ -237,14 +241,14 @@ class Addproductmedia: BaseController {
                                  let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
                     print(data?.id)
                     player.isHidden = false
-                    let asset = BMPlayerResource(url: videoURL!,
-                                                 name: "WNDO")
-                    player.setVideo(resource: asset)
+
                     vedioid = ""
                     vediothum = ""
                     videoURL = nil
                     player.isHidden = true
-                    delete.isHidden = true
+                    delete1.isHidden = true
+                    self.player.pause()
+                    play.isHidden = false
 
                                  
                              }
@@ -355,9 +359,11 @@ extension Addproductmedia : UIImagePickerControllerDelegate {
                                                  name: "WNDO")
                     userupload = data
                     player.setVideo(resource: asset)
+                    self.player.pause()
                     vedioid = data?.id ?? ""
                     vediothum = data?.urlthumbnail ?? ""
-                    delete.isHidden = false
+                    delete1.isHidden = false
+                    play.isHidden = true
                                  
                              }
             }else{
@@ -381,5 +387,57 @@ extension Addproductmedia : UIImagePickerControllerDelegate {
 
 
             // work with the video URL
+}
+
+extension Addproductmedia : VedioattachorrecordDelegate , VediocacheDelegate {
+    func settypeoptin(type: String) {
+        if (type == "upload"){
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+            let vcc = self.controller(Vediocache.self,storyboard: .vedios)
+            vcc.isproduct = true
+            vcc.delegate = self
+            self.pushPop(vcr: vcc)
+            }
+        }else{
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){ [self] in
+            let vcc = self.controller(Recordeing.self,storyboard: .vedios)
+            vcc.isproduct = true
+            vcc.delegate = self
+            vcc.currentCount = 60
+            vcc.maxCount = 60
+            self.pushPop(vcr: vcc)
+            }
+        }
+    }
+    func setuser(userupload: UploadModel?) {
+        self.userupload = userupload
+        self.vedioid = userupload?.id ?? ""
+        player.isHidden = false
+        let asset = BMPlayerResource(url: URL(string: userupload?.urlPreview ?? "")!,
+                                              name: "WNDO")
+        player.setVideo(resource: asset)
+        self.player.pause()
+        delete1.isHidden = false
+        play.isHidden = true
+    }
+    
+    
+}
+extension Addproductmedia : RecordeingDelegate {
+    func setuserrecord(userupload: UploadModel?) {
+        self.userupload = userupload
+        self.vedioid = userupload?.id ?? ""
+        print(vedioid)
+        player.isHidden = false
+        let asset = BMPlayerResource(url: URL(string: userupload?.urlPreview ?? "")!,
+                                              name: "WNDO")
+        player.setVideo(resource: asset)
+        self.player.pause()
+        delete1.isHidden = false
+        play.isHidden = true
+        
+    }
 }
   

@@ -9,6 +9,9 @@
 import UIKit
 import BMPlayer
 import AVFoundation
+protocol VediocacheDelegate: class {
+    func setuser(userupload : UploadModel?)
+}
 class Vediocache: BaseController {
     var parameters : [String : Any] = [:]
     var userupload : UploadModel?
@@ -18,8 +21,9 @@ class Vediocache: BaseController {
     var viewModel : SallerViewModel?
     @IBOutlet weak var player: BMPlayer!
     @IBOutlet weak var delete: UIImageView!
-    
     @IBOutlet weak var attach: UIImageView!
+    var isproduct = false
+    var delegate : VediocacheDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNav = true
@@ -79,12 +83,18 @@ class Vediocache: BaseController {
                                      self.stopLoading()
                                      let data = try? JSONDecoder().decode(UploadModel.self, from: response ?? Data())
                         print(data?.id)
-                        parameters["videoId"] = data?.id ?? ""
-                        parameters["urlThumbnail"] = data?.urlthumbnail ?? ""
-                        parameters["urlPreview"] = data?.urlPreview ?? ""
-                        parameters["urlDownload"] = data?.urldownload ?? ""
+                        userupload = data
+                        if (isproduct == true){
+                            delegate?.setuser(userupload: userupload)
+                            self.dismiss(animated: true, completion: nil)
+                        }else{
+                            parameters["videoId"] = data?.id ?? ""
+                            parameters["urlThumbnail"] = data?.urlthumbnail ?? ""
+                            parameters["urlPreview"] = data?.urlPreview ?? ""
+                            parameters["urlDownload"] = data?.urldownload ?? ""
 
-                        viewModel?.addvedio(paramters: parameters)
+                            viewModel?.addvedio(paramters: parameters)
+                        }
           
                                      
                                  }
@@ -109,16 +119,27 @@ extension Vediocache : UIImagePickerControllerDelegate {
         videoURL = movieUrl
         let asset = AVURLAsset.init(url: videoURL!)
         let durationInSeconds = asset.duration.seconds
-        if (durationInSeconds <= 300){
+        var second = 0
+        if (isproduct == true){
+            second = 60
+        }else{
+            second = 300
+        }
+        if (durationInSeconds <= Double(second)){
             let asset1 = BMPlayerResource(url: videoURL!,
                                          name: "WNDO")
             player.setVideo(resource: asset1)
+            self.player.pause()
             player.isHidden = false
             delete.isHidden = false
 
         
         }else {
-            makeAlert("Vedio must be not exceeded 5 minute".localized(), closure: {})
+            if (isproduct == true){
+            makeAlert("Vedio must be not exceeded 1 minute".localized(), closure: {})
+            }else{
+                makeAlert("Vedio must be not exceeded 5 minute".localized(), closure: {})
+            }
         }
         
     }

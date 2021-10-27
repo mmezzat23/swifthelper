@@ -91,7 +91,7 @@ class Store: BaseController {
                 offerline.isHidden = true
                 vedioslbl.textColor = UIColor(red: 1, green: 20, blue: 71)
                 offerlbl.textColor = UIColor(red: 150, green: 161, blue: 171)
-                offerlbl.textColor = UIColor(red: 150, green: 161, blue: 171)
+                productlbl.textColor = UIColor(red: 150, green: 161, blue: 171)
 
             }
         }

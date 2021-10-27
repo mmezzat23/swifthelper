@@ -236,7 +236,7 @@ class Addproductstep3: BaseController {
             if (error != ""){
               makeAlert(error, closure: {})
             }else{
-            isveify = true
+            isveify = false
             parameters["price"] = pricetxt.text ?? ""
             parameters["isPermanent"] = isPermanent
             parameters["productId"] = productid

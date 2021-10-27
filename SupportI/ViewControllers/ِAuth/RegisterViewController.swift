@@ -93,8 +93,8 @@ class RegisterViewController: BaseController {
             emialOrPhoneTxt.customValidationRules = [RequiredRule() , MinLengthRule(length: 11)]
         }
         userNameTxt.customValidationRules = [RequiredRule() , MaxLengthRule(length: 16)]
-        passwordTxt.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),  PasswordRule()]
-        `repeat`.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),  PasswordRule()]
+        passwordTxt.customValidationRules = [RequiredRule(), MinLengthRule(length: 8),  PasswordRule()]
+        `repeat`.customValidationRules = [RequiredRule(), MinLengthRule(length: 8),  PasswordRule()]
         let validator = Validation(textFields: [emialOrPhoneTxt , userNameTxt ,passwordTxt,`repeat`])
         return validator.success
     }

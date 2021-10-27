@@ -58,6 +58,8 @@ class Addproduct: BaseController {
             sectxt.textColor = UIColor(red: 1, green: 20, blue: 71)
             cattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
             subcattxt.textColor = UIColor(red: 1, green: 20, blue: 71)
+            viewModel?.getcats(id: sec_id)
+            viewModel?.getsubcats(id: cat_id)
 
 
         }
@@ -69,9 +71,20 @@ class Addproduct: BaseController {
         viewModel?.userdata.bind({ [weak self](data) in
                 self?.stopLoading()
             if (self?.isperson == true){
-                let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
-                vcc?.productid = data.responseData?.productId ?? ""
-                self?.push(vcc!)
+                if (self?.sec_id != self?.productdetails?.responseData?.section?.id ?? 0 || self?.cat_id != self?.productdetails?.responseData?.category?.id ?? 0 || self?.subcat_id != self?.productdetails?.responseData?.subCategory?.id ?? 0){
+                    let vcc = self?.pushViewController(Addproductmedia.self,storyboard: .addproduct)
+                    vcc?.productid = data.responseData?.productId ?? ""
+                    vcc?.catid = self?.subcat_id ?? 0
+                    if (self?.isedit == true){
+//                        vcc?.productdetails = self?.productdetails
+                        vcc?.isedit = true
+                    }
+                    self?.push(vcc!)
+                }else {
+                    let vcc = self?.pushViewController(Reviewproduct.self,storyboard: .addproduct)
+                    vcc?.productid = data.responseData?.productId ?? ""
+                    self?.push(vcc!)
+                }
             }else {
                 let vcc = self?.pushViewController(Addproductmedia.self,storyboard: .addproduct)
                 vcc?.productid = data.responseData?.productId ?? ""
@@ -93,11 +106,13 @@ class Addproduct: BaseController {
             self?.stopLoading()
             self?.cats.removeAll()
             self?.cats.append(contentsOf: data.responseData?.items ?? [])
-            self?.subcats.removeAll()
-            self?.cat_id = 0
-            self?.subcat_id = 0
-            self?.cattxt.text = "Select category".localized()
-            self?.subcattxt.text = "Select subcategory".localized()
+            if (self?.isedit == false) {
+                self?.subcats.removeAll()
+                self?.cat_id = 0
+                self?.subcat_id = 0
+                self?.cattxt.text = "Select category".localized()
+                self?.subcattxt.text = "Select subcategory".localized()
+            }
 
            
         })
@@ -105,8 +120,10 @@ class Addproduct: BaseController {
             self?.stopLoading()
             self?.subcats.removeAll()
             self?.subcats.append(contentsOf: data.responseData?.items ?? [])
+            if (self?.isedit == false) {
             self?.subcat_id = 0
             self?.subcattxt.text = "Select subcategory".localized()
+            }
 
            
         })

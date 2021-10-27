@@ -83,6 +83,7 @@ class Reviewproduct: BaseController {
             let asset = BMPlayerResource(url: URL(string: self?.productdetails?.responseData?.videos?[0].urlPreview ?? "")!,
                                                   name: "WNDO")
             self?.player.setVideo(resource: asset)
+            self?.player.pause()
             var priceval = self?.productdetails?.responseData?.price?.price ?? 0
             var dis = (self?.productdetails?.responseData?.price?.discount)! ?? 0
             var discountval = priceval * dis / 100

@@ -2739,6 +2739,13 @@ and microphone</string>
                                                             <constraint firstAttribute="height" constant="18" id="Yfj-hd-0yD"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 11308" translatesAutoresizingMaskIntoConstraints="NO" id="dpN-JU-Yka">
+                                                        <rect key="frame" x="150" y="15" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="gZC-JF-Y24"/>
+                                                            <constraint firstAttribute="height" constant="25" id="j0j-Vn-nTK"/>
+                                                        </constraints>
+                                                    </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fill-1030" translatesAutoresizingMaskIntoConstraints="NO" id="1ZJ-zz-xa6">
                                                         <rect key="frame" x="156" y="173" width="24" height="17"/>
                                                         <constraints>
@@ -2750,7 +2757,9 @@ and microphone</string>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="ZDi-Jj-XiD" secondAttribute="bottom" id="23C-KK-irl"/>
+                                                    <constraint firstItem="dpN-JU-Yka" firstAttribute="top" secondItem="c8o-cn-P73" secondAttribute="top" constant="15" id="8bx-cW-vQT"/>
                                                     <constraint firstItem="ZDi-Jj-XiD" firstAttribute="top" secondItem="c8o-cn-P73" secondAttribute="top" id="NtA-ou-rDV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dpN-JU-Yka" secondAttribute="trailing" constant="15" id="UZT-1K-Msi"/>
                                                     <constraint firstAttribute="bottom" secondItem="1ZJ-zz-xa6" secondAttribute="bottom" constant="10" id="f80-UO-o8w"/>
                                                     <constraint firstAttribute="trailing" secondItem="ZDi-Jj-XiD" secondAttribute="trailing" id="fyO-xB-bkq"/>
                                                     <constraint firstAttribute="trailing" secondItem="1ZJ-zz-xa6" secondAttribute="trailing" constant="10" id="hpd-bM-TOo"/>
@@ -3165,6 +3174,7 @@ and microphone</string>
                         <outlet property="cancel" destination="94z-Bi-eGV" id="WGY-Qc-heF"/>
                         <outlet property="continu" destination="UGX-1A-Drz" id="MUL-Xf-L15"/>
                         <outlet property="delete" destination="1ZJ-zz-xa6" id="hVK-45-JNC"/>
+                        <outlet property="delete1" destination="dpN-JU-Yka" id="jfH-me-kmD"/>
                         <outlet property="photos" destination="d5b-FQ-oOd" id="My6-VS-pbk"/>
                         <outlet property="play" destination="kqe-CR-8qi" id="d9c-K5-p8n"/>
                         <outlet property="player" destination="ZDi-Jj-XiD" id="dzp-PO-oRI"/>
@@ -4529,8 +4539,9 @@ and microphone</string>
     </scenes>
     <resources>
         <image name=" FILLED_OUTLINE" width="23" height="23"/>
-        <image name="Back Button" width="9" height="15"/>
+        <image name="Back Button" width="8" height="15"/>
         <image name="Fill 1168-3" width="50" height="61"/>
+        <image name="Group 11308" width="18" height="18"/>
         <image name="Group 11628" width="30" height="30"/>
         <image name="arrowdown" width="11.5" height="6.5"/>
         <image name="datepicker" width="19" height="19"/>

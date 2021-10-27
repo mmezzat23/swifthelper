@@ -101,9 +101,9 @@ class Editpassword: BaseController {
     }
     func validateTextFields() -> Bool {
        
-        oldpass.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),   PasswordRule()]
-        newpass.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),  PasswordRule()]
-        repeatpass.customValidationRules = [RequiredRule(), MaxLengthRule(length: 8),  PasswordRule()]
+        oldpass.customValidationRules = [RequiredRule(), MinLengthRule(length: 8),   PasswordRule()]
+        newpass.customValidationRules = [RequiredRule(), MinLengthRule(length: 8),  PasswordRule()]
+        repeatpass.customValidationRules = [RequiredRule(), MinLengthRule(length: 8),  PasswordRule()]
 
         let validator = Validation(textFields: [oldpass , newpass ,repeatpass])
         return validator.success

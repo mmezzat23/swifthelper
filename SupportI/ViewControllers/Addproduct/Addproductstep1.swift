@@ -50,7 +50,6 @@ class Addproductstep1: BaseController {
         viewModel = .init()
         viewModel?.delegate = self
         if (isedit == true){
-            catid = productdetails?.responseData?.subCategory?.id ?? 0
             savedraft.isHidden = true
             cancel.isHidden = false
             var tagtitle = ""
@@ -102,7 +101,7 @@ class Addproductstep1: BaseController {
             self?.colors.append(contentsOf: data.responseData.colors ?? [])
             self?.colorsizemodel.colors.append(contentsOf: self!.colors)
             self?.colorsizemodel1.colors.append(contentsOf: self!.colors)
-            if (self?.isedit == true && self?.productdetails?.responseData?.lookupDtos?.count ?? 0 > 0){
+            if (self?.isedit == true && self?.productdetails?.responseData?.lookupDtos?.count ?? 0 > 0 && self?.catid == self?.productdetails?.responseData?.subCategory?.id ?? 0){
 //                for item1 in self?.productdetails?.responseData?.productColorSizes ?? [] {
 //                    self?.colorsizes.append((self?.colorsizemodel) as! ColorsizeModel)
 //                }

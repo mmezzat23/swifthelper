@@ -353,7 +353,7 @@
                                             <constraint firstAttribute="trailing" secondItem="sf2-mT-9aZ" secondAttribute="trailing" id="tJ9-XP-6x5"/>
                                             <constraint firstAttribute="trailing" secondItem="Slc-vb-a6g" secondAttribute="trailing" constant="27" id="xWp-Hd-CRb"/>
                                             <constraint firstItem="KnE-pd-ipl" firstAttribute="leading" secondItem="CPx-uD-hDR" secondAttribute="leading" constant="17" id="yIe-oR-Lhe"/>
-                                            <constraint firstAttribute="bottom" secondItem="iUj-GR-JGG" secondAttribute="bottom" constant="30" id="yfp-Tn-ZUu"/>
+                                            <constraint firstAttribute="bottom" secondItem="iUj-GR-JGG" secondAttribute="bottom" constant="80" id="yfp-Tn-ZUu"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
@@ -901,7 +901,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="backBtn:" destination="gma-Ab-P2f" eventType="touchUpInside" id="TQF-bw-Dji"/>
+                                            <action selector="back:" destination="VDS-xH-KfI" eventType="touchUpInside" id="sIF-eY-y6W"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD8-zW-1bH">
@@ -1150,7 +1150,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="backBtn:" destination="rZP-1w-jru" eventType="touchUpInside" id="7Se-1L-bsA"/>
+                                            <action selector="back:" destination="O8H-m9-ZYc" eventType="touchUpInside" id="ZfY-sy-BL7"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scan barcode" translatesAutoresizingMaskIntoConstraints="NO" id="2qe-2Q-khD">
@@ -1163,8 +1163,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSS-Kd-Me1" customClass="KDCircularProgress" customModule="KDCircularProgress">
                                         <rect key="frame" x="167" y="664" width="80" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-W5-7KM">
-                                                <rect key="frame" x="27.5" y="25" width="25" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-W5-7KM">
+                                                <rect key="frame" x="21" y="25" width="38" height="30"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1175,6 +1175,8 @@
                                             <constraint firstItem="rUC-W5-7KM" firstAttribute="centerX" secondItem="tSS-Kd-Me1" secondAttribute="centerX" id="aub-df-QHP"/>
                                             <constraint firstAttribute="width" constant="80" id="f3U-n3-u9E"/>
                                             <constraint firstAttribute="height" constant="80" id="mw5-uW-NgZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rUC-W5-7KM" secondAttribute="trailing" constant="21" id="q5a-cM-uhB"/>
+                                            <constraint firstItem="rUC-W5-7KM" firstAttribute="leading" secondItem="tSS-Kd-Me1" secondAttribute="leading" constant="21" id="wWC-oa-KGw"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
@@ -1200,17 +1202,17 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="gee-Xk-a2N">
-                                        <rect key="frame" x="103" y="691" width="24" height="26"/>
+                                        <rect key="frame" x="97" y="689" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="VR3-kB-3PW"/>
-                                            <constraint firstAttribute="height" constant="26" id="gzi-Ux-Hnw"/>
+                                            <constraint firstAttribute="width" constant="30" id="VR3-kB-3PW"/>
+                                            <constraint firstAttribute="height" constant="30" id="gzi-Ux-Hnw"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause" translatesAutoresizingMaskIntoConstraints="NO" id="bqP-HO-83L">
-                                        <rect key="frame" x="287" y="686" width="24" height="36"/>
+                                        <rect key="frame" x="287" y="689" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="7jY-8p-T2a"/>
-                                            <constraint firstAttribute="height" constant="36" id="uja-SV-jqC"/>
+                                            <constraint firstAttribute="width" constant="30" id="7jY-8p-T2a"/>
+                                            <constraint firstAttribute="height" constant="30" id="uja-SV-jqC"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -1360,7 +1362,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="9" height="15"/>
+        <image name="Back Button" width="8" height="15"/>
         <image name="Background-1" width="341" height="84"/>
         <image name="Group 11179" width="115.5" height="111.5"/>
         <image name="Group 11308" width="18" height="18"/>
